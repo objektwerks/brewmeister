@@ -4,9 +4,9 @@ Brewmeister
 
 Process
 -------
-1. Mash
-2. Boil
-3. Cool
-4. Ferment
-5. Condition
-6. Package
+1. Mashing
+2. Boiling
+3. Cooling
+4. Fermenting
+5. Conditioning
+6. Packaging
