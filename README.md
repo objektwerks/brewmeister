@@ -1,2 +1,3 @@
-# brewmeister
-Brewing process simulation.
+Brewmeister
+-----------
+>Brewing process simulation.
