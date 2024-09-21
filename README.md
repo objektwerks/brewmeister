@@ -5,3 +5,4 @@ Brewmeister
 Process
 -------
 1. Mash
+2. Boil
