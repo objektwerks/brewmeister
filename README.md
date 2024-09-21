@@ -9,3 +9,4 @@ Process
 3. Cool
 4. Ferment
 5. Condition
+6. Package
