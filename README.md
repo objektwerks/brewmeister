@@ -11,8 +11,8 @@ Process
 5. Mashing - Mix hot water with the grist to convert the starches into fermentable sugars, creating a sugar-rich liquid called ***wort***.
 6. Lautering - Filter out solids from the ***wort***.
 7. Boiling - Bring the ***wort*** to a boil; then, add hops for bitterness, flavor, and aroma.
-8. Whirlpooling - After boiling, let the ***wort*** settle and clarify, removing protein and hop solids, or ***trub***, from the ***wort***.
-9. Cooling
+8. Cooling - Give the ***wort*** an ice bath, bringing it down to recommended temperature.
+9. Whirlpooling - Stir the ***wort***, removing protein and hop solids, or ***trub***.
 10. Fermenting
 11. Conditioning
 12. Packaging
