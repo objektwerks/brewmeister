@@ -1,6 +1,6 @@
 Brewmeister
 -----------
->Brewing process simulation.
+>Brewing process simulation using ScalaFx, ScalikeJdbc, Jsoniter, JoddMail, Helidon, Ox, PostgreSql and Scala 3.
 
 Process
 -------
