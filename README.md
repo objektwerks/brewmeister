@@ -10,3 +10,7 @@ Process
 4. Fermenting
 5. Conditioning
 6. Packaging
+
+Resources
+---------
+* [Brewing Fundamentals](https://beerconnoisseur.com/articles/beer-101-fundamental-steps-brewing)
