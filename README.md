@@ -7,7 +7,7 @@ Process
 1. Sanitizing - Santize all brewing tools and containers.
 2. Preparing - Prepare all ingrediants for a brewing session.
 3. Malting - Germinated grains (barley, wheat, oats, or rye) are dried and sometimes roasted, preparing them for milling.
-4. Milling
+4. Milling - Crush or gound malted grains into a grist, exposing the starches for the mashing process.
 5. Mashing
 6. Lautering
 7. Boiling
