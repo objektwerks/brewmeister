@@ -8,7 +8,7 @@ Process
 2. Preparing - Prepare all ingrediants for a brewing session.
 3. Malting - Germinated grains (barley, wheat, oats, or rye) are dried and sometimes roasted, preparing them for milling.
 4. Milling - Crush or gound malted grains into a grist, exposing the starches for the mashing process.
-5. Mashing
+5. Mashing - Mix hot water with the grist to convert the starches into fermentable sugars, creating a sugar-rich liquid called ***wort***.
 6. Lautering
 7. Boiling
 8. Whirlpooling
