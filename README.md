@@ -9,3 +9,4 @@ Process
 3. Cooling
 4. Fermenting
 5. Conditioning
+6. Packaging
