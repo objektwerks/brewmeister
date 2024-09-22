@@ -4,12 +4,16 @@ Brewmeister
 
 Process
 -------
-1. Mashing
-2. Boiling
-3. Cooling
-4. Fermenting
-5. Conditioning
-6. Packaging
+1. Sanitizing
+2. Preparing
+3. Malting
+4. Milling
+5. Mashing
+6. Boiling
+7. Cooling
+8. Fermenting
+9. Conditioning
+10. Packaging
 
 Resources
 ---------
