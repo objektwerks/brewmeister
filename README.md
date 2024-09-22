@@ -16,7 +16,7 @@ Process
 10. Fermenting - Add yeast to the ***wort***, allowing sugars to be converted into alcohol and CO2. Typically takes 2 weeks. Optionally add hops.
 11. Conditioning - Let the ***wort*** mature and develop its unique flavor profile. Typically takes 2 weeks. Optionally add hops.
 12. Filtering - Optionally filter the ***wort*** to further clarify and stabilize.
-12. Packaging - Bottle, keg or cask the ***wort***.
+13. Packaging - Bottle, keg or cask the ***wort***.
 
 Resources
 ---------
