@@ -14,7 +14,7 @@ Process
 8. Cooling - Give the ***wort*** an ice bath, bringing it down to recommended temperature.
 9. Whirlpooling - Stir the ***wort***, removing protein and hop solids, or ***trub***.
 10. Fermenting - Add yeast to the ***wort***, allowing sugars to be converted into alcohol and CO2. Fermentation typically takes 2 weeks.
-11. Conditioning
+11. Conditioning - Let the ***wort*** mature and develop its unique flavor profile.  Conditioning typically takes 2 weeks.
 12. Packaging
 
 Resources
