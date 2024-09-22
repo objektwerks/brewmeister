@@ -9,6 +9,7 @@ Process
 3. Malting
 4. Milling
 5. Mashing
+6. Lautering
 6. Boiling
 7. Cooling
 8. Fermenting
