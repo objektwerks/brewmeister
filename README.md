@@ -10,7 +10,7 @@ Process
 4. Milling - Crush or gound malted grains into a grist, exposing the starches for the ***mashing***.
 5. Mashing - Mix hot water with the grist to convert the starches into fermentable sugars, creating a sugar-rich liquid called ***wort***.
 6. Lautering - Filter out solids from the ***wort***.
-7. Boiling
+7. Boiling - Bring the wort to a boil; then, add hops for bitterness, flavor, and aroma.
 8. Whirlpooling
 9. Cooling
 10. Fermenting
