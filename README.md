@@ -10,11 +10,12 @@ Process
 4. Milling
 5. Mashing
 6. Lautering
-6. Boiling
-7. Cooling
-8. Fermenting
-9. Conditioning
-10. Packaging
+7. Boiling
+8. Whirlpooling
+9. Cooling
+10. Fermenting
+11. Conditioning
+12. Packaging
 
 Resources
 ---------
