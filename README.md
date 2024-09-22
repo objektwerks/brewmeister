@@ -5,7 +5,7 @@ Brewmeister
 Process
 -------
 1. Sanitizing - Santize all brewing tools and containers.
-2. Preparing
+2. Preparing - Prepare all ingrediants for a brewing session.
 3. Malting - Germinated grains (barley, wheat, oats, or rye) are dried and sometimes roasted, preparing them for milling.
 4. Milling
 5. Mashing
