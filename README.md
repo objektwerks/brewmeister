@@ -13,7 +13,7 @@ Process
 7. Boiling - Bring the ***wort*** to a boil; then, add hops for bitterness, flavor, and aroma.
 8. Cooling - Give the ***wort*** an ice bath, bringing it down to recommended temperature.
 9. Whirlpooling - Stir the ***wort***, removing protein and hop solids, or ***trub***.
-10. Fermenting
+10. Fermenting - Add yeast to the ***wort***, allowing sugars to be converted into alcohol and CO2. Fermentation typically takes 2 weeks.
 11. Conditioning
 12. Packaging
 
