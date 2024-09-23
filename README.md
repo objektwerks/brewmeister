@@ -18,6 +18,7 @@ Process
 11. **Fermenting** - **Transfer** the ***wort*** to a ***fermenter***. Then **pitch** ***yeast*** into the ***wort***, allowing for the conversion of sugars into alcohol and CO2. Let ferment for 2 weeks. Optionally add hops.
 12. **Conditioning** - Let the ***wort*** mature and develop its unique flavor profile. Let condition for 2 weeks. Optionally add ***hops***.
 13. **Packaging** - Bottle, keg or cask the ***fermented and conditioned wort***.
+>Some beer style recipes will require adjustment to this process.
 
 Resources
 ---------
