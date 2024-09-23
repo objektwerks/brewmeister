@@ -14,7 +14,7 @@ Process
 8. Boiling - Bring the ***wort*** to a boil in a brew kettle. Then add hops as required. Sustain boil for 60m.
 9. Cooling - Cool the ***wort*** using a chiller, bringing it down to 70F or lower.
 10. Whirlpooling - Stir the ***wort***, collecting hop solids, or ***trub***, at the bottom-center of the kettle. Optionally add hops.
-11. Fermenting - Add yeast to the ***wort***, converting sugars into alcohol and CO2. Let ferment for 2 weeks. Optionally add hops.
+11. Fermenting - Pitch yeast into the ***wort***, allowing for the conversion of sugars into alcohol and CO2. Let ferment for 2 weeks. Optionally add hops.
 12. Conditioning - Let the ***wort*** mature and develop its unique flavor profile. Let condition for 2 weeks. Optionally add hops.
 13. Packaging - Bottle, keg or cask the ***fermented and conditioned wort***.
 
