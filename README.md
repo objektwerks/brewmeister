@@ -11,7 +11,7 @@ Process
 5. Mashing - Pour the ***grist*** into boiling water (148 - 158F). Then stir and let set for 60m, converting starches into fermentable sugars - known as the ***wort***.
 6. Lautering - Filter out solids from the ***wort***.
 7. Sparging - Pour hot water on the ***wort*** and stir to extract sugars from the grains.
-8. Boiling - Bring the ***wort*** to a boil; then, add hops for bitterness, flavor, and aroma.
+8. Boiling - Bring the ***wort*** to a boil in a brew kettle; then, add hops for bitterness, flavor, and aroma.
 9. Cooling - Cool the ***wort*** using a chiller, bringing it down to 70F or lower.
 10. Whirlpooling - Stir the ***wort***, collecting hop solids, or ***trub***, at the bottom-center of the kettle. Optionally add hops.
 11. Fermenting - Add yeast to the ***wort***, converting sugars into alcohol and CO2. Let ferment for 2 weeks. Optionally add hops.
