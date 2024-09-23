@@ -7,7 +7,7 @@ Process
 1. Sanitizing - Santize all brewing tools and containers.
 2. Preparing - Prepare all ingredients for a brewing session.
 3. Malting - Dry and optionally roast germinated grains (barley, wheat, oats or rye) for ***milling***.
-4. Milling - Grind malted grains into a ***grist***, exposing its starches for ***mashing***.
+4. Milling - Crush malted grains into a ***grist***, exposing its starches for ***mashing***.
 5. Mashing - Pour the ***grist*** into boiling water (148 - 168F). Then stir for 60m, converting its starches into fermentable sugars - known as the ***wort***.
 6. Lautering - Filter out solids from the ***wort***.
 7. Boiling - Bring the ***wort*** to a boil; then, add hops for bitterness, flavor, and aroma.
