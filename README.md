@@ -23,3 +23,4 @@ Process
 Resources
 ---------
 * [Brewing Fundamentals](https://beerconnoisseur.com/articles/beer-101-fundamental-steps-brewing)
+* [Brulosophy](https://brulosophy.com/)
