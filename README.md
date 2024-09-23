@@ -17,7 +17,7 @@ Process
 10. **Whirlpooling** - Stir the ***wort***, collecting hop solids, or ***trub***, at the bottom-center of the kettle. Optionally add ***hops***.
 11. **Fermenting** - **Transfer** the ***wort*** to the primary ***fermenter***. Then **pitch** the ***yeast*** into the ***wort***, allowing for the conversion of sugars into alcohol and CO2. Let ferment for 2+ weeks.
 12. **Conditioning** - Optionally **transfer** ***wort*** to a secondary ***fermenter*** and add ***hops***. Let condition for 2+ days or longer.
-13. **Packaging** - Bottle, keg or cask the ***fermented and conditioned wort*** via a direct or indirect **transfer** method.
+13. **Packaging** - Bottle ( with priming sugar ), keg or cask the ***fermented and conditioned wort***.
 >Some beer recipes might require minor adjustments to this process.
 
 Resources
