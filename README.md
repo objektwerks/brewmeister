@@ -9,7 +9,7 @@ Process
 2. **Preparing** - Prepare all ingredients for a brewing session.
 3. **Malting** - Dry and optionally roast germinated grains (barley, wheat, oats or rye) for ***milling***.
 4. **Milling** - Crush malted grains into a ***grist***, exposing its starches for ***mashing***.
-5. **Mashing** - **Transfer** the ***grist*** to a ***mash tun*** with boiling water (148 - 158F). Then stir and let set for 60m, converting starches into fermentable sugars - known as the ***wort***.
+5. **Mashing** - **Transfer** the ***grist*** to a ***mash tun*** and bring to boil (148 - 158F). Then stir and let set for 60m, converting starches into fermentable sugars - known as the ***wort***.
 6. **Lautering** - Filter out solids from the ***wort***.
 7. **Sparging** - Pour hot water on the ***wort*** and stir to extract sugars from the grains.
 8. **Boiling** - **Transfer** the ***wort*** to a ***brew kettle*** and bring to a boil. Then add ***hops*** as required. Sustain boil for 60m.
