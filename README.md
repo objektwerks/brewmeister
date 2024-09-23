@@ -10,7 +10,7 @@ Process
 4. Milling - Crush malted grains into a ***grist***, exposing its starches for ***mashing***.
 5. Mashing - Pour the ***grist*** into boiling water (148 - 158F). Then stir and let set for 60m, converting starches into fermentable sugars - known as the ***wort***.
 6. Lautering - Filter out solids from the ***wort***.
-7. Sparging - Sprinkle hot water on the ***wort*** to rinse sugars off of the grains.
+7. Sparging - Sprinkle hot water on the ***wort*** to extract sugars from the grains.
 8. Boiling - Bring the ***wort*** to a boil; then, add hops for bitterness, flavor, and aroma.
 9. Cooling - Cool the ***wort*** using an ice bath or immersion chiller, bringing it down to the recommended temperature.
 10. Whirlpooling - Stir the ***wort***, collecting hop solids, or ***trub***, at the bottom-center of the kettle. Optionally add hops.
