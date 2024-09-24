@@ -45,6 +45,7 @@ Metrics
 3. **ABV** -
 4. **SRM** -
 5. **IBU** -
+6. **Calories** -
 
 Resources
 ---------
