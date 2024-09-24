@@ -22,6 +22,7 @@ Process
 
 Recipe
 -------
+* Recipe 1 -> * Hop
 
 Resources
 ---------
