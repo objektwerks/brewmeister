@@ -27,6 +27,7 @@ Recipe
 
 Actors
 ------
+* Sanitizer, Preparer, Malter, Miller, Masher, Lauter, Sparger, Boiler, Cooler, Whirlpooler, Fermenter, Conditioner, Packager
 
 Commands
 --------
