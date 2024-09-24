@@ -22,7 +22,7 @@ Process
 
 Recipe
 -------
-* Recipe 1 -> * Hop | Fermentable
+* Recipe 1 -> * Hop | Fermentable | Adjunct
 
 Resources
 ---------
