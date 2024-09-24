@@ -18,7 +18,7 @@ Process
 11. **Fermenting** - **Transfer** the ***wort*** to the primary ***fermenter***. Then **pitch** the ***yeast*** into the ***wort***, allowing for the conversion of sugars into alcohol and CO2. Let ferment for 2+ weeks at required temperature.
 12. **Conditioning** - Optionally **transfer** ***wort*** to a secondary ***fermenter*** and add ***hops***. Let condition for 2+ days or longer at required temperature.
 13. **Packaging** - Bottle ( carbonate with priming sugar ) or keg ( force carbonate ) the ***fermented and conditioned wort***. Let condition for 2 weeks at required temperature. Then refrigerate.
->Some beer recipes might require adjustments to this process.
+>Some beer recipes will require adjustments to this process.
 
 Recipe
 ------
