@@ -45,7 +45,7 @@ Metrics
     1. Use a Hydrometer to measure FG after fermentation.
 3. **Color: SRM** - Standard Reference Method/SRM/Beer Color is the color of your beer.
     1. Malt Color Units: MCU = (Weight of grain in lbs) * (Color of grain in degrees lovibond) / (volume in gallons)
-    2. Color: SRM = 1.4922 X (MCU * 0.6859)
+    2. Color: SRM = 1.4922 * (MCU * 0.6859)
 4. **Hop Bitterness: IBU** - International Bittering Units is the measure of bitterness of beer that comes from the boiling of hops.
     1. Hop Utilization(%) = Hop Alpha Acid(%) * Hop Weight(oz)) / Hop Volume(gallons)
     2. IBU = Hop Weight(oz) * Hop Alpha Acid(%) * Hop Utilization(%) / 7.25
