@@ -28,6 +28,9 @@ Recipe
 Actors
 ------
 
+Commands
+--------
+
 Resources
 ---------
 * [Brewing Fundamentals](https://beerconnoisseur.com/articles/beer-101-fundamental-steps-brewing)
