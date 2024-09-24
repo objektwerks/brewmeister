@@ -38,6 +38,12 @@ Events
 ------
 *Sanitized, Prepared, Malted, Milled, Mashed, Lautered, Sparged, Boiled, Cooled, Whirlpooled, Fermented, Conditioned, Packaged
 
+Metrics
+-------
+1. OG -
+2. FG -
+3. ABV -
+
 Resources
 ---------
 * [Brewing Fundamentals](https://beerconnoisseur.com/articles/beer-101-fundamental-steps-brewing)
