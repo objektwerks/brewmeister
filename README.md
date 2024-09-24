@@ -44,7 +44,7 @@ Metrics
 3. **Color: SRM** - Standard Reference Method/SRM/Beer Color is the color of your beer.
 4. **Hop Bitterness: IBU** - International Bittering Units is the measure of bitterness of beer that comes from the boiling of hops.
 5. **Alcohol: ABV** - Measured by volume, the amount of alcohol that was produced in your beer during fermentation.
-  1. ABV = (Original Gravity - Final Gravity) x 131
+    1. ABV = (Original Gravity - Final Gravity) x 131
 6. **Alcohol: ABW** - Measured by weight, the amount of alcohol that was produced in your beer during fermentation.
 7. **Calories** - The number of calories in your beer.
 8. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
