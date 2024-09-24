@@ -22,7 +22,7 @@ Process
 
 Recipe
 ------
-* Recipe 1 -> * Hop | Fermentable | Adjunct | Result
+* Recipe 1 -> * Malt | Hop | Adjunct | Result
 * Recipe 1 -> 1 Style | Water | Yeast
 
 Actors
