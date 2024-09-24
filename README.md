@@ -22,7 +22,7 @@ Process
 
 Recipe
 -------
-* Recipe 1 -> * Hop
+* Recipe 1 -> * Hop | Fermentable
 
 Resources
 ---------
