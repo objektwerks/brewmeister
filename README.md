@@ -20,6 +20,9 @@ Process
 13. **Packaging** - Bottle ( carbonate with priming sugar ) or keg ( force carbonate ) the ***fermented and conditioned wort***. Let condition for 2 weeks at required temperature. Then refrigerate.
 >Some beer recipes might require adjustments to this process.
 
+Recipe
+-------
+
 Resources
 ---------
 * [Brewing Fundamentals](https://beerconnoisseur.com/articles/beer-101-fundamental-steps-brewing)
