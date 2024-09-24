@@ -69,6 +69,7 @@ Metrics
 
 Resources
 ---------
+* [Doc's Brewing Glossary](https://docmckee.com/beer/)
 * [Brewing Fundamentals](https://beerconnoisseur.com/articles/beer-101-fundamental-steps-brewing)
 * [Brulosophy](https://brulosophy.com/)
 * [Beer XML](https://www.beerxml.com/)
