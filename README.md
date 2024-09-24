@@ -43,6 +43,7 @@ Metrics
 1. **OG** -
 2. **FG** -
 3. **ABV** -
+4. **SRM** -
 
 Resources
 ---------
