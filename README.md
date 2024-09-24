@@ -46,6 +46,7 @@ Metrics
 5. **Alcohol: ABV** - Alcohol content, measured by volume (ABV) or weight (ABW), is the amount of alcohol that was produced in your beer during fermentation.
 6. **Calories** - The number of calories in your beer.
 7. **Mash Efficiency ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
+8. **Brewhouse Efficiency BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
 
 Resources
 ---------
