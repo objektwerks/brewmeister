@@ -22,8 +22,8 @@ Process
 
 Recipe
 ------
-* Recipe 1 -> * Malt | Hop | Adjunct | Result
-* Recipe 1 -> 1 Style | Water | Yeast ( ideally embedded in the recipe )
+* Recipe 1 -> * Malt | Hop | Adjunct | Water | Yeast | Result
+* Recipe 1 -> 1 Style
 
 Actors
 ------
