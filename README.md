@@ -41,7 +41,7 @@ Metrics
 -------
 1. **Original Gravity: OG** - Origianl Gravity is the specific gravity of your wort before fermentation.
 2. **Final Gravity: FG** - Final Gravity is the specific gravity of your wort after fermentation has completed.
-3. **Color: SRM** -
+3. **Color: SRM** - Standard Reference Method/SRM/Beer Color is the color of your homebrew.
 4. **Bitterness: IBU** -
 5. **Alcohol: ABV** -
 6. **Calories** -
