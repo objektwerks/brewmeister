@@ -50,16 +50,16 @@ Metrics
 5. **Alcohol: ABV** - Measured by volume, the amount of alcohol that was produced in your beer during fermentation.
     1. ABV = (OG - FG) * 131
 6. **Alcohol: ABW** - Measured by weight, the amount of alcohol that was produced in your beer during fermentation.
-    1. ABW = (0.79 * ABV) / Final Gravity
+    1. ABW = (0.79 * ABV) / FG
 7. **Calories** - The number of calories in your beer.
     1. Volume = 12oz bottle
     2. Alcohol Calories = (OG - FG) * 7.5
     3. Carbohydrate Calories = (FG * 13) * Volume
     4. Calories = Alcohol Calories + Carbohydrate Calories
 8. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
-    1. ME (%) = (Actual Extract / Potential Extract) * 100
+    1. ME(%) = (Actual Extract / Potential Extract) * 100
 9. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
-    1. BE (%) = (Actual Fermentable Extract / Ideal Fermentable Extract) * 100
+    1. BE(%) = (Actual Fermentable Extract / Ideal Fermentable Extract) * 100
 
 Resources
 ---------
