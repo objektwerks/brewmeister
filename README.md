@@ -39,7 +39,7 @@ Events
 
 Metrics
 -------
-1. **Original Gravity: OG** -
+1. **Original Gravity: OG** - Origianl Gravity is the specific gravity of your wort before fermentation.
 2. **Final Gravity: FG** -
 3. **Color: SRM** -
 4. **Bitterness: IBU** -
