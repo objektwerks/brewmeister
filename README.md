@@ -39,7 +39,7 @@ Events
 
 Metrics
 -------
-1. **Original Gravity: OG** - Origianl Gravity is the specific gravity of your wort before fermentation.
+1. **Original Gravity: OG** - Origianl Gravity measures the gravity of wort before fermentation.
     1. Use a Hydrometer to measure OG before fermentation.
 2. **Final Gravity: FG** - Final Gravity is the specific gravity of your wort after fermentation has completed.
     1. Use a Hydrometer to measure FG after fermentation.
