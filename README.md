@@ -43,10 +43,11 @@ Metrics
 2. **Final Gravity: FG** - Final Gravity is the specific gravity of your wort after fermentation has completed.
 3. **Color: SRM** - Standard Reference Method/SRM/Beer Color is the color of your beer.
 4. **Hop Bitterness: IBU** - International Bittering Units is the measure of bitterness of beer that comes from the boiling of hops.
-5. **Alcohol: ABV** - Alcohol content, measured by volume (ABV) or weight (ABW), is the amount of alcohol that was produced in your beer during fermentation.
-6. **Calories** - The number of calories in your beer.
-7. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
-8. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
+5. **Alcohol: ABV** - Measured by volume, the amount of alcohol that was produced in your beer during fermentation.
+6. **Alcohol: ABW** - Measured by weight, the amount of alcohol that was produced in your beer during fermentation.
+7. **Calories** - The number of calories in your beer.
+8. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
+9. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
 
 Resources
 ---------
