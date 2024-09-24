@@ -40,9 +40,9 @@ Events
 
 Metrics
 -------
-1. OG -
-2. FG -
-3. ABV -
+1. **OG** -
+2. **FG** -
+3. **ABV** -
 
 Resources
 ---------
