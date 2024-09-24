@@ -39,11 +39,11 @@ Events
 
 Metrics
 -------
-1. **OG** -
-2. **FG** -
-3. **ABV** -
-4. **SRM** -
-5. **IBU** -
+1. **Original Gravity: OG** -
+2. **Final Gravity: FG** -
+3. **Color: SRM** -
+4. **Bitterness: IBU** -
+5. **Alcohol: ABV** -
 6. **Calories** -
 
 Resources
