@@ -40,7 +40,9 @@ Events
 Metrics
 -------
 1. **Original Gravity: OG** - Origianl Gravity is the specific gravity of your wort before fermentation.
+    1. Use a Hydrometer to measure OG before fermentation.
 2. **Final Gravity: FG** - Final Gravity is the specific gravity of your wort after fermentation has completed.
+    1. Use a Hydrometer to measure FG after fermentation.
 3. **Color: SRM** - Standard Reference Method/SRM/Beer Color is the color of your beer.
 4. **Hop Bitterness: IBU** - International Bittering Units is the measure of bitterness of beer that comes from the boiling of hops.
 5. **Alcohol: ABV** - Measured by volume, the amount of alcohol that was produced in your beer during fermentation.
