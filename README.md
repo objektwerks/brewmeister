@@ -44,7 +44,7 @@ Metrics
 3. **Color: SRM** - Standard Reference Method/SRM/Beer Color is the color of your beer.
 4. **Hop Bitterness: IBU** - International Bittering Units is the measure of bitterness of beer that comes from the boiling of hops.
 5. **Alcohol: ABV** - Alcohol content, measured by volume (ABV) or weight (ABW), is the amount of alcohol that was produced in your beer during fermentation.
-6. **Calories** -
+6. **Calories** - The number of calories in your beer.
 
 Resources
 ---------
