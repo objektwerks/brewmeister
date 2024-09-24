@@ -44,6 +44,7 @@ Metrics
 2. **FG** -
 3. **ABV** -
 4. **SRM** -
+5. **IBU** -
 
 Resources
 ---------
