@@ -25,6 +25,9 @@ Recipe
 * Recipe 1 -> * Hop | Fermentable | Adjunct
 * Recipe 1 -> 1 Style | Water | Yeast | Result
 
+Actors
+------
+
 Resources
 ---------
 * [Brewing Fundamentals](https://beerconnoisseur.com/articles/beer-101-fundamental-steps-brewing)
