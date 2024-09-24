@@ -23,7 +23,7 @@ Process
 Recipe
 -------
 * Recipe 1 -> * Hop | Fermentable | Adjunct
-* Recipe 1 -> 1 Style | Water | Yeast
+* Recipe 1 -> 1 Style | Water | Yeast | Result
 
 Resources
 ---------
