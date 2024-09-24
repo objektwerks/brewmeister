@@ -54,7 +54,7 @@ Metrics
 6. **Alcohol: ABW** - Measured by weight, the amount of alcohol that was produced in your beer during fermentation.
     1. ABW = (0.79 * ABV) / FG
 7. **Calories** - The number of calories in your beer.
-    1. Volume = 12oz bottle
+    1. Volume = Beer bottle in ounces(oz).
     2. Alcohol Calories = (OG - FG) * 7.5
     3. Carbohydrate Calories = (FG * 13) * Volume
     4. Calories = Alcohol Calories + Carbohydrate Calories
