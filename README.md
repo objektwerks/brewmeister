@@ -21,10 +21,9 @@ Process
 >Some beer recipes might require adjustments to this process.
 
 Recipe
--------
-* Recipe 1 -> * Hop | Fermentable | Adjunct
+------
+* Recipe 1 -> * Hop | Fermentable | Adjunct | Result
 * Recipe 1 -> 1 Style | Water | Yeast
-* Recipe 1 -> * Result
 
 Actors
 ------
