@@ -41,7 +41,7 @@ Metrics
 -------
 1. **Original Gravity: OG** - Origianl Gravity measures the gravity of wort before fermentation.
     1. Use a Hydrometer to measure OG before fermentation.
-2. **Final Gravity: FG** - Final Gravity is the specific gravity of your wort after fermentation has completed.
+2. **Final Gravity: FG** - Final Gravity measures the gravity of wort after fermentation.
     1. Use a Hydrometer to measure FG after fermentation.
 3. **Color: SRM** - Standard Reference Method/SRM/Beer Color is the color of your beer.
     1. Malt Color Units: MCU = (Weight of grain in lbs) * (Color of grain in degrees lovibond) / (volume in gallons)
