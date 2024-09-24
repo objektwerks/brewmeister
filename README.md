@@ -55,7 +55,9 @@ Metrics
     3. Carbohydrate Calories = (FG × 13) × Volume
     4. Calories = Alcohol Calories + Carbohydrate Calories
 8. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
+    1. ME (%) = (Actual Extract / Potential Extract) × 100
 9. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
+    1. BE (%) = (Actual Fermentable Extract / Ideal Fermentable Extract) × 100
 
 Resources
 ---------
