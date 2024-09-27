@@ -2,6 +2,8 @@ package objektwerks
 
 // Recipe 1 -> * Malt | Hop | Adjunct | Water | Yeast | Result
 
+final case class Malt(id: Long)
+
 final case class Recipe(id: Long,
                         malts: List[Malt],
                         hops: List[Hop],
