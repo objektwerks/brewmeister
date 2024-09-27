@@ -18,4 +18,6 @@ class Boiler
 
 class Cooler
 
-Whirlpooler, Fermenter, Conditioner, Packager
+class Whirlpooler
+
+Fermenter, Conditioner, Packager
