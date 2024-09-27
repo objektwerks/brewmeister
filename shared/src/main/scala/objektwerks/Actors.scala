@@ -16,4 +16,6 @@ class Sparger
 
 class Boiler
 
-Cooler, Whirlpooler, Fermenter, Conditioner, Packager
+class Cooler
+
+Whirlpooler, Fermenter, Conditioner, Packager
