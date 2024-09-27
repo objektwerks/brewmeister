@@ -1,27 +1,30 @@
 package objektwerks
 
-class Sanitizer
+sealed trait Actor:
+  def close: Unit = ()
 
-class Preparer
+class Sanitizer extends Actor
 
-class Malter
+class Preparer extends Actor
 
-class Miller
+class Malter extends Actor
 
-class Masher
+class Miller extends Actor
 
-class Lauter
+class Masher extends Actor
 
-class Sparger
+class Lauter extends Actor
 
-class Boiler
+class Sparger extends Actor
 
-class Cooler
+class Boiler extends Actor
 
-class Whirlpooler
+class Cooler extends Actor
 
-class Fermenter
+class Whirlpooler extends Actor
 
-class Conditioner
+class Fermenter extends Actor
 
-class Packager
+class Conditioner extends Actor
+
+class Packager extends Actor
