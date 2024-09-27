@@ -22,4 +22,6 @@ class Whirlpooler
 
 class Fermenter
 
-Conditioner, Packager
+class Conditioner
+
+Packager
