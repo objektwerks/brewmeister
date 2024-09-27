@@ -6,4 +6,8 @@ class Preparer
 
 class Malter
 
-Miller, Masher, Lauter, Sparger, Boiler, Cooler, Whirlpooler, Fermenter, Conditioner, Packager
+class Miller
+
+class Masher
+
+Lauter, Sparger, Boiler, Cooler, Whirlpooler, Fermenter, Conditioner, Packager
