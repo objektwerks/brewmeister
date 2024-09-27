@@ -12,4 +12,6 @@ class Masher
 
 class Lauter
 
-Sparger, Boiler, Cooler, Whirlpooler, Fermenter, Conditioner, Packager
+class Sparger
+
+Boiler, Cooler, Whirlpooler, Fermenter, Conditioner, Packager
