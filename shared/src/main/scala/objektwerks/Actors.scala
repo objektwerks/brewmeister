@@ -20,4 +20,6 @@ class Cooler
 
 class Whirlpooler
 
-Fermenter, Conditioner, Packager
+class Fermenter
+
+Conditioner, Packager
