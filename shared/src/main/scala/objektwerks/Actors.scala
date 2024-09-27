@@ -24,4 +24,4 @@ class Fermenter
 
 class Conditioner
 
-Packager
+class Packager
