@@ -1,5 +1,7 @@
 package objektwerks
 
+final case class Style(id: Long)
+
 final case class Malt(id: Long)
 
 final case class Hop(id: Long)
@@ -13,6 +15,7 @@ final case class Yeast(id: Long)
 final case class Result(id: Long)
 
 final case class Recipe(id: Long,
+                        style: Style,
                         malts: List[Malt],
                         hops: List[Hop],
                         adjunts: List[Adjunct],
