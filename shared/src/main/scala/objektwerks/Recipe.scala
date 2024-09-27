@@ -8,6 +8,7 @@ final case class Hop(id: Long)
 
 final case class Adjunct(id: Long)
 
+final case class Water(id: Long)
 
 final case class Recipe(id: Long,
                         malts: List[Malt],
