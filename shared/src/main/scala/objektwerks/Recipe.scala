@@ -15,7 +15,7 @@ final case class Result(id: Long)
 final case class Recipe(id: Long,
                         malts: List[Malt],
                         hops: List[Hop],
-                        adjunts: List[Adjunct]
+                        adjunts: List[Adjunct],
                         waters: List[Water],
                         yeasts: List[Yeast],
                         results: List[Result])
