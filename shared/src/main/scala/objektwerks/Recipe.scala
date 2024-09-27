@@ -21,4 +21,3 @@ final case class Recipe(id: Long,
                         waters: List[Water],
                         yeasts: List[Yeast],
                         results: List[Result])
-
