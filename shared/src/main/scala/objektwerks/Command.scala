@@ -18,4 +18,6 @@ final case class Sparge(recipe: Recipe) extends Command
 
 final case class Boil(recipe: Recipe) extends Command
 
-//, Cool, Whirlpool, Ferment, Condition, Package
+final case class Cool(recipe: Recipe) extends Command
+
+//, Whirlpool, Ferment, Condition, Package
