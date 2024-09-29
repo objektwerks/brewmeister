@@ -8,4 +8,6 @@ final case class Prepare(recipe: Recipe)
 
 final case class Malt(recipe: Recipe)
 
-//Mill, Mash, Lauter, Sparge, Boil, Cool, Whirlpool, Ferment, Condition, Package
+final case class Mill(recipe: Recipe)
+
+//Mash, Lauter, Sparge, Boil, Cool, Whirlpool, Ferment, Condition, Package
