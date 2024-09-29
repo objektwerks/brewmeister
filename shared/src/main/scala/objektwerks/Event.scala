@@ -26,4 +26,4 @@ final case class Fermented(recipe: Recipe) extends Event
 
 final case class Conditioned(recipe: Recipe) extends Event
 
-//, Packaged
+final case class Packaged(recipe: Recipe) extends Event
