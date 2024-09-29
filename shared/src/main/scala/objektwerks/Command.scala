@@ -20,4 +20,6 @@ final case class Boil(recipe: Recipe) extends Command
 
 final case class Cool(recipe: Recipe) extends Command
 
-//, Whirlpool, Ferment, Condition, Package
+final case class Whirlpool(recipe: Recipe) extends Command
+
+//, Ferment, Condition, Package
