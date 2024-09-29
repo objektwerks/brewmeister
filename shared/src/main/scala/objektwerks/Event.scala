@@ -10,4 +10,6 @@ final case class Malted(recipe: Recipe) extends Event
 
 final case class Milled(recipe: Recipe) extends Event
 
-//Mashed, Lautered, Sparged, Boiled, Cooled, Whirlpooled, Fermented, Conditioned, Packaged
+final case class Mashed(recipe: Recipe) extends Event
+
+//Lautered, Sparged, Boiled, Cooled, Whirlpooled, Fermented, Conditioned, Packaged
