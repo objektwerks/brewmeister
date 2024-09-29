@@ -4,10 +4,12 @@ trait Command
 
 case object Sanitize extends Command
 
-final case class Prepare(recipe: Recipe)
+final case class Prepare(recipe: Recipe) extends Command
 
-final case class Malt(recipe: Recipe)
+final case class Malt(recipe: Recipe) extends Command
 
-final case class Mill(recipe: Recipe)
+final case class Mill(recipe: Recipe) extends Command
 
-//Mash, Lauter, Sparge, Boil, Cool, Whirlpool, Ferment, Condition, Package
+final case class Mash(recipe: Recipe) extends Command
+
+//, Lauter, Sparge, Boil, Cool, Whirlpool, Ferment, Condition, Package
