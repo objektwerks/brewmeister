@@ -24,4 +24,6 @@ final case class Whirlpooled(recipe: Recipe) extends Event
 
 final case class Fermented(recipe: Recipe) extends Event
 
-//, Conditioned, Packaged
+final case class Conditioned(recipe: Recipe) extends Event
+
+//, Packaged
