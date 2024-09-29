@@ -21,4 +21,4 @@ final case class Recipe(id: Long,
                         adjunts: List[Adjunct],
                         waters: List[Water],
                         yeasts: List[Yeast],
-                        results: List[Result])
+                        results: List[Result] = List.empty[Result])
