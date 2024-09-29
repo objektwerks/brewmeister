@@ -24,4 +24,6 @@ final case class Whirlpool(recipe: Recipe) extends Command
 
 final case class Ferment(recipe: Recipe) extends Command
 
-//, Condition, Package
+final case class Condition(recipe: Recipe) extends Command
+
+//, Package
