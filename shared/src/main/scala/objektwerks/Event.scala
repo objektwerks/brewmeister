@@ -18,4 +18,6 @@ final case class Sparged(recipe: Recipe) extends Event
 
 final case class Boiled(recipe: Recipe) extends Event
 
-//, Cooled, Whirlpooled, Fermented, Conditioned, Packaged
+final case class Cooled(recipe: Recipe) extends Event
+
+//, Whirlpooled, Fermented, Conditioned, Packaged
