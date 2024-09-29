@@ -71,6 +71,14 @@ Metrics
     2. Ideal Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
     3. BE(%) = (Actual Fermentable Extract / Ideal Fermentable Extract) * 100
 
+Assembly
+--------
+>To build for a "mac", "m1', "win" or "linux" os target:
+1. sbt -Dtarget="mac" clean test assembly copyAssemblyJar
+2. sbt -Dtarget="m1" clean test assembly copyAssemblyJar
+3. sbt -Dtarget="win" clean test assembly copyAssemblyJar
+4. sbt -Dtarget="linux" clean test assembly copyAssemblyJar
+
 Resources
 ---------
 * [Doc's Brewing Glossary](https://docmckee.com/beer/)
