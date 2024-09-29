@@ -12,4 +12,6 @@ final case class Mill(recipe: Recipe) extends Command
 
 final case class Mash(recipe: Recipe) extends Command
 
-//, Lauter, Sparge, Boil, Cool, Whirlpool, Ferment, Condition, Package
+final case class Lauter(recipe: Recipe) extends Command
+
+//, Sparge, Boil, Cool, Whirlpool, Ferment, Condition, Package

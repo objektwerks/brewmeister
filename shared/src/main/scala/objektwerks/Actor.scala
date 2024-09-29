@@ -13,7 +13,7 @@ class Miller extends Actor
 
 class Masher extends Actor
 
-class Lauter extends Actor
+class Lauterer extends Actor
 
 class Sparger extends Actor
 
