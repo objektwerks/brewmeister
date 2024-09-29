@@ -87,6 +87,12 @@ Execute
 3. java -jar .assembly/pool-balance-win-0.1.jar
 4. java -jar .assembly/pool-balance-linux-0.1.jar
 
+Deploy
+------
+>Consider these options:
+1. [jDeploy](https://www.npmjs.com/package/jdeploy)
+2. [Conveyor](https://hydraulic.software/index.html)
+
 Resources
 ---------
 * [Doc's Brewing Glossary](https://docmckee.com/beer/)
