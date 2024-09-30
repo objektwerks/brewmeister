@@ -73,12 +73,12 @@ Metric
 8. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
     1. Actual Extract = The amount of fermentable extract collected from the mash tun.
     2. Potential Extract = The maximum extract potential of the grain bill, calculated based on the malt’s extract potential and the grain bill’s weight and volume.
-    3. ME(%) = (Actual Extract / Potential Extract) * 100
+    3. ME(%) = ( Actual Extract / Potential Extract ) * 100
     4. Range: 70.0 - 85 %
 9. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
     1. Actual Fermentable Extract = The amount of fermentable extract collected from the brewhouse.
     2. Ideal Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
-    3. BE(%) = (Actual Fermentable Extract / Ideal Fermentable Extract) * 100
+    3. BE(%) = ( Actual Fermentable Extract / Ideal Fermentable Extract ) * 100
     4. Range: 68.0 - 72.0 %
 10. **Plato: P ~ Specific Gravity: SG** See [Table](https://www.brewersfriend.com/plato-to-sg-conversion-chart/)
     1. SG = 1+ ( P / ( 258.6 – ( (P/258.2) *227.1 ) ) )
