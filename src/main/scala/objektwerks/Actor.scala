@@ -3,6 +3,8 @@ package objektwerks
 sealed trait Actor:
   def close: Unit = ()
 
+final class Brewer extends Actor
+
 final class Sanitizer extends Actor
 
 final class Preparer extends Actor
