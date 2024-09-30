@@ -58,10 +58,10 @@ Metric
     1. Hop Utilization(%) = ( Hop Alpha Acid(%) * Hop Weight(oz) ) / Hop Volume(gallons)
     2. IBU = ( Hop Weight(oz) * Hop Alpha Acid(%) * Hop Utilization(%) ) / 7.25
     3. Range: 0 - 120
-5. **Alcohol: ABV** - Measured by volume, the amount of alcohol that was produced in your beer during fermentation.
+5. **Alcohol: ABV** - Measured by volume, the amount of alcohol produced in a wort during fermentation.
     1. ABV = ( OG - FG ) * 131
     2. Range: 3.0 - 13.0 %
-6. **Alcohol: ABW** - Measured by weight, the amount of alcohol that was produced in your beer during fermentation.
+6. **Alcohol: ABW** - Measured by weight, the amount of alcohol produced in a wort during fermentation.
     1. ABW = ( 0.79 * ABV ) / FG
     2. Range: 3.0 - 10.0 %
 7. **Calories** - The number of calories in your beer.
