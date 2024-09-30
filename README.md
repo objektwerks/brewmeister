@@ -54,7 +54,7 @@ Metric
     1. Malt Color Units: MCU = ( Weight of grain in lbs ) * ( Color of grain in degrees lovibond ) / ( volume in gallons )
     2. Color: SRM = 1.4922 * ( MCU * 0.6859 )
     3. Range: 1 - 40
-4. **Hop Bitterness: IBU** - International Bittering Units is the measure of bitterness of beer that comes from the boiling of hops.
+4. **Hop Bitterness: IBU** - International Bittering Units ( IBU ) is the measure of bitterness of beer that comes from the boiling of hops.
     1. Hop Utilization(%) = ( Hop Alpha Acid(%) * Hop Weight(oz) ) / Hop Volume(gallons)
     2. IBU = ( Hop Weight(oz) * Hop Alpha Acid(%) * Hop Utilization(%) ) / 7.25
     3. Range: 0 - 120
