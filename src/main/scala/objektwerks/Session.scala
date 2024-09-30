@@ -10,4 +10,4 @@ final case class Session(id: Long,
                         alcoholByWeight: Double,
                         calories: Double,
                         mashEfficiency: Double,
-                        brewEfficiency: Double)
+                        brewhouseEfficiency: Double)
