@@ -14,8 +14,8 @@ final case class Session(id: Long,
                          finalGravity: Double, // 1.000 - 1.072
                          color: Int, // 1 - 40
                          hopBitterness: Int, // 0 - 120
-                         alcoholByVolume: Double, // 3.0 - 13.0
-                         alcoholByWeight: Double,
+                         alcoholByVolume: Double, // 3.0 - 13.0 %
+                         alcoholByWeight: Double, // 3.0 - 10.0 %
                          calories: Double,
                          mashEfficiency: Double,
                          brewhouseEfficiency: Double)
