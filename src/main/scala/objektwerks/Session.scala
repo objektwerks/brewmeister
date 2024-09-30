@@ -1,4 +1,4 @@
 package objektwerks
 
-final case class Result(id: Long,
+final case class Session(id: Long,
                         recipeId: Long)
