@@ -79,6 +79,7 @@ Metric
     1. Actual Fermentable Extract = The amount of fermentable extract collected from the brewhouse.
     2. Ideal Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
     3. BE(%) = (Actual Fermentable Extract / Ideal Fermentable Extract) * 100
+    4. Range: 68.0 - 72.0 %
 
 Assembly
 --------
