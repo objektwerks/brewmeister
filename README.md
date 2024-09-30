@@ -56,7 +56,7 @@ Metric
     3. Range: 1 - 40
 4. **Hop Bitterness: IBU** - International Bittering Units is the measure of bitterness of beer that comes from the boiling of hops.
     1. Hop Utilization(%) = ( Hop Alpha Acid(%) * Hop Weight(oz) ) / Hop Volume(gallons)
-    2. IBU = Hop Weight(oz) * Hop Alpha Acid(%) * Hop Utilization(%) / 7.25
+    2. IBU = ( Hop Weight(oz) * Hop Alpha Acid(%) * Hop Utilization(%) ) / 7.25
     3. Range: 0 - 120
 5. **Alcohol: ABV** - Measured by volume, the amount of alcohol that was produced in your beer during fermentation.
     1. ABV = (OG - FG) * 131
@@ -81,8 +81,8 @@ Metric
     3. BE(%) = (Actual Fermentable Extract / Ideal Fermentable Extract) * 100
     4. Range: 68.0 - 72.0 %
 10. **Plato: P ~ Specific Gravity: SG** See [Table](https://www.brewersfriend.com/plato-to-sg-conversion-chart/)
-    1. SG = 1+ (plato / (258.6 – ( (plato/258.2) *227.1) ) )
-    2. P = (-1 * 616.868) + (1111.14 * SG) – (630.272 * SG^2) + (135.997 * SG^3)
+    1. SG = 1+ ( P / ( 258.6 – ( (P/258.2) *227.1 ) ) )
+    2. P = ( -1 * 616.868 ) + ( 1111.14 * SG ) – ( 630.272 * SG^2 ) + ( 135.997 * SG^3 )
 
 Assembly
 --------
