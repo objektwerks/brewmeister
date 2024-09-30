@@ -16,6 +16,6 @@ final case class Session(id: Long,
                          hopBitterness: Int, // 0 - 120
                          alcoholByVolume: Double, // 3.0 - 13.0 %
                          alcoholByWeight: Double, // 3.0 - 10.0 %
-                         calories: Double,
+                         calories: Int, // 10 - 600
                          mashEfficiency: Double, // 70.0 - 85 %
                          brewhouseEfficiency: Double) // 68.0 - 72.0 %
