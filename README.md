@@ -25,24 +25,24 @@ Recipe
 * Recipe 1 -> * Grain | Hop | Adjunct | Water | Yeast | Result
 * Recipe 1 -> 1 Style
 
-Actors
-------
+Actor
+-----
 * Sanitizer, Preparer, Malter, Miller, Masher, Lauter, Sparger, Boiler, Cooler, Whirlpooler, Fermenter, Conditioner, Packager
 
-Commands
---------
+Command
+-------
 * Sanitize, Prepare, Malt, Mill, Mash, Lauter, Sparge, Boil, Cool, Whirlpool, Ferment, Condition, Package
 
 State
 -----
 * Sanitizing, Preparing, Malting, Milling, Mashing, Lautering, Sparging, Boiling, Cooling, Wirlpooling, Fermenting, Conditioning, Packaging
 
-Events
-------
+Event
+-----
 * Sanitized, Prepared, Malted, Milled, Mashed, Lautered, Sparged, Boiled, Cooled, Whirlpooled, Fermented, Conditioned, Packaged
 
-Metrics
--------
+Metric
+------
 1. **Original Gravity: OG** - Origianl Gravity measures the gravity of wort before fermentation.
     1. Use a **Hydrometer** to measure OG before fermentation.
 2. **Final Gravity: FG** - Final Gravity measures the gravity of wort after fermentation.
