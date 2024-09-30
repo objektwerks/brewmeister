@@ -17,5 +17,5 @@ final case class Session(id: Long,
                          alcoholByVolume: Double, // 3.0 - 13.0 %
                          alcoholByWeight: Double, // 3.0 - 10.0 %
                          calories: Double,
-                         mashEfficiency: Double, // %
+                         mashEfficiency: Double, // 70.0 - 85 %
                          brewhouseEfficiency: Double) // %
