@@ -63,6 +63,7 @@ Metric
     2. Range: 3.0 - 13.0 %
 6. **Alcohol: ABW** - Measured by weight, the amount of alcohol that was produced in your beer during fermentation.
     1. ABW = (0.79 * ABV) / FG
+    2. Range: 3.0 - 10.0 %
 7. **Calories** - The number of calories in your beer.
     1. Volume = Beer bottle in ounces(oz).
     2. Alcohol Calories = (OG - FG) * 7.5
