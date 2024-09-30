@@ -8,4 +8,5 @@ final case class Session(id: Long,
                         hopBitterness: Double,
                         alcoholByVolume: Double,
                         alcoholByWeight: Double,
-                        calories: Double)
+                        calories: Double,
+                        mashEfficiency: Double)
