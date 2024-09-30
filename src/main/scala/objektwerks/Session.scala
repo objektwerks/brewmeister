@@ -5,4 +5,5 @@ final case class Session(id: Long,
                         originalGravity: Double,
                         finalGravity: Double,
                         color: Double,
-                        hopBitterness: Double)
+                        hopBitterness: Double,
+                        alcholByVolume: Double)
