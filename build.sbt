@@ -7,7 +7,9 @@ libraryDependencies ++= {
   val jsoniterVersion = "2.30.14"
   Seq(
     "org.scalafx" %% "scalafx" % "22.0.0-R33",
-    "com.softwaremill.ox" %% "core" % "0.4.0"
+    "com.softwaremill.ox" %% "core" % "0.4.0",
+    "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-core" % jsoniterVersion,
+    "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-macros" % jsoniterVersion
   )
 }
 scalacOptions ++= Seq(
