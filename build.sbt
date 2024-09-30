@@ -9,7 +9,8 @@ libraryDependencies ++= {
     "org.scalafx" %% "scalafx" % "22.0.0-R33",
     "com.softwaremill.ox" %% "core" % "0.4.0",
     "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-core" % jsoniterVersion,
-    "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-macros" % jsoniterVersion
+    "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-macros" % jsoniterVersion,
+    "com.outr" %% "scribe" % "3.15.0"
   )
 }
 scalacOptions ++= Seq(
