@@ -1,7 +1,7 @@
 package objektwerks
 
 sealed trait Actor:
-  def close: Unit = ()
+  def close: Unit = println(s"*** ${this.getClass.getSimpleName} closing ...")
 
 final class Brewer extends Actor
 
