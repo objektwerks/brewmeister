@@ -1,7 +1,7 @@
 package objektwerks
 
 import scalafx.application.JFXApp3
-// import scalafx.scene.image.Image
+import scalafx.scene.image.Image
 
 object App extends JFXApp3:
   override def start(): Unit =
@@ -10,7 +10,7 @@ object App extends JFXApp3:
       title = "Ciphers"
       minWidth = View.width
       minHeight = View.height
-      // icons.add( new Image( Image.getClass.getResourceAsStream("/cipher.png") ) )
+      icons.add( new Image( Image.getClass.getResourceAsStream("/beer.png") ) )
     stage.show()
 
 import scalafx.scene.Scene
