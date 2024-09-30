@@ -81,8 +81,8 @@ Metric
     3. BE(%) = ( Actual Fermentable Extract / Ideal Fermentable Extract ) * 100
     4. Range: 68.0 - 72.0 %
 10. **Plato: P ~ Specific Gravity: SG** See [Table](https://www.brewersfriend.com/plato-to-sg-conversion-chart/)
-    1. SG = 1 + ( P / ( 258.6 – ( ( P / 258.2 ) * 227.1 ) ) )
-    2. P = ( -1 * 616.868 ) + ( 1111.14 * SG ) – ( 630.272 * SG^2 ) + ( 135.997 * SG^3 )
+    1. SG = 1 + ( P / ( 258.6 - ( ( P / 258.2 ) * 227.1 ) ) )
+    2. P = ( -1 * 616.868 ) + ( 1111.14 * SG ) - ( 630.272 * SG^2 ) + ( 135.997 * SG^3 )
 
 Assembly
 --------
