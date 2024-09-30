@@ -7,4 +7,5 @@ final case class Session(id: Long,
                         color: Double,
                         hopBitterness: Double,
                         alcoholByVolume: Double,
-                        alcoholByWeight: Double)
+                        alcoholByWeight: Double,
+                        calories: Double)
