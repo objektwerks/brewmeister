@@ -80,6 +80,12 @@ Metric
     2. Ideal Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
     3. BE(%) = (Actual Fermentable Extract / Ideal Fermentable Extract) * 100
     4. Range: 68.0 - 72.0 %
+10. **Plato - Specific Gravity Table**
+    * 10	  1.000
+    * 12	  1.048
+    * 14	  1.056
+    * 16	  1.064
+    * 18	  1.072
 
 Assembly
 --------
