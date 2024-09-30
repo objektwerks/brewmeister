@@ -7,7 +7,7 @@ object App extends JFXApp3:
   override def start(): Unit =
     stage = new JFXApp3.PrimaryStage:
       scene = View.scene
-      title = "Ciphers"
+      title = "Brewmeister"
       minWidth = View.width
       minHeight = View.height
       icons.add( new Image( Image.getClass.getResourceAsStream("/beer.png") ) )
