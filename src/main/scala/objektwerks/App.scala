@@ -6,10 +6,10 @@ import scalafx.application.JFXApp3
 object App extends JFXApp3:
   override def start(): Unit =
     stage = new JFXApp3.PrimaryStage:
-      // scene = View.scene
+      scene = View.scene
       title = "Ciphers"
-      // minWidth = View.width
-      // minHeight = View.height
+      minWidth = View.width
+      minHeight = View.height
       // icons.add( new Image( Image.getClass.getResourceAsStream("/cipher.png") ) )
     stage.show()
 
