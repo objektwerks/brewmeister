@@ -14,7 +14,9 @@ final case class Batch(water: String,
                        bitterness: Int,
                        alcoholByVolume: Double,
                        alcoholByWeight: Double,
-                       calories: Int)
+                       calories: Int,
+                       mashEfficiency: Double,
+                       brewhouseEfficiency: Double)
 
 final case class Grain(typeof: String)
 
