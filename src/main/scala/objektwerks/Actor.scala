@@ -9,22 +9,21 @@ sealed trait Actor:
 final class Brewer extends Actor:
   var metrics = Metrics.empty
 
-  def brew(brew: Brew): Metrics =
+  def brew(recipe: Recipe): Metrics =
     supervised:
       val logger = Actor.create( Logger() )
-      logger.ask( _.log(brew) )
       
       val sanitizer = Actor.create( Sanitizer() )
       sanitizer.ask( _.sanitize( Sanitize(), logger ) )
 
       val preparer = Actor.create( Preparer() )
-      preparer.ask( _.prepare( Prepare(brew.recipe), logger ) )
+      preparer.ask( _.prepare( Prepare(recipe), logger ) )
 
       val malter = Actor.create( Malter() )
-      malter.ask( _.malt( Malt(brew.recipe), logger ) )
+      malter.ask( _.malt( Malt(recipe), logger ) )
 
       val miller = Actor.create( Miller() )
-      miller.ask( _.mill( Mill(brew.recipe), logger ) )
+      miller.ask( _.mill( Mill(recipe), logger ) )
 
     metrics
 
