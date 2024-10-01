@@ -8,7 +8,7 @@ final case class Grain(typeof: String)
 
 final case class Hop(typeof: String)
 
-final case class Adjunct(id: Long)
+final case class Adjunct(typeof: String)
 
 final case class Yeast(id: Long)
 
