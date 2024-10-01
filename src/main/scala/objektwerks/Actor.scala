@@ -9,7 +9,8 @@ final class Brewer extends Actor:
 final class Sanitizer extends Actor:
   def sanitize(sanitize: Sanitize): Sanitized = ???
 
-final class Preparer extends Actor
+final class Preparer extends Actor:
+  def prepare(prepare: Prepare): Prepared = ???
 
 final class Malter extends Actor
 
