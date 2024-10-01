@@ -1,8 +1,7 @@
 package objektwerks
 
-final case class Style(name: String)
-
-final case class Batch(water: String,
+final case class Batch(style: String,
+                       water: String,
                        gallons: Int,
                        mashingTemp: Range,
                        boilingTemp: Range,
@@ -27,7 +26,6 @@ final case class Adjunct(typeof: String)
 final case class Yeast(typeof: String)
 
 final case class Recipe(id: Long,
-                        style: Style,
                         batch: Batch,
                         grains: List[Grain],
                         hops: List[Hop],
