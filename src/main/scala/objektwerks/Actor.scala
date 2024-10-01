@@ -42,7 +42,9 @@ final class Preparer extends Actor:
   def process(prepare: Prepare, logger: ActorRef[Logger]): Unit =
     logger.ask( _.log( prepare, Preparing, Prepared ) )
 
-final class Malter extends Actor
+final class Malter extends Actor:
+  def process(malt: Malt, logger: ActorRef[Logger]): Unit =
+    logger.ask( _.log( malt, Malting, Malted() ) )
 
 final class Miller extends Actor
 
