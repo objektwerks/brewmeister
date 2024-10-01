@@ -9,6 +9,8 @@ sealed trait Actor:
 final class Brewer extends Actor:
   var metrics = Metrics.empty
 
+  def log(state: State): Unit = scribe.info(state.toString)
+
   def brew(id: Long, recipe: Recipe): Metrics =
     supervised:
       val sanitizer = Actor.create( Sanitizer() )
