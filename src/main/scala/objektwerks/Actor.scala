@@ -7,7 +7,7 @@ final class Brewer extends Actor:
   def brew(recipe: Recipe): Metrics = ???
 
 final class Sanitizer extends Actor:
-  def sanitize(sanitize: Sanitize): Sanitized = ???
+  def sanitize(sanitize: Sanitize): Sanitized = Sanitized()
 
 final class Preparer extends Actor:
   def prepare(prepare: Prepare): Prepared = ???
