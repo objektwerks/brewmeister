@@ -34,13 +34,9 @@ Command
 -------
 * Sanitize, Prepare, Malt, Mill, Mash, Lauter, Sparge, Boil, Cool, Whirlpool, Ferment, Condition, Package
 
-State
------
-* Sanitizing, Preparing, Malting, Milling, Mashing, Lautering, Sparging, Boiling, Cooling, Wirlpooling, Fermenting, Conditioning, Packaging
-
 Event
 -----
-* Sanitized, Prepared, Malted, Milled, Mashed, Lautered, Sparged, Boiled, Cooled, Whirlpooled, Fermented, Conditioned, Packaged
+* Sanitizing, Sanitized, Preparing, Prepared, Malting, Malted, Milling, Milled, Mashing, Mashed, Lautering, Lautered, Sparging, Sparged, Boiling, Boiled, Cooling, Cooled, Wirlpooling, Whirlpooled, Fermenting, Fermented, Conditioning, Conditioned, Packaging, Packaged
 
 Metric
 ------
