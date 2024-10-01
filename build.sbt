@@ -18,6 +18,7 @@ libraryDependencies ++= {
 scalacOptions ++= Seq(
   "-Wunused:all"
 )
+outputStrategy := Some(StdoutOutput)
 
 // Begin: Assembly Tasks
 
