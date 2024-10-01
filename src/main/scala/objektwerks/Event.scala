@@ -27,5 +27,3 @@ final case class Fermented() extends Event
 final case class Conditioned() extends Event
 
 final case class Packaged() extends Event
-
-case object Brewed extends Event

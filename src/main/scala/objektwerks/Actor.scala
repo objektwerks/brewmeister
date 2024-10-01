@@ -20,8 +20,6 @@ final class Brewer extends Actor:
       val preparer = Actor.create( Preparer() )
       preparer.ask( _.process( Prepare(brew.recipe), logger ) )
 
-      logger.ask( _.log(Brewed) )
-
     metrics
 
 final class Logger extends Actor:
