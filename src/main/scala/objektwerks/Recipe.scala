@@ -8,7 +8,9 @@ final case class Batch(water: String,
                        originalGravity: Double,
                        finalGravity: Double,
                        color: Int,
-                       bitterness: Int)
+                       bitterness: Int,
+                       abv: Double,
+                       abw: Double)
 
 final case class Grain(typeof: String)
 
