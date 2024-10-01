@@ -2,6 +2,7 @@ package objektwerks
 
 final case class Metrics(id: Long,
                          recipeId: Long,
+                         temperatures: List[Double],
                          pH: Double,
                          originalGravity: Double,
                          finalGravity: Double,
