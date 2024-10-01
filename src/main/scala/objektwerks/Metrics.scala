@@ -1,15 +1,15 @@
 package objektwerks
 
 object Metrics:
-  def empty: Metrics = Metrics(0, 0, "", 0, (0.0, 0.0), (0.0, 0.0), (0.0, 0.0), 0.0, 0.0, 0.0, 0, 0, 0.0, 0.0, 0, 0.0, 0.0)
+  def empty: Metrics = Metrics(0, 0, "", 0, Range(0, 0), Range(0, 0), Range(0, 0), 0.0, 0.0, 0.0, 0, 0, 0.0, 0.0, 0, 0.0, 0.0)
 
 final case class Metrics(id: Long,
                          recipeId: Long,
                          water: String,
                          gallons: Int,
-                         mashingTemp: (Double, Double),
-                         boilingTemp: (Double, Double),
-                         coolingTemp: (Double, Double),
+                         mashingTemp: Range,
+                         boilingTemp: Range,
+                         coolingTemp: Range,
                          pH: Double,
                          originalGravity: Double,
                          finalGravity: Double,
