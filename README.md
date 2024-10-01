@@ -52,10 +52,11 @@ Metric
     1. Use a **Hydrometer** to measure FG after fermentation. Sample must be at 68F.
     2. Range: 1.000 - 1.130
     3. Ideal: Depends on beer style.
-3. **Color: SRM** - Standard Reference Method/SRM/Beer Color is the color, or darkness, of a beer.
+3. **Color: SRM** - Standard Reference Method (SRM) represents the color of a beer.
     1. Malt Color Units: MCU = ( Weight of grain in lbs ) * ( Color of grain in degrees lovibond ) / ( volume in gallons )
-    2. Color: SRM = 1.4922 * ( MCU * 0.6859 )
+    2. SRM = 1.4922 * ( MCU * 0.6859 )
     3. Range: 1 - 40
+    4. Ideal: Depends on beer style.
 4. **Hop Bitterness: IBU** - International Bittering Units ( IBU ) is the measure of bitterness of beer that comes from the boiling of hops.
     1. Hop Utilization(%) = ( Hop Alpha Acid(%) * Hop Weight(oz) ) / Hop Volume(gallons)
     2. IBU = ( Hop Weight(oz) * Hop Alpha Acid(%) * Hop Utilization(%) ) / 7.25
