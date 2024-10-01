@@ -47,6 +47,7 @@ Metric
 1. **Original Gravity: OG** - Original Gravity measures the gravity of wort before fermentation.
     1. Use a **Hydrometer** to measure OG before fermentation. Sample must be at 68F.
     2. Range: 1.000 - 1.072
+    3. Ideal: 1.072
 2. **Final Gravity: FG** - Final Gravity measures the gravity of wort after fermentation.
     1. Use a **Hydrometer** to measure FG after fermentation. Sample must be at 68F.
     2. Range: 1.000 - 1.072
