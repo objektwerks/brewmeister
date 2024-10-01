@@ -25,6 +25,9 @@ final class Brewer extends Actor:
       val miller = Actor.create( Miller() )
       miller.ask( _.mill( Mill(recipe), logger ) )
 
+      val masher = Actor.create( Masher() )
+      masher.ask( _.mash( Mash(recipe), logger ) )
+
     metrics
 
 final class Logger extends Actor:
