@@ -20,7 +20,7 @@ final case class Sparge() extends Command
 
 final case class Boil(recipe: Recipe) extends Command
 
-final case class Cool(recipe: Recipe) extends Command
+final case class Cool() extends Command
 
 final case class Whirlpool(recipe: Recipe) extends Command
 
