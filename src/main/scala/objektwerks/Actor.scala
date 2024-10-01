@@ -3,7 +3,8 @@ package objektwerks
 sealed trait Actor:
   def close: Unit = println(s"*** ${getClass.getSimpleName}.close")
 
-final class Brewer extends Actor
+final class Brewer extends Actor:
+  def brew(recipe: Recipe): Metrics = ???
 
 final class Sanitizer extends Actor
 
