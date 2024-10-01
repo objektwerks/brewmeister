@@ -2,6 +2,8 @@ package objektwerks
 
 sealed trait Command
 
+final case class Brew(id: Long, recipe: Recipe)
+
 final case class Sanitize() extends Command
 
 final case class Prepare(recipe: Recipe) extends Command
