@@ -18,6 +18,4 @@ final case class Recipe(id: Long,
                         grains: List[Grain],
                         hops: List[Hop],
                         adjunts: List[Adjunct],
-                        yeasts: List[Yeast]):
-
-  override def toString(): String = style.toString
+                        yeasts: List[Yeast])
