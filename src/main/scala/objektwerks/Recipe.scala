@@ -1,15 +1,10 @@
 package objektwerks
 
-final case class Style(typeof: String,
-                       gallons: Int,
-                       originalGravity: Double,
-                       finalGravity: Double,
-                       color: Int,
-                       bitterness: Int)
+final case class Style(typeof: String)
 
 final case class Batch(water: String,
-                       pH: Double,
                        gallons: Int,
+                       pH: Double,
                        originalGravity: Double,
                        finalGravity: Double,
                        color: Int,
