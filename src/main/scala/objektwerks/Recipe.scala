@@ -13,6 +13,7 @@ final case class Adjunct(typeof: String)
 final case class Yeast(typeof: String)
 
 final case class Recipe(id: Long,
+                        gallons: Int,
                         style: Style,
                         water: Water,
                         grains: List[Grain],
