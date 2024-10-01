@@ -10,7 +10,7 @@ final class Sanitizer extends Actor:
   def sanitize(sanitize: Sanitize): Sanitized = Sanitized()
 
 final class Preparer extends Actor:
-  def prepare(prepare: Prepare): Prepared = ???
+  def prepare(prepare: Prepare): Prepared = Prepared()
 
 final class Malter extends Actor
 

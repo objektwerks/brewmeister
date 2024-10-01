@@ -4,7 +4,7 @@ trait Event
 
 final case class Sanitized() extends Event
 
-final case class Prepared(metrics: Metrics) extends Event
+final case class Prepared() extends Event
 
 final case class Malted(metrics: Metrics) extends Event
 
