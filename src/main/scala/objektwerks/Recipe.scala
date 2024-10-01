@@ -1,6 +1,6 @@
 package objektwerks
 
-final case class Style(typeof: String)
+final case class Style(name: String)
 
 final case class Batch(water: String,
                        gallons: Int,
