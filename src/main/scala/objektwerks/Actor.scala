@@ -46,7 +46,9 @@ final class Malter extends Actor:
   def process(malt: Malt, logger: ActorRef[Logger]): Unit =
     logger.ask( _.log( malt, Malting, Malted() ) )
 
-final class Miller extends Actor
+final class Miller extends Actor:
+  def process(mill: Mill, logger: ActorRef[Logger]): Unit =
+    logger.ask( _.log( mill, Milling, Milled() ) )
 
 final class Masher extends Actor
 
