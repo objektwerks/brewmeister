@@ -81,7 +81,10 @@ final class Boiler extends Actor:
     logger.ask( _.log( boil ) )
     logger.ask( _.log( Boiling, Boiled() ) )
 
-final class Cooler extends Actor
+final class Cooler extends Actor:
+  def mash(cool: Cool, logger: ActorRef[Logger]): Unit =
+    logger.ask( _.log( cool ) )
+    logger.ask( _.log( Cooling, Cooled() ) )
 
 final class Whirlpooler extends Actor
 
