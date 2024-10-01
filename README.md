@@ -2,6 +2,11 @@ Brewmeister
 -----------
 >Brewing process simulation using ScalaFx, Ox and Scala 3.
 
+Todo
+----
+1. Flow
+2. Metrics
+
 Process
 -------
 >Steps used in ***all grain*** brewing. ***Extract*** brewing will exclude steps 3 - 7.
