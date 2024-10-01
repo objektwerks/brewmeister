@@ -2,8 +2,6 @@ package objektwerks
 
 sealed trait State
 
-case object Brewing extends State
-
 case object Sanitizing extends State
 
 case object Preparing extends State

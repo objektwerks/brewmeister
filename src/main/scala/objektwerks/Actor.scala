@@ -1,7 +1,7 @@
 package objektwerks
 
 import ox.channels.*
-import ox.{never, supervised}
+import ox.supervised
 
 sealed trait Actor:
   def close: Unit = println(s"*** ${getClass.getSimpleName}.close")
@@ -9,17 +9,18 @@ sealed trait Actor:
 final class Brewer extends Actor:
   var metrics = Metrics.empty
 
-  def brew(id: Long, recipe: Recipe): Metrics =
+  def brew(brew: Brew): Metrics =
     supervised:
       val logger = Actor.create( Logger() )
+      logger.ask( _.log(brew) )
       
       val sanitizer = Actor.create( Sanitizer() )
       sanitizer.ask( _.process( Sanitize(), logger ) )
 
       val preparer = Actor.create( Preparer() )
-      preparer.ask( _.process( Prepare(recipe), logger ) )
+      preparer.ask( _.process( Prepare(brew.recipe), logger ) )
 
-      never
+      logger.ask( _.log(Brewed) )
 
     metrics
 
