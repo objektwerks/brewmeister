@@ -29,7 +29,7 @@ final class Logger extends Actor:
 
   def log(state: State): Unit = scribe.info(s"*** state: $state")
 
-  def log(event: Event): Unit = scribe.info(event.toString)
+  def log(event: Event): Unit = scribe.info(s"*** event: $event")
 
   def log(command: Command, state: State, event: Event): Unit =
     log(command)
