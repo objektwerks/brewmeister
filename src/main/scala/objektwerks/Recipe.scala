@@ -8,6 +8,7 @@ final case class Style(typeof: String,
                        bitterness: Int)
 
 final case class Batch(water: String,
+                       pH: Double,
                        gallons: Int,
                        originalGravity: Double,
                        finalGravity: Double,
