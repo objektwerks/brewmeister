@@ -96,6 +96,9 @@ final class Fermenter extends Actor:
     logger.ask( _.log( ferment ) )
     logger.ask( _.log( Fermenting, Fermented() ) )
 
-final class Conditioner extends Actor
+final class Conditioner extends Actor:
+  def mash(condition: Condition, logger: ActorRef[Logger]): Unit =
+    logger.ask( _.log( condition ) )
+    logger.ask( _.log( Conditioning, Conditioned() ) )
 
 final class Packager extends Actor
