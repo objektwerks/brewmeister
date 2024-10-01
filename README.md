@@ -60,8 +60,8 @@ Metric
     2. SRM = 1.4922 * ( MCU * 0.6859 )
     3. Range: 1 - 40
 7. **Hop Bitterness: IBU** - International Bittering Units ( IBU ) is the measure of bitterness of beer that comes from the boiling of hops.
-    1. Hop Utilization(%) = ( Hop Alpha Acid(%) * Hop Weight(oz) ) / Hop Volume(gallons)
-    2. IBU = ( Hop Weight(oz) * Hop Alpha Acid(%) * Hop Utilization(%) ) / 7.25
+    1. Hop Utilization(%) = ( Hop Alpha Acid (%) * Hop Weight (oz) ) / Hop Volume (gallons)
+    2. IBU = ( Hop Weight (oz) * Hop Alpha Acid (%) * Hop Utilization (%) ) / 7.25
     3. Range: 0 - 120
 8. **Alcohol: ABV** - Measured by volume, the amount of alcohol produced in a wort during fermentation.
     1. ABV = ( OG - FG ) * 131
@@ -78,13 +78,13 @@ Metric
 11. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
     1. Actual Extract = The amount of fermentable extract collected from the mash tun.
     2. Potential Extract = The maximum extract potential of the grain bill, calculated based on the malt’s extract potential and the grain bill’s weight and volume.
-    3. ME(%) = ( Actual Extract / Potential Extract ) * 100
+    3. ME % = ( Actual Extract / Potential Extract ) * 100
     4. Range: 70.0 - 100.0 %
     5. Ideal: 80.0 - 90.0 %
 12. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
     1. Actual Fermentable Extract = The amount of fermentable extract collected from the brewhouse.
     2. Ideal Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
-    3. BE(%) = ( Actual Fermentable Extract / Ideal Fermentable Extract ) * 100
+    3. BE % = ( Actual Fermentable Extract / Ideal Fermentable Extract ) * 100
     4. Range: 60.0 - 100.0 %
     5. Ideal: 72.0 - 80.0 %
 
