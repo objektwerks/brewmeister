@@ -76,7 +76,10 @@ final class Sparger extends Actor:
     logger.ask( _.log( sparge ) )
     logger.ask( _.log( Sparging, Sparged() ) )
 
-final class Boiler extends Actor
+final class Boiler extends Actor:
+  def mash(boil: Boil, logger: ActorRef[Logger]): Unit =
+    logger.ask( _.log( boil ) )
+    logger.ask( _.log( Boiling, Boiled() ) )
 
 final class Cooler extends Actor
 
