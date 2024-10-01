@@ -31,30 +31,27 @@ final class Brewer extends Actor:
 final class Logger extends Actor:
   def log(command: Command): Unit = scribe.info(s"*** command: $command")
 
-  def log(state: State): Unit = scribe.info(s"*** state: $state")
-
-  def log(event: Event): Unit = scribe.info(s"*** event: $event")
-
-  def log(command: Command, state: State, event: Event): Unit =
-    log(command)
-    log(state)
-    log(event)
+  def log(events: Event*): Unit = events.foreach( event => scribe.info(s"*** event: $event") )
 
 final class Sanitizer extends Actor:
   def sanitize(sanitize: Sanitize, logger: ActorRef[Logger]): Unit =
-    logger.ask( _.log( sanitize, Sanitizing, Sanitized ) )
+    logger.ask( _.log( sanitize ) )
+    logger.ask( _.log( Sanitizing, Sanitized ) )
 
 final class Preparer extends Actor:
   def prepare(prepare: Prepare, logger: ActorRef[Logger]): Unit =
-    logger.ask( _.log( prepare, Preparing, Prepared ) )
+    logger.ask( _.log( prepare ) )
+    logger.ask( _.log( Preparing, Prepared ) )
 
 final class Malter extends Actor:
   def malt(malt: Malt, logger: ActorRef[Logger]): Unit =
-    logger.ask( _.log( malt, Malting, Malted() ) )
+    logger.ask( _.log( malt ) )
+    logger.ask( _.log( Malting, Malted() ) )
 
 final class Miller extends Actor:
   def mill(mill: Mill, logger: ActorRef[Logger]): Unit =
-    logger.ask( _.log( mill, Milling, Milled() ) )
+    logger.ask( _.log( mill ) )
+    logger.ask( _.log( Milling, Milled() ) )
 
 final class Masher extends Actor
 
