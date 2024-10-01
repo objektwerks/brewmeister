@@ -30,6 +30,11 @@ final class Logger extends Actor:
 
   def log(event: Event): Unit = scribe.info(event.toString)
 
+  def log(command: Command, state: State, event: Event): Unit =
+    log(command)
+    log(state)
+    log(event)
+
 final class Sanitizer extends Actor:
   def process(sanitize: Sanitize, logger: ActorRef[Logger]): Unit =
     logger.tell( _.log( sanitize ) )
