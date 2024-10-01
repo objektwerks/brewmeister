@@ -2,7 +2,7 @@ package objektwerks
 
 trait Command
 
-case object Sanitize extends Command
+final case class Sanitize() extends Command
 
 final case class Prepare(recipe: Recipe) extends Command
 
