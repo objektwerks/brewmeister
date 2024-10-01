@@ -2,6 +2,7 @@ package objektwerks
 
 final case class Session(id: Long,
                          recipeId: Long,
+                         ph: Double,
                          originalGravity: Double,
                          finalGravity: Double,
                          color: Int,
