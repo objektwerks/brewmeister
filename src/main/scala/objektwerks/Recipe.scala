@@ -1,8 +1,8 @@
 package objektwerks
 
-final case class Water(typeof: String)
-
 final case class Style(typeof: String)
+
+final case class Water(typeof: String)
 
 final case class Grain(typeof: String)
 
@@ -13,9 +13,11 @@ final case class Adjunct(typeof: String)
 final case class Yeast(typeof: String)
 
 final case class Recipe(id: Long,
-                        water: Water,
                         style: Style,
+                        water: Water,
                         grains: List[Grain],
                         hops: List[Hop],
                         adjunts: List[Adjunct],
-                        yeasts: List[Yeast])
+                        yeasts: List[Yeast]):
+
+  override def toString(): String = style.toString
