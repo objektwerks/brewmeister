@@ -4,7 +4,7 @@ import ox.channels.*
 import ox.supervised
 
 sealed trait Actor:
-  def close: Unit = scribe.info(s"*** ${getClass.getSimpleName}.close")
+  def close: Unit = scribe.info(s"*** actor closing ...")
 
 final class Brewer extends Actor:
   var metrics = Metrics.empty
