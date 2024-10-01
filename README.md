@@ -44,47 +44,47 @@ Event
 
 Metric
 ------
-1. **Original Gravity: OG** - Original Gravity measures the gravity of wort before fermentation.
+1. **Plato: P ~ Specific Gravity: SG** See [Table](https://www.brewersfriend.com/plato-to-sg-conversion-chart/)
+    1. P = ( -1 * 616.868 ) + ( 1111.14 * SG ) - ( 630.272 * SG ^ 2 ) + ( 135.997 * SG ^ 3 )
+    2. SG = 1 + ( P / ( 258.6 - ( ( P / 258.2 ) * 227.1 ) ) )
+2. **Original Gravity: OG** - Original Gravity measures the gravity of wort before fermentation.
     1. Use a **Hydrometer** to measure OG before fermentation. Sample must be at 68F.
     2. Range: 1.000 - 1.130
-2. **Final Gravity: FG** - Final Gravity measures the gravity of wort after fermentation.
+3. **Final Gravity: FG** - Final Gravity measures the gravity of wort after fermentation.
     1. Use a **Hydrometer** to measure FG after fermentation. Sample must be at 68F.
     2. Range: 1.000 - 1.130
-3. **Color: SRM** - Standard Reference Method (SRM) represents the color of a beer.
+4. **Color: SRM** - Standard Reference Method (SRM) represents the color of a beer.
     1. Malt Color Units: MCU = ( Weight of grain in lbs ) * ( Color of grain in degrees lovibond ) / ( volume in gallons )
     2. SRM = 1.4922 * ( MCU * 0.6859 )
     3. Range: 1 - 40
-4. **Hop Bitterness: IBU** - International Bittering Units ( IBU ) is the measure of bitterness of beer that comes from the boiling of hops.
+5. **Hop Bitterness: IBU** - International Bittering Units ( IBU ) is the measure of bitterness of beer that comes from the boiling of hops.
     1. Hop Utilization(%) = ( Hop Alpha Acid(%) * Hop Weight(oz) ) / Hop Volume(gallons)
     2. IBU = ( Hop Weight(oz) * Hop Alpha Acid(%) * Hop Utilization(%) ) / 7.25
     3. Range: 0 - 120
-5. **Alcohol: ABV** - Measured by volume, the amount of alcohol produced in a wort during fermentation.
+6. **Alcohol: ABV** - Measured by volume, the amount of alcohol produced in a wort during fermentation.
     1. ABV = ( OG - FG ) * 131
     2. Range: 3.0 - 13.0 %
-6. **Alcohol: ABW** - Measured by weight, the amount of alcohol produced in a wort during fermentation.
+7. **Alcohol: ABW** - Measured by weight, the amount of alcohol produced in a wort during fermentation.
     1. ABW = ( 0.79 * ABV ) / FG
     2. Range: 3.0 - 10.0 %
-7. **Calories** - The number of calories in a beer.
+8. **Calories** - The number of calories in a beer.
     1. Volume = Beer bottle in ounces(oz).
     2. Alcohol Calories = ( OG - FG ) * 7.5
     3. Carbohydrate Calories = ( FG * 13 ) * Volume
     4. Calories = Alcohol Calories + Carbohydrate Calories
     5. Range: 10 - 600
-8. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
+9. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
     1. Actual Extract = The amount of fermentable extract collected from the mash tun.
     2. Potential Extract = The maximum extract potential of the grain bill, calculated based on the malt’s extract potential and the grain bill’s weight and volume.
     3. ME(%) = ( Actual Extract / Potential Extract ) * 100
     4. Range: 70.0 - 100.0 %
     5. Ideal: 80.0 - 90.0 %
-9. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
+10. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
     1. Actual Fermentable Extract = The amount of fermentable extract collected from the brewhouse.
     2. Ideal Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
     3. BE(%) = ( Actual Fermentable Extract / Ideal Fermentable Extract ) * 100
     4. Range: 60.0 - 100.0 %
     5. Ideal: 72.0 - 80.0 %
-10. **Plato: P ~ Specific Gravity: SG** See [Table](https://www.brewersfriend.com/plato-to-sg-conversion-chart/)
-    1. P = ( -1 * 616.868 ) + ( 1111.14 * SG ) - ( 630.272 * SG ^ 2 ) + ( 135.997 * SG ^ 3 )
-    2. SG = 1 + ( P / ( 258.6 - ( ( P / 258.2 ) * 227.1 ) ) )
 11. **pH** - The pH balance of the mash. Use a pH meter.
 12. **Temperature** - Measured at strike water, mashing, chilling and daily throughout fermentation. Use a thermometer.
 
