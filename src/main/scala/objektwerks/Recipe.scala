@@ -4,7 +4,7 @@ final case class Water(typeof: String)
 
 final case class Style(typeof: String)
 
-final case class Grain(id: Long)
+final case class Grain(typeof: String)
 
 final case class Hop(id: Long)
 
