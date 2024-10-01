@@ -24,7 +24,7 @@ Recipe
 ------
 * Recipe 1 -> * Grain | Hop | Adjunct | Yeast
 * Recipe 1 -> 1 Style, Water
-* Session 1 -> 1 Recipe
+* Metrics 1 -> 1 Recipe
 
 Actor
 -----
