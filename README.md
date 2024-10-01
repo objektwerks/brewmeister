@@ -6,6 +6,8 @@ Todo
 ----
 1. Flow
 2. Metrics
+3. Persistence
+4. App
 
 Process
 -------
