@@ -1,6 +1,6 @@
 package objektwerks
 
-final case class Water(id: Long)
+final case class Water(typeof: String)
 
 final case class Style(id: Long)
 
