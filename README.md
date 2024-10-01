@@ -51,6 +51,7 @@ Metric
 2. **Final Gravity: FG** - Final Gravity measures the gravity of wort after fermentation.
     1. Use a **Hydrometer** to measure FG after fermentation. Sample must be at 68F.
     2. Range: 1.000 - 1.072
+    3. Ideal: 1.072
 3. **Color: SRM** - Standard Reference Method/SRM/Beer Color is the color, or darkness, of a beer.
     1. Malt Color Units: MCU = ( Weight of grain in lbs ) * ( Color of grain in degrees lovibond ) / ( volume in gallons )
     2. Color: SRM = 1.4922 * ( MCU * 0.6859 )
