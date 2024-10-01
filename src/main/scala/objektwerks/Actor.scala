@@ -46,6 +46,9 @@ final class Brewer extends Actor:
       val fermenter = Actor.create( Fermenter() )
       fermenter.ask( _.mash( Ferment(recipe), logger ) )
 
+      val conditioner = Actor.create( Conditioner() )
+      conditioner.ask( _.mash( Condition(), logger ) )
+
     metrics
 
 final class Logger extends Actor:
