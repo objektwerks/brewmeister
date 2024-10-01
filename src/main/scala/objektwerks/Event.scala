@@ -2,7 +2,7 @@ package objektwerks
 
 trait Event
 
-case object Sanitized extends Event
+final case class Sanitized() extends Event
 
 final case class Prepared(metrics: Metrics) extends Event
 
