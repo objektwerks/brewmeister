@@ -1,6 +1,6 @@
 package objektwerks
 
-final case class Session(id: Long,
+final case class Metrics(id: Long,
                          recipeId: Long,
                          pH: Double,
                          originalGravity: Double,
