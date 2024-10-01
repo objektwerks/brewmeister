@@ -8,6 +8,8 @@ case object Preparing extends State
 
 case object Malting extends State
 
+case object Milling extends State
+
 case object Mashing extends State
 
 case object Lautering extends State
