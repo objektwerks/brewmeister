@@ -15,16 +15,16 @@ final class Brewer extends Actor:
       logger.ask( _.log(brew) )
       
       val sanitizer = Actor.create( Sanitizer() )
-      sanitizer.ask( _.process( Sanitize(), logger ) )
+      sanitizer.ask( _.sanitize( Sanitize(), logger ) )
 
       val preparer = Actor.create( Preparer() )
-      preparer.ask( _.process( Prepare(brew.recipe), logger ) )
+      preparer.ask( _.prepare( Prepare(brew.recipe), logger ) )
 
       val malter = Actor.create( Malter() )
-      malter.ask( _.process( Malt(brew.recipe), logger ) )
+      malter.ask( _.malt( Malt(brew.recipe), logger ) )
 
       val miller = Actor.create( Miller() )
-      miller.ask( _.process( Mill(brew.recipe), logger ) )
+      miller.ask( _.mill( Mill(brew.recipe), logger ) )
 
     metrics
 
@@ -41,19 +41,19 @@ final class Logger extends Actor:
     log(event)
 
 final class Sanitizer extends Actor:
-  def process(sanitize: Sanitize, logger: ActorRef[Logger]): Unit =
+  def sanitize(sanitize: Sanitize, logger: ActorRef[Logger]): Unit =
     logger.ask( _.log( sanitize, Sanitizing, Sanitized ) )
 
 final class Preparer extends Actor:
-  def process(prepare: Prepare, logger: ActorRef[Logger]): Unit =
+  def prepare(prepare: Prepare, logger: ActorRef[Logger]): Unit =
     logger.ask( _.log( prepare, Preparing, Prepared ) )
 
 final class Malter extends Actor:
-  def process(malt: Malt, logger: ActorRef[Logger]): Unit =
+  def malt(malt: Malt, logger: ActorRef[Logger]): Unit =
     logger.ask( _.log( malt, Malting, Malted() ) )
 
 final class Miller extends Actor:
-  def process(mill: Mill, logger: ActorRef[Logger]): Unit =
+  def mill(mill: Mill, logger: ActorRef[Logger]): Unit =
     logger.ask( _.log( mill, Milling, Milled() ) )
 
 final class Masher extends Actor
