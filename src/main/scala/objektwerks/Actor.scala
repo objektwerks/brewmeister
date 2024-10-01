@@ -101,4 +101,7 @@ final class Conditioner extends Actor:
     logger.ask( _.log( condition ) )
     logger.ask( _.log( Conditioning, Conditioned() ) )
 
-final class Packager extends Actor
+final class Packager extends Actor:
+  def mash(`package`: Package, logger: ActorRef[Logger]): Unit =
+    logger.ask( _.log( `package` ) )
+    logger.ask( _.log( Packaging, Packaged() ) )
