@@ -67,7 +67,7 @@ Metric
     1. ABV % = ( OG - FG ) * 131
     2. Range: 3.0 - 13.0 %
 9. **Alcohol: ABW** - Measured by weight, the amount of alcohol produced in a wort during fermentation.
-    1. ABW % = ( 0.79 * ABV ) / FG
+    1. ABW % = ( 0.79 * ABV (%) ) / FG
     2. Range: 3.0 - 10.0 %
 10. **Calories** - The number of calories in a beer.
     1. Volume = Beer bottle in ounces(oz).
