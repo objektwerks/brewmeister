@@ -14,10 +14,10 @@ final class Brewer extends Actor:
       val logger = Actor.create( Logger() )
       
       val sanitizer = Actor.create( Sanitizer() )
-      sanitizer.tell( _.process( Sanitize(), logger ) )
+      sanitizer.ask( _.process( Sanitize(), logger ) )
 
       val preparer = Actor.create( Preparer() )
-      preparer.tell( _.process( Prepare(recipe), logger ) )
+      preparer.ask( _.process( Prepare(recipe), logger ) )
 
       never
 
