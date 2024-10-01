@@ -23,7 +23,7 @@ scalacOptions ++= Seq(
 
 lazy val createAssemblyDir = taskKey[File]("Create assembly dir.")
 createAssemblyDir := {
-  import java.nio.file._
+  import java.nio.file.*
 
   val assemblyDir: File = baseDirectory.value / ".assembly"
   val assemblyPath: Path = assemblyDir.toPath()
@@ -37,7 +37,7 @@ createAssemblyDir := {
 
 lazy val copyAssemblyJar = taskKey[Unit]("Copy assembly jar to assembly dir.")
 copyAssemblyJar := {
-  import java.nio.file._
+  import java.nio.file.*
 
   val assemblyDir: File = createAssemblyDir.value
   val assemblyPath: String = s"${assemblyDir.toString}/${assemblyJarName.value}"
@@ -70,11 +70,11 @@ lazy val OS: String = sys.props.getOrElse("target", "") match {
   case _ => ""
 }
 
-if (OS == "mac") assemblyJarName := "pool-balance-mac-0.1.jar"
-else if (OS == "mac-aarch64") assemblyJarName := "pool-balance-m1-0.1.jar"
-else if (OS == "win") assemblyJarName := "pool-balance-win-0.1.jar"
-else if (OS == "linux") assemblyJarName := "pool-balance-linux-0.1.jar"
-else assemblyJarName := "pool-balance-no-valid-target-specified-0.1.jar"
+if (OS == "mac") assemblyJarName := "brewmeister-mac-0.1.jar"
+else if (OS == "mac-aarch64") assemblyJarName := "brewmeister-m1-0.1.jar"
+else if (OS == "win") assemblyJarName := "brewmeister-win-0.1.jar"
+else if (OS == "linux") assemblyJarName := "brewmeister-linux-0.1.jar"
+else assemblyJarName := "brewmeister-no-valid-target-specified-0.1.jar"
 
 lazy val javafxModules = Seq("base", "controls", "web")
 libraryDependencies ++= javafxModules.map( module =>
