@@ -1,6 +1,6 @@
 package objektwerks
 
-import ox.channels.*
+import ox.channels.{Actor, ActorRef}
 import ox.supervised
 
 sealed trait Actor:
