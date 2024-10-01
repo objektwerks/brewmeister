@@ -27,7 +27,7 @@ final class Brewer extends Actor:
 final class Logger extends Actor:
   def log(command: Command): Unit = scribe.info(s"*** command: $command")
 
-  def log(state: State): Unit = scribe.info(state.toString)
+  def log(state: State): Unit = scribe.info(s"*** state: $state")
 
   def log(event: Event): Unit = scribe.info(event.toString)
 
