@@ -1,3 +1,0 @@
-package objektwerks
-
-object Metric
