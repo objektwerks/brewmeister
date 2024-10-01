@@ -14,6 +14,7 @@ final case class Yeast(typeof: String)
 
 final case class Recipe(id: Long,
                         gallons: Int,
+                        originalGravity: Double,
                         style: Style,
                         water: Water,
                         grains: List[Grain],
