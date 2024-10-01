@@ -17,25 +17,30 @@ final class Brewer extends Actor:
       sanitizer.tell( _.process( Sanitize(), logger ) )
 
       val preparer = Actor.create( Preparer() )
-      preparer.tell( _.process( Prepare(recipe) ) )
+      preparer.tell( _.process( Prepare(recipe), logger ) )
 
       never
 
     metrics
 
 final case class Logger() extends Actor:
-  def log(event: Event): Unit = scribe.info(event.toString)
+  def log(command: Command): Unit = scribe.info(command.toString)
 
   def log(state: State): Unit = scribe.info(state.toString)
 
+  def log(event: Event): Unit = scribe.info(event.toString)
+
 final class Sanitizer extends Actor:
   def process(sanitize: Sanitize, logger: ActorRef[Logger]): Unit =
+    logger.tell( _.log( sanitize ) )
     logger.tell( _.log( Sanitizing ) )
     logger.tell( _.log( Sanitized ) )
 
 final class Preparer extends Actor:
-  def process(prepare: Prepare): Unit =
-    Prepared()
+  def process(prepare: Prepare, logger: ActorRef[Logger]): Unit =
+    logger.tell( _.log( prepare ) )
+    logger.tell( _.log( Preparing ) )
+    logger.tell( _.log( Prepared ) )
 
 final class Malter extends Actor
 

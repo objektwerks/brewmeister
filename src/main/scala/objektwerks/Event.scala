@@ -4,7 +4,7 @@ sealed trait Event
 
 case object Sanitized extends Event
 
-final case class Prepared() extends Event
+case object Prepared extends Event
 
 final case class Malted() extends Event
 
