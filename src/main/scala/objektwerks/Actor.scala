@@ -6,7 +6,8 @@ sealed trait Actor:
 final class Brewer extends Actor:
   def brew(recipe: Recipe): Metrics = ???
 
-final class Sanitizer extends Actor
+final class Sanitizer extends Actor:
+  def sanitize(sanitize: Sanitize): Sanitized = ???
 
 final class Preparer extends Actor
 
