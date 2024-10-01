@@ -10,7 +10,7 @@ final case class Hop(typeof: String)
 
 final case class Adjunct(typeof: String)
 
-final case class Yeast(id: Long)
+final case class Yeast(typeof: String)
 
 final case class Recipe(id: Long,
                         water: Water,
