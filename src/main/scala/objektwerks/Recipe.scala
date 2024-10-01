@@ -2,7 +2,7 @@ package objektwerks
 
 final case class Water(typeof: String)
 
-final case class Style(id: Long)
+final case class Style(typeof: String)
 
 final case class Grain(id: Long)
 
