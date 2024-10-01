@@ -1,11 +1,13 @@
 package objektwerks
 
 object Metrics:
-  def empty: Metrics = Metrics(0, 0, List(0.0), 0.0, 0.0, 0.0, 0, 0, 0.0, 0.0, 0, 0.0, 0.0)
+  def empty: Metrics = Metrics(0, 0, (0.0, 0.0), (0.0, 0.0), (0.0, 0.0), 0.0, 0.0, 0.0, 0, 0, 0.0, 0.0, 0, 0.0, 0.0)
 
 final case class Metrics(id: Long,
                          recipeId: Long,
-                         temperatures: List[Double],
+                         mashingTemp: (Double, Double),
+                         boilingTemp: (Double, Double),
+                         coolingTemp: (Double, Double),
                          pH: Double,
                          originalGravity: Double,
                          finalGravity: Double,
