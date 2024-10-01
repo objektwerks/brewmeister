@@ -6,7 +6,7 @@ final case class Style(typeof: String)
 
 final case class Grain(typeof: String)
 
-final case class Hop(id: Long)
+final case class Hop(typeof: String)
 
 final case class Adjunct(id: Long)
 
