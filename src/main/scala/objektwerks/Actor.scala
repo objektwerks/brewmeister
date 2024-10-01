@@ -49,6 +49,9 @@ final class Brewer extends Actor:
       val conditioner = Actor.create( Conditioner() )
       conditioner.ask( _.mash( Condition(), logger ) )
 
+      val packager = Actor.create( Packager() )
+      packager.ask( _.mash( Package(), logger ) )
+
     metrics
 
 final class Logger extends Actor:
