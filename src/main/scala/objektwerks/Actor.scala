@@ -38,11 +38,11 @@ final class Logger extends Actor:
 
 final class Sanitizer extends Actor:
   def process(sanitize: Sanitize, logger: ActorRef[Logger]): Unit =
-    logger.tell( _.log( sanitize, Sanitizing, Sanitized ) )
+    logger.ask( _.log( sanitize, Sanitizing, Sanitized ) )
 
 final class Preparer extends Actor:
   def process(prepare: Prepare, logger: ActorRef[Logger]): Unit =
-    logger.tell( _.log( prepare, Preparing, Prepared ) )
+    logger.ask( _.log( prepare, Preparing, Prepared ) )
 
 final class Malter extends Actor
 
