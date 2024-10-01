@@ -9,12 +9,12 @@ sealed trait Actor:
 final class Brewer extends Actor:
   var metrics = Metrics.empty
 
-  def log(state: State): Unit = scribe.info(state.toString)
-
   def brew(id: Long, recipe: Recipe): Metrics =
     supervised:
+      val logger = Actor.create( Logger() )
+      
       val sanitizer = Actor.create( Sanitizer() )
-      sanitizer.tell( _.process( Sanitize() ) )
+      sanitizer.tell( _.process( Sanitize(), logger ) )
 
       val preparer = Actor.create( Preparer() )
       preparer.tell( _.process( Prepare(recipe) ) )
@@ -23,11 +23,19 @@ final class Brewer extends Actor:
 
     metrics
 
+final case class Logger() extends Actor:
+  def log(event: Event): Unit = scribe.info(event.toString)
+
+  def log(state: State): Unit = scribe.info(state.toString)
+
 final class Sanitizer extends Actor:
-  def process(sanitize: Sanitize): Sanitized = Sanitized()
+  def process(sanitize: Sanitize, logger: ActorRef[Logger]): Unit =
+    logger.tell( _.log( Sanitizing ) )
+    logger.tell( _.log( Sanitized ) )
 
 final class Preparer extends Actor:
-  def process(prepare: Prepare): Prepared = Prepared()
+  def process(prepare: Prepare): Unit =
+    Prepared()
 
 final class Malter extends Actor
 

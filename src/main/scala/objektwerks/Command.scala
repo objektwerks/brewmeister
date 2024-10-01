@@ -1,6 +1,6 @@
 package objektwerks
 
-trait Command
+sealed trait Command
 
 final case class Sanitize() extends Command
 

@@ -1,6 +1,6 @@
 package objektwerks
 
-trait State
+sealed trait State
 
 case object Brewing extends State
 

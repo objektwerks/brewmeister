@@ -1,8 +1,8 @@
 package objektwerks
 
-trait Event
+sealed trait Event
 
-final case class Sanitized() extends Event
+case object Sanitized extends Event
 
 final case class Prepared() extends Event
 
@@ -27,3 +27,5 @@ final case class Fermented() extends Event
 final case class Conditioned() extends Event
 
 final case class Packaged() extends Event
+
+case object Brewed extends Event
