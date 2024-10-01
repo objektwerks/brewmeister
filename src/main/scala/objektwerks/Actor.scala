@@ -1,18 +1,25 @@
 package objektwerks
 
-import ox.supervised
 import ox.channels.*
+import ox.{never, supervised}
 
 sealed trait Actor:
   def close: Unit = println(s"*** ${getClass.getSimpleName}.close")
 
 final class Brewer extends Actor:
+  var metrics = Metrics.empty
+
   def brew(id: Long, recipe: Recipe): Metrics =
     supervised:
-      val sanitizer = Actor.create[Sanitizer]( Sanitizer() )
-      sanitizer.ask( _.process( Sanitize() ) )
+      val sanitizer = Actor.create( Sanitizer() )
+      sanitizer.tell( _.process( Sanitize() ) )
 
-    Metrics(id, recipe.id, List(0.0), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+      val preparer = Actor.create( Preparer() )
+      preparer.tell( _.process( Prepare(recipe) ) )
+
+      never
+
+    metrics
 
 final class Sanitizer extends Actor:
   def process(sanitize: Sanitize): Sanitized = Sanitized()
