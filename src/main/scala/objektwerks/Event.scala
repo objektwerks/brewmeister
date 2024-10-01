@@ -6,24 +6,24 @@ final case class Sanitized() extends Event
 
 final case class Prepared() extends Event
 
-final case class Malted(metrics: Metrics) extends Event
+final case class Malted() extends Event
 
-final case class Milled(metrics: Metrics) extends Event
+final case class Milled() extends Event
 
-final case class Mashed(metrics: Metrics) extends Event
+final case class Mashed() extends Event
 
-final case class Lautered(metrics: Metrics) extends Event
+final case class Lautered() extends Event
 
-final case class Sparged(metrics: Metrics) extends Event
+final case class Sparged() extends Event
 
-final case class Boiled(metrics: Metrics) extends Event
+final case class Boiled() extends Event
 
-final case class Cooled(metrics: Metrics) extends Event
+final case class Cooled() extends Event
 
-final case class Whirlpooled(metrics: Metrics) extends Event
+final case class Whirlpooled() extends Event
 
-final case class Fermented(metrics: Metrics) extends Event
+final case class Fermented() extends Event
 
-final case class Conditioned(metrics: Metrics) extends Event
+final case class Conditioned() extends Event
 
-final case class Packaged(metrics: Metrics) extends Event
+final case class Packaged() extends Event
