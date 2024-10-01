@@ -55,7 +55,10 @@ final class Miller extends Actor:
     logger.ask( _.log( mill ) )
     logger.ask( _.log( Milling, Milled() ) )
 
-final class Masher extends Actor
+final class Masher extends Actor:
+  def mash(mash: Mash, logger: ActorRef[Logger]): Unit =
+    logger.ask( _.log( mash ) )
+    logger.ask( _.log( Mashing, Mashed() ) )
 
 final class Lauterer extends Actor
 
