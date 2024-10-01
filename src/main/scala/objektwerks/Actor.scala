@@ -31,6 +31,9 @@ final class Brewer extends Actor:
       val lauterer = Actor.create( Lauterer() )
       lauterer.ask( _.mash( Lauter(), logger ) )
 
+      val sparger = Actor.create( Sparger() )
+      sparger.ask( _.mash( Sparge(), logger ) )
+
     metrics
 
 final class Logger extends Actor:
