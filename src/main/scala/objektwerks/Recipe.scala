@@ -4,6 +4,9 @@ final case class Style(typeof: String)
 
 final case class Batch(water: String,
                        gallons: Int,
+                       mashingTemp: (Double, Double),
+                       boilingTemp: (Double, Double),
+                       coolingTemp: (Double, Double),
                        pH: Double,
                        originalGravity: Double,
                        finalGravity: Double,
