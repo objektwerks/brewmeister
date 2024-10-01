@@ -1,8 +1,18 @@
 package objektwerks
 
-final case class Style(typeof: String)
+final case class Style(typeof: String,
+                       gallons: Int,
+                       originalGravity: Double,
+                       finalGravity: Double,
+                       color: Int,
+                       bitterness: Int)
 
-final case class Water(typeof: String)
+final case class Batch(water: String,
+                       gallons: Int,
+                       originalGravity: Double,
+                       finalGravity: Double,
+                       color: Int,
+                       bitterness: Int)
 
 final case class Grain(typeof: String)
 
@@ -13,13 +23,8 @@ final case class Adjunct(typeof: String)
 final case class Yeast(typeof: String)
 
 final case class Recipe(id: Long,
-                        gallons: Int,
-                        originalGravity: Double,
-                        finalGravity: Double,
-                        color: Int,
-                        bitterness: Int,
                         style: Style,
-                        water: Water,
+                        batch: Batch,
                         grains: List[Grain],
                         hops: List[Hop],
                         adjunts: List[Adjunct],
