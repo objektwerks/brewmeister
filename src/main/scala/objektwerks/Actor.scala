@@ -23,7 +23,7 @@ final class Brewer extends Actor:
 
     metrics
 
-final case class Logger() extends Actor:
+final class Logger extends Actor:
   def log(command: Command): Unit = scribe.info(command.toString)
 
   def log(state: State): Unit = scribe.info(state.toString)
