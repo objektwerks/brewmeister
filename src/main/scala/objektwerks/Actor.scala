@@ -9,8 +9,7 @@ sealed trait Actor:
 final class Brewer extends Actor:
   def brew(recipe: Recipe, listener: Listener): Metrics =
     supervised:
-      val sanitizer = Actor.create( Sanitizer() )
-      sanitizer.ask( _.sanitize( Sanitize(), listener ) )
+      Actor.create( Sanitizer() ).ask( _.sanitize( Sanitize(), listener ) )
 
       val preparer = Actor.create( Preparer() )
       preparer.ask( _.prepare( Prepare(recipe), listener ) )
