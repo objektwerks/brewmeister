@@ -38,7 +38,8 @@ final class Preparer extends Actor:
 final class Malter extends Actor:
   def malt(malt: Malt, listener: Listener): Unit =
     listener.onCommand( malt )
-    listener.onEvent( Malting, Malted() )
+    listener.onEvent( Malting )
+    listener.onEvent( Malted() )
 
 final class Miller extends Actor:
   def mill(mill: Mill, listener: Listener): Unit =
