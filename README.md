@@ -36,6 +36,7 @@ Flow
 5. brewer -- Mill(recipe) --> Miller
 6. brewer -- Mash(recipe) --> Masher
 7. brewer -- Lauter --> Lauterer
+8. brewer -- Sparge --> Sparger
 
 Model
 -----
