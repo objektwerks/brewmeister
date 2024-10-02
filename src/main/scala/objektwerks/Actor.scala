@@ -31,8 +31,7 @@ final class Brewer extends Actor:
 
       Actor.create( Fermenter() ).ask( _.mash( Ferment(recipe), listener ) )
 
-      val conditioner = Actor.create( Conditioner() )
-      conditioner.ask( _.mash( Condition(), listener ) )
+      Actor.create( Conditioner() ).ask( _.mash( Condition(), listener ) )
 
       val packager = Actor.create( Packager() )
       packager.ask( _.mash( Package(), listener ) )
