@@ -41,7 +41,7 @@ Flow
 11. brewer -- Whirlpool(recipe) --> Whirlpooler --> Whirlpooling | Whirlpooled --> Logger
 12. brewer -- Ferment(recipe) --> Fermenter --> Fermenting | Fermented --> Logger
 13. brewer -- Condition --> Conditioner --> Conditioning | Conditioned --> Logger
-14. brewer -- Package --> Packager
+14. brewer -- Package --> Packager --> Packaging | Packaged --> Logger
 
 Model
 -----
