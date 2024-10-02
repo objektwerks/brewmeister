@@ -19,8 +19,7 @@ final class Brewer extends Actor:
 
       Actor.create( Masher() ).ask( _.mash( Mash(recipe), listener ) )
 
-      val lauterer = Actor.create( Lauterer() )
-      lauterer.ask( _.mash( Lauter(), listener ) )
+      Actor.create( Lauterer() ).ask( _.mash( Lauter(), listener ) )
 
       val sparger = Actor.create( Sparger() )
       sparger.ask( _.mash( Sparge(), listener ) )
