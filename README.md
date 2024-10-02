@@ -30,19 +30,19 @@ Flow
 ----
 1. App -- Recipe, Listener --> Brewer
 2. Brewer --
-    1. Sanitize, Listener --> Sanitizer --> Sanitizing | Sanitized
-    2. Prepare, Listener --> Preparer --> Preparing | Prepared 
-    3. Malt, Listener --> Malter --> Malting | Malted
-    4. Mill, Listener --> Miller --> Milling | Milled
-    5. Mash, Listener --> Masher --> Mashing | Mashed
-    6. Lauter, Listener --> Lauterer --> Lautering | Lautered
-    7. Sparge, Listener --> Sparger --> Spargering | Sparged
-    8. Boil, Listener --> Boiler --> Boiling | Boiled
-    9. Cool, Listener --> Cooler --> Cooling | Cooled
-    10. Whirlpool, Listener --> Whirlpooler --> Whirlpooling | Whirlpooled
-    11. Ferment, Listener --> Fermenter --> Fermenting | Fermented
-    12. Condition, Listener --> Conditioner --> Conditioning | Conditioned
-    13. Package, Listener --> Packager --> Packaging | Packaged
+    1. Sanitize, Listener --> Sanitizer -- Sanitizing | Sanitized --> Listener
+    2. Prepare, Listener --> Preparer -- Preparing | Prepared --> Listener
+    3. Malt, Listener --> Malter -- Malting | Malted --> Listener
+    4. Mill, Listener --> Miller -- Milling | Milled --> Listener
+    5. Mash, Listener --> Masher -- Mashing | Mashed --> Listener
+    6. Lauter, Listener --> Lauterer -- Lautering | Lautered --> Listener
+    7. Sparge, Listener --> Sparger -- Spargering | Sparged --> Listener
+    8. Boil, Listener --> Boiler -- Boiling | Boiled --> Listener
+    9. Cool, Listener --> Cooler -- Cooling | Cooled --> Listener
+    10. Whirlpool, Listener --> Whirlpooler -- Whirlpooling | Whirlpooled --> Listener
+    11. Ferment, Listener --> Fermenter -- Fermenting | Fermented --> Listener
+    12. Condition, Listener --> Conditioner -- Conditioning | Conditioned --> Listener
+    13. Package, Listener --> Packager -- Packaging | Packaged --> Listener
 
 Model
 -----
