@@ -42,6 +42,7 @@ Flow
 11. brewer -- Whirlpool(recipe) --> Whirlpooler
 12. brewer -- Ferment(recipe) --> Fermenter
 13. brewer -- Condition --> Conditioner
+14. brewer -- Package --> Packager
 
 Model
 -----
