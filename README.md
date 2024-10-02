@@ -29,19 +29,19 @@ Process
 Flow
 ----
 1. app -- recipe, listener --> brewer
-2. brewer -- Sanitize, listener --> Sanitizer --> Sanitizing | Sanitized --> Logger
-3. brewer -- Prepare(recipe), listener --> Preparer --> Preparing | Prepared  --> Logger
-4. brewer -- Malt(recipe), listener --> Malter --> Malting | Malted --> Logger
-5. brewer -- Mill(recipe), listener --> Miller --> Milling | Milled --> Logger
-6. brewer -- Mash(recipe), listener --> Masher --> Mashing | Mashed --> Logger
-7. brewer -- Lauter, listener --> Lauterer --> Lautering | Lautered --> Logger
-8. brewer -- Sparge, listener --> Sparger --> Spargering | Sparged --> Logger
-9. brewer -- Boil(recipe), listener --> Boiler --> Boiling | Boiled --> Logger
-10. brewer -- Cool, listener --> Cooler --> Cooling | Cooled --> Logger
-11. brewer -- Whirlpool(recipe), listener --> Whirlpooler --> Whirlpooling | Whirlpooled --> Logger
-12. brewer -- Ferment(recipe), listener --> Fermenter --> Fermenting | Fermented --> Logger
-13. brewer -- Condition, listener --> Conditioner --> Conditioning | Conditioned --> Logger
-14. brewer -- Package, listener --> Packager --> Packaging | Packaged --> Logger
+2. brewer -- Sanitize, listener --> Sanitizer --> Sanitizing | Sanitized
+3. brewer -- Prepare(recipe), listener --> Preparer --> Preparing | Prepared 
+4. brewer -- Malt(recipe), listener --> Malter --> Malting | Malted
+5. brewer -- Mill(recipe), listener --> Miller --> Milling | Milled
+6. brewer -- Mash(recipe), listener --> Masher --> Mashing | Mashed
+7. brewer -- Lauter, listener --> Lauterer --> Lautering | Lautered
+8. brewer -- Sparge, listener --> Sparger --> Spargering | Sparged
+9. brewer -- Boil(recipe), listener --> Boiler --> Boiling | Boiled
+10. brewer -- Cool, listener --> Cooler --> Cooling | Cooled
+11. brewer -- Whirlpool(recipe), listener --> Whirlpooler --> Whirlpooling | Whirlpooled
+12. brewer -- Ferment(recipe), listener --> Fermenter --> Fermenting | Fermented
+13. brewer -- Condition, listener --> Conditioner --> Conditioning | Conditioned
+14. brewer -- Package, listener --> Packager --> Packaging | Packaged
 
 Model
 -----
