@@ -30,6 +30,8 @@ Process
 Flow
 ----
 1. app -- recipe --> brewer
+2. brewer --> Sanitizer
+3. brewer -- recipe --> Preparer
 
 Model
 -----
