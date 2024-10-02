@@ -59,7 +59,8 @@ Command
 
 Event
 -----
-* Sanitizing, Sanitized, Preparing, Prepared, Malting, Malted, Milling, Milled, Mashing, Mashed, Lautering, Lautered, Sparging, Sparged, Boiling, Boiled, Cooling, Cooled, Wirlpooling, Whirlpooled, Fermenting, Fermented, Conditioning, Conditioned, Packaging, Packaged
+* Sanitizing, Sanitized, Preparing, Prepared, Malting, Malted, Milling, Milled, Mashing, Mashed, Lautering, Lautered, Sparging, Sparged,
+Boiling, Boiled, Cooling, Cooled, Wirlpooling, Whirlpooled, Fermenting, Fermented, Conditioning, Conditioned, Packaging, Packaged
 
 Metric
 ------
