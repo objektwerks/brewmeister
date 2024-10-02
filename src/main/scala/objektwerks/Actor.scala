@@ -7,10 +7,8 @@ sealed trait Actor:
   def close: Unit = scribe.info(s"*** actor closing ...")
 
 final class Brewer extends Actor:
-  var metrics = Metrics.empty
-
   def brew(recipe: Recipe, listener: Listener): Metrics =
-    supervised:      
+    supervised:
       val sanitizer = Actor.create( Sanitizer() )
       sanitizer.ask( _.sanitize( Sanitize(), listener ) )
 
@@ -50,7 +48,8 @@ final class Brewer extends Actor:
       val packager = Actor.create( Packager() )
       packager.ask( _.mash( Package(), listener ) )
 
-    metrics
+      Metrics.empty
+
 
 final class Sanitizer extends Actor:
   def sanitize(sanitize: Sanitize, listener: Listener): Unit =
