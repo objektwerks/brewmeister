@@ -28,21 +28,21 @@ Process
 
 Flow
 ----
-1. App -- Recipe, Listener --> Brewer
-2. Brewer --
-    1. Sanitize, Listener --> Sanitizer -- Sanitizing | Sanitized --> Listener
-    2. Prepare, Listener --> Preparer -- Preparing | Prepared --> Listener
-    3. Malt, Listener --> Malter -- Malting | Malted --> Listener
-    4. Mill, Listener --> Miller -- Milling | Milled --> Listener
-    5. Mash, Listener --> Masher -- Mashing | Mashed --> Listener
-    6. Lauter, Listener --> Lauterer -- Lautering | Lautered --> Listener
-    7. Sparge, Listener --> Sparger -- Spargering | Sparged --> Listener
-    8. Boil, Listener --> Boiler -- Boiling | Boiled --> Listener
-    9. Cool, Listener --> Cooler -- Cooling | Cooled --> Listener
-    10. Whirlpool, Listener --> Whirlpooler -- Whirlpooling | Whirlpooled --> Listener
-    11. Ferment, Listener --> Fermenter -- Fermenting | Fermented --> Listener
-    12. Condition, Listener --> Conditioner -- Conditioning | Conditioned --> Listener
-    13. Package, Listener --> Packager -- Packaging | Packaged --> Listener
+1. **App** -- Recipe, Listener --> **Brewer**
+2. **Brewer** --
+    1. Sanitize, Listener --> **Sanitizer** -- Sanitizing | Sanitized --> Listener
+    2. Prepare, Listener --> **Preparer** -- Preparing | Prepared --> Listener
+    3. Malt, Listener --> **Malter** -- Malting | Malted --> Listener
+    4. Mill, Listener --> **Miller** -- Milling | Milled --> Listener
+    5. Mash, Listener --> **Masher** -- Mashing | Mashed --> Listener
+    6. Lauter, Listener --> **Lauterer** -- Lautering | Lautered --> Listener
+    7. Sparge, Listener --> **Sparger** -- Spargering | Sparged --> Listener
+    8. Boil, Listener --> **Boiler** -- Boiling | Boiled --> Listener
+    9. Cool, Listener --> **Cooler** -- Cooling | Cooled --> Listener
+    10. Whirlpool, Listener --> **Whirlpooler** -- Whirlpooling | Whirlpooled --> Listener
+    11. Ferment, Listener --> **Fermenter** -- Fermenting | Fermented --> Listener
+    12. Condition, Listener --> **Conditioner** -- Conditioning | Conditioned --> Listener
+    13. Package, Listener --> **Packager** -- Packaging | Packaged --> Listener
 
 Model
 -----
