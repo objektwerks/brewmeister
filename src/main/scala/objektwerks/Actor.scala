@@ -62,7 +62,8 @@ final class Lauterer extends Actor:
 final class Sparger extends Actor:
   def mash(sparge: Sparge, listener: Listener): Unit =
     listener.onCommand( sparge )
-    listener.onEvent( Sparging, Sparged() )
+    listener.onEvent( Sparging )
+    listener.onEvent( Sparged() )
 
 final class Boiler extends Actor:
   def mash(boil: Boil, listener: Listener): Unit =
