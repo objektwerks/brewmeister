@@ -98,4 +98,5 @@ final class Conditioner extends Actor:
 final class Packager extends Actor:
   def mash(`package`: Package, listener: Listener): Unit =
     listener.onCommand( `package` )
-    listener.onEvent( Packaging, Packaged() )
+    listener.onEvent( Packaging )
+    listener.onEvent( Packaged() )
