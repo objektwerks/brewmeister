@@ -24,7 +24,6 @@ final class Brewer extends Actor:
       Actor.create( Packager() ).ask( _.mash( Package(), listener ) )
       Metrics.empty
 
-
 final class Sanitizer extends Actor:
   def sanitize(sanitize: Sanitize, listener: Listener): Unit =
     listener.onCommand( sanitize )
