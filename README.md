@@ -30,7 +30,7 @@ Flow
 ----
 1. app -- recipe --> brewer
 2. brewer -- Sanitize --> Sanitizer --> Sanitizing | Sanitized --> Logger
-3. brewer -- Prepare(recipe) --> Preparer
+3. brewer -- Prepare(recipe) --> Preparer --> Preparing | Prepared  --> Logger
 4. brewer -- Malt(recipe) --> Malter
 5. brewer -- Mill(recipe) --> Miller
 6. brewer -- Mash(recipe) --> Masher
