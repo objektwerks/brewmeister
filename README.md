@@ -28,20 +28,21 @@ Process
 
 Flow
 ----
-1. App --> recipe, listener --> Brewer
-2. Brewer --> Sanitize, listener --> Sanitizer --> Sanitizing | Sanitized
-3. Brewer -- recipe, listener --> Prepare --> Preparer --> Preparing | Prepared 
-4. Brewer -- recipe, listener --> Malt --> Malter --> Malting | Malted
-5. Brewer -- recipe, listener --> Mill --> Miller --> Milling | Milled
-6. Brewer -- recipe, listener --> Mash --> Masher --> Mashing | Mashed
-7. Brewer --> Lauter, listener --> Lauterer --> Lautering | Lautered
-8. Brewer --> Sparge, listener --> Sparger --> Spargering | Sparged
-9. Brewer -- recipe, listener --> Boil --> Boiler --> Boiling | Boiled
-10. Brewer --> Cool, listener --> Cooler --> Cooling | Cooled
-11. Brewer -- recipe, listener --> Whirlpooler --> Whirlpooling | Whirlpooled
-12. Brewer -- recipe, listener --> Fermenter --> Fermenting | Fermented
-13. Brewer --> Condition, listener --> Conditioner --> Conditioning | Conditioned
-14. Brewer --> Package, listener --> Packager --> Packaging | Packaged
+1. App -- Recipe, Listener --> Brewer
+2. Brewer --
+    1. Sanitize, Listener --> Sanitizer --> Sanitizing | Sanitized
+    2. Prepare, Listener --> Preparer --> Preparing | Prepared 
+    3. Malt, Listener --> Malter --> Malting | Malted
+    4. Mill, Listener --> Miller --> Milling | Milled
+    5. Mash, Listener --> Masher --> Mashing | Mashed
+    6. Lauter, Listener --> Lauterer --> Lautering | Lautered
+    7. Sparge, Listener --> Sparger --> Spargering | Sparged
+    8. Boil, Listener --> Boiler --> Boiling | Boiled
+    9. Cool, Listener --> Cooler --> Cooling | Cooled
+    10. Whirlpool, Listener --> Whirlpooler --> Whirlpooling | Whirlpooled
+    11. Ferment, Listener --> Fermenter --> Fermenting | Fermented
+    12. Condition, Listener --> Conditioner --> Conditioning | Conditioned
+    13. Package, Listener --> Packager --> Packaging | Packaged
 
 Model
 -----
