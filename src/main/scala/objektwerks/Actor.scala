@@ -9,48 +9,46 @@ sealed trait Actor:
 final class Brewer extends Actor:
   var metrics = Metrics.empty
 
-  def brew(recipe: Recipe, logger: Logger, listener: Listener): Metrics =
-    supervised:
-      val logger = Actor.create( Logger() )
-      
+  def brew(recipe: Recipe, listener: Listener): Metrics =
+    supervised:      
       val sanitizer = Actor.create( Sanitizer() )
-      sanitizer.ask( _.sanitize( Sanitize(), logger, listener ) )
+      sanitizer.ask( _.sanitize( Sanitize(), listener ) )
 
       val preparer = Actor.create( Preparer() )
-      preparer.ask( _.prepare( Prepare(recipe), logger, listener ) )
+      preparer.ask( _.prepare( Prepare(recipe), listener ) )
 
       val malter = Actor.create( Malter() )
-      malter.ask( _.malt( Malt(recipe), logger, listener ) )
+      malter.ask( _.malt( Malt(recipe), listener ) )
 
       val miller = Actor.create( Miller() )
-      miller.ask( _.mill( Mill(recipe), logger, listener ) )
+      miller.ask( _.mill( Mill(recipe), listener ) )
 
       val masher = Actor.create( Masher() )
-      masher.ask( _.mash( Mash(recipe), logger, listener ) )
+      masher.ask( _.mash( Mash(recipe), listener ) )
 
       val lauterer = Actor.create( Lauterer() )
-      lauterer.ask( _.mash( Lauter(), logger, listener ) )
+      lauterer.ask( _.mash( Lauter(), listener ) )
 
       val sparger = Actor.create( Sparger() )
-      sparger.ask( _.mash( Sparge(), logger, listener ) )
+      sparger.ask( _.mash( Sparge(), listener ) )
 
       val boiler = Actor.create( Boiler() )
-      boiler.ask( _.mash( Boil(recipe), logger, listener ) )
+      boiler.ask( _.mash( Boil(recipe), listener ) )
 
       val cooler = Actor.create( Cooler() )
-      cooler.ask( _.mash( Cool(), logger, listener ) )
+      cooler.ask( _.mash( Cool(), listener ) )
 
       val whirlpooler = Actor.create( Whirlpooler() )
-      whirlpooler.ask( _.mash( Whirlpool(recipe), logger, listener ) )
+      whirlpooler.ask( _.mash( Whirlpool(recipe), listener ) )
 
       val fermenter = Actor.create( Fermenter() )
-      fermenter.ask( _.mash( Ferment(recipe), logger, listener ) )
+      fermenter.ask( _.mash( Ferment(recipe), listener ) )
 
       val conditioner = Actor.create( Conditioner() )
-      conditioner.ask( _.mash( Condition(), logger, listener ) )
+      conditioner.ask( _.mash( Condition(), listener ) )
 
       val packager = Actor.create( Packager() )
-      packager.ask( _.mash( Package(), logger, listener ) )
+      packager.ask( _.mash( Package(), listener ) )
 
     metrics
 
