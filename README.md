@@ -28,7 +28,7 @@ Process
 
 Flow
 ----
-1. app -- recipe --> brewer
+1. app -- recipe, listener --> brewer
 2. brewer -- Sanitize --> Sanitizer --> Sanitizing | Sanitized --> Logger
 3. brewer -- Prepare(recipe) --> Preparer --> Preparing | Prepared  --> Logger
 4. brewer -- Malt(recipe) --> Malter --> Malting | Malted --> Logger
