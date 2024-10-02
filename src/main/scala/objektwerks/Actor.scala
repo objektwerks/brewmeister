@@ -50,7 +50,8 @@ final class Miller extends Actor:
 final class Masher extends Actor:
   def mash(mash: Mash, listener: Listener): Unit =
     listener.onCommand( mash )
-    listener.onEvent( Mashing, Mashed() )
+    listener.onEvent( Mashing )
+    listener.onEvent( Mashed() )
 
 final class Lauterer extends Actor:
   def mash(lauter: Lauter, listener: Listener): Unit =
