@@ -30,16 +30,16 @@ Flow
 ----
 1. App --> recipe, listener --> Brewer
 2. Brewer --> Sanitize, listener --> Sanitizer --> Sanitizing | Sanitized
-3. Brewer --> Prepare(recipe), listener --> Preparer --> Preparing | Prepared 
-4. Brewer --> Malt(recipe), listener --> Malter --> Malting | Malted
-5. Brewer --> Mill(recipe), listener --> Miller --> Milling | Milled
-6. Brewer --> Mash(recipe), listener --> Masher --> Mashing | Mashed
+3. Brewer -- recipe --> Prepare(recipe), listener --> Preparer --> Preparing | Prepared 
+4. Brewer -- recipe --> Malt(recipe), listener --> Malter --> Malting | Malted
+5. Brewer -- recipe --> Mill(recipe), listener --> Miller --> Milling | Milled
+6. Brewer -- recipe --> Mash(recipe), listener --> Masher --> Mashing | Mashed
 7. Brewer --> Lauter, listener --> Lauterer --> Lautering | Lautered
 8. Brewer --> Sparge, listener --> Sparger --> Spargering | Sparged
-9. Brewer --> Boil(recipe), listener --> Boiler --> Boiling | Boiled
+9. Brewer -- recipe --> Boil(recipe), listener --> Boiler --> Boiling | Boiled
 10. Brewer --> Cool, listener --> Cooler --> Cooling | Cooled
-11. Brewer --> Whirlpool(recipe), listener --> Whirlpooler --> Whirlpooling | Whirlpooled
-12. Brewer --> Ferment(recipe), listener --> Fermenter --> Fermenting | Fermented
+11. Brewer -- recipe --> Whirlpool(recipe), listener --> Whirlpooler --> Whirlpooling | Whirlpooled
+12. Brewer -- recipe --> Ferment(recipe), listener --> Fermenter --> Fermenting | Fermented
 13. Brewer --> Condition, listener --> Conditioner --> Conditioning | Conditioned
 14. Brewer --> Package, listener --> Packager --> Packaging | Packaged
 
