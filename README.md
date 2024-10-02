@@ -37,6 +37,7 @@ Flow
 6. brewer -- Mash(recipe) --> Masher
 7. brewer -- Lauter --> Lauterer
 8. brewer -- Sparge --> Sparger
+9. brewer -- Boil(recipe) --> Boiler
 
 Model
 -----
