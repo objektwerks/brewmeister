@@ -34,8 +34,8 @@ Flow
 4. brewer -- Malt(recipe) --> Malter --> Malting | Malted --> Logger
 5. brewer -- Mill(recipe) --> Miller --> Milling | Milled --> Logger
 6. brewer -- Mash(recipe) --> Masher --> Mashing | Mashed --> Logger
-7. brewer -- Lauter --> Lauterer
-8. brewer -- Sparge --> Sparger
+7. brewer -- Lauter --> Lauterer --> Lautering | Lautered --> Logger
+8. brewer -- Sparge --> Sparger --> Spargering | Sparged --> Logger
 9. brewer -- Boil(recipe) --> Boiler
 10. brewer -- Cool --> Cooler
 11. brewer -- Whirlpool(recipe) --> Whirlpooler
