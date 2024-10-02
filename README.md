@@ -30,8 +30,9 @@ Process
 Flow
 ----
 1. app -- recipe --> brewer
-2. brewer --> Sanitizer
-3. brewer -- recipe --> Preparer
+2. brewer -- Sanitize --> Sanitizer
+3. brewer -- Prepare(recipe) --> Preparer
+4. brewer -- Malt(recipe) --> Malter
 
 Model
 -----
