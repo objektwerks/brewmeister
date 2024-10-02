@@ -39,7 +39,7 @@ Flow
 8. brewer -- Sparge --> Sparger
 9. brewer -- Boil(recipe) --> Boiler
 10. brewer -- Cool --> Cooler
-
+11. brewer -- Whirlpool(recipe) --> Whirlpool
 
 Model
 -----
