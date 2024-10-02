@@ -27,8 +27,7 @@ final class Brewer extends Actor:
 
       Actor.create( Cooler() ).ask( _.mash( Cool(), listener ) )
 
-      val whirlpooler = Actor.create( Whirlpooler() )
-      whirlpooler.ask( _.mash( Whirlpool(recipe), listener ) )
+      Actor.create( Whirlpooler() ).ask( _.mash( Whirlpool(recipe), listener ) )
 
       val fermenter = Actor.create( Fermenter() )
       fermenter.ask( _.mash( Ferment(recipe), listener ) )
