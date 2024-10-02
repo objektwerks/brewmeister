@@ -126,7 +126,7 @@ Execute
 
 Deploy
 ------
->Consider these options:
+>Options:
 1. [jDeploy](https://www.npmjs.com/package/jdeploy)
 2. [Conveyor](https://hydraulic.software/index.html)
 
