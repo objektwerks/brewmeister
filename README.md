@@ -46,8 +46,8 @@ Flow
 
 Model
 -----
-* Recipe 1 -> * Grain | Hop | Adjunct | Yeast
-* Metrics 1 -> 1 Recipe
+* Recipe 1 --> * Grain | Hop | Adjunct | Yeast
+* Metrics 1 --> 1 Recipe
 
 Actor
 -----
