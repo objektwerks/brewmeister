@@ -86,7 +86,8 @@ final class Whirlpooler extends Actor:
 final class Fermenter extends Actor:
   def mash(ferment: Ferment, listener: Listener): Unit =
     listener.onCommand( ferment )
-    listener.onEvent( Fermenting, Fermented() )
+    listener.onEvent( Fermenting )
+    listener.onEvent( Fermented() )
 
 final class Conditioner extends Actor:
   def mash(condition: Condition, listener: Listener): Unit =
