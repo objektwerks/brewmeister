@@ -68,8 +68,9 @@ final class Preparer extends Actor:
 
 final class Malter extends Actor:
   def malt(malt: Malt, logger: Logger, listener: Listener): Unit =
-    logger.ask( _.log( malt ) )
-    logger.ask( _.log( Malting, Malted() ) )
+    logger.log( malt )
+    listener.handle( Malting )
+    listener.handle( Malted() )
 
 final class Miller extends Actor:
   def mill(mill: Mill, logger: Logger, listener: Listener): Unit =
