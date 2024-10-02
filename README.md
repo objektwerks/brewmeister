@@ -36,7 +36,7 @@ Flow
 6. brewer -- Mash(recipe) --> Masher --> Mashing | Mashed --> Logger
 7. brewer -- Lauter --> Lauterer --> Lautering | Lautered --> Logger
 8. brewer -- Sparge --> Sparger --> Spargering | Sparged --> Logger
-9. brewer -- Boil(recipe) --> Boiler
+9. brewer -- Boil(recipe) --> Boiler --> Boiling | Boiled --> Logger
 10. brewer -- Cool --> Cooler
 11. brewer -- Whirlpool(recipe) --> Whirlpooler
 12. brewer -- Ferment(recipe) --> Fermenter
