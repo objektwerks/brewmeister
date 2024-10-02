@@ -11,8 +11,7 @@ final class Brewer extends Actor:
     supervised:
       Actor.create( Sanitizer() ).ask( _.sanitize( Sanitize(), listener ) )
 
-      val preparer = Actor.create( Preparer() )
-      preparer.ask( _.prepare( Prepare(recipe), listener ) )
+      Actor.create( Preparer() ).ask( _.prepare( Prepare(recipe), listener ) )
 
       val malter = Actor.create( Malter() )
       malter.ask( _.malt( Malt(recipe), listener ) )
