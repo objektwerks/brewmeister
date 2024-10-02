@@ -54,69 +54,69 @@ final class Brewer extends Actor:
 
 final class Sanitizer extends Actor:
   def sanitize(sanitize: Sanitize, listener: Listener): Unit =
-    logger.log( sanitize )
+    listener.log( sanitize )
     listener.handle( Sanitizing )
     listener.handle( Sanitized )
 
 final class Preparer extends Actor:
   def prepare(prepare: Prepare, listener: Listener): Unit =
-    logger.log( prepare )
+    listener.log( prepare )
     listener.handle( Preparing )
     listener.handle( Prepared )
 
 final class Malter extends Actor:
   def malt(malt: Malt, listener: Listener): Unit =
-    logger.log( malt )
+    listener.log( malt )
     listener.handle( Malting )
     listener.handle( Malted() )
 
 final class Miller extends Actor:
   def mill(mill: Mill, listener: Listener): Unit =
-    logger.log( mill )
+    listener.log( mill )
     listener.handle( Milling )
     listener.handle( Milled() )
 
 final class Masher extends Actor:
   def mash(mash: Mash, listener: Listener): Unit =
-    logger.ask( _.log( mash ) )
-    logger.ask( _.log( Mashing, Mashed() ) )
+    listener.log( mash ) )
+    listener.log( Mashing, Mashed() ) )
 
 final class Lauterer extends Actor:
   def mash(lauter: Lauter, listener: Listener): Unit =
-    logger.ask( _.log( lauter ) )
-    logger.ask( _.log( Lautering, Lautered() ) )
+    listener.log( lauter ) )
+    listener.log( Lautering, Lautered() ) )
 
 final class Sparger extends Actor:
   def mash(sparge: Sparge, listener: Listener): Unit =
-    logger.ask( _.log( sparge ) )
-    logger.ask( _.log( Sparging, Sparged() ) )
+    listener.log( sparge ) )
+    listener.log( Sparging, Sparged() ) )
 
 final class Boiler extends Actor:
   def mash(boil: Boil, listener: Listener): Unit =
-    logger.ask( _.log( boil ) )
-    logger.ask( _.log( Boiling, Boiled() ) )
+    listener.log( boil ) )
+    listener.log( Boiling, Boiled() ) )
 
 final class Cooler extends Actor:
   def mash(cool: Cool, listener: Listener): Unit =
-    logger.ask( _.log( cool ) )
-    logger.ask( _.log( Cooling, Cooled() ) )
+    listener.log( cool ) )
+    listener.log( Cooling, Cooled() ) )
 
 final class Whirlpooler extends Actor:
   def mash(whirlpool: Whirlpool, listener: Listener): Unit =
-    logger.ask( _.log( whirlpool ) )
-    logger.ask( _.log( Whirlpooling, Whirlpooled() ) )
+    listener.log( whirlpool ) )
+    listener.log( Whirlpooling, Whirlpooled() ) )
 
 final class Fermenter extends Actor:
   def mash(ferment: Ferment, listener: Listener): Unit =
-    logger.ask( _.log( ferment ) )
-    logger.ask( _.log( Fermenting, Fermented() ) )
+    listener.log( ferment ) )
+    listener.log( Fermenting, Fermented() ) )
 
 final class Conditioner extends Actor:
   def mash(condition: Condition, listener: Listener): Unit =
-    logger.ask( _.log( condition ) )
-    logger.ask( _.log( Conditioning, Conditioned() ) )
+    listener.log( condition ) )
+    listener.log( Conditioning, Conditioned() ) )
 
 final class Packager extends Actor:
   def mash(`package`: Package, listener: Listener): Unit =
-    logger.ask( _.log( `package` ) )
-    logger.ask( _.log( Packaging, Packaged() ) )
+    listener.log( `package` ) )
+    listener.log( Packaging, Packaged() ) )
