@@ -26,64 +26,65 @@ final class Brewer extends Actor:
 final class Sanitizer extends Actor:
   def sanitize(sanitize: Sanitize, listener: Listener): Unit =
     listener.onCommand( sanitize )
-    listener.onEvents( Sanitizing, Sanitized )
+    listener.onEvent( Sanitizing )
+    listener.onEvent( Sanitized )
 
 final class Preparer extends Actor:
   def prepare(prepare: Prepare, listener: Listener): Unit =
     listener.onCommand( prepare )
-    listener.onEvents( Preparing, Prepared )
+    listener.onEvent( Preparing, Prepared )
 
 final class Malter extends Actor:
   def malt(malt: Malt, listener: Listener): Unit =
     listener.onCommand( malt )
-    listener.onEvents( Malting, Malted() )
+    listener.onEvent( Malting, Malted() )
 
 final class Miller extends Actor:
   def mill(mill: Mill, listener: Listener): Unit =
     listener.onCommand( mill )
-    listener.onEvents( Milling, Milled() )
+    listener.onEvent( Milling, Milled() )
 
 final class Masher extends Actor:
   def mash(mash: Mash, listener: Listener): Unit =
     listener.onCommand( mash )
-    listener.onEvents( Mashing, Mashed() )
+    listener.onEvent( Mashing, Mashed() )
 
 final class Lauterer extends Actor:
   def mash(lauter: Lauter, listener: Listener): Unit =
     listener.onCommand( lauter )
-    listener.onEvents( Lautering, Lautered() )
+    listener.onEvent( Lautering, Lautered() )
 
 final class Sparger extends Actor:
   def mash(sparge: Sparge, listener: Listener): Unit =
     listener.onCommand( sparge )
-    listener.onEvents( Sparging, Sparged() )
+    listener.onEvent( Sparging, Sparged() )
 
 final class Boiler extends Actor:
   def mash(boil: Boil, listener: Listener): Unit =
     listener.onCommand( boil )
-    listener.onEvents( Boiling, Boiled() )
+    listener.onEvent( Boiling, Boiled() )
 
 final class Cooler extends Actor:
   def mash(cool: Cool, listener: Listener): Unit =
     listener.onCommand( cool )
-    listener.onEvents( Cooling, Cooled() )
+    listener.onEvent( Cooling, Cooled() )
 
 final class Whirlpooler extends Actor:
   def mash(whirlpool: Whirlpool, listener: Listener): Unit =
     listener.onCommand( whirlpool )
-    listener.onEvents( Whirlpooling, Whirlpooled() )
+    listener.onEvent( Whirlpooling, Whirlpooled() )
 
 final class Fermenter extends Actor:
   def mash(ferment: Ferment, listener: Listener): Unit =
     listener.onCommand( ferment )
-    listener.onEvents( Fermenting, Fermented() )
+    listener.onEvent( Fermenting, Fermented() )
 
 final class Conditioner extends Actor:
   def mash(condition: Condition, listener: Listener): Unit =
     listener.onCommand( condition )
-    listener.onEvents( Conditioning, Conditioned() )
+    listener.onEvent( Conditioning, Conditioned() )
 
 final class Packager extends Actor:
   def mash(`package`: Package, listener: Listener): Unit =
     listener.onCommand( `package` )
-    listener.onEvents( Packaging, Packaged() )
+    listener.onEvent( Packaging, Packaged() )
