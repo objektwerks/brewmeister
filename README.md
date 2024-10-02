@@ -34,6 +34,7 @@ Flow
 3. brewer -- Prepare(recipe) --> Preparer
 4. brewer -- Malt(recipe) --> Malter
 5. brewer -- Mill(recipe) --> Miller
+6. brewer -- Mash(recipe) --> Masher
 
 Model
 -----
