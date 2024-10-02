@@ -1,6 +1,6 @@
 name := "ciphers"
 organization := "objektwerks"
-version := "0.1"
+version := "0.2-SNAPSHOT"
 scalaVersion := "3.5.1"
 mainClass := Some("objektwerks.App")
 libraryDependencies ++= {
@@ -71,11 +71,11 @@ lazy val OS: String = sys.props.getOrElse("target", "") match {
   case _ => ""
 }
 
-if (OS == "mac") assemblyJarName := "brewmeister-mac-0.1.jar"
-else if (OS == "mac-aarch64") assemblyJarName := "brewmeister-m1-0.1.jar"
-else if (OS == "win") assemblyJarName := "brewmeister-win-0.1.jar"
-else if (OS == "linux") assemblyJarName := "brewmeister-linux-0.1.jar"
-else assemblyJarName := "brewmeister-no-valid-target-specified-0.1.jar"
+if (OS == "mac") assemblyJarName := "brewmeister-mac-0.2.jar"
+else if (OS == "mac-aarch64") assemblyJarName := "brewmeister-m1-0.2.jar"
+else if (OS == "win") assemblyJarName := "brewmeister-win-0.2.jar"
+else if (OS == "linux") assemblyJarName := "brewmeister-linux-0.2.jar"
+else assemblyJarName := "brewmeister-no-valid-target-specified-0.2.jar"
 
 lazy val javafxModules = Seq("base", "controls", "web")
 libraryDependencies ++= javafxModules.map( module =>
