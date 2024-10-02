@@ -15,8 +15,7 @@ final class Brewer extends Actor:
 
       Actor.create( Malter() ).ask( _.malt( Malt(recipe), listener ) )
 
-      val miller = Actor.create( Miller() )
-      miller.ask( _.mill( Mill(recipe), listener ) )
+      Actor.create( Miller() ).ask( _.mill( Mill(recipe), listener ) )
 
       val masher = Actor.create( Masher() )
       masher.ask( _.mash( Mash(recipe), listener ) )
