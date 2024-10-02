@@ -38,6 +38,8 @@ Flow
 7. brewer -- Lauter --> Lauterer
 8. brewer -- Sparge --> Sparger
 9. brewer -- Boil(recipe) --> Boiler
+10. brewer -- Cool --> Cooler
+
 
 Model
 -----
