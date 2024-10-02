@@ -38,7 +38,7 @@ Flow
 8. brewer -- Sparge --> Sparger --> Spargering | Sparged --> Logger
 9. brewer -- Boil(recipe) --> Boiler --> Boiling | Boiled --> Logger
 10. brewer -- Cool --> Cooler --> Cooling | Cooled --> Logger
-11. brewer -- Whirlpool(recipe) --> Whirlpooler
+11. brewer -- Whirlpool(recipe) --> Whirlpooler --> Whirlpooling | Whirlpooled --> Logger
 12. brewer -- Ferment(recipe) --> Fermenter
 13. brewer -- Condition --> Conditioner
 14. brewer -- Package --> Packager
