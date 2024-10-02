@@ -35,6 +35,7 @@ Flow
 4. brewer -- Malt(recipe) --> Malter
 5. brewer -- Mill(recipe) --> Miller
 6. brewer -- Mash(recipe) --> Masher
+7. brewer -- Lauter --> Lauterer
 
 Model
 -----
