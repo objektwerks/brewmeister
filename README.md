@@ -33,6 +33,7 @@ Flow
 2. brewer -- Sanitize --> Sanitizer
 3. brewer -- Prepare(recipe) --> Preparer
 4. brewer -- Malt(recipe) --> Malter
+5. brewer -- Mill(recipe) --> Miller
 
 Model
 -----
