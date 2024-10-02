@@ -9,7 +9,7 @@ sealed trait Actor:
 final class Brewer extends Actor:
   def brew(recipe: Recipe, listener: Listener): Unit =
     supervised:
-      Actor.create( Sanitizer() ).ask( _.sanitize( Sanitize(), listener ) )
+      Actor.create( Sanitizer() ).ask( _.sanitize( Sanitize(listener) ) )
       Actor.create( Preparer() ).ask( _.prepare( Prepare(recipe), listener ) )
       Actor.create( Malter() ).ask( _.malt( Malt(recipe), listener ) )
       Actor.create( Miller() ).ask( _.mill( Mill(recipe), listener ) )
@@ -24,10 +24,10 @@ final class Brewer extends Actor:
       Actor.create( Packager() ).ask( _.mash( Package(), listener ) )
 
 final class Sanitizer extends Actor:
-  def sanitize(sanitize: Sanitize, listener: Listener): Unit =
-    listener.onCommand( sanitize )
-    listener.onEvent( Sanitizing )
-    listener.onEvent( Sanitized )
+  def sanitize(sanitize: Sanitize): Unit =
+    sanitize.listener.onCommand( sanitize )
+    sanitize.listener.onEvent( Sanitizing )
+    sanitize.listener.onEvent( Sanitized )
 
 final class Preparer extends Actor:
   def prepare(prepare: Prepare, listener: Listener): Unit =
