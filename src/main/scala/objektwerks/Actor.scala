@@ -33,8 +33,7 @@ final class Brewer extends Actor:
 
       Actor.create( Conditioner() ).ask( _.mash( Condition(), listener ) )
 
-      val packager = Actor.create( Packager() )
-      packager.ask( _.mash( Package(), listener ) )
+      Actor.create( Packager() ).ask( _.mash( Package(), listener ) )
 
       Metrics.empty
 
