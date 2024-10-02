@@ -4,7 +4,7 @@ Brewmeister
 
 Todo
 ----
-1. Metrics
+1. Metric calcs
 2. Persistence
 3. App
 
