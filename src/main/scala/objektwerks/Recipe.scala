@@ -31,7 +31,7 @@ final case class Recipe(id: Long,
                         yeasts: List[Yeast])
 
 final case class Metrics(id: Long,
-                         recipeId: Long,
+                         processId: Long,
                          style: String,
                          water: String,
                          gallons: Int,
