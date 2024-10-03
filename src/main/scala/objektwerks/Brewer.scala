@@ -60,3 +60,7 @@ final class Brewer:
   def cool(cool: Cool): Cooled =
     supervised:
       Actor.create( Cooler() ).ask( _.cool( cool ) )
+
+  def whirlpool(whirlpool: Whirlpool): Whirlpooled =
+    supervised:
+      Actor.create( Whirlpooler() ).ask( _.whirlpool( whirlpool ) )
