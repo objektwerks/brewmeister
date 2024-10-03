@@ -1,6 +1,8 @@
 package objektwerks
 
-final case class Process(id: Long, steps: List[Step])
+final case class Process(id: Long, steps: List[Step], currentStep: CurrentStep)
+
+final case class CurrentStep(processId: Long, stepId: Long)
 
 sealed trait Step
 
