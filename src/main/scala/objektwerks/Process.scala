@@ -1,8 +1,8 @@
 package objektwerks
 
 final case class Process(id: Long,
-                         recipeId: Long,
-                         metricsId: Long,
+                         recipe: Recipe,
+                         metrics: Metrics,
                          steps: List[Step],
                          currentStep: CurrentStep)
 
