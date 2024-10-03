@@ -19,3 +19,5 @@ final case class Lautering() extends Step
 final case class Sparging() extends Step
 
 final case class Boiling() extends Step
+
+final case class Cooling() extends Step
