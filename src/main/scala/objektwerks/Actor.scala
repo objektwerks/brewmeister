@@ -7,10 +7,7 @@ final class Sanitizer extends Actor:
   def sanitize(sanitize: Sanitize): Sanitized = Sanitized()
 
 final class Preparer extends Actor:
-  def prepare(prepare: Prepare, listener: Listener): Unit =
-    listener.onCommand( prepare )
-    listener.onEvent( Preparing )
-    listener.onEvent( Prepared )
+  def prepare(prepare: Prepare, listener: Listener): Prepared = Prepared()
 
 final class Malter extends Actor:
   def malt(malt: Malt, listener: Listener): Unit =
