@@ -4,10 +4,7 @@ sealed trait Actor:
   def close: Unit = scribe.info(s"*** actor closing ...")
 
 final class Sanitizer extends Actor:
-  def sanitize(sanitize: Sanitize): Unit =
-    sanitize.listener.onCommand( sanitize )
-    sanitize.listener.onEvent( Sanitizing )
-    sanitize.listener.onEvent( Sanitized )
+  def sanitize(sanitize: Sanitize): Sanitized = Sanitized()
 
 final class Preparer extends Actor:
   def prepare(prepare: Prepare, listener: Listener): Unit =
