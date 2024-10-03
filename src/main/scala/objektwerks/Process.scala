@@ -26,6 +26,6 @@ final case class Whirlpooling(boilKettle: BoilKettle) extends Step
 
 final case class Fermenting(fermentationKettle: FementationKettle) extends Step
 
-final case class Conditioning() extends Step
+final case class Conditioning(fermentationKettle: FementationKettle) extends Step
 
-final case class Packaging() extends Step
+final case class Packaging(container: Bottle | Keg) extends Step
