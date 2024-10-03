@@ -1,14 +1,17 @@
 package objektwerks
 
-final case class Grain(id: Long, recipeId: Long, typeof: String, amount: Int, step: Step)
+enum MixinStep:
+  case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
 
-final case class Hop(id: Long, recipeId: Long, typeof: String, amount: Int, step: Step)
+final case class Grain(typeof: String, amount: Int, mixinStep: String = MixinStep.Mashing.toString)
 
-final case class Adjunct(id: Long, recipeId: Long, typeof: String, amount: Int, step: Step)
+final case class Hop(typeof: String, amount: Int, mixinStep: String = MixinStep.Boiling.toString) // or Whirlpooling or Conditioning
 
-final case class Yeast(id: Long, recipeId: Long, typeof: String, amount: Int, step: Step)
+final case class Adjunct(typeof: String, amount: Int, mixinStep: String = MixinStep.Mashing.toString) // or Boiling or Conditioning
 
-final case class Recipe(id: Long,
+final case class Yeast(typeof: String, amount: Int, mixinStep: String = MixinStep.Fermenting.toString)
+
+final case class Recipe(created: String = now(),
                         style: String,
                         water: String,
                         gallons: Int,
@@ -30,7 +33,7 @@ final case class Recipe(id: Long,
                         adjuncts: List[Adjunct],
                         yeasts: List[Yeast])
 
-final case class Metrics(id: Long,
+final case class Metrics(created: String = now(),
                          style: String,
                          water: String,
                          gallons: Int,
