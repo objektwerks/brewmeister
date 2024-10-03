@@ -11,3 +11,5 @@ final case class Preparing() extends Step
 final case class Malting() extends Step
 
 final case class Milling() extends Step
+
+final case class Mashing() extends Step
