@@ -32,3 +32,7 @@ final class Brewer:
   def prepare(prepare: Prepare): Prepared =
     supervised:
       Actor.create( Preparer() ).ask( _.prepare( prepare ) )
+
+  def malt(malt: Malt): Malted =
+    supervised:
+      Actor.create( Malter() ).ask( _.malt( malt ) )
