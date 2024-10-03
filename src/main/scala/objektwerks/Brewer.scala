@@ -4,7 +4,7 @@ import ox.channels.Actor
 import ox.supervised
 
 final class Brewer:
-  def simulate(recipe: Recipe): List[Event] =
+  def brew(recipe: Recipe): List[Event] =
     supervised:
       val sanitized = Actor.create( Sanitizer() ).ask( _.sanitize( Sanitize() ) )
       val prepared = Actor.create( Preparer() ).ask( _.prepare( Prepare(recipe) ) )
