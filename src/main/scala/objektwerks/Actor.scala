@@ -7,16 +7,13 @@ final class Sanitizer extends Actor:
   def sanitize(sanitize: Sanitize): Sanitized = Sanitized()
 
 final class Preparer extends Actor:
-  def prepare(prepare: Prepare, listener: Listener): Prepared = Prepared()
+  def prepare(prepare: Prepare): Prepared = Prepared()
 
 final class Malter extends Actor:
-  def malt(malt: Malt, listener: Listener): Malted = Malted()
+  def malt(malt: Malt): Malted = Malted()
 
 final class Miller extends Actor:
-  def mill(mill: Mill, listener: Listener): Unit =
-    listener.onCommand( mill )
-    listener.onEvent( Milling )
-    listener.onEvent( Milled() )
+  def mill(mill: Mill, listener: Listener): Milled = Milled()
 
 final class Masher extends Actor:
   def mash(mash: Mash, listener: Listener): Unit =
