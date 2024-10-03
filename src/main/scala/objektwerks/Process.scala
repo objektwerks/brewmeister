@@ -27,3 +27,5 @@ final case class Whirlpooling() extends Step
 final case class Fermenting() extends Step
 
 final case class Conditioning() extends Step
+
+final case class Packaging() extends Step
