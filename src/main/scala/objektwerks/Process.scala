@@ -12,19 +12,19 @@ final case class Malting() extends Step
 
 final case class Milling() extends Step
 
-final case class Mashing() extends Step
+final case class Mashing(mashTun: MashTun) extends Step
 
-final case class Lautering() extends Step
+final case class Lautering(mashTun: MashTun) extends Step
 
-final case class Sparging() extends Step
+final case class Sparging(mashTun: MashTun) extends Step
 
-final case class Boiling() extends Step
+final case class Boiling(boilKettle: BoilKettle) extends Step
 
-final case class Cooling() extends Step
+final case class Cooling(boilKettle: BoilKettle) extends Step
 
-final case class Whirlpooling() extends Step
+final case class Whirlpooling(boilKettle: BoilKettle) extends Step
 
-final case class Fermenting() extends Step
+final case class Fermenting(fermentationKettle: FementationKettle) extends Step
 
 final case class Conditioning() extends Step
 
