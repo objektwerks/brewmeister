@@ -4,6 +4,7 @@ Brewmeister
 
 Todo
 ----
+* Json
 * Actors
 * Metrics
 * Persistence
