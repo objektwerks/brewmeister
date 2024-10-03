@@ -50,6 +50,7 @@ Flows
 
 Model
 -----
+* Process 1 --> * Step
 * Recipe 1 --> * Grain | Hop | Adjunct | Yeast
 * Metrics 1 --> 1 Recipe
 
