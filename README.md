@@ -4,12 +4,10 @@ Brewmeister
 
 Todo
 ----
-1. Mashing, Boiling and Fermenting Containers
-2. Bottles and Kegs
-3. Actors
-4. Metrics
-5. Persistence
-6. App
+* Actors
+* Metrics
+* Persistence
+* App
 
 Process
 -------
