@@ -30,4 +30,6 @@ final case class Recipe(id: Long,
                         whirlpoolingHops: List[Hop],
                         conditioningHops: List[Hop],
                         mashAdjuncts: List[Adjunct],
+                        boilAdjuncts: List[Adjunct],
+                        
                         yeasts: List[Yeast])
