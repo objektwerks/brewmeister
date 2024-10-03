@@ -17,7 +17,7 @@ final class Brewer:
       val cooled = Actor.create( Cooler() ).ask( _.cool( Cool() ) )
       val whirlpooled = Actor.create( Whirlpooler() ).ask( _.whirlpool( Whirlpool(recipe) ) )
       val fermented = Actor.create( Fermenter() ).ask( _.ferment( Ferment(recipe) ) )
-      val conditioned = Actor.create( Conditioner() ).ask( _.condition( Condition() ) )
+      val conditioned = Actor.create( Conditioner() ).ask( _.condition( Condition(recipe) ) )
       val packaged = Actor.create( Packager() ).ask( _.`package`( Package() ) )
       List(
         sanitized,
