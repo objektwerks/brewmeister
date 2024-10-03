@@ -6,9 +6,9 @@ import ox.supervised
 final class Brewer:
   def simulate(recipe: Recipe, listener: Listener): Unit =
     supervised:
-      val sanitized = Actor.create( Sanitizer() ).ask( _.sanitize( Sanitize(listener) ) )
+      val sanitized = Actor.create( Sanitizer() ).ask( _.sanitize( Sanitize() ) )
       val prepared = Actor.create( Preparer() ).ask( _.prepare( Prepare(recipe) ) )
-      Actor.create( Malter() ).ask( _.malt( Malt(recipe), listener ) )
+      val malted = Actor.create( Malter() ).ask( _.malt( Malt(recipe) ) )
       Actor.create( Miller() ).ask( _.mill( Mill(recipe), listener ) )
       Actor.create( Masher() ).ask( _.mash( Mash(recipe), listener ) )
       Actor.create( Lauterer() ).ask( _.mash( Lauter(), listener ) )
