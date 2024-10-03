@@ -1,6 +1,6 @@
 package objektwerks
 
-final case class Process()
+final case class Process(steps: List[Step])
 
 sealed trait Step
 
