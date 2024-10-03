@@ -6,24 +6,23 @@ import ox.supervised
 final class Brewer:
   def brew(brew: Brew): Brewed =
     val recipe = brew.recipe
-    supervised:
-      Brewed(
-        List(
-          Actor.create( Sanitizer() ).ask( _.sanitize( Sanitize() ) ),
-          Actor.create( Preparer() ).ask( _.prepare( Prepare(recipe) ) ),
-          Actor.create( Malter() ).ask( _.malt( Malt(recipe) ) ),
-          Actor.create( Miller() ).ask( _.mill( Mill(recipe) ) ),
-          Actor.create( Masher() ).ask( _.mash( Mash(recipe) ) ),
-          Actor.create( Lauterer() ).ask( _.lauter( Lauter() ) ),
-          Actor.create( Sparger() ).ask( _.sparge( Sparge() ) ),
-          Actor.create( Boiler() ).ask( _.boil( Boil(recipe) ) ),
-          Actor.create( Cooler() ).ask( _.cool( Cool() ) ),
-          Actor.create( Whirlpooler() ).ask( _.whirlpool( Whirlpool(recipe) ) ),
-          Actor.create( Fermenter() ).ask( _.ferment( Ferment(recipe) ) ),
-          Actor.create( Conditioner() ).ask( _.condition( Condition(recipe) ) ),
-          Actor.create( Packager() ).ask( _.`package`( Package() ) )
-        )
+    val events = supervised:
+      List(
+        sanitize( Sanitize() ),
+        prepare( Prepare(recipe) ),
+        malt( Malt(recipe) ),
+        mill( Mill(recipe) ),
+        mash( Mash(recipe) ),
+        lauter( Lauter() ),
+        sparge( Sparge() ),
+        boil( Boil(recipe) ),
+        cool( Cool() ),
+        whirlpool( Whirlpool(recipe) ),
+        ferment( Ferment(recipe) ),
+        condition( Condition(recipe) ),
+        `package`( Package() )
       )
+    Brewed( events )
 
   def sanitize(sanitize: Sanitize): Sanitized =
     supervised:
