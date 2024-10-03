@@ -53,6 +53,7 @@ Model
 * Process 1 --> * Step * --> 1 Container
 * Recipe 1 --> * Grain | Hop | Adjunct | Yeast
 * Metrics 1 --> 1 Recipe
+* Process 1 --> 1 Recipe | Metrics
 
 Actor
 -----
