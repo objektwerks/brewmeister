@@ -4,7 +4,7 @@ final case class Grain(typeof: String)
 
 final case class Hop(typeof: String, oz: Int)
 
-final case class Adjunct(typeof: String)
+final case class Adjunct(typeof: String, oz: Int)
 
 final case class Yeast(typeof: String)
 
