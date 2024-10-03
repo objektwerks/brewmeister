@@ -4,9 +4,10 @@ Brewmeister
 
 Todo
 ----
-1. Metrics
-2. Persistence
-3. App
+1. Actors, commands and events.
+2. Metrics
+3. Persistence
+4. App
 
 Process
 -------
