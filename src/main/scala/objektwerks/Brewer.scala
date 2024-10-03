@@ -64,3 +64,7 @@ final class Brewer:
   def whirlpool(whirlpool: Whirlpool): Whirlpooled =
     supervised:
       Actor.create( Whirlpooler() ).ask( _.whirlpool( whirlpool ) )
+
+  def ferment(ferment: Ferment): Fermented =
+    supervised:
+      Actor.create( Fermenter() ).ask( _.ferment( ferment ) )
