@@ -40,3 +40,7 @@ final class Brewer:
   def mill(mill: Mill): Milled =
     supervised:
       Actor.create( Miller() ).ask( _.mill( mill ) )
+
+  def mash(mash: Mash): Mashed =
+    supervised:
+      Actor.create( Masher() ).ask( _.mash( mash ) )
