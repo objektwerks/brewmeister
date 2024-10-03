@@ -30,19 +30,19 @@ Flow
 ----
 1. **App** -- Recipe --> **Brewer**
 2. **Brewer** --
-    1. Sanitize --> **Sanitizer** -- Sanitizing | Sanitized --> Brewer
-    2. Prepare --> **Preparer** -- Preparing | Prepared --> Brewer
-    3. Malt --> **Malter** -- Malting | Malted --> Brewer
-    4. Mill --> **Miller** -- Milling | Milled --> Brewer
-    5. Mash --> **Masher** -- Mashing | Mashed --> Brewer
-    6. Lauter --> **Lauterer** -- Lautering | Lautered --> Brewer
-    7. Sparge --> **Sparger** -- Spargering | Sparged --> Brewer
-    8. Boil --> **Boiler** -- Boiling | Boiled --> Brewer
-    9. Cool --> **Cooler** -- Cooling | Cooled --> Brewer
-    10. Whirlpool --> **Whirlpooler** -- Whirlpooling | Whirlpooled --> Brewer
-    11. Ferment --> **Fermenter** -- Fermenting | Fermented --> Brewer
-    12. Condition --> **Conditioner** -- Conditioning | Conditioned --> Brewer
-    13. Package --> **Packager** -- Packaging | Packaged --> Brewer
+    1. Sanitize --> **Sanitizer** -- Sanitized --> Brewer
+    2. Prepare --> **Preparer** -- Prepared --> Brewer
+    3. Malt --> **Malter** -- Malted --> Brewer
+    4. Mill --> **Miller** -- Milled --> Brewer
+    5. Mash --> **Masher** -- Mashed --> Brewer
+    6. Lauter --> **Lauterer** -- Lautered --> Brewer
+    7. Sparge --> **Sparger** -- Sparged --> Brewer
+    8. Boil --> **Boiler** -- Boiled --> Brewer
+    9. Cool --> **Cooler** -- Cooled --> Brewer
+    10. Whirlpool --> **Whirlpooler** -- Whirlpooled --> Brewer
+    11. Ferment --> **Fermenter** -- Fermented --> Brewer
+    12. Condition --> **Conditioner** -- Conditioned --> Brewer
+    13. Package --> **Packager** -- Packaged --> Brewer
 
 Model
 -----
