@@ -44,3 +44,7 @@ final class Brewer:
   def mash(mash: Mash): Mashed =
     supervised:
       Actor.create( Masher() ).ask( _.mash( mash ) )
+
+  def lauter(lauter: Lauter): Lautered =
+    supervised:
+      Actor.create( Lauterer() ).ask( _.lauter( lauter ) )
