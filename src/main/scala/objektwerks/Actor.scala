@@ -19,25 +19,25 @@ final class Masher extends Actor:
   def mash(mash: Mash): Mashed = Mashed()
 
 final class Lauterer extends Actor:
-  def mash(lauter: Lauter): Lautered = Lautered()
+  def lauter(lauter: Lauter): Lautered = Lautered()
 
 final class Sparger extends Actor:
-  def mash(sparge: Sparge): Sparged = Sparged()
+  def sparge(sparge: Sparge): Sparged = Sparged()
 
 final class Boiler extends Actor:
-  def mash(boil: Boil): Boiled = Boiled()
+  def boil(boil: Boil): Boiled = Boiled()
 
 final class Cooler extends Actor:
-  def mash(cool: Cool): Cooled = Cooled()
+  def cool(cool: Cool): Cooled = Cooled()
 
 final class Whirlpooler extends Actor:
-  def mash(whirlpool: Whirlpool): Whirlpooled = Whirlpooled()
+  def whirlpool(whirlpool: Whirlpool): Whirlpooled = Whirlpooled()
 
 final class Fermenter extends Actor:
-  def mash(ferment: Ferment): Fermented = Fermented()
+  def ferment(ferment: Ferment): Fermented = Fermented()
 
 final class Conditioner extends Actor:
-  def mash(condition: Condition): Conditioned = Conditioned()
+  def condition(condition: Condition): Conditioned = Conditioned()
 
 final class Packager extends Actor:
-  def mash(`package`: Package): Packaged = Packaged()
+  def `package`(`package`: Package): Packaged = Packaged()
