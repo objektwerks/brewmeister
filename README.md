@@ -28,21 +28,21 @@ Process
 
 Flow
 ----
-1. **App** -- Recipe, Listener --> **Brewer**
+1. **App** -- Recipe --> **Brewer**
 2. **Brewer** --
-    1. Sanitize, Listener --> **Sanitizer** -- Sanitizing | Sanitized --> Listener
-    2. Prepare, Listener --> **Preparer** -- Preparing | Prepared --> Listener
-    3. Malt, Listener --> **Malter** -- Malting | Malted --> Listener
-    4. Mill, Listener --> **Miller** -- Milling | Milled --> Listener
-    5. Mash, Listener --> **Masher** -- Mashing | Mashed --> Listener
-    6. Lauter, Listener --> **Lauterer** -- Lautering | Lautered --> Listener
-    7. Sparge, Listener --> **Sparger** -- Spargering | Sparged --> Listener
-    8. Boil, Listener --> **Boiler** -- Boiling | Boiled --> Listener
-    9. Cool, Listener --> **Cooler** -- Cooling | Cooled --> Listener
-    10. Whirlpool, Listener --> **Whirlpooler** -- Whirlpooling | Whirlpooled --> Listener
-    11. Ferment, Listener --> **Fermenter** -- Fermenting | Fermented --> Listener
-    12. Condition, Listener --> **Conditioner** -- Conditioning | Conditioned --> Listener
-    13. Package, Listener --> **Packager** -- Packaging | Packaged --> Listener
+    1. Sanitize --> **Sanitizer** -- Sanitizing | Sanitized --> Brewer
+    2. Prepare --> **Preparer** -- Preparing | Prepared --> Brewer
+    3. Malt --> **Malter** -- Malting | Malted --> Brewer
+    4. Mill --> **Miller** -- Milling | Milled --> Brewer
+    5. Mash --> **Masher** -- Mashing | Mashed --> Brewer
+    6. Lauter --> **Lauterer** -- Lautering | Lautered --> Brewer
+    7. Sparge --> **Sparger** -- Spargering | Sparged --> Brewer
+    8. Boil --> **Boiler** -- Boiling | Boiled --> Brewer
+    9. Cool --> **Cooler** -- Cooling | Cooled --> Brewer
+    10. Whirlpool --> **Whirlpooler** -- Whirlpooling | Whirlpooled --> Brewer
+    11. Ferment --> **Fermenter** -- Fermenting | Fermented --> Brewer
+    12. Condition --> **Conditioner** -- Conditioning | Conditioned --> Brewer
+    13. Package --> **Packager** -- Packaging | Packaged --> Brewer
 
 Model
 -----
