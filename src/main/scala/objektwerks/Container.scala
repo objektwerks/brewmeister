@@ -1,13 +1,18 @@
 package objektwerks
 
-sealed trait Container
+enum Unit:
+  case oz, gl, l
 
-final case class MashTun() extends Container
+sealed trait Container:
+  def volume: Double
+  def unit: Unit
 
-final case class BoilKettle() extends Container
+final case class MashTun(volume: Double, unit: Unit) extends Container
 
-final case class FementationKettle() extends Container
+final case class BoilKettle(volume: Double, unit: Unit) extends Container
 
-final case class Bottle() extends Container
+final case class FementationKettle(volume: Double, unit: Unit) extends Container
 
-final case class Keg() extends Container
+final case class Bottle(volume: Double, unit: Unit) extends Container
+
+final case class Keg(volume: Double, unit: Unit) extends Container
