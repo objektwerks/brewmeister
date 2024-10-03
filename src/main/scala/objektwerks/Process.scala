@@ -33,11 +33,11 @@ final case class Packaging(id: Long, processId: Long, bottleOrKeg: Container) ex
 enum ContainerType:
   case mashTun, boilKettle, fermentationKettle, bottle, keg
 
-enum Unit:
+enum UnitType:
   case oz, gl, l
 
 final case class Container(id: Long,
                            stepId: Long,
                            typeof: ContainerType,
                            volume: Double,
-                           unit: Unit)
+                           unit: UnitType)
