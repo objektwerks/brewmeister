@@ -4,7 +4,7 @@ Brewmeister
 
 Todo
 ----
-1. Actors, commands and events.
+1. Actor Behavior
 2. Metrics
 3. Persistence
 4. App
