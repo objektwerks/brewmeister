@@ -138,6 +138,7 @@ Resources
 * [Beer XML](https://www.beerxml.com/)
 * [Brewing Measurement Devices](https://www.youtube.com/watch?v=WZgmTy_nDqs)
 * [OG & FG Chart](https://www.brewersfriend.com/2017/05/07/beer-styles-original-gravity-and-final-gravity-chart-2017-update/)
+* [More Wayy to Get Hoppy](https://beerandbrewing.com/learning-lab-more-ways-to-get-hoppy/)
 
 License
 -------
