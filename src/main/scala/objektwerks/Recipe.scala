@@ -5,7 +5,7 @@ enum Step:
 
 final case class Grain(typeof: String, step: Step)
 
-final case class Hop(typeof: String, oz: Int, step: Step)
+final case class Hop(typeof: String, amount: Int, step: Step)
 
 final case class Adjunct(typeof: String, oz: Int, step: Step)
 
