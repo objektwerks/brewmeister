@@ -56,3 +56,7 @@ final class Brewer:
   def boil(boil: Boil): Boiled =
     supervised:
       Actor.create( Boiler() ).ask( _.boil( boil ) )
+
+  def cool(cool: Cool): Cooled =
+    supervised:
+      Actor.create( Cooler() ).ask( _.cool( cool ) )
