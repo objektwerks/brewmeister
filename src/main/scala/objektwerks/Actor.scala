@@ -13,55 +13,52 @@ final class Malter extends Actor:
   def malt(malt: Malt): Malted = Malted()
 
 final class Miller extends Actor:
-  def mill(mill: Mill, listener: Listener): Milled = Milled()
+  def mill(mill: Mill): Milled = Milled()
 
 final class Masher extends Actor:
-  def mash(mash: Mash, listener: Listener): Mashed = Mashed()
+  def mash(mash: Mash): Mashed = Mashed()
 
 final class Lauterer extends Actor:
-  def mash(lauter: Lauter, listener: Listener): Unit =
-    listener.onCommand( lauter )
-    listener.onEvent( Lautering )
-    listener.onEvent( Lautered() )
+  def mash(lauter: Lauter): Lautered = Lautered()
 
 final class Sparger extends Actor:
-  def mash(sparge: Sparge, listener: Listener): Unit =
+  def mash(sparge: Sparge): Unit =
     listener.onCommand( sparge )
     listener.onEvent( Sparging )
     listener.onEvent( Sparged() )
 
 final class Boiler extends Actor:
-  def mash(boil: Boil, listener: Listener): Unit =
+  def mash(boil: Boil): Unit =
     listener.onCommand( boil )
     listener.onEvent( Boiling )
     listener.onEvent( Boiled() )
 
 final class Cooler extends Actor:
-  def mash(cool: Cool, listener: Listener): Unit =
+  def mash(cool: Cool): Unit =
     listener.onCommand( cool )
     listener.onEvent( Cooling )
     listener.onEvent( Cooled() )
 
 final class Whirlpooler extends Actor:
-  def mash(whirlpool: Whirlpool, listener: Listener): Unit =
+  def mash(whirlpool: Whirlpool): Unit =
     listener.onCommand( whirlpool )
     listener.onEvent( Whirlpooling )
     listener.onEvent( Whirlpooled() )
 
 final class Fermenter extends Actor:
-  def mash(ferment: Ferment, listener: Listener): Unit =
+  def mash(ferment: Ferment): Unit =
     listener.onCommand( ferment )
     listener.onEvent( Fermenting )
     listener.onEvent( Fermented() )
 
 final class Conditioner extends Actor:
-  def mash(condition: Condition, listener: Listener): Unit =
+  def mash(condition: Condition): Unit =
     listener.onCommand( condition )
     listener.onEvent( Conditioning )
     listener.onEvent( Conditioned() )
 
 final class Packager extends Actor:
-  def mash(`package`: Package, listener: Listener): Unit =
+  def mash(`package`: Package): Unit =
     listener.onCommand( `package` )
     listener.onEvent( Packaging )
     listener.onEvent( Packaged() )
