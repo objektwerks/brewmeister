@@ -47,12 +47,13 @@ Flow
 
 Model
 -----
+* App 1 --> * Brewer
 * Recipe 1 --> * Grain | Hop | Adjunct | Yeast
 * Metrics 1 --> 1 Recipe
 
 Actor
 -----
-* Brewer, Sanitizer, Preparer, Malter, Miller, Masher, Lauter, Sparger, Boiler, Cooler, Whirlpooler, Fermenter, Conditioner, Packager
+* Sanitizer, Preparer, Malter, Miller, Masher, Lauter, Sparger, Boiler, Cooler, Whirlpooler, Fermenter, Conditioner, Packager
 
 Command
 -------
@@ -60,8 +61,7 @@ Command
 
 Event
 -----
-* Sanitizing, Sanitized, Preparing, Prepared, Malting, Malted, Milling, Milled, Mashing, Mashed, Lautering, Lautered, Sparging, Sparged,
-Boiling, Boiled, Cooling, Cooled, Wirlpooling, Whirlpooled, Fermenting, Fermented, Conditioning, Conditioned, Packaging, Packaged
+* Sanitized, Prepared, Malted, Milled, Mashed, Lautered, Sparged, Boiled, Cooled, Whirlpooled, Fermented, Conditioned, Packaged
 
 Metric
 ------
