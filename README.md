@@ -120,10 +120,10 @@ Assembly
 Execute
 -------
 >To execute an assembled jar locally:
-1. java -jar .assembly/brewmeister-mac-0.4.jar
-2. java -jar .assembly/brewmeister-m1-0.4.jar
-3. java -jar .assembly/brewmeister-win-0.4.jar
-4. java -jar .assembly/brewmeister-linux-0.4.jar
+1. java -jar .assembly/brewmeister-mac-0.5.jar
+2. java -jar .assembly/brewmeister-m1-0.5.jar
+3. java -jar .assembly/brewmeister-win-0.5.jar
+4. java -jar .assembly/brewmeister-linux-0.5.jar
 
 Deploy
 ------
