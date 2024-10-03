@@ -27,4 +27,8 @@ final class Brewer:
 
   def sanitize(sanitize: Sanitize): Sanitized =
     supervised:
-      Actor.create( Sanitizer() ).ask( _.sanitize( Sanitize() ) )
+      Actor.create( Sanitizer() ).ask( _.sanitize( sanitize ) )
+
+  def prepare(prepare: Prepare): Prepared =
+    supervised:
+      Actor.create( Preparer() ).ask( _.prepare( prepare ) )
