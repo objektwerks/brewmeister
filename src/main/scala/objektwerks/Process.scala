@@ -6,7 +6,7 @@ final case class Process(id: Long,
                          steps: List[Step],
                          currentStep: CurrentStep)
 
-final case class CurrentStep(processId: Long, stepId: Long)
+final case class CurrentStep(stepId: Long, processId: Long)
 
 sealed trait Step
 
