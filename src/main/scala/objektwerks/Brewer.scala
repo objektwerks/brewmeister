@@ -72,3 +72,7 @@ final class Brewer:
   def condition(condition: Condition): Conditioned =
     supervised:
       Actor.create( Conditioner() ).ask( _.condition( condition ) )
+
+  def `package`(`package`: Package): Packaged =
+    supervised:
+      Actor.create( Packager() ).ask( _.`package`( `package` ) )
