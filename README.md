@@ -49,7 +49,6 @@ Flows
 
 Model
 -----
-* App 1 --> * Brewer
 * Recipe 1 --> * Grain | Hop | Adjunct | Yeast
 * Metrics 1 --> 1 Recipe
 
