@@ -1,8 +1,5 @@
 package objektwerks
 
-enum Step:
-  case Sanitizing, Preparing, Malting, Milling, Mashing, Lautering, Sparging, Boiling, Cooling, Wirlpooling, Fermenting, Conditioning, Packaging
-
 final case class Grain(typeof: String, amount: Int, step: Step)
 
 final case class Hop(typeof: String, amount: Int, step: Step)
