@@ -48,3 +48,7 @@ final class Brewer:
   def lauter(lauter: Lauter): Lautered =
     supervised:
       Actor.create( Lauterer() ).ask( _.lauter( lauter ) )
+
+  def sparge(sparge: Sparge): Sparged =
+    supervised:
+      Actor.create( Sparger() ).ask( _.sparge( sparge ) )
