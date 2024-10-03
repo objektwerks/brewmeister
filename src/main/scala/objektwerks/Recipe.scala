@@ -29,7 +29,7 @@ final case class Recipe(id: Long,
                         boilingHops: List[Hop],
                         whirlpoolingHops: List[Hop],
                         conditioningHops: List[Hop],
-                        mashAdjuncts: List[Adjunct],
-                        boilAdjuncts: List[Adjunct],
-                        
+                        mashingAdjuncts: List[Adjunct],
+                        boilingAdjuncts: List[Adjunct],
+                        conditioningAdjuncts: List[Adjunct],
                         yeasts: List[Yeast])
