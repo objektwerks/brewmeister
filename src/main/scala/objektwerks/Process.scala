@@ -23,3 +23,5 @@ final case class Boiling() extends Step
 final case class Cooling() extends Step
 
 final case class Whirlpooling() extends Step
+
+final case class Fermenting() extends Step
