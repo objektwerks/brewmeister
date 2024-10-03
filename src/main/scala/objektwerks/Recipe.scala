@@ -26,6 +26,6 @@ final case class Recipe(id: Long,
                         mashEfficiency: Double,
                         brewhouseEfficiency: Double,
                         grains: List[Grain],
-                        hops: List[Hop],
+                        boilingHops: List[Hop],
                         adjunts: List[Adjunct],
                         yeasts: List[Yeast])
