@@ -28,10 +28,7 @@ final class Boiler extends Actor:
   def mash(boil: Boil): Boiled = Boiled()
 
 final class Cooler extends Actor:
-  def mash(cool: Cool): Unit =
-    listener.onCommand( cool )
-    listener.onEvent( Cooling )
-    listener.onEvent( Cooled() )
+  def mash(cool: Cool): Cooled = Cooled()
 
 final class Whirlpooler extends Actor:
   def mash(whirlpool: Whirlpool): Unit =
