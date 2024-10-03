@@ -28,7 +28,7 @@ Process
 
 Flows
 -----
->Simulates the brewing process in a single call.
+>Invokes the entire brewing process in a single call.
 1. **App** -- Brew --> **Brewer** -- Brewed --> **App**
 
 >Allows ***App*** to call brewing process steps as required via a ***Brewer*** instance.
