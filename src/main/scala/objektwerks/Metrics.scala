@@ -1,8 +1,5 @@
 package objektwerks
 
-object Metrics:
-  def empty: Metrics = Metrics(0, 0, "", "", 0, Range(0, 0), Range(0, 0), Range(0, 0), 0.0, 0.0, 0.0, 0, 0, 0.0, 0.0, 0, 0.0, 0.0)
-
 final case class Metrics(id: Long,
                          recipeId: Long,
                          style: String,
