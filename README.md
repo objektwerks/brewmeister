@@ -43,6 +43,7 @@ Flow
     11. Ferment --> **Fermenter** -- Fermented --> Brewer
     12. Condition --> **Conditioner** -- Conditioned --> Brewer
     13. Package --> **Packager** -- Packaged --> Brewer
+3. ***Brewer*** --- List[Event] --> ***App***
 
 Model
 -----
