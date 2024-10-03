@@ -38,6 +38,6 @@ enum Unit:
 
 final case class Container(id: Long,
                            stepId: Long,
-                           container: ContainerType,
+                           typeof: ContainerType,
                            volume: Double,
                            unit: Unit)
