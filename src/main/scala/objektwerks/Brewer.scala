@@ -68,3 +68,7 @@ final class Brewer:
   def ferment(ferment: Ferment): Fermented =
     supervised:
       Actor.create( Fermenter() ).ask( _.ferment( ferment ) )
+
+  def condition(condition: Condition): Conditioned =
+    supervised:
+      Actor.create( Conditioner() ).ask( _.condition( condition ) )
