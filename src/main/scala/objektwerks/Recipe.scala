@@ -1,12 +1,12 @@
 package objektwerks
 
-final case class Grain(typeof: String, amount: Int, step: Step)
+final case class Grain(id: Long, recipeId: Long, typeof: String, amount: Int, step: Step)
 
-final case class Hop(typeof: String, amount: Int, step: Step)
+final case class Hop(id: Long, recipeId: Long, typeof: String, amount: Int, step: Step)
 
-final case class Adjunct(typeof: String, amount: Int, step: Step)
+final case class Adjunct(id: Long, recipeId: Long, typeof: String, amount: Int, step: Step)
 
-final case class Yeast(typeof: String, amount: Int, step: Step)
+final case class Yeast(id: Long, recipeId: Long, typeof: String, amount: Int, step: Step)
 
 final case class Recipe(id: Long,
                         style: String,
