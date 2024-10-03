@@ -40,7 +40,7 @@ enum ContainerType:
   case mashTun, boilKettle, fermentationKettle, bottle, keg
 
 enum UnitType:
-  case oz, gl, l
+  case oz, gl
 
 final case class Container(id: Long,
                            stepId: Long,
