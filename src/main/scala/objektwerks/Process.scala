@@ -37,6 +37,7 @@ enum Unit:
   case oz, gl, l
 
 final case class Container(id: Long,
+                           stepId: Long,
                            container: ContainerType,
                            volume: Double,
                            unit: Unit)
