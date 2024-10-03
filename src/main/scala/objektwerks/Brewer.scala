@@ -52,3 +52,7 @@ final class Brewer:
   def sparge(sparge: Sparge): Sparged =
     supervised:
       Actor.create( Sparger() ).ask( _.sparge( sparge ) )
+
+  def boil(boil: Boil): Boiled =
+    supervised:
+      Actor.create( Boiler() ).ask( _.boil( boil ) )
