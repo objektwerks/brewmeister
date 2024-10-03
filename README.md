@@ -28,7 +28,7 @@ Process
 
 Flow
 ----
-1. **App** -- Recipe --> **Brewer**
+1. **App** -- Brew --> **Brewer**
 2. **Brewer** --
     1. Sanitize --> **Sanitizer** -- Sanitized --> Brewer
     2. Prepare --> **Preparer** -- Prepared --> Brewer
@@ -43,7 +43,7 @@ Flow
     11. Ferment --> **Fermenter** -- Fermented --> Brewer
     12. Condition --> **Conditioner** -- Conditioned --> Brewer
     13. Package --> **Packager** -- Packaged --> Brewer
-3. ***Brewer*** --- List[Event] --> ***App***
+3. ***Brewer*** --- Brewed --> ***App***
 
 Model
 -----
