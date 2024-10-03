@@ -37,10 +37,7 @@ final class Fermenter extends Actor:
   def mash(ferment: Ferment): Fermented = Fermented()
 
 final class Conditioner extends Actor:
-  def mash(condition: Condition): Unit =
-    listener.onCommand( condition )
-    listener.onEvent( Conditioning )
-    listener.onEvent( Conditioned() )
+  def mash(condition: Condition): Conditioned = Conditioned()
 
 final class Packager extends Actor:
   def mash(`package`: Package): Unit =
