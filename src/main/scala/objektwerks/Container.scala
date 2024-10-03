@@ -4,4 +4,6 @@ sealed trait Container
 
 final case class MashTun() extends Container
 
-final case class BrewKettle() extends Container
+final case class BoilKettle() extends Container
+
+final case class FementationKettle() extends Container
