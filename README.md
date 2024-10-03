@@ -26,24 +26,26 @@ Process
 13. **Packaging** - Bottle / Can ( carbonate with priming sugar ) or Keg ( force carbonate ) the ***fermented and conditioned wort***. Let condition for 2 weeks at required temperature. Then refrigerate.
 >Some beer recipes may require adjustments to this process.
 
-Flow
-----
-1. **App** -- Brew --> **Brewer**
-2. **Brewer** --
-    1. Sanitize --> **Sanitizer** -- Sanitized --> Brewer
-    2. Prepare --> **Preparer** -- Prepared --> Brewer
-    3. Malt --> **Malter** -- Malted --> Brewer
-    4. Mill --> **Miller** -- Milled --> Brewer
-    5. Mash --> **Masher** -- Mashed --> Brewer
-    6. Lauter --> **Lauterer** -- Lautered --> Brewer
-    7. Sparge --> **Sparger** -- Sparged --> Brewer
-    8. Boil --> **Boiler** -- Boiled --> Brewer
-    9. Cool --> **Cooler** -- Cooled --> Brewer
-    10. Whirlpool --> **Whirlpooler** -- Whirlpooled --> Brewer
-    11. Ferment --> **Fermenter** -- Fermented --> Brewer
-    12. Condition --> **Conditioner** -- Conditioned --> Brewer
-    13. Package --> **Packager** -- Packaged --> Brewer
-3. ***Brewer*** --- Brewed --> ***App***
+Flows
+-----
+>Simulates the brewing process in a single call.
+1. **App** -- Brew --> **Brewer** -- Brewed --> **App**
+
+>Allows ***App*** to call brewing process steps as required via a ***Brewer*** instance.
+1. ***App*** -- create --> ***Brewer*** --
+    1. Sanitize --> **Sanitizer** -- Sanitized --> App
+    2. Prepare --> **Preparer** -- Prepared --> App
+    3. Malt --> **Malter** -- Malted --> App
+    4. Mill --> **Miller** -- Milled --> App
+    5. Mash --> **Masher** -- Mashed --> App
+    6. Lauter --> **Lauterer** -- Lautered --> App
+    7. Sparge --> **Sparger** -- Sparged --> App
+    8. Boil --> **Boiler** -- Boiled --> App
+    9. Cool --> **Cooler** -- Cooled --> App
+    10. Whirlpool --> **Whirlpooler** -- Whirlpooled --> App
+    11. Ferment --> **Fermenter** -- Fermented --> App
+    12. Condition --> **Conditioner** -- Conditioned --> App
+    13. Package --> **Packager** -- Packaged --> App
 
 Model
 -----
