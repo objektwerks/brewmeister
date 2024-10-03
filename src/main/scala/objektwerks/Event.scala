@@ -27,3 +27,5 @@ final case class Fermented() extends Event
 final case class Conditioned() extends Event
 
 final case class Packaged() extends Event
+
+final case class Brewed(events: List[Event]) extends Event
