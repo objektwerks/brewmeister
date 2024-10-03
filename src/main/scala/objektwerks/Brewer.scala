@@ -24,3 +24,7 @@ final class Brewer:
           Actor.create( Packager() ).ask( _.`package`( Package() ) )
         )
       )
+
+  def sanitize(sanitize: Sanitize): Sanitized =
+    supervised:
+      Actor.create( Sanitizer() ).ask( _.sanitize( Sanitize() ) )
