@@ -5,11 +5,11 @@ import java.time.LocalDateTime
 def now(): String = LocalDateTime.now.toString
 def localDateTime(now: String): LocalDateTime = if now.nonEmpty then LocalDateTime.parse(now) else LocalDateTime.now
 
-final case class Process(recipe: Recipe,
+final case class Process(started: String = now(),
+                         completed: String = "",
+                         recipe: Recipe,
                          metrics: Metrics,
-                         steps: List[Step],
-                         started: String = now(),
-                         completed: String = "")
+                         steps: List[Step])
 
 sealed trait Step:
   def step: Int
