@@ -15,3 +15,5 @@ final case class Milling() extends Step
 final case class Mashing() extends Step
 
 final case class Lautering() extends Step
+
+final case class Sparging() extends Step
