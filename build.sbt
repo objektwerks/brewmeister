@@ -10,7 +10,8 @@ libraryDependencies ++= {
     "com.softwaremill.ox" %% "core" % "0.4.0",
     "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-core" % jsoniterVersion,
     "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-macros" % jsoniterVersion,
-    "com.outr" %% "scribe" % "3.15.0"
+    "com.outr" %% "scribe" % "3.15.0",
+    "org.scalatest" %% "scalatest" % "3.2.19" % Test
   )
 }
 scalacOptions ++= Seq(
