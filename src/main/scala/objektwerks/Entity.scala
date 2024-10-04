@@ -7,7 +7,7 @@ import upickle.default.*
 def now(): String = LocalDateTime.now.toString
 def localDateTime(now: String): LocalDateTime = if now.nonEmpty then LocalDateTime.parse(now) else LocalDateTime.now
 
-enum UnitType derives ReadWriter:
+enum UoM derives ReadWriter:
   case oz, gl, ml, l, lb, kg
 
 final case class Process(started: String = now(),
@@ -43,47 +43,47 @@ final case class Sanitizing(step: Int = 1) extends Step
 final case class Preparing(step: Int = 2) extends Step
 final case class Malting(step: Int = 3) extends Step
 final case class Milling(step: Int = 4) extends Step
-final case class Mashing(step: Int = 5, mashTun: Container = MashTun(5.0, UnitType.gl)) extends Step
-final case class Lautering(step: Int = 6, mashTun: Container = MashTun(5.0, UnitType.gl)) extends Step
-final case class Sparging(step: Int = 7, mashTun: Container = MashTun(5.0, UnitType.gl)) extends Step
-final case class Boiling(step: Int = 8, boilKettle: Container = BoilKettle(5.0, UnitType.gl)) extends Step
-final case class Cooling(step: Int = 9, boilKettle: Container = BoilKettle(5.0, UnitType.gl)) extends Step
-final case class Whirlpooling(step: Int = 10, boilKettle: Container = BoilKettle(5.0, UnitType.gl)) extends Step
-final case class Fermenting(step: Int = 11, fermentationKettle: Container = FermentationKettle(5.0, UnitType.gl)) extends Step
-final case class Conditioning(step: Int = 12, fermentationKettle: Container = FermentationKettle(5.0, UnitType.gl)) extends Step
-final case class Packaging(step: Int = 13, bottleOrKeg: Container = Keg(5.0, UnitType.gl)) extends Step
+final case class Mashing(step: Int = 5, mashTun: Container = MashTun(5.0, UoM.gl)) extends Step
+final case class Lautering(step: Int = 6, mashTun: Container = MashTun(5.0, UoM.gl)) extends Step
+final case class Sparging(step: Int = 7, mashTun: Container = MashTun(5.0, UoM.gl)) extends Step
+final case class Boiling(step: Int = 8, boilKettle: Container = BoilKettle(5.0, UoM.gl)) extends Step
+final case class Cooling(step: Int = 9, boilKettle: Container = BoilKettle(5.0, UoM.gl)) extends Step
+final case class Whirlpooling(step: Int = 10, boilKettle: Container = BoilKettle(5.0, UoM.gl)) extends Step
+final case class Fermenting(step: Int = 11, fermentationKettle: Container = FermentationKettle(5.0, UoM.gl)) extends Step
+final case class Conditioning(step: Int = 12, fermentationKettle: Container = FermentationKettle(5.0, UoM.gl)) extends Step
+final case class Packaging(step: Int = 13, bottleOrKeg: Container = Keg(5.0, UoM.gl)) extends Step
 
 sealed trait Container derives ReadWriter:
   def volume: Double
-  def unit: UnitType
+  def unit: UoM
 
-final case class MashTun(volume: Double, unit: UnitType) extends Container
-final case class BoilKettle(volume: Double, unit: UnitType) extends Container
-final case class FermentationKettle(volume: Double, unit: UnitType) extends Container
-final case class Bottle(volume: Double, unit: UnitType) extends Container
-final case class Keg(volume: Double, unit: UnitType) extends Container
+final case class MashTun(volume: Double, unit: UoM) extends Container
+final case class BoilKettle(volume: Double, unit: UoM) extends Container
+final case class FermentationKettle(volume: Double, unit: UoM) extends Container
+final case class Bottle(volume: Double, unit: UoM) extends Container
+final case class Keg(volume: Double, unit: UoM) extends Container
 
 enum MixinStep derives ReadWriter:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
 
 final case class Grain(typeof: String,
                        amount: Double,
-                       unit: UnitType,
+                       unit: UoM,
                        mixinStep: MixinStep = MixinStep.Mashing) derives ReadWriter
 
 final case class Hop(typeof: String,
                      amount: Double,
-                     unit: UnitType,
+                     unit: UoM,
                      mixinStep: MixinStep = MixinStep.Boiling) derives ReadWriter // or Whirlpooling or Conditioning
 
 final case class Adjunct(typeof: String,
                          amount: Double,
-                         unit: UnitType,
+                         unit: UoM,
                          mixinStep: MixinStep = MixinStep.Mashing) derives ReadWriter // or Boiling or Conditioning
 
 final case class Yeast(typeof: String,
                        amount: Double,
-                       unit: UnitType,
+                       unit: UoM,
                        mixinStep: MixinStep = MixinStep.Fermenting) derives ReadWriter
 
 object Recipe:  
@@ -107,10 +107,10 @@ object Recipe:
            calories = (180, 200),
            mashEfficiency = (70, 80),
            brewhouseEfficiency = (72, 80),
-           grains = List( Grain("pale ale", 4.0, UnitType.lb) ),
-           hops = List( Hop("amarillo", 2.0, UnitType.oz), Hop("cascade", 2.0, UnitType.oz), Hop("chinook", 2.0, UnitType.oz) ),
+           grains = List( Grain("pale ale", 4.0, UoM.lb) ),
+           hops = List( Hop("amarillo", 2.0, UoM.oz), Hop("cascade", 2.0, UoM.oz), Hop("chinook", 2.0, UoM.oz) ),
            adjuncts = List.empty[Adjunct],
-           yeasts = List(  Yeast("Wyeast American Ale 1056", 5.0, UnitType.oz) )
+           yeasts = List(  Yeast("Wyeast American Ale 1056", 5.0, UoM.oz) )
     )
 
 final case class Recipe(created: String = now(),
