@@ -49,11 +49,11 @@ enum UnitType:
   case oz, gl
 
 object Container:
-  def mashTun = Container(ContainerType.mashTun, 5.0, UnitType.gl)
-  def boilKettle = Container(ContainerType.boilKettle, 5.0, UnitType.gl)
-  def fermentationKettle = Container(ContainerType.fermentationKettle, 5.0, UnitType.gl)
-  def bottle = Container(ContainerType.bottle, 12, UnitType.oz)
-  def keg = Container(ContainerType.keg, 5.0, UnitType.gl)
+  def mashTun: Container = Container(ContainerType.mashTun, 5.0, UnitType.gl)
+  def boilKettle: Container = Container(ContainerType.boilKettle, 5.0, UnitType.gl)
+  def fermentationKettle: Container = Container(ContainerType.fermentationKettle, 5.0, UnitType.gl)
+  def bottle: Container = Container(ContainerType.bottle, 12.0, UnitType.oz)
+  def keg: Container = Container(ContainerType.keg, 5.0, UnitType.gl)
 
 final case class Container(typeof: ContainerType,
                            volume: Double,
