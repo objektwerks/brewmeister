@@ -63,9 +63,6 @@ final case class Packaging(step: Int = 13, bottleOrKeg: Container = Container.ke
 enum ContainerType:
   case mashTun, boilKettle, fermentationKettle, bottle, keg
 
-enum UnitType:
-  case oz, gl
-
 object Container:
   def mashTun: Container = Container(ContainerType.mashTun, 5.0, UnitType.gl)
   def boilKettle: Container = Container(ContainerType.boilKettle, 5.0, UnitType.gl)

@@ -1,5 +1,8 @@
 package objektwerks
 
+enum UnitType:
+  case oz, gl, ml, l
+
 enum MixinStep:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
 
