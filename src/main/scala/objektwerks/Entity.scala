@@ -2,6 +2,8 @@ package objektwerks
 
 import java.time.LocalDateTime
 
+import upickle.default.*
+
 def now(): String = LocalDateTime.now.toString
 def localDateTime(now: String): LocalDateTime = if now.nonEmpty then LocalDateTime.parse(now) else LocalDateTime.now
 
@@ -9,7 +11,7 @@ final case class Process(started: String = now(),
                          completed: String = "",
                          recipe: Recipe = Recipe.default,
                          metrics: Metrics = Metrics(),
-                         steps: List[Step] = Steps.default)
+                         steps: List[Step] = Steps.default) derives ReadWriter
 
 object Steps:
   def default: List[Step] =
@@ -29,7 +31,7 @@ object Steps:
       Packaging()
     )
 
-sealed trait Step:
+sealed trait Step derives ReadWriter:
   def step: Int
   def started: String = now()
   def completed: String = ""
@@ -48,10 +50,10 @@ final case class Fermenting(step: Int = 11, fermentationKettle: Container = Cont
 final case class Conditioning(step: Int = 12, fermentationKettle: Container = Container.fermentationKettle) extends Step
 final case class Packaging(step: Int = 13, bottleOrKeg: Container = Container.keg) extends Step
 
-enum UnitType:
+enum UnitType derives ReadWriter:
   case oz, gl, ml, l
 
-enum ContainerType:
+enum ContainerType derives ReadWriter:
   case mashTun, boilKettle, fermentationKettle, bottle, keg
 
 object Container:
@@ -63,30 +65,30 @@ object Container:
 
 final case class Container(typeof: ContainerType,
                            volume: Double,
-                           unit: UnitType)
+                           unit: UnitType) derives ReadWriter
 
-enum MixinStep:
+enum MixinStep derives ReadWriter:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
 
 final case class Grain(typeof: String,
                        amount: Double,
                        unit: UnitType,
-                       mixinStep: MixinStep = MixinStep.Mashing)
+                       mixinStep: MixinStep = MixinStep.Mashing) derives ReadWriter
 
 final case class Hop(typeof: String,
                      amount: Double,
                      unit: UnitType,
-                     mixinStep: MixinStep = MixinStep.Boiling) // or Whirlpooling or Conditioning
+                     mixinStep: MixinStep = MixinStep.Boiling) derives ReadWriter // or Whirlpooling or Conditioning
 
 final case class Adjunct(typeof: String,
                          amount: Double,
                          unit: UnitType,
-                         mixinStep: MixinStep = MixinStep.Mashing) // or Boiling or Conditioning
+                         mixinStep: MixinStep = MixinStep.Mashing) derives ReadWriter // or Boiling or Conditioning
 
 final case class Yeast(typeof: String,
                        amount: Double,
                        unit: UnitType,
-                       mixinStep: MixinStep = MixinStep.Fermenting)
+                       mixinStep: MixinStep = MixinStep.Fermenting) derives ReadWriter
 
 object Recipe:  
   def default: Recipe =
@@ -133,7 +135,7 @@ final case class Recipe(created: String = now(),
                         grains: List[Grain],
                         hops: List[Hop],
                         adjuncts: List[Adjunct],
-                        yeasts: List[Yeast])
+                        yeasts: List[Yeast]) derives ReadWriter
 
 final case class Metrics(created: String = now(),
                          style: String = "",
@@ -151,4 +153,4 @@ final case class Metrics(created: String = now(),
                          alcoholByWeight: Double = 0.0,
                          calories: Int = 0,
                          mashEfficiency: Double = 0.0,
-                         brewhouseEfficiency: Double = 0.0)
+                         brewhouseEfficiency: Double = 0.0) derives ReadWriter
