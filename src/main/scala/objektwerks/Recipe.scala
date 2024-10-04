@@ -19,7 +19,7 @@ object Recipe:
     Recipe(created = now(),
            style = "",
            water = "",
-           gallons = 1,
+           gallons = 0.0,
            mashingTemp = Range(0, 0),
            boilingTemp = Range(0, 0),
            coolingTemp = Range(0, 0),
