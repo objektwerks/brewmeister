@@ -105,7 +105,7 @@ object Recipe:
            calories = 0,
            mashEfficiency = 0.0,
            brewhouseEfficiency = 0.0,
-           grains = List.empty[Grain],
+           grains = List( Grain("pale ale", 5.0, UnitType.lb) ),
            hops = List.empty[Hop],
            adjuncts = List.empty[Adjunct],
            yeasts = List.empty[Yeast])
