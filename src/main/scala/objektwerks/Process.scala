@@ -7,9 +7,27 @@ def localDateTime(now: String): LocalDateTime = if now.nonEmpty then LocalDateTi
 
 final case class Process(started: String = now(),
                          completed: String = "",
-                         recipe: Recipe,
-                         metrics: Metrics,
-                         steps: List[Step])
+                         recipe: Recipe = Recipe(),
+                         metrics: Metrics = Metrics(),
+                         steps: List[Step] = Steps())
+
+object Steps:
+  def apply(): List[Step] =
+    List(
+      Sanitizing(),
+      Preparing(),
+      Malting(),
+      Milling(),
+      Mashing(),
+      Lautering(),
+      Sparging(),
+      Boiling(),
+      Cooling(),
+      Whirlpooling(),
+      Fermenting(),
+      Conditioning(),
+      Packaging()
+    )
 
 sealed trait Step:
   def step: Int
