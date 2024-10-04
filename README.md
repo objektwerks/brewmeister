@@ -16,6 +16,8 @@ Process
     1. input: dirty brewing implements
     2. output: clean brewing implements
 2. **Preparing** - Prepare all ingredients for a brewing session.
+    1. input - recipe
+    2. output - recipe ingredients prepared
 3. **Malting** - Dry and optionally roast germinated grains (barley, wheat, oats or rye) for ***milling***.
 4. **Milling** - Crush malted grains into a ***grist***, exposing its starches for ***mashing***.
 5. **Mashing** - **Transfer** the ***grist*** to a ***mash tun*** with boiling water (148 - 158F). Then stir and let set for 60m, allowing for the conversion of starches into fermentable sugars - known as the ***wort***. Optionally add ***adjuncts***.
