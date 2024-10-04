@@ -9,10 +9,10 @@ final case class Process(started: String = now(),
                          completed: String = "",
                          recipe: Recipe = Recipe.default,
                          metrics: Metrics = Metrics(),
-                         steps: List[Step] = Steps())
+                         steps: List[Step] = Steps.default)
 
 object Steps:
-  def apply(): List[Step] =
+  def default: List[Step] =
     List(
       Sanitizing(),
       Preparing(),
