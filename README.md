@@ -48,7 +48,7 @@ Process
 12. **Conditioning** - **Optionally** **transfer** ***wort*** to a secondary ***fermenter***. Let condition for 2+ days or longer at required temperature. **Optionally** add ***adjuncts*** and/or ***hops***.
     1. input - wort
     2. output - optionally modified wort
-13. **Packaging** - Bottle / Can ( carbonate with priming sugar ) or Keg ( force carbonate ) the ***fermented and conditioned wort***. Let condition for 2 weeks at required temperature. Then refrigerate.
+13. **Packaging** - Bottle / Can ( carbonate with priming sugar ) or Keg ( force carbonate ) the ***fermented and conditioned wort***. Let condition for 2+ days at required temperature. Then refrigerate.
     1. input - wort
     2. output - beer
 >Some beer recipes may require adjustments to this process.
