@@ -13,6 +13,8 @@ Process
 -------
 >Steps used in ***all grain*** brewing. ***Extract*** brewing will exclude steps 3 - 7.
 1. **Sanitizing** - Santize all brewing tools and containers.
+    1. input: dirty brewing implements
+    2. output: clean brewing implements
 2. **Preparing** - Prepare all ingredients for a brewing session.
 3. **Malting** - Dry and optionally roast germinated grains (barley, wheat, oats or rye) for ***milling***.
 4. **Milling** - Crush malted grains into a ***grist***, exposing its starches for ***mashing***.
