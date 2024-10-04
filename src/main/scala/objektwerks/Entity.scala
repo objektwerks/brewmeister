@@ -89,9 +89,9 @@ final case class Yeast(typeof: String,
 object Recipe:  
   def default: Recipe =
     Recipe(created = now(),
-           style = "",
-           water = "",
-           gallons = 0.0,
+           style = "American IPA",
+           water = "spring",
+           gallons = 5.0,
            mashingTemp = (0, 0),
            boilingTemp = (0, 0),
            coolingTemp = (0, 0),
