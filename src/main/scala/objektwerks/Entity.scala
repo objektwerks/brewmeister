@@ -69,21 +69,25 @@ enum MixinStep derives ReadWriter:
 final case class Grain(typeof: String,
                        amount: Double,
                        unit: UoM,
+                       mixinMinute: Int,
                        mixinStep: MixinStep = MixinStep.Mashing) derives ReadWriter
 
 final case class Hop(typeof: String,
                      amount: Double,
                      unit: UoM,
+                     mixinMinute: Int,
                      mixinStep: MixinStep = MixinStep.Boiling) derives ReadWriter // or Whirlpooling or Conditioning
 
 final case class Adjunct(typeof: String,
                          amount: Double,
                          unit: UoM,
+                         mixinMinute: Int,
                          mixinStep: MixinStep = MixinStep.Mashing) derives ReadWriter // or Boiling or Conditioning
 
 final case class Yeast(typeof: String,
                        amount: Double,
                        unit: UoM,
+                       mixinMinute: Int,
                        mixinStep: MixinStep = MixinStep.Fermenting) derives ReadWriter
 
 object Recipe:
@@ -107,10 +111,10 @@ object Recipe:
            calories = (180, 200),
            mashEfficiency = (70, 80),
            brewhouseEfficiency = (72, 80),
-           grains = List( Grain("pale ale", 4.0, UoM.lb) ),
-           hops = List( Hop("amarillo", 2.0, UoM.oz), Hop("cascade", 2.0, UoM.oz), Hop("chinook", 2.0, UoM.oz) ),
+           grains = List( Grain("pale ale", 4.0, UoM.lb, 0) ),
+           hops = List( Hop("amarillo", 2.0, UoM.oz, 0), Hop("cascade", 2.0, UoM.oz, 15), Hop("chinook", 2.0, UoM.oz, 30) ),
            adjuncts = List.empty[Adjunct],
-           yeasts = List(  Yeast("Wyeast American Ale 1056", 5.0, UoM.oz) )
+           yeasts = List(  Yeast("Wyeast American Ale 1056", 5.0, UoM.oz, 0) )
     )
 
 final case class Recipe(created: String = now(),
