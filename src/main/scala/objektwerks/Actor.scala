@@ -4,10 +4,19 @@ sealed trait Actor:
   def close: Unit = scribe.info(s"*** actor closing ...")
 
 final class Sanitizer extends Actor:
-  def sanitize(sanitize: Sanitize): Sanitized = Sanitized()
+  def sanitize(sanitize: Sanitize): Sanitized =
+    scribe.info(s"*** Sanitized brewing implements.")
+    Sanitized()
 
 final class Preparer extends Actor:
-  def prepare(prepare: Prepare): Prepared = Prepared()
+  def prepare(prepare: Prepare): Prepared =
+    scribe.info(s"*** Preparing recipe ingrediants.")
+    scribe.info(s"*** Grains ${prepare.recipe.grains}")
+    scribe.info(s"*** Hops ${prepare.recipe.hops}")
+    scribe.info(s"*** Adjuncts ${prepare.recipe.adjuncts}")
+    scribe.info(s"*** Yeasts ${prepare.recipe.yeasts}")
+    scribe.info(s"*** Prepared recipe ingrediants.")
+    Prepared()
 
 final class Malter extends Actor:
   def malt(malt: Malt): Malted = Malted()
