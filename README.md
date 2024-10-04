@@ -4,7 +4,6 @@ Brewmeister
 
 Todo
 ----
-* Entity Model - Default Values
 * Actors
 * Metrics
 * Persistence
