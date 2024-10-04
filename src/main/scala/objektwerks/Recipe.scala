@@ -3,13 +3,13 @@ package objektwerks
 enum MixinStep:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
 
-final case class Grain(typeof: String = "", amount: Int = 0, mixinStep: MixinStep = MixinStep.Mashing)
+final case class Grain(typeof: String, amount: Int, mixinStep: MixinStep = MixinStep.Mashing)
 
-final case class Hop(typeof: String = "", amount: Int = 0, mixinStep: MixinStep = MixinStep.Boiling) // or Whirlpooling or Conditioning
+final case class Hop(typeof: String, amount: Int, mixinStep: MixinStep = MixinStep.Boiling) // or Whirlpooling or Conditioning
 
-final case class Adjunct(typeof: String = "", amount: Int = 0, mixinStep: MixinStep = MixinStep.Mashing) // or Boiling or Conditioning
+final case class Adjunct(typeof: String, amount: Int, mixinStep: MixinStep = MixinStep.Mashing) // or Boiling or Conditioning
 
-final case class Yeast(typeof: String = "", amount: Int = 0, mixinStep: MixinStep = MixinStep.Fermenting)
+final case class Yeast(typeof: String, amount: Int, mixinStep: MixinStep = MixinStep.Fermenting)
 
 final case class Recipe(created: String = now(),
                         style: String = "",
