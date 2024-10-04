@@ -48,11 +48,11 @@ final case class Fermenting(step: Int = 11, fermentationKettle: Container = Cont
 final case class Conditioning(step: Int = 12, fermentationKettle: Container = Container.fermentationKettle) extends Step
 final case class Packaging(step: Int = 13, bottleOrKeg: Container = Container.keg) extends Step
 
-enum ContainerType:
-  case mashTun, boilKettle, fermentationKettle, bottle, keg
-
 enum UnitType:
   case oz, gl, ml, l
+
+enum ContainerType:
+  case mashTun, boilKettle, fermentationKettle, bottle, keg
 
 object Container:
   def mashTun: Container = Container(ContainerType.mashTun, 5.0, UnitType.gl)
@@ -94,9 +94,9 @@ object Recipe:
            style = "",
            water = "",
            gallons = 0.0,
-           mashingTemp = Range(0, 0),
-           boilingTemp = Range(0, 0),
-           coolingTemp = Range(0, 0),
+           mashingTemp = (0, 0),
+           boilingTemp = (0, 0),
+           coolingTemp = (0, 0),
            pH = 0.0,
            originalGravity = 0.0,
            finalGravity = 0.0,
@@ -117,9 +117,9 @@ final case class Recipe(created: String = now(),
                         style: String,
                         water: String,
                         gallons: Double,
-                        mashingTemp: Range,
-                        boilingTemp: Range,
-                        coolingTemp: Range,
+                        mashingTemp: (Int, Int),
+                        boilingTemp: (Int, Int),
+                        coolingTemp: (Int, Int),
                         pH: Double,
                         originalGravity: Double,
                         finalGravity: Double,
@@ -139,9 +139,9 @@ final case class Metrics(created: String = now(),
                          style: String = "",
                          water: String = "",
                          gallons: Int = 0,
-                         mashingTemp: Range = Range(0, 0),
-                         boilingTemp: Range = Range(0, 0),
-                         coolingTemp: Range = Range(0, 0),
+                         mashingTemp: (Int, Int) = (0, 0),
+                         boilingTemp: (Int, Int) = (0, 0),
+                         coolingTemp: (Int, Int) = (0, 0),
                          pH: Double = 0.0,
                          originalGravity: Double = 0.0,
                          finalGravity: Double = 0.0,
