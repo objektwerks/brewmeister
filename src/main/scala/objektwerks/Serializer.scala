@@ -12,3 +12,6 @@ object Serializer:
   given JsonValueCodec[Adjunct] = JsonCodecMaker.make[Adjunct]
   given JsonValueCodec[Yeast] = JsonCodecMaker.make[Yeast]
 
+  given JsonValueCodec[Process] = JsonCodecMaker.make[Process]
+  given JsonValueCodec[Step] = JsonCodecMaker.make[Step]
+  given JsonValueCodec[Container] = JsonCodecMaker.make[Container]
