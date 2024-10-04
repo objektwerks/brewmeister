@@ -24,7 +24,9 @@ Process
 4. **Milling** - Crush malted grains into a ***grist***, exposing its starches for ***mashing***.
     1. input - grains
     2. output - crushed grains
-5. **Mashing** - **Transfer** the ***grist*** to a ***mash tun*** with boiling water (148 - 158F). Then stir and let set for 60m, allowing for the conversion of starches into fermentable sugars - known as the ***wort***. Optionally add ***adjuncts***.
+5. **Mashing** - **Transfer** the ***grist*** to a ***mash tun*** with boiling water (148 - 158F). Then stir and let set for 60m, allowing for the conversion of starches into fermentable sugars - known as the ***wort***. **Optionally** add ***adjuncts***.
+    1. input - grist ( crushed grains )
+    2. output - wort
 6. **Lautering** - Filter out solids from the ***wort***.
 7. **Sparging** - Pour hot water on the ***wort*** and stir to extract more sugars from the grains.
 8. **Boiling** - **Transfer** the ***wort*** to a ***brew kettle*** and bring to a boil. Then add ***hops*** and optional ***extract*** as required.  Optionally add ***adjuncts***. Sustain boil for 60m.
