@@ -7,7 +7,7 @@ def localDateTime(now: String): LocalDateTime = if now.nonEmpty then LocalDateTi
 
 final case class Process(started: String = now(),
                          completed: String = "",
-                         recipe: Recipe = Recipe(),
+                         recipe: Recipe = Recipe.default,
                          metrics: Metrics = Metrics(),
                          steps: List[Step] = Steps())
 
