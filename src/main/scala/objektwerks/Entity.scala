@@ -7,6 +7,9 @@ import upickle.default.*
 def now(): String = LocalDateTime.now.toString
 def localDateTime(now: String): LocalDateTime = if now.nonEmpty then LocalDateTime.parse(now) else LocalDateTime.now
 
+enum UnitType derives ReadWriter:
+  case oz, gl, ml, l, lb, kg
+
 final case class Process(started: String = now(),
                          completed: String = "",
                          recipe: Recipe = Recipe.default,
@@ -49,9 +52,6 @@ final case class Whirlpooling(step: Int = 10, boilKettle: Container = BoilKettle
 final case class Fermenting(step: Int = 11, fermentationKettle: Container = FermentationKettle(5.0, UnitType.gl)) extends Step
 final case class Conditioning(step: Int = 12, fermentationKettle: Container = FermentationKettle(5.0, UnitType.gl)) extends Step
 final case class Packaging(step: Int = 13, bottleOrKeg: Container = Keg(5.0, UnitType.gl)) extends Step
-
-enum UnitType derives ReadWriter:
-  case oz, gl, ml, l
 
 sealed trait Container derives ReadWriter:
   def volume: Double
