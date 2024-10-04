@@ -88,7 +88,7 @@ final case class Yeast(typeof: String,
                        unit: UnitType,
                        mixinStep: MixinStep = MixinStep.Fermenting)
 
-object Recipe:
+object Recipe:  
   def default: Recipe =
     Recipe(created = now(),
            style = "",
