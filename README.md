@@ -28,6 +28,8 @@ Process
     1. input - grist ( crushed grains )
     2. output - wort
 6. **Lautering** - Filter out solids from the ***wort***.
+    1. input - wort
+    2. output - wort
 7. **Sparging** - Pour hot water on the ***wort*** and stir to extract more sugars from the grains.
 8. **Boiling** - **Transfer** the ***wort*** to a ***brew kettle*** and bring to a boil. Then add ***hops*** and optional ***extract*** as required.  Optionally add ***adjuncts***. Sustain boil for 60m.
 9. **Cooling** - Cool the ***wort*** using a chiller, bringing the temperature down to 68 - 72F.
