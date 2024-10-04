@@ -8,8 +8,6 @@ libraryDependencies ++= {
   Seq(
     "org.scalafx" %% "scalafx" % "22.0.0-R33",
     "com.softwaremill.ox" %% "core" % "0.4.0",
-    "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-core" % jsoniterVersion,
-    "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-macros" % jsoniterVersion  % "compile-internal",
     "com.outr" %% "scribe" % "3.15.0",
     "org.scalatest" %% "scalatest" % "3.2.19" % Test
   )
