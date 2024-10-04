@@ -51,7 +51,7 @@ Process
 13. **Packaging** - Bottle / Can ( carbonate with priming sugar ) or Keg ( force carbonate ) the ***fermented and optionally conditioned wort***. Let condition 
 for 2+ days at required temperature. Then refrigerate.
     1. input - wort
-    2. output - beer ***with*** IBU ***with*** ABV ***with*** ABW ***with*** Brewhouse Efficiency
+    2. output - beer ***with*** IBU ***with*** ABV ***with*** ABW ***with*** Brewhouse Efficiency ratings
 >Some beer recipes ***may*** require adjustments to this process.
 
 Flows
