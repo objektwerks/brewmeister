@@ -4,8 +4,7 @@ Brewmeister
 
 Todo
 ----
-* Json
-* Entity Model - Prooper Default Values
+* Entity Model - Default Values
 * Actors
 * Metrics
 * Persistence
