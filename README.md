@@ -23,7 +23,7 @@ Process
     2. output - dry and/or roasted grains
 4. **Milling** - Crush malted grains into a ***grist***, exposing its starches for ***mashing***.
     1. input - grains
-    2. output - crushed grains
+    2. output - crushed grains as ***grist***
 5. **Mashing** - **Transfer** the ***grist*** to a ***mash tun*** with boiling water (148 - 158F). Then stir and let set for 60m, allowing for the conversion of starches into fermentable sugars - known as the ***wort***. **Optionally** add ***adjuncts***.
     1. input - grist ( crushed grains )
     2. output - wort
@@ -44,10 +44,10 @@ Process
     2. output - modified wort ***with*** Original Gravity (OG) reading
 11. **Fermenting** - **Transfer** the ***wort*** to the primary ***fermenter***. Then **pitch** the ***yeast*** into the ***wort***, allowing for the conversion of sugars into alcohol and CO2. Let ferment for 2+ weeks at required temperature.
     1. input - wort
-    2. output - yeast-pitched wort ***with*** Final Gravity (FG)
+    2. output - yeast-pitched wort ***with*** Final Gravity (FG) reading
 12. **Conditioning** - **Optionally** **transfer** ***wort*** to a secondary ***fermenter***. Let condition for 2+ days or longer at required temperature. **Optionally** add ***adjuncts*** and/or ***hops***.
     1. input - wort
-    2. output - optionally modified wort ***with*** color (SRM)
+    2. output - optionally modified wort ***with*** color (SRM) reading
 13. **Packaging** - Bottle / Can ( carbonate with priming sugar ) or Keg ( force carbonate ) the ***fermented and conditioned wort***. Let condition 
 for 2+ days at required temperature. Then refrigerate.
     1. input - wort
