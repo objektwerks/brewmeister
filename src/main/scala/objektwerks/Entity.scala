@@ -40,32 +40,28 @@ final case class Sanitizing(step: Int = 1) extends Step
 final case class Preparing(step: Int = 2) extends Step
 final case class Malting(step: Int = 3) extends Step
 final case class Milling(step: Int = 4) extends Step
-final case class Mashing(step: Int = 5, mashTun: Container = Container.mashTun) extends Step
-final case class Lautering(step: Int = 6, mashTun: Container = Container.mashTun) extends Step
-final case class Sparging(step: Int = 7, mashTun: Container = Container.mashTun) extends Step
-final case class Boiling(step: Int = 8, boilKettle: Container = Container.boilKettle) extends Step
-final case class Cooling(step: Int = 9, boilKettle: Container = Container.boilKettle) extends Step
-final case class Whirlpooling(step: Int = 10, boilKettle: Container = Container.boilKettle) extends Step
-final case class Fermenting(step: Int = 11, fermentationKettle: Container = Container.fermentationKettle) extends Step
-final case class Conditioning(step: Int = 12, fermentationKettle: Container = Container.fermentationKettle) extends Step
-final case class Packaging(step: Int = 13, bottleOrKeg: Container = Container.keg) extends Step
+final case class Mashing(step: Int = 5, mashTun: Container = MashTun(5.0, UnitType.gl)) extends Step
+final case class Lautering(step: Int = 6, mashTun: Container = MashTun(5.0, UnitType.gl)) extends Step
+final case class Sparging(step: Int = 7, mashTun: Container = MashTun(5.0, UnitType.gl)) extends Step
+final case class Boiling(step: Int = 8, boilKettle: Container = BoilKettle(5.0, UnitType.gl)) extends Step
+final case class Cooling(step: Int = 9, boilKettle: Container = BoilKettle(5.0, UnitType.gl)) extends Step
+final case class Whirlpooling(step: Int = 10, boilKettle: Container = BoilKettle(5.0, UnitType.gl)) extends Step
+final case class Fermenting(step: Int = 11, fermentationKettle: Container = FermentationKettle(5.0, UnitType.gl)) extends Step
+final case class Conditioning(step: Int = 12, fermentationKettle: Container = FermentationKettle(5.0, UnitType.gl)) extends Step
+final case class Packaging(step: Int = 13, bottleOrKeg: Container = Keg(5.0, UnitType.gl)) extends Step
 
 enum UnitType derives ReadWriter:
   case oz, gl, ml, l
 
-enum ContainerType derives ReadWriter:
-  case mashTun, boilKettle, fermentationKettle, bottle, keg
+sealed trait Container derives ReadWriter:
+  def volume: Double
+  def unit: UnitType
 
-object Container:
-  def mashTun: Container = Container(ContainerType.mashTun, 5.0, UnitType.gl)
-  def boilKettle: Container = Container(ContainerType.boilKettle, 5.0, UnitType.gl)
-  def fermentationKettle: Container = Container(ContainerType.fermentationKettle, 5.0, UnitType.gl)
-  def bottle: Container = Container(ContainerType.bottle, 12.0, UnitType.oz)
-  def keg: Container = Container(ContainerType.keg, 5.0, UnitType.gl)
-
-final case class Container(typeof: ContainerType,
-                           volume: Double,
-                           unit: UnitType) derives ReadWriter
+final case class MashTun(volume: Double, unit: UnitType) extends Container
+final case class BoilKettle(volume: Double, unit: UnitType) extends Container
+final case class FermentationKettle(volume: Double, unit: UnitType) extends Container
+final case class Bottle(volume: Double, unit: UnitType) extends Container
+final case class Keg(volume: Double, unit: UnitType) extends Container
 
 enum MixinStep derives ReadWriter:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
