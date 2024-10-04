@@ -4,7 +4,6 @@ version := "0.13"
 scalaVersion := "3.5.1"
 mainClass := Some("objektwerks.App")
 libraryDependencies ++= {
-  val jsoniterVersion = "2.30.14"
   Seq(
     "org.scalafx" %% "scalafx" % "22.0.0-R33",
     "com.softwaremill.ox" %% "core" % "0.4.0",
