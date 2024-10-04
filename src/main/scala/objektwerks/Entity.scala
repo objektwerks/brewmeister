@@ -95,7 +95,7 @@ object Recipe:
            mashingTemp = (148, 152),
            boilingTemp = (148, 152),
            coolingTemp = (68, 72),
-           pH = 5.2,
+           pH = 5.4,
            originalGravity = (1.056, 1.075),
            finalGravity = (1.008, 1.014),
            srmColor = (6, 14),
