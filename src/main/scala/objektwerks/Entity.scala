@@ -108,7 +108,8 @@ object Recipe:
            grains = List( Grain("pale ale", 5.0, UnitType.lb) ),
            hops = List( Hop("cascade", 5.0, UnitType.oz), Hop("chinook", 5.0, UnitType.oz), Hop("simcoe", 5.0, UnitType.oz) ),
            adjuncts = List.empty[Adjunct],
-           yeasts = List.empty[Yeast])
+           yeasts = List(  Yeast("Wyeast American Ale 1056", 5.0, UnitType.oz) )
+    )
     
 
 final case class Recipe(created: String = now(),
