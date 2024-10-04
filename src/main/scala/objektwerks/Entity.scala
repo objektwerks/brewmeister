@@ -98,7 +98,7 @@ object Recipe:
            pH = 0.0,
            originalGravity = 0.0,
            finalGravity = 0.0,
-           color = 0,
+           color = 10,
            bitterness = 0,
            alcoholByVolume = 0.0,
            alcoholByWeight = 0.0,
