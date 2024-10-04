@@ -112,7 +112,6 @@ object Recipe:
            adjuncts = List.empty[Adjunct],
            yeasts = List(  Yeast("Wyeast American Ale 1056", 5.0, UnitType.oz) )
     )
-    
 
 final case class Recipe(created: String = now(),
                         style: String,
