@@ -5,13 +5,11 @@ import java.time.LocalDateTime
 def now(): String = LocalDateTime.now.toString
 def localDateTime(now: String): LocalDateTime = if now.nonEmpty then LocalDateTime.parse(now) else LocalDateTime.now
 
-sealed trait Entity
-
 final case class Process(started: String = now(),
                          completed: String = "",
                          recipe: Recipe = Recipe.default,
                          metrics: Metrics = Metrics(),
-                         steps: List[Step] = Steps.default) extends Entity
+                         steps: List[Step] = Steps.default)
 
 object Steps:
   def default: List[Step] =
@@ -31,7 +29,7 @@ object Steps:
       Packaging()
     )
 
-sealed trait Step extends Entity:
+sealed trait Step:
   def step: Int
   def started: String = now()
   def completed: String = ""
@@ -65,7 +63,7 @@ object Container:
 
 final case class Container(typeof: ContainerType,
                            volume: Double,
-                           unit: UnitType) extends Entity
+                           unit: UnitType)
 
 enum MixinStep:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
@@ -73,22 +71,22 @@ enum MixinStep:
 final case class Grain(typeof: String,
                        amount: Double,
                        unit: UnitType,
-                       mixinStep: MixinStep = MixinStep.Mashing) extends Entity
+                       mixinStep: MixinStep = MixinStep.Mashing)
 
 final case class Hop(typeof: String,
                      amount: Double,
                      unit: UnitType,
-                     mixinStep: MixinStep = MixinStep.Boiling) extends Entity // or Whirlpooling or Conditioning
+                     mixinStep: MixinStep = MixinStep.Boiling) // or Whirlpooling or Conditioning
 
 final case class Adjunct(typeof: String,
                          amount: Double,
                          unit: UnitType,
-                         mixinStep: MixinStep = MixinStep.Mashing) extends Entity // or Boiling or Conditioning
+                         mixinStep: MixinStep = MixinStep.Mashing) // or Boiling or Conditioning
 
 final case class Yeast(typeof: String,
                        amount: Double,
                        unit: UnitType,
-                       mixinStep: MixinStep = MixinStep.Fermenting) extends Entity
+                       mixinStep: MixinStep = MixinStep.Fermenting)
 
 object Recipe:
   def default: Recipe =
@@ -135,7 +133,7 @@ final case class Recipe(created: String = now(),
                         grains: List[Grain],
                         hops: List[Hop],
                         adjuncts: List[Adjunct],
-                        yeasts: List[Yeast]) extends Entity
+                        yeasts: List[Yeast])
 
 final case class Metrics(created: String = now(),
                          style: String = "",
@@ -153,4 +151,4 @@ final case class Metrics(created: String = now(),
                          alcoholByWeight: Double = 0.0,
                          calories: Int = 0,
                          mashEfficiency: Double = 0.0,
-                         brewhouseEfficiency: Double = 0.0) extends Entity
+                         brewhouseEfficiency: Double = 0.0)
