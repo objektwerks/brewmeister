@@ -39,9 +39,9 @@ Process
 9. **Cooling** - Cool the ***wort*** using a chiller, bringing the temperature down to 68 - 72F.
     1. input - wort
     2. output - wort
-10. **Whirlpooling** - Stir the ***wort***, collecting hop solids, or ***trub***, at the bottom-center of the kettle. **Optionally** add ***hops***.
-    1. input - wort
-    2. output - optional ***hops***, ***original gravity***
+10. **Whirlpooling** - Stir the ***wort***, collecting hop solids, or ***trub***, at the bottom-center of the kettle.
+    1. input - wort, optional ***hops***
+    2. output - ***original gravity***
 11. **Fermenting** - **Transfer** the ***wort*** to the primary ***fermenter***. Then **pitch** the ***yeast*** into the ***wort***, allowing for the conversion of sugars into alcohol and CO2. Let ferment for 2+ weeks at required temperature.
     1. input - wort, ***yeast***
     2. output - wort, ***final gravity***
