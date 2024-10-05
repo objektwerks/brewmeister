@@ -64,7 +64,9 @@ final class Fermenter extends Actor:
     Fermented()
 
 final class Conditioner extends Actor:
-  def condition(condition: Condition): Conditioned = Conditioned()
+  def condition(condition: Condition): Conditioned =
+    scribe.info(s"*** Conditioner wort with srm color ${condition.recipe.srmColor}") // TODO!
+    Conditioned()
 
 final class Packager extends Actor:
   def `package`(`package`: Package): Packaged = Packaged()
