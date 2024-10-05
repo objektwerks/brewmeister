@@ -69,4 +69,6 @@ final class Conditioner extends Actor:
     Conditioned()
 
 final class Packager extends Actor:
-  def `package`(`package`: Package): Packaged = Packaged()
+  def `package`(`package`: Package): Packaged =
+    // ibu, abv, abw, be
+    Packaged()
