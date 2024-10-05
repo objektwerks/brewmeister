@@ -32,7 +32,7 @@ Process
     2. output - wort
 7. **Sparging** - Pour hot water on the ***wort*** and stir to extract more sugars from the grains.
     1. input - wort
-    2. output - wort ***with*** Mash Efficiency
+    2. output - wort and ***mash efficiency***
 8. **Boiling** - **Transfer** the ***wort*** to a ***brew kettle*** and bring to a boil. Then add ***hops*** as required. **Optionally** add ***adjuncts***. Sustain boil for 60m.
     1. input - wort
     2. output - enhanced wort

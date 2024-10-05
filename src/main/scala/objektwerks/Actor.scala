@@ -10,42 +10,43 @@ final class Sanitizer extends Actor:
 
 final class Preparer extends Actor:
   def prepare(prepare: Prepare): Prepared =
-    scribe.info(s"*** Preparing recipe ingrediants.")
+    scribe.info(s"*** Preparer preparing recipe ingrediants.")
     scribe.info(s"*** Grains ${prepare.recipe.grains}")
     scribe.info(s"*** Hops ${prepare.recipe.hops}")
     scribe.info(s"*** Adjuncts ${prepare.recipe.adjuncts}")
     scribe.info(s"*** Yeasts ${prepare.recipe.yeasts}")
-    scribe.info(s"*** Prepared recipe ingrediants.")
+    scribe.info(s"*** Preparer prepared recipe ingrediants.")
     Prepared()
 
 final class Malter extends Actor:
   def malt(malt: Malt): Malted =
-    scribe.info(s"*** Malted grains.")
+    scribe.info(s"*** Malter malted grains.")
     Malted()
 
 final class Miller extends Actor:
   def mill(mill: Mill): Milled =
-    scribe.info(s"*** Milled ( crushed ) grains to grist.")
+    scribe.info(s"*** Miller milled ( crushed ) grains to grist.")
     Milled()
 
 final class Masher extends Actor:
   def mash(mash: Mash): Mashed =
-    scribe.info(s"*** Mashed grist into a wort at temp: ${mash.recipe.mashingTemp} for duration: ${mash.recipe.mashingDuration}")
+    scribe.info(s"*** Masher mashed grist into a wort at temp: ${mash.recipe.mashingTemp} for duration: ${mash.recipe.mashingDuration}")
     Mashed(pH = 5.6) // Calculate pH!
 
 final class Lauterer extends Actor:
   def lauter(lauter: Lauter): Lautered =
-    scribe.info(s"*** Lautered wort: ${lauter.recipe.grains}")
+    scribe.info(s"*** Lauter lautered wort: ${lauter.recipe.grains}")
     Lautered()
 
 final class Sparger extends Actor:
   def sparge(sparge: Sparge): Sparged =
-    scribe.info(s"*** Sparged wort: ${sparge.recipe.grains}")
+    scribe.info(s"*** Sparger sparged wort: ${sparge.recipe.grains}")
     Sparged(mashEfficiency = 70) // Calculate mashed efficiency!
 
 final class Boiler extends Actor:
   def boil(boil: Boil): Boiled =
-    scribe.info(s"*** Boiled wort to temp: ${boil.recipe.boilingTemp} for duration: ${boil.recipe.boilingDuration}")
+    scribe.info(s"*** Boiler boiled wort to temp: ${boil.recipe.boilingTemp} for duration: ${boil.recipe.boilingDuration}")
+    scribe.info(s"*** Boiler added hops: ${boil.recipe.hops}")
     Boiled()
 
 final class Cooler extends Actor:
