@@ -28,4 +28,4 @@ final case class Ferment(recipe: Recipe) extends Command
 
 final case class Condition(recipe: Recipe) extends Command
 
-final case class Package() extends Command
+final case class Package(recipe: Recipe) extends Command

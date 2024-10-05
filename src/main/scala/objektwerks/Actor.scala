@@ -80,6 +80,7 @@ final class Conditioner extends Actor:
 
 final class Packager extends Actor:
   def `package`(`package`: Package): Packaged =
+    scribe.info(s"*** Packager should condition within this temp range: ${`package`.recipe.packagingTemp}")
     scribe.info(s"*** Packager ibu bitterness: TODO!") // Calculate ibu, abv, abw, calories and be!
     scribe.info(s"*** Packager alcohol by volume: TODO!")
     scribe.info(s"*** Packager alcohol by weight: TODO!")

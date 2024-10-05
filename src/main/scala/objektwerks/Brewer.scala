@@ -20,7 +20,7 @@ final class Brewer:
         whirlpool( Whirlpool(recipe) ),
         ferment( Ferment(recipe) ),
         condition( Condition(recipe) ),
-        `package`( Package() )
+        `package`( Package(recipe) )
       )
     Brewed( events )
 
