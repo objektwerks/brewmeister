@@ -13,7 +13,7 @@ enum UoM derives JsonSupport:
 object Process:
   def default: Process =
     Process(recipe = Recipe.default,
-            metrics = Metrics(),
+            metrics = Metrics.default,
             steps = Steps.default)
 
 final case class Process(started: String = now(),
