@@ -44,7 +44,9 @@ final class Sparger extends Actor:
     Sparged(mashedEfficienty = 70) // TODO!
 
 final class Boiler extends Actor:
-  def boil(boil: Boil): Boiled = Boiled()
+  def boil(boil: Boil): Boiled =
+    scribe.info(s"*** Boil wort.")
+    Boiled()
 
 final class Cooler extends Actor:
   def cool(cool: Cool): Cooled = Cooled()
