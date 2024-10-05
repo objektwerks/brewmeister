@@ -27,15 +27,15 @@ object Steps:
       Preparing(),
       Malting(),
       Milling(),
-      Mashing(mashTun = mashTun),
-      Lautering(mashTun = mashTun),
-      Sparging(mashTun = mashTun),
-      Boiling(boilKettle = boilKettle),
-      Cooling(boilKettle = boilKettle),
-      Whirlpooling(boilKettle = boilKettle),
-      Fermenting(fermentationKettle = fermentationKettle),
-      Conditioning(fermentationKettle = fermentationKettle),
-      Packaging(keg = keg)
+      Mashing(container = mashTun),
+      Lautering(container = mashTun),
+      Sparging(container = mashTun),
+      Boiling(container = boilKettle),
+      Cooling(container = boilKettle),
+      Whirlpooling(container = boilKettle),
+      Fermenting(container = fermentationKettle),
+      Conditioning(container = fermentationKettle),
+      Packaging(container = keg)
     )
 
 sealed trait Step derives JsonSupport:
@@ -47,15 +47,15 @@ final case class Sanitizing(step: Int = 1) extends Step
 final case class Preparing(step: Int = 2) extends Step
 final case class Malting(step: Int = 3) extends Step
 final case class Milling(step: Int = 4) extends Step
-final case class Mashing(step: Int = 5, mashTun: MashTun) extends Step
-final case class Lautering(step: Int = 6, mashTun: MashTun) extends Step
-final case class Sparging(step: Int = 7, mashTun: MashTun) extends Step
-final case class Boiling(step: Int = 8, boilKettle: BoilKettle) extends Step
-final case class Cooling(step: Int = 9, boilKettle: BoilKettle) extends Step
-final case class Whirlpooling(step: Int = 10, boilKettle: BoilKettle) extends Step
-final case class Fermenting(step: Int = 11, fermentationKettle: FermentationKettle) extends Step
-final case class Conditioning(step: Int = 12, fermentationKettle: FermentationKettle) extends Step
-final case class Packaging(step: Int = 13, keg: Keg) extends Step
+final case class Mashing(step: Int = 5, container: Container) extends Step
+final case class Lautering(step: Int = 6, container: Container) extends Step
+final case class Sparging(step: Int = 7, container: Container) extends Step
+final case class Boiling(step: Int = 8, container: Container) extends Step
+final case class Cooling(step: Int = 9, container: Container) extends Step
+final case class Whirlpooling(step: Int = 10, container: Container) extends Step
+final case class Fermenting(step: Int = 11, container: Container) extends Step
+final case class Conditioning(step: Int = 12, container: Container) extends Step
+final case class Packaging(step: Int = 13, container: Container) extends Step
 
 sealed trait Container derives JsonSupport:
   def volume: Double
