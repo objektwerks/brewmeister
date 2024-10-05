@@ -21,6 +21,7 @@ object Steps:
     val mashTun = MashTun(5.0, UoM.gl)
     val boilKettle = BoilKettle(5.0, UoM.gl)
     val fermentationKettle = FermentationKettle(5.0, UoM.gl)
+    val keg = Keg(5.0, UoM.gl)
     List(
       Sanitizing(),
       Preparing(),
@@ -34,7 +35,7 @@ object Steps:
       Whirlpooling(boilKettle = boilKettle),
       Fermenting(fermentationKettle = fermentationKettle),
       Conditioning(fermentationKettle = fermentationKettle),
-      Packaging()
+      Packaging(keg = keg)
     )
 
 sealed trait Step derives ReadWriter:
@@ -54,7 +55,7 @@ final case class Cooling(step: Int = 9, boilKettle: BoilKettle) extends Step
 final case class Whirlpooling(step: Int = 10, boilKettle: BoilKettle) extends Step
 final case class Fermenting(step: Int = 11, fermentationKettle: FermentationKettle) extends Step
 final case class Conditioning(step: Int = 12, fermentationKettle: FermentationKettle) extends Step
-final case class Packaging(step: Int = 13, keg: Keg = Keg(5.0, UoM.gl)) extends Step
+final case class Packaging(step: Int = 13, keg: Keg) extends Step
 
 sealed trait Container derives ReadWriter:
   def volume: Double
