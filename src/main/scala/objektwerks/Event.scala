@@ -10,7 +10,7 @@ final case class Malted() extends Event
 
 final case class Milled() extends Event
 
-final case class Mashed() extends Event
+final case class Mashed(pH: Double) extends Event
 
 final case class Lautered() extends Event
 

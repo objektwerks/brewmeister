@@ -31,7 +31,7 @@ final class Miller extends Actor:
 final class Masher extends Actor:
   def mash(mash: Mash): Mashed =
     scribe.info(s"*** Mashed grains at temp: ${mash.recipe.mashingTemp} for duration: ${mash.recipe.mashingDuration}")
-    Mashed() // ph!
+    Mashed(pH = 5.6) // Calculate pH!
 
 final class Lauterer extends Actor:
   def lauter(lauter: Lauter): Lautered =
