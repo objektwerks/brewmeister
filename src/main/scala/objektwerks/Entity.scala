@@ -21,7 +21,6 @@ object Steps:
     val mashTun = MashTun(5.0, UoM.gl)
     val boilKettle = BoilKettle(5.0, UoM.gl)
     val fermentationKettle = FermentationKettle(5.0, UoM.gl)
-    val keg = Keg(5.0, UoM.gl)
     List(
       Sanitizing(),
       Preparing(),
@@ -35,7 +34,7 @@ object Steps:
       Whirlpooling(container = boilKettle),
       Fermenting(container = fermentationKettle),
       Conditioning(container = fermentationKettle),
-      Packaging(container = keg)
+      Packaging(container = Keg(5.0, UoM.gl))
     )
 
 sealed trait Step derives JsonSupport:
