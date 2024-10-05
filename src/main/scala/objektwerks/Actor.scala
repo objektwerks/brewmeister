@@ -49,7 +49,9 @@ final class Boiler extends Actor:
     Boiled()
 
 final class Cooler extends Actor:
-  def cool(cool: Cool): Cooled = Cooled()
+  def cool(cool: Cool): Cooled =
+    scribe.info(s"*** Cool wort.")
+    Cooled()
 
 final class Whirlpooler extends Actor:
   def whirlpool(whirlpool: Whirlpool): Whirlpooled = Whirlpooled()
