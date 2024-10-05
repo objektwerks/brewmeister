@@ -74,10 +74,10 @@ final class Conditioner extends Actor:
 
 final class Packager extends Actor:
   def `package`(`package`: Package): Packaged =
-    scribe.info(s"*** Packaged ibu bitterness: TODO!") // Calculate ibu, abv, abw, calories and be!
-    scribe.info(s"*** Packaged alcohol by volume: TODO!")
-    scribe.info(s"*** Packaged alcohol by weight: TODO!")
-    scribe.info(s"*** Packaged calories: TODO!")
-    scribe.info(s"*** Packaged brew efficiency: TODO!")
-    scribe.info(s"*** Packaged wort into keg.")
+    scribe.info(s"*** Packager ibu bitterness: TODO!") // Calculate ibu, abv, abw, calories and be!
+    scribe.info(s"*** Packager alcohol by volume: TODO!")
+    scribe.info(s"*** Packager alcohol by weight: TODO!")
+    scribe.info(s"*** Packager calories: TODO!")
+    scribe.info(s"*** Packager brew efficiency: TODO!")
+    scribe.info(s"*** Packager packaged wort in a keg.")
     Packaged(ibuBitterness = 68, alcoholByVolume = 6.4, alcoholByWeight = 6.0, calories = 190, brewhouseEfficiency = 71)
