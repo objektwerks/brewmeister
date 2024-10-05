@@ -2,19 +2,19 @@ package objektwerks
 
 import java.time.LocalDateTime
 
-import upickle.default.ReadWriter
+import upickle.default.{ReadWriter => JsonSupport}
 
 def now(): String = LocalDateTime.now.toString
 def localDateTime(now: String): LocalDateTime = if now.nonEmpty then LocalDateTime.parse(now) else LocalDateTime.now
 
-enum UoM derives ReadWriter:
+enum UoM derives JsonSupport:
   case oz, gl, ml, l, lb, kg
 
 final case class Process(started: String = now(),
                          completed: String = "",
                          recipe: Recipe = Recipe.default,
                          metrics: Metrics = Metrics(),
-                         steps: List[Step] = Steps.default) derives ReadWriter
+                         steps: List[Step] = Steps.default) derives JsonSupport
 
 object Steps:
   def default: List[Step] =
@@ -38,7 +38,7 @@ object Steps:
       Packaging(keg = keg)
     )
 
-sealed trait Step derives ReadWriter:
+sealed trait Step derives JsonSupport:
   def step: Int
   def started: String = now()
   def completed: String = ""
@@ -57,7 +57,7 @@ final case class Fermenting(step: Int = 11, fermentationKettle: FermentationKett
 final case class Conditioning(step: Int = 12, fermentationKettle: FermentationKettle) extends Step
 final case class Packaging(step: Int = 13, keg: Keg) extends Step
 
-sealed trait Container derives ReadWriter:
+sealed trait Container derives JsonSupport:
   def volume: Double
   def unit: UoM
 
@@ -66,32 +66,32 @@ final case class BoilKettle(volume: Double, unit: UoM) extends Container
 final case class FermentationKettle(volume: Double, unit: UoM) extends Container
 final case class Keg(volume: Double, unit: UoM) extends Container
 
-enum MixinStep derives ReadWriter:
+enum MixinStep derives JsonSupport:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
 
 final case class Grain(typeof: String,
                        amount: Double,
                        unit: UoM,
                        mixinMinute: Int,
-                       mixinStep: MixinStep = MixinStep.Mashing) derives ReadWriter
+                       mixinStep: MixinStep = MixinStep.Mashing) derives JsonSupport
 
 final case class Hop(typeof: String,
                      amount: Double,
                      unit: UoM,
                      mixinMinute: Int,
-                     mixinStep: MixinStep = MixinStep.Boiling) derives ReadWriter // or Whirlpooling or Conditioning
+                     mixinStep: MixinStep = MixinStep.Boiling) derives JsonSupport // or Whirlpooling or Conditioning
 
 final case class Adjunct(typeof: String,
                          amount: Double,
                          unit: UoM,
                          mixinMinute: Int,
-                         mixinStep: MixinStep = MixinStep.Mashing) derives ReadWriter // or Boiling or Conditioning
+                         mixinStep: MixinStep = MixinStep.Mashing) derives JsonSupport // or Boiling or Conditioning
 
 final case class Yeast(typeof: String,
                        amount: Double,
                        unit: UoM,
                        mixinMinute: Int,
-                       mixinStep: MixinStep = MixinStep.Fermenting) derives ReadWriter
+                       mixinStep: MixinStep = MixinStep.Fermenting) derives JsonSupport
 
 object Recipe:
   def default: Recipe =
@@ -142,7 +142,7 @@ final case class Recipe(created: String = now(),
                         grains: List[Grain],
                         hops: List[Hop],
                         adjuncts: List[Adjunct],
-                        yeasts: List[Yeast]) derives ReadWriter
+                        yeasts: List[Yeast]) derives JsonSupport
 
 final case class Metrics(created: String = now(),
                          style: String = "",
@@ -156,4 +156,4 @@ final case class Metrics(created: String = now(),
                          alcoholByWeight: Double = 0.0,
                          calories: Int = 0,
                          mashEfficiency: Double = 0.0,
-                         brewhouseEfficiency: Double = 0.0) derives ReadWriter
+                         brewhouseEfficiency: Double = 0.0) derives JsonSupport
