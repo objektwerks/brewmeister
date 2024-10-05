@@ -26,7 +26,7 @@ Process
     2. output - crushed grains as ***grist***
 5. **Mashing** - **Transfer** the ***grist*** to a ***mash tun*** with boiling water (148 - 158F). Then stir and let set for 60m, allowing for the conversion of starches into fermentable sugars - known as the ***wort***. **Optionally** add ***adjuncts***.
     1. input - grist ( crushed grains )
-    2. output - wort
+    2. output - wort and ***pH***
 6. **Lautering** - Filter out solids from the ***wort***.
     1. input - wort
     2. output - wort

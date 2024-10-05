@@ -20,27 +20,27 @@ final class Preparer extends Actor:
 
 final class Malter extends Actor:
   def malt(malt: Malt): Malted =
-    scribe.info(s"*** Malted grains: ${malt.recipe.grains}")
+    scribe.info(s"*** Malted grains.")
     Malted()
 
 final class Miller extends Actor:
   def mill(mill: Mill): Milled =
-    scribe.info(s"*** Milled ( crushed ) grains to grist: ${mill.recipe.grains}")
+    scribe.info(s"*** Milled ( crushed ) grains to grist.")
     Milled()
 
 final class Masher extends Actor:
   def mash(mash: Mash): Mashed =
-    scribe.info(s"*** Mashed grains at temp: ${mash.recipe.mashingTemp} for duration: ${mash.recipe.mashingDuration}")
+    scribe.info(s"*** Mashed grist into a wort at temp: ${mash.recipe.mashingTemp} for duration: ${mash.recipe.mashingDuration}")
     Mashed(pH = 5.6) // Calculate pH!
 
 final class Lauterer extends Actor:
   def lauter(lauter: Lauter): Lautered =
-    scribe.info(s"*** Lautered grains: ${lauter.recipe.grains}")
+    scribe.info(s"*** Lautered wort: ${lauter.recipe.grains}")
     Lautered()
 
 final class Sparger extends Actor:
   def sparge(sparge: Sparge): Sparged =
-    scribe.info(s"*** Sparged grains: ${sparge.recipe.grains}")
+    scribe.info(s"*** Sparged wort: ${sparge.recipe.grains}")
     Sparged(mashEfficiency = 70) // Calculate mashed efficiency!
 
 final class Boiler extends Actor:
