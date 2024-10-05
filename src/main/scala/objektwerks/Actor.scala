@@ -70,5 +70,6 @@ final class Conditioner extends Actor:
 
 final class Packager extends Actor:
   def `package`(`package`: Package): Packaged =
+    scribe.info(s"*** Packaged wort into keg.") // TODO!
     // ibu, abv, abw, be TODO!
     Packaged()
