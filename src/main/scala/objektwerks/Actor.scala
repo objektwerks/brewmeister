@@ -45,7 +45,7 @@ final class Sparger extends Actor:
 
 final class Boiler extends Actor:
   def boil(boil: Boil): Boiled =
-    scribe.info(s"*** Boiled wort.")
+    scribe.info(s"*** Boiled wort at temp: ${boil.recipe.boilingTemp} for duration: ${boil.recipe.boilingDuration}")
     Boiled()
 
 final class Cooler extends Actor:
