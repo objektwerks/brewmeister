@@ -29,7 +29,9 @@ final class Miller extends Actor:
     Milled()
 
 final class Masher extends Actor:
-  def mash(mash: Mash): Mashed = Mashed()
+  def mash(mash: Mash): Mashed =
+    scribe.info(s"*** Mashed grains at temp: ${mash.recipe.mashingTemp} for duration: ${mash.recipe.mashingDuration}")
+    Mashed()
 
 final class Lauterer extends Actor:
   def lauter(lauter: Lauter): Lautered = Lautered()
