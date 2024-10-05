@@ -31,8 +31,8 @@ final class Miller extends Actor:
 final class Masher extends Actor:
   def mash(mash: Mash): Mashed =
     scribe.info(s"*** Masher mashed grist into a wort at temp: ${mash.recipe.mashingTemp} for duration: ${mash.recipe.mashingDuration}")
-    scribe.info(s"*** Masher ph should be: ${mash.recipe.pH}")
     scribe.info(s"*** Masher optionally added adjuncts: ${mash.recipe.adjuncts}")
+    scribe.info(s"*** Masher ph should be: ${mash.recipe.pH}")
     Mashed(pH = 5.6) // Calculate pH!
 
 final class Lauterer extends Actor:
@@ -48,13 +48,13 @@ final class Sparger extends Actor:
 
 final class Boiler extends Actor:
   def boil(boil: Boil): Boiled =
-    scribe.info(s"*** Boiler boiled wort to temp: ${boil.recipe.boilingTemp} for duration: ${boil.recipe.boilingDuration}")
+    scribe.info(s"*** Boiler boiled wort to a temp: ${boil.recipe.boilingTemp} for duration: ${boil.recipe.boilingDuration}")
     scribe.info(s"*** Boiler added hops: ${boil.recipe.hops}")
     Boiled()
 
 final class Cooler extends Actor:
   def cool(cool: Cool): Cooled =
-    scribe.info(s"*** Cooled wort to temp of: ${cool.recipe.coolingTemp}")
+    scribe.info(s"*** Cooler cooled wort to a temp of: ${cool.recipe.coolingTemp}")
     Cooled()
 
 final class Whirlpooler extends Actor:
