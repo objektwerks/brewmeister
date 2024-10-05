@@ -35,11 +35,13 @@ final class Masher extends Actor:
 
 final class Lauterer extends Actor:
   def lauter(lauter: Lauter): Lautered =
-    scribe.info(s"*** Lauterer grains.")
+    scribe.info(s"*** Lauter grains.")
     Lautered()
 
 final class Sparger extends Actor:
-  def sparge(sparge: Sparge): Sparged = Sparged()
+  def sparge(sparge: Sparge): Sparged =
+    scribe.info(s"*** Sparge grains.")
+    Sparged()
 
 final class Boiler extends Actor:
   def boil(boil: Boil): Boiled = Boiled()
