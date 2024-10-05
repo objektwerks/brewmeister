@@ -14,9 +14,9 @@ final case class Mill(recipe: Recipe) extends Command
 
 final case class Mash(recipe: Recipe) extends Command
 
-final case class Lauter() extends Command
+final case class Lauter(recipe: Recipe) extends Command
 
-final case class Sparge() extends Command
+final case class Sparge(recipe: Recipe) extends Command
 
 final case class Boil(recipe: Recipe) extends Command
 
