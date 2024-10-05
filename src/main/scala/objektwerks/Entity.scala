@@ -149,6 +149,22 @@ final case class Recipe(created: String = now(),
                         adjuncts: List[Adjunct],
                         yeasts: List[Yeast]) derives JsonSupport
 
+object Metrics:
+  def default: Metrics =
+    Metrics(created = now(),
+            style = "American IPA",
+            gallons = 5.0,
+            pH = 5.6,
+            originalGravity = 1.060,
+            finalGravity = 1.012,
+            srmColor = 7,
+            ibuBitterness = 68,
+            alcoholByVolume = 6.4,
+            alcoholByWeight = 6.0,
+            calories = 190,
+            mashEfficiency = 70,
+            brewhouseEfficiency = 71)                            
+
 final case class Metrics(created: String = now(),
                          style: String = "",
                          gallons: Double = 0.0,
@@ -160,5 +176,5 @@ final case class Metrics(created: String = now(),
                          alcoholByVolume: Double = 0.0,
                          alcoholByWeight: Double = 0.0,
                          calories: Int = 0,
-                         mashEfficiency: Double = 0.0,
-                         brewhouseEfficiency: Double = 0.0) derives JsonSupport
+                         mashEfficiency: Int = 0,
+                         brewhouseEfficiency: Int = 0) derives JsonSupport
