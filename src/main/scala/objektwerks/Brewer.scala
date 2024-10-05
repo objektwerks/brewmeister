@@ -16,7 +16,7 @@ final class Brewer:
         lauter( Lauter(recipe) ),
         sparge( Sparge(recipe) ),
         boil( Boil(recipe) ),
-        cool( Cool() ),
+        cool( Cool(recipe) ),
         whirlpool( Whirlpool(recipe) ),
         ferment( Ferment(recipe) ),
         condition( Condition(recipe) ),
