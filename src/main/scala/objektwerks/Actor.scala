@@ -50,6 +50,7 @@ final class Boiler extends Actor:
   def boil(boil: Boil): Boiled =
     scribe.info(s"*** Boiler boiled wort to a temp: ${boil.recipe.boilingTemp} for duration: ${boil.recipe.boilingDuration}")
     scribe.info(s"*** Boiler added hops: ${boil.recipe.hops}")
+    scribe.info(s"*** Boiler optionally added adjuncts: ${boil.recipe.adjuncts}")
     Boiled()
 
 final class Cooler extends Actor:

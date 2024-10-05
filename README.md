@@ -33,8 +33,8 @@ Process
 7. **Sparging** - Pour hot water on the ***wort*** and stir to extract more sugars from the grains.
     1. input - wort
     2. output - wort and ***mash efficiency***
-8. **Boiling** - **Transfer** the ***wort*** to a ***brew kettle*** and bring to a boil. Then add ***hops*** as required. **Optionally** add ***adjuncts***. Sustain boil for 60m.
-    1. input - wort
+8. **Boiling** - **Transfer** the ***wort*** to a ***brew kettle*** and bring to a boil. Sustain boil for 60m.
+    1. input - wort, hops, optional adjuncts
     2. output - enhanced wort
 9. **Cooling** - Cool the ***wort*** using a chiller, bringing the temperature down to 68 - 72F.
     1. input - wort
