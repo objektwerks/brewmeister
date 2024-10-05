@@ -17,7 +17,7 @@ Process
     2. output: clean brewing implements
 2. **Preparing** - Prepare all ingredients for a brewing session.
     1. input - recipe
-    2. output - recipe ingredients prepared
+    2. output - recipe ingredients
 3. **Malting** - Dry and optionally roast germinated grains (barley, wheat, oats or rye) for ***milling***.
     1. input - grains
     2. output - dry and/or roasted grains
@@ -25,16 +25,16 @@ Process
     1. input - grains
     2. output - crushed grains as ***grist***
 5. **Mashing** - **Transfer** the ***grist*** to a ***mash tun*** with boiling water (148 - 158F). Then stir and let set for 60m, allowing for the conversion of starches into fermentable sugars - known as the ***wort***.
-    1. input - grist ( crushed grains ) and **optionally** add ***adjuncts***.
+    1. input - grist, optional ***adjuncts***
     2. output - wort and ***pH***
 6. **Lautering** - Filter out solids from the ***wort***.
     1. input - wort
     2. output - wort
 7. **Sparging** - Pour hot water on the ***wort*** and stir to extract more sugars from the grains.
     1. input - wort
-    2. output - wort and ***mash efficiency***
+    2. output - wort, ***mash efficiency***
 8. **Boiling** - **Transfer** the ***wort*** to a ***brew kettle*** and bring to a boil. Sustain boil for 60m.
-    1. input - wort, hops, optional adjuncts
+    1. input - wort, hops, optional ***adjuncts***
     2. output - enhanced wort
 9. **Cooling** - Cool the ***wort*** using a chiller, bringing the temperature down to 68 - 72F.
     1. input - wort
