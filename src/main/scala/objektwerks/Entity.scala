@@ -2,7 +2,7 @@ package objektwerks
 
 import java.time.LocalDateTime
 
-import upickle.default.*
+import upickle.default.ReadWriter
 
 def now(): String = LocalDateTime.now.toString
 def localDateTime(now: String): LocalDateTime = if now.nonEmpty then LocalDateTime.parse(now) else LocalDateTime.now
