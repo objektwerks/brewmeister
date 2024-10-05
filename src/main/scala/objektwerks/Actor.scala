@@ -59,7 +59,9 @@ final class Whirlpooler extends Actor:
     Whirlpooled()
 
 final class Fermenter extends Actor:
-  def ferment(ferment: Ferment): Fermented = Fermented()
+  def ferment(ferment: Ferment): Fermented =
+    scribe.info(s"*** Fermenter wort with final gravity ${ferment.recipe.finalGravity}") // TODO!
+    Fermented()
 
 final class Conditioner extends Actor:
   def condition(condition: Condition): Conditioned = Conditioned()
