@@ -35,37 +35,37 @@ final class Masher extends Actor:
 
 final class Lauterer extends Actor:
   def lauter(lauter: Lauter): Lautered =
-    scribe.info(s"*** Lauter grains.")
+    scribe.info(s"*** Lautered grains.")
     Lautered()
 
 final class Sparger extends Actor:
   def sparge(sparge: Sparge): Sparged =
-    scribe.info(s"*** Sparge grains.")
+    scribe.info(s"*** Sparged grains.")
     Sparged(mashedEfficienty = 70) // TODO!
 
 final class Boiler extends Actor:
   def boil(boil: Boil): Boiled =
-    scribe.info(s"*** Boil wort.")
+    scribe.info(s"*** Boiled wort.")
     Boiled()
 
 final class Cooler extends Actor:
   def cool(cool: Cool): Cooled =
-    scribe.info(s"*** Cool wort.")
+    scribe.info(s"*** Cooled wort.")
     Cooled()
 
 final class Whirlpooler extends Actor:
   def whirlpool(whirlpool: Whirlpool): Whirlpooled =
-    scribe.info(s"*** Whirlpool wort with orginal gravity ${whirlpool.recipe.originalGravity}") // TODO!
+    scribe.info(s"*** Whirlpooled wort with orginal gravity ${whirlpool.recipe.originalGravity}") // TODO!
     Whirlpooled()
 
 final class Fermenter extends Actor:
   def ferment(ferment: Ferment): Fermented =
-    scribe.info(s"*** Fermenter wort with final gravity ${ferment.recipe.finalGravity}") // TODO!
+    scribe.info(s"*** Fermented wort with final gravity ${ferment.recipe.finalGravity}") // TODO!
     Fermented()
 
 final class Conditioner extends Actor:
   def condition(condition: Condition): Conditioned =
-    scribe.info(s"*** Conditioner wort with srm color ${condition.recipe.srmColor}") // TODO!
+    scribe.info(s"*** Conditioned wort with srm color ${condition.recipe.srmColor}") // TODO!
     Conditioned()
 
 final class Packager extends Actor:
