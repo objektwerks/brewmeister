@@ -44,7 +44,7 @@ Process
     2. output - optional ***hops***, ***original gravity***
 11. **Fermenting** - **Transfer** the ***wort*** to the primary ***fermenter***. Then **pitch** the ***yeast*** into the ***wort***, allowing for the conversion of sugars into alcohol and CO2. Let ferment for 2+ weeks at required temperature.
     1. input - wort
-    2. output - yeast-pitched wort ***with*** Final Gravity (FG) reading
+    2. output - yeast-pitched wort, ***final gravity***
 12. **Conditioning** - **Optionally** **transfer** ***wort*** to a secondary ***fermenter***. Let condition for 2+ days or longer at required temperature. **Optionally** add ***adjuncts*** and/or ***hops***.
     1. input - wort
     2. output - optionally enhanced wort ***with*** color (SRM) reading
