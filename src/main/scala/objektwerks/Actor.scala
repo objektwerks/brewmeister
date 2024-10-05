@@ -59,8 +59,8 @@ final class Cooler extends Actor:
 
 final class Whirlpooler extends Actor:
   def whirlpool(whirlpool: Whirlpool): Whirlpooled =
-    scribe.info(s"*** Whirlpooled wort with an orginal gravity of: ${whirlpool.recipe.originalGravity}") // Calculate original gravity!
-    Whirlpooled(originalGravity = 1.030)
+    scribe.info(s"*** Whirlpooler should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}")
+    Whirlpooled(originalGravity = 1.030) // Calculate original gravity!
 
 final class Fermenter extends Actor:
   def ferment(ferment: Ferment): Fermented =
