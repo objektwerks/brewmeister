@@ -69,7 +69,7 @@ final class Fermenter extends Actor:
 
 final class Conditioner extends Actor:
   def condition(condition: Condition): Conditioned =
-    scribe.info(s"*** Conditioned wort with an SRM color of: ${condition.recipe.srmColor}")
+    scribe.info(s"*** Conditioner should have an SRM color within this range: ${condition.recipe.srmColor}")
     Conditioned(srmColor = 7) // Calculate SRM color!
 
 final class Packager extends Actor:
