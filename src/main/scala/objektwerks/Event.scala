@@ -14,7 +14,7 @@ final case class Mashed() extends Event
 
 final case class Lautered() extends Event
 
-final case class Sparged() extends Event
+final case class Sparged(mashedEfficienty: Int) extends Event
 
 final case class Boiled() extends Event
 
