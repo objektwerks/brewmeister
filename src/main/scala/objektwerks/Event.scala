@@ -14,13 +14,13 @@ final case class Mashed() extends Event
 
 final case class Lautered() extends Event
 
-final case class Sparged(mashedEfficienty: Int) extends Event
+final case class Sparged(mashEfficiency: Int) extends Event
 
 final case class Boiled() extends Event
 
 final case class Cooled() extends Event
 
-final case class Whirlpooled() extends Event
+final case class Whirlpooled(originalGravity: Double) extends Event
 
 final case class Fermented() extends Event
 

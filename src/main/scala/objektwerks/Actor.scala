@@ -41,22 +41,22 @@ final class Lauterer extends Actor:
 final class Sparger extends Actor:
   def sparge(sparge: Sparge): Sparged =
     scribe.info(s"*** Sparged grains: ${sparge.recipe.grains}")
-    Sparged(mashedEfficienty = 70) // Calculate!
+    Sparged(mashEfficiency = 70) // Calculate mashed efficiency!
 
 final class Boiler extends Actor:
   def boil(boil: Boil): Boiled =
-    scribe.info(s"*** Boiled wort at temp: ${boil.recipe.boilingTemp} for duration: ${boil.recipe.boilingDuration}")
+    scribe.info(s"*** Boiled wort to temp: ${boil.recipe.boilingTemp} for duration: ${boil.recipe.boilingDuration}")
     Boiled()
 
 final class Cooler extends Actor:
   def cool(cool: Cool): Cooled =
-    scribe.info(s"*** Cooled wort at temp: ${cool.recipe.coolingTemp}")
+    scribe.info(s"*** Cooled wort to temp of: ${cool.recipe.coolingTemp}")
     Cooled()
 
 final class Whirlpooler extends Actor:
   def whirlpool(whirlpool: Whirlpool): Whirlpooled =
-    scribe.info(s"*** Whirlpooled wort with orginal gravity ${whirlpool.recipe.originalGravity}") // TODO!
-    Whirlpooled()
+    scribe.info(s"*** Whirlpooled wort with orginal gravity ${whirlpool.recipe.originalGravity}") // Calculate original gravity!
+    Whirlpooled(originalGravity = 1.030)
 
 final class Fermenter extends Actor:
   def ferment(ferment: Ferment): Fermented =
