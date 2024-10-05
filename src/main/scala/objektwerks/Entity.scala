@@ -12,17 +12,15 @@ enum UoM derives JsonSupport:
 
 object Process:
   def default: Process =
-    Process(started = now(),
-            completed = "",
-            recipe = Recipe.default,
+    Process(recipe = Recipe.default,
             metrics = Metrics(),
             steps = Steps.default)
 
 final case class Process(started: String = now(),
                          completed: String = "",
-                         recipe: Recipe = Recipe.default,
-                         metrics: Metrics = Metrics(),
-                         steps: List[Step] = Steps.default) derives JsonSupport
+                         recipe: Recipe,
+                         metrics: Metrics,
+                         steps: List[Step]) derives JsonSupport
 
 object Steps:
   def default: List[Step] =
