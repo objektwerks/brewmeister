@@ -55,13 +55,13 @@ final class Cooler extends Actor:
 
 final class Whirlpooler extends Actor:
   def whirlpool(whirlpool: Whirlpool): Whirlpooled =
-    scribe.info(s"*** Whirlpooled wort with orginal gravity ${whirlpool.recipe.originalGravity}") // Calculate original gravity!
+    scribe.info(s"*** Whirlpooled wort with an orginal gravity of: ${whirlpool.recipe.originalGravity}") // Calculate original gravity!
     Whirlpooled(originalGravity = 1.030)
 
 final class Fermenter extends Actor:
   def ferment(ferment: Ferment): Fermented =
-    scribe.info(s"*** Fermented wort with final gravity ${ferment.recipe.finalGravity}") // TODO!
-    Fermented()
+    scribe.info(s"*** Fermented wort with a final gravity of: ${ferment.recipe.finalGravity}")
+    Fermented(finalGravity = 1.015) // Calculate final gravity!
 
 final class Conditioner extends Actor:
   def condition(condition: Condition): Conditioned =

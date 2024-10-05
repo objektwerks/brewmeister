@@ -22,7 +22,7 @@ final case class Cooled() extends Event
 
 final case class Whirlpooled(originalGravity: Double) extends Event
 
-final case class Fermented() extends Event
+final case class Fermented(finalGravity: Double) extends Event
 
 final case class Conditioned() extends Event
 
