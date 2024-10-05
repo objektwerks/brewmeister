@@ -24,7 +24,9 @@ final class Malter extends Actor:
     Malted()
 
 final class Miller extends Actor:
-  def mill(mill: Mill): Milled = Milled()
+  def mill(mill: Mill): Milled =
+    scribe.info(s"*** Milled ( crushed ) grains to grist.")
+    Milled()
 
 final class Masher extends Actor:
   def mash(mash: Mash): Mashed = Mashed()
