@@ -25,12 +25,13 @@ final class Malter extends Actor:
 
 final class Miller extends Actor:
   def mill(mill: Mill): Milled =
-    scribe.info(s"*** Miller milled ( crushed ) grains to grist.")
+    scribe.info(s"*** Miller crushed grains into a grist.")
     Milled()
 
 final class Masher extends Actor:
   def mash(mash: Mash): Mashed =
     scribe.info(s"*** Masher mashed grist into a wort at temp: ${mash.recipe.mashingTemp} for duration: ${mash.recipe.mashingDuration}")
+    scribe.info(s"*** Masher ph should be: ${mash.recipe.pH}")
     Mashed(pH = 5.6) // Calculate pH!
 
 final class Lauterer extends Actor:
