@@ -64,7 +64,7 @@ final class Whirlpooler extends Actor:
 
 final class Fermenter extends Actor:
   def ferment(ferment: Ferment): Fermented =
-    scribe.info(s"*** Fermented wort with a final gravity of: ${ferment.recipe.finalGravity}")
+    scribe.info(s"*** Fermenter should have a final gravity within this range: ${ferment.recipe.finalGravity}")
     Fermented(finalGravity = 1.015) // Calculate final gravity!
 
 final class Conditioner extends Actor:
