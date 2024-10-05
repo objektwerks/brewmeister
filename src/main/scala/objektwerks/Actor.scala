@@ -31,7 +31,7 @@ final class Miller extends Actor:
 final class Masher extends Actor:
   def mash(mash: Mash): Mashed =
     scribe.info(s"*** Mashed grains at temp: ${mash.recipe.mashingTemp} for duration: ${mash.recipe.mashingDuration}")
-    Mashed()
+    Mashed() // ph!
 
 final class Lauterer extends Actor:
   def lauter(lauter: Lauter): Lautered =
@@ -70,6 +70,10 @@ final class Conditioner extends Actor:
 
 final class Packager extends Actor:
   def `package`(`package`: Package): Packaged =
-    scribe.info(s"*** Packaged wort into keg.") // TODO!
-    // ibu, abv, abw, be TODO!
-    Packaged()
+    scribe.info(s"*** Packaged ibu bitterness: TODO!") // Calculate ibu, abv, abw, calories and be!
+    scribe.info(s"*** Packaged alcohol by volume: TODO!")
+    scribe.info(s"*** Packaged alcohol by weight: TODO!")
+    scribe.info(s"*** Packaged calories: TODO!")
+    scribe.info(s"*** Packaged brew efficiency: TODO!")
+    scribe.info(s"*** Packaged wort into keg.")
+    Packaged(ibuBitterness = 68, alcoholByVolume = 6.4, alcoholByWeight = 6.0, calories = 190, brewhouseEfficiency = 71)

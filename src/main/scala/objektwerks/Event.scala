@@ -26,6 +26,10 @@ final case class Fermented(finalGravity: Double) extends Event
 
 final case class Conditioned(srmColor: Int) extends Event
 
-final case class Packaged() extends Event
+final case class Packaged(ibuBitterness: Int,
+                          alcoholByVolume: Double,
+                          alcoholByWeight: Double,
+                          calories: Int,
+                          brewhouseEfficiency: Int) extends Event
 
 final case class Brewed(events: List[Event]) extends Event
