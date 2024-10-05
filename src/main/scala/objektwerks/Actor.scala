@@ -42,6 +42,7 @@ final class Lauterer extends Actor:
 final class Sparger extends Actor:
   def sparge(sparge: Sparge): Sparged =
     scribe.info(s"*** Sparger sparged wort: ${sparge.recipe.grains}")
+    scribe.info(s"*** Sparger mash efficiency should be with in this range: ${sparge.recipe.mashEfficiency}")
     Sparged(mashEfficiency = 70) // Calculate mashed efficiency!
 
 final class Boiler extends Actor:
