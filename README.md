@@ -109,10 +109,11 @@ Metric
 4. **Original Gravity: OG** - Original Gravity measures the gravity of wort before fermentation. ***Use a hydrometer***.
     1. OG: Measure OG before fermentation.
     2. Constraint: Sample must be at 20C / 68F.
-    2. Range: 1.000 - 1.130
-5. **Final Gravity: FG** - Final Gravity measures the gravity of wort after fermentation.
-    1. Use a **Hydrometer** to measure FG after fermentation. Sample must be at 20C / 68F.
-    2. Range: 1.000 - 1.130
+    3. Range: 1.000 - 1.130
+5. **Final Gravity: FG** - Final Gravity measures the gravity of wort after fermentation.  ***Use a hydrometer***.
+    1. FG: Measure FG after fermentation.
+    2. Constraint: Sample must be at 20C / 68F.
+    3. Range: 1.000 - 1.130
 6. **Color: SRM** - Standard Reference Method (SRM) represents the color of a beer. Malt Color Units (MCU).
     1. MCU = ( Grain Weight (lbs) ) * ( Grain Color (degrees lovibond) ) / ( Volume(gallons) )
     2. SRM = 1.4922 * ( MCU * 0.6859 )
