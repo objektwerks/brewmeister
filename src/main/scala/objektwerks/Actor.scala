@@ -36,9 +36,9 @@ final class Masher extends Actor:
   def mash(mash: Mash): Mashed =
     Mashed(
       List(
+        s"*** Masher ph should be: ${mash.recipe.pH}",
         s"*** Masher mashed grist into a wort at a temp of: ${mash.recipe.mashingTemp} for a duration of: ${mash.recipe.mashingDuration}",
-        s"*** Masher optionally added adjuncts: ${mash.recipe.adjuncts}",
-        s"*** Masher ph should be: ${mash.recipe.pH}"
+        s"*** Masher optionally added adjuncts: ${mash.recipe.adjuncts}"
       ),
       pH = 5.6
     ) // Calculate pH!
