@@ -49,7 +49,7 @@ Process
     1. input - wort, optional ***adjuncts*** and ***hops***
     2. output - wort, ***srm color***
 13. **Packaging** - Bottle / Can ( carbonate with priming sugar ) or Keg ( force carbonate ) the ***fermented and conditioned wort***. Condition for 2+ days at required **temp**. Then refrigerate at required **temp**.
-    1. input - wort
+    1. input - wort, priming sugar or forced carbonation
     2. output - beer, **IBU**, **ABV**, **ABW**, **Brewhouse Efficiency**
 >Some beer recipes ***may*** require adjustments to this process.
 
