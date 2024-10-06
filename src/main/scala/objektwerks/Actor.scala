@@ -91,7 +91,7 @@ final class Fermenter extends Actor:
   def ferment(ferment: Ferment): Fermented =
     Fermented(
       List(
-        s"Should ferment with this temp / duration: ${ferment.recipe.fermentatingTempDuration}",
+        s"Fermented within this temp / duration: ${ferment.recipe.fermentatingTempDuration}",
         s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
       ),
       finalGravity = 1.015
@@ -101,10 +101,10 @@ final class Conditioner extends Actor:
   def condition(condition: Condition): Conditioned =
     Conditioned(
       List(
-        s"Should condition with this temp / duration: ${condition.recipe.conditioningTempDuration}",
-        s"Should have an SRM color within this range: ${condition.recipe.srmColor}",
+        s"Conditioned within this temp / duration: ${condition.recipe.conditioningTempDuration}",
         s"Optionally added adjuncts: ${condition.recipe.adjuncts}",
-        s"Optionally added hops: ${condition.recipe.hops}"
+        s"Optionally added hops: ${condition.recipe.hops}",
+        s"Should have an SRM color within this range: ${condition.recipe.srmColor}"
       ),
       srmColor = 7
     ) // Calculate SRM color!
@@ -113,7 +113,7 @@ final class Packager extends Actor:
   def `package`(`package`: Package): Packaged =
     Packaged(
       List(
-        s"Should condition with this temp / duration: ${`package`.recipe.packagingTempDuration}",
+        s"Conditioned within this temp / duration: ${`package`.recipe.packagingTempDuration}",
         s"Hop bitterness should be within this range: ${`package`.recipe.ibuBitterness}",
         s"Alcohol by volume should be within this range: ${`package`.recipe.alcoholByVolume}",
         s"Alcohol by weight should be within this range: ${`package`.recipe.alcoholByWeight}",
