@@ -65,7 +65,7 @@ final class Boiler extends Actor:
   def boil(boil: Boil): Boiled =
     Boiled(
       List(
-        s"*** Boiler boiled wort to a temp of: ${boil.recipe.boilingTemp} for a duration of: ${boil.recipe.boilingDuration}",
+        s"*** Boiler boiled the wort to a temp of: ${boil.recipe.boilingTemp} for a duration of: ${boil.recipe.boilingDuration}",
         s"*** Boiler added hops: ${boil.recipe.hops}",
         s"*** Boiler optionally added adjuncts: ${boil.recipe.adjuncts}"
       )
@@ -75,7 +75,7 @@ final class Cooler extends Actor:
   def cool(cool: Cool): Cooled =
     Cooled(
       List(
-        s"*** Cooler should cool the wort to a temp of: ${cool.recipe.coolingTemp}"
+        s"*** Cooler cooled the wort to a temp of: ${cool.recipe.coolingTemp}"
       )
     )
 
