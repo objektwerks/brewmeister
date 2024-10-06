@@ -102,7 +102,7 @@ Recipe
 * grains: List[Grain]
 * hops: List[Hop],
 * adjuncts: List[Adjunct]
-* yeasts: List[Yeast]*
+* yeasts: List[Yeast]
 
 Model
 -----
