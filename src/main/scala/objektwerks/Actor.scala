@@ -101,11 +101,15 @@ final class Fermenter extends Actor:
 
 final class Conditioner extends Actor:
   def condition(condition: Condition): Conditioned =
-    scribe.info(s"*** Conditioner should condition within this temp range: ${condition.recipe.conditioningTemp}")
-    scribe.info(s"*** Conditioner should have an SRM color within this range: ${condition.recipe.srmColor}")
-    scribe.info(s"*** Conditioner optionally added adjuncts: ${condition.recipe.adjuncts}")
-    scribe.info(s"*** Conditioner optionally added hops: ${condition.recipe.hops}")
-    Conditioned(srmColor = 7) // Calculate SRM color!
+    Conditioned(
+      List(
+        s"*** Conditioner should condition within this temp range: ${condition.recipe.conditioningTemp}",
+        s"*** Conditioner should have an SRM color within this range: ${condition.recipe.srmColor}",
+        s"*** Conditioner optionally added adjuncts: ${condition.recipe.adjuncts}",
+        s"*** Conditioner optionally added hops: ${condition.recipe.hops}"
+      ),
+      srmColor = 7
+    ) // Calculate SRM color!
 
 final class Packager extends Actor:
   def `package`(`package`: Package): Packaged =
