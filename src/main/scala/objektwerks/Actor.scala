@@ -55,18 +55,21 @@ final class Sparger extends Actor:
   def sparge(sparge: Sparge): Sparged =
     Sparged(
       List(
-       s"*** Sparger sparged wort: ${sparge.recipe.grains}",
-       s"*** Sparger mash efficiency should be with in this range: ${sparge.recipe.mashEfficiency}"
+        s"*** Sparger sparged wort: ${sparge.recipe.grains}",
+        s"*** Sparger mash efficiency should be with in this range: ${sparge.recipe.mashEfficiency}"
       ),
       mashEfficiency = 70
     ) // Calculate mashed efficiency!
 
 final class Boiler extends Actor:
   def boil(boil: Boil): Boiled =
-    scribe.info(s"*** Boiler boiled wort to a temp of: ${boil.recipe.boilingTemp} for a duration of: ${boil.recipe.boilingDuration}")
-    scribe.info(s"*** Boiler added hops: ${boil.recipe.hops}")
-    scribe.info(s"*** Boiler optionally added adjuncts: ${boil.recipe.adjuncts}")
-    Boiled()
+    Boiled(
+      List(
+        s"*** Boiler boiled wort to a temp of: ${boil.recipe.boilingTemp} for a duration of: ${boil.recipe.boilingDuration}",
+        s"*** Boiler added hops: ${boil.recipe.hops}",
+        s"*** Boiler optionally added adjuncts: ${boil.recipe.adjuncts}"
+      )
+    )
 
 final class Cooler extends Actor:
   def cool(cool: Cool): Cooled =
