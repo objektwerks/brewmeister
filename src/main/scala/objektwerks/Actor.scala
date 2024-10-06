@@ -5,7 +5,7 @@ sealed trait Actor
 final class Sanitizer extends Actor:
   def sanitize(sanitize: Sanitize): Sanitized =
     Sanitized(
-      List( s"*** Sanitized brewing implements." )
+      List( s"*** Sanitizer sanitized brewing implements." )
     )
 
 final class Preparer extends Actor:
@@ -113,11 +113,18 @@ final class Conditioner extends Actor:
 
 final class Packager extends Actor:
   def `package`(`package`: Package): Packaged =
-    scribe.info(s"*** Packager should condition within this temp range: ${`package`.recipe.packagingTemp}")
-    scribe.info(s"*** Packager ibu bitterness: TODO!") // Calculate ibu, abv, abw, calories and be!
-    scribe.info(s"*** Packager alcohol by volume: TODO!")
-    scribe.info(s"*** Packager alcohol by weight: TODO!")
-    scribe.info(s"*** Packager calories: TODO!")
-    scribe.info(s"*** Packager brew efficiency: TODO!")
-    scribe.info(s"*** Packager packaged wort in a keg.")
-    Packaged(ibuBitterness = 68, alcoholByVolume = 6.4, alcoholByWeight = 6.0, calories = 190, brewhouseEfficiency = 71)
+    Packaged(
+      List(
+        s"*** Packager should condition within this temp range: ${`package`.recipe.packagingTemp}",
+        s"*** Packager ibu bitterness: TODO!",
+        s"*** Packager alcohol by volume: TODO!",
+        s"*** Packager alcohol by weight: TODO!",
+        s"*** Packager calories: TODO!",
+        s"*** Packager brew efficiency: TODO!"
+      ),
+      ibuBitterness = 68,
+      alcoholByVolume = 6.4,
+      alcoholByWeight = 6.0,
+      calories = 190,
+      brewhouseEfficiency = 71
+    )  // Calculate ibu, abv, abw, calories and be!
