@@ -40,6 +40,7 @@ Process
     3. output - wort
 9. **Cooling** - Cool the ***wort*** using a chiller, until required **temp** is reached.
     1. input - wort
+    2. constraints - required **temp**
     2. output - wort
 10. **Whirlpooling** - Stir the ***wort***, collecting hop solids, or ***trub***, at the bottom-center of the kettle.
     1. input - wort, optional ***hops***
