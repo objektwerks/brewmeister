@@ -23,15 +23,15 @@ final class Preparer extends Actor:
 
 final class Malter extends Actor:
   def malt(malt: Malt): Malted =
-    scribe.info(s"*** Malter malted grains.")
     Malted(
-      
+      List( s"*** Malter malted grains." )
     )
 
 final class Miller extends Actor:
   def mill(mill: Mill): Milled =
-    scribe.info(s"*** Miller crushed grains into a grist.")
-    Milled()
+    Milled(
+      List( s"*** Miller crushed grains into a grist." )
+    )
 
 final class Masher extends Actor:
   def mash(mash: Mash): Mashed =
