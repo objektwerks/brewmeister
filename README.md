@@ -45,10 +45,10 @@ Process
 11. **Fermenting** - **Transfer** the ***wort*** to the primary ***fermenter***. Then **pitch** the ***yeast*** into the ***wort***, allowing for the conversion of sugars into alcohol and CO2. Ferment for 2+ weeks at required **temp**.
     1. input - wort, ***yeast***
     2. output - wort, ***final gravity***
-12. **Conditioning** - **Optionally** **transfer** ***wort*** to a secondary ***fermenter***. Condition for 2+ days at required **temp**.
+12. **Conditioning** - **Transfer** ***wort*** to a secondary ***fermenter***. Condition for 2+ days at required **temp**.
     1. input - wort, optional ***adjuncts*** and ***hops***
     2. output - wort, ***srm color***
-13. **Packaging** - Bottle / Can ( carbonate with priming sugar ) or Keg ( force carbonate ) the ***fermented and optionally conditioned wort***. Condition for 2+ days at required **temp**. Then refrigerate at required **temp**.
+13. **Packaging** - Bottle / Can ( carbonate with priming sugar ) or Keg ( force carbonate ) the ***fermented and conditioned wort***. Condition for 2+ days at required **temp**. Then refrigerate at required **temp**.
     1. input - wort
     2. output - beer, **IBU**, **ABV**, **ABW**, **Brewhouse Efficiency**
 >Some beer recipes ***may*** require adjustments to this process.
