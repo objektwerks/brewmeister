@@ -172,7 +172,7 @@ object Metrics:
             alcoholByWeight = 6.0,
             calories = 190,
             mashEfficiency = 70,
-            brewhouseEfficiency = 71)                            
+            brewhouseEfficiency = 71)
 
 final case class Metrics(created: String = now(),
                          style: String = "",
