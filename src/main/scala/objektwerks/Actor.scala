@@ -92,6 +92,7 @@ final class Fermenter extends Actor:
     Fermented(
       List(
         s"Should ferment within this temp range: ${ferment.recipe.fermentatingTemp}",
+        s"Should ferment for: ${ferment.recipe.fermentingDuration} weeks",
         s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
       ),
       finalGravity = 1.015
