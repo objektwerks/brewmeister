@@ -74,6 +74,10 @@ Flows
     12. Condition --> **Conditioner** -- Conditioned --> App
     13. Package --> **Packager** -- Packaged --> App
 
+Recipe
+------
+>**TODO**
+
 Model
 -----
 * Recipe 1 --> * Grain | Hop | Adjunct | Yeast
