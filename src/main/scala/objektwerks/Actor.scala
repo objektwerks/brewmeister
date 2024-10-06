@@ -10,12 +10,11 @@ final class Sanitizer extends Actor:
 
 final class Preparer extends Actor:
   def prepare(prepare: Prepare): Prepared =
-    scribe.info(s"*** Preparer preparing recipe ingrediants.")
+    scribe.info(s"*** Preparer prepared the following recipe ingrediants:")
     scribe.info(s"*** Grains ${prepare.recipe.grains}")
     scribe.info(s"*** Hops ${prepare.recipe.hops}")
     scribe.info(s"*** Adjuncts ${prepare.recipe.adjuncts}")
     scribe.info(s"*** Yeasts ${prepare.recipe.yeasts}")
-    scribe.info(s"*** Preparer prepared recipe ingrediants.")
     Prepared()
 
 final class Malter extends Actor:
