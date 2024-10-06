@@ -41,14 +41,14 @@ Process
 9. **Cooling** - Cool the ***wort*** using a chiller, until required **temp** is reached.
     1. input - wort
     2. constraints - required cooling **temp**
-    2. output - wort
+    3. output - wort
 10. **Whirlpooling** - Stir the ***wort***, collecting hop solids, or ***trub***, at the bottom-center of the kettle.
     1. input - wort, optional **hops**
     2. output - **original gravity**
 11. **Fermenting** - **Transfer** the ***wort*** to the primary ***fermenter***. Then **pitch** the ***yeast*** into the ***wort***, allowing for the conversion of sugars into alcohol and CO2. Ferment for required **temp** and **duration**.
     1. input - wort, **yeast**
     2. constraints - required fermenting **temp** and **duration**
-    2. output - wort, **final gravity**
+    3. output - wort, **final gravity**
 12. **Conditioning** - **Transfer** ***wort*** to a secondary ***fermenter***. Condition for required **temp** and **duration**.
     1. input - wort, optional **adjuncts** and **hops**
     2. constraints - required conditioning **temp** and **duration**
