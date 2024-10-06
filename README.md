@@ -24,7 +24,7 @@ Process
 4. **Milling** - Crush malted grains into a ***grist***, exposing its starches for ***mashing***.
     1. input - grains
     2. output - crushed grains as ***grist***
-5. **Mashing** - **Transfer** the ***grist*** to a ***mash tun*** with boiling water at required **temp**. Stir and let set for **60m**, allowing for the conversion of starches into fermentable sugars - known as the ***wort***.
+5. **Mashing** - **Transfer** the ***grist*** to a ***mash tun*** with boiling water at required **temp**. Stir and let set for required **duration**, allowing for the conversion of starches into fermentable sugars - known as the ***wort***.
     1. input - grist, optional ***adjuncts***
     2. output - wort, ***pH***
 6. **Lautering** - Filter out solids from the ***wort***.
@@ -42,13 +42,13 @@ Process
 10. **Whirlpooling** - Stir the ***wort***, collecting hop solids, or ***trub***, at the bottom-center of the kettle.
     1. input - wort, optional ***hops***
     2. output - ***original gravity***
-11. **Fermenting** - **Transfer** the ***wort*** to the primary ***fermenter***. Then **pitch** the ***yeast*** into the ***wort***, allowing for the conversion of sugars into alcohol and CO2. Ferment for 14+ days at required **temp**.
+11. **Fermenting** - **Transfer** the ***wort*** to the primary ***fermenter***. Then **pitch** the ***yeast*** into the ***wort***, allowing for the conversion of sugars into alcohol and CO2. Ferment for required **duration** and **temp**.
     1. input - wort, ***yeast***
     2. output - wort, ***final gravity***
-12. **Conditioning** - **Transfer** ***wort*** to a secondary ***fermenter***. Condition for 2 days at required **temp**.
+12. **Conditioning** - **Transfer** ***wort*** to a secondary ***fermenter***. Condition for required **duration** and **temp**.
     1. input - wort, optional ***adjuncts*** and ***hops***
     2. output - wort, ***srm color***
-13. **Packaging** - Bottle / Can ( carbonate with priming sugar ) or Keg ( force carbonate ) the ***fermented and conditioned wort***. Condition for 2 days at required **temp**. Then refrigerate at required **temp**.
+13. **Packaging** - Bottle / Can ( carbonate with priming sugar ) or Keg ( force carbonate ) the ***fermented and conditioned wort***. Condition for required **duration** and **temp**. Then refrigerate at required **temp**.
     1. input - wort, priming sugar or forced carbonation
     2. output - beer, **IBU**, **ABV**, **ABW**, **Brewhouse Efficiency**
 >Some beer recipes ***may*** require adjustments to this process.
