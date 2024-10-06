@@ -116,6 +116,7 @@ final class Packager extends Actor:
     Packaged(
       List(
         s"Should condition within this temp range: ${`package`.recipe.packagingTemp}",
+        s"Should condition for: ${`package`.recipe.packagingDuration} days",
         s"Hop bitterness should be within this range: ${`package`.recipe.ibuBitterness}",
         s"Alcohol by volume should be within this range: ${`package`.recipe.alcoholByVolume}",
         s"Alcohol by weight should be within this range: ${`package`.recipe.alcoholByWeight}",
