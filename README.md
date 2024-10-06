@@ -25,8 +25,9 @@ Process
     1. input - grains
     2. output - crushed grains as ***grist***
 5. **Mashing** - **Transfer** the ***grist*** to a ***mash tun*** with boiling water at required **temp**. Stir and let set for required **duration**, allowing for the conversion of starches into fermentable sugars - known as the ***wort***.
-    1. input - grist, optional ***adjuncts***
-    2. output - wort, ***pH***
+    1. input - grist, optional **adjuncts**
+    2. constraints - required **temp** and **duration**
+    3. output - wort, **pH**
 6. **Lautering** - Filter out solids from the ***wort***.
     1. input - wort
     2. output - wort
