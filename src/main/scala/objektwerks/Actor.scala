@@ -73,8 +73,11 @@ final class Boiler extends Actor:
 
 final class Cooler extends Actor:
   def cool(cool: Cool): Cooled =
-    scribe.info(s"*** Cooler cooled wort to a temp of: ${cool.recipe.coolingTemp}")
-    Cooled()
+    Cooled(
+      List(
+        s"*** Cooler cooled wort to a temp of: ${cool.recipe.coolingTemp}"
+      )
+    )
 
 final class Whirlpooler extends Actor:
   def whirlpool(whirlpool: Whirlpool): Whirlpooled =
