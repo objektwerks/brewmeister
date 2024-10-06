@@ -5,22 +5,28 @@ sealed trait Actor:
 
 final class Sanitizer extends Actor:
   def sanitize(sanitize: Sanitize): Sanitized =
-    scribe.info(s"*** Sanitized brewing implements.")
-    Sanitized()
+    Sanitized(
+      List( s"*** Sanitized brewing implements." )
+    )
 
 final class Preparer extends Actor:
   def prepare(prepare: Prepare): Prepared =
-    scribe.info(s"*** Preparer prepared the following recipe ingrediants:")
-    scribe.info(s"*** Grains ${prepare.recipe.grains}")
-    scribe.info(s"*** Hops ${prepare.recipe.hops}")
-    scribe.info(s"*** Adjuncts ${prepare.recipe.adjuncts}")
-    scribe.info(s"*** Yeasts ${prepare.recipe.yeasts}")
-    Prepared()
+    Prepared(
+      List(
+        s"*** Preparer prepared the following recipe ingrediants:",
+        s"*** Grains ${prepare.recipe.grains}",
+        s"*** Hops ${prepare.recipe.hops}",
+        s"*** Adjuncts ${prepare.recipe.adjuncts}",
+        s"*** Yeasts ${prepare.recipe.yeasts}"
+      )
+    )
 
 final class Malter extends Actor:
   def malt(malt: Malt): Malted =
     scribe.info(s"*** Malter malted grains.")
-    Malted()
+    Malted(
+      
+    )
 
 final class Miller extends Actor:
   def mill(mill: Mill): Milled =
