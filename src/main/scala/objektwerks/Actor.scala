@@ -117,7 +117,7 @@ final class Packager extends Actor:
         s"Alcohol by volume should be within this range: ${`package`.recipe.alcoholByVolume}",
         s"Alcohol by weight should be within this range: ${`package`.recipe.alcoholByWeight}",
         s"Calories should be within this range: ${`package`.recipe.calories}",
-        s"Brew efficiency should be within this range: ${`package`.recipe.brewhouseEfficiency}"
+        s"Should have a brew efficiency within this range: ${`package`.recipe.brewhouseEfficiency}"
       ),
       ibuBitterness = 68,
       alcoholByVolume = 6.4,
