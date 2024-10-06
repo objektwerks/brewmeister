@@ -92,7 +92,7 @@ final class Fermenter extends Actor:
     Fermented(
       List(
         s"Should ferment within this temp range: ${ferment.recipe.fermentatingTemp}",
-        s"Should ferment for: ${ferment.recipe.fermentingDuration} weeks",
+        s"Should ferment for: ${ferment.recipe.fermentingDuration} days",
         s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
       ),
       finalGravity = 1.015
@@ -103,6 +103,7 @@ final class Conditioner extends Actor:
     Conditioned(
       List(
         s"Should condition within this temp range: ${condition.recipe.conditioningTemp}",
+        s"Should condition for: ${condition.recipe.conditioningDuration} days",
         s"Should have an SRM color within this range: ${condition.recipe.srmColor}",
         s"Optionally added adjuncts: ${condition.recipe.adjuncts}",
         s"Optionally added hops: ${condition.recipe.hops}"
