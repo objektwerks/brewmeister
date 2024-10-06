@@ -53,8 +53,7 @@ final class Sparger extends Actor:
   def sparge(sparge: Sparge): Sparged =
     Sparged(
       List(
-        s"Mash efficiency should be within this range: ${sparge.recipe.mashEfficiency}",
-        "Sparged wort."
+        s"Mash efficiency should be within this range: ${sparge.recipe.mashEfficiency}"
       ),
       mashEfficiency = 70
     ) // Calculate mashed efficiency!
