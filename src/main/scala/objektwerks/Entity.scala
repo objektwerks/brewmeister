@@ -10,6 +10,9 @@ def localDateTime(now: String): LocalDateTime = if now.nonEmpty then LocalDateTi
 enum UoM derives JsonSupport:
   case oz, gl, ml, l, lb, kg
 
+enum UoT derives JsonSupport:
+  case minutes, days, weeks, months
+
 object Process:
   def default: Process =
     Process(recipe = Recipe.default,
