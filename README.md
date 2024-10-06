@@ -36,7 +36,8 @@ Process
     2. output - wort, ***mash efficiency***
 8. **Boiling** - **Transfer** the ***wort*** to a ***brew kettle*** and bring to a boil at required **temp**. Sustain boil for required **duration**.
     1. input - wort, hops, optional ***adjuncts***
-    2. output - wort
+    2. constraints - required **temp** and **duration**
+    3. output - wort
 9. **Cooling** - Cool the ***wort*** using a chiller, until required **temp** is reached.
     1. input - wort
     2. output - wort
