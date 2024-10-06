@@ -36,7 +36,7 @@ final class Masher extends Actor:
   def mash(mash: Mash): Mashed =
     Mashed(
       List(
-        s"Mashed grist into a wort within this temp range / duration: ${mash.recipe.mashingTempDuration}",
+        s"Mashed grist into a wort within this temp range / duration: ${mash.recipe.mashingTempRangeDuration}",
         s"Optionally added adjuncts: ${mash.recipe.adjuncts}",
         s"pH should be: ${mash.recipe.pH}"
       ),
@@ -62,7 +62,7 @@ final class Boiler extends Actor:
   def boil(boil: Boil): Boiled =
     Boiled(
       List(
-        s"Boiled wort within this temp range / duration: ${boil.recipe.boilingTempDuration}",
+        s"Boiled wort within this temp range / duration: ${boil.recipe.boilingTempRangeDuration}",
         s"Added hops: ${boil.recipe.hops}",
         s"Optionally added adjuncts: ${boil.recipe.adjuncts}"
       )
@@ -72,7 +72,7 @@ final class Cooler extends Actor:
   def cool(cool: Cool): Cooled =
     Cooled(
       List(
-        s"Cooled the wort within this temp range: ${cool.recipe.coolingTemp}"
+        s"Cooled the wort within this temp range: ${cool.recipe.coolingTempRange}"
       )
     )
 
@@ -90,7 +90,7 @@ final class Fermenter extends Actor:
   def ferment(ferment: Ferment): Fermented =
     Fermented(
       List(
-        s"Fermented within this temp range / duration: ${ferment.recipe.fermentatingTempDuration}",
+        s"Fermented within this temp range / duration: ${ferment.recipe.fermentatingTempRangeDuration}",
         s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
       ),
       finalGravity = 1.015
@@ -100,7 +100,7 @@ final class Conditioner extends Actor:
   def condition(condition: Condition): Conditioned =
     Conditioned(
       List(
-        s"Conditioned within this temp range / duration: ${condition.recipe.conditioningTempDuration}",
+        s"Conditioned within this temp range / duration: ${condition.recipe.conditioningTempRangeDuration}",
         s"Optionally added adjuncts: ${condition.recipe.adjuncts}",
         s"Optionally added hops: ${condition.recipe.hops}",
         s"Should have an SRM color within this range: ${condition.recipe.srmColor}"
@@ -112,13 +112,13 @@ final class Packager extends Actor:
   def `package`(`package`: Package): Packaged =
     Packaged(
       List(
-        s"Conditioned within this temp range / duration: ${`package`.recipe.packagingTempDuration}",
+        s"Conditioned within this temp range / duration: ${`package`.recipe.packagingTempRangeDuration}",
         s"Hop bitterness should be within this range: ${`package`.recipe.ibuBitterness}",
         s"Alcohol by volume should be within this range: ${`package`.recipe.alcoholByVolume}",
         s"Alcohol by weight should be within this range: ${`package`.recipe.alcoholByWeight}",
         s"Calories should be within this range: ${`package`.recipe.calories}",
         s"Should have a brew efficiency within this range: ${`package`.recipe.brewhouseEfficiency}",
-        s"Should refrigerate within this temp range: ${`package`.recipe.refrigerateTemp}",
+        s"Should refrigerate within this temp range: ${`package`.recipe.refrigerateTempRange}",
       ),
       ibuBitterness = 68,
       alcoholByVolume = 6.4,
