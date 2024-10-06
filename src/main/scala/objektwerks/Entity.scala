@@ -101,7 +101,7 @@ final case class Yeast(typeof: String,
                        mixinMinute: Int,
                        mixinStep: MixinStep = MixinStep.Fermenting) derives JsonSupport
 
-final case class TempDuration(temp: Int, duration: Int, unit: UoT) derives JsonSupport
+final case class TempDuration(range: (Int, Int), duration: Int, unit: UoT) derives JsonSupport
 
 object Recipe:
   def default: Recipe =
