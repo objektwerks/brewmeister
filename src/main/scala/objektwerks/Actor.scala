@@ -37,7 +37,7 @@ final class Masher extends Actor:
     Mashed(
       List(
         s"ph should be: ${mash.recipe.pH}",
-        s"Mashed grist into a wort at a temp of: ${mash.recipe.mashingTemp} for a duration of: ${mash.recipe.mashingDuration}",
+        s"Mashed grist into a wort within this temp / duration: ${mash.recipe.mashingTempDuration}",
         s"Optionally added adjuncts: ${mash.recipe.adjuncts}"
       ),
       pH = 5.6
@@ -63,7 +63,7 @@ final class Boiler extends Actor:
   def boil(boil: Boil): Boiled =
     Boiled(
       List(
-        s"Boiled the wort to a temp of: ${boil.recipe.boilingTemp} for a duration of: ${boil.recipe.boilingDuration}",
+        s"Boiled wort within this time / duration: ${boil.recipe.boilingTempDuration}",
         s"Added hops: ${boil.recipe.hops}",
         s"Optionally added adjuncts: ${boil.recipe.adjuncts}"
       )
@@ -91,8 +91,7 @@ final class Fermenter extends Actor:
   def ferment(ferment: Ferment): Fermented =
     Fermented(
       List(
-        s"Should ferment within this temp range: ${ferment.recipe.fermentatingTemp}",
-        s"Should ferment for: ${ferment.recipe.fermentingDuration} days",
+        s"Should ferment with this temp / duration: ${ferment.recipe.fermentatingTempDuration}",
         s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
       ),
       finalGravity = 1.015
@@ -102,8 +101,7 @@ final class Conditioner extends Actor:
   def condition(condition: Condition): Conditioned =
     Conditioned(
       List(
-        s"Should condition within this temp range: ${condition.recipe.conditioningTemp}",
-        s"Should condition for: ${condition.recipe.conditioningDuration} days",
+        s"Should condition with this temp / duration: ${condition.recipe.conditioningTempDuration}",
         s"Should have an SRM color within this range: ${condition.recipe.srmColor}",
         s"Optionally added adjuncts: ${condition.recipe.adjuncts}",
         s"Optionally added hops: ${condition.recipe.hops}"
@@ -115,8 +113,7 @@ final class Packager extends Actor:
   def `package`(`package`: Package): Packaged =
     Packaged(
       List(
-        s"Should condition within this temp range: ${`package`.recipe.packagingTemp}",
-        s"Should condition for: ${`package`.recipe.packagingDuration} days",
+        s"Should condition with this temp / duration: ${`package`.recipe.packagingTempDuration}",
         s"Hop bitterness should be within this range: ${`package`.recipe.ibuBitterness}",
         s"Alcohol by volume should be within this range: ${`package`.recipe.alcoholByVolume}",
         s"Alcohol by weight should be within this range: ${`package`.recipe.alcoholByWeight}",
