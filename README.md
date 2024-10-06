@@ -76,6 +76,7 @@ Flows
 
 Recipe
 ------
+>See [Entity](https://github.com/objektwerks/brewmeister/blob/main/src/main/scala/objektwerks/Entity.scala) for details.
 * created: String
 * style: String
 * water: String
