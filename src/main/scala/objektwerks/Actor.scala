@@ -46,9 +46,7 @@ final class Masher extends Actor:
 final class Lauterer extends Actor:
   def lauter(lauter: Lauter): Lautered =
     Lautered(
-      List(
-        s"*** Lauter lautered wort."
-      )
+      List( s"*** Lauter lautered wort." )
     )
 
 final class Sparger extends Actor:
