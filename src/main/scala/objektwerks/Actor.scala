@@ -91,9 +91,13 @@ final class Whirlpooler extends Actor:
 
 final class Fermenter extends Actor:
   def ferment(ferment: Ferment): Fermented =
-    scribe.info(s"*** Fermenter should ferment within this temp range: ${ferment.recipe.fermentatingTemp}")
-    scribe.info(s"*** Fermenter should have a final gravity within this range: ${ferment.recipe.finalGravity}")
-    Fermented(finalGravity = 1.015) // Calculate final gravity!
+    Fermented(
+      List(
+        s"*** Fermenter should ferment within this temp range: ${ferment.recipe.fermentatingTemp}",
+        s"*** Fermenter should have a final gravity within this range: ${ferment.recipe.finalGravity}"
+      ),
+      finalGravity = 1.015
+    ) // Calculate final gravity!
 
 final class Conditioner extends Actor:
   def condition(condition: Condition): Conditioned =
