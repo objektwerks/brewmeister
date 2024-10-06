@@ -5,14 +5,14 @@ sealed trait Actor
 final class Sanitizer extends Actor:
   def sanitize(sanitize: Sanitize): Sanitized =
     Sanitized(
-      List( s"Sanitized brewing implements." )
+      List( "Sanitized brewing implements." )
     )
 
 final class Preparer extends Actor:
   def prepare(prepare: Prepare): Prepared =
     Prepared(
       List(
-        s"Prepared the following recipe ingrediants:",
+        "Prepared the following recipe ingrediants:",
         s"Grains ${prepare.recipe.grains}",
         s"Hops ${prepare.recipe.hops}",
         s"Adjuncts ${prepare.recipe.adjuncts}",
@@ -23,13 +23,13 @@ final class Preparer extends Actor:
 final class Malter extends Actor:
   def malt(malt: Malt): Malted =
     Malted(
-      List( s"Malted grains." )
+      List( "Malted grains." )
     )
 
 final class Miller extends Actor:
   def mill(mill: Mill): Milled =
     Milled(
-      List( s"Milled grains into a grist." )
+      List( "Milled grains into a grist." )
     )
 
 final class Masher extends Actor:
@@ -46,7 +46,7 @@ final class Masher extends Actor:
 final class Lauterer extends Actor:
   def lauter(lauter: Lauter): Lautered =
     Lautered(
-      List( s"Lautered wort." )
+      List( "Lautered wort." )
     )
 
 final class Sparger extends Actor:
@@ -54,7 +54,7 @@ final class Sparger extends Actor:
     Sparged(
       List(
         s"Mash efficiency should be with in this range: ${sparge.recipe.mashEfficiency}",
-        s"Sparged wort."
+        "Sparged wort."
       ),
       mashEfficiency = 70
     ) // Calculate mashed efficiency!
