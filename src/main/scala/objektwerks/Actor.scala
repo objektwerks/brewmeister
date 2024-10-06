@@ -75,7 +75,7 @@ final class Cooler extends Actor:
   def cool(cool: Cool): Cooled =
     Cooled(
       List(
-        s"*** Cooler cooled wort to a temp of: ${cool.recipe.coolingTemp}"
+        s"*** Cooler should cool the wort to a temp of: ${cool.recipe.coolingTemp}"
       )
     )
 
@@ -127,4 +127,4 @@ final class Packager extends Actor:
       alcoholByWeight = 6.0,
       calories = 190,
       brewhouseEfficiency = 71
-    )  // Calculate ibu, abv, abw, calories and be!
+    ) // Calculate ibu, abv, abw, calories and be!
