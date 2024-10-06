@@ -13,10 +13,10 @@ final class Preparer extends Actor:
     Prepared(
       List(
         "Prepared the following recipe ingrediants:",
-        s"Grains ${prepare.recipe.grains}",
-        s"Hops ${prepare.recipe.hops}",
-        s"Adjuncts ${prepare.recipe.adjuncts}",
-        s"Yeasts ${prepare.recipe.yeasts}"
+        s"Grains: ${prepare.recipe.grains}",
+        s"Hops: ${prepare.recipe.hops}",
+        s"Adjuncts: ${prepare.recipe.adjuncts}",
+        s"Yeasts: ${prepare.recipe.yeasts}"
       )
     )
 
