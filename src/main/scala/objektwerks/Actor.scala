@@ -47,7 +47,7 @@ final class Lauterer extends Actor:
   def lauter(lauter: Lauter): Lautered =
     Lautered(
       List(
-        s"*** Lauter lautered wort: ${lauter.recipe.grains}"
+        s"*** Lauter lautered wort."
       )
     )
 
@@ -55,8 +55,8 @@ final class Sparger extends Actor:
   def sparge(sparge: Sparge): Sparged =
     Sparged(
       List(
-        s"*** Sparger sparged wort: ${sparge.recipe.grains}",
-        s"*** Sparger mash efficiency should be with in this range: ${sparge.recipe.mashEfficiency}"
+        s"*** Sparger mash efficiency should be with in this range: ${sparge.recipe.mashEfficiency}",
+        s"*** Sparger sparged wort."
       ),
       mashEfficiency = 70
     ) // Calculate mashed efficiency!
@@ -116,11 +116,11 @@ final class Packager extends Actor:
     Packaged(
       List(
         s"*** Packager should condition within this temp range: ${`package`.recipe.packagingTemp}",
-        s"*** Packager ibu bitterness: TODO!",
-        s"*** Packager alcohol by volume: TODO!",
-        s"*** Packager alcohol by weight: TODO!",
-        s"*** Packager calories: TODO!",
-        s"*** Packager brew efficiency: TODO!"
+        s"*** Packager ibu bitterness should be within this range: ${`package`.recipe.ibuBitterness}",
+        s"*** Packager alcohol by volume should be within this range: ${`package`.recipe.alcoholByVolume}",
+        s"*** Packager alcohol by weight should be within this range: ${`package`.recipe.alcoholByWeight}",
+        s"*** Packager calories should be within this range: ${`package`.recipe.calories}",
+        s"*** Packager brew efficiency should be within this range: ${`package`.recipe.brewhouseEfficiency}"
       ),
       ibuBitterness = 68,
       alcoholByVolume = 6.4,
