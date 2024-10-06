@@ -56,7 +56,7 @@ final class Sparger extends Actor:
         s"Mash efficiency should be within this range: ${sparge.recipe.mashEfficiency}"
       ),
       mashEfficiency = 70
-    ) // Calculate mashed efficiency!
+    ) // Calculate mash efficiency!
 
 final class Boiler extends Actor:
   def boil(boil: Boil): Boiled =
