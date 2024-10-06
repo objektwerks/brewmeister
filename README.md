@@ -87,6 +87,7 @@ Recipe
 * boilingDuration: Int
 * coolingTemp: (Int, Int)
 * fermentatingTemp: (Int, Int)
+* fermentingDuration: Int
 * conditioningTemp: (Int, Int)
 * packagingTemp: (Int, Int)
 * pH: Double
