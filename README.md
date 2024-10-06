@@ -74,39 +74,9 @@ Flows
     12. Condition --> **Conditioner** -- Conditioned --> App
     13. Package --> **Packager** -- Packaged --> App
 
-Recipe
-------
->See [Entity](https://github.com/objektwerks/brewmeister/blob/main/src/main/scala/objektwerks/Entity.scala) for details.
-* created: String
-* style: String
-* water: String
-* gallons: Double
-* mashingTemp: (Int, Int)
-* mashingDuration: Int
-* boilingTemp: (Int, Int)
-* boilingDuration: Int
-* coolingTemp: (Int, Int)
-* fermentatingTemp: (Int, Int)
-* fermentingDuration: Int
-* conditioningTemp: (Int, Int)
-* packagingTemp: (Int, Int)
-* pH: Double
-* originalGravity: (Double, Double)
-* finalGravity: (Double, Double)
-* srmColor: (Int, Int)
-* ibuBitterness: (Int, Int)
-* alcoholByVolume: (Double, Double)
-* alcoholByWeight: (Double, Double)
-* calories: (Int, Int)
-* mashEfficiency: (Int, Int)
-* brewhouseEfficiency: (Int, Int)
-* grains: List[Grain]
-* hops: List[Hop],
-* adjuncts: List[Adjunct]
-* yeasts: List[Yeast]
-
 Model
 -----
+>See [Entity](https://github.com/objektwerks/brewmeister/blob/main/src/main/scala/objektwerks/Entity.scala) for details.
 * Recipe 1 --> * Grain | Hop | Adjunct | Yeast
 * Process 1 --> * Step 1 --> 1 Container
 * Process 1 --> 1 Recipe | Metrics
