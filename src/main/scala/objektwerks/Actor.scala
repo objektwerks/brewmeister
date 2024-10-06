@@ -46,8 +46,11 @@ final class Masher extends Actor:
 
 final class Lauterer extends Actor:
   def lauter(lauter: Lauter): Lautered =
-    scribe.info(s"*** Lauter lautered wort: ${lauter.recipe.grains}")
-    Lautered()
+    Lautered(
+      List(
+        s"*** Lauter lautered wort: ${lauter.recipe.grains}"
+      )
+    )
 
 final class Sparger extends Actor:
   def sparge(sparge: Sparge): Sparged =
