@@ -81,8 +81,8 @@ final class Whirlpooler extends Actor:
   def whirlpool(whirlpool: Whirlpool): Whirlpooled =
     Whirlpooled(
       List(
-        s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}",
-        s"Optionally added hops: ${whirlpool.recipe.hops}"
+        s"Optionally added hops: ${whirlpool.recipe.hops}",
+        s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}"
       ),
       originalGravity = 1.030
     ) // Calculate original gravity!
