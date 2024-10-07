@@ -61,8 +61,8 @@ Process
 
 Flows
 -----
->Allows ***App*** to call brewing process steps as required via a ***Brewer*** instance.
-1. ***App*** -- create --> ***Brewer*** --
+1. App -- create --> Process
+2. App -- process --> Brewer --
     1. Sanitize --> **Sanitizer** -- Sanitized --> App
     2. Prepare --> **Preparer** -- Prepared --> App
     3. Malt --> **Malter** -- Malted --> App
