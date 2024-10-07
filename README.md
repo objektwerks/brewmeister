@@ -119,7 +119,7 @@ Metric
     2. SRM = 1.4922 * ( MCU * 0.6859 )
     3. Range: 1 - 40
 7. **Hop Bitterness: IBU** - International Bittering Units ( IBU ) is the measure of beer bitterness that comes from boiling hops.
-    1. Hop Utilization % = ( Hop Alpha Acid (%) * Hop Weight (oz) ) / Hop Volume (gallons)
+    1. Hop Utilization % = ( Hop Alpha Acid (%) * Hop Weight (oz) ) / Hop Volume (oz)
     2. IBU = ( Hop Weight (oz) * Hop Alpha Acid (%) * Hop Utilization (%) ) / 7.25
     3. Range: 0 - 120
 8. **Alcohol: ABV** - Measured by volume, the amount of alcohol produced in a wort during fermentation.
