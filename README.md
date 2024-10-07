@@ -116,7 +116,7 @@ Metric
     3. Range: 1.000 - 1.130
 6. **Color: SRM** - Standard Reference Method (SRM) represents the color of a beer. Malt Color Units (MCU).
     1. MCU = ( Grain Weight (lbs) ) * ( Grain Color (degrees lovibond) ) / ( Volume(gallons) )
-    2. SRM = 1.4922 * ( MCU * 0.6859 )
+    2. SRM = 1.4922 * ( MCU ^ 0.6859 )
     3. Range: 1 - 40
 7. **Hop Bitterness: IBU** - International Bittering Units ( IBU ) is the measure of beer bitterness that comes from boiling hops.
     1. Hop Utilization % = ( Hop Alpha Acid (%) * Hop Weight (oz) ) / Hop Volume (oz)
