@@ -7,6 +7,8 @@ import upickle.default.{ReadWriter => JsonSupport}
 def now(): String = LocalDateTime.now.toString
 def localDateTime(now: String): LocalDateTime = if now.nonEmpty then LocalDateTime.parse(now) else LocalDateTime.now
 
+def formatGravity(double: Double): Double = f"$double%1.3f".toDouble
+
 enum UoM derives JsonSupport:
   case oz, gl, ml, l, lb, kg
 
