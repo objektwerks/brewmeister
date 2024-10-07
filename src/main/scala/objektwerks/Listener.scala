@@ -1,8 +1,8 @@
 package objektwerks
 
-trait Listener:
-  def onCommand(command: Command): Unit
+final class Listener:
+  def onCommand(command: Command): Unit = scribe.info(command.toString)
 
-  def onEvent(event: Event): Unit
+  def onEvent(event: Event): Unit = scribe.info(event.toString)
 
-  def onMetrics(metrics: Metrics): Unit
+  def onMetrics(metrics: Metrics): Unit = scribe.info(metrics.toString)
