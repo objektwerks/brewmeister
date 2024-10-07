@@ -1,14 +1,14 @@
 package objektwerks
 
-sealed trait Actor
+sealed trait Handler
 
-final class Sanitizer extends Actor:
+final class Sanitizer extends Handler:
   def sanitize(sanitize: Sanitize): Sanitized =
     Sanitized(
       List( "Sanitized brewing implements." )
     )
 
-final class Preparer extends Actor:
+final class Preparer extends Handler:
   def prepare(prepare: Prepare): Prepared =
     Prepared(
       List(
@@ -20,19 +20,19 @@ final class Preparer extends Actor:
       )
     )
 
-final class Malter extends Actor:
+final class Malter extends Handler:
   def malt(malt: Malt): Malted =
     Malted(
       List( "Malted grains." )
     )
 
-final class Miller extends Actor:
+final class Miller extends Handler:
   def mill(mill: Mill): Milled =
     Milled(
       List( "Milled grains into a grist." )
     )
 
-final class Masher extends Actor:
+final class Masher extends Handler:
   def mash(mash: Mash): Mashed =
     Mashed(
       List(
@@ -43,13 +43,13 @@ final class Masher extends Actor:
       pH = 5.6
     ) // Calculate pH!
 
-final class Lauterer extends Actor:
+final class Lauterer extends Handler:
   def lauter(lauter: Lauter): Lautered =
     Lautered(
       List( "Lautered wort." )
     )
 
-final class Sparger extends Actor:
+final class Sparger extends Handler:
   def sparge(sparge: Sparge): Sparged =
     Sparged(
       List(
@@ -58,7 +58,7 @@ final class Sparger extends Actor:
       mashEfficiency = 70
     ) // Calculate mash efficiency!
 
-final class Boiler extends Actor:
+final class Boiler extends Handler:
   def boil(boil: Boil): Boiled =
     Boiled(
       List(
@@ -68,7 +68,7 @@ final class Boiler extends Actor:
       )
     )
 
-final class Cooler extends Actor:
+final class Cooler extends Handler:
   def cool(cool: Cool): Cooled =
     Cooled(
       List(
@@ -76,7 +76,7 @@ final class Cooler extends Actor:
       )
     )
 
-final class Whirlpooler extends Actor:
+final class Whirlpooler extends Handler:
   def whirlpool(whirlpool: Whirlpool): Whirlpooled =
     Whirlpooled(
       List(
@@ -86,7 +86,7 @@ final class Whirlpooler extends Actor:
       originalGravity = 1.030
     ) // Calculate original gravity!
 
-final class Fermenter extends Actor:
+final class Fermenter extends Handler:
   def ferment(ferment: Ferment): Fermented =
     Fermented(
       List(
@@ -96,7 +96,7 @@ final class Fermenter extends Actor:
       finalGravity = 1.015
     ) // Calculate final gravity!
 
-final class Conditioner extends Actor:
+final class Conditioner extends Handler:
   def condition(condition: Condition): Conditioned =
     Conditioned(
       List(
@@ -108,7 +108,7 @@ final class Conditioner extends Actor:
       srmColor = 7
     ) // Calculate SRM color!
 
-final class Packager extends Actor:
+final class Packager extends Handler:
   def `package`(`package`: Package): Packaged =
     Packaged(
       List(
