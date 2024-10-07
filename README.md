@@ -129,7 +129,7 @@ Metric
     1. ABW % = ( 0.79 * ABV (%) ) / FG
     2. Range: 3.0 - 10.0 %
 10. **Calories** - The number of calories in a beer.
-    1. Volume = Beer bottle in ounces(oz).
+    1. Volume = Beer container (oz)
     2. Alcohol Calories = ( OG - FG ) * 7.5
     3. Carbohydrate Calories = ( FG * 13 ) * Volume
     4. Calories = Alcohol Calories + Carbohydrate Calories
