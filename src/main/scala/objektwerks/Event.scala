@@ -32,5 +32,3 @@ final case class Packaged(log: List[String],
                           alcoholByWeight: Double,
                           calories: Int,
                           brewhouseEfficiency: Int) extends Event
-
-final case class Brewed(events: List[Event]) extends Event
