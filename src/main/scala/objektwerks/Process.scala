@@ -19,63 +19,12 @@ enum UoT derives JsonSupport:
 object Process:
   def default: Process =
     Process(recipe = Recipe.default,
-            metrics = Metrics.default,
-            steps = Steps.default)
+            metrics = Metrics.default)
 
 final case class Process(started: String = now(),
                          completed: String = "",
                          recipe: Recipe,
-                         metrics: Metrics,
-                         steps: List[Step]) derives JsonSupport
-
-object Steps:
-  def default: List[Step] =
-    val mashTun = MashTun(5.0, UoM.gl)
-    val boilKettle = BoilKettle(5.0, UoM.gl)
-    val fermentationKettle = FermentationKettle(5.0, UoM.gl)
-    List(
-      Sanitizing(),
-      Preparing(),
-      Malting(),
-      Milling(),
-      Mashing(container = mashTun),
-      Lautering(container = mashTun),
-      Sparging(container = mashTun),
-      Boiling(container = boilKettle),
-      Cooling(container = boilKettle),
-      Whirlpooling(container = boilKettle),
-      Fermenting(container = fermentationKettle),
-      Conditioning(container = fermentationKettle),
-      Packaging(container = Keg(5.0, UoM.gl))
-    )
-
-sealed trait Step derives JsonSupport:
-  def step: Int
-  def started: String = now()
-  def completed: String = ""
-
-final case class Sanitizing(step: Int = 1) extends Step
-final case class Preparing(step: Int = 2) extends Step
-final case class Malting(step: Int = 3) extends Step
-final case class Milling(step: Int = 4) extends Step
-final case class Mashing(step: Int = 5, container: Container) extends Step
-final case class Lautering(step: Int = 6, container: Container) extends Step
-final case class Sparging(step: Int = 7, container: Container) extends Step
-final case class Boiling(step: Int = 8, container: Container) extends Step
-final case class Cooling(step: Int = 9, container: Container) extends Step
-final case class Whirlpooling(step: Int = 10, container: Container) extends Step
-final case class Fermenting(step: Int = 11, container: Container) extends Step
-final case class Conditioning(step: Int = 12, container: Container) extends Step
-final case class Packaging(step: Int = 13, container: Container) extends Step
-
-sealed trait Container derives JsonSupport:
-  def volume: Double
-  def unit: UoM
-
-final case class MashTun(volume: Double, unit: UoM) extends Container
-final case class BoilKettle(volume: Double, unit: UoM) extends Container
-final case class FermentationKettle(volume: Double, unit: UoM) extends Container
-final case class Keg(volume: Double, unit: UoM) extends Container
+                         metrics: Metrics) derives JsonSupport
 
 enum MixinStep derives JsonSupport:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
