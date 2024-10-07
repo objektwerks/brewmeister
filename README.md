@@ -120,7 +120,7 @@ Metric
     3. Range: 1 - 40
 7. **Hop Bitterness: IBU** - International Bittering Units ( IBU ) is the measure of beer bitterness that comes from boiling hops.
     1. Hop Weight: Actual mass of hops, excluding moisture.
-    2. Hop Volume: Actual mass of hops, including moisture. 1 oz of dry hops equals 4-6 oz of wet hops.
+    2. Hop Volume: Actual mass of hops, including moisture. 1 oz of **dry** hops equals 4-6 oz of **wet** hops.
     3. Hop Utilization % = ( Hop Alpha Acid (%) * Hop Weight (dry oz) ) / Hop Volume (fluid oz)
     4. IBU = ( Hop Weight (oz) * Hop Alpha Acid (%) * Hop Utilization (%) ) / 7.25
     5. Range: 0 - 120
