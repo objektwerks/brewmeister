@@ -17,9 +17,7 @@ enum UoT derives JsonSupport:
   case minutes, days, weeks, months
 
 object Process:
-  def default: Process =
-    Process(recipe = Recipe.default,
-            metrics = Metrics.default)
+  def default: Process = Process(recipe = Recipe.default, metrics = Metrics.default)
 
 final case class Process(started: String = now(),
                          completed: String = "",
