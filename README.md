@@ -81,7 +81,6 @@ Model
 -----
 >See [Entity](https://github.com/objektwerks/brewmeister/blob/main/src/main/scala/objektwerks/Entity.scala) for details.
 * Recipe 1 --> * Grain | Hop | Adjunct | Yeast
-* Process 1 --> * Step 1 --> 1 Container
 * Process 1 --> 1 Recipe | Metrics
 
 Actor
