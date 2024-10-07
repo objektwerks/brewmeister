@@ -3,55 +3,57 @@ package objektwerks
 import ox.channels.Actor
 import ox.supervised
 
-final class Brewer:
-  def sanitize(sanitize: Sanitize): Sanitized =
-    supervised:
-      Actor.create( Sanitizer() ).ask( _.sanitize( sanitize ) )
+final class Brewer(process: Process):
+  private val recipe = process.recipe
 
-  def prepare(prepare: Prepare): Prepared =
+  def sanitize: Sanitized =
     supervised:
-      Actor.create( Preparer() ).ask( _.prepare( prepare ) )
+      Actor.create( Sanitizer() ).ask( _.sanitize( Sanitize() ) )
 
-  def malt(malt: Malt): Malted =
+  def prepare: Prepared =
     supervised:
-      Actor.create( Malter() ).ask( _.malt( malt ) )
+      Actor.create( Preparer() ).ask( _.prepare( Prepare(recipe) ) )
 
-  def mill(mill: Mill): Milled =
+  def malt: Malted =
     supervised:
-      Actor.create( Miller() ).ask( _.mill( mill ) )
+      Actor.create( Malter() ).ask( _.malt( Malt(recipe) ) )
 
-  def mash(mash: Mash): Mashed =
+  def mill: Milled =
     supervised:
-      Actor.create( Masher() ).ask( _.mash( mash ) )
+      Actor.create( Miller() ).ask( _.mill( Mill(recipe) ) )
 
-  def lauter(lauter: Lauter): Lautered =
+  def mash: Mashed =
     supervised:
-      Actor.create( Lauterer() ).ask( _.lauter( lauter ) )
+      Actor.create( Masher() ).ask( _.mash( Mash(recipe) ) )
 
-  def sparge(sparge: Sparge): Sparged =
+  def lauter: Lautered =
     supervised:
-      Actor.create( Sparger() ).ask( _.sparge( sparge ) )
+      Actor.create( Lauterer() ).ask( _.lauter( Lauter(recipe) ) )
 
-  def boil(boil: Boil): Boiled =
+  def sparge: Sparged =
     supervised:
-      Actor.create( Boiler() ).ask( _.boil( boil ) )
+      Actor.create( Sparger() ).ask( _.sparge( Sparge(recipe) ) )
 
-  def cool(cool: Cool): Cooled =
+  def boil: Boiled =
     supervised:
-      Actor.create( Cooler() ).ask( _.cool( cool ) )
+      Actor.create( Boiler() ).ask( _.boil( Boil(recipe) ) )
 
-  def whirlpool(whirlpool: Whirlpool): Whirlpooled =
+  def cool: Cooled =
     supervised:
-      Actor.create( Whirlpooler() ).ask( _.whirlpool( whirlpool ) )
+      Actor.create( Cooler() ).ask( _.cool( Cool(recipe) ) )
 
-  def ferment(ferment: Ferment): Fermented =
+  def whirlpool: Whirlpooled =
     supervised:
-      Actor.create( Fermenter() ).ask( _.ferment( ferment ) )
+      Actor.create( Whirlpooler() ).ask( _.whirlpool( Whirlpool(recipe) ) )
 
-  def condition(condition: Condition): Conditioned =
+  def ferment: Fermented =
     supervised:
-      Actor.create( Conditioner() ).ask( _.condition( condition ) )
+      Actor.create( Fermenter() ).ask( _.ferment( Ferment(recipe) ) )
 
-  def `package`(`package`: Package): Packaged =
+  def condition: Conditioned =
     supervised:
-      Actor.create( Packager() ).ask( _.`package`( `package` ) )
+      Actor.create( Conditioner() ).ask( _.condition( Condition(recipe) ) )
+
+  def `package`: Packaged =
+    supervised:
+      Actor.create( Packager() ).ask( _.`package`( Package(recipe) ) )
