@@ -86,6 +86,7 @@ final case class Grain(typeof: String,
 final case class Hop(typeof: String,
                      amount: Double,
                      unit: UoM,
+                     alphaAcid: (Double, Double),
                      mixinMinute: Int,
                      mixinStep: MixinStep = MixinStep.Boiling) derives JsonSupport // or Whirlpooling or Conditioning
 
@@ -127,7 +128,7 @@ object Recipe:
            mashEfficiency = (70, 80),
            brewhouseEfficiency = (72, 80),
            grains = List( Grain("pale ale", 4.0, UoM.lb, 0) ),
-           hops = List( Hop("amarillo", 2.0, UoM.oz, 0), Hop("cascade", 2.0, UoM.oz, 15), Hop("chinook", 2.0, UoM.oz, 30) ),
+           hops = List( Hop("amarillo", 2.0, UoM.oz, (8.0, 11.0), 0), Hop("cascade", 2.0, UoM.oz, (4.5, 8.9), 15), Hop("chinook", 2.0, UoM.oz, (12.0, 14.0), 30) ),
            adjuncts = List.empty[Adjunct],
            yeasts = List( Yeast("Wyeast American Ale 1056", 5.0, UoM.oz, 0) )
     )
