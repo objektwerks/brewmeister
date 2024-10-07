@@ -1,12 +1,16 @@
 package objektwerks
 
+import ox.channels.ActorRef
+
 sealed trait Handler
 
-final class Sanitizer extends Handler:
-  def sanitize(sanitize: Sanitize): Sanitized =
-    Sanitized(
-      List( "Sanitized brewing implements." )
+final class Sanitizer(listener: ActorRef[Listener]) extends Handler:
+  def sanitize(sanitize: Sanitize): Unit =
+    listener.ask( _.onEvent:
+      Sanitized:
+        "Sanitized brewing implements."
     )
+
 
 final class Preparer extends Handler:
   def prepare(prepare: Prepare): Prepared =
