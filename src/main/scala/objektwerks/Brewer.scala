@@ -4,26 +4,6 @@ import ox.channels.Actor
 import ox.supervised
 
 final class Brewer:
-  def brew(brew: Brew): Brewed =
-    val recipe = brew.recipe
-    val events = supervised:
-      List(
-        sanitize( Sanitize() ),
-        prepare( Prepare(recipe) ),
-        malt( Malt(recipe) ),
-        mill( Mill(recipe) ),
-        mash( Mash(recipe) ),
-        lauter( Lauter(recipe) ),
-        sparge( Sparge(recipe) ),
-        boil( Boil(recipe) ),
-        cool( Cool(recipe) ),
-        whirlpool( Whirlpool(recipe) ),
-        ferment( Ferment(recipe) ),
-        condition( Condition(recipe) ),
-        `package`( Package(recipe) )
-      )
-    Brewed( events )
-
   def sanitize(sanitize: Sanitize): Sanitized =
     supervised:
       Actor.create( Sanitizer() ).ask( _.sanitize( sanitize ) )
