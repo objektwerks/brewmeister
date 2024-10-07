@@ -168,7 +168,7 @@ object Metrics:
             pH = 5.6,
             originalGravity = 1.060,
             finalGravity = 1.012,
-            srmColor = 7,
+            srmColor = 9,
             ibuBitterness = 68,
             alcoholByVolume = 6.4,
             alcoholByWeight = 6.0,
