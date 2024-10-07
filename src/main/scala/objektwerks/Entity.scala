@@ -121,7 +121,7 @@ object Recipe:
            pH = 5.6,
            originalGravity = (1.057, 1.67),
            finalGravity = (1.010, 1.015),
-           srmColor = (6, 8),
+           srmColor = (6, 12),
            ibuBitterness = (60, 75),
            alcoholByVolume = (6.0, 7.0),
            alcoholByWeight = (5.8, 6.8),
