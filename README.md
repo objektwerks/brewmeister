@@ -114,7 +114,7 @@ Metric
     1. FG: Measure FG after fermentation.
     2. Constraint: Sample must be at 20C / 68F.
     3. Range: 1.000 - 1.130
-6. **Color: SRM** - Standard Reference Method (SRM) represents the color of a beer. Malt Color Units (MCU).
+6. **Color: SRM** - Standard Reference Method (SRM) represents the color of a beer. Malt Color Units (MCU). Obtain Lovibond value from grain package.
     1. MCU = ( Grain Weight (lbs) ) * ( Grain Color (degrees lovibond) ) / ( Volume(gallons) )
     2. SRM = 1.4922 * ( MCU ^ 0.6859 )
     3. Range: 1 - 40
