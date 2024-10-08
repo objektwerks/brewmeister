@@ -74,6 +74,7 @@ final class Sparger(listener: ActorRef[Listener]) extends Handler:
   def sparge(sparge: Sparge): Unit =
     listener.tell( _.onEvent:
       Sparged(
+        sparge.batchId,
         List( s"Should have a mash efficiency within this range: ${sparge.recipe.mashEfficiency}" ),
         mashEfficiency = 70
       )
