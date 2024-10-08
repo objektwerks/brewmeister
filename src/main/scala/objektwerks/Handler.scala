@@ -97,6 +97,7 @@ final class Cooler(listener: ActorRef[Listener]) extends Handler:
   def cool(cool: Cool): Unit =
     listener.tell( _.onEvent:
       Cooled(
+        cool.batchId,
         List( s"Cooled the wort within this temp range: ${cool.recipe.coolingTempRange}" )
       )
     )

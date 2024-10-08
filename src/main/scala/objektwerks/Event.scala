@@ -18,7 +18,7 @@ final case class Sparged(batchId: Int, log: List[String], mashEfficiency: Int) e
 
 final case class Boiled(batchId: Int, log: List[String]) extends Event
 
-final case class Cooled(log: List[String]) extends Event
+final case class Cooled(batchId: Int, log: List[String]) extends Event
 
 final case class Whirlpooled(log: List[String], originalGravity: Double) extends Event
 
