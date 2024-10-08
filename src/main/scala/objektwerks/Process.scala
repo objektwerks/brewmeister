@@ -19,7 +19,8 @@ enum UoT derives JsonSupport:
 object Process:
   def default: Process = Process(recipe = Recipe.default, metrics = Metrics.default)
 
-final case class Process(started: String = now(),
+final case class Process(id: Int = 1,
+                         started: String = now(),
                          completed: String = "",
                          recipe: Recipe,
                          metrics: Metrics) derives JsonSupport
