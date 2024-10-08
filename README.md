@@ -61,8 +61,8 @@ Process
 
 Flows
 -----
-1. App -- create --> Process
-2. App -- process --> Brewer --
+1. App -- create --> Batch
+2. App -- batch --> Brewer --
     1. Sanitize --> **Sanitizer** -- Sanitized --> App
     2. Prepare --> **Preparer** -- Prepared --> App
     3. Malt --> **Malter** -- Malted --> App
@@ -81,7 +81,7 @@ Model
 -----
 >See [Entity](https://github.com/objektwerks/brewmeister/blob/main/src/main/scala/objektwerks/Entity.scala) for details.
 * Recipe 1 --> * Grain | Hop | Adjunct | Yeast
-* Process 1 --> 1 Recipe | Metrics
+* Batch 1 --> 1 Recipe | Metrics
 
 Actor
 -----
