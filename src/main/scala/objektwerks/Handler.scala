@@ -101,15 +101,17 @@ final class Whirlpooler(listener: ActorRef[Listener]) extends Handler:
       ) // Calculate original gravity!
     )
 
-final class Fermenter extends Handler:
-  def ferment(ferment: Ferment): Fermented =
-    Fermented(
-      List(
-        s"Fermented within this temp range / duration: ${ferment.recipe.fermentatingTempRangeDuration}",
-        s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
-      ),
-      finalGravity = 1.015
-    ) // Calculate final gravity!
+final class Fermenter(listener: ActorRef[Listener]) extends Handler:
+  def ferment(ferment: Ferment): Unit =
+    listener.tell( _.onEvent:
+      Fermented(
+        List(
+          s"Fermented within this temp range / duration: ${ferment.recipe.fermentatingTempRangeDuration}",
+          s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
+        ),
+        finalGravity = 1.015
+      ) // Calculate final gravity!
+    )
 
 final class Conditioner extends Handler:
   def condition(condition: Condition): Conditioned =
