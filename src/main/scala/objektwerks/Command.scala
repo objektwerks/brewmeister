@@ -26,4 +26,4 @@ final case class Ferment(batchId: Int, recipe: Recipe) extends Command
 
 final case class Condition(batchId: Int, recipe: Recipe) extends Command
 
-final case class Package(recipe: Recipe) extends Command
+final case class Package(batchId: Int, recipe: Recipe) extends Command

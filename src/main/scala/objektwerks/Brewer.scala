@@ -58,4 +58,4 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
 
   def `package`: Unit =
     supervised:
-      Actor.create( Packager(listener) ).tell( _.`package`( Package(recipe) ) )
+      Actor.create( Packager(listener) ).tell( _.`package`( Package(batchId, recipe) ) )
