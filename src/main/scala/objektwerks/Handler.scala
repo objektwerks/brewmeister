@@ -132,6 +132,7 @@ final class Conditioner(listener: ActorRef[Listener]) extends Handler:
   def condition(condition: Condition): Unit =
     listener.tell( _.onEvent:
       Conditioned(
+        condition.batchId,
         List(
           s"Conditioned within this temp range / duration: ${condition.recipe.conditioningTempRangeDuration}",
           s"Optionally added adjuncts: ${condition.recipe.adjuncts}",

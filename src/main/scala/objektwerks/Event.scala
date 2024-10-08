@@ -24,7 +24,7 @@ final case class Whirlpooled(batchId: Int, log: List[String], originalGravity: D
 
 final case class Fermented(batchId: Int, log: List[String], finalGravity: Double) extends Event
 
-final case class Conditioned(log: List[String], srmColor: Int) extends Event
+final case class Conditioned(batchId: Int, log: List[String], srmColor: Int) extends Event
 
 final case class Packaged(log: List[String],
                           ibuBitterness: Int,
