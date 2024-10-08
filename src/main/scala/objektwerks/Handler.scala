@@ -17,7 +17,8 @@ final class Sanitizer(listener: ActorRef[Listener]) extends Handler:
 final class Preparer(listener: ActorRef[Listener]) extends Handler:
   def prepare(prepare: Prepare): Unit =
     listener.tell( _.onEvent:
-      Prepared:
+      Prepared(
+        prepare.batchId,
         List(
           "Prepared the following recipe ingrediants:",
           s"Grains: ${prepare.recipe.grains}",
@@ -25,6 +26,7 @@ final class Preparer(listener: ActorRef[Listener]) extends Handler:
           s"Adjuncts: ${prepare.recipe.adjuncts}",
           s"Yeasts: ${prepare.recipe.yeasts}"
         )
+      )
     )
 
 final class Malter(listener: ActorRef[Listener]) extends Handler:
