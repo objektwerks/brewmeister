@@ -60,13 +60,13 @@ final class Lauterer(listener: ActorRef[Listener]) extends Handler:
       )
     )
 
-final class Sparger extends Handler:
-  def sparge(sparge: Sparge): Sparged =
-    Sparged(
-      List(
-        s"Should have a mash efficiency within this range: ${sparge.recipe.mashEfficiency}"
-      ),
-      mashEfficiency = 70
+final class Sparger(listener: ActorRef[Listener]) extends Handler:
+  def sparge(sparge: Sparge): Unit =
+    listener.tell( _.onEvent:
+      Sparged(
+        List( s"Should have a mash efficiency within this range: ${sparge.recipe.mashEfficiency}" ),
+        mashEfficiency = 70
+      )
     ) // Calculate mash efficiency!
 
 final class Boiler extends Handler:

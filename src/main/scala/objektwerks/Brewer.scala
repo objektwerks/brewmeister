@@ -31,9 +31,9 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
     supervised:
       Actor.create( Lauterer(listener) ).tell( _.lauter( Lauter(recipe) ) )
 
-  def sparge: Sparged =
+  def sparge: Unit =
     supervised:
-      Actor.create( Sparger() ).ask( _.sparge( Sparge(recipe) ) )
+      Actor.create( Sparger(listener) ).tell( _.sparge( Sparge(recipe) ) )
 
   def boil: Boiled =
     supervised:
