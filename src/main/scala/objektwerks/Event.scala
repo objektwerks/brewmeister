@@ -22,7 +22,7 @@ final case class Cooled(batchId: Int, log: List[String]) extends Event
 
 final case class Whirlpooled(batchId: Int, log: List[String], originalGravity: Double) extends Event
 
-final case class Fermented(log: List[String], finalGravity: Double) extends Event
+final case class Fermented(batchId: Int, log: List[String], finalGravity: Double) extends Event
 
 final case class Conditioned(log: List[String], srmColor: Int) extends Event
 

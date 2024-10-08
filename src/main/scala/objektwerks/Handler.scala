@@ -119,6 +119,7 @@ final class Fermenter(listener: ActorRef[Listener]) extends Handler:
   def ferment(ferment: Ferment): Unit =
     listener.tell( _.onEvent:
       Fermented(
+        ferment.batchId,
         List(
           s"Fermented within this temp range / duration: ${ferment.recipe.fermentatingTempRangeDuration}",
           s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
