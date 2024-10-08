@@ -10,7 +10,7 @@ final case class Malt(batchId: Int, recipe: Recipe) extends Command
 
 final case class Mill(batchId: Int, recipe: Recipe) extends Command
 
-final case class Mash(recipe: Recipe) extends Command
+final case class Mash(batchId: Int, recipe: Recipe) extends Command
 
 final case class Lauter(recipe: Recipe) extends Command
 
