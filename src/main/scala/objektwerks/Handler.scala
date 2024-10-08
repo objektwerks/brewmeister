@@ -84,6 +84,7 @@ final class Boiler(listener: ActorRef[Listener]) extends Handler:
   def boil(boil: Boil): Unit =
     listener.tell( _.onEvent:
       Boiled(
+        boil.batchId,
         List(
           s"Boiled wort within this temp range / duration: ${boil.recipe.boilingTempRangeDuration}",
           s"Added hops: ${boil.recipe.hops}",
