@@ -22,7 +22,7 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
 
   def mill: Unit =
     supervised:
-      Actor.create( Miller(listener) ).tell( _.mill( Mill(recipe) ) )
+      Actor.create( Miller(listener) ).tell( _.mill( Mill(batchId, recipe) ) )
 
   def mash: Unit =
     supervised:
