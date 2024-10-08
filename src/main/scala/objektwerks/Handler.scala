@@ -51,6 +51,7 @@ final class Masher(listener: ActorRef[Listener]) extends Handler:
   def mash(mash: Mash): Unit =
     listener.tell( _.onEvent:
       Mashed(
+        mash.batchId,
         List(
           s"Mashed grist into a wort within this temp range / duration: ${mash.recipe.mashingTempRangeDuration}",
           s"Optionally added adjuncts: ${mash.recipe.adjuncts}",

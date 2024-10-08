@@ -10,7 +10,7 @@ final case class Malted(batchId: Int, log: List[String]) extends Event
 
 final case class Milled(batchId: Int, log: List[String]) extends Event
 
-final case class Mashed(log: List[String], pH: Double) extends Event
+final case class Mashed(batchId: Int, log: List[String], pH: Double) extends Event
 
 final case class Lautered(log: List[String]) extends Event
 
