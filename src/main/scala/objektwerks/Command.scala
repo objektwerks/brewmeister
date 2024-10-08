@@ -2,7 +2,7 @@ package objektwerks
 
 sealed trait Command
 
-final case class Sanitize() extends Command
+final case class Sanitize(batchId: Int) extends Command
 
 final case class Prepare(recipe: Recipe) extends Command
 
