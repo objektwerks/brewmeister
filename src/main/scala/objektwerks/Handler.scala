@@ -81,11 +81,11 @@ final class Boiler(listener: ActorRef[Listener]) extends Handler:
       )
     )
 
-final class Cooler extends Handler:
-  def cool(cool: Cool): Cooled =
-    Cooled(
-      List(
-        s"Cooled the wort within this temp range: ${cool.recipe.coolingTempRange}"
+final class Cooler(listener: ActorRef[Listener]) extends Handler:
+  def cool(cool: Cool): Unit =
+    listener.tell( _.onEvent:
+      Cooled(
+        List( s"Cooled the wort within this temp range: ${cool.recipe.coolingTempRange}" )
       )
     )
 
