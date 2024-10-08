@@ -26,7 +26,8 @@ final case class Fermented(batchId: Int, log: List[String], finalGravity: Double
 
 final case class Conditioned(batchId: Int, log: List[String], srmColor: Int) extends Event
 
-final case class Packaged(log: List[String],
+final case class Packaged(batchId: Int,
+                          log: List[String],
                           ibuBitterness: Int,
                           alcoholByVolume: Double,
                           alcoholByWeight: Double,

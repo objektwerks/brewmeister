@@ -147,6 +147,7 @@ final class Packager(listener: ActorRef[Listener]) extends Handler:
   def `package`(`package`: Package): Unit =
     listener.tell( _.onEvent:
       Packaged(
+        `package`.batchId,
         List(
           s"Conditioned within this temp range / duration: ${`package`.recipe.packagingTempRangeDuration}",
           s"Hop bitterness should be within this range: ${`package`.recipe.ibuBitterness}",
