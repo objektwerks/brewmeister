@@ -19,9 +19,9 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
     supervised:
       Actor.create( Malter(listener) ).tell( _.malt( Malt(recipe) ) )
 
-  def mill: Milled =
+  def mill: Unit =
     supervised:
-      Actor.create( Miller() ).ask( _.mill( Mill(recipe) ) )
+      Actor.create( Miller(listener) ).tell( _.mill( Mill(recipe) ) )
 
   def mash: Mashed =
     supervised:

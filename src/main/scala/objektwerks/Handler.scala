@@ -32,10 +32,11 @@ final class Malter(listener: ActorRef[Listener]) extends Handler:
         List( "Malted grains." )
     )
 
-final class Miller extends Handler:
-  def mill(mill: Mill): Milled =
-    Milled(
-      List( "Milled grains into a grist." )
+final class Miller(listener: ActorRef[Listener]) extends Handler:
+  def mill(mill: Mill): Unit =
+    listener.tell( _.onEvent:
+      Milled:
+        List( "Milled grains into a grist." )
     )
 
 final class Masher extends Handler:
