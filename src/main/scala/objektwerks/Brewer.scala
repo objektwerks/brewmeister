@@ -50,7 +50,7 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
 
   def ferment: Unit =
     supervised:
-      Actor.create( Fermenter(listener) ).tell( _.ferment( Ferment(recipe) ) )
+      Actor.create( Fermenter(listener) ).tell( _.ferment( Ferment(batchId, recipe) ) )
 
   def condition: Unit =
     supervised:
