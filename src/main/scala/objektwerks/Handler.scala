@@ -25,10 +25,11 @@ final class Preparer(listener: ActorRef[Listener]) extends Handler:
         )
     )
 
-final class Malter extends Handler:
-  def malt(malt: Malt): Malted =
-    Malted(
-      List( "Malted grains." )
+final class Malter(listener: ActorRef[Listener]) extends Handler:
+  def malt(malt: Malt): Unit =
+    listener.tell( _.onEvent:
+      Malted:
+        List( "Malted grains." )
     )
 
 final class Miller extends Handler:
