@@ -11,9 +11,9 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
     supervised:
       Actor.create( Sanitizer(listener) ).tell( _.sanitize( Sanitize() ) )
 
-  def prepare: Prepared =
+  def prepare: Unit =
     supervised:
-      Actor.create( Preparer() ).ask( _.prepare( Prepare(recipe) ) )
+      Actor.create( Preparer(listener) ).tell( _.prepare( Prepare(recipe) ) )
 
   def malt: Malted =
     supervised:

@@ -6,22 +6,23 @@ sealed trait Handler
 
 final class Sanitizer(listener: ActorRef[Listener]) extends Handler:
   def sanitize(sanitize: Sanitize): Unit =
-    listener.ask( _.onEvent:
+    listener.tell( _.onEvent:
       Sanitized:
-        "Sanitized brewing implements."
+        List( "Sanitized brewing implements." )
     )
 
 
-final class Preparer extends Handler:
-  def prepare(prepare: Prepare): Prepared =
-    Prepared(
-      List(
-        "Prepared the following recipe ingrediants:",
-        s"Grains: ${prepare.recipe.grains}",
-        s"Hops: ${prepare.recipe.hops}",
-        s"Adjuncts: ${prepare.recipe.adjuncts}",
-        s"Yeasts: ${prepare.recipe.yeasts}"
-      )
+final class Preparer(listener: ActorRef[Listener]) extends Handler:
+  def prepare(prepare: Prepare): Unit =
+    listener.tell( _.onEvent:
+      Prepared:
+        List(
+          "Prepared the following recipe ingrediants:",
+          s"Grains: ${prepare.recipe.grains}",
+          s"Hops: ${prepare.recipe.hops}",
+          s"Adjuncts: ${prepare.recipe.adjuncts}",
+          s"Yeasts: ${prepare.recipe.yeasts}"
+        )
     )
 
 final class Malter extends Handler:
