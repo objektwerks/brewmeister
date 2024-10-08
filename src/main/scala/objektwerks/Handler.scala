@@ -69,13 +69,15 @@ final class Sparger(listener: ActorRef[Listener]) extends Handler:
       )
     ) // Calculate mash efficiency!
 
-final class Boiler extends Handler:
-  def boil(boil: Boil): Boiled =
-    Boiled(
-      List(
-        s"Boiled wort within this temp range / duration: ${boil.recipe.boilingTempRangeDuration}",
-        s"Added hops: ${boil.recipe.hops}",
-        s"Optionally added adjuncts: ${boil.recipe.adjuncts}"
+final class Boiler(listener: ActorRef[Listener]) extends Handler:
+  def boil(boil: Boil): Unit =
+    listener.tell( _.onEvent:
+      Boiled(
+        List(
+          s"Boiled wort within this temp range / duration: ${boil.recipe.boilingTempRangeDuration}",
+          s"Added hops: ${boil.recipe.hops}",
+          s"Optionally added adjuncts: ${boil.recipe.adjuncts}"
+        )
       )
     )
 
