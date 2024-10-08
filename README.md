@@ -4,7 +4,6 @@ Brewmeister
 
 Todo
 ----
-* Actors
 * Metrics
 * Persistence
 * App
