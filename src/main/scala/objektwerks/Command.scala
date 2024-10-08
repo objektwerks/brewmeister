@@ -24,6 +24,6 @@ final case class Whirlpool(batchId: Int, recipe: Recipe) extends Command
 
 final case class Ferment(batchId: Int, recipe: Recipe) extends Command
 
-final case class Condition(recipe: Recipe) extends Command
+final case class Condition(batchId: Int, recipe: Recipe) extends Command
 
 final case class Package(recipe: Recipe) extends Command

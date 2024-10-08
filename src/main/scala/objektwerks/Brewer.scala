@@ -54,7 +54,7 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
 
   def condition: Unit =
     supervised:
-      Actor.create( Conditioner(listener) ).tell( _.condition( Condition(recipe) ) )
+      Actor.create( Conditioner(listener) ).tell( _.condition( Condition(batchId, recipe) ) )
 
   def `package`: Unit =
     supervised:
