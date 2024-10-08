@@ -7,8 +7,10 @@ sealed trait Handler
 final class Sanitizer(listener: ActorRef[Listener]) extends Handler:
   def sanitize(sanitize: Sanitize): Unit =
     listener.tell( _.onEvent:
-      Sanitized:
+      Sanitized(
+        sanitize.batchId,
         List( "Sanitized brewing implements." )
+      )
     )
 
 
