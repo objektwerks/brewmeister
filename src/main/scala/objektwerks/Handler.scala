@@ -127,21 +127,23 @@ final class Conditioner(listener: ActorRef[Listener]) extends Handler:
       ) // Calculate SRM color!
     )
 
-final class Packager extends Handler:
-  def `package`(`package`: Package): Packaged =
-    Packaged(
-      List(
-        s"Conditioned within this temp range / duration: ${`package`.recipe.packagingTempRangeDuration}",
-        s"Hop bitterness should be within this range: ${`package`.recipe.ibuBitterness}",
-        s"Alcohol by volume should be within this range: ${`package`.recipe.alcoholByVolume}",
-        s"Alcohol by weight should be within this range: ${`package`.recipe.alcoholByWeight}",
-        s"Calories should be within this range: ${`package`.recipe.calories}",
-        s"Should have a brew efficiency within this range: ${`package`.recipe.brewhouseEfficiency}",
-        s"Should refrigerate within this temp range: ${`package`.recipe.refrigerateTempRange}",
-      ),
-      ibuBitterness = 68,
-      alcoholByVolume = 6.4,
-      alcoholByWeight = 6.0,
-      calories = 190,
-      brewhouseEfficiency = 71
-    ) // Calculate ibu, abv, abw, calories and be!
+final class Packager(listener: ActorRef[Listener]) extends Handler:
+  def `package`(`package`: Package): Unit =
+    listener.tell( _.onEvent:
+      Packaged(
+        List(
+          s"Conditioned within this temp range / duration: ${`package`.recipe.packagingTempRangeDuration}",
+          s"Hop bitterness should be within this range: ${`package`.recipe.ibuBitterness}",
+          s"Alcohol by volume should be within this range: ${`package`.recipe.alcoholByVolume}",
+          s"Alcohol by weight should be within this range: ${`package`.recipe.alcoholByWeight}",
+          s"Calories should be within this range: ${`package`.recipe.calories}",
+          s"Should have a brew efficiency within this range: ${`package`.recipe.brewhouseEfficiency}",
+          s"Should refrigerate within this temp range: ${`package`.recipe.refrigerateTempRange}",
+        ),
+        ibuBitterness = 68,
+        alcoholByVolume = 6.4,
+        alcoholByWeight = 6.0,
+        calories = 190,
+        brewhouseEfficiency = 71
+      ) // Calculate ibu, abv, abw, calories and be!
+    )
