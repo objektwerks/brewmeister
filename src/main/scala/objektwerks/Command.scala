@@ -6,7 +6,7 @@ final case class Sanitize(batchId: Int) extends Command
 
 final case class Prepare(batchId: Int, recipe: Recipe) extends Command
 
-final case class Malt(recipe: Recipe) extends Command
+final case class Malt(batchId: Int, recipe: Recipe) extends Command
 
 final case class Mill(recipe: Recipe) extends Command
 
