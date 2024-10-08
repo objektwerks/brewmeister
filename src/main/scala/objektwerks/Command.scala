@@ -18,7 +18,7 @@ final case class Sparge(batchId: Int, recipe: Recipe) extends Command
 
 final case class Boil(batchId: Int, recipe: Recipe) extends Command
 
-final case class Cool(recipe: Recipe) extends Command
+final case class Cool(batchId: Int, recipe: Recipe) extends Command
 
 final case class Whirlpool(recipe: Recipe) extends Command
 
