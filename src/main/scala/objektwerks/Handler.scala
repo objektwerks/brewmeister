@@ -113,17 +113,19 @@ final class Fermenter(listener: ActorRef[Listener]) extends Handler:
       ) // Calculate final gravity!
     )
 
-final class Conditioner extends Handler:
-  def condition(condition: Condition): Conditioned =
-    Conditioned(
-      List(
-        s"Conditioned within this temp range / duration: ${condition.recipe.conditioningTempRangeDuration}",
-        s"Optionally added adjuncts: ${condition.recipe.adjuncts}",
-        s"Optionally added hops: ${condition.recipe.hops}",
-        s"Should have an SRM color within this range: ${condition.recipe.srmColor}"
-      ),
-      srmColor = 7
-    ) // Calculate SRM color!
+final class Conditioner(listener: ActorRef[Listener]) extends Handler:
+  def condition(condition: Condition): Unit =
+    listener.tell( _.onEvent:
+      Conditioned(
+        List(
+          s"Conditioned within this temp range / duration: ${condition.recipe.conditioningTempRangeDuration}",
+          s"Optionally added adjuncts: ${condition.recipe.adjuncts}",
+          s"Optionally added hops: ${condition.recipe.hops}",
+          s"Should have an SRM color within this range: ${condition.recipe.srmColor}"
+        ),
+        srmColor = 7
+      ) // Calculate SRM color!
+    )
 
 final class Packager extends Handler:
   def `package`(`package`: Package): Packaged =
