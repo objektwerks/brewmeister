@@ -14,7 +14,7 @@ final case class Mash(batchId: Int, recipe: Recipe) extends Command
 
 final case class Lauter(batchId: Int, recipe: Recipe) extends Command
 
-final case class Sparge(recipe: Recipe) extends Command
+final case class Sparge(batchId: Int, recipe: Recipe) extends Command
 
 final case class Boil(recipe: Recipe) extends Command
 
