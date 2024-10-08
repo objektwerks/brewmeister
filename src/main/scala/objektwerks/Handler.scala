@@ -106,6 +106,7 @@ final class Whirlpooler(listener: ActorRef[Listener]) extends Handler:
   def whirlpool(whirlpool: Whirlpool): Unit =
     listener.tell( _.onEvent:
       Whirlpooled(
+        whirlpool.batchId,
         List(
           s"Optionally added hops: ${whirlpool.recipe.hops}",
           s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}"
