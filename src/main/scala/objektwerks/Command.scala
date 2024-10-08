@@ -20,7 +20,7 @@ final case class Boil(batchId: Int, recipe: Recipe) extends Command
 
 final case class Cool(batchId: Int, recipe: Recipe) extends Command
 
-final case class Whirlpool(recipe: Recipe) extends Command
+final case class Whirlpool(batchId: Int, recipe: Recipe) extends Command
 
 final case class Ferment(recipe: Recipe) extends Command
 
