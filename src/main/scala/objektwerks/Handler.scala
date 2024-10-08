@@ -52,10 +52,12 @@ final class Masher(listener: ActorRef[Listener]) extends Handler:
       )
     ) // Calculate pH!
 
-final class Lauterer extends Handler:
-  def lauter(lauter: Lauter): Lautered =
-    Lautered(
-      List( "Lautered wort." )
+final class Lauterer(listener: ActorRef[Listener]) extends Handler:
+  def lauter(lauter: Lauter): Unit =
+    listener.tell( _.onEvent:
+      Lautered(
+        List( "Lautered wort." )
+      )
     )
 
 final class Sparger extends Handler:
