@@ -89,15 +89,17 @@ final class Cooler(listener: ActorRef[Listener]) extends Handler:
       )
     )
 
-final class Whirlpooler extends Handler:
-  def whirlpool(whirlpool: Whirlpool): Whirlpooled =
-    Whirlpooled(
-      List(
-        s"Optionally added hops: ${whirlpool.recipe.hops}",
-        s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}"
-      ),
-      originalGravity = 1.030
-    ) // Calculate original gravity!
+final class Whirlpooler(listener: ActorRef[Listener]) extends Handler:
+  def whirlpool(whirlpool: Whirlpool): Unit =
+    listener.tell( _.onEvent:
+      Whirlpooled(
+        List(
+          s"Optionally added hops: ${whirlpool.recipe.hops}",
+          s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}"
+        ),
+        originalGravity = 1.030
+      ) // Calculate original gravity!
+    )
 
 final class Fermenter extends Handler:
   def ferment(ferment: Ferment): Fermented =
