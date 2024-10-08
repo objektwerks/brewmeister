@@ -65,6 +65,7 @@ final class Lauterer(listener: ActorRef[Listener]) extends Handler:
   def lauter(lauter: Lauter): Unit =
     listener.tell( _.onEvent:
       Lautered(
+        lauter.batchId,
         List( "Lautered wort." )
       )
     )
