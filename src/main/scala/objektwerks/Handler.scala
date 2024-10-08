@@ -39,15 +39,17 @@ final class Miller(listener: ActorRef[Listener]) extends Handler:
         List( "Milled grains into a grist." )
     )
 
-final class Masher extends Handler:
-  def mash(mash: Mash): Mashed =
-    Mashed(
-      List(
-        s"Mashed grist into a wort within this temp range / duration: ${mash.recipe.mashingTempRangeDuration}",
-        s"Optionally added adjuncts: ${mash.recipe.adjuncts}",
-        s"pH should be: ${mash.recipe.pH}"
-      ),
-      pH = 5.6
+final class Masher(listener: ActorRef[Listener]) extends Handler:
+  def mash(mash: Mash): Unit =
+    listener.tell( _.onEvent:
+      Mashed(
+        List(
+          s"Mashed grist into a wort within this temp range / duration: ${mash.recipe.mashingTempRangeDuration}",
+          s"Optionally added adjuncts: ${mash.recipe.adjuncts}",
+          s"pH should be: ${mash.recipe.pH}"
+        ),
+        pH = 5.6
+      )
     ) // Calculate pH!
 
 final class Lauterer extends Handler:
