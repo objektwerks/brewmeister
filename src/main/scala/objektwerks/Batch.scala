@@ -16,14 +16,14 @@ enum UoM derives JsonSupport:
 enum UoT derives JsonSupport:
   case minutes, days, weeks, months
 
-object Process:
-  def default: Process = Process(recipe = Recipe.default, metrics = Metrics.default)
+object Batch:
+  def default: Batch = Batch(recipe = Recipe.default, metrics = Metrics.default)
 
-final case class Process(id: Int = 1,
-                         started: String = now(),
-                         completed: String = "",
-                         recipe: Recipe,
-                         metrics: Metrics) derives JsonSupport
+final case class Batch(id: Int = 1,
+                       started: String = now(),
+                       completed: String = "",
+                       recipe: Recipe,
+                       metrics: Metrics) derives JsonSupport
 
 enum MixinStep derives JsonSupport:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning

@@ -3,9 +3,9 @@ package objektwerks
 import ox.channels.{Actor, ActorRef}
 import ox.supervised
 
-final class Brewer(process: Process, listener: ActorRef[Listener]):
-  private val recipe = process.recipe
-  // private val metrics = process.metrics
+final class Brewer(batch: Batch, listener: ActorRef[Listener]):
+  private val recipe = batch.recipe
+  // private val metrics = batch.metrics
 
   def sanitize: Unit =
     supervised:
