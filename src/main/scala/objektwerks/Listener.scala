@@ -4,22 +4,17 @@ import scala.collection.mutable
 
 final class Listener:
   private val listeners = mutable.ListBuffer.empty[Listener]
-  val log = mutable.ListBuffer.empty[String]
+  val commands = mutable.ListBuffer.empty[Command]
+  val events = mutable.ListBuffer.empty[Event]
 
   def register(listener: Listener): Unit =
     listeners += listener
     ()
 
   def onCommand(command: Command): Unit =
+    commands += command
     listeners.foreach( _.onCommand(command) )
-    log(command.toString)
 
   def onEvent(event: Event): Unit =
+    events += event
     listeners.foreach( _.onEvent(event) )
-    log(event.toString)
-
-  def onMetrics(metrics: Metrics): Unit =
-    listeners.foreach( _.onMetrics(metrics) )
-    log(metrics.toString)
-
-  def log(entry: String): Unit = log += entry
