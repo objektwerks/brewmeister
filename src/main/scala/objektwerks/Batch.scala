@@ -156,7 +156,8 @@ object Metrics:
     val carbohydrateCalories = (finalGravity * 13) * beerVolume
     format( alcoholCalories + carbohydrateCalories ).toInt
 
-  def mashEfficiency(actualMashExtract: Double, potentialMashExtract: Double): Double =
+  def mashEfficiency(actualMashExtract: Double,
+                     potentialMashExtract: Double): Double =
     format( (actualMashExtract / potentialMashExtract) * 100 )
 
   def brewhouseEfficiency(actualFermentableExtract: Double, idealFermentableExtract: Double): Double =
