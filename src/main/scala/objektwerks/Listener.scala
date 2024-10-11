@@ -1,8 +1,14 @@
 package objektwerks
 
+import scala.collection.mutable
+
 final class Listener:
-  def register(listener: Listener): Unit = ???
-  
+  private val listeners = mutable.ListBuffer.empty[Listener]
+
+  def register(listener: Listener): Unit =
+    listeners += listener
+    ()
+
   def onCommand(command: Command): Unit = scribe.info(command.toString)
 
   def onEvent(event: Event): Unit = scribe.info(event.toString)
