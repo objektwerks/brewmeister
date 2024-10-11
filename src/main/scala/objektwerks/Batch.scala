@@ -57,9 +57,11 @@ final case class Yeast(typeof: String,
                        mixinMinute: Int,
                        mixinStep: MixinStep = MixinStep.Fermenting) derives JsonSupport
 
-final case class TempRange(low: Int, high: Int) derives JsonSupport
+final case class DoubleRange(low: Double, high: Double) derives JsonSupport
 
-final case class TempRangeDuration(tempRange: TempRange, duration: Int, unit: UoT) derives JsonSupport
+final case class IntRange(low: Int, high: Int) derives JsonSupport
+
+final case class TempDuration(tempRange: IntRange, duration: Int, unit: UoT) derives JsonSupport
 
 final case class Volume(volume: Double, unit: UoM) derives JsonSupport
 
@@ -69,13 +71,13 @@ object Recipe:
            style = "American IPA",
            water = "spring",
            volume = Volume(5.0, UoM.gl),
-           mashingTempRangeDuration = TempRangeDuration( TempRange(148, 152), 60, UoT.minutes ),
-           boilingTempRangeDuration = TempRangeDuration( TempRange(148, 152), 60, UoT.minutes ),
-           coolingTempRange = TempRange(68, 72),
-           fermentatingTempRangeDuration = TempRangeDuration( TempRange(68, 72), 2, UoT.weeks ),
-           conditioningTempRangeDuration = TempRangeDuration( TempRange(68, 72), 2, UoT.days ),
-           packagingTempRangeDuration = TempRangeDuration( TempRange(42, 45), 2, UoT.days ),
-           refrigerateTempRange = TempRange(42, 45),
+           mashingTempRangeDuration = TempDuration( IntRange(148, 152), 60, UoT.minutes ),
+           boilingTempRangeDuration = TempDuration( IntRange(148, 152), 60, UoT.minutes ),
+           coolingTempRange = IntRange(68, 72),
+           fermentatingTempRangeDuration = TempDuration( IntRange(68, 72), 2, UoT.weeks ),
+           conditioningTempRangeDuration = TempDuration( IntRange(68, 72), 2, UoT.days ),
+           packagingTempRangeDuration = TempDuration( IntRange(42, 45), 2, UoT.days ),
+           refrigerateTempRange = IntRange(42, 45),
            pH = 5.6,
            originalGravity = (1.057, 1.67),
            finalGravity = (1.010, 1.015),
@@ -96,13 +98,13 @@ final case class Recipe(created: String = now(),
                         style: String,
                         water: String,
                         volume: Volume,
-                        mashingTempRangeDuration: TempRangeDuration,
-                        boilingTempRangeDuration: TempRangeDuration,
-                        coolingTempRange: TempRange,
-                        fermentatingTempRangeDuration: TempRangeDuration,
-                        conditioningTempRangeDuration: TempRangeDuration,
-                        packagingTempRangeDuration: TempRangeDuration,
-                        refrigerateTempRange: TempRange,
+                        mashingTempRangeDuration: TempDuration,
+                        boilingTempRangeDuration: TempDuration,
+                        coolingTempRange: IntRange,
+                        fermentatingTempRangeDuration: TempDuration,
+                        conditioningTempRangeDuration: TempDuration,
+                        packagingTempRangeDuration: TempDuration,
+                        refrigerateTempRange: IntRange,
                         pH: Double,
                         originalGravity: (Double, Double),
                         finalGravity: (Double, Double),
