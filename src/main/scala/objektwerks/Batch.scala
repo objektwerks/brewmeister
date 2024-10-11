@@ -57,7 +57,8 @@ final case class Yeast(typeof: String,
                        mixinMinute: Int,
                        mixinStep: MixinStep = MixinStep.Fermenting) derives JsonSupport
 
-final case class DoubleRange(low: Double, high: Double) derives JsonSupport
+final case class DoubleRange(low: Double, high: Double) derives JsonSupport:
+  def avg: Double = format( (low + high) / 2 )
 
 final case class IntRange(low: Int, high: Int) derives JsonSupport
 
