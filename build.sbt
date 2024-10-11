@@ -69,11 +69,11 @@ lazy val OS: String = sys.props.getOrElse("target", "") match {
   case _ => ""
 }
 
-if (OS == "mac") assemblyJarName := "brewmeister-mac-0.19.jar"
-else if (OS == "mac-aarch64") assemblyJarName := "brewmeister-m1-0.19.jar"
-else if (OS == "win") assemblyJarName := "brewmeister-win-0.19.jar"
-else if (OS == "linux") assemblyJarName := "brewmeister-linux-0.19.jar"
-else assemblyJarName := "brewmeister-no-valid-target-specified-0.19.jar"
+if (OS == "mac") assemblyJarName := "brewmeister-mac-0.20.jar"
+else if (OS == "mac-aarch64") assemblyJarName := "brewmeister-m1-0.20.jar"
+else if (OS == "win") assemblyJarName := "brewmeister-win-0.20.jar"
+else if (OS == "linux") assemblyJarName := "brewmeister-linux-0.20.jar"
+else assemblyJarName := "brewmeister-no-valid-target-specified-0.20.jar"
 
 lazy val javafxModules = Seq("base", "controls", "web")
 libraryDependencies ++= javafxModules.map( module =>
