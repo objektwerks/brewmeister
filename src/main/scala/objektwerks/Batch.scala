@@ -46,7 +46,7 @@ final case class Hop(typeof: String,
                      mixinStep: MixinStep = MixinStep.Boiling) derives JsonSupport // or Whirlpooling or Conditioning
 
 final case class Adjunct(typeof: String,
-                         amount: Double,
+                         weight: Double,
                          unit: UoM,
                          mixinMinute: Int,
                          mixinStep: MixinStep = MixinStep.Mashing) derives JsonSupport // or Boiling or Conditioning
