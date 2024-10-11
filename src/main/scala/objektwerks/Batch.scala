@@ -58,7 +58,7 @@ final case class Yeast(typeof: String,
 
 final case class TempRange(low: Int, high: Int) derives JsonSupport
 
-final case class TempRangeDuration(range: (Int, Int), duration: Int, unit: UoT) derives JsonSupport
+final case class TempRangeDuration(tempRange: TempRange, duration: Int, unit: UoT) derives JsonSupport
 
 final case class Volume(volume: Double, unit: UoM) derives JsonSupport
 
@@ -68,13 +68,13 @@ object Recipe:
            style = "American IPA",
            water = "spring",
            volume = Volume(5.0, UoM.gl),
-           mashingTempRangeDuration = TempRangeDuration( (148, 152), 60, UoT.minutes ),
-           boilingTempRangeDuration = TempRangeDuration( (148, 152), 60, UoT.minutes ),
-           coolingTempRange = (68, 72),
-           fermentatingTempRangeDuration = TempRangeDuration( (68, 72), 2, UoT.weeks ),
-           conditioningTempRangeDuration = TempRangeDuration( (68, 72), 2, UoT.days ),
-           packagingTempRangeDuration = TempRangeDuration( (42, 45), 2, UoT.days ),
-           refrigerateTempRange = (42, 45),
+           mashingTempRangeDuration = TempRangeDuration( TempRange(148, 152), 60, UoT.minutes ),
+           boilingTempRangeDuration = TempRangeDuration( TempRange(148, 152), 60, UoT.minutes ),
+           coolingTempRange = TempRange(68, 72),
+           fermentatingTempRangeDuration = TempRangeDuration( TempRange(68, 72), 2, UoT.weeks ),
+           conditioningTempRangeDuration = TempRangeDuration( TempRange(68, 72), 2, UoT.days ),
+           packagingTempRangeDuration = TempRangeDuration( TempRange(42, 45), 2, UoT.days ),
+           refrigerateTempRange = TempRange(42, 45),
            pH = 5.6,
            originalGravity = (1.057, 1.67),
            finalGravity = (1.010, 1.015),
@@ -97,11 +97,11 @@ final case class Recipe(created: String = now(),
                         volume: Volume,
                         mashingTempRangeDuration: TempRangeDuration,
                         boilingTempRangeDuration: TempRangeDuration,
-                        coolingTempRange: (Int, Int),
+                        coolingTempRange: TempRange,
                         fermentatingTempRangeDuration: TempRangeDuration,
                         conditioningTempRangeDuration: TempRangeDuration,
                         packagingTempRangeDuration: TempRangeDuration,
-                        refrigerateTempRange: (Int, Int),
+                        refrigerateTempRange: TempRange,
                         pH: Double,
                         originalGravity: (Double, Double),
                         finalGravity: (Double, Double),
