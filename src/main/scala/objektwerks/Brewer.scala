@@ -3,6 +3,8 @@ package objektwerks
 import ox.channels.{Actor, ActorRef}
 import ox.supervised
 
+// import Metrics.*
+
 final class Brewer(batch: Batch, listener: ActorRef[Listener]):
   def sanitize: Unit =
     supervised:
@@ -128,9 +130,9 @@ final class Sparger(listener: ActorRef[Listener]):
       Sparged(
         sparge.batch.id,
         List( s"Should have a mash efficiency within this range: ${sparge.batch.recipe.mashEfficiency}" ),
-        mashEfficiency = 70
+        mashEfficiency = 70 // get actual / potential mash extract from brewer for ME calc!
       )
-    ) // Calculate mash efficiency!
+    )
 
 final class Boiler(listener: ActorRef[Listener]):
   def boil(boil: Boil): Unit =
