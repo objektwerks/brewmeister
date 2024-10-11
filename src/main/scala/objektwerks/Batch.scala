@@ -139,7 +139,7 @@ object Metrics:
 
   def alcoholByVolume(originalGravity: Double, finalGravity: Double): Double = format( (originalGravity - finalGravity) * 131 )
 
-  def alcoholByWeight(alcoholByVolume: Double, finalGravity: Double): Double = (0.79 * alcoholByVolume) / finalGravity
+  def alcoholByWeight(alcoholByVolume: Double, finalGravity: Double): Double = format( (0.79 * alcoholByVolume) / finalGravity )
 
 final case class Metrics(created: String = now(),
                          style: String = "",
