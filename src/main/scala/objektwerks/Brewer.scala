@@ -178,7 +178,7 @@ final class Fermenter(listener: ActorRef[Listener]):
           s"Fermented within this temp range / duration: ${ferment.batch.recipe.fermentatingTempRangeDuration}",
           s"Should have a final gravity within this range: ${ferment.batch.recipe.finalGravity}"
         ),
-        finalGravity = 1.015
+        finalGravity = ferment.batch.recipe.finalGravity.avg // get actual FG from brewer!
       ) // Calculate final gravity!
     )
 
