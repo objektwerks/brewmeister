@@ -146,7 +146,8 @@ object Metrics:
     format( (originalGravity - finalGravity) * 131 )
 
   def alcoholByWeight(alcoholByVolume: Double,
-                      finalGravity: Double): Double = format( (0.79 * alcoholByVolume) / finalGravity )
+                      finalGravity: Double): Double =
+    format( (0.79 * alcoholByVolume) / finalGravity )
 
   def calories(beerVolume: Int, originalGravity: Double, finalGravity: Double): Int =
     val alcoholCalories = (originalGravity - finalGravity) * 7.5
