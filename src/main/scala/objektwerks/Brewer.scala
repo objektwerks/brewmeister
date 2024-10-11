@@ -179,7 +179,7 @@ final class Fermenter(listener: ActorRef[Listener]):
           s"Should have a final gravity within this range: ${ferment.batch.recipe.finalGravity}"
         ),
         finalGravity = ferment.batch.recipe.finalGravity.avg // get actual FG from brewer!
-      ) // Calculate final gravity!
+      )
     )
 
 final class Conditioner(listener: ActorRef[Listener]):
@@ -193,8 +193,8 @@ final class Conditioner(listener: ActorRef[Listener]):
           s"Optionally added hops: ${condition.batch.recipe.hops}",
           s"Should have an SRM color within this range: ${condition.batch.recipe.srmColor}"
         ),
-        srmColor = 7
-      ) // Calculate SRM color!
+        srmColor = condition.batch.recipe.srmColor.avg // get actual srm from brewer!
+      )
     )
 
 final class Packager(listener: ActorRef[Listener]):
