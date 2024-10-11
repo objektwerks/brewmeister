@@ -4,8 +4,6 @@ import ox.channels.{Actor, ActorRef}
 import ox.supervised
 
 final class Brewer(batch: Batch, listener: ActorRef[Listener]):
-  private val batchId = batch.id
-
   def sanitize: Unit =
     supervised:
       Actor.create( Sanitizer(listener) ).tell( _.sanitize( Sanitize(batch) ) )

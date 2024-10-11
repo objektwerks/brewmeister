@@ -8,7 +8,7 @@ final class Sanitizer(listener: ActorRef[Listener]) extends Handler:
   def sanitize(sanitize: Sanitize): Unit =
     listener.tell( _.onEvent:
       Sanitized(
-        sanitize.batchId,
+        sanitize.batch.id,
         List( "Sanitized brewing implements." )
       )
     )
@@ -18,7 +18,7 @@ final class Preparer(listener: ActorRef[Listener]) extends Handler:
   def prepare(prepare: Prepare): Unit =
     listener.tell( _.onEvent:
       Prepared(
-        prepare.batchId,
+        prepare.batch.id,
         List(
           "Prepared the following recipe ingrediants:",
           s"Grains: ${prepare.batch.recipe.grains}",
@@ -33,7 +33,7 @@ final class Malter(listener: ActorRef[Listener]) extends Handler:
   def malt(malt: Malt): Unit =
     listener.tell( _.onEvent:
       Malted(
-        malt.batchId,
+        malt.batch.id,
         List( "Malted grains." )
       )
     )
@@ -42,7 +42,7 @@ final class Miller(listener: ActorRef[Listener]) extends Handler:
   def mill(mill: Mill): Unit =
     listener.tell( _.onEvent:
       Milled(
-        mill.batchId,
+        mill.batch.id,
         List( "Milled grains into a grist." )
       )
     )
@@ -51,7 +51,7 @@ final class Masher(listener: ActorRef[Listener]) extends Handler:
   def mash(mash: Mash): Unit =
     listener.tell( _.onEvent:
       Mashed(
-        mash.batchId,
+        mash.batch.id,
         List(
           s"Mashed grist into a wort within this temp range / duration: ${mash.batch.recipe.mashingTempRangeDuration}",
           s"Optionally added adjuncts: ${mash.batch.recipe.adjuncts}",
@@ -65,7 +65,7 @@ final class Lauterer(listener: ActorRef[Listener]) extends Handler:
   def lauter(lauter: Lauter): Unit =
     listener.tell( _.onEvent:
       Lautered(
-        lauter.batchId,
+        lauter.batch.id,
         List( "Lautered wort." )
       )
     )
@@ -74,7 +74,7 @@ final class Sparger(listener: ActorRef[Listener]) extends Handler:
   def sparge(sparge: Sparge): Unit =
     listener.tell( _.onEvent:
       Sparged(
-        sparge.batchId,
+        sparge.batch.id,
         List( s"Should have a mash efficiency within this range: ${sparge.batch.recipe.mashEfficiency}" ),
         mashEfficiency = 70
       )
@@ -84,7 +84,7 @@ final class Boiler(listener: ActorRef[Listener]) extends Handler:
   def boil(boil: Boil): Unit =
     listener.tell( _.onEvent:
       Boiled(
-        boil.batchId,
+        boil.batch.id,
         List(
           s"Boiled wort within this temp range / duration: ${boil.batch.recipe.boilingTempRangeDuration}",
           s"Added hops: ${boil.batch.recipe.hops}",
@@ -97,7 +97,7 @@ final class Cooler(listener: ActorRef[Listener]) extends Handler:
   def cool(cool: Cool): Unit =
     listener.tell( _.onEvent:
       Cooled(
-        cool.batchId,
+        cool.batch.id,
         List( s"Cooled the wort within this temp range: ${cool.batch.recipe.coolingTempRange}" )
       )
     )
@@ -106,7 +106,7 @@ final class Whirlpooler(listener: ActorRef[Listener]) extends Handler:
   def whirlpool(whirlpool: Whirlpool): Unit =
     listener.tell( _.onEvent:
       Whirlpooled(
-        whirlpool.batchId,
+        whirlpool.batch.id,
         List(
           s"Optionally added hops: ${whirlpool.batch.recipe.hops}",
           s"Should have an orginal gravity within this range: ${whirlpool.batch.recipe.originalGravity}"
@@ -119,7 +119,7 @@ final class Fermenter(listener: ActorRef[Listener]) extends Handler:
   def ferment(ferment: Ferment): Unit =
     listener.tell( _.onEvent:
       Fermented(
-        ferment.batchId,
+        ferment.batch.id,
         List(
           s"Fermented within this temp range / duration: ${ferment.batch.recipe.fermentatingTempRangeDuration}",
           s"Should have a final gravity within this range: ${ferment.batch.recipe.finalGravity}"
@@ -132,7 +132,7 @@ final class Conditioner(listener: ActorRef[Listener]) extends Handler:
   def condition(condition: Condition): Unit =
     listener.tell( _.onEvent:
       Conditioned(
-        condition.batchId,
+        condition.batch.id,
         List(
           s"Conditioned within this temp range / duration: ${condition.batch.recipe.conditioningTempRangeDuration}",
           s"Optionally added adjuncts: ${condition.batch.recipe.adjuncts}",
@@ -147,7 +147,7 @@ final class Packager(listener: ActorRef[Listener]) extends Handler:
   def `package`(`package`: Package): Unit =
     listener.tell( _.onEvent:
       Packaged(
-        `package`.batchId,
+        `package`.batch.id,
         List(
           s"Conditioned within this temp range / duration: ${`package`.batch.recipe.packagingTempRangeDuration}",
           s"Hop bitterness should be within this range: ${`package`.batch.recipe.ibuBitterness}",
