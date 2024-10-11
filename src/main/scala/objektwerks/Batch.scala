@@ -131,7 +131,7 @@ object Metrics:
 
   def srmColor(grainWeight: Double, grainColor: Double, batchVolume: Double): Double =
     val maltColorUnits = (grainWeight * grainColor) / batchVolume
-    1.4922 * pow(maltColorUnits, 0.6859)
+    format( 1.4922 * pow(maltColorUnits, 0.6859) )
 
   def ibuBitterness(hopAlphaAcid: Double, hopWeight: Double, hopVolume: Double): Double =
     val hopUtilization = (hopAlphaAcid * hopWeight) / hopVolume
