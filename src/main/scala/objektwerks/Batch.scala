@@ -142,9 +142,11 @@ object Metrics:
     format( (hopWeight * hopAlphaAcid * hopUtilization) / 7.25 )
 
   def alcoholByVolume(originalGravity: Double,
-                      finalGravity: Double): Double = format( (originalGravity - finalGravity) * 131 )
+                      finalGravity: Double): Double =
+    format( (originalGravity - finalGravity) * 131 )
 
-  def alcoholByWeight(alcoholByVolume: Double, finalGravity: Double): Double = format( (0.79 * alcoholByVolume) / finalGravity )
+  def alcoholByWeight(alcoholByVolume: Double,
+                      finalGravity: Double): Double = format( (0.79 * alcoholByVolume) / finalGravity )
 
   def calories(beerVolume: Int, originalGravity: Double, finalGravity: Double): Int =
     val alcoholCalories = (originalGravity - finalGravity) * 7.5
