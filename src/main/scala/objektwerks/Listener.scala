@@ -9,7 +9,9 @@ final class Listener:
     listeners += listener
     ()
 
-  def onCommand(command: Command): Unit = scribe.info(command.toString)
+  def onCommand(command: Command): Unit =
+    listeners.foreach( _.onCommand(command) )
+    scribe.info(command.toString)
 
   def onEvent(event: Event): Unit = scribe.info(event.toString)
 
