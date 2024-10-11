@@ -105,9 +105,8 @@ Metric
     2. SG = 1 + ( P / ( 258.6 - ( ( P / 258.2 ) * 227.1 ) ) )
 4. **Original Gravity: OG** - Original Gravity measures the gravity of the wort **before** fermentation.
     1. Method: ***Use a hydrometer***.
-    2. OG: Measure OG before fermentation.
-    3. Constraint: Sample must be at 20C / 68F.
-    4. Range: 1.000 - 1.130
+    2. Constraint: Sample must be at 20C / 68F.
+    3. Range: 1.000 - 1.130
 5. **Final Gravity: FG** - Final Gravity measures the gravity of the wort **after** fermentation.
     1. Method: ***Use a hydrometer***.
     2. FG: Measure FG after fermentation.
