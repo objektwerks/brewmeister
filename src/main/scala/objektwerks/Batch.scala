@@ -141,7 +141,8 @@ object Metrics:
     val hopUtilization = (hopAlphaAcid * hopWeight) / hopVolume
     format( (hopWeight * hopAlphaAcid * hopUtilization) / 7.25 )
 
-  def alcoholByVolume(originalGravity: Double, finalGravity: Double): Double = format( (originalGravity - finalGravity) * 131 )
+  def alcoholByVolume(originalGravity: Double,
+                      finalGravity: Double): Double = format( (originalGravity - finalGravity) * 131 )
 
   def alcoholByWeight(alcoholByVolume: Double, finalGravity: Double): Double = format( (0.79 * alcoholByVolume) / finalGravity )
 
