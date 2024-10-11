@@ -4,6 +4,7 @@ Brewmeister
 
 Todo
 ----
+* Handler Metrics
 * Persistence
 * App
 
