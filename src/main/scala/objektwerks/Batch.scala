@@ -156,6 +156,10 @@ object Metrics:
     val carbohydrateCalories = (finalGravity * 13) * beerVolume
     format( alcoholCalories + carbohydrateCalories ).toInt
 
+  def mashEfficiency(actualMashExtract: Double, potentialMashExtract: Double): Double =
+    format( (actualMashExtract / potentialMashExtract) * 100 )
+
+
 final case class Metrics(created: String = now(),
                          style: String = "",
                          gallons: Double = 0.0,
