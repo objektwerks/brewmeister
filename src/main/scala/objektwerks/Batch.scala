@@ -31,7 +31,8 @@ enum MixinStep derives JsonSupport:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
 
 final case class Grain(typeof: String,
-                       amount: Double,
+                       weight: Double,
+                       color: Double,
                        unit: UoM,
                        lovibond: Double,
                        mixinMinute: Int,
@@ -85,7 +86,7 @@ object Recipe:
            calories = (180, 200),
            mashEfficiency = (70, 80),
            brewhouseEfficiency = (72, 80),
-           grains = List( Grain("pale ale", 4.0, UoM.lb, 1.8, 0) ),
+           grains = List( Grain("pale ale", 4.0, 6.0, UoM.lb, 1.8, 0) ),
            hops = List( Hop("amarillo", 2.0, UoM.oz, (8.0, 11.0), 0), Hop("cascade", 2.0, UoM.oz, (4.5, 8.9), 15), Hop("chinook", 2.0, UoM.oz, (12.0, 14.0), 30) ),
            adjuncts = List.empty[Adjunct],
            yeasts = List( Yeast("Wyeast American Ale 1056", 5.0, UoM.oz, 0) )
