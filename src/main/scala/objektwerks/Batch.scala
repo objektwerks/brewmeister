@@ -2,6 +2,8 @@ package objektwerks
 
 import java.time.LocalDateTime
 
+import scala.math.pow
+
 import upickle.default.{ReadWriter => JsonSupport}
 
 def now(): String = LocalDateTime.now.toString
@@ -126,6 +128,10 @@ object Metrics:
             calories = 190,
             mashEfficiency = 70,
             brewhouseEfficiency = 71)
+
+  def srmColor(grainWeight: Double, grainColor: Double, batchVolume: Double): Double =
+    val maltColorUnits = (grainWeight * grainColor) / batchVolume
+    1.4922 * pow(maltColorUnits, 0.6859)
 
   def alcoholByVolume(originalGravity: Double, finalGravity: Double): Double = (originalGravity - finalGravity) * 131
 
