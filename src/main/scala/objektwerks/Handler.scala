@@ -2,9 +2,7 @@ package objektwerks
 
 import ox.channels.ActorRef
 
-sealed trait Handler
-
-final class Sanitizer(listener: ActorRef[Listener]) extends Handler:
+final class Sanitizer(listener: ActorRef[Listener]):
   def sanitize(sanitize: Sanitize): Unit =
     listener.tell( _.onEvent:
       Sanitized(
@@ -14,7 +12,7 @@ final class Sanitizer(listener: ActorRef[Listener]) extends Handler:
     )
 
 
-final class Preparer(listener: ActorRef[Listener]) extends Handler:
+final class Preparer(listener: ActorRef[Listener]):
   def prepare(prepare: Prepare): Unit =
     listener.tell( _.onEvent:
       Prepared(
@@ -29,7 +27,7 @@ final class Preparer(listener: ActorRef[Listener]) extends Handler:
       )
     )
 
-final class Malter(listener: ActorRef[Listener]) extends Handler:
+final class Malter(listener: ActorRef[Listener]):
   def malt(malt: Malt): Unit =
     listener.tell( _.onEvent:
       Malted(
@@ -38,7 +36,7 @@ final class Malter(listener: ActorRef[Listener]) extends Handler:
       )
     )
 
-final class Miller(listener: ActorRef[Listener]) extends Handler:
+final class Miller(listener: ActorRef[Listener]):
   def mill(mill: Mill): Unit =
     listener.tell( _.onEvent:
       Milled(
@@ -47,7 +45,7 @@ final class Miller(listener: ActorRef[Listener]) extends Handler:
       )
     )
 
-final class Masher(listener: ActorRef[Listener]) extends Handler:
+final class Masher(listener: ActorRef[Listener]):
   def mash(mash: Mash): Unit =
     listener.tell( _.onEvent:
       Mashed(
@@ -61,7 +59,7 @@ final class Masher(listener: ActorRef[Listener]) extends Handler:
       )
     ) // Calculate ph!
 
-final class Lauterer(listener: ActorRef[Listener]) extends Handler:
+final class Lauterer(listener: ActorRef[Listener]):
   def lauter(lauter: Lauter): Unit =
     listener.tell( _.onEvent:
       Lautered(
@@ -70,7 +68,7 @@ final class Lauterer(listener: ActorRef[Listener]) extends Handler:
       )
     )
 
-final class Sparger(listener: ActorRef[Listener]) extends Handler:
+final class Sparger(listener: ActorRef[Listener]):
   def sparge(sparge: Sparge): Unit =
     listener.tell( _.onEvent:
       Sparged(
@@ -80,7 +78,7 @@ final class Sparger(listener: ActorRef[Listener]) extends Handler:
       )
     ) // Calculate mash efficiency!
 
-final class Boiler(listener: ActorRef[Listener]) extends Handler:
+final class Boiler(listener: ActorRef[Listener]):
   def boil(boil: Boil): Unit =
     listener.tell( _.onEvent:
       Boiled(
@@ -93,7 +91,7 @@ final class Boiler(listener: ActorRef[Listener]) extends Handler:
       )
     )
 
-final class Cooler(listener: ActorRef[Listener]) extends Handler:
+final class Cooler(listener: ActorRef[Listener]):
   def cool(cool: Cool): Unit =
     listener.tell( _.onEvent:
       Cooled(
@@ -102,7 +100,7 @@ final class Cooler(listener: ActorRef[Listener]) extends Handler:
       )
     )
 
-final class Whirlpooler(listener: ActorRef[Listener]) extends Handler:
+final class Whirlpooler(listener: ActorRef[Listener]):
   def whirlpool(whirlpool: Whirlpool): Unit =
     listener.tell( _.onEvent:
       Whirlpooled(
@@ -115,7 +113,7 @@ final class Whirlpooler(listener: ActorRef[Listener]) extends Handler:
       ) // Calculate original gravity!
     )
 
-final class Fermenter(listener: ActorRef[Listener]) extends Handler:
+final class Fermenter(listener: ActorRef[Listener]):
   def ferment(ferment: Ferment): Unit =
     listener.tell( _.onEvent:
       Fermented(
@@ -128,7 +126,7 @@ final class Fermenter(listener: ActorRef[Listener]) extends Handler:
       ) // Calculate final gravity!
     )
 
-final class Conditioner(listener: ActorRef[Listener]) extends Handler:
+final class Conditioner(listener: ActorRef[Listener]):
   def condition(condition: Condition): Unit =
     listener.tell( _.onEvent:
       Conditioned(
@@ -143,7 +141,7 @@ final class Conditioner(listener: ActorRef[Listener]) extends Handler:
       ) // Calculate SRM color!
     )
 
-final class Packager(listener: ActorRef[Listener]) extends Handler:
+final class Packager(listener: ActorRef[Listener]):
   def `package`(`package`: Package): Unit =
     listener.tell( _.onEvent:
       Packaged(
