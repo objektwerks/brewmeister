@@ -60,7 +60,8 @@ final case class Yeast(typeof: String,
 final case class DoubleRange(low: Double, high: Double) derives JsonSupport:
   def avg: Double = format( (low + high) / 2 )
 
-final case class IntRange(low: Int, high: Int) derives JsonSupport
+final case class IntRange(low: Int, high: Int) derives JsonSupport:
+  def avg: Int = ( (low + high) / 2 ).toInt
 
 final case class TempDuration(tempRange: IntRange, duration: Int, unit: UoT) derives JsonSupport
 
