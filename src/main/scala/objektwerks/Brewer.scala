@@ -109,9 +109,9 @@ final class Masher(listener: ActorRef[Listener]):
           s"Optionally added adjuncts: ${mash.batch.recipe.adjuncts}",
           s"pH should be: ${mash.batch.recipe.pH}"
         ),
-        pH = 5.6
+        pH = mash.batch.recipe.pH // How to get from brewer via pH meter?
       )
-    ) // Calculate ph!
+    )
 
 final class Lauterer(listener: ActorRef[Listener]):
   def lauter(lauter: Lauter): Unit =
