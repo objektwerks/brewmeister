@@ -39,7 +39,7 @@ final case class Grain(typeof: String,
                        mixinStep: MixinStep = MixinStep.Mashing) derives JsonSupport
 
 final case class Hop(typeof: String,
-                     amount: Double,
+                     weight: Double,
                      unit: UoM,
                      alphaAcid: (Double, Double),
                      mixinMinute: Int,
