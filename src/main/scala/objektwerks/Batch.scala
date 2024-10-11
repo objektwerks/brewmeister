@@ -56,6 +56,8 @@ final case class Yeast(typeof: String,
                        mixinMinute: Int,
                        mixinStep: MixinStep = MixinStep.Fermenting) derives JsonSupport
 
+final case class TempRange(low: Int, high: Int) derives JsonSupport
+
 final case class TempRangeDuration(range: (Int, Int), duration: Int, unit: UoT) derives JsonSupport
 
 final case class Volume(volume: Double, unit: UoM) derives JsonSupport
