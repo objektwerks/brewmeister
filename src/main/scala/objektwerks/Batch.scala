@@ -122,7 +122,7 @@ object Metrics:
   def default: Metrics =
     Metrics(created = now(),
             style = "American IPA",
-            gallons = 5.0,
+            volume = Volume(5.0, UoM.gl),
             pH = 5.6,
             originalGravity = 1.060,
             finalGravity = 1.012,
@@ -171,7 +171,7 @@ object Metrics:
 
 final case class Metrics(created: String = now(),
                          style: String = "",
-                         gallons: Double = 0.0,
+                         volume: Volume = Volume(0.0, UoM.gl),
                          pH: Double = 0.0,
                          originalGravity: Double = 0.0,
                          finalGravity: Double = 0.0,
