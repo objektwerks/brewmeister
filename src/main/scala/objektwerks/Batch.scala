@@ -159,6 +159,8 @@ object Metrics:
   def mashEfficiency(actualMashExtract: Double, potentialMashExtract: Double): Double =
     format( (actualMashExtract / potentialMashExtract) * 100 )
 
+  def brewhouseEfficiency(actualFermentableExtract: Double, idealFermentableExtract: Double): Double =
+    format( (actualFermentableExtract / idealFermentableExtract) * 100 )
 
 final case class Metrics(created: String = now(),
                          style: String = "",
