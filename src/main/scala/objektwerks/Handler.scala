@@ -57,9 +57,9 @@ final class Masher(listener: ActorRef[Listener]) extends Handler:
           s"Optionally added adjuncts: ${mash.recipe.adjuncts}",
           s"pH should be: ${mash.recipe.pH}"
         ),
-        pH = mash.recipe.pH // Get from brewer!
+        pH = 5.6
       )
-    )
+    ) // Calculate ph!
 
 final class Lauterer(listener: ActorRef[Listener]) extends Handler:
   def lauter(lauter: Lauter): Unit =
