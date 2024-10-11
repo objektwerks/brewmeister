@@ -2,28 +2,28 @@ package objektwerks
 
 sealed trait Command
 
-final case class Sanitize(batchId: Int) extends Command
+final case class Sanitize(batch: Batch) extends Command
 
-final case class Prepare(batchId: Int, batch: Batch) extends Command
+final case class Prepare(batch: Batch) extends Command
 
-final case class Malt(batchId: Int, batch: Batch) extends Command
+final case class Malt(batch: Batch) extends Command
 
-final case class Mill(batchId: Int, batch: Batch) extends Command
+final case class Mill(batch: Batch) extends Command
 
-final case class Mash(batchId: Int, batch: Batch) extends Command
+final case class Mash(batch: Batch) extends Command
 
-final case class Lauter(batchId: Int, batch: Batch) extends Command
+final case class Lauter(batch: Batch) extends Command
 
-final case class Sparge(batchId: Int, batch: Batch) extends Command
+final case class Sparge(batch: Batch) extends Command
 
-final case class Boil(batchId: Int, batch: Batch) extends Command
+final case class Boil(batch: Batch) extends Command
 
-final case class Cool(batchId: Int, batch: Batch) extends Command
+final case class Cool(batch: Batch) extends Command
 
-final case class Whirlpool(batchId: Int, batch: Batch) extends Command
+final case class Whirlpool(batch: Batch) extends Command
 
-final case class Ferment(batchId: Int, batch: Batch) extends Command
+final case class Ferment(batch: Batch) extends Command
 
-final case class Condition(batchId: Int, batch: Batch) extends Command
+final case class Condition(batch: Batch) extends Command
 
-final case class Package(batchId: Int, batch: Batch) extends Command
+final case class Package(batch: Batch) extends Command
