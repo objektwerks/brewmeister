@@ -5,8 +5,6 @@ import ox.supervised
 
 final class Brewer(batch: Batch, listener: ActorRef[Listener]):
   private val batchId = batch.id
-  private val recipe = batch.recipe
-  // private val metrics = batch.metrics
 
   def sanitize: Unit =
     supervised:
@@ -14,48 +12,48 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
 
   def prepare: Unit =
     supervised:
-      Actor.create( Preparer(listener) ).tell( _.prepare( Prepare(batchId, recipe) ) )
+      Actor.create( Preparer(listener) ).tell( _.prepare( Prepare(batchId, batch) ) )
 
   def malt: Unit =
     supervised:
-      Actor.create( Malter(listener) ).tell( _.malt( Malt(batchId, recipe) ) )
+      Actor.create( Malter(listener) ).tell( _.malt( Malt(batchId, batch) ) )
 
   def mill: Unit =
     supervised:
-      Actor.create( Miller(listener) ).tell( _.mill( Mill(batchId, recipe) ) )
+      Actor.create( Miller(listener) ).tell( _.mill( Mill(batchId, batch) ) )
 
   def mash: Unit =
     supervised:
-      Actor.create( Masher(listener) ).tell( _.mash( Mash(batchId, recipe) ) )
+      Actor.create( Masher(listener) ).tell( _.mash( Mash(batchId, batch) ) )
 
   def lauter: Unit =
     supervised:
-      Actor.create( Lauterer(listener) ).tell( _.lauter( Lauter(batchId, recipe) ) )
+      Actor.create( Lauterer(listener) ).tell( _.lauter( Lauter(batchId, batch) ) )
 
   def sparge: Unit =
     supervised:
-      Actor.create( Sparger(listener) ).tell( _.sparge( Sparge(batchId, recipe) ) )
+      Actor.create( Sparger(listener) ).tell( _.sparge( Sparge(batchId, batch) ) )
 
   def boil: Unit =
     supervised:
-      Actor.create( Boiler(listener) ).tell( _.boil( Boil(batchId, recipe) ) )
+      Actor.create( Boiler(listener) ).tell( _.boil( Boil(batchId, batch) ) )
 
   def cool: Unit =
     supervised:
-      Actor.create( Cooler(listener) ).tell( _.cool( Cool(batchId, recipe) ) )
+      Actor.create( Cooler(listener) ).tell( _.cool( Cool(batchId, batch) ) )
 
   def whirlpool: Unit =
     supervised:
-      Actor.create( Whirlpooler(listener) ).tell( _.whirlpool( Whirlpool(batchId, recipe) ) )
+      Actor.create( Whirlpooler(listener) ).tell( _.whirlpool( Whirlpool(batchId, batch) ) )
 
   def ferment: Unit =
     supervised:
-      Actor.create( Fermenter(listener) ).tell( _.ferment( Ferment(batchId, recipe) ) )
+      Actor.create( Fermenter(listener) ).tell( _.ferment( Ferment(batchId, batch) ) )
 
   def condition: Unit =
     supervised:
-      Actor.create( Conditioner(listener) ).tell( _.condition( Condition(batchId, recipe) ) )
+      Actor.create( Conditioner(listener) ).tell( _.condition( Condition(batchId, batch) ) )
 
   def `package`: Unit =
     supervised:
-      Actor.create( Packager(listener) ).tell( _.`package`( Package(batchId, recipe) ) )
+      Actor.create( Packager(listener) ).tell( _.`package`( Package(batchId, batch) ) )
