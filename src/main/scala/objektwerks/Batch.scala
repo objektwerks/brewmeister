@@ -167,8 +167,8 @@ object Metrics:
     format( alcoholCalories + carbohydrateCalories ).toInt
 
   def mashEfficiency(actualMashExtract: Double,
-                     potentialMashExtract: Double): Double =
-    format( (actualMashExtract / potentialMashExtract) * 100 )
+                     potentialMashExtract: Double): Int =
+    ( (actualMashExtract / potentialMashExtract) * 100 ).toInt
 
   def brewhouseEfficiency(actualFermentableExtract: Double,
                           idealFermentableExtract: Double): Double =
