@@ -127,6 +127,8 @@ object Metrics:
             mashEfficiency = 70,
             brewhouseEfficiency = 71)
 
+  def alcoholByVolume(originalGravity: Double, finalGravity: Double): Double = (originalGravity - finalGravity) * 131
+
 final case class Metrics(created: String = now(),
                          style: String = "",
                          gallons: Double = 0.0,
