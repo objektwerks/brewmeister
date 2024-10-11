@@ -133,6 +133,10 @@ object Metrics:
     val maltColorUnits = (grainWeight * grainColor) / batchVolume
     1.4922 * pow(maltColorUnits, 0.6859)
 
+  def ibuBitterness(hopAlphaAcid: Double, hopWeight: Double, hopVolume: Double): Double =
+    val hopUtilization = (hopAlphaAcid * hopWeight) / hopVolume
+    (hopWeight * hopAlphaAcid * hopUtilization) / 7.25
+
   def alcoholByVolume(originalGravity: Double, finalGravity: Double): Double = (originalGravity - finalGravity) * 131
 
   def alcoholByWeight(alcoholByVolume: Double, finalGravity: Double): Double = (0.79 * alcoholByVolume) / finalGravity
