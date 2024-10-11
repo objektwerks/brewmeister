@@ -3,7 +3,8 @@ package objektwerks
 import scala.collection.mutable
 
 final class Listener:
-  private val listeners = mutable.ListBuffer.empty[Listener]
+  val listeners = mutable.ListBuffer.empty[Listener]
+  val logs = mutable.ListBuffer.empty[String]
 
   def register(listener: Listener): Unit =
     listeners += listener
@@ -20,3 +21,5 @@ final class Listener:
   def onMetrics(metrics: Metrics): Unit =
     listeners.foreach( _.onMetrics(metrics) )
     scribe.info(metrics.toString)
+
+  def log(entry: String): Unit = logs += entry
