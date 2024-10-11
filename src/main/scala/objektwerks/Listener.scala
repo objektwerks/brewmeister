@@ -17,4 +17,6 @@ final class Listener:
     listeners.foreach( _.onEvent(event) )
     scribe.info(event.toString)
 
-  def onMetrics(metrics: Metrics): Unit = scribe.info(metrics.toString)
+  def onMetrics(metrics: Metrics): Unit =
+    listeners.foreach( _.onMetrics(metrics) )
+    scribe.info(metrics.toString)
