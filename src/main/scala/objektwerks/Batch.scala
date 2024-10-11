@@ -141,6 +141,11 @@ object Metrics:
 
   def alcoholByWeight(alcoholByVolume: Double, finalGravity: Double): Double = format( (0.79 * alcoholByVolume) / finalGravity )
 
+  def calories(beerVolume: Int, originalGravity: Double, finalGravity: Double): Int =
+    val alcoholCalories = (originalGravity - finalGravity) * 7.5
+    val carbohydrateCalories = (finalGravity * 13) * beerVolume
+    format( alcoholCalories + carbohydrateCalories ).toInt
+
 final case class Metrics(created: String = now(),
                          style: String = "",
                          gallons: Double = 0.0,
