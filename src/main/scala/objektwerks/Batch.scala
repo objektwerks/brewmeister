@@ -129,7 +129,9 @@ object Metrics:
             mashEfficiency = 70,
             brewhouseEfficiency = 71)
 
-  def srmColor(grainWeight: Double, grainColor: Double, batchVolume: Double): Double =
+  def srmColor(grainWeight: Double,
+               grainColor: Double,
+               batchVolume: Double): Double =
     val maltColorUnits = (grainWeight * grainColor) / batchVolume
     format( 1.4922 * pow(maltColorUnits, 0.6859) )
 
