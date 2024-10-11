@@ -3,7 +3,7 @@ package objektwerks
 import scala.collection.mutable
 
 final class Listener:
-  val listeners = mutable.ListBuffer.empty[Listener]
+  private val listeners = mutable.ListBuffer.empty[Listener]
   val log = mutable.ListBuffer.empty[String]
 
   def register(listener: Listener): Unit =
