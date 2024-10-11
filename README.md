@@ -6,7 +6,6 @@ Todo
 ----
 * Metrics
 * Persistence
-* Listener
 * App
 
 Process
