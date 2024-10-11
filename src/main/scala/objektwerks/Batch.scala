@@ -58,12 +58,14 @@ final case class Yeast(typeof: String,
 
 final case class TempRangeDuration(range: (Int, Int), duration: Int, unit: UoT) derives JsonSupport
 
+final case class Volume(volume: Double, unit: UoM) derives JsonSupport
+
 object Recipe:
   def default: Recipe =
     Recipe(created = now(),
            style = "American IPA",
            water = "spring",
-           gallons = 5.0,
+           volume = Volume(5.0, UoM.gl),
            mashingTempRangeDuration = TempRangeDuration( (148, 152), 60, UoT.minutes ),
            boilingTempRangeDuration = TempRangeDuration( (148, 152), 60, UoT.minutes ),
            coolingTempRange = (68, 72),
@@ -90,7 +92,7 @@ object Recipe:
 final case class Recipe(created: String = now(),
                         style: String,
                         water: String,
-                        gallons: Double,
+                        volume: Volume,
                         mashingTempRangeDuration: TempRangeDuration,
                         boilingTempRangeDuration: TempRangeDuration,
                         coolingTempRange: (Int, Int),
