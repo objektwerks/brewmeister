@@ -130,7 +130,7 @@ final class Sparger(listener: ActorRef[Listener]):
       Sparged(
         sparge.batch.id,
         List( s"Should have a mash efficiency within this range: ${sparge.batch.recipe.mashEfficiency}" ),
-        mashEfficiency = 70 // get actual / potential mash extract from brewer for ME calc!
+        mashEfficiency = sparge.batch.recipe.mashEfficiency.avg // get actual / potential mash extract from brewer for ME calc!
       )
     )
 
@@ -165,8 +165,8 @@ final class Whirlpooler(listener: ActorRef[Listener]):
           s"Optionally added hops: ${whirlpool.batch.recipe.hops}",
           s"Should have an orginal gravity within this range: ${whirlpool.batch.recipe.originalGravity}"
         ),
-        originalGravity = 1.030
-      ) // Calculate original gravity!
+        originalGravity = whirlpool.batch.recipe.originalGravity.avg // get actual OG from brewer!
+      )
     )
 
 final class Fermenter(listener: ActorRef[Listener]):
