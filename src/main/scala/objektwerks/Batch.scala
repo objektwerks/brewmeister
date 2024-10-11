@@ -135,7 +135,7 @@ object Metrics:
 
   def ibuBitterness(hopAlphaAcid: Double, hopWeight: Double, hopVolume: Double): Double =
     val hopUtilization = (hopAlphaAcid * hopWeight) / hopVolume
-    (hopWeight * hopAlphaAcid * hopUtilization) / 7.25
+    format( (hopWeight * hopAlphaAcid * hopUtilization) / 7.25 )
 
   def alcoholByVolume(originalGravity: Double, finalGravity: Double): Double = (originalGravity - finalGravity) * 131
 
