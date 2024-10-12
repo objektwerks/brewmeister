@@ -159,7 +159,7 @@ Metrics Flow
 2. sparging -- user input and recipe --> mashEfficiency
 3. whirlpooler -- user hydormeter --> originalGravity
 4. fermenter -- user hydrometer --> finalGravity
-5. conditioner --> srmColor
+5. conditioner -- recipe --> srmColor
 6. packager --> ibuBitterness, alcoholByVolume, alcoholByWeight, calories, brewhouseEfficiency
 
 Assembly
