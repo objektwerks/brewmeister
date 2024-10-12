@@ -12,13 +12,9 @@ final class Listener(batchId: Int):
       case _ => 0.0
 
   def finalGravity: Double =
-    var fg = 0.0
-    events.foreach { event =>
-      event match
-        case Fermented(_, finalGravity) => fg = finalGravity
-        case _ =>
-    }
-    fg
+    events.toList match
+      case e :: es if e.isInstanceOf[Fermented] => e.asInstanceOf[Fermented].finalGravity
+      case _ => 0.0
 
   def metrics: Metrics = Metrics.build(batchId, events.toList)
 
