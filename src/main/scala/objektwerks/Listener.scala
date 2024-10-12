@@ -4,7 +4,7 @@ import scala.collection.mutable
 
 final class Listener(batchId: Int):
   private val listeners = mutable.ListBuffer.empty[Listener]
-  val events = mutable.ListBuffer.empty[Event]
+  private val events = mutable.ListBuffer.empty[Event]
 
   def register(listener: Listener): Unit =
     listeners += listener
