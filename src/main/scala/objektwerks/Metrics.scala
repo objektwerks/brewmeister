@@ -21,7 +21,8 @@ object Metrics:
             brewhouseEfficiency = 71)
 
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
-    grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.volume) }.sum
+    val sum = grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.volume) }.sum
+    ( sum / grains.length ).toInt
 
   def srmColor(grainWeight: Double,
                grainColor: Double,
