@@ -155,10 +155,10 @@ Metric
 
 Metrics Flow
 ------------
-1. mashing -- user input --> pH
+1. mashing -- user pH meter --> pH
 2. sparging -- user input and recipe --> mashEfficiency
-3. whirlpooler --> originalGravity
-4. fermenter --> finalGravity
+3. whirlpooler -- user hydormeter --> originalGravity
+4. fermenter -- user hydrometer --> finalGravity
 5. conditioner --> srmColor
 6. packager --> ibuBitterness, alcoholByVolume, alcoholByWeight, calories, brewhouseEfficiency
 
