@@ -15,6 +15,15 @@ final class Listener(batchId: Int):
     }
     og
 
+  def finalGravity: Double =
+    var fg = 0.0
+    events.foreach { event =>
+      event match
+        case Fermented(_, finalGravity) => fg = finalGravity
+        case _ =>
+    }
+    fg
+
   def metrics: Metrics = Metrics.build(batchId, events.toList)
 
   def register(listener: Listener): Unit =
