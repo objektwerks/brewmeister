@@ -3,8 +3,6 @@ package objektwerks
 import ox.channels.{Actor, ActorRef}
 import ox.supervised
 
-// import Metrics.*
-
 final class Brewer(batch: Batch, listener: ActorRef[Listener]):
   def sanitize: Unit =
     supervised:
