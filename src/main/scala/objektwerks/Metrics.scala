@@ -85,6 +85,9 @@ object Metrics:
                      potentialMashExtract: Double): Int =
     ( (actualMashExtract / potentialMashExtract) * 100 ).toInt
 
+  def brewhouseEfficiency(grains: List[Grain]): Double =
+    grains.map { grain => grain.potentialFermentableExtract }.sum
+
   def brewhouseEfficiency(actualFermentableExtract: Double,
                           potentialFermentableExtract: Double): Int =
     ( (actualFermentableExtract / potentialFermentableExtract) * 100 ).toInt
