@@ -55,7 +55,7 @@ Process
 13. **Packaging** - Bottle / Can ( carbonate with priming sugar ) or Keg ( force carbonate ) the ***fermented and conditioned wort***. Condition for required **temp** and **duration**. Then refrigerate at required **temp**.
     1. input - wort, priming sugar or forced carbonation
     2. constraints - required conditioning **temp** range and **duration**; required refrigeration **temp** range
-    3. output - beer, **IBU**, **ABV**, **ABW**, **Brewhouse Efficiency**
+    3. output - beer, **ibu**, **abv**, **abw**, **calories**, **brewhouse efficiency**
 >Some beer recipes ***may*** require adjustments to this process.
 
 Flows
