@@ -19,7 +19,8 @@ enum UoT derives JsonSupport:
   case minutes, days, weeks, months
 
 object Batch:
-  def default: Batch = Batch(recipe = Recipe.default, metrics = Metrics.default)
+  def default: Batch = Batch(recipe = Recipe.default,
+                             metrics = Metrics.default)
 
 final case class Batch(id: Int = 1,
                        started: String = now(),
