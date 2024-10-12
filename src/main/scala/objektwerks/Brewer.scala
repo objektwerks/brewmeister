@@ -196,7 +196,7 @@ final class Packager(listener: ActorRef[Listener]):
           s"Should have a brew efficiency within this range: ${`package`.batch.recipe.brewhouseEfficiency}",
           s"Should refrigerate within this temp range: ${`package`.batch.recipe.refrigerateTempRange}",
         ),
-        ibuBitterness = `package`.batch.recipe.ibuBitterness.avg, // calculate
+        ibuBitterness = Metrics.ibuBitterness(`package`.batch.recipe.hops),
         alcoholByVolume = `package`.batch.recipe.alcoholByVolume.avg, // calculate
         alcoholByWeight = `package`.batch.recipe.alcoholByWeight.avg, // calculate
         calories = `package`.batch.recipe.calories.avg, // calculate
