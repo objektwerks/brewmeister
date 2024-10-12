@@ -161,7 +161,7 @@ Metrics Flow
 4. fermenter -- user hydrometer --> finalGravity
 5. conditioner -- recipe (grain weight, grain color, batch volume) --> srmColor
 6. packager -- metrics -->
-    1. ibuBitterness
+    1. ibuBitterness ( hops )
     2. alcoholByVolume
     3. alcoholByWeight
     4. calories
