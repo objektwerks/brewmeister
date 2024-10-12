@@ -159,6 +159,7 @@ Metrics Flow
 2. sparging --> mashEfficiency
 3. whirlpooler --> originalGravity
 4. fermenter --> finalGravity
+5. conditioner --> srmColor
 
 Assembly
 --------
