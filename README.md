@@ -160,6 +160,7 @@ Metrics Flow
 3. whirlpooler --> originalGravity
 4. fermenter --> finalGravity
 5. conditioner --> srmColor
+6. packager --> ibuBitterness, alcoholByVolume, alcoholByWeight, calories, brewhouseEfficiency
 
 Assembly
 --------
