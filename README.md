@@ -162,7 +162,7 @@ Metrics Flow
 5. conditioner -- recipe (grain weight, grain color, batch volume) --> srmColor
 6. packager -- metrics -->
     1. ibuBitterness ( hops )
-    2. alcoholByVolume
+    2. alcoholByVolume ( OG, FG )
     3. alcoholByWeight
     4. calories
     5. brewhouseEfficiency
