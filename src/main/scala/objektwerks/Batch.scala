@@ -70,7 +70,7 @@ object Recipe:
   def default: Recipe =
     Recipe(style = "American IPA",
            water = "spring",
-           brewVolume = Volume(5.0, UoM.gl),
+           batchVolume = Volume(5.0, UoM.gl),
            packageVolume = Volume(12.0, UoM.oz),
            mashingTempDuration = TempDuration( IntRange(148, 152), 60, UoT.minutes ),
            boilingTempDuration = TempDuration( IntRange(148, 152), 60, UoT.minutes ),
@@ -98,7 +98,7 @@ object Recipe:
 final case class Recipe(created: String = now(),
                         style: String,
                         water: String,
-                        brewVolume: Volume,
+                        batchVolume: Volume,
                         packageVolume: Volume,
                         mashingTempDuration: TempDuration,
                         boilingTempDuration: TempDuration,
