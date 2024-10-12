@@ -156,6 +156,7 @@ Metric
 Metrics Flow
 ------------
 1. mashing --> pH
+2. sparging --> mashEfficiency
 
 Assembly
 --------
