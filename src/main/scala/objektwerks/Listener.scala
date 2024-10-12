@@ -6,7 +6,8 @@ final class Listener(batchId: Int):
   private val listeners = mutable.ListBuffer.empty[Listener]
   val events = mutable.ListBuffer.empty[Event]
 
-  def metrics: Metrics = Metrics.default(batchId) // TODO! Derive metrics from events!
+  // TODO! Derive metrics from events, to include batch completed date and time!
+  def metrics: Metrics = Metrics.default(batchId)
 
   def register(listener: Listener): Unit =
     listeners += listener
