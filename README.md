@@ -61,7 +61,7 @@ Process
 Flows
 -----
 1. App -- create --> Batch
-2. App -- batch, listener --> Brewer --
+2. App -- batch, listener --> Brewer -- batch --
     1. Sanitize --> **Sanitizer** -- Sanitized --> App
     2. Prepare --> **Preparer** -- Prepared --> App
     3. Malt --> **Malter** -- Malted --> App
