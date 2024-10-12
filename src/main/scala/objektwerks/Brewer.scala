@@ -121,7 +121,10 @@ final class Sparger(listener: ActorRef[Listener]):
     listener.tell( _.onEvent:
       Sparged(
         List( s"Should have a mash efficiency within this range: ${sparge.batch.recipe.mashEfficiency}" ),
-        mashEfficiency = sparge.batch.recipe.mashEfficiency.avg // get actual mash extract from brewer!
+        mashEfficiency = Metrics.mashEfficiency(
+          0.0, // get actual mash extract from brewer!
+          sparge.batch.recipe.potentialMashExtract
+        )
       )
     )
 
