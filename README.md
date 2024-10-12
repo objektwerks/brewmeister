@@ -139,14 +139,14 @@ Metric
     5. Calories = Alcohol Calories + Carbohydrate Calories
     6. Range: 10 - 600
 11. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
-    1. Method: ***user input and recipe***
+    1. Method: ***brewer input and recipe***
     2. Actual Mash Extract = The amount of fermentable extract collected from the mash tun.
     3. Potential Mash Extract = The maximum extract potential of the grain bill, calculated on the malt’s extract potential and the grain bill’s weight and volume.
     4. ME % = ( Actual Extract / Potential Extract ) * 100
     5. Range: 70.0 - 100.0 %
     6. Ideal: 80.0 - 90.0 %
 12. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
-    1. Method: ***user input and metrics***
+    1. Method: ***brewer input and metrics***
     2. Actual Fermentable Extract = The amount of fermentable extract collected from the brewhouse.
     3. Potential Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
     4. BE % = ( Actual Fermentable Extract / Ideal Fermentable Extract ) * 100
@@ -155,10 +155,10 @@ Metric
 
 Metrics Flow
 ------------
-1. mashing -- user pH meter --> pH
-2. sparging -- user input ( actual mash extract ) and recipe ( potential mash extract ) --> mashEfficiency
-3. whirlpooler -- user hydormeter --> originalGravity
-4. fermenter -- user hydrometer --> finalGravity
+1. mashing -- brewer pH meter --> pH
+2. sparging -- brewer input ( actual mash extract ) and recipe ( potential mash extract ) --> mashEfficiency
+3. whirlpooler -- brewer hydormeter --> originalGravity
+4. fermenter -- brewer hydrometer --> finalGravity
 5. conditioner -- recipe ( grain weight, grain color, batch volume ) --> srmColor
 6. packager -- recipe, metrics -->
     1. ibuBitterness ( hops -> alphaAcid, weight, volume )
