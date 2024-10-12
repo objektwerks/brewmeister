@@ -158,6 +158,7 @@ Metrics Flow
 1. mashing --> pH
 2. sparging --> mashEfficiency
 3. whirlpooler --> originalGravity
+4. fermenter --> finalGravity
 
 Assembly
 --------
