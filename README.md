@@ -155,8 +155,8 @@ Metric
 
 Metrics Flow
 ------------
-1. mashing --> pH
-2. sparging --> mashEfficiency
+1. mashing -- user input --> pH
+2. sparging -- user input and recipe --> mashEfficiency
 3. whirlpooler --> originalGravity
 4. fermenter --> finalGravity
 5. conditioner --> srmColor
