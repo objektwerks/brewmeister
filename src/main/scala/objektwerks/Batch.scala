@@ -71,8 +71,7 @@ final case class Volume(volume: Double, unit: UoM) derives JsonSupport
 
 object Recipe:
   def default: Recipe =
-    Recipe(created = now(),
-           style = "American IPA",
+    Recipe(style = "American IPA",
            water = "spring",
            volume = Volume(5.0, UoM.gl),
            mashingTempDuration = TempDuration( IntRange(148, 152), 60, UoT.minutes ),
