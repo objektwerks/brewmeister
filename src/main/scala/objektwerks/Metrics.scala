@@ -46,7 +46,7 @@ object Metrics:
     metrics
 
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
-    grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.volume)}.sum
+    grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.volume) }.sum
 
   def srmColor(grainWeight: Double,
                grainColor: Double,
