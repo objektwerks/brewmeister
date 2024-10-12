@@ -107,7 +107,7 @@ final class Masher(listener: ActorRef[Listener]):
       Mashed(
         mash.batch.id,
         List(
-          s"Mashed grist into a wort within this temp range / duration: ${mash.batch.recipe.mashingTempRangeDuration}",
+          s"Mashed grist into a wort within this temp range / duration: ${mash.batch.recipe.mashingTempDuration}",
           s"Optionally added adjuncts: ${mash.batch.recipe.adjuncts}",
           s"pH should be: ${mash.batch.recipe.pH}"
         ),
@@ -140,7 +140,7 @@ final class Boiler(listener: ActorRef[Listener]):
       Boiled(
         boil.batch.id,
         List(
-          s"Boiled wort within this temp range / duration: ${boil.batch.recipe.boilingTempRangeDuration}",
+          s"Boiled wort within this temp range / duration: ${boil.batch.recipe.boilingTempDuration}",
           s"Added hops: ${boil.batch.recipe.hops}",
           s"Optionally added adjuncts: ${boil.batch.recipe.adjuncts}"
         )
@@ -175,7 +175,7 @@ final class Fermenter(listener: ActorRef[Listener]):
       Fermented(
         ferment.batch.id,
         List(
-          s"Fermented within this temp range / duration: ${ferment.batch.recipe.fermentatingTempRangeDuration}",
+          s"Fermented within this temp range / duration: ${ferment.batch.recipe.fermentatingTempDuration}",
           s"Should have a final gravity within this range: ${ferment.batch.recipe.finalGravity}"
         ),
         finalGravity = ferment.batch.recipe.finalGravity.avg // get actual FG from brewer!
@@ -188,7 +188,7 @@ final class Conditioner(listener: ActorRef[Listener]):
       Conditioned(
         condition.batch.id,
         List(
-          s"Conditioned within this temp range / duration: ${condition.batch.recipe.conditioningTempRangeDuration}",
+          s"Conditioned within this temp range / duration: ${condition.batch.recipe.conditioningTempDuration}",
           s"Optionally added adjuncts: ${condition.batch.recipe.adjuncts}",
           s"Optionally added hops: ${condition.batch.recipe.hops}",
           s"Should have an SRM color within this range: ${condition.batch.recipe.srmColor}"
@@ -203,7 +203,7 @@ final class Packager(listener: ActorRef[Listener]):
       Packaged(
         `package`.batch.id,
         List(
-          s"Conditioned within this temp range / duration: ${`package`.batch.recipe.packagingTempRangeDuration}",
+          s"Conditioned within this temp range / duration: ${`package`.batch.recipe.packagingTempDuration}",
           s"Hop bitterness should be within this range: ${`package`.batch.recipe.ibuBitterness}",
           s"Alcohol by volume should be within this range: ${`package`.batch.recipe.alcoholByVolume}",
           s"Alcohol by weight should be within this range: ${`package`.batch.recipe.alcoholByWeight}",
