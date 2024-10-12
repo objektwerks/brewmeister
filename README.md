@@ -124,29 +124,29 @@ Metric
     5. IBU = ( Hop Weight (oz) * Hop Alpha Acid (%) * Hop Utilization (%) ) / 7.25
     6. Range: 0 - 120
 8. **Alcohol: ABV** - Measured by volume, the amount of alcohol produced in a wort during fermentation.
-    1. Method: ***via metrics***
+    1. Method: ***metrics***
     2. ABV % = ( OG - FG ) * 131
     3. Range: 3.0 - 13.0 %
 9. **Alcohol: ABW** - Measured by weight, the amount of alcohol produced in a wort during fermentation.
-    1. Method: ***via metrics***
+    1. Method: ***metrics***
     2. ABW % = ( 0.79 * ABV (%) ) / FG
     3. Range: 3.0 - 10.0 %
 10. **Calories** - The number of calories in a beer.
-    1. Method: ***via metrics***
+    1. Method: ***metrics***
     2. Volume = Beer container (oz)
     3. Alcohol Calories = ( OG - FG ) * 7.5
     4. Carbohydrate Calories = ( FG * 13 ) * Volume
     5. Calories = Alcohol Calories + Carbohydrate Calories
     6. Range: 10 - 600
 11. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
-    1. Method: ***via user input and recipe***
+    1. Method: ***user input and recipe***
     2. Actual Mash Extract = The amount of fermentable extract collected from the mash tun.
     3. Potential Mash Extract = The maximum extract potential of the grain bill, calculated on the malt’s extract potential and the grain bill’s weight and volume.
     4. ME % = ( Actual Extract / Potential Extract ) * 100
     5. Range: 70.0 - 100.0 %
     6. Ideal: 80.0 - 90.0 %
 12. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
-    1. Method: ***via user input and recipe***
+    1. Method: ***user input and metrics***
     2. Actual Fermentable Extract = The amount of fermentable extract collected from the brewhouse.
     3. Potential Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
     4. BE % = ( Actual Fermentable Extract / Ideal Fermentable Extract ) * 100
