@@ -60,7 +60,6 @@ final class Sanitizer(listener: ActorRef[Listener]):
   def sanitize(sanitize: Sanitize): Unit =
     listener.tell( _.onEvent:
       Sanitized(
-        sanitize.batch.id,
         List( "Sanitized brewing implements." )
       )
     )
@@ -70,7 +69,6 @@ final class Preparer(listener: ActorRef[Listener]):
   def prepare(prepare: Prepare): Unit =
     listener.tell( _.onEvent:
       Prepared(
-        prepare.batch.id,
         List(
           "Prepared the following recipe ingrediants:",
           s"Grains: ${prepare.batch.recipe.grains}",
@@ -85,7 +83,6 @@ final class Malter(listener: ActorRef[Listener]):
   def malt(malt: Malt): Unit =
     listener.tell( _.onEvent:
       Malted(
-        malt.batch.id,
         List( "Malted grains." )
       )
     )
@@ -94,7 +91,6 @@ final class Miller(listener: ActorRef[Listener]):
   def mill(mill: Mill): Unit =
     listener.tell( _.onEvent:
       Milled(
-        mill.batch.id,
         List( "Milled grains into a grist." )
       )
     )
@@ -103,7 +99,6 @@ final class Masher(listener: ActorRef[Listener]):
   def mash(mash: Mash): Unit =
     listener.tell( _.onEvent:
       Mashed(
-        mash.batch.id,
         List(
           s"Mashed grist into a wort within this temp range / duration: ${mash.batch.recipe.mashingTempDuration}",
           s"Optionally added adjuncts: ${mash.batch.recipe.adjuncts}",
@@ -117,7 +112,6 @@ final class Lauterer(listener: ActorRef[Listener]):
   def lauter(lauter: Lauter): Unit =
     listener.tell( _.onEvent:
       Lautered(
-        lauter.batch.id,
         List( "Lautered wort." )
       )
     )
@@ -126,7 +120,6 @@ final class Sparger(listener: ActorRef[Listener]):
   def sparge(sparge: Sparge): Unit =
     listener.tell( _.onEvent:
       Sparged(
-        sparge.batch.id,
         List( s"Should have a mash efficiency within this range: ${sparge.batch.recipe.mashEfficiency}" ),
         mashEfficiency = sparge.batch.recipe.mashEfficiency.avg // get actual mash extract from brewer!
       )
@@ -136,7 +129,6 @@ final class Boiler(listener: ActorRef[Listener]):
   def boil(boil: Boil): Unit =
     listener.tell( _.onEvent:
       Boiled(
-        boil.batch.id,
         List(
           s"Boiled wort within this temp range / duration: ${boil.batch.recipe.boilingTempDuration}",
           s"Added hops: ${boil.batch.recipe.hops}",
@@ -149,7 +141,6 @@ final class Cooler(listener: ActorRef[Listener]):
   def cool(cool: Cool): Unit =
     listener.tell( _.onEvent:
       Cooled(
-        cool.batch.id,
         List( s"Cooled the wort within this temp range: ${cool.batch.recipe.coolingTempRange}" )
       )
     )
@@ -158,7 +149,6 @@ final class Whirlpooler(listener: ActorRef[Listener]):
   def whirlpool(whirlpool: Whirlpool): Unit =
     listener.tell( _.onEvent:
       Whirlpooled(
-        whirlpool.batch.id,
         List(
           s"Optionally added hops: ${whirlpool.batch.recipe.hops}",
           s"Should have an orginal gravity within this range: ${whirlpool.batch.recipe.originalGravity}"
@@ -171,7 +161,6 @@ final class Fermenter(listener: ActorRef[Listener]):
   def ferment(ferment: Ferment): Unit =
     listener.tell( _.onEvent:
       Fermented(
-        ferment.batch.id,
         List(
           s"Fermented within this temp range / duration: ${ferment.batch.recipe.fermentatingTempDuration}",
           s"Should have a final gravity within this range: ${ferment.batch.recipe.finalGravity}"
@@ -184,7 +173,6 @@ final class Conditioner(listener: ActorRef[Listener]):
   def condition(condition: Condition): Unit =
     listener.tell( _.onEvent:
       Conditioned(
-        condition.batch.id,
         List(
           s"Conditioned within this temp range / duration: ${condition.batch.recipe.conditioningTempDuration}",
           s"Optionally added adjuncts: ${condition.batch.recipe.adjuncts}",
@@ -199,7 +187,6 @@ final class Packager(listener: ActorRef[Listener]):
   def `package`(`package`: Package): Unit =
     listener.tell( _.onEvent:
       Packaged(
-        `package`.batch.id,
         List(
           s"Conditioned within this temp range / duration: ${`package`.batch.recipe.packagingTempDuration}",
           s"Hop bitterness should be within this range: ${`package`.batch.recipe.ibuBitterness}",
