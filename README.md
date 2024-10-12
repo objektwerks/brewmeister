@@ -160,12 +160,12 @@ Metrics Flow
 3. whirlpooler -- brewer hydrometer --> originalGravity
 4. fermenter -- brewer hydrometer --> finalGravity
 5. conditioner -- recipe ( grain weight, grain color, batch volume ) --> srmColor
-6. packager -- recipe, metrics -->
+6. packager -- brewer input, recipe, metrics -->
     1. ibuBitterness ( recipe -> hops -> hop -> alphaAcid, weight, volume )
     2. alcoholByVolume ( metrics -> OG, metrics -> FG )
     3. alcoholByWeight ( metrics -> abv, metrics -> FG )
     4. calories ( metrics -> volume, metrics -> OG, metrics -> FG )
-    5. brewhouseEfficiency ( actualFermentableExtract, recipe -> grains -> grain -> potentialFermentableExtract)
+    5. brewhouseEfficiency ( brewer input -> actualFermentableExtract, recipe -> grains -> grain -> potentialFermentableExtract)
 
 Assembly
 --------
