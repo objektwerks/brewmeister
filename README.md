@@ -165,7 +165,7 @@ Metrics Flow
     2. alcoholByVolume ( OG, FG )
     3. alcoholByWeight ( abv, FG )
     4. calories ( volume, OG, FG )
-    5. brewhouseEfficiency ( actualFermentableExtract, potentialFermentableExtract)
+    5. brewhouseEfficiency ( actualFermentableExtract, recipe -> grains -> grain -> potentialFermentableExtract)
 
 Assembly
 --------
