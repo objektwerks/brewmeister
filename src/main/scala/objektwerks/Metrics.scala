@@ -79,14 +79,14 @@ object Metrics:
     ( alcoholCalories + carbohydrateCalories ).toInt
 
   def mashEfficiency(grains: List[Grain]): Double =
-    grains.map { grain => grain.potentialMashExtract }.sum
+    format( grains.map { grain => grain.potentialMashExtract }.sum )
 
   def mashEfficiency(actualMashExtract: Double,
                      potentialMashExtract: Double): Int =
     ( (actualMashExtract / potentialMashExtract) * 100 ).toInt
 
   def brewhouseEfficiency(grains: List[Grain]): Double =
-    grains.map { grain => grain.potentialFermentableExtract }.sum
+    format( grains.map { grain => grain.potentialFermentableExtract }.sum )
 
   def brewhouseEfficiency(actualFermentableExtract: Double,
                           potentialFermentableExtract: Double): Int =
