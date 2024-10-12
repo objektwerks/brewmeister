@@ -156,10 +156,10 @@ Metric
 Metrics Flow
 ------------
 1. mashing -- user pH meter --> pH
-2. sparging -- user input (actual mash extract) and recipe (potential mash extract) --> mashEfficiency
+2. sparging -- user input ( actual mash extract ) and recipe ( potential mash extract ) --> mashEfficiency
 3. whirlpooler -- user hydormeter --> originalGravity
 4. fermenter -- user hydrometer --> finalGravity
-5. conditioner -- recipe (grain weight, grain color, batch volume) --> srmColor
+5. conditioner -- recipe ( grain weight, grain color, batch volume ) --> srmColor
 6. packager -- recipe, metrics -->
     1. ibuBitterness ( hops -> alphaAcid, weight, volume )
     2. alcoholByVolume ( OG, FG )
