@@ -163,7 +163,7 @@ Metrics Flow
 6. packager -- metrics -->
     1. ibuBitterness ( hops )
     2. alcoholByVolume ( OG, FG )
-    3. alcoholByWeight
+    3. alcoholByWeight ( abv, FG )
     4. calories
     5. brewhouseEfficiency
 
