@@ -78,6 +78,9 @@ object Metrics:
     val carbohydrateCalories = (finalGravity * 13) * packageVolume
     ( alcoholCalories + carbohydrateCalories ).toInt
 
+  def mashEfficiency(grains: List[Grain]): Double =
+    grains.map { grain => grain.potentialMashExtract }.sum
+
   def mashEfficiency(actualMashExtract: Double,
                      potentialMashExtract: Double): Int =
     ( (actualMashExtract / potentialMashExtract) * 100 ).toInt
