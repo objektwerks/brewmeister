@@ -148,7 +148,7 @@ Metric
 12. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
     1. Method: ***via user input and recipe***
     2. Actual Fermentable Extract = The amount of fermentable extract collected from the brewhouse.
-    3. Ideal Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
+    3. Potential Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
     4. BE % = ( Actual Fermentable Extract / Ideal Fermentable Extract ) * 100
     5. Range: 60.0 - 100.0 %
     6. Ideal: 72.0 - 80.0 %
@@ -161,11 +161,11 @@ Metrics Flow
 4. fermenter -- user hydrometer --> finalGravity
 5. conditioner -- recipe (grain weight, grain color, batch volume) --> srmColor
 6. packager -- metrics -->
-    1. ibuBitterness ( hops )
+    1. ibuBitterness ( hops -> alphaAcid, weight, volume )
     2. alcoholByVolume ( OG, FG )
     3. alcoholByWeight ( abv, FG )
     4. calories ( volume, OG, FG )
-    5. brewhouseEfficiency
+    5. brewhouseEfficiency ( actualFermentableExtract, potentialFermentableExtract)
 
 Assembly
 --------

@@ -171,8 +171,8 @@ object Metrics:
     ( (actualMashExtract / potentialMashExtract) * 100 ).toInt
 
   def brewhouseEfficiency(actualFermentableExtract: Double,
-                          idealFermentableExtract: Double): Int =
-    ( (actualFermentableExtract / idealFermentableExtract) * 100 ).toInt
+                          potentialFermentableExtract: Double): Int =
+    ( (actualFermentableExtract / potentialFermentableExtract) * 100 ).toInt
 
 final case class Metrics(created: String = now(),
                          style: String = "",
