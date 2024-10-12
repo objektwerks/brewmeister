@@ -212,6 +212,9 @@ final class Packager(listener: ActorRef[Listener]):
           listener.ask( _.originalGravity ),
           listener.ask( _.finalGravity )
         ),
-        brewhouseEfficiency = `package`.batch.recipe.brewhouseEfficiency.avg // get actualFermentableExtract from brewer!
+        brewhouseEfficiency = Metrics.brewhouseEfficiency(
+          0.0, // get actualFermentableExtract from brewer!
+          `package`.batch.recipe.potentialFermentableExtract
+        )
       )
     )
