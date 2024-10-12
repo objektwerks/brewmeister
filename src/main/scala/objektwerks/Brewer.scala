@@ -165,7 +165,7 @@ final class Whirlpooler(listener: ActorRef[Listener]):
           s"Optionally added hops: ${whirlpool.batch.recipe.hops}",
           s"Should have an orginal gravity within this range: ${whirlpool.batch.recipe.originalGravity}"
         ),
-        originalGravity = whirlpool.batch.recipe.originalGravity.avg // get actual OG from brewer!
+        originalGravity = whirlpool.batch.recipe.originalGravity.avg // get OG from brewer!
       )
     )
 
