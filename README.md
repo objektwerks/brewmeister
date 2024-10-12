@@ -112,27 +112,27 @@ Metric
     2. Constraint: Sample must be at 20C / 68F.
     3. Range: 1.000 - 1.130
 6. **Color: SRM** - Standard Reference Method (SRM) represents the color of a beer. Malt Color Units (MCU). Obtain Lovibond value from grain package.
-    1. Method: ***program***
+    1. Method: ***recipe***
     2. MCU = ( Grain Weight (lbs) ) * ( Grain Color (degrees lovibond) ) / ( Volume(gallons) )
     3. SRM = 1.4922 * ( MCU ^ 0.6859 )
     4. Range: 1 - 40
 7. **Hop Bitterness: IBU** - International Bittering Units ( IBU ) is the measure of beer bitterness that comes from boiling hops.
-    1. Method: ***program***
+    1. Method: ***recipe***
     2. Hop Weight: Actual mass of hops, excluding moisture.
     3. Hop Volume: Actual mass of hops, including moisture. 1 oz of **dry** hops equals 4-6 oz of **wet** hops.
     4. Hop Utilization % = ( Hop Alpha Acid (%) * Hop Weight (dry oz) ) / Hop Volume (fluid oz)
     5. IBU = ( Hop Weight (oz) * Hop Alpha Acid (%) * Hop Utilization (%) ) / 7.25
     6. Range: 0 - 120
 8. **Alcohol: ABV** - Measured by volume, the amount of alcohol produced in a wort during fermentation.
-    1. Method: ***program***
+    1. Method: ***via user input***
     2. ABV % = ( OG - FG ) * 131
     3. Range: 3.0 - 13.0 %
 9. **Alcohol: ABW** - Measured by weight, the amount of alcohol produced in a wort during fermentation.
-    1. Method: ***program***
+    1. Method: ***via user input***
     2. ABW % = ( 0.79 * ABV (%) ) / FG
     3. Range: 3.0 - 10.0 %
 10. **Calories** - The number of calories in a beer.
-    1. Method: ***program***
+    1. Method: ***via user input***
     2. Volume = Beer container (oz)
     3. Alcohol Calories = ( OG - FG ) * 7.5
     4. Carbohydrate Calories = ( FG * 13 ) * Volume
