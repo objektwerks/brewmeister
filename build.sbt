@@ -14,7 +14,7 @@ libraryDependencies ++= {
   )
 }
 scalacOptions ++= Seq(
-  "-Wunused:all"
+  "-Wall"
 )
 outputStrategy := Some(StdoutOutput)
 
