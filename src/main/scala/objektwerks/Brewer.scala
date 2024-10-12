@@ -196,10 +196,10 @@ final class Packager(listener: ActorRef[Listener]):
           s"Should have a brew efficiency within this range: ${`package`.batch.recipe.brewhouseEfficiency}",
           s"Should refrigerate within this temp range: ${`package`.batch.recipe.refrigerateTempRange}",
         ),
-        ibuBitterness = `package`.batch.recipe.ibuBitterness.avg,
-        alcoholByVolume = `package`.batch.recipe.alcoholByVolume.avg,
-        alcoholByWeight = `package`.batch.recipe.alcoholByWeight.avg,
-        calories = `package`.batch.recipe.calories.avg,
-        brewhouseEfficiency = `package`.batch.recipe.brewhouseEfficiency.avg
-      ) // get ibu, abv, abw, calories and be from brewer!
+        ibuBitterness = `package`.batch.recipe.ibuBitterness.avg, // calculate
+        alcoholByVolume = `package`.batch.recipe.alcoholByVolume.avg, // calculate
+        alcoholByWeight = `package`.batch.recipe.alcoholByWeight.avg, // calculate
+        calories = `package`.batch.recipe.calories.avg, // get beer volume from brewer, calculate
+        brewhouseEfficiency = `package`.batch.recipe.brewhouseEfficiency.avg // get from brewer!
+      )
     )
