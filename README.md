@@ -117,11 +117,12 @@ Metric
     3. SRM = 1.4922 * ( MCU ^ 0.6859 )
     4. Range: 1 - 40
 7. **Hop Bitterness: IBU** - International Bittering Units ( IBU ) is the measure of beer bitterness that comes from boiling hops.
-    1. Hop Weight: Actual mass of hops, excluding moisture.
-    2. Hop Volume: Actual mass of hops, including moisture. 1 oz of **dry** hops equals 4-6 oz of **wet** hops.
-    3. Hop Utilization % = ( Hop Alpha Acid (%) * Hop Weight (dry oz) ) / Hop Volume (fluid oz)
-    4. IBU = ( Hop Weight (oz) * Hop Alpha Acid (%) * Hop Utilization (%) ) / 7.25
-    5. Range: 0 - 120
+    1. Method: ***program***
+    2. Hop Weight: Actual mass of hops, excluding moisture.
+    3. Hop Volume: Actual mass of hops, including moisture. 1 oz of **dry** hops equals 4-6 oz of **wet** hops.
+    4. Hop Utilization % = ( Hop Alpha Acid (%) * Hop Weight (dry oz) ) / Hop Volume (fluid oz)
+    5. IBU = ( Hop Weight (oz) * Hop Alpha Acid (%) * Hop Utilization (%) ) / 7.25
+    6. Range: 0 - 120
 8. **Alcohol: ABV** - Measured by volume, the amount of alcohol produced in a wort during fermentation.
     1. ABV % = ( OG - FG ) * 131
     2. Range: 3.0 - 13.0 %
