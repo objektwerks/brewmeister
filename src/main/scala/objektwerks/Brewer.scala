@@ -199,7 +199,7 @@ final class Packager(listener: ActorRef[Listener]):
         ibuBitterness = `package`.batch.recipe.ibuBitterness.avg, // calculate
         alcoholByVolume = `package`.batch.recipe.alcoholByVolume.avg, // calculate
         alcoholByWeight = `package`.batch.recipe.alcoholByWeight.avg, // calculate
-        calories = `package`.batch.recipe.calories.avg, // get beer volume from brewer, calculate
+        calories = `package`.batch.recipe.calories.avg, // calculate
         brewhouseEfficiency = `package`.batch.recipe.brewhouseEfficiency.avg // get from brewer!
       )
     )
