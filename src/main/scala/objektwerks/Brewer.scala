@@ -199,7 +199,7 @@ final class Packager(listener: ActorRef[Listener]):
         ibuBitterness = Metrics.ibuBitterness(`package`.batch.recipe.hops),
         alcoholByVolume = Metrics.alcoholByVolume( listener.ask( _.originalGravity ), listener.ask( _.finalGravity ) ),
         alcoholByWeight = Metrics.alcoholByWeight( Metrics.alcoholByVolume( listener.ask( _.originalGravity ), listener.ask( _.finalGravity ) ), listener.ask( _.finalGravity ) ),
-        calories = `package`.batch.recipe.calories.avg, // calculate
+        calories = Metrics.calories(`package`.batch.recipe.packageVolume.volume, listener.ask( _.originalGravity ), listener.ask( _.finalGravity ) ),
         brewhouseEfficiency = `package`.batch.recipe.brewhouseEfficiency.avg // get BE from brewer!
       )
     )

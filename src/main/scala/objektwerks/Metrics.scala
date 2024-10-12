@@ -71,7 +71,7 @@ object Metrics:
                       finalGravity: Double): Double =
     format( (0.79 * alcoholByVolume) / finalGravity )
 
-  def calories(packageVolume: Int,
+  def calories(packageVolume: Double,
                originalGravity: Double,
                finalGravity: Double): Int =
     val alcoholCalories = (originalGravity - finalGravity) * 7.5
