@@ -164,7 +164,7 @@ Metrics Flow
     1. ibuBitterness ( hops )
     2. alcoholByVolume ( OG, FG )
     3. alcoholByWeight ( abv, FG )
-    4. calories
+    4. calories ( volume, OG, FG )
     5. brewhouseEfficiency
 
 Assembly
