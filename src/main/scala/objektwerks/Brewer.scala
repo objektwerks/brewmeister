@@ -111,7 +111,7 @@ final class Masher(listener: ActorRef[Listener]):
           s"Optionally added adjuncts: ${mash.batch.recipe.adjuncts}",
           s"pH should be: ${mash.batch.recipe.pH}"
         ),
-        pH = mash.batch.recipe.pH // How to get from brewer via pH meter?
+        pH = mash.batch.recipe.pH // get pH from brewer!
       )
     )
 
@@ -130,7 +130,7 @@ final class Sparger(listener: ActorRef[Listener]):
       Sparged(
         sparge.batch.id,
         List( s"Should have a mash efficiency within this range: ${sparge.batch.recipe.mashEfficiency}" ),
-        mashEfficiency = sparge.batch.recipe.mashEfficiency.avg // get actual / potential mash extract from brewer for ME calc!
+        mashEfficiency = sparge.batch.recipe.mashEfficiency.avg // get actual / potential mash extract from brewer!
       )
     )
 
