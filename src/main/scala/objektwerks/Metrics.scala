@@ -5,8 +5,8 @@ import scala.math.pow
 import upickle.default.{ReadWriter => JsonSupport}
 
 object Metrics:
-  def default: Metrics =
-    Metrics(batchId = 1,
+  def default(batchId: Int): Metrics =
+    Metrics(batchId = batchId,
             style = "American IPA",
             volume = Volume(5.0, UoM.gl),
             pH = 5.6,
@@ -55,8 +55,8 @@ object Metrics:
                           potentialFermentableExtract: Double): Int =
     ( (actualFermentableExtract / potentialFermentableExtract) * 100 ).toInt
 
-final case class Metrics(created: String = now(),
-                         batchId: Int = 1,
+final case class Metrics(batchId: Int,
+                         created: String = now(),
                          style: String = "",
                          volume: Volume = Volume(0.0, UoM.gl),
                          pH: Double = 0.0,
