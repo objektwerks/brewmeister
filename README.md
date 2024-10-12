@@ -4,7 +4,7 @@ Brewmeister
 
 Todo
 ----
-* Listener Metrics
+* Metrics
 * Persistence
 * App
 
