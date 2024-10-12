@@ -7,13 +7,9 @@ final class Listener(batchId: Int):
   val events = mutable.ListBuffer.empty[Event]
 
   def originalGravity: Double =
-    var og = 0.0
-    events.foreach { event =>
-      event match
-        case Whirlpooled(_, originalGravity) => og = originalGravity
-        case _ =>
-    }
-    og
+    events.toList match
+      case e :: es if e.isInstanceOf[Whirlpooled] => e.asInstanceOf[Whirlpooled].originalGravity
+      case _ => 0.0
 
   def finalGravity: Double =
     var fg = 0.0
