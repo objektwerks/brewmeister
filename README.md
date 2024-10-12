@@ -157,7 +157,7 @@ Metrics Flow
 ------------
 1. mashing -- brewer pH meter --> pH
 2. sparging -- brewer input ( actual mash extract ) and recipe ( potential mash extract ) --> mashEfficiency
-3. whirlpooler -- brewer hydormeter --> originalGravity
+3. whirlpooler -- brewer hydrometer --> originalGravity
 4. fermenter -- brewer hydrometer --> finalGravity
 5. conditioner -- recipe ( grain weight, grain color, batch volume ) --> srmColor
 6. packager -- recipe, metrics -->
