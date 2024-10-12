@@ -200,6 +200,6 @@ final class Packager(listener: ActorRef[Listener]):
         alcoholByVolume = `package`.batch.recipe.alcoholByVolume.avg, // calculate
         alcoholByWeight = `package`.batch.recipe.alcoholByWeight.avg, // calculate
         calories = `package`.batch.recipe.calories.avg, // calculate
-        brewhouseEfficiency = `package`.batch.recipe.brewhouseEfficiency.avg // get from brewer!
+        brewhouseEfficiency = `package`.batch.recipe.brewhouseEfficiency.avg // get BE from brewer!
       )
     )
