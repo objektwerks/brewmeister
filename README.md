@@ -146,11 +146,12 @@ Metric
     4. Range: 70.0 - 100.0 %
     5. Ideal: 80.0 - 90.0 %
 12. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
-    1. Actual Fermentable Extract = The amount of fermentable extract collected from the brewhouse.
-    2. Ideal Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
-    3. BE % = ( Actual Fermentable Extract / Ideal Fermentable Extract ) * 100
-    4. Range: 60.0 - 100.0 %
-    5. Ideal: 72.0 - 80.0 %
+    1. Method: ***via recipe and user input***
+    2. Actual Fermentable Extract = The amount of fermentable extract collected from the brewhouse.
+    3. Ideal Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
+    4. BE % = ( Actual Fermentable Extract / Ideal Fermentable Extract ) * 100
+    5. Range: 60.0 - 100.0 %
+    6. Ideal: 72.0 - 80.0 %
 
 Assembly
 --------
