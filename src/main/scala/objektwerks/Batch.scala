@@ -33,6 +33,7 @@ final case class Grain(typeof: String,
                        color: Double,
                        lovibond: Double,
                        potentialMashExtract: Double,
+                       potentialFermentableExtract: Double,
                        mixinMinute: Int,
                        mixinStep: MixinStep = MixinStep.Mashing) derives JsonSupport
 
@@ -89,7 +90,7 @@ object Recipe:
            calories = IntRange(180, 200),
            mashEfficiency = IntRange(70, 80),
            brewhouseEfficiency = IntRange(72, 80),
-           grains = List( Grain("pale ale", 4.0, UoM.lb, 6.0, 4.0, 1.8, 0) ),
+           grains = List( Grain("pale ale", 4.0, UoM.lb, 6.0, 4.0, 4.0, 1.8, 0) ),
            hops = List( Hop("chinook", 2.0, 10.0, UoM.oz, 13.0, 30) ),
            adjuncts = List.empty[Adjunct],
            yeasts = List( Yeast("Wyeast American Ale 1056", 5.0, UoM.oz, 0) )
