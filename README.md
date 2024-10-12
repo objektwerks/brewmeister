@@ -61,20 +61,20 @@ Process
 Flows
 -----
 1. App -- create --> Batch
-2. App -- batch, listener --> Brewer -- batch --
-    1. Sanitize --> **Sanitizer** -- Sanitized --> App
-    2. Prepare --> **Preparer** -- Prepared --> App
-    3. Malt --> **Malter** -- Malted --> App
-    4. Mill --> **Miller** -- Milled --> App
-    5. Mash --> **Masher** -- Mashed --> App
-    6. Lauter --> **Lauterer** -- Lautered --> App
-    7. Sparge --> **Sparger** -- Sparged --> App
-    8. Boil --> **Boiler** -- Boiled --> App
-    9. Cool --> **Cooler** -- Cooled --> App
-    10. Whirlpool --> **Whirlpooler** -- Whirlpooled --> App
-    11. Ferment --> **Fermenter** -- Fermented --> App
-    12. Condition --> **Conditioner** -- Conditioned --> App
-    13. Package --> **Packager** -- Packaged --> App
+2. App -- batch, listener --> Brewer -- batch, listener --
+    1. Sanitize --> **Sanitizer** -- Sanitized --> Listener
+    2. Prepare --> **Preparer** -- Prepared --> Listener
+    3. Malt --> **Malter** -- Malted --> Listener
+    4. Mill --> **Miller** -- Milled --> Listener
+    5. Mash --> **Masher** -- Mashed --> Listener
+    6. Lauter --> **Lauterer** -- Lautered --> Listener
+    7. Sparge --> **Sparger** -- Sparged --> Listener
+    8. Boil --> **Boiler** -- Boiled --> Listener
+    9. Cool --> **Cooler** -- Cooled --> Listener
+    10. Whirlpool --> **Whirlpooler** -- Whirlpooled --> Listener
+    11. Ferment --> **Fermenter** -- Fermented --> Listener
+    12. Condition --> **Conditioner** -- Conditioned --> Listener
+    13. Package --> **Packager** -- Packaged --> Listener
 
 Model
 -----
