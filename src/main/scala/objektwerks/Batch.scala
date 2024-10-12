@@ -126,8 +126,7 @@ final case class Recipe(created: String = now(),
 
 object Metrics:
   def default: Metrics =
-    Metrics(created = now(),
-            style = "American IPA",
+    Metrics(style = "American IPA",
             volume = Volume(5.0, UoM.gl),
             pH = 5.6,
             originalGravity = 1.060,
