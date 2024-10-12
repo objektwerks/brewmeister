@@ -179,7 +179,7 @@ final class Conditioner(listener: ActorRef[Listener]):
           s"Optionally added hops: ${condition.batch.recipe.hops}",
           s"Should have an SRM color within this range: ${condition.batch.recipe.srmColor}"
         ),
-        srmColor = condition.batch.recipe.srmColor.avg // calculate
+        srmColor = Metrics.srmColor(condition.batch.recipe.brewVolume, condition.batch.recipe.grains)
       )
     )
 
