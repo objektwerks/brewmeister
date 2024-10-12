@@ -139,8 +139,9 @@ Metric
     5. Calories = Alcohol Calories + Carbohydrate Calories
     6. Range: 10 - 600
 11. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
-    1. Actual Extract = The amount of fermentable extract collected from the mash tun.
-    2. Potential Extract = The maximum extract potential of the grain bill, calculated on the malt’s extract potential and the grain bill’s weight and volume.
+    1. Method: ***via recipe and user input***
+    2. Actual Extract = The amount of fermentable extract collected from the mash tun.
+    3. Potential Extract = The maximum extract potential of the grain bill, calculated on the malt’s extract potential and the grain bill’s weight and volume.
     3. ME % = ( Actual Extract / Potential Extract ) * 100
     4. Range: 70.0 - 100.0 %
     5. Ideal: 80.0 - 90.0 %
