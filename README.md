@@ -160,7 +160,7 @@ Metrics Flow
 3. whirlpooler -- user hydormeter --> originalGravity
 4. fermenter -- user hydrometer --> finalGravity
 5. conditioner -- recipe --> srmColor
-6. packager --> ibuBitterness, alcoholByVolume, alcoholByWeight, calories, brewhouseEfficiency
+6. packager -- metrics --> ibuBitterness, alcoholByVolume, alcoholByWeight, calories, brewhouseEfficiency
 
 Assembly
 --------
