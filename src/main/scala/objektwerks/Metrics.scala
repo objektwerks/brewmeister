@@ -31,7 +31,8 @@ object Metrics:
     ( 1.4922 * pow(maltColorUnits, 0.6859) ).toInt
 
   def ibuBitterness(hops: List[Hop]): Int =
-    hops.map { hop => ibuBitterness(hop.alphaAcid, hop.weight, hop.volume) }.sum
+    val sum = hops.map { hop => ibuBitterness(hop.alphaAcid, hop.weight, hop.volume) }.sum
+    ( sum / hops.length ).toInt
 
   def ibuBitterness(hopAlphaAcid: Double,
                     hopWeight: Double,
