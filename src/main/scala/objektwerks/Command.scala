@@ -20,7 +20,7 @@ final case class Boil(batch: Batch) extends Command
 
 final case class Cool(batch: Batch) extends Command
 
-final case class Whirlpool(batch: Batch) extends Command
+final case class Whirlpool(batch: Batch, originalGravity: Double) extends Command
 
 final case class Ferment(batch: Batch) extends Command
 
