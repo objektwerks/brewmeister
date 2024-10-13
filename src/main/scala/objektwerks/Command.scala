@@ -14,7 +14,7 @@ final case class Mash(batch: Batch, pH: Double) extends Command
 
 final case class Lauter(batch: Batch) extends Command
 
-final case class Sparge(batch: Batch) extends Command
+final case class Sparge(batch: Batch, actualMashExtract: Double) extends Command
 
 final case class Boil(batch: Batch) extends Command
 
