@@ -40,9 +40,9 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
     supervised:
       Actor.create( Cooler(listener) ).tell( _.cool( Cool(batch) ) )
 
-  def whirlpool: Unit =
+  def whirlpool(originalGravity: Double): Unit =
     supervised:
-      Actor.create( Whirlpooler(listener) ).tell( _.whirlpool( Whirlpool(batch) ) )
+      Actor.create( Whirlpooler(listener) ).tell( _.whirlpool( Whirlpool(batch, originalGravity) ) )
 
   def ferment: Unit =
     supervised:
