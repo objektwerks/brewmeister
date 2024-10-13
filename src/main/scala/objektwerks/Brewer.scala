@@ -20,9 +20,9 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
     supervised:
       Actor.create( Miller(listener) ).tell( _.mill( Mill(batch) ) )
 
-  def mash: Unit =
+  def mash(pH: Double): Unit =
     supervised:
-      Actor.create( Masher(listener) ).tell( _.mash( Mash(batch) ) )
+      Actor.create( Masher(listener) ).tell( _.mash( Mash(batch, pH) ) )
 
   def lauter: Unit =
     supervised:
