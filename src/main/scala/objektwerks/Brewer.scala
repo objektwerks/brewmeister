@@ -52,9 +52,9 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
     supervised:
       Actor.create( Conditioner(listener) ).tell( _.condition( Condition(batch) ) )
 
-  def `package`: Unit =
+  def `package`(actualFermentableExtract: Double): Unit =
     supervised:
-      Actor.create( Packager(listener) ).tell( _.`package`( Package(batch) ) )
+      Actor.create( Packager(listener) ).tell( _.`package`( Package(batch, actualFermentableExtract) ) )
 
 final class Sanitizer(listener: ActorRef[Listener]):
   def sanitize(sanitize: Sanitize): Unit =
