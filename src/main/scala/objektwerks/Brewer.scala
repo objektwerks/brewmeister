@@ -122,7 +122,7 @@ final class Sparger(listener: ActorRef[Listener]):
       Sparged(
         List( s"Should have a mash efficiency within this range: ${sparge.batch.recipe.mashEfficiency}" ),
         mashEfficiency = Metrics.mashEfficiency(
-          0.0, // get actual mash extract from brewer!
+          sparge.actualMashExtract,
           sparge.batch.recipe.potentialMashExtract
         )
       )
