@@ -1,3 +1,5 @@
+val jarVersion = "0.25"
+
 name := "ciphers"
 organization := "objektwerks"
 version := "0.25-SNAPSHOT"
@@ -69,11 +71,11 @@ lazy val OS: String = sys.props.getOrElse("target", "") match {
   case _ => ""
 }
 
-if (OS == "mac") assemblyJarName := "brewmeister-mac-0.25.jar"
-else if (OS == "mac-aarch64") assemblyJarName := "brewmeister-m1-0.25.jar"
-else if (OS == "win") assemblyJarName := "brewmeister-win-0.25.jar"
-else if (OS == "linux") assemblyJarName := "brewmeister-linux-0.25.jar"
-else assemblyJarName := "brewmeister-no-valid-target-specified-0.25.jar"
+if (OS == "mac") assemblyJarName := s"brewmeister-mac-$jarVersion.jar"
+else if (OS == "mac-aarch64") assemblyJarName := s"brewmeister-m1-$jarVersion.jar"
+else if (OS == "win") assemblyJarName := s"brewmeister-win-$jarVersion.jar"
+else if (OS == "linux") assemblyJarName := s"brewmeister-linux-$jarVersion.jar"
+else assemblyJarName := s"brewmeister-no-valid-target-specified-$jarVersion.jar"
 
 lazy val javafxModules = Seq("base", "controls", "web")
 libraryDependencies ++= javafxModules.map( module =>
