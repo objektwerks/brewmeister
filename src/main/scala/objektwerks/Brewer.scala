@@ -28,7 +28,7 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
     supervised:
       Actor.create( Lauterer(listener) ).tell( _.lauter( Lauter(batch) ) )
 
-  def sparge: Unit =
+  def sparge(actualMashExtract: Double): Unit =
     supervised:
       Actor.create( Sparger(listener) ).tell( _.sparge( Sparge(batch) ) )
 
