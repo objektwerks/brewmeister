@@ -26,4 +26,4 @@ final case class Ferment(batch: Batch, finalGravity: Double) extends Command
 
 final case class Condition(batch: Batch) extends Command
 
-final case class Package(batch: Batch) extends Command
+final case class Package(batch: Batch, actualFermentableExtract: Double) extends Command
