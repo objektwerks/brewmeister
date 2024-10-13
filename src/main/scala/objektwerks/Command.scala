@@ -22,7 +22,7 @@ final case class Cool(batch: Batch) extends Command
 
 final case class Whirlpool(batch: Batch, originalGravity: Double) extends Command
 
-final case class Ferment(batch: Batch) extends Command
+final case class Ferment(batch: Batch, finalGravity: Double) extends Command
 
 final case class Condition(batch: Batch) extends Command
 
