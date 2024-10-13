@@ -104,7 +104,7 @@ final class Masher(listener: ActorRef[Listener]):
           s"Optionally added adjuncts: ${mash.batch.recipe.adjuncts}",
           s"pH should be: ${mash.batch.recipe.pH}"
         ),
-        pH = mash.batch.recipe.pH // get pH from brewer!
+        pH = mash.pH
       )
     )
 
