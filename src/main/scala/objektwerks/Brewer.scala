@@ -30,14 +30,12 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
       case Boil(batch) =>
         supervised:
           Actor.create( Boiler(listener) ).tell( _.boil( Boil(batch) ) )
+      case Cool(batch) =>
+        supervised:
+          Actor.create( Cooler(listener) ).tell( _.cool( Cool(batch) ) )
 
       case _
 
-
-
-  def boil: Unit =
-    supervised:
-      Actor.create( Boiler(listener) ).tell( _.boil( Boil(batch) ) )
 
   def cool: Unit =
     supervised:
