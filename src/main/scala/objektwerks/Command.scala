@@ -20,7 +20,9 @@ case object Milled extends Command
 
 final case class Mash(recipe: Recipe, pH: Double) extends Command // remove pH
 
-final case class Mased(pH: Double)
+final case class Mashed(pH: Double) extends Command
+
+case object Mashed extends Command
 
 final case class Lauter(recipe: Recipe) extends Command
 
