@@ -8,46 +8,46 @@ final class Brewer(listener: ActorRef[Listener]):
     command match
       case sanitize: Sanitize =>
         supervised:
-          Actor.create( Sanitizer(listener) ).tell( _.sanitizing( sanitize ) )
+          Actor.create( Sanitizer(listener) ).tell( _.sanitize( sanitize ) )
       case prepare: Prepare =>
         supervised:
-          Actor.create( Preparer(listener) ).tell( _.preparing( prepare ) )
+          Actor.create( Preparer(listener) ).tell( _.prepare( prepare ) )
       case malt: Malt =>
         supervised:
-          Actor.create( Malter(listener) ).tell( _.malting( malt ) )
+          Actor.create( Malter(listener) ).tell( _.malt( malt ) )
       case mill: Mill =>
         supervised:
-          Actor.create( Miller(listener) ).tell( _.milling( mill ) )
+          Actor.create( Miller(listener) ).tell( _.mill( mill ) )
       case mash: Mash =>
         supervised:
-          Actor.create( Masher(listener) ).tell( _.mashing( mash ) )
+          Actor.create( Masher(listener) ).tell( _.mash( mash ) )
       case lauter: Lauter =>
         supervised:
-          Actor.create( Lauterer(listener) ).tell( _.lautering( lauter ) )
+          Actor.create( Lauterer(listener) ).tell( _.lauter( lauter ) )
       case sparge: Sparge =>
         supervised:
-          Actor.create( Sparger(listener) ).tell( _.sparging( sparge ) )
+          Actor.create( Sparger(listener) ).tell( _.sparge( sparge ) )
       case boil: Boil =>
         supervised:
-          Actor.create( Boiler(listener) ).tell( _.boiling( boil ) )
+          Actor.create( Boiler(listener) ).tell( _.boil( boil ) )
       case cool: Cool =>
         supervised:
-          Actor.create( Cooler(listener) ).tell( _.cooling( cool ) )
+          Actor.create( Cooler(listener) ).tell( _.cool( cool ) )
       case whirlpool: Whirlpool =>
         supervised:
-          Actor.create( Whirlpooler(listener) ).tell( _.whirlpooling( whirlpool ) )
+          Actor.create( Whirlpooler(listener) ).tell( _.whirlpool( whirlpool ) )
       case ferment: Ferment =>
         supervised:
-          Actor.create( Fermenter(listener) ).tell( _.fermenting( ferment ) )
+          Actor.create( Fermenter(listener) ).tell( _.ferment( ferment ) )
       case condition: Condition =>
         supervised:
-          Actor.create( Conditioner(listener) ).tell( _.conditioning( condition ) )
+          Actor.create( Conditioner(listener) ).tell( _.condition( condition ) )
       case keg: Keg =>
         supervised:
-          Actor.create( Kegger(listener) ).tell( _.kegging( keg ) )
+          Actor.create( Kegger(listener) ).tell( _.keg( keg ) )
 
 final class Sanitizer(listener: ActorRef[Listener]):
-  def sanitizing(sanitize: Sanitize): Unit =
+  def sanitize(sanitize: Sanitize): Unit =
     listener.tell( _.onEvent:
       Sanitized(
         List( "Sanitized brewing implements." )
@@ -56,7 +56,7 @@ final class Sanitizer(listener: ActorRef[Listener]):
 
 
 final class Preparer(listener: ActorRef[Listener]):
-  def preparing(prepare: Prepare): Unit =
+  def prepare(prepare: Prepare): Unit =
     listener.tell( _.onEvent:
       Prepared(
         List(
@@ -70,7 +70,7 @@ final class Preparer(listener: ActorRef[Listener]):
     )
 
 final class Malter(listener: ActorRef[Listener]):
-  def malting(malt: Malt): Unit =
+  def malt(malt: Malt): Unit =
     listener.tell( _.onEvent:
       Malted(
         List( "Malted grains." )
@@ -78,7 +78,7 @@ final class Malter(listener: ActorRef[Listener]):
     )
 
 final class Miller(listener: ActorRef[Listener]):
-  def milling(mill: Mill): Unit =
+  def mill(mill: Mill): Unit =
     listener.tell( _.onEvent:
       Milled(
         List( "Milled grains into a grist." )
@@ -86,7 +86,7 @@ final class Miller(listener: ActorRef[Listener]):
     )
 
 final class Masher(listener: ActorRef[Listener]):
-  def mashing(mash: Mash): Unit =
+  def mash(mash: Mash): Unit =
     listener.tell( _.onEvent:
       Mashed(
         List(
@@ -99,7 +99,7 @@ final class Masher(listener: ActorRef[Listener]):
     )
 
 final class Lauterer(listener: ActorRef[Listener]):
-  def lautering(lauter: Lauter): Unit =
+  def lauter(lauter: Lauter): Unit =
     listener.tell( _.onEvent:
       Lautered(
         List( "Lautered wort." )
@@ -107,7 +107,7 @@ final class Lauterer(listener: ActorRef[Listener]):
     )
 
 final class Sparger(listener: ActorRef[Listener]):
-  def sparging(sparge: Sparge): Unit =
+  def sparge(sparge: Sparge): Unit =
     listener.tell( _.onEvent:
       Sparged(
         List( s"Should have a mash efficiency within this range: ${sparge.recipe.mashEfficiency}" ),
@@ -119,7 +119,7 @@ final class Sparger(listener: ActorRef[Listener]):
     )
 
 final class Boiler(listener: ActorRef[Listener]):
-  def boiling(boil: Boil): Unit =
+  def boil(boil: Boil): Unit =
     listener.tell( _.onEvent:
       Boiled(
         List(
@@ -131,7 +131,7 @@ final class Boiler(listener: ActorRef[Listener]):
     )
 
 final class Cooler(listener: ActorRef[Listener]):
-  def cooling(cool: Cool): Unit =
+  def cool(cool: Cool): Unit =
     listener.tell( _.onEvent:
       Cooled(
         List( s"Cooled the wort within this temp range: ${cool.recipe.coolingTempRange}" )
@@ -139,7 +139,7 @@ final class Cooler(listener: ActorRef[Listener]):
     )
 
 final class Whirlpooler(listener: ActorRef[Listener]):
-  def whirlpooling(whirlpool: Whirlpool): Unit =
+  def whirlpool(whirlpool: Whirlpool): Unit =
     listener.tell( _.onEvent:
       Whirlpooled(
         List(
@@ -151,7 +151,7 @@ final class Whirlpooler(listener: ActorRef[Listener]):
     )
 
 final class Fermenter(listener: ActorRef[Listener]):
-  def fermenting(ferment: Ferment): Unit =
+  def ferment(ferment: Ferment): Unit =
     listener.tell( _.onEvent:
       Fermented(
         List(
@@ -163,7 +163,7 @@ final class Fermenter(listener: ActorRef[Listener]):
     )
 
 final class Conditioner(listener: ActorRef[Listener]):
-  def conditioning(condition: Condition): Unit =
+  def condition(condition: Condition): Unit =
     listener.tell( _.onEvent:
       Conditioned(
         List(
@@ -177,7 +177,7 @@ final class Conditioner(listener: ActorRef[Listener]):
     )
 
 final class Kegger(listener: ActorRef[Listener]):
-  def kegging(keg: Keg): Unit =
+  def keg(keg: Keg): Unit =
     listener.tell( _.onEvent:
       Kegged(
         List(
