@@ -21,14 +21,14 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
       case Mash(batch, pH) =>
         supervised:
           Actor.create( Masher(listener) ).tell( _.mash( Mash(batch, pH) ) )
+      case Lauter(batch) =>
+        supervised:
+          Actor.create( Lauterer(listener) ).tell( _.lauter( Lauter(batch) ) )
 
       case _
 
 
 
-  def mash(pH: Double): Unit =
-    supervised:
-      Actor.create( Masher(listener) ).tell( _.mash( Mash(batch, pH) ) )
 
   def lauter: Unit =
     supervised:
