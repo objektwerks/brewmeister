@@ -28,7 +28,9 @@ final case class Lauter(recipe: Recipe) extends Command
 
 case object Lautered extends Command
 
-final case class Sparge(recipe: Recipe, actualMashExtract: Double) extends Command
+final case class Sparge(recipe: Recipe, actualMashExtract: Double) extends Command // removed actualMashExtract
+
+final case class Spared(actualMashExtract: Double) extends Command
 
 final case class Boil(recipe: Recipe) extends Command
 
