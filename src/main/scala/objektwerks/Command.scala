@@ -50,4 +50,6 @@ final case class Fermented(finalGravity: Double) extends Command
 
 final case class Condition(recipe: Recipe) extends Command
 
+case object Conditioned extends Command
+
 final case class Keg(recipe: Recipe, actualFermentableExtract: Double) extends Command
