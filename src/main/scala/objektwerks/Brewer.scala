@@ -6,9 +6,9 @@ import ox.supervised
 final class Brewer(listener: ActorRef[Listener]):
   def handle(command: Command): Unit =
     command match
-      case Sanitize(batch) =>
+      case sanitize: Sanitize =>
         supervised:
-          Actor.create( Sanitizer(listener) ).tell( _.sanitize( Sanitize(batch) ) )
+          Actor.create( Sanitizer(listener) ).tell( _.sanitize( sanitize ) )
       case Prepare(batch) =>
         supervised:
           Actor.create( Preparer(listener) ).tell( _.prepare( Prepare(batch) ) )
