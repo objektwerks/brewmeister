@@ -63,13 +63,20 @@ final class Sanitizer(listener: ActorRef[Listener]):
 final class Preparer(listener: ActorRef[Listener]):
   def prepare(prepare: Prepare): Unit =
     listener.tell( _.onEvent:
-      Prepared(
+      Preparing(
         List(
-          "Prepared the following recipe ingrediants:",
+          "Preparing the following recipe ingrediants:",
           s"Grains: ${prepare.recipe.grains}",
           s"Hops: ${prepare.recipe.hops}",
           s"Adjuncts: ${prepare.recipe.adjuncts}",
           s"Yeasts: ${prepare.recipe.yeasts}"
+        )
+      )
+    )
+    listener.tell( _.onEvent:
+      Prepared(
+        List(
+          "Prepared all recipe ingrediants.",
         )
       )
     )
