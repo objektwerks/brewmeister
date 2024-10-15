@@ -18,9 +18,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case mill: Mill =>
         supervised:
           Actor.create( Miller(listener) ).tell( _.mill( mill ) )
-      case Mash(batch, pH) =>
+      case mash: Mash =>
         supervised:
-          Actor.create( Masher(listener) ).tell( _.mash( Mash(batch, pH) ) )
+          Actor.create( Masher(listener) ).tell( _.mash( mash ) )
       case Lauter(batch) =>
         supervised:
           Actor.create( Lauterer(listener) ).tell( _.lauter( Lauter(batch) ) )
