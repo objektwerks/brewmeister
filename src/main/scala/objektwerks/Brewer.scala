@@ -33,9 +33,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case cool: Cool =>
         supervised:
           Actor.create( Cooler(listener) ).tell( _.cool( cool ) )
-      case Whirlpool(batch, originalGravity) =>
+      case whirlpool: Whirlpool =>
         supervised:
-          Actor.create( Whirlpooler(listener) ).tell( _.whirlpool( Whirlpool(batch, originalGravity) ) )
+          Actor.create( Whirlpooler(listener) ).tell( _.whirlpool( whirlpool ) )
       case Ferment(batch, finalGravity) =>
         supervised:
           Actor.create( Fermenter(listener) ).tell( _.ferment( Ferment(batch, finalGravity) ) )
