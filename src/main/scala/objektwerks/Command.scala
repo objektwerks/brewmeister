@@ -8,6 +8,8 @@ case object Sanitized extends Command
 
 final case class Prepare(recipe: Recipe) extends Command
 
+case object Prepared extends Command
+
 final case class Malt(recipe: Recipe) extends Command
 
 final case class Mill(recipe: Recipe) extends Command
