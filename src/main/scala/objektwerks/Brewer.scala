@@ -24,15 +24,13 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
       case Lauter(batch) =>
         supervised:
           Actor.create( Lauterer(listener) ).tell( _.lauter( Lauter(batch) ) )
+      case Sparge(batch, actualMashExtract) =>
+        supervised:
+          Actor.create( Sparger(listener) ).tell( _.sparge( Sparge(batch, actualMashExtract) ) )
 
       case _
 
 
-
-
-  def lauter: Unit =
-    supervised:
-      Actor.create( Lauterer(listener) ).tell( _.lauter( Lauter(batch) ) )
 
   def sparge(actualMashExtract: Double): Unit =
     supervised:
