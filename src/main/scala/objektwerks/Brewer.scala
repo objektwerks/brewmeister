@@ -98,6 +98,11 @@ final class Miller(listener: ActorRef[Listener]):
   def mill(mill: Mill): Unit =
     listener.tell( _.onEvent:
       Milled(
+        List( "Milling grains into a grist." )
+      )
+    )
+    listener.tell( _.onEvent:
+      Milled(
         List( "Milled grains into a grist." )
       )
     )
