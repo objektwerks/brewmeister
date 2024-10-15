@@ -3,7 +3,7 @@ package objektwerks
 import ox.channels.{Actor, ActorRef}
 import ox.supervised
 
-final class Brewer(batch: Batch, listener: ActorRef[Listener]):
+final class Brewer(listener: ActorRef[Listener]):
   def handle(command: Command): Unit =
     command match
       case Sanitize(batch) =>
@@ -42,17 +42,9 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
       case Condition(batch) =>
         supervised:
           Actor.create( Conditioner(listener) ).tell( _.condition( Condition(batch) ) )
-
-      case _
-
-
-  def condition: Unit =
-    supervised:
-      Actor.create( Conditioner(listener) ).tell( _.condition( Condition(batch) ) )
-
-  def `package`(actualFermentableExtract: Double): Unit =
-    supervised:
-      Actor.create( Packager(listener) ).tell( _.`package`( Package(batch, actualFermentableExtract) ) )
+      case Package(batch, actualFermentableExtract) =>
+        supervised:
+          Actor.create( Packager(listener) ).tell( _.`package`( Package(batch, actualFermentableExtract) ) )
 
 final class Sanitizer(listener: ActorRef[Listener]):
   def sanitize(sanitize: Sanitize): Unit =
