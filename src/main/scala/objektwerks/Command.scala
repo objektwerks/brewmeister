@@ -4,6 +4,8 @@ sealed trait Command
 
 final case class Sanitize(recipe: Recipe) extends Command
 
+case object Sanitized extends Command
+
 final case class Prepare(recipe: Recipe) extends Command
 
 final case class Malt(recipe: Recipe) extends Command
