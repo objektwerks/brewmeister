@@ -59,8 +59,8 @@ Process
 
 Flows
 -----
-1. App -- create --> Recipe | Listener
-3. App -- listener --> Brewer -- handle( command )
+1. App -- create --> Recipe | Listener | Brewer
+2. App -- command --> Brewer -- handle( command )
     1. Sanitize --> **Sanitizer** -- Sanitized --> Listener
     2. Prepare --> **Preparer** -- Prepared --> Listener
     3. Malt --> **Malter** -- Malted --> Listener
@@ -74,7 +74,7 @@ Flows
     11. Ferment --> **Fermenter** -- Fermented --> Listener
     12. Condition --> **Conditioner** -- Conditioned --> Listener
     13. Package --> **Packager** -- Packaged --> Listener
-4. Listener -- events -> Batch
+3. Listener -- events -> Batch
 
 Model
 -----
