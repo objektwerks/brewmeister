@@ -4,9 +4,9 @@ import scala.math.pow
 
 import upickle.default.{ReadWriter => JsonSupport}
 
-object Metrics:
-  def default(batchId: Int): Metrics =
-    Metrics(style = "American IPA",
+object Batch:
+  def default: Batch =
+    Batch(style = "American IPA",
             volume = Volume(5.0, UoM.gl),
             pH = 5.6,
             originalGravity = 1.060,
@@ -62,16 +62,16 @@ object Metrics:
                           potentialFermentableExtract: Double): Int =
     ( (actualFermentableExtract / potentialFermentableExtract) * 100 ).toInt
 
-final case class Metrics(created: String = now(),
-                         style: String = "",
-                         volume: Volume = Volume(0.0, UoM.gl),
-                         pH: Double = 0.0,
-                         originalGravity: Double = 0.0,
-                         finalGravity: Double = 0.0,
-                         srmColor: Int = 0,
-                         ibuBitterness: Int = 0,
-                         alcoholByVolume: Double = 0.0,
-                         alcoholByWeight: Double = 0.0,
-                         calories: Int = 0,
-                         mashEfficiency: Int = 0,
-                         brewhouseEfficiency: Int = 0) derives JsonSupport
+final case class Batch(created: String = now(),
+                       style: String = "",
+                       volume: Volume = Volume(0.0, UoM.gl),
+                       pH: Double = 0.0,
+                       originalGravity: Double = 0.0,
+                       finalGravity: Double = 0.0,
+                       srmColor: Int = 0,
+                       ibuBitterness: Int = 0,
+                       alcoholByVolume: Double = 0.0,
+                       alcoholByWeight: Double = 0.0,
+                       calories: Int = 0,
+                       mashEfficiency: Int = 0,
+                       brewhouseEfficiency: Int = 0) derives JsonSupport

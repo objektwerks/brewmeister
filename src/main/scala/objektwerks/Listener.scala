@@ -24,9 +24,8 @@ final class Listener:
       case e :: es if e.isInstanceOf[Fermented] => e.asInstanceOf[Fermented].finalGravity
       case _ => 0.0
 
-  def metrics(batchId: Int,
-              events: List[Event]): Metrics =
-    var metrics = Metrics()
+  def metrics(events: List[Event]): Batch =
+    var metrics = Batch()
     events.foreach { event =>
       event match
         case Mashed(_, pH) =>

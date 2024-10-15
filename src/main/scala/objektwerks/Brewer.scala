@@ -111,7 +111,7 @@ final class Sparger(listener: ActorRef[Listener]):
     listener.tell( _.onEvent:
       Sparged(
         List( s"Should have a mash efficiency within this range: ${sparge.recipe.mashEfficiency}" ),
-        mashEfficiency = Metrics.mashEfficiency(
+        mashEfficiency = Batch.mashEfficiency(
           sparge.actualMashExtract,
           sparge.recipe.potentialMashExtract
         )
@@ -172,7 +172,7 @@ final class Conditioner(listener: ActorRef[Listener]):
           s"Optionally added hops: ${condition.recipe.hops}",
           s"Should have an SRM color within this range: ${condition.recipe.srmColor}"
         ),
-        srmColor = Metrics.srmColor(condition.recipe.batchVolume, condition.recipe.grains)
+        srmColor = Batch.srmColor(condition.recipe.batchVolume, condition.recipe.grains)
       )
     )
 
@@ -189,23 +189,23 @@ final class Kegger(listener: ActorRef[Listener]):
           s"Should have a brew efficiency within this range: ${keg.recipe.brewhouseEfficiency}",
           s"Should refrigerate within this temp range: ${keg.recipe.refrigerateTempRange}",
         ),
-        ibuBitterness = Metrics.ibuBitterness(keg.recipe.hops),
-        alcoholByVolume = Metrics.alcoholByVolume(
+        ibuBitterness = Batch.ibuBitterness(keg.recipe.hops),
+        alcoholByVolume = Batch.alcoholByVolume(
           listener.ask( _.originalGravity ),
           listener.ask( _.finalGravity )
         ),
-        alcoholByWeight = Metrics.alcoholByWeight(
-          Metrics.alcoholByVolume(
+        alcoholByWeight = Batch.alcoholByWeight(
+          Batch.alcoholByVolume(
             listener.ask( _.originalGravity ),
             listener.ask( _.finalGravity ) ),
             listener.ask( _.finalGravity )
           ),
-        calories = Metrics.calories(
+        calories = Batch.calories(
           keg.recipe.packageVolume.volume,
           listener.ask( _.originalGravity ),
           listener.ask( _.finalGravity )
         ),
-        brewhouseEfficiency = Metrics.brewhouseEfficiency(
+        brewhouseEfficiency = Batch.brewhouseEfficiency(
           keg.actualFermentableExtract,
           keg.recipe.potentialFermentableExtract
         )
