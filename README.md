@@ -60,7 +60,7 @@ Process
 Flows
 -----
 1. App -- create --> Recipe | Listener
-3. App -- recipe, listener --> Brewer -- recipe, listener --
+3. App -- listener --> Brewer -- handle( command )
     1. Sanitize --> **Sanitizer** -- Sanitized --> Listener
     2. Prepare --> **Preparer** -- Prepared --> Listener
     3. Malt --> **Malter** -- Malted --> Listener
