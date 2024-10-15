@@ -33,13 +33,12 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
       case Cool(batch) =>
         supervised:
           Actor.create( Cooler(listener) ).tell( _.cool( Cool(batch) ) )
+      case Whirlpool(batch, originalGravity) =>
+        supervised:
+          Actor.create( Whirlpooler(listener) ).tell( _.whirlpool( Whirlpool(batch, originalGravity) ) )
 
       case _
 
-
-  def cool: Unit =
-    supervised:
-      Actor.create( Cooler(listener) ).tell( _.cool( Cool(batch) ) )
 
   def whirlpool(originalGravity: Double): Unit =
     supervised:
