@@ -39,9 +39,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case ferment: Ferment =>
         supervised:
           Actor.create( Fermenter(listener) ).tell( _.ferment( ferment ) )
-      case Condition(batch) =>
+      case condition: Condition =>
         supervised:
-          Actor.create( Conditioner(listener) ).tell( _.condition( Condition(batch) ) )
+          Actor.create( Conditioner(listener) ).tell( _.condition( condition ) )
       case Package(batch, actualFermentableExtract) =>
         supervised:
           Actor.create( Packager(listener) ).tell( _.`package`( Package(batch, actualFermentableExtract) ) )
