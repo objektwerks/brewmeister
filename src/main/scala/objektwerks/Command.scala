@@ -2,28 +2,28 @@ package objektwerks
 
 sealed trait Command
 
-final case class Sanitize(batch: Batch) extends Command
+final case class Sanitize(recipe: Recipe) extends Command
 
-final case class Prepare(batch: Batch) extends Command
+final case class Prepare(recipe: Recipe) extends Command
 
-final case class Malt(batch: Batch) extends Command
+final case class Malt(recipe: Recipe) extends Command
 
-final case class Mill(batch: Batch) extends Command
+final case class Mill(recipe: Recipe) extends Command
 
-final case class Mash(batch: Batch, pH: Double) extends Command
+final case class Mash(recipe: Recipe, pH: Double) extends Command
 
-final case class Lauter(batch: Batch) extends Command
+final case class Lauter(recipe: Recipe) extends Command
 
-final case class Sparge(batch: Batch, actualMashExtract: Double) extends Command
+final case class Sparge(recipe: Recipe, actualMashExtract: Double) extends Command
 
-final case class Boil(batch: Batch) extends Command
+final case class Boil(recipe: Recipe) extends Command
 
-final case class Cool(batch: Batch) extends Command
+final case class Cool(recipe: Recipe) extends Command
 
-final case class Whirlpool(batch: Batch, originalGravity: Double) extends Command
+final case class Whirlpool(recipe: Recipe, originalGravity: Double) extends Command
 
-final case class Ferment(batch: Batch, finalGravity: Double) extends Command
+final case class Ferment(recipe: Recipe, finalGravity: Double) extends Command
 
-final case class Condition(batch: Batch) extends Command
+final case class Condition(recipe: Recipe) extends Command
 
-final case class Package(batch: Batch, actualFermentableExtract: Double) extends Command
+final case class Package(recipe: Recipe, actualFermentableExtract: Double) extends Command

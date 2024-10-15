@@ -61,10 +61,10 @@ final class Preparer(listener: ActorRef[Listener]):
       Prepared(
         List(
           "Prepared the following recipe ingrediants:",
-          s"Grains: ${prepare.batch.recipe.grains}",
-          s"Hops: ${prepare.batch.recipe.hops}",
-          s"Adjuncts: ${prepare.batch.recipe.adjuncts}",
-          s"Yeasts: ${prepare.batch.recipe.yeasts}"
+          s"Grains: ${prepare.recipe.grains}",
+          s"Hops: ${prepare.recipe.hops}",
+          s"Adjuncts: ${prepare.recipe.adjuncts}",
+          s"Yeasts: ${prepare.recipe.yeasts}"
         )
       )
     )
@@ -90,9 +90,9 @@ final class Masher(listener: ActorRef[Listener]):
     listener.tell( _.onEvent:
       Mashed(
         List(
-          s"Mashed grist into a wort within this temp range / duration: ${mash.batch.recipe.mashingTempDuration}",
-          s"Optionally added adjuncts: ${mash.batch.recipe.adjuncts}",
-          s"pH should be: ${mash.batch.recipe.pH}"
+          s"Mashed grist into a wort within this temp range / duration: ${mash.recipe.mashingTempDuration}",
+          s"Optionally added adjuncts: ${mash.recipe.adjuncts}",
+          s"pH should be: ${mash.recipe.pH}"
         ),
         pH = mash.pH
       )
@@ -110,10 +110,10 @@ final class Sparger(listener: ActorRef[Listener]):
   def sparge(sparge: Sparge): Unit =
     listener.tell( _.onEvent:
       Sparged(
-        List( s"Should have a mash efficiency within this range: ${sparge.batch.recipe.mashEfficiency}" ),
+        List( s"Should have a mash efficiency within this range: ${sparge.recipe.mashEfficiency}" ),
         mashEfficiency = Metrics.mashEfficiency(
           sparge.actualMashExtract,
-          sparge.batch.recipe.potentialMashExtract
+          sparge.recipe.potentialMashExtract
         )
       )
     )
@@ -123,9 +123,9 @@ final class Boiler(listener: ActorRef[Listener]):
     listener.tell( _.onEvent:
       Boiled(
         List(
-          s"Boiled wort within this temp range / duration: ${boil.batch.recipe.boilingTempDuration}",
-          s"Added hops: ${boil.batch.recipe.hops}",
-          s"Optionally added adjuncts: ${boil.batch.recipe.adjuncts}"
+          s"Boiled wort within this temp range / duration: ${boil.recipe.boilingTempDuration}",
+          s"Added hops: ${boil.recipe.hops}",
+          s"Optionally added adjuncts: ${boil.recipe.adjuncts}"
         )
       )
     )
@@ -134,7 +134,7 @@ final class Cooler(listener: ActorRef[Listener]):
   def cool(cool: Cool): Unit =
     listener.tell( _.onEvent:
       Cooled(
-        List( s"Cooled the wort within this temp range: ${cool.batch.recipe.coolingTempRange}" )
+        List( s"Cooled the wort within this temp range: ${cool.recipe.coolingTempRange}" )
       )
     )
 
@@ -143,8 +143,8 @@ final class Whirlpooler(listener: ActorRef[Listener]):
     listener.tell( _.onEvent:
       Whirlpooled(
         List(
-          s"Optionally added hops: ${whirlpool.batch.recipe.hops}",
-          s"Should have an orginal gravity within this range: ${whirlpool.batch.recipe.originalGravity}"
+          s"Optionally added hops: ${whirlpool.recipe.hops}",
+          s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}"
         ),
         originalGravity = whirlpool.originalGravity
       )
@@ -155,8 +155,8 @@ final class Fermenter(listener: ActorRef[Listener]):
     listener.tell( _.onEvent:
       Fermented(
         List(
-          s"Fermented within this temp range / duration: ${ferment.batch.recipe.fermentatingTempDuration}",
-          s"Should have a final gravity within this range: ${ferment.batch.recipe.finalGravity}"
+          s"Fermented within this temp range / duration: ${ferment.recipe.fermentatingTempDuration}",
+          s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
         ),
         finalGravity = ferment.finalGravity
       )
@@ -167,12 +167,12 @@ final class Conditioner(listener: ActorRef[Listener]):
     listener.tell( _.onEvent:
       Conditioned(
         List(
-          s"Conditioned within this temp range / duration: ${condition.batch.recipe.conditioningTempDuration}",
-          s"Optionally added adjuncts: ${condition.batch.recipe.adjuncts}",
-          s"Optionally added hops: ${condition.batch.recipe.hops}",
-          s"Should have an SRM color within this range: ${condition.batch.recipe.srmColor}"
+          s"Conditioned within this temp range / duration: ${condition.recipe.conditioningTempDuration}",
+          s"Optionally added adjuncts: ${condition.recipe.adjuncts}",
+          s"Optionally added hops: ${condition.recipe.hops}",
+          s"Should have an SRM color within this range: ${condition.recipe.srmColor}"
         ),
-        srmColor = Metrics.srmColor(condition.batch.recipe.batchVolume, condition.batch.recipe.grains)
+        srmColor = Metrics.srmColor(condition.recipe.batchVolume, condition.recipe.grains)
       )
     )
 
@@ -181,15 +181,15 @@ final class Packager(listener: ActorRef[Listener]):
     listener.tell( _.onEvent:
       Packaged(
         List(
-          s"Conditioned within this temp range / duration: ${`package`.batch.recipe.packagingTempDuration}",
-          s"Hop bitterness should be within this range: ${`package`.batch.recipe.ibuBitterness}",
-          s"Alcohol by volume should be within this range: ${`package`.batch.recipe.alcoholByVolume}",
-          s"Alcohol by weight should be within this range: ${`package`.batch.recipe.alcoholByWeight}",
-          s"Calories should be within this range: ${`package`.batch.recipe.calories}",
-          s"Should have a brew efficiency within this range: ${`package`.batch.recipe.brewhouseEfficiency}",
-          s"Should refrigerate within this temp range: ${`package`.batch.recipe.refrigerateTempRange}",
+          s"Conditioned within this temp range / duration: ${`package`.recipe.packagingTempDuration}",
+          s"Hop bitterness should be within this range: ${`package`.recipe.ibuBitterness}",
+          s"Alcohol by volume should be within this range: ${`package`.recipe.alcoholByVolume}",
+          s"Alcohol by weight should be within this range: ${`package`.recipe.alcoholByWeight}",
+          s"Calories should be within this range: ${`package`.recipe.calories}",
+          s"Should have a brew efficiency within this range: ${`package`.recipe.brewhouseEfficiency}",
+          s"Should refrigerate within this temp range: ${`package`.recipe.refrigerateTempRange}",
         ),
-        ibuBitterness = Metrics.ibuBitterness(`package`.batch.recipe.hops),
+        ibuBitterness = Metrics.ibuBitterness(`package`.recipe.hops),
         alcoholByVolume = Metrics.alcoholByVolume(
           listener.ask( _.originalGravity ),
           listener.ask( _.finalGravity )
@@ -201,13 +201,13 @@ final class Packager(listener: ActorRef[Listener]):
             listener.ask( _.finalGravity )
           ),
         calories = Metrics.calories(
-          `package`.batch.recipe.packageVolume.volume,
+          `package`.recipe.packageVolume.volume,
           listener.ask( _.originalGravity ),
           listener.ask( _.finalGravity )
         ),
         brewhouseEfficiency = Metrics.brewhouseEfficiency(
           `package`.actualFermentableExtract,
-          `package`.batch.recipe.potentialFermentableExtract
+          `package`.recipe.potentialFermentableExtract
         )
       )
     )

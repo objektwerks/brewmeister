@@ -2,55 +2,6 @@ package objektwerks
 
 import upickle.default.{ReadWriter => JsonSupport}
 
-object Batch:
-  def default: Batch = Batch(recipe = Recipe.default)
-
-final case class Batch(id: Int = 1,
-                       started: String = now(),
-                       completed: String = "",
-                       recipe: Recipe) derives JsonSupport
-
-enum MixinStep derives JsonSupport:
-  case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
-
-final case class Grain(typeof: String,
-                       weight: Double,
-                       unit: UoM,
-                       color: Double,
-                       lovibond: Double,
-                       mixinMinute: Int,
-                       mixinStep: MixinStep = MixinStep.Mashing) derives JsonSupport
-
-final case class Hop(typeof: String,
-                     weight: Double,
-                     volume: Double,
-                     unit: UoM,
-                     alphaAcid: Double,
-                     mixinMinute: Int,
-                     mixinStep: MixinStep = MixinStep.Boiling) derives JsonSupport // or Whirlpooling or Conditioning
-
-final case class Adjunct(typeof: String,
-                         weight: Double,
-                         unit: UoM,
-                         mixinMinute: Int,
-                         mixinStep: MixinStep = MixinStep.Mashing) derives JsonSupport // or Boiling or Conditioning
-
-final case class Yeast(typeof: String,
-                       weight: Double,
-                       unit: UoM,
-                       mixinMinute: Int,
-                       mixinStep: MixinStep = MixinStep.Fermenting) derives JsonSupport
-
-final case class DoubleRange(low: Double, high: Double) derives JsonSupport:
-  def avg: Double = format( (low + high) / 2 )
-
-final case class IntRange(low: Int, high: Int) derives JsonSupport:
-  def avg: Int = ( (low + high) / 2 ).toInt
-
-final case class TempDuration(tempRange: IntRange, duration: Int, unit: UoT) derives JsonSupport
-
-final case class Volume(volume: Double, unit: UoM) derives JsonSupport
-
 object Recipe:
   def default: Recipe =
     Recipe(style = "American IPA",
@@ -110,3 +61,44 @@ final case class Recipe(created: String = now(),
                         hops: List[Hop],
                         adjuncts: List[Adjunct],
                         yeasts: List[Yeast]) derives JsonSupport
+
+enum MixinStep derives JsonSupport:
+  case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
+
+final case class Grain(typeof: String,
+                       weight: Double,
+                       unit: UoM,
+                       color: Double,
+                       lovibond: Double,
+                       mixinMinute: Int,
+                       mixinStep: MixinStep = MixinStep.Mashing) derives JsonSupport
+
+final case class Hop(typeof: String,
+                     weight: Double,
+                     volume: Double,
+                     unit: UoM,
+                     alphaAcid: Double,
+                     mixinMinute: Int,
+                     mixinStep: MixinStep = MixinStep.Boiling) derives JsonSupport // or Whirlpooling or Conditioning
+
+final case class Adjunct(typeof: String,
+                         weight: Double,
+                         unit: UoM,
+                         mixinMinute: Int,
+                         mixinStep: MixinStep = MixinStep.Mashing) derives JsonSupport // or Boiling or Conditioning
+
+final case class Yeast(typeof: String,
+                       weight: Double,
+                       unit: UoM,
+                       mixinMinute: Int,
+                       mixinStep: MixinStep = MixinStep.Fermenting) derives JsonSupport
+
+final case class DoubleRange(low: Double, high: Double) derives JsonSupport:
+  def avg: Double = format( (low + high) / 2 )
+
+final case class IntRange(low: Int, high: Int) derives JsonSupport:
+  def avg: Int = ( (low + high) / 2 ).toInt
+
+final case class TempDuration(tempRange: IntRange, duration: Int, unit: UoT) derives JsonSupport
+
+final case class Volume(volume: Double, unit: UoM) derives JsonSupport
