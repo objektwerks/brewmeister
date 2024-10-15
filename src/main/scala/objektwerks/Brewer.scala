@@ -49,6 +49,11 @@ final class Brewer(listener: ActorRef[Listener]):
 final class Sanitizer(listener: ActorRef[Listener]):
   def sanitize(sanitize: Sanitize): Unit =
     listener.tell( _.onEvent:
+      Sanitizing(
+        List( "Sanitizing brewing implements." )
+      )
+    )
+    listener.tell( _.onEvent:
       Sanitized(
         List( "Sanitized brewing implements." )
       )
