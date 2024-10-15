@@ -24,26 +24,26 @@ final class Listener:
       case e :: es if e.isInstanceOf[Fermented] => e.asInstanceOf[Fermented].finalGravity
       case _ => 0.0
 
-  def metrics(events: List[Event]): Batch =
-    var metrics = Batch()
+  def batch(events: List[Event]): Batch =
+    var batch = Batch()
     events.foreach { event =>
       event match
         case Mashed(_, pH) =>
-          metrics = metrics.copy(pH = pH)
+          batch = batch.copy(pH = pH)
         case Sparged(_, mashEfficiency) =>
-          metrics = metrics.copy(mashEfficiency = mashEfficiency)
+          batch = batch.copy(mashEfficiency = mashEfficiency)
         case Whirlpooled(_, originalGravity) =>
-          metrics = metrics.copy(originalGravity = originalGravity)
+          batch = batch.copy(originalGravity = originalGravity)
         case Fermented(_, finalGravity) =>
-          metrics = metrics.copy(finalGravity = finalGravity)
+          batch = batch.copy(finalGravity = finalGravity)
         case Conditioned(_, srmColor) =>
-          metrics = metrics.copy(srmColor = srmColor)
+          batch = batch.copy(srmColor = srmColor)
         case Kegged(_, ibuBitterness, alcoholByVolume, alcoholByWeight, calories, brewhouseEfficiency) =>
-          metrics = metrics.copy(ibuBitterness = ibuBitterness,
+          batch = batch.copy(ibuBitterness = ibuBitterness,
                                 alcoholByVolume = alcoholByVolume,
                                 alcoholByWeight = alcoholByWeight,
                                 calories = calories,
                                 brewhouseEfficiency = brewhouseEfficiency)
         case _ =>
     }
-    metrics
+    batch
