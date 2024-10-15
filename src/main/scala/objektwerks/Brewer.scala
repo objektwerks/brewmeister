@@ -21,9 +21,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case mash: Mash =>
         supervised:
           Actor.create( Masher(listener) ).tell( _.mash( mash ) )
-      case Lauter(batch) =>
+      case lauter: Lauter =>
         supervised:
-          Actor.create( Lauterer(listener) ).tell( _.lauter( Lauter(batch) ) )
+          Actor.create( Lauterer(listener) ).tell( _.lauter( lauter ) )
       case Sparge(batch, actualMashExtract) =>
         supervised:
           Actor.create( Sparger(listener) ).tell( _.sparge( Sparge(batch, actualMashExtract) ) )
