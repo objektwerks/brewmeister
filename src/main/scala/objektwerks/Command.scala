@@ -12,6 +12,8 @@ case object Prepared extends Command
 
 final case class Malt(recipe: Recipe) extends Command
 
+case object Malted extends Command
+
 final case class Mill(recipe: Recipe) extends Command
 
 final case class Mash(recipe: Recipe, pH: Double) extends Command
