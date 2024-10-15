@@ -39,13 +39,12 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
       case Ferment(batch, finalGravity) =>
         supervised:
           Actor.create( Fermenter(listener) ).tell( _.ferment( Ferment(batch, finalGravity) ) )
+      case Condition(batch) =>
+        supervised:
+          Actor.create( Conditioner(listener) ).tell( _.condition( Condition(batch) ) )
 
       case _
 
-
-  def ferment(finalGravity: Double): Unit =
-    supervised:
-      Actor.create( Fermenter(listener) ).tell( _.ferment( Ferment(batch, finalGravity) ) )
 
   def condition: Unit =
     supervised:
