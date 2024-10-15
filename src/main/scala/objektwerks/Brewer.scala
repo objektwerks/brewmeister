@@ -84,6 +84,11 @@ final class Preparer(listener: ActorRef[Listener]):
 final class Malter(listener: ActorRef[Listener]):
   def malt(malt: Malt): Unit =
     listener.tell( _.onEvent:
+      Malting(
+        List( "Malting grains." )
+      )
+    )
+    listener.tell( _.onEvent:
       Malted(
         List( "Malted grains." )
       )
