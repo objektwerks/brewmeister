@@ -34,6 +34,8 @@ final case class Spared(actualMashExtract: Double) extends Command
 
 final case class Boil(recipe: Recipe) extends Command
 
+case object Boiled extends Command
+
 final case class Cool(recipe: Recipe) extends Command
 
 final case class Whirlpool(recipe: Recipe, originalGravity: Double) extends Command
