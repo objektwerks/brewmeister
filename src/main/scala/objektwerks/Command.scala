@@ -12,6 +12,8 @@ final case class Mill(recipe: Recipe) extends Command
 
 final case class Mash(recipe: Recipe, pH: Double) extends Command
 
+final case class Mashed(pH: Double) extends Command
+
 final case class Lauter(recipe: Recipe) extends Command
 
 final case class Sparge(recipe: Recipe, actualMashExtract: Double) extends Command
