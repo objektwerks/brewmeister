@@ -97,7 +97,7 @@ final class Malter(listener: ActorRef[Listener]):
 final class Miller(listener: ActorRef[Listener]):
   def mill(mill: Mill): Unit =
     listener.tell( _.onEvent:
-      Milled(
+      Milling(
         List( "Milling grains into a grist." )
       )
     )
@@ -110,11 +110,18 @@ final class Miller(listener: ActorRef[Listener]):
 final class Masher(listener: ActorRef[Listener]):
   def mash(mash: Mash): Unit =
     listener.tell( _.onEvent:
-      Mashed(
+      Mashing(
         List(
-          s"Mashed grist into a wort within this temp range / duration: ${mash.recipe.mashingTempDuration}",
+          s"Mashing grist into a wort within this temp range / duration: ${mash.recipe.mashingTempDuration}",
           s"Optionally added adjuncts: ${mash.recipe.adjuncts}",
           s"pH should be: ${mash.recipe.pH}"
+        ),
+      )
+    )
+    listener.tell( _.onEvent:
+      Mashed(
+        List(
+          "Mashed wort.",
         ),
         pH = mash.pH
       )
