@@ -4,6 +4,14 @@ import ox.channels.{Actor, ActorRef}
 import ox.supervised
 
 final class Brewer(batch: Batch, listener: ActorRef[Listener]):
+  def handle(command: Command): Unit =
+    command match
+      case Sanitize(batch) =>
+        supervised:
+          Actor.create( Sanitizer(listener) ).tell( _.sanitize( Sanitize(batch) ) )
+      case _
+
+    
   def sanitize: Unit =
     supervised:
       Actor.create( Sanitizer(listener) ).tell( _.sanitize( Sanitize(batch) ) )
