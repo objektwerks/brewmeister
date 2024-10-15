@@ -9,9 +9,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case sanitize: Sanitize =>
         supervised:
           Actor.create( Sanitizer(listener) ).tell( _.sanitize( sanitize ) )
-      case keg: Keg =>
+      case prepare: Prepare =>
         supervised:
-          Actor.create( Kegger(listener) ).tell( _.keg( keg ) )
+          Actor.create( Preparer(listener) ).tell( _.prepare( prepare ) )
       case malt: Malt =>
         supervised:
           Actor.create( Malter(listener) ).tell( _.malt( malt ) )
