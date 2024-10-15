@@ -9,9 +9,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case sanitize: Sanitize =>
         supervised:
           Actor.create( Sanitizer(listener) ).tell( _.sanitize( sanitize ) )
-      case prepare: Prepare =>
+      case keg: Keg =>
         supervised:
-          Actor.create( Preparer(listener) ).tell( _.prepare( prepare ) )
+          Actor.create( Kegger(listener) ).tell( _.keg( keg ) )
       case malt: Malt =>
         supervised:
           Actor.create( Malter(listener) ).tell( _.malt( malt ) )
@@ -42,9 +42,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case condition: Condition =>
         supervised:
           Actor.create( Conditioner(listener) ).tell( _.condition( condition ) )
-      case `package`: Package =>
+      case keg: Keg =>
         supervised:
-          Actor.create( Packager(listener) ).tell( _.`package`( `package` ) )
+          Actor.create( Kegger(listener) ).tell( _.keg( keg ) )
 
 final class Sanitizer(listener: ActorRef[Listener]):
   def sanitize(sanitize: Sanitize): Unit =
@@ -176,20 +176,20 @@ final class Conditioner(listener: ActorRef[Listener]):
       )
     )
 
-final class Packager(listener: ActorRef[Listener]):
-  def `package`(`package`: Package): Unit =
+final class Kegger(listener: ActorRef[Listener]):
+  def keg(keg: Keg): Unit =
     listener.tell( _.onEvent:
-      Packaged(
+      Kegged(
         List(
-          s"Conditioned within this temp range / duration: ${`package`.recipe.packagingTempDuration}",
-          s"Hop bitterness should be within this range: ${`package`.recipe.ibuBitterness}",
-          s"Alcohol by volume should be within this range: ${`package`.recipe.alcoholByVolume}",
-          s"Alcohol by weight should be within this range: ${`package`.recipe.alcoholByWeight}",
-          s"Calories should be within this range: ${`package`.recipe.calories}",
-          s"Should have a brew efficiency within this range: ${`package`.recipe.brewhouseEfficiency}",
-          s"Should refrigerate within this temp range: ${`package`.recipe.refrigerateTempRange}",
+          s"Conditioned within this temp range / duration: ${keg.recipe.packagingTempDuration}",
+          s"Hop bitterness should be within this range: ${keg.recipe.ibuBitterness}",
+          s"Alcohol by volume should be within this range: ${keg.recipe.alcoholByVolume}",
+          s"Alcohol by weight should be within this range: ${keg.recipe.alcoholByWeight}",
+          s"Calories should be within this range: ${keg.recipe.calories}",
+          s"Should have a brew efficiency within this range: ${keg.recipe.brewhouseEfficiency}",
+          s"Should refrigerate within this temp range: ${keg.recipe.refrigerateTempRange}",
         ),
-        ibuBitterness = Metrics.ibuBitterness(`package`.recipe.hops),
+        ibuBitterness = Metrics.ibuBitterness(keg.recipe.hops),
         alcoholByVolume = Metrics.alcoholByVolume(
           listener.ask( _.originalGravity ),
           listener.ask( _.finalGravity )
@@ -201,13 +201,13 @@ final class Packager(listener: ActorRef[Listener]):
             listener.ask( _.finalGravity )
           ),
         calories = Metrics.calories(
-          `package`.recipe.packageVolume.volume,
+          keg.recipe.packageVolume.volume,
           listener.ask( _.originalGravity ),
           listener.ask( _.finalGravity )
         ),
         brewhouseEfficiency = Metrics.brewhouseEfficiency(
-          `package`.actualFermentableExtract,
-          `package`.recipe.potentialFermentableExtract
+          keg.actualFermentableExtract,
+          keg.recipe.potentialFermentableExtract
         )
       )
     )

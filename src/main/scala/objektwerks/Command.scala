@@ -26,4 +26,4 @@ final case class Ferment(recipe: Recipe, finalGravity: Double) extends Command
 
 final case class Condition(recipe: Recipe) extends Command
 
-final case class Package(recipe: Recipe, actualFermentableExtract: Double) extends Command
+final case class Keg(recipe: Recipe, actualFermentableExtract: Double) extends Command

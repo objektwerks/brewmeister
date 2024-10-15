@@ -39,7 +39,7 @@ final class Listener:
           metrics = metrics.copy(finalGravity = finalGravity)
         case Conditioned(_, srmColor) =>
           metrics = metrics.copy(srmColor = srmColor)
-        case Packaged(_, ibuBitterness, alcoholByVolume, alcoholByWeight, calories, brewhouseEfficiency) =>
+        case Kegged(_, ibuBitterness, alcoholByVolume, alcoholByWeight, calories, brewhouseEfficiency) =>
           metrics = metrics.copy(ibuBitterness = ibuBitterness,
                                 alcoholByVolume = alcoholByVolume,
                                 alcoholByWeight = alcoholByWeight,

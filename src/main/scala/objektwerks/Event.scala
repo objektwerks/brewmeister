@@ -31,9 +31,9 @@ final case class Fermented(log: List[String],
 final case class Conditioned(log: List[String],
                              srmColor: Int) extends Event
 
-final case class Packaged(log: List[String],
-                          ibuBitterness: Int,
-                          alcoholByVolume: Double,
-                          alcoholByWeight: Double,
-                          calories: Int,
-                          brewhouseEfficiency: Int) extends Event
+final case class Kegged(log: List[String],
+                        ibuBitterness: Int,
+                        alcoholByVolume: Double,
+                        alcoholByWeight: Double,
+                        calories: Int,
+                        brewhouseEfficiency: Int) extends Event
