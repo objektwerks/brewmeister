@@ -42,9 +42,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case condition: Condition =>
         supervised:
           Actor.create( Conditioner(listener) ).tell( _.condition( condition ) )
-      case Package(batch, actualFermentableExtract) =>
+      case `package`: Package =>
         supervised:
-          Actor.create( Packager(listener) ).tell( _.`package`( Package(batch, actualFermentableExtract) ) )
+          Actor.create( Packager(listener) ).tell( _.`package`( `package` ) )
 
 final class Sanitizer(listener: ActorRef[Listener]):
   def sanitize(sanitize: Sanitize): Unit =
