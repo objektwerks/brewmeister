@@ -12,6 +12,9 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
       case Prepare(batch) =>
         supervised:
           Actor.create( Preparer(listener) ).tell( _.prepare( Prepare(batch) ) )
+      case Malt(batch) =>
+        supervised:
+          Actor.create( Malter(listener) ).tell( _.malt( Malt(batch) ) )
 
       case _
 
