@@ -17,26 +17,14 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
           Actor.create( Malter(listener) ).tell( _.malt( Malt(batch) ) )
       case Mill(batch) =>
         supervised:
-          Actor.create( Miller(listener) ).tell( _.mill( Mill(batch) ) )      
+          Actor.create( Miller(listener) ).tell( _.mill( Mill(batch) ) )
+      case Mash(batch, pH) =>
+        supervised:
+          Actor.create( Masher(listener) ).tell( _.mash( Mash(batch, pH) ) )
 
       case _
 
-    
-  def sanitize: Unit =
-    supervised:
-      Actor.create( Sanitizer(listener) ).tell( _.sanitize( Sanitize(batch) ) )
 
-  def prepare: Unit =
-    supervised:
-      Actor.create( Preparer(listener) ).tell( _.prepare( Prepare(batch) ) )
-
-  def malt: Unit =
-    supervised:
-      Actor.create( Malter(listener) ).tell( _.malt( Malt(batch) ) )
-
-  def mill: Unit =
-    supervised:
-      Actor.create( Miller(listener) ).tell( _.mill( Mill(batch) ) )
 
   def mash(pH: Double): Unit =
     supervised:
