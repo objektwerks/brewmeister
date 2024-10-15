@@ -26,7 +26,7 @@ final class Listener:
 
   def metrics(batchId: Int,
               events: List[Event]): Metrics =
-    var metrics = Metrics(batchId = batchId)
+    var metrics = Metrics()
     events.foreach { event =>
       event match
         case Mashed(_, pH) =>
