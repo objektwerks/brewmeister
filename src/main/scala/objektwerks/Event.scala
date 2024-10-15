@@ -6,6 +6,8 @@ final case class Sanitizing(log: List[String]) extends Event
 
 final case class Sanitized(log: List[String]) extends Event
 
+final case class Preparing(log: List[String]) extends Event
+
 final case class Prepared(log: List[String]) extends Event
 
 final case class Malted(log: List[String]) extends Event
