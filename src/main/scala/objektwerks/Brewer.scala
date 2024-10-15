@@ -27,14 +27,13 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
       case Sparge(batch, actualMashExtract) =>
         supervised:
           Actor.create( Sparger(listener) ).tell( _.sparge( Sparge(batch, actualMashExtract) ) )
+      case Boil(batch) =>
+        supervised:
+          Actor.create( Boiler(listener) ).tell( _.boil( Boil(batch) ) )
 
       case _
 
 
-
-  def sparge(actualMashExtract: Double): Unit =
-    supervised:
-      Actor.create( Sparger(listener) ).tell( _.sparge( Sparge(batch, actualMashExtract) ) )
 
   def boil: Unit =
     supervised:
