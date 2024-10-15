@@ -7,17 +7,17 @@ import upickle.default.{ReadWriter => JsonSupport}
 object Batch:
   def default: Batch =
     Batch(style = "American IPA",
-            volume = Volume(5.0, UoM.gl),
-            pH = 5.6,
-            originalGravity = 1.060,
-            finalGravity = 1.012,
-            srmColor = 9,
-            ibuBitterness = 68,
-            alcoholByVolume = 6.4,
-            alcoholByWeight = 6.0,
-            calories = 190,
-            mashEfficiency = 70,
-            brewhouseEfficiency = 71)
+          volume = Volume(5.0, UoM.gl),
+          pH = 5.6,
+          originalGravity = 1.060,
+          finalGravity = 1.012,
+          srmColor = 9,
+          ibuBitterness = 68,
+          alcoholByVolume = 6.4,
+          alcoholByWeight = 6.0,
+          calories = 190,
+          mashEfficiency = 70,
+          brewhouseEfficiency = 71)
 
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
     val sum = grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.volume) }.sum
