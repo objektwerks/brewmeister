@@ -9,6 +9,10 @@ final class Brewer(batch: Batch, listener: ActorRef[Listener]):
       case Sanitize(batch) =>
         supervised:
           Actor.create( Sanitizer(listener) ).tell( _.sanitize( Sanitize(batch) ) )
+      case Prepare(batch) =>
+        supervised:
+          Actor.create( Preparer(listener) ).tell( _.prepare( Prepare(batch) ) )
+
       case _
 
     
