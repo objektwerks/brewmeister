@@ -24,7 +24,7 @@ final class Listener:
       case e :: es if e.isInstanceOf[Fermented] => e.asInstanceOf[Fermented].finalGravity
       case _ => 0.0
 
-  def batch(events: List[Event]): Batch =
+  def batch: Batch =
     var batch = Batch()
     events.foreach { event =>
       event match
