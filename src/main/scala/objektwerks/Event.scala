@@ -26,8 +26,10 @@ final case class Boiled(log: List[String]) extends Event
 
 final case class Cooled(log: List[String]) extends Event
 
-final case class Whirlpooled(log: List[String],
-                             originalGravity: Double) extends Event
+final case class Whirlpooled(log: List[String]) extends Event
+
+final case class OriginalGravityLogged(log: List[String],
+                                       originalGravity: Double) extends Event
 
 final case class Fermented(log: List[String],
                            finalGravity: Double) extends Event
