@@ -26,18 +26,15 @@ final case class Cooled(log: List[String]) extends Event
 
 final case class Whirlpooled(log: List[String]) extends Event
 
-final case class OriginalGravityLogged(log: List[String],
-                                       originalGravity: Double) extends Event
+final case class OriginalGravityLogged(originalGravity: Double) extends Event
 
 final case class Fermented(log: List[String]) extends Event
 
-final case class FinalGravityLogged(log: List[String],
-                                    finalGravity: Double) extends Event
+final case class FinalGravityLogged(finalGravity: Double) extends Event
 
 final case class Conditioned(log: List[String]) extends Event
 
-final case class SrmColorLogged(log: List[String],
-                                srmColor: Int) extends Event
+final case class SrmColorLogged(srmColor: Int) extends Event
 
 final case class Kegged(log: List[String],
                         ibuBitterness: Int,
@@ -45,5 +42,4 @@ final case class Kegged(log: List[String],
                         alcoholByWeight: Double,
                         calories: Int) extends Event
 
-final case class BrewhouseEfficiencyLogged(log: List[String],
-                                           brewhouseEfficiency: Int) extends Event
+final case class BrewhouseEfficiencyLogged(brewhouseEfficiency: Int) extends Event
