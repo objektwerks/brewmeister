@@ -95,7 +95,7 @@ Actor
 
 Command
 -------
-* Sanitize, Prepare, Malt, Mill, Mash, Lauter, Sparge, Boil, Cool, Whirlpool, Ferment, Condition, Keg
+* Sanitize, Prepare, Malt, Mill, Mash, LogPh, Lauter, Sparge, LogMashEfficiency, Boil, Cool, Whirlpool, LogOriginalGravity, Ferment, LogFinalGravity, Condition, LogSrmColor, Keg, LogBrewhouseEfficiency
 
 Event
 -----
