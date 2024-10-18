@@ -6,6 +6,7 @@ Todo
 ----
 * Persistence
 * App
+* Should *temperature* be included in **Batch** for: mashing, boiling, cooling, fermentation, conditioning, packaging and refrigeration?
 
 Process
 -------
