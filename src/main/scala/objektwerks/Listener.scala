@@ -21,7 +21,7 @@ final class Listener:
 
   def finalGravity: Double =
     events.toList match
-      case e :: es if e.isInstanceOf[Fermented] => e.asInstanceOf[Fermented].finalGravity
+      case e :: es if e.isInstanceOf[FinalGravityLogged] => e.asInstanceOf[FinalGravityLogged].finalGravity
       case _ => 0.0
 
   def batch: Batch =
