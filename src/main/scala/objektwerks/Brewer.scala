@@ -54,6 +54,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case condition: Condition =>
         supervised:
           Actor.create( Conditioner(listener) ).tell( _.condition( condition ) )
+      case logSrmColor: LogSrmColor =>
+        supervised:
+          Actor.create( Conditioner(listener) ).tell( _.logSrmColor( logSrmColor ) )
       case keg: Keg =>
         supervised:
           Actor.create( Kegger(listener) ).tell( _.keg( keg ) )
@@ -203,6 +206,12 @@ final class Conditioner(listener: ActorRef[Listener]):
           s"Optionally added hops: ${condition.recipe.hops}",
           s"Should have an SRM color within this range: ${condition.recipe.srmColor}"
         )
+      )
+    )
+  def logSrmColor(logSrmColor: LogSrmColor): Unit =
+    listener.tell( _.onEvent:
+      SrmColorLogged(
+        srmColor = logSrmColor.srmColor
       )
     )
 
