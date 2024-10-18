@@ -59,7 +59,7 @@ Process
 
 Flow
 ----
->**Package / Packager / Packaged** has been replaced by **Keg / Kegger / Kegged** for *simplicity* in the source code.
+>**Package / Packager / Packaged** has been replaced with **Keg / Kegger / Kegged** for *simplicity* in the design.
 1. App -- create --> Recipe | Listener | Brewer
 2. App -- command --> Brewer -- handle( command )
     1. Sanitize --> **Sanitizer** -- Sanitized --> Listener
