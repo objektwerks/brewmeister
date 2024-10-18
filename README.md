@@ -102,8 +102,8 @@ Event
 -----
 * Sanitized, Prepared, Malted, Milled, Mashed, PhLogged, Lautered, Sparged, MashEfficiencyLogged, Boiled, Cooled, Whirlpooled, OriginalGravityLogged, Fermented, FinalGravityLogged, Conditioned, SrmColorLogged, Kegged, BrewhouseEfficiencyLogged
 
-Batch
------
+Metrics
+-------
 >Elements **not** defined in **Batch** --> **Temperature**, **Plato**. **Temperature** ranges are defined in **Recipe**.
 1. **Temperature** - Measured during mashing, boiling, cooling, fermentation, conditioning, packaging and refrigeration.
     1. Method: ***thermometer***.
