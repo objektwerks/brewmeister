@@ -60,6 +60,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case keg: Keg =>
         supervised:
           Actor.create( Kegger(listener) ).tell( _.keg( keg ) )
+      case logBrewhouseEfficiency: LogBrewhouseEfficiency =>
+        supervised:
+          Actor.create( Kegger(listener) ).tell( _.logBrewhouseEfficiency( logBrewhouseEfficiency ) )
 
 final class Sanitizer(listener: ActorRef[Listener]):
   def sanitize(sanitize: Sanitize): Unit =
@@ -243,6 +246,15 @@ final class Kegger(listener: ActorRef[Listener]):
           keg.recipe.packageVolume.volume,
           listener.ask( _.originalGravity ),
           listener.ask( _.finalGravity )
+        )
+      )
+    )
+  def logBrewhouseEfficiency(logBrewhouseEfficiency: LogBrewhouseEfficiency): Unit =
+    listener.tell( _.onEvent:
+      BrewhouseEfficiencyLogged(
+        brewhouseEfficiency = Batch.brewhouseEfficiency(
+          logBrewhouseEfficiency.actualFermentableExtract,
+          logBrewhouseEfficiency.recipe.potentialFermentableExtract
         )
       )
     )
