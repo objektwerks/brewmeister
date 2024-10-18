@@ -17,8 +17,10 @@ final case class PhLogged(log: List[String],
 
 final case class Lautered(log: List[String]) extends Event
 
-final case class Sparged(log: List[String],
-                         mashEfficiency: Int) extends Event
+final case class Sparged(log: List[String]) extends Event
+
+final case class MashEfficiencyLogged(log: List[String],
+                                      mashEfficiency: Int) extends Event
 
 final case class Boiled(log: List[String]) extends Event
 
