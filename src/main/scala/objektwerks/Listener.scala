@@ -54,6 +54,8 @@ final class Listener:
                              alcoholByWeight = alcoholByWeight,
                              calories = calories)
           batch = batch.copy(log = batch.log ++ log)
+        case BrewhouseEfficiencyLogged(brewhouseEfficiency) =>
+          batch = batch.copy(brewhouseEfficiency = brewhouseEfficiency)
         case _ =>
     }
     batch
