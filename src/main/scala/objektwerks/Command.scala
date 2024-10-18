@@ -34,4 +34,6 @@ final case class LogFinalGravity(finalGravity: Double) extends Command
 
 final case class Condition(recipe: Recipe) extends Command
 
-final case class Keg(recipe: Recipe, actualFermentableExtract: Double) extends Command
+final case class Keg(recipe: Recipe) extends Command
+
+final case class LogActualFermentableExtract(actualFermentableExtract: Double) extends Command
