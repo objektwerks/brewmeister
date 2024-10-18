@@ -107,7 +107,7 @@ Metrics
 >These metrics are captured in **Batch**.
 1. **pH** - The pH balance of the mash.
     1. Method: ***pH meter***.
-1. **Original Gravity: OG** - Original Gravity measures the gravity of the wort **before** fermentation.
+2. **Original Gravity: OG** - Original Gravity measures the gravity of the wort **before** fermentation.
     1. Method: ***hydrometer***.
     2. Constraint: Sample must be at 20C / 68F.
     3. Range: 1.000 - 1.130
