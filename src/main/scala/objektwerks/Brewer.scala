@@ -123,11 +123,7 @@ final class Sparger(listener: ActorRef[Listener]):
   def sparge(sparge: Sparge): Unit =
     listener.tell( _.onEvent:
       Sparged(
-        List( s"Should have a mash efficiency within this range: ${sparge.recipe.mashEfficiency}" ),
-        mashEfficiency = Batch.mashEfficiency(
-          sparge.actualMashExtract,
-          sparge.recipe.potentialMashExtract
-        )
+        List( s"Should have a mash efficiency within this range: ${sparge.recipe.mashEfficiency}" )
       )
     )
 
@@ -158,8 +154,7 @@ final class Whirlpooler(listener: ActorRef[Listener]):
         List(
           s"Optionally added hops: ${whirlpool.recipe.hops}",
           s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}"
-        ),
-        originalGravity = whirlpool.originalGravity
+        )
       )
     )
 
@@ -170,8 +165,7 @@ final class Fermenter(listener: ActorRef[Listener]):
         List(
           s"Fermented within this temp range / duration: ${ferment.recipe.fermentatingTempDuration}",
           s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
-        ),
-        finalGravity = ferment.finalGravity
+        )
       )
     )
 
@@ -184,8 +178,7 @@ final class Conditioner(listener: ActorRef[Listener]):
           s"Optionally added adjuncts: ${condition.recipe.adjuncts}",
           s"Optionally added hops: ${condition.recipe.hops}",
           s"Should have an SRM color within this range: ${condition.recipe.srmColor}"
-        ),
-        srmColor = Batch.srmColor(condition.recipe.batchVolume, condition.recipe.grains)
+        )
       )
     )
 
@@ -217,10 +210,6 @@ final class Kegger(listener: ActorRef[Listener]):
           keg.recipe.packageVolume.volume,
           listener.ask( _.originalGravity ),
           listener.ask( _.finalGravity )
-        ),
-        brewhouseEfficiency = Batch.brewhouseEfficiency(
-          keg.actualFermentableExtract,
-          keg.recipe.potentialFermentableExtract
         )
       )
     )
