@@ -16,7 +16,7 @@ final class Listener:
 
   def originalGravity: Double =
     events.toList match
-      case e :: es if e.isInstanceOf[Whirlpooled] => e.asInstanceOf[Whirlpooled].originalGravity
+      case e :: es if e.isInstanceOf[OriginalGravityLogged] => e.asInstanceOf[OriginalGravityLogged].originalGravity
       case _ => 0.0
 
   def finalGravity: Double =
