@@ -101,8 +101,8 @@ Event
 -----
 * Sanitized, Prepared, Malted, Milled, Mashed, Lautered, Sparged, Boiled, Cooled, Whirlpooled, Fermented, Conditioned, Kegged
 
-Metric
-------
+Batch
+-----
 1. **Temperature** - Measured during mashing, boiling, cooling, fermentation, conditioning, packaging and refrigeration.
     1. Method: ***thermometer***.
 2. **pH** - The pH balance of the mash.
