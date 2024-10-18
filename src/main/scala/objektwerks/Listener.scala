@@ -28,7 +28,7 @@ final class Listener:
     var batch = Batch()
     events.foreach { event =>
       event match
-        case Mashed(_, pH) =>
+        case MashPhLogged(_, pH) =>
           batch = batch.copy(pH = pH)
         case Sparged(_, mashEfficiency) =>
           batch = batch.copy(mashEfficiency = mashEfficiency)
