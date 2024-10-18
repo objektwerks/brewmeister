@@ -30,7 +30,7 @@ final class Brewer(listener: ActorRef[Listener]):
       case sparge: Sparge =>
         supervised:
           Actor.create( Sparger(listener) ).tell( _.sparge( sparge ) )
-      case LogMashEfficiency: LogMashEfficiency =>
+      case logMashEfficiency: LogMashEfficiency =>
         supervised:
           Actor.create( Sparger(listener) ).tell( _.sparge( sparge ) )
       case boil: Boil =>
@@ -107,9 +107,6 @@ final class Masher(listener: ActorRef[Listener]):
   def logPh(logPh: LogPh): Unit =
     listener.tell( _.onEvent:
       PhLogged(
-        List(
-          s"Mash pH is: ${logPh.pH}"
-        ),
         pH = logPh.pH
       )
     )
@@ -127,6 +124,12 @@ final class Sparger(listener: ActorRef[Listener]):
     listener.tell( _.onEvent:
       Sparged(
         List( s"Should have a mash efficiency within this range: ${sparge.recipe.mashEfficiency}" )
+      )
+    )
+  def logMashEfficiency(logMashEfficiency: LogMashEfficiency): Unit =
+    listener.tell( _.onEvent:
+      MashEfficiencyLogged(
+        mashEfficiency = Batch.mashEfficiency(logMashEfficiency.actualMashExtract, logMashEfficiency.recipe.potentialMashExtract)
       )
     )
 
