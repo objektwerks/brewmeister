@@ -66,8 +66,9 @@ Flows
     3. Malt --> **Malter** -- Malted --> Listener
     4. Mill --> **Miller** -- Milled --> Listener
     5. Mash --> **Masher** -- Mashed --> Listener
-    6. Lauter --> **Lauterer** -- Lautered --> Listener
-    7. Sparge --> **Sparger** -- Sparged --> Listener
+    6. LogPh --> **Masher** -- PhLogged --> Listener
+    7. Lauter --> **Lauterer** -- Lautered --> Listener
+    8. Sparge --> **Sparger** -- Sparged --> Listener
     8. Boil --> **Boiler** -- Boiled --> Listener
     9. Cool --> **Cooler** -- Cooled --> Listener
     10. Whirlpool --> **Whirlpooler** -- Whirlpooled --> Listener
