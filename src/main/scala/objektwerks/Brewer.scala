@@ -48,6 +48,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case ferment: Ferment =>
         supervised:
           Actor.create( Fermenter(listener) ).tell( _.ferment( ferment ) )
+      case logFinalGravity: LogFinalGravity =>
+        supervised:
+          Actor.create( Fermenter(listener) ).tell( _.logFinalGravity( logFinalGravity ) )
       case condition: Condition =>
         supervised:
           Actor.create( Conditioner(listener) ).tell( _.condition( condition ) )
@@ -181,6 +184,12 @@ final class Fermenter(listener: ActorRef[Listener]):
           s"Fermented within this temp range / duration: ${ferment.recipe.fermentatingTempDuration}",
           s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
         )
+      )
+    )
+  def logFinalGravity(logFinalGravity: LogFinalGravity): Unit =
+    listener.tell( _.onEvent:
+      FinalGravityLogged(
+        finalGravity = logFinalGravity.finalGravity
       )
     )
 
