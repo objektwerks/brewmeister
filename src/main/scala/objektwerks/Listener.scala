@@ -33,24 +33,19 @@ final class Listener:
         case PhLogged(log, pH) =>
           batch = batch.copy(pH = pH)
           batch = batch.copy(log = batch.log ++ log)
-        case Sparged(log, mashEfficiency) =>
-          batch = batch.copy(mashEfficiency = mashEfficiency)
+        case Sparged(log) =>
           batch = batch.copy(log = batch.log ++ log)
-        case Whirlpooled(log, originalGravity) =>
-          batch = batch.copy(originalGravity = originalGravity)
+        case Whirlpooled(log) =>
           batch = batch.copy(log = batch.log ++ log)
-        case Fermented(log, finalGravity) =>
-          batch = batch.copy(finalGravity = finalGravity)
+        case Fermented(log) =>
           batch = batch.copy(log = batch.log ++ log)
-        case Conditioned(log, srmColor) =>
-          batch = batch.copy(srmColor = srmColor)
+        case Conditioned(log) =>
           batch = batch.copy(log = batch.log ++ log)
-        case Kegged(log, ibuBitterness, alcoholByVolume, alcoholByWeight, calories, brewhouseEfficiency) =>
+        case Kegged(log, ibuBitterness, alcoholByVolume, alcoholByWeight, calories) =>
           batch = batch.copy(ibuBitterness = ibuBitterness,
                              alcoholByVolume = alcoholByVolume,
                              alcoholByWeight = alcoholByWeight,
-                             calories = calories,
-                             brewhouseEfficiency = brewhouseEfficiency)
+                             calories = calories)
           batch = batch.copy(log = batch.log ++ log)
         case _ =>
     }
