@@ -30,6 +30,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case sparge: Sparge =>
         supervised:
           Actor.create( Sparger(listener) ).tell( _.sparge( sparge ) )
+      case LogMashEfficiency: LogMashEfficiency =>
+        supervised:
+          Actor.create( Sparger(listener) ).tell( _.sparge( sparge ) )
       case boil: Boil =>
         supervised:
           Actor.create( Boiler(listener) ).tell( _.boil( boil ) )

@@ -19,8 +19,7 @@ final case class Lauter(recipe: Recipe) extends Command
 final case class Sparge(recipe: Recipe) extends Command
 
 final case class LogMashEfficiency(recipe: Recipe,
-                                   actualMashExtract: Double,
-                                   mashEfficiency: Int) extends Command
+                                   actualMashExtract: Double) extends Command
 
 final case class Boil(recipe: Recipe) extends Command
 
@@ -41,5 +40,4 @@ final case class LogSrmColor(srmColor: Int) extends Command
 final case class Keg(recipe: Recipe) extends Command
 
 final case class LogBrewhouseEfficiency(recipe: Recipe,
-                                        actualFermentableExtract: Double,
-                                        brewhouseEfficiency: Int) extends Command
+                                        actualFermentableExtract: Double) extends Command
