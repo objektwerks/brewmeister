@@ -30,6 +30,8 @@ final class Listener:
       event match
         case Sanitized(log) =>
           batch = batch.copy(log = batch.log ++ log)
+        case Prepared(log) =>
+          batch = batch.copy(log = batch.log ++ log)
         case Mashed(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case PhLogged(pH) =>
