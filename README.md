@@ -103,6 +103,7 @@ Event
 
 Batch
 -----
+>Plato is not included in **Batch**.
 1. **Temperature** - Measured during mashing, boiling, cooling, fermentation, conditioning, packaging and refrigeration.
     1. Method: ***thermometer***.
 2. **pH** - The pH balance of the mash.
