@@ -78,7 +78,8 @@ Flows
     15. LogFinalGravity --> **Fermenter** -- FinalGravityLogged --> Listener
     16. Condition --> **Conditioner** -- Conditioned --> Listener
     17. LogSrmColor --> **Conditioner** -- SrmColorLogged --> Listener
-    13. Package --> **Packager** -- Packaged --> Listener
+    18. Package --> **Packager** -- Packaged --> Listener
+    19. LogBrewhouseEfficiency --> **Packager** -- BrewhouseEfficiencyLogged --> Listener
 3. Listener -- events -> Batch
 
 Model
