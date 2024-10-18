@@ -28,22 +28,28 @@ final class Listener:
     var batch = Batch()
     events.foreach { event =>
       event match
-        case MashPhLogged(_, pH) =>
+        case MashPhLogged(log, pH) =>
           batch = batch.copy(pH = pH)
-        case Sparged(_, mashEfficiency) =>
+          batch = batch.copy(log = batch.log ++ log)
+        case Sparged(log, mashEfficiency) =>
           batch = batch.copy(mashEfficiency = mashEfficiency)
-        case Whirlpooled(_, originalGravity) =>
+          batch = batch.copy(log = batch.log ++ log)
+        case Whirlpooled(log, originalGravity) =>
           batch = batch.copy(originalGravity = originalGravity)
-        case Fermented(_, finalGravity) =>
+          batch = batch.copy(log = batch.log ++ log)
+        case Fermented(log, finalGravity) =>
           batch = batch.copy(finalGravity = finalGravity)
-        case Conditioned(_, srmColor) =>
+          batch = batch.copy(log = batch.log ++ log)
+        case Conditioned(log, srmColor) =>
           batch = batch.copy(srmColor = srmColor)
-        case Kegged(_, ibuBitterness, alcoholByVolume, alcoholByWeight, calories, brewhouseEfficiency) =>
+          batch = batch.copy(log = batch.log ++ log)
+        case Kegged(log, ibuBitterness, alcoholByVolume, alcoholByWeight, calories, brewhouseEfficiency) =>
           batch = batch.copy(ibuBitterness = ibuBitterness,
-                                alcoholByVolume = alcoholByVolume,
-                                alcoholByWeight = alcoholByWeight,
-                                calories = calories,
-                                brewhouseEfficiency = brewhouseEfficiency)
+                             alcoholByVolume = alcoholByVolume,
+                             alcoholByWeight = alcoholByWeight,
+                             calories = calories,
+                             brewhouseEfficiency = brewhouseEfficiency)
+          batch = batch.copy(log = batch.log ++ log)
         case _ =>
     }
     batch
