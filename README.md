@@ -6,7 +6,7 @@ Todo
 ----
 * Persistence
 * App
-* Include *temperature* in **Batch** for: mashing, boiling, cooling, fermentation, conditioning, packaging and refrigeration?
+* Include *temperature* in **Batch** for: mashing, boiling, cooling, fermentation, conditioning and kegging?
 
 Process
 -------
