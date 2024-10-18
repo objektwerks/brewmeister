@@ -104,6 +104,7 @@ Event
 
 Metrics
 -------
+>These metrics are captured in **Batch**.
 1. **pH** - The pH balance of the mash.
     1. Method: ***pH meter***.
 1. **Original Gravity: OG** - Original Gravity measures the gravity of the wort **before** fermentation.
