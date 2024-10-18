@@ -59,6 +59,7 @@ Process
 
 Flows
 -----
+>**Package / Packager / Packaged** is replaced by **Keg / Kegger / Kegged** in the source code.
 1. App -- create --> Recipe | Listener | Brewer
 2. App -- command --> Brewer -- handle( command )
     1. Sanitize --> **Sanitizer** -- Sanitized --> Listener
@@ -78,7 +79,7 @@ Flows
     15. LogFinalGravity --> **Fermenter** -- FinalGravityLogged --> Listener
     16. Condition --> **Conditioner** -- Conditioned --> Listener
     17. LogSrmColor --> **Conditioner** -- SrmColorLogged --> Listener
-    18. Package --> **Packager** -- Packaged --> Listener
+    18. Keg --> **Kegger** -- Kegged --> Listener
     19. LogBrewhouseEfficiency --> **Packager** -- BrewhouseEfficiencyLogged --> Listener
 3. Listener -- events -> Batch
 
