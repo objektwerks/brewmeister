@@ -76,7 +76,8 @@ Flows
     13. LogOriginalGravity --> **Whirlpooler** -- OriginalGracityLogged --> Listener
     14. Ferment --> **Fermenter** -- Fermented --> Listener
     15. LogFinalGravity --> **Fermenter** -- FinalGravityLogged --> Listener
-    12. Condition --> **Conditioner** -- Conditioned --> Listener
+    16. Condition --> **Conditioner** -- Conditioned --> Listener
+    17. LogSrmColor --> **Conditioner** -- SrmColorLogged --> Listener
     13. Package --> **Packager** -- Packaged --> Listener
 3. Listener -- events -> Batch
 
