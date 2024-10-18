@@ -104,12 +104,6 @@ Event
 
 Metrics
 -------
->Elements **not** defined in **Batch** --> **Temperature**, **Plato**. **Temperature** ranges are defined in **Recipe**.
-1. **Temperature** - Measured during mashing, boiling, cooling, fermentation, conditioning, packaging and refrigeration.
-    1. Method: ***thermometer***.
-2. **Plato: P ~ Specific Gravity: SG** See [Table](https://www.brewersfriend.com/plato-to-sg-conversion-chart/)
-    1. P = ( -1 * 616.868 ) + ( 1111.14 * SG ) - ( 630.272 * SG ^ 2 ) + ( 135.997 * SG ^ 3 )
-    2. SG = 1 + ( P / ( 258.6 - ( ( P / 258.2 ) * 227.1 ) ) )
 3. **pH** - The pH balance of the mash.
     1. Method: ***pH meter***.
 4. **Original Gravity: OG** - Original Gravity measures the gravity of the wort **before** fermentation.
@@ -161,6 +155,14 @@ Metrics
     4. BE % = ( Actual Fermentable Extract / Ideal Fermentable Extract ) * 100
     5. Range: 60.0 - 100.0 %
     6. Ideal: 72.0 - 80.0 %
+
+Additional Metrics
+------------------
+1. **Temperature** - Measured during mashing, boiling, cooling, fermentation, conditioning, packaging and refrigeration.
+    1. Method: ***thermometer***.
+2. **Plato: P ~ Specific Gravity: SG** See [Table](https://www.brewersfriend.com/plato-to-sg-conversion-chart/)
+    1. P = ( -1 * 616.868 ) + ( 1111.14 * SG ) - ( 630.272 * SG ^ 2 ) + ( 135.997 * SG ^ 3 )
+    2. SG = 1 + ( P / ( 258.6 - ( ( P / 258.2 ) * 227.1 ) ) )
 
 Assembly
 --------
