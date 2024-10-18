@@ -99,7 +99,7 @@ Command
 
 Event
 -----
-* Sanitized, Prepared, Malted, Milled, Mashed, Lautered, Sparged, Boiled, Cooled, Whirlpooled, Fermented, Conditioned, Kegged
+* Sanitized, Prepared, Malted, Milled, Mashed, PhLogged, Lautered, Sparged, MashEfficiencyLogged, Boiled, Cooled, Whirlpooled, OriginalGravityLogged, Fermented, FinalGravityLogged, Conditioned, SrmColorLogged, Kegged, BrewhouseEfficiencyLogged
 
 Batch
 -----
