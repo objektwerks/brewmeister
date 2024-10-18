@@ -70,9 +70,10 @@ Flows
     7. Lauter --> **Lauterer** -- Lautered --> Listener
     8. Sparge --> **Sparger** -- Sparged --> Listener
     9. LogMashEfficiency --> **Sparger** -- MashEfficiencyLogged --> Listener
-    8. Boil --> **Boiler** -- Boiled --> Listener
-    9. Cool --> **Cooler** -- Cooled --> Listener
-    10. Whirlpool --> **Whirlpooler** -- Whirlpooled --> Listener
+    10. Boil --> **Boiler** -- Boiled --> Listener
+    11. Cool --> **Cooler** -- Cooled --> Listener
+    12. Whirlpool --> **Whirlpooler** -- Whirlpooled --> Listener
+    13. LogOriginalGravity --> **Whirlpooler** -- OriginalGracityLogged --> Listener
     11. Ferment --> **Fermenter** -- Fermented --> Listener
     12. Condition --> **Conditioner** -- Conditioned --> Listener
     13. Package --> **Packager** -- Packaged --> Listener
