@@ -38,6 +38,8 @@ final class Listener:
           batch = batch.copy(mashEfficiency = mashEfficiency)
         case Whirlpooled(log) =>
           batch = batch.copy(log = batch.log ++ log)
+        case OriginalGravityLogged(originalGravity) =>
+          batch = batch.copy(originalGravity = originalGravity)
         case Fermented(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case Conditioned(log) =>
