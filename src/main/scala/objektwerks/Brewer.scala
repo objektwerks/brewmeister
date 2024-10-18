@@ -42,6 +42,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case whirlpool: Whirlpool =>
         supervised:
           Actor.create( Whirlpooler(listener) ).tell( _.whirlpool( whirlpool ) )
+      case logOriginalGravity: LogOriginalGravity =>
+        supervised:
+          Actor.create( Whirlpooler(listener) ).tell( _.logOriginalGravity( logOriginalGravity ) )
       case ferment: Ferment =>
         supervised:
           Actor.create( Fermenter(listener) ).tell( _.ferment( ferment ) )
@@ -161,6 +164,12 @@ final class Whirlpooler(listener: ActorRef[Listener]):
           s"Optionally added hops: ${whirlpool.recipe.hops}",
           s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}"
         )
+      )
+    )
+  def logOriginalGravity(logOriginalGravity: LogOriginalGravity): Unit =
+    listener.tell( _.onEvent:
+      OriginalGravityLogged(
+        originalGravity = logOriginalGravity.originalGravity
       )
     )
 
