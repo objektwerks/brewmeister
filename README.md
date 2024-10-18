@@ -103,7 +103,7 @@ Event
 
 Batch
 -----
->Not included in **Batch** -- **Temperature**, **Plato**.
+>Not defined in **Batch** -- **Temperature**, **Plato**. **Temperature** is defined in **Recipe**.
 1. **Temperature** - Measured during mashing, boiling, cooling, fermentation, conditioning, packaging and refrigeration.
     1. Method: ***thermometer***.
 2. **Plato: P ~ Specific Gravity: SG** See [Table](https://www.brewersfriend.com/plato-to-sg-conversion-chart/)
