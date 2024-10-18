@@ -57,8 +57,8 @@ Process
     3. output - beer, **ibu**, **abv**, **abw**, **calories**, **brewhouse efficiency**
 >Some beer recipes ***may*** require adjustments to this process.
 
-Flows
------
+Flow
+----
 >**Package / Packager / Packaged** is replaced by **Keg / Kegger / Kegged** for *simplicity* in the source code.
 1. App -- create --> Recipe | Listener | Brewer
 2. App -- command --> Brewer -- handle( command )
@@ -160,20 +160,6 @@ Batch
     4. BE % = ( Actual Fermentable Extract / Ideal Fermentable Extract ) * 100
     5. Range: 60.0 - 100.0 %
     6. Ideal: 72.0 - 80.0 %
-
-Metrics Flow
-------------
-1. mashing -- brewer pH meter --> pH
-2. sparging -- brewer input ( actual mash extract ) and recipe ( potential mash extract ) --> mashEfficiency
-3. whirlpooler -- brewer hydrometer --> originalGravity
-4. fermenter -- brewer hydrometer --> finalGravity
-5. conditioner -- recipe ( grain weight, grain color, batch volume ) --> srmColor
-6. packager -- brewer input, recipe, metrics -->
-    1. ibuBitterness ( recipe -> hops -> hop -> alphaAcid, weight, volume )
-    2. alcoholByVolume ( metrics -> OG, metrics -> FG )
-    3. alcoholByWeight ( metrics -> abv, metrics -> FG )
-    4. calories ( metrics -> volume, metrics -> OG, metrics -> FG )
-    5. brewhouseEfficiency ( brewer input -> actual fermentable extract, recipe -> grains -> grain -> potential fermentable extract)
 
 Assembly
 --------
