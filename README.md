@@ -74,7 +74,8 @@ Flows
     11. Cool --> **Cooler** -- Cooled --> Listener
     12. Whirlpool --> **Whirlpooler** -- Whirlpooled --> Listener
     13. LogOriginalGravity --> **Whirlpooler** -- OriginalGracityLogged --> Listener
-    11. Ferment --> **Fermenter** -- Fermented --> Listener
+    14. Ferment --> **Fermenter** -- Fermented --> Listener
+    15. LogFinalGravity --> **Fermenter** -- FinalGravityLogged --> Listener
     12. Condition --> **Conditioner** -- Conditioned --> Listener
     13. Package --> **Packager** -- Packaged --> Listener
 3. Listener -- events -> Batch
