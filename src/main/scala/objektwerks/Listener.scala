@@ -70,6 +70,5 @@ final class Listener:
           batch = batch.copy(log = batch.log ++ log)
         case BrewhouseEfficiencyLogged(brewhouseEfficiency) =>
           batch = batch.copy(brewhouseEfficiency = brewhouseEfficiency)
-        case _ =>
     }
     batch
