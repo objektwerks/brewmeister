@@ -2,26 +2,18 @@ package objektwerks
 
 sealed trait Event
 
-final case class Sanitizing(log: List[String]) extends Event
-
 final case class Sanitized(log: List[String]) extends Event
-
-final case class Preparing(log: List[String]) extends Event
 
 final case class Prepared(log: List[String]) extends Event
 
-final case class Malting(log: List[String]) extends Event
-
 final case class Malted(log: List[String]) extends Event
-
-final case class Milling(log: List[String]) extends Event
 
 final case class Milled(log: List[String]) extends Event
 
 final case class Mashed(log: List[String]) extends Event
 
-final case class MashPhLogged(log: List[String],
-                              pH: Double) extends Event
+final case class PhLogged(log: List[String],
+                          pH: Double) extends Event
 
 final case class Lautered(log: List[String]) extends Event
 

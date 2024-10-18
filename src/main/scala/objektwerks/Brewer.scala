@@ -21,9 +21,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case mash: Mash =>
         supervised:
           Actor.create( Masher(listener) ).tell( _.mash( mash ) )
-      case logMashPh: LogMashPh =>
+      case logPh: LogPh =>
         supervised:
-          Actor.create( Masher(listener) ).tell( _.logMashPh( logMashPh ) )
+          Actor.create( Masher(listener) ).tell( _.logPh( logPh ) )
       case lauter: Lauter =>
         supervised:
           Actor.create( Lauterer(listener) ).tell( _.lauter( lauter ) )
@@ -52,11 +52,6 @@ final class Brewer(listener: ActorRef[Listener]):
 final class Sanitizer(listener: ActorRef[Listener]):
   def sanitize(sanitize: Sanitize): Unit =
     listener.tell( _.onEvent:
-      Sanitizing(
-        List( "Sanitizing brewing implements." )
-      )
-    )
-    listener.tell( _.onEvent:
       Sanitized(
         List( "Sanitized brewing implements." )
       )
@@ -66,31 +61,20 @@ final class Sanitizer(listener: ActorRef[Listener]):
 final class Preparer(listener: ActorRef[Listener]):
   def prepare(prepare: Prepare): Unit =
     listener.tell( _.onEvent:
-      Preparing(
+      Prepared(
         List(
           "Preparing the following recipe ingrediants:",
           s"Grains: ${prepare.recipe.grains}",
           s"Hops: ${prepare.recipe.hops}",
           s"Adjuncts: ${prepare.recipe.adjuncts}",
-          s"Yeasts: ${prepare.recipe.yeasts}"
-        )
-      )
-    )
-    listener.tell( _.onEvent:
-      Prepared(
-        List(
-          "Prepared all recipe ingrediants.",
+          s"Yeasts: ${prepare.recipe.yeasts}",
+          "Prepared all recipe ingrediants."
         )
       )
     )
 
 final class Malter(listener: ActorRef[Listener]):
   def malt(malt: Malt): Unit =
-    listener.tell( _.onEvent:
-      Malting(
-        List( "Malting grains." )
-      )
-    )
     listener.tell( _.onEvent:
       Malted(
         List( "Malted grains." )
@@ -99,11 +83,6 @@ final class Malter(listener: ActorRef[Listener]):
 
 final class Miller(listener: ActorRef[Listener]):
   def mill(mill: Mill): Unit =
-    listener.tell( _.onEvent:
-      Milling(
-        List( "Milling grains into a grist." )
-      )
-    )
     listener.tell( _.onEvent:
       Milled(
         List( "Milled grains into a grist." )
@@ -115,20 +94,20 @@ final class Masher(listener: ActorRef[Listener]):
     listener.tell( _.onEvent:
       Mashed(
         List(
-          s"Mashing grist into a wort within this temp range / duration: ${mash.recipe.mashingTempDuration}",
+          s"Mashed grist into a wort within this temp range / duration: ${mash.recipe.mashingTempDuration}",
           s"Optionally added adjuncts: ${mash.recipe.adjuncts}",
           s"pH should be: ${mash.recipe.pH}",
           "Mashed wort."
         )
       )
     )
-  def logMashPh(logMashPh: LogMashPh): Unit =
+  def logPh(logPh: LogPh): Unit =
     listener.tell( _.onEvent:
-      MashPhLogged(
+      PhLogged(
         List(
-          s"Mash pH is: ${logMashPh.pH}"
+          s"Mash pH is: ${logPh.pH}"
         ),
-        pH = logMashPh.pH
+        pH = logPh.pH
       )
     )
 
