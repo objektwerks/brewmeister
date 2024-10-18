@@ -74,4 +74,5 @@ final case class Batch(created: String = now(),
                        alcoholByWeight: Double = 0.0,
                        calories: Int = 0,
                        mashEfficiency: Int = 0,
-                       brewhouseEfficiency: Int = 0) derives JsonSupport
+                       brewhouseEfficiency: Int = 0,
+                       log: List[String] = List.empty[String]) derives JsonSupport
