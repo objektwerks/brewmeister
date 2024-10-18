@@ -106,11 +106,11 @@ Batch
 >Not included in **Batch** -- **Temperature**, **Plato**.
 1. **Temperature** - Measured during mashing, boiling, cooling, fermentation, conditioning, packaging and refrigeration.
     1. Method: ***thermometer***.
-2. **pH** - The pH balance of the mash.
-    1. Method: ***pH meter***.
-3. **Plato: P ~ Specific Gravity: SG** See [Table](https://www.brewersfriend.com/plato-to-sg-conversion-chart/)
+2. **Plato: P ~ Specific Gravity: SG** See [Table](https://www.brewersfriend.com/plato-to-sg-conversion-chart/)
     1. P = ( -1 * 616.868 ) + ( 1111.14 * SG ) - ( 630.272 * SG ^ 2 ) + ( 135.997 * SG ^ 3 )
     2. SG = 1 + ( P / ( 258.6 - ( ( P / 258.2 ) * 227.1 ) ) )
+3. **pH** - The pH balance of the mash.
+    1. Method: ***pH meter***.
 4. **Original Gravity: OG** - Original Gravity measures the gravity of the wort **before** fermentation.
     1. Method: ***hydrometer***.
     2. Constraint: Sample must be at 20C / 68F.
