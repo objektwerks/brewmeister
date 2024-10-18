@@ -40,6 +40,8 @@ final class Listener:
           batch = batch.copy(log = batch.log ++ log)
         case PhLogged(pH) =>
           batch = batch.copy(pH = pH)
+        case Lautered(log) =>
+          batch = batch.copy(log = batch.log ++ log)
         case Sparged(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case MashEfficiencyLogged(mashEfficiency) =>
