@@ -62,7 +62,11 @@ final class Listener:
           batch = batch.copy(log = batch.log ++ log)
         case SrmColorLogged(srmColor) =>
           batch = batch.copy(srmColor = srmColor)
-        case Kegged(log, ibuBitterness, alcoholByVolume, alcoholByWeight, calories) =>
+        case Kegged(log,
+                    ibuBitterness,
+                    alcoholByVolume,
+                    alcoholByWeight,
+                    calories) =>
           batch = batch.copy(ibuBitterness = ibuBitterness,
                              alcoholByVolume = alcoholByVolume,
                              alcoholByWeight = alcoholByWeight,
