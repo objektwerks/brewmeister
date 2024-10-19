@@ -9,7 +9,7 @@ libraryDependencies ++= {
   Seq(
     "org.scalafx" %% "scalafx" % "22.0.0-R33",
     "com.softwaremill.ox" %% "core" % "0.5.1",
-    "com.lihaoyi" %% "os-lib" % "0.11.1",
+    "com.lihaoyi" %% "os-lib" % "0.11.2",
     "com.lihaoyi" %% "upickle" % "4.0.2",
     "com.outr" %% "scribe" % "3.15.1",
     "org.scalatest" %% "scalatest" % "3.2.19" % Test
