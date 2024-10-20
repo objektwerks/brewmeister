@@ -15,9 +15,14 @@ final class Listener:
     listeners.foreach( _.onEvent(event) )
 
   def originalGravity: Double =
-    events.toList match
-      case e :: es if e.isInstanceOf[OriginalGravityLogged] => e.asInstanceOf[OriginalGravityLogged].originalGravity.formatGravity
-      case _ => 0.0
+    var originalGravity = 0.0
+    events.foreach { event =>
+      event match
+        case logged: OriginalGravityLogged => originalGravity = logged.originalGravity.formatGravity
+        case _ =>
+      
+    }
+    originalGravity
 
   def finalGravity: Double =
     events.toList match
