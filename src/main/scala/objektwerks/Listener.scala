@@ -16,12 +16,12 @@ final class Listener:
 
   def originalGravity: Double =
     events.toList match
-      case e :: es if e.isInstanceOf[OriginalGravityLogged] => e.asInstanceOf[OriginalGravityLogged].originalGravity
+      case e :: es if e.isInstanceOf[OriginalGravityLogged] => e.asInstanceOf[OriginalGravityLogged].originalGravity.formatGravity
       case _ => 0.0
 
   def finalGravity: Double =
     events.toList match
-      case e :: es if e.isInstanceOf[FinalGravityLogged] => e.asInstanceOf[FinalGravityLogged].finalGravity
+      case e :: es if e.isInstanceOf[FinalGravityLogged] => e.asInstanceOf[FinalGravityLogged].finalGravity.formatGravity
       case _ => 0.0
 
   def batch: Batch =
