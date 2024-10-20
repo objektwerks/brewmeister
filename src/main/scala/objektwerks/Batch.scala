@@ -41,11 +41,11 @@ object Batch:
 
   def alcoholByVolume(originalGravity: Double,
                       finalGravity: Double): Double =
-    format( (originalGravity - finalGravity) * 131 )
+    ( (originalGravity - finalGravity) * 131 ).format
 
   def alcoholByWeight(alcoholByVolume: Double,
                       finalGravity: Double): Double =
-    format( (0.79 * alcoholByVolume) / finalGravity )
+    ( (0.79 * alcoholByVolume) / finalGravity ).format
 
   def calories(packageVolume: Double,
                originalGravity: Double,
