@@ -25,9 +25,14 @@ final class Listener:
     originalGravity
 
   def finalGravity: Double =
-    events.toList match
-      case e :: es if e.isInstanceOf[FinalGravityLogged] => e.asInstanceOf[FinalGravityLogged].finalGravity.formatGravity
-      case _ => 0.0
+    var finalGravity = 0.0
+    events.foreach { event =>
+      event match
+        case logged: FinalGravityLogged => finalGravity = logged.finalGravity.formatGravity
+        case _ =>
+      
+    }
+    finalGravity
 
   def batch: Batch =
     var batch = Batch()
