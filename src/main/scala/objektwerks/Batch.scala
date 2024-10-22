@@ -68,8 +68,8 @@ final case class Batch(created: String = now(),
                        volume: Volume = Volume(0.0, UoM.gl),
                        mashTemp: Int = 0,
                        pH: Double = 0.0,
-                       // boilingTemp = 0,
-                       // coolingTemp = 0,
+                       // add boilingTemp = 0,
+                       // add coolingTemp = 0,
                        originalGravity: Double = 0.0,
                        finalGravity: Double = 0.0, // with fermenting temp
                        srmColor: Int = 0, // with conditioning temp
@@ -79,6 +79,6 @@ final case class Batch(created: String = now(),
                        calories: Int = 0,
                        mashEfficiency: Int = 0,
                        brewhouseEfficiency: Int = 0,
-                       // kegging temp ?
-                       // refrig temp ?
+                       // add kegging temp ?
+                       // add refrig temp ?
                        log: List[String] = List.empty[String]) derives JsonSupport
