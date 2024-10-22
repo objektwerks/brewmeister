@@ -12,7 +12,7 @@ final case class Mill(recipe: Recipe) extends Command
 
 final case class Mash(recipe: Recipe) extends Command
 
-final case class LogPh(pH: Double) extends Command
+final case class LogPh(mashingTemp: Int, pH: Double) extends Command
 
 final case class Lauter(recipe: Recipe) extends Command
 
