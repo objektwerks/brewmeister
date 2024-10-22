@@ -16,7 +16,7 @@ final class Listener:
 
   def originalGravity: Double =
     var originalGravity = 0.0
-    events.foreach { event =>
+    events.foreach { event => // there should be only 1 OriginalGravityLogged event per listener brewing session
       event match
         case logged: OriginalGravityLogged => originalGravity = logged.originalGravity.formatGravity
         case _ =>
@@ -26,7 +26,7 @@ final class Listener:
 
   def finalGravity: Double =
     var finalGravity = 0.0
-    events.foreach { event =>
+    events.foreach { event => // there should be only 1 FinalGravityLogged event per listener brewing session
       event match
         case logged: FinalGravityLogged => finalGravity = logged.finalGravity.formatGravity
         case _ =>
