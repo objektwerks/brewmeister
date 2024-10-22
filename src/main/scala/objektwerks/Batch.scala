@@ -8,7 +8,7 @@ object Batch:
   def default: Batch =
     Batch(style = "American IPA",
           volume = Volume(5.0, UoM.gl),
-          mashTemp = 154,
+          mashTemp = 150,
           pH = 5.6,
           originalGravity = 1.060,
           finalGravity = 1.012,
