@@ -119,6 +119,7 @@ final class Masher(listener: ActorRef[Listener]):
   def logPh(logPh: LogPh): Unit =
     listener.tell( _.onEvent:
       PhLogged(
+        mashTemp = logPh.mashTemp,
         pH = logPh.pH
       )
     )

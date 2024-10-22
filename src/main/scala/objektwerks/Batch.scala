@@ -8,6 +8,7 @@ object Batch:
   def default: Batch =
     Batch(style = "American IPA",
           volume = Volume(5.0, UoM.gl),
+          mashTemp = 154,
           pH = 5.6,
           originalGravity = 1.060,
           finalGravity = 1.012,
@@ -65,6 +66,7 @@ object Batch:
 final case class Batch(created: String = now(),
                        style: String = "",
                        volume: Volume = Volume(0.0, UoM.gl),
+                       mashTemp: Int = 0,
                        pH: Double = 0.0,
                        originalGravity: Double = 0.0,
                        finalGravity: Double = 0.0,
