@@ -30,7 +30,7 @@ final class Listener:
 
   def batch: Batch =
     var batch = Batch()
-    events.foreach { event =>
+    events.foreach: event =>
       event match
         case Sanitized(log) =>
           batch = batch.copy(log = batch.log ++ log)
@@ -78,5 +78,4 @@ final class Listener:
                              log = batch.log ++ log)
         case BrewhouseEfficiencyLogged(brewhouseEfficiency) =>
           batch = batch.copy(brewhouseEfficiency = brewhouseEfficiency)
-    }
     batch
