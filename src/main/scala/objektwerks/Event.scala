@@ -12,7 +12,7 @@ final case class Milled(log: List[String]) extends Event
 
 final case class Mashed(log: List[String]) extends Event
 
-final case class PhLogged(pH: Double) extends Event
+final case class PhLogged(mashTemp: Int, pH: Double) extends Event
 
 final case class Lautered(log: List[String]) extends Event
 
