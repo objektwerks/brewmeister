@@ -23,12 +23,9 @@ final class Listener:
 
   def finalGravity: Double =
     var finalGravity = 0.0
-    events.foreach { event => // there should be only 1 FinalGravityLogged event per listener brewing session
-      event match
-        case logged: FinalGravityLogged => finalGravity = logged.finalGravity.formatGravity
-        case _ =>
-      
-    }
+    events.foreach: event =>
+      if event.isInstanceOf[FinalGravityLogged] then
+        finalGravity = event.asInstanceOf[FinalGravityLogged].finalGravity.formatGravity
     finalGravity
 
   def batch: Batch =
