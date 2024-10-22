@@ -7,7 +7,7 @@ scalaVersion := "3.6.1"
 mainClass := Some("objektwerks.App")
 libraryDependencies ++= {
   Seq(
-    "org.scalafx" %% "scalafx" % "22.0.0-R33",
+    "org.scalafx" %% "scalafx" % "23.0.1-R34",
     "com.softwaremill.ox" %% "core" % "0.5.2",
     "com.lihaoyi" %% "os-lib" % "0.11.3",
     "com.lihaoyi" %% "upickle" % "4.0.2",
