@@ -21,9 +21,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case mash: Mash =>
         supervised:
           Actor.create( Masher(listener) ).tell( _.mash( mash ) )
-      case logPh: LogPh =>
+      case logMashTempPh: LogMashTempPh =>
         supervised:
-          Actor.create( Masher(listener) ).tell( _.logPh( logPh ) )
+          Actor.create( Masher(listener) ).tell( _.logMashTempPh( logMashTempPh ) )
       case lauter: Lauter =>
         supervised:
           Actor.create( Lauterer(listener) ).tell( _.lauter( lauter ) )
@@ -116,11 +116,11 @@ final class Masher(listener: ActorRef[Listener]):
         )
       )
     )
-  def logPh(logPh: LogPh): Unit =
+  def logMashTempPh(logMashTempPh: LogMashTempPh): Unit =
     listener.tell( _.onEvent:
-      PhLogged(
-        mashTemp = logPh.mashTemp,
-        pH = logPh.pH
+      MashTempPhLogged(
+        mashTemp = logMashTempPh.mashTemp,
+        pH = logMashTempPh.pH
       )
     )
 
