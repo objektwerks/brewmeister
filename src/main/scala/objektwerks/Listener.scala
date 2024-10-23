@@ -68,8 +68,8 @@ final class Listener:
         case Conditioned(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case ConditioningTempSrmColorLogged(conditioningTemp, srmColor) =>
-          batch = batch.copy(conditioningTemp = conditioningTemp)
-          batch = batch.copy(srmColor = srmColor)
+          batch = batch.copy(conditioningTemp = conditioningTemp,
+                             srmColor = srmColor)
         case Kegged(log,
                     ibuBitterness,
                     alcoholByVolume,
