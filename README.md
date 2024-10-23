@@ -78,7 +78,7 @@ Flow
     14. Ferment --> **Fermenter** -- Fermented --> Listener
     15. LogFermentingTempFinalGravity --> **Fermenter** -- FermentingTempFinalGravityLogged --> Listener
     16. Condition --> **Conditioner** -- Conditioned --> Listener
-    17. LogSrmColor --> **Conditioner** -- SrmColorLogged --> Listener
+    17. LogConditioningTempSrmColor --> **Conditioner** -- ConditioningTempSrmColorLogged --> Listener
     18. Keg --> **Kegger** -- Kegged --> Listener
     19. LogBrewhouseEfficiency --> **Kegger** -- BrewhouseEfficiencyLogged --> Listener
 3. Listener -- events -> Batch
