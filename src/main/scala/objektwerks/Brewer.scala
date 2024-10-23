@@ -86,21 +86,21 @@ final class Brewer(listener: ActorRef[Listener]):
           Actor
             .create( Conditioner(listener) )
             .tell( _.condition( condition ) )
-      case logSrmColor: LogConditioningTempSrmColor =>
+      case logConditioningTempSrmColor: LogConditioningTempSrmColor =>
         supervised:
           Actor
             .create( Conditioner(listener) )
-            .tell( _.logConditioningSrmColor( logSrmColor ) )
+            .tell( _.logConditioningSrmColor( logConditioningTempSrmColor ) )
       case keg: Keg =>
         supervised:
           Actor
             .create( Kegger(listener) )
             .tell( _.keg( keg ) )
-      case logBrewhouseEfficiency: LogBrewhouseEfficiency =>
+      case logKeggingTempBrewhouseEfficiency: LogKeggingTempBrewhouseEfficiency =>
         supervised:
           Actor
             .create( Kegger(listener) )
-            .tell( _.logBrewhouseEfficiency( logBrewhouseEfficiency ) )
+            .tell( _.logKeggingTempBrewhouseEfficiency( logKeggingTempBrewhouseEfficiency ) )
 
 final class Sanitizer(listener: ActorRef[Listener]):
   def sanitize(sanitize: Sanitize): Unit =
@@ -292,13 +292,13 @@ final class Kegger(listener: ActorRef[Listener]):
         )
       )
     )
-  def logBrewhouseEfficiency(logBrewhouseEfficiency: LogBrewhouseEfficiency): Unit =
+  def logKeggingTempBrewhouseEfficiency(logKeggingTempBrewhouseEfficiency: LogKeggingTempBrewhouseEfficiency): Unit =
     listener.tell( _.onEvent:
       BrewhouseEfficiencyLogged(
-        keggingTemp = logBrewhouseEfficiency.keggingTemp,
+        keggingTemp = logKeggingTempBrewhouseEfficiency.keggingTemp,
         brewhouseEfficiency = Batch.brewhouseEfficiency(
-          logBrewhouseEfficiency.actualFermentableExtract,
-          logBrewhouseEfficiency.recipe.potentialFermentableExtract
+          logKeggingTempBrewhouseEfficiency.actualFermentableExtract,
+          logKeggingTempBrewhouseEfficiency.recipe.potentialFermentableExtract
         )
       )
     )
