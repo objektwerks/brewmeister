@@ -109,51 +109,51 @@ Metrics
 2. **Plato: P ~ Specific Gravity: SG** See [Table](https://www.brewersfriend.com/plato-to-sg-conversion-chart/)
     1. P = ( -1 * 616.868 ) + ( 1111.14 * SG ) - ( 630.272 * SG ^ 2 ) + ( 135.997 * SG ^ 3 )
     2. SG = 1 + ( P / ( 258.6 - ( ( P / 258.2 ) * 227.1 ) ) )
-1. **pH** - The pH balance of the mash.
+3. **pH** - The pH balance of the mash.
     1. Method: ***pH meter***.
-2. **Original Gravity: OG** - Original Gravity measures the gravity of the wort **before** fermentation.
+4. **Original Gravity: OG** - Original Gravity measures the gravity of the wort **before** fermentation.
     1. Method: ***hydrometer***.
     2. Constraint: Sample must be at 20C / 68F.
     3. Range: 1.000 - 1.130
-3. **Final Gravity: FG** - Final Gravity measures the gravity of the wort **after** fermentation.
+5. **Final Gravity: FG** - Final Gravity measures the gravity of the wort **after** fermentation.
     1. Method: ***hydrometer***.
     2. Constraint: Sample must be at 20C / 68F.
     3. Range: 1.000 - 1.130
-4. **Color: SRM** - Standard Reference Method (SRM) represents the color of a beer. Malt Color Units (MCU). Obtain Lovibond value from grain package.
+6. **Color: SRM** - Standard Reference Method (SRM) represents the color of a beer. Malt Color Units (MCU). Obtain Lovibond value from grain package.
     1. Method: ***recipe***
     2. MCU = ( Grain Weight (lbs) ) * ( Grain Color (degrees lovibond) ) / ( Volume(gallons) )
     3. SRM = 1.4922 * ( MCU ^ 0.6859 )
     4. Range: 1 - 40
-5. **Hop Bitterness: IBU** - International Bittering Units ( IBU ) is the measure of beer bitterness that comes from boiling hops.
+7. **Hop Bitterness: IBU** - International Bittering Units ( IBU ) is the measure of beer bitterness that comes from boiling hops.
     1. Method: ***recipe***
     2. Hop Weight: Actual mass of hops, excluding moisture.
     3. Hop Volume: Actual mass of hops, including moisture. 1 oz of **dry** hops equals 4-6 oz of **wet** hops.
     4. Hop Utilization % = ( Hop Alpha Acid (%) * Hop Weight (dry oz) ) / Hop Volume (fluid oz)
     5. IBU = ( Hop Weight (oz) * Hop Alpha Acid (%) * Hop Utilization (%) ) / 7.25
     6. Range: 0 - 120
-6. **Alcohol: ABV** - Measured by volume, the amount of alcohol produced in a wort during fermentation.
+8. **Alcohol: ABV** - Measured by volume, the amount of alcohol produced in a wort during fermentation.
     1. Method: ***metrics***
     2. ABV % = ( OG - FG ) * 131
     3. Range: 3.0 - 13.0 %
-7. **Alcohol: ABW** - Measured by weight, the amount of alcohol produced in a wort during fermentation.
+9. **Alcohol: ABW** - Measured by weight, the amount of alcohol produced in a wort during fermentation.
     1. Method: ***metrics***
     2. ABW % = ( 0.79 * ABV (%) ) / FG
     3. Range: 3.0 - 10.0 %
-8. **Calories** - The number of calories in a beer.
+10. **Calories** - The number of calories in a beer.
     1. Method: ***metrics***
     2. Volume = Beer container (oz)
     3. Alcohol Calories = ( OG - FG ) * 7.5
     4. Carbohydrate Calories = ( FG * 13 ) * Volume
     5. Calories = Alcohol Calories + Carbohydrate Calories
     6. Range: 10 - 600
-9. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
+11. **Mash Efficiency: ME** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
     1. Method: ***brewer input and recipe***
     2. Actual Mash Extract = The amount of fermentable extract collected from the mash tun.
     3. Potential Mash Extract = The maximum extract potential of the grain bill, calculated on the malt’s extract potential and the grain bill’s weight and volume.
     4. ME % = ( Actual Extract / Potential Extract ) * 100
     5. Range: 70.0 - 100.0 %
     6. Ideal: 80.0 - 90.0 %
-10. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
+12. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
     1. Method: ***brewer input and metrics***
     2. Actual Fermentable Extract = The amount of fermentable extract collected from the brewhouse.
     3. Potential Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
