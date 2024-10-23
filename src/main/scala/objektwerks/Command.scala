@@ -38,7 +38,8 @@ final case class LogFermentingTempFinalGravity(fermentingTemp: Int,
 
 final case class Condition(recipe: Recipe) extends Command
 
-final case class LogConditioningTempSrmColor(conditioningTemp: Int, srmColor: Int) extends Command
+final case class LogConditioningTempSrmColor(conditioningTemp: Int,
+                                             srmColor: Int) extends Command
 
 final case class Keg(recipe: Recipe) extends Command
 
