@@ -57,9 +57,9 @@ final class Listener:
         case Whirlpooled(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case BoilingCoolingTempOriginalGravityLogged(boilingTemp, coolingTemp, originalGravity) =>
-          batch = batch.copy(boilingTemp = boilingTemp)
-          batch = batch.copy(coolingTemp = coolingTemp)
-          batch = batch.copy(originalGravity = originalGravity)
+          batch = batch.copy(boilingTemp = boilingTemp,
+                             coolingTemp = coolingTemp,
+                             originalGravity = originalGravity)
         case Fermented(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case FermentingTempFinalGravityLogged(fermentingTemp, finalGravity) =>
