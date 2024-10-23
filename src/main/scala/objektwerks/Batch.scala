@@ -22,6 +22,7 @@ object Batch:
           alcoholByVolume = 6.4,
           alcoholByWeight = 6.0,
           calories = 190,
+          keggingTemp = 43,
           brewhouseEfficiency = 71)
 
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
@@ -84,7 +85,6 @@ final case class Batch(created: String = now(),
                        alcoholByVolume: Double = 0.0,
                        alcoholByWeight: Double = 0.0,
                        calories: Int = 0,
+                       keggingTemp: Int = 0,
                        brewhouseEfficiency: Int = 0,
-                       // keggingTemp = 0,
-                       // refrigeratorTemp = 0,
                        log: List[String] = List.empty[String]) derives JsonSupport
