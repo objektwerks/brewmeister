@@ -2,7 +2,7 @@ val jarVersion = "0.29"
 
 name := "ciphers"
 organization := "objektwerks"
-version := "0.29-SNAPSHOT"
+version := "0.30-SNAPSHOT"
 scalaVersion := "3.6.1"
 mainClass := Some("objektwerks.App")
 libraryDependencies ++= {
