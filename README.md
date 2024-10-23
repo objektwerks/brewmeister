@@ -67,7 +67,7 @@ Flow
     3. Malt --> **Malter** -- Malted --> Listener
     4. Mill --> **Miller** -- Milled --> Listener
     5. Mash --> **Masher** -- Mashed --> Listener
-    6. LogPh --> **Masher** -- PhLogged --> Listener
+    6. LogMashTempPh --> **Masher** -- MashTempPhLogged --> Listener
     7. Lauter --> **Lauterer** -- Lautered --> Listener
     8. Sparge --> **Sparger** -- Sparged --> Listener
     9. LogMashEfficiency --> **Sparger** -- MashEfficiencyLogged --> Listener
