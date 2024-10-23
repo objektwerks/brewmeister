@@ -27,7 +27,9 @@ final case class Cool(recipe: Recipe) extends Command
 
 final case class Whirlpool(recipe: Recipe) extends Command
 
-final case class LogBoilingCoolingTempOriginalGravity(boilingTemp: Int, coolingTemp: Int, originalGravity: Double) extends Command
+final case class LogBoilingCoolingTempOriginalGravity(boilingTemp: Int,
+                                                      coolingTemp: Int,
+                                                      originalGravity: Double) extends Command
 
 final case class Ferment(recipe: Recipe) extends Command
 
