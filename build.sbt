@@ -79,7 +79,7 @@ else assemblyJarName := s"brewmeister-no-valid-target-specified-$jarVersion.jar"
 
 lazy val javafxModules = Seq("base", "controls", "web")
 libraryDependencies ++= javafxModules.map( module =>
-  "org.openjfx" % s"javafx-$module" % "22" classifier OS
+  "org.openjfx" % s"javafx-$module" % "23" classifier OS
 )
 
 assembly / assemblyMergeStrategy := {
