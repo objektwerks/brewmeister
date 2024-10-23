@@ -4,7 +4,7 @@ Brewmeister
 
 Todo
 ----
-* Persistence
+* Store
 * App
 
 Process
