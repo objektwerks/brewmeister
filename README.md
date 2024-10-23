@@ -95,11 +95,11 @@ Actor
 
 Command
 -------
-* Sanitize, Prepare, Malt, Mill, Mash, LogPh, Lauter, Sparge, LogMashEfficiency, Boil, Cool, Whirlpool, LogOriginalGravity, Ferment, LogFinalGravity, Condition, LogSrmColor, Keg, LogBrewhouseEfficiency
+* Sanitize, Prepare, Malt, Mill, Mash, LogMashingTempPh, Lauter, Sparge, LogMashEfficiency, Boil, Cool, Whirlpool, LogBoilingCoolingTempOriginalGravity, Ferment, LogFermentingTempFinalGravity, Condition, LogConditioningTempSrmColor, Keg, LogBrewhouseEfficiency
 
 Event
 -----
-* Sanitized, Prepared, Malted, Milled, Mashed, PhLogged, Lautered, Sparged, MashEfficiencyLogged, Boiled, Cooled, Whirlpooled, OriginalGravityLogged, Fermented, FinalGravityLogged, Conditioned, SrmColorLogged, Kegged, BrewhouseEfficiencyLogged
+* Sanitized, Prepared, Malted, Milled, Mashed, MashingTempPhLogged, Lautered, Sparged, MashEfficiencyLogged, Boiled, Cooled, Whirlpooled, BoilingCoolingTempOriginalGravityLogged, Fermented, FermentingTempFinalGravityLogged, Conditioned, ConditioningTempSrmColorLogged, Kegged, BrewhouseEfficiencyLogged
 
 Metrics
 -------
