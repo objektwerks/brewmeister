@@ -70,11 +70,11 @@ final class Listener:
         case ConditioningTempSrmColorLogged(conditioningTemp, srmColor) =>
           batch = batch.copy(conditioningTemp = conditioningTemp,
                              srmColor = srmColor)
-        case Kegged(log,
-                    ibuBitterness,
+        case Kegged(ibuBitterness,
                     alcoholByVolume,
                     alcoholByWeight,
-                    calories) =>
+                    calories,
+                    log) =>
           batch = batch.copy(ibuBitterness = ibuBitterness,
                              alcoholByVolume = alcoholByVolume,
                              alcoholByWeight = alcoholByWeight,
