@@ -42,9 +42,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case whirlpool: Whirlpool =>
         supervised:
           Actor.create( Whirlpooler(listener) ).tell( _.whirlpool( whirlpool ) )
-      case logOriginalGravity: LogOriginalGravity =>
+      case logBoilingCoolingTempOriginalGravity: LogBoilingCoolingTempOriginalGravity =>
         supervised:
-          Actor.create( Whirlpooler(listener) ).tell( _.logOriginalGravity( logOriginalGravity ) )
+          Actor.create( Whirlpooler(listener) ).tell( _.logBoilingCoolingTempOriginalGravity( logBoilingCoolingTempOriginalGravity ) )
       case ferment: Ferment =>
         supervised:
           Actor.create( Fermenter(listener) ).tell( _.ferment( ferment ) )
@@ -176,10 +176,12 @@ final class Whirlpooler(listener: ActorRef[Listener]):
         )
       )
     )
-  def logOriginalGravity(logOriginalGravity: LogOriginalGravity): Unit =
+  def logBoilingCoolingTempOriginalGravity(logBoilingCoolingTempOriginalGravity: LogBoilingCoolingTempOriginalGravity): Unit =
     listener.tell( _.onEvent:
-      OriginalGravityLogged(
-        originalGravity = logOriginalGravity.originalGravity
+      BoilingCoolingTempOriginalGravityLogged(
+        boilingTemp = logBoilingCoolingTempOriginalGravity.boilingTemp,
+        coolingTemp = logBoilingCoolingTempOriginalGravity.coolingTemp,
+        originalGravity = logBoilingCoolingTempOriginalGravity.originalGravity
       )
     )
 
