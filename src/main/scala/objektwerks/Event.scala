@@ -47,5 +47,5 @@ final case class Kegged(ibuBitterness: Int,
                         calories: Int,
                         log: List[String]) extends Event
 
-final case class BrewhouseEfficiencyLogged(keggingTemp: Int,
-                                           brewhouseEfficiency: Int) extends Event
+final case class KeggingTempBrewhouseEfficiencyLogged(keggingTemp: Int,
+                                                      brewhouseEfficiency: Int) extends Event

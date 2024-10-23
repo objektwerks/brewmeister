@@ -294,7 +294,7 @@ final class Kegger(listener: ActorRef[Listener]):
     )
   def logKeggingTempBrewhouseEfficiency(logKeggingTempBrewhouseEfficiency: LogKeggingTempBrewhouseEfficiency): Unit =
     listener.tell( _.onEvent:
-      BrewhouseEfficiencyLogged(
+      KeggingTempBrewhouseEfficiencyLogged(
         keggingTemp = logKeggingTempBrewhouseEfficiency.keggingTemp,
         brewhouseEfficiency = Batch.brewhouseEfficiency(
           logKeggingTempBrewhouseEfficiency.actualFermentableExtract,
