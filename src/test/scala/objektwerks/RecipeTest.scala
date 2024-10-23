@@ -3,6 +3,10 @@ package objektwerks
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
+import upickle.default.*
+
 final class RecipeTest extends AnyFunSuite with Matchers:
   test("recipe"):
-    true
+    val recipe = Recipe.default
+    val recipeAsJson = write(recipe)
+    recipe shouldBe read[Recipe](recipeAsJson)
