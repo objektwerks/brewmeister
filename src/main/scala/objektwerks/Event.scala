@@ -34,7 +34,7 @@ final case class FermentingTempFinalGravityLogged(fermentingTemp: Int, finalGrav
 
 final case class Conditioned(log: List[String]) extends Event
 
-final case class SrmColorLogged(srmColor: Int) extends Event
+final case class ConditioningTempSrmColorLogged(conditioningTemp: Int, srmColor: Int) extends Event
 
 final case class Kegged(log: List[String],
                         ibuBitterness: Int,

@@ -54,9 +54,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case condition: Condition =>
         supervised:
           Actor.create( Conditioner(listener) ).tell( _.condition( condition ) )
-      case logSrmColor: LogSrmColor =>
+      case logSrmColor: LogConditioningTempSrmColor =>
         supervised:
-          Actor.create( Conditioner(listener) ).tell( _.logSrmColor( logSrmColor ) )
+          Actor.create( Conditioner(listener) ).tell( _.logConditioningSrmColor( logSrmColor ) )
       case keg: Keg =>
         supervised:
           Actor.create( Kegger(listener) ).tell( _.keg( keg ) )
@@ -215,10 +215,11 @@ final class Conditioner(listener: ActorRef[Listener]):
         )
       )
     )
-  def logSrmColor(logSrmColor: LogSrmColor): Unit =
+  def logConditioningSrmColor(logConditioningTempSrmColor: LogConditioningTempSrmColor): Unit =
     listener.tell( _.onEvent:
-      SrmColorLogged(
-        srmColor = logSrmColor.srmColor
+      ConditioningTempSrmColorLogged(
+        conditioningTemp = logConditioningTempSrmColor.conditioningTemp,
+        srmColor = logConditioningTempSrmColor.srmColor
       )
     )
 
