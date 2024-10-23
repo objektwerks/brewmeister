@@ -76,7 +76,7 @@ Flow
     12. Whirlpool --> **Whirlpooler** -- Whirlpooled --> Listener
     13. LogBoilingCoolingTempOriginalGravity --> **Whirlpooler** -- BoilingCoolingTempOriginalGravityLogged --> Listener
     14. Ferment --> **Fermenter** -- Fermented --> Listener
-    15. LogFinalGravity --> **Fermenter** -- FinalGravityLogged --> Listener
+    15. LogFermentingTempFinalGravity --> **Fermenter** -- FermentingTempFinalGravityLogged --> Listener
     16. Condition --> **Conditioner** -- Conditioned --> Listener
     17. LogSrmColor --> **Conditioner** -- SrmColorLogged --> Listener
     18. Keg --> **Kegger** -- Kegged --> Listener
