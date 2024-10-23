@@ -8,7 +8,7 @@ object Batch:
   def default: Batch =
     Batch(style = "American IPA",
           volume = Volume(5.0, UoM.gl),
-          mashTemp = 150,
+          mashingTemp = 150,
           pH = 5.6,
           boilingTemp = 150,
           coolingTemp = 72,
@@ -71,7 +71,7 @@ object Batch:
 final case class Batch(created: String = now(),
                        style: String = "",
                        volume: Volume = Volume(0.0, UoM.gl),
-                       mashTemp: Int = 0,
+                       mashingTemp: Int = 0,
                        pH: Double = 0.0,
                        boilingTemp: Int = 0,
                        coolingTemp: Int = 0,
