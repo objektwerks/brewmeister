@@ -48,9 +48,9 @@ final class Brewer(listener: ActorRef[Listener]):
       case ferment: Ferment =>
         supervised:
           Actor.create( Fermenter(listener) ).tell( _.ferment( ferment ) )
-      case logFinalGravity: LogFinalGravity =>
+      case logFermentingTempFinalGravity: LogFermentingTempFinalGravity =>
         supervised:
-          Actor.create( Fermenter(listener) ).tell( _.logFinalGravity( logFinalGravity ) )
+          Actor.create( Fermenter(listener) ).tell( _.logFermentingTempFinalGravity( logFermentingTempFinalGravity ) )
       case condition: Condition =>
         supervised:
           Actor.create( Conditioner(listener) ).tell( _.condition( condition ) )
@@ -195,10 +195,11 @@ final class Fermenter(listener: ActorRef[Listener]):
         )
       )
     )
-  def logFinalGravity(logFinalGravity: LogFinalGravity): Unit =
+  def logFermentingTempFinalGravity(logFermentingTempFinalGravity: LogFermentingTempFinalGravity): Unit =
     listener.tell( _.onEvent:
-      FinalGravityLogged(
-        finalGravity = logFinalGravity.finalGravity
+      FermentingTempFinalGravityLogged(
+        fermentingTemp = logFermentingTempFinalGravity.fermentingTemp,
+        finalGravity = logFermentingTempFinalGravity.finalGravity
       )
     )
 

@@ -31,7 +31,7 @@ final case class LogBoilingCoolingTempOriginalGravity(boilingTemp: Int, coolingT
 
 final case class Ferment(recipe: Recipe) extends Command
 
-final case class LogFinalGravity(finalGravity: Double) extends Command
+final case class LogFermentingTempFinalGravity(fermentingTemp: Int, finalGravity: Double) extends Command
 
 final case class Condition(recipe: Recipe) extends Command
 

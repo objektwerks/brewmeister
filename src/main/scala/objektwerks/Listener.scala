@@ -24,8 +24,8 @@ final class Listener:
   def finalGravity: Double =
     var finalGravity = 0.0
     events.foreach: event =>
-      if event.isInstanceOf[FinalGravityLogged] then
-        finalGravity = event.asInstanceOf[FinalGravityLogged].finalGravity.formatGravity
+      if event.isInstanceOf[FermentingTempFinalGravityLogged] then
+        finalGravity = event.asInstanceOf[FermentingTempFinalGravityLogged].finalGravity.formatGravity
     finalGravity
 
   def batch: Batch =
@@ -63,7 +63,8 @@ final class Listener:
           batch = batch.copy(originalGravity = originalGravity)
         case Fermented(log) =>
           batch = batch.copy(log = batch.log ++ log)
-        case FinalGravityLogged(finalGravity) =>
+        case FermentingTempFinalGravityLogged(fermentingTemp, finalGravity) =>
+          batch = batch.copy(fermentingTemp = fermentingTemp)
           batch = batch.copy(finalGravity = finalGravity)
         case Conditioned(log) =>
           batch = batch.copy(log = batch.log ++ log)

@@ -13,6 +13,7 @@ object Batch:
           boilingTemp = 150,
           coolingTemp = 72,
           originalGravity = 1.060,
+          fermentingTemp = 72,
           finalGravity = 1.012,
           srmColor = 9,
           ibuBitterness = 68,
@@ -73,7 +74,8 @@ final case class Batch(created: String = now(),
                        boilingTemp: Int = 0,
                        coolingTemp: Int = 0,
                        originalGravity: Double = 0.0,
-                       finalGravity: Double = 0.0, // with fermenting temp
+                       fermentingTemp: Int = 0,
+                       finalGravity: Double = 0.0,
                        srmColor: Int = 0, // with conditioning temp
                        ibuBitterness: Int = 0,
                        alcoholByVolume: Double = 0.0,
