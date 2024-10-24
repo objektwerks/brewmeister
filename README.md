@@ -80,7 +80,7 @@ Flow
     16. Condition --> **Conditioner** -- Conditioned --> Listener
     17. LogConditioningTempSrmColor --> **Conditioner** -- ConditioningTempSrmColorLogged --> Listener
     18. Keg --> **Kegger** -- Kegged --> Listener
-    19. LogBrewhouseEfficiency --> **Kegger** -- BrewhouseEfficiencyLogged --> Listener
+    19. LogKeggingTempBrewhouseEfficiency --> **Kegger** -- KeggingTempBrewhouseEfficiencyLogged --> Listener
 3. Listener -- events -> Batch
 
 Model
