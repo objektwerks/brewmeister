@@ -5,6 +5,7 @@ Brewmeister
 Todo
 ----
 * Store Test
+* Add Taste Profile to Batch
 * App
 
 Process
