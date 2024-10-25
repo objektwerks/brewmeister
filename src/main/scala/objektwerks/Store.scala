@@ -12,7 +12,8 @@ final class Store(storePathRecipes: Path,
     if !os.exists(storePathRecipes) then os.makeDir(storePathRecipes)
     if !os.exists(storePathBatches) then os.makeDir(storePathBatches)
 
-  def listRecipes: IndexedSeq[Path] = os.list(storePathRecipes)
+  def listRecipes: IndexedSeq[Path] =
+    os.list(storePathRecipes)
 
   def readRecipe(path: Path): Recipe =
     val recipeAsJson = os.read(path)
@@ -22,7 +23,8 @@ final class Store(storePathRecipes: Path,
     val recipeAsJson = write(recipe)
     os.write(path, recipeAsJson)
 
-  def listBatches: IndexedSeq[Path] = os.list(storePathBatches)
+  def listBatches: IndexedSeq[Path] =
+    os.list(storePathBatches)
 
   def readBatch(path: Path): Batch =
     val batchAsJson = os.read(path)
