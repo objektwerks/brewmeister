@@ -14,6 +14,6 @@ final class Store(storePathRecipes: Path,
 
   def addRecipe(recipe: Recipe): Unit = ???
 
-  def listBatches: List[Batch] = ???
+  def listBatches: IndexedSeq[Path] = os.list(storePathBatches)
 
   def addBatch(batch: Batch): Unit = ???
