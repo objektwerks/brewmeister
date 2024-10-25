@@ -4,16 +4,16 @@ import os.Path
 
 import upickle.default.{read, write}
 
-final class Store(storePathRecipes: Path,
-                  storePathBatches: Path):
+final class Store(recipesPath: Path,
+                  batchesPath: Path):
   validatePaths
 
   private def validatePaths: Unit =
-    if !os.exists(storePathRecipes) then os.makeDir(storePathRecipes)
-    if !os.exists(storePathBatches) then os.makeDir(storePathBatches)
+    if !os.exists(recipesPath) then os.makeDir(recipesPath)
+    if !os.exists(batchesPath) then os.makeDir(batchesPath)
 
   def listRecipes: IndexedSeq[Path] =
-    os.list(storePathRecipes)
+    os.list(recipesPath)
 
   def readRecipe(path: Path): Recipe =
     val recipeAsJson = os.read(path)
@@ -24,7 +24,7 @@ final class Store(storePathRecipes: Path,
     os.write(path, recipeAsJson)
 
   def listBatches: IndexedSeq[Path] =
-    os.list(storePathBatches)
+    os.list(batchesPath)
 
   def readBatch(path: Path): Batch =
     val batchAsJson = os.read(path)
