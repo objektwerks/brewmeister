@@ -32,4 +32,4 @@ final class Store(recipesPath: Path,
 
   def writeBatch(path: Path, batch: Batch): Unit =
     val batchAsJson = write(batch)
-    os.write(path, batchAsJson)
+    os.write.over(path, batchAsJson)
