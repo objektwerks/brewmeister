@@ -9,8 +9,8 @@ final class Store(recipesPath: Path,
   validatePaths
 
   private def validatePaths: Unit =
-    if !os.exists(recipesPath) then os.makeDir(recipesPath)
-    if !os.exists(batchesPath) then os.makeDir(batchesPath)
+    os.makeDir.all(recipesPath)
+    os.makeDir.all(batchesPath)
 
   def listRecipes: IndexedSeq[Path] =
     os.list(recipesPath)
