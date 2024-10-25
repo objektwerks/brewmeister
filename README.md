@@ -10,7 +10,7 @@ Todo
 
 Process
 -------
->Steps used in ***all grain*** brewing. ***Extract*** brewing will exclude steps 3 - 7.
+>Steps used in ***all grain*** brewing. ***Extract*** brewing excludes steps 3 - 7.
 1. **Sanitizing** - Santize all brewing tools and containers.
     1. input: dirty brewing implements
     2. output: clean brewing implements
