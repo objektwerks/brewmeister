@@ -21,7 +21,7 @@ final class Store(recipesPath: Path,
 
   def writeRecipe(path: Path, recipe: Recipe): Unit =
     val recipeAsJson = write(recipe)
-    os.write(path, recipeAsJson)
+    os.write.over(path, recipeAsJson)
 
   def listBatches: IndexedSeq[Path] =
     os.list(batchesPath)
