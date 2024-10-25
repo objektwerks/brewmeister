@@ -6,3 +6,5 @@ final class Store(storePath: String):
   def listRecipes: List[Recipe] = ???
 
   def addRecipe(recipe: Recipe) = ???
+
+  def listBatches: List[Batch] = ???
