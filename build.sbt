@@ -11,7 +11,7 @@ libraryDependencies ++= {
     "com.softwaremill.ox" %% "core" % "0.5.2",
     "com.lihaoyi" %% "os-lib" % "0.11.3",
     "com.lihaoyi" %% "upickle" % "4.0.2",
-    "com.outr" %% "scribe" % "3.15.1",
+    "com.outr" %% "scribe" % "3.15.2",
     "org.scalatest" %% "scalatest" % "3.2.19" % Test
   )
 }
