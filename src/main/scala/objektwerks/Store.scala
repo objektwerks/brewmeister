@@ -10,7 +10,7 @@ final class Store(storePathRecipes: Path,
     if !os.exists(storePathRecipes) then os.makeDir(storePathRecipes)
     if !os.exists(storePathBatches) then os.makeDir(storePathBatches)
 
-  def listRecipes: List[Recipe] = ???
+  def listRecipes: IndexedSeq[Path] = os.list(storePathRecipes)
 
   def addRecipe(recipe: Recipe): Unit = ???
 
