@@ -14,7 +14,7 @@ final class Store(storePathRecipes: Path,
 
   def readRecipe(path: Path): Recipe = ???
 
-  def addRecipe(recipe: Recipe): Unit = ???
+  def writeRecipe(recipe: Recipe): Unit = ???
 
   def listBatches: IndexedSeq[Path] = os.list(storePathBatches)
 
