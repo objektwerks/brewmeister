@@ -1,7 +1,9 @@
 package objektwerks
 
-final class Store(storePath: String):
-  println(storePath)
+import os.*
+
+final class Store(storePath: Path):
+  if !os.exists(storePath) then os.makeDir(storePath)
 
   def listRecipes: List[Recipe] = ???
 
