@@ -1,6 +1,8 @@
 package objektwerks
 
-import os.*
+import os.Path
+
+import upickle.default.{read}
 
 final class Store(storePathRecipes: Path,
                   storePathBatches: Path):
@@ -12,7 +14,9 @@ final class Store(storePathRecipes: Path,
 
   def listRecipes: IndexedSeq[Path] = os.list(storePathRecipes)
 
-  def readRecipe(path: Path): Recipe = ???
+  def readRecipe(path: Path): Recipe =
+    val recipeAsJson = os.read(path)
+    read[Recipe](recipeAsJson)
 
   def writeRecipe(recipe: Recipe): Unit = ???
 
