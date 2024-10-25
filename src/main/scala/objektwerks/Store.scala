@@ -2,8 +2,13 @@ package objektwerks
 
 import os.*
 
-final class Store(storePath: Path):
-  if !os.exists(storePath) then os.makeDir(storePath)
+final class Store(storePathRecipes: Path,
+                  storePathBatches: Path):
+  validatePaths
+
+  private def validatePaths: Unit =
+    if !os.exists(storePathRecipes) then os.makeDir(storePathRecipes)
+    if !os.exists(storePathBatches) then os.makeDir(storePathBatches)
 
   def listRecipes: List[Recipe] = ???
 
