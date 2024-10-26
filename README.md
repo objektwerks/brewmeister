@@ -163,7 +163,7 @@ Metrics
 
 Review
 ------
->**Batch** contains the folloiwng review properties:
+>**Batch** contains the folloiwng ***review*** properties:
 1. Appearance
 2. Aroma
 3. Taste
