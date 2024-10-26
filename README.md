@@ -162,6 +162,13 @@ Metrics
     5. Range: 60.0 - 100.0 %
     6. Ideal: 72.0 - 80.0 %
 
+Review
+------
+>**Batch** contains the folloiwng review properties:
+1. Appearance
+2. Aroma
+3. Taste
+
 Assembly
 --------
 >To build for a "mac", "m1', "win" or "linux" os target:
