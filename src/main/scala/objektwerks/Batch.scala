@@ -87,4 +87,5 @@ final case class Batch(created: String = now(),
                        calories: Int = 0,
                        keggingTemp: Int = 0,
                        brewhouseEfficiency: Int = 0,
+                       appearance: Int = 1,
                        log: List[String] = List.empty[String]) derives JsonSupport
