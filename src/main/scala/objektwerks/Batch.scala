@@ -6,7 +6,8 @@ import upickle.default.{ReadWriter => JsonSupport}
 
 object Batch:
   def default: Batch =
-    Batch(style = "American IPA",
+    Batch(name = "Objektwerks IPA",
+          style = "American IPA",
           volume = Volume(5.0, UoM.gl),
           mashingTemp = 150,
           pH = 5.6,
@@ -69,6 +70,7 @@ object Batch:
     ( (actualFermentableExtract / potentialFermentableExtract) * 100 ).toInt
 
 final case class Batch(created: String = now(),
+                       name: String = "",
                        style: String = "",
                        volume: Volume = Volume(0.0, UoM.gl),
                        mashingTemp: Int = 0,
