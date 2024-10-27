@@ -16,7 +16,7 @@ final class StoreTest extends AnyFunSuite with Matchers:
     val store = Store(pathRecipes, pathBatches)
 
     val recipe = Recipe.default
-    store.writeRecipe(pathRecipes, recipe)
+    store.writeRecipe(pathRecipes / s"${recipe.created}.json", recipe)
     
     val batch = Batch.default
-    store.writeBatch(pathBatches, batch)
+    store.writeBatch(pathBatches / s"${batch.created}.json", batch)
