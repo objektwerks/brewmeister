@@ -1,6 +1,6 @@
 val jarVersion = "0.33"
 
-name := "ciphers"
+name := "brewmeister"
 organization := "objektwerks"
 version := "0.33-SNAPSHOT"
 scalaVersion := "3.6.1"
