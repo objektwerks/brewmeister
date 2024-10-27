@@ -4,32 +4,31 @@ import os.Path
 
 import upickle.default.{read => readJson, write => writeJson}
 
-final class Store(recipesPath: Path,
-                  batchesPath: Path):
-  validatePaths
+final class Store():
+  os.makeDir.all( os.home / ".brewmeister" / "store" / "recipes" )
+  os.makeDir.all( os.home / ".brewmeister" / "store" / "batches" )
 
-  private def validatePaths: Unit =
-    os.makeDir.all(recipesPath)
-    os.makeDir.all(batchesPath)
+  val recipesPath = os.home / ".brewmeister" / "store" / "recipes"
+  val batchesPath = os.home / ".brewmeister" / "store" / "batches"
 
   def listRecipes: IndexedSeq[Path] =
     os.list(recipesPath)
 
-  def readRecipe(path: Path): Recipe =
-    val recipeAsJson = os.read(path)
+  def readRecipe(name: String): Recipe =
+    val recipeAsJson = os.read(recipesPath / s"$name.json")
     readJson[Recipe](recipeAsJson)
 
-  def writeRecipe(path: Path, recipe: Recipe): Unit =
+  def writeRecipe(recipe: Recipe): Unit =
     val recipeAsJson = writeJson(recipe)
-    os.write.over(path, recipeAsJson)
+    os.write.over(recipesPath / s"${recipe.created}.json", recipeAsJson)
 
   def listBatches: IndexedSeq[Path] =
     os.list(batchesPath)
 
-  def readBatch(path: Path): Batch =
-    val batchAsJson = os.read(path)
+  def readBatch(name: String): Batch =
+    val batchAsJson = os.read(batchesPath / s"$name.json")
     readJson[Batch](batchAsJson)
 
-  def writeBatch(path: Path, batch: Batch): Unit =
+  def writeBatch(batch: Batch): Unit =
     val batchAsJson = writeJson(batch)
-    os.write.over(path, batchAsJson)
+    os.write.over(batchesPath / s"${batch.created}.json", batchAsJson)
