@@ -4,7 +4,6 @@ Brewmeister
 
 Todo
 ----
-* Store Test
 * App
 
 Process
