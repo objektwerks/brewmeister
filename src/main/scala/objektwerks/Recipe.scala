@@ -4,7 +4,8 @@ import upickle.default.{ReadWriter => JsonSupport}
 
 object Recipe:
   def default: Recipe =
-    Recipe(style = "American IPA",
+    Recipe(name = "Objektwerks IPA",
+           style = "American IPA",
            water = "spring",
            batchVolume = Volume(5.0, UoM.gl),
            packageVolume = Volume(12.0, UoM.oz),
@@ -33,6 +34,7 @@ object Recipe:
            yeasts = List( Yeast("Wyeast American Ale 1056", 5.0, UoM.oz, 0) ) )
 
 final case class Recipe(created: String = now(),
+                        name: String,
                         style: String,
                         water: String,
                         batchVolume: Volume,
