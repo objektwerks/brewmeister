@@ -2,6 +2,9 @@ package objektwerks
 
 import org.scalatest.funsuite.AnyFunSuite
 
+import scala.annotation.nowarn
+
+@nowarn
 final class StoreTest extends AnyFunSuite:
   test("store"):
     val store = Store()

@@ -17,7 +17,7 @@ libraryDependencies ++= {
   )
 }
 scalacOptions ++= Seq(
-  // "-Wall" Breaking ScalaTest asserts!
+  "-Wall"
 )
 outputStrategy := Some(StdoutOutput)
 
