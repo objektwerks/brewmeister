@@ -26,7 +26,7 @@ extension (double: Double)
   def formatGravity: Double = f"$double%1.3f".toDouble
 
 extension (now: String)
-  def localDateTime: LocalDateTime = if now.nonEmpty then LocalDateTime.parse(now) else LocalDateTime.now
+  def localDateTime: LocalDateTime = if now.nonEmpty then LocalDateTime.parse(now, formatter) else LocalDateTime.now
 
 def now(): String = formatter.format(LocalDateTime.now)
 
