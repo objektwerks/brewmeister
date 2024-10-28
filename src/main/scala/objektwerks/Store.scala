@@ -5,11 +5,15 @@ import os.Path
 import upickle.default.{read => readJson, write => writeJson}
 
 final class Store():
-  os.makeDir.all( os.home / ".brewmeister" / "store" / "recipes" )
-  os.makeDir.all( os.home / ".brewmeister" / "store" / "batches" )
+  os.makeDir.all( buildRecipesPath )
+  os.makeDir.all( buildBatchesPath )
 
-  val recipesPath = os.home / ".brewmeister" / "store" / "recipes"
-  val batchesPath = os.home / ".brewmeister" / "store" / "batches"
+  val recipesPath = buildRecipesPath
+  val batchesPath = buildBatchesPath
+
+  def buildRecipesPath: Path = os.home / ".brewmeister" / "store" / "recipes"
+
+  def buildBatchesPath: Path = os.home / ".brewmeister" / "store" / "batches"
 
   def listRecipes: IndexedSeq[Path] =
     os.list(recipesPath)
