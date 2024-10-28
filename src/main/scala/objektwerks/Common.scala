@@ -1,7 +1,6 @@
 package objektwerks
 
 import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 import upickle.default.{ReadWriter => JsonSupport}
 
@@ -28,4 +27,4 @@ extension (double: Double)
 extension (now: String)
   def localDateTime: LocalDateTime = if now.nonEmpty then LocalDateTime.parse(now) else LocalDateTime.now
 
-def now(): String = LocalDateTime.now.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+def now(): String = LocalDateTime.now.toString
