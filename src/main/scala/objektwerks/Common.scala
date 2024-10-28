@@ -28,6 +28,6 @@ extension (double: Double)
 extension (now: String)
   def localDateTime: LocalDateTime = if now.nonEmpty then LocalDateTime.parse(now, formatter) else LocalDateTime.now
 
-def now(): String = formatter.format(LocalDateTime.now)
+def now(): String = LocalDateTime.now.format(formatter)
 
 private val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
