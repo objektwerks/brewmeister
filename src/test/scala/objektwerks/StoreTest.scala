@@ -11,10 +11,10 @@ final class StoreTest extends AnyFunSuite:
 
     val recipe = Recipe.default
     store.writeRecipe(recipe)
-    assert( store.readRecipe(recipe.created) == recipe )
+    assert( store.readRecipe(recipe.name) == recipe )
     assert( store.listRecipes.length >= 1 )
 
     val batch = Batch.default
     store.writeBatch(batch)
-    assert( store.readBatch(batch.created) == batch )
+    assert( store.readBatch(batch.recipe, batch.created) == batch )
     assert( store.listBatches.length >= 1 )

@@ -16,7 +16,7 @@ final class Store():
 
   def writeRecipe(recipe: Recipe): Unit =
     val recipeAsJson = writeJson(recipe)
-    os.write.over(recipesPath / s"${recipe.created}.json", recipeAsJson)
+    os.write.over(recipesPath / s"${recipe.name}.json", recipeAsJson)
 
   def readRecipe(name: String): Recipe =
     val recipeAsJson = os.read(recipesPath / s"$name.json")
@@ -27,8 +27,8 @@ final class Store():
 
   def writeBatch(batch: Batch): Unit =
     val batchAsJson = writeJson(batch)
-    os.write.over(batchesPath / s"${batch.created}.json", batchAsJson)
+    os.write.over(batchesPath / s"${batch.recipe}.${batch.created}.json", batchAsJson)
 
-  def readBatch(name: String): Batch =
-    val batchAsJson = os.read(batchesPath / s"$name.json")
+  def readBatch(recipe: String, created: String): Batch =
+    val batchAsJson = os.read(batchesPath / s"$recipe.$created.json")
     readJson[Batch](batchAsJson)
