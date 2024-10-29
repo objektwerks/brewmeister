@@ -16,5 +16,5 @@ final class StoreTest extends AnyFunSuite:
 
     val batch = Batch.default
     store.writeBatch(batch)
-    assert( store.readBatch(batch.recipe, batch.created) == batch )
+    assert( store.readBatch(batch.recipe, batch.started) == batch )
     assert( store.listBatches.length >= 1 )

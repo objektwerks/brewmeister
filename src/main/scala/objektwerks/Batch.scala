@@ -29,7 +29,8 @@ object Batch:
           aroma = 3,
           taste = 3,
           log = List("Completed brewing process."),
-          created = now())
+          started = now(),
+          completed = now())
 
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
     val sum = grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.volume) }.sum
@@ -97,4 +98,5 @@ final case class Batch(recipe: String = "",
                        aroma: Int = 1,
                        taste: Int = 1,
                        log: List[String] = List.empty[String],
-                       created: String = now()) derives JsonSupport
+                       started: String = now(),
+                       completed: String = now()) derives JsonSupport
