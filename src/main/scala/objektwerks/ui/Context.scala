@@ -9,10 +9,9 @@ final class Context(config: Config):
   val windowWidth = config.getDouble("window.width")
   val windowHeight = config.getDouble("window.height")
 
-  def logoImage = loadImageView("/logo.png")
-  def addImage = loadImageView("/add.png")
-
-  def logo = new Image(Image.getClass.getResourceAsStream("/logo.png"))
+  def logoImageView = loadImageView("/logo.png")
+  def addImageView = loadImageView("/add.png")
+  def logoImage = new Image(Image.getClass.getResourceAsStream("/logo.png"))
 
   private def loadImageView(path: String): ImageView = new ImageView:
     image = new Image(Image.getClass.getResourceAsStream(path))
