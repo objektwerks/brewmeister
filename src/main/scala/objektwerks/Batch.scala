@@ -28,9 +28,7 @@ object Batch:
           appearance = 3,
           aroma = 3,
           taste = 3,
-          log = List("Completed brewing process."),
-          started = now(),
-          completed = "")
+          log = List("Completed brewing process."))
 
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
     val sum = grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.volume) }.sum
@@ -103,6 +101,7 @@ final case class Batch(recipe: String = "",
                        process: Process = Process(),
                        completed: String = "") derives JsonSupport
 
+@upickle.implicits.serializeDefaults(true)
 final case class Process(steps: List[Step] = List.empty[Step]) derives JsonSupport
 
 @upickle.implicits.serializeDefaults(true)
