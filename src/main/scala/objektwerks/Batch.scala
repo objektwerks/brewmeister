@@ -69,8 +69,7 @@ object Batch:
                           potentialFermentableExtract: Double): Int =
     ( (actualFermentableExtract / potentialFermentableExtract) * 100 ).toInt
 
-final case class Batch(created: String = now(),
-                       recipe: String = "",
+final case class Batch(recipe: String = "",
                        style: String = "",
                        volume: Volume = Volume(0.0, UoM.gl),
                        mashingTemp: Int = 0,
@@ -92,4 +91,5 @@ final case class Batch(created: String = now(),
                        appearance: Int = 3,
                        aroma: Int = 3,
                        taste: Int = 3,
-                       log: List[String] = List.empty[String]) derives JsonSupport
+                       log: List[String] = List.empty[String],
+                       created: String = now()) derives JsonSupport
