@@ -1,9 +1,7 @@
-package objektwerks
+package objektwerks.ui
 
 import scalafx.application.JFXApp3
 import scalafx.scene.image.Image
-
-import ui.View
 
 object App extends JFXApp3:
   override def start(): Unit =
