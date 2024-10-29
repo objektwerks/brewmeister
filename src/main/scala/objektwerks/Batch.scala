@@ -100,9 +100,10 @@ final case class Batch(recipe: String = "",
                        taste: Int = 1,
                        log: List[String] = List.empty[String],
                        started: String = now(),
+                       process: Process = Process(),
                        completed: String = "") derives JsonSupport
 
-final case class Process(steps: List[Step]) derives JsonSupport
+final case class Process(steps: List[Step] = List.empty[Step]) derives JsonSupport
 
 @upickle.implicits.serializeDefaults(true)
 final case class Step(started: String = now(),
