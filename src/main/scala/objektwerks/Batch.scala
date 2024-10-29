@@ -24,7 +24,12 @@ object Batch:
           alcoholByWeight = 6.0,
           calories = 190,
           keggingTemp = 43,
-          brewhouseEfficiency = 71)
+          brewhouseEfficiency = 71,
+          appearance = 3,
+          aroma = 3,
+          taste = 3,
+          log = List.empty[String],
+          created = now())
 
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
     val sum = grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.volume) }.sum
