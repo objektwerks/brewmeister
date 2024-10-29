@@ -4,6 +4,7 @@ Brewmeister
 
 Todo
 ----
+* Emit *ing brewer events?
 * How to capture the state of batch process steps?
 * App
 
