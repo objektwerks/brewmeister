@@ -34,6 +34,7 @@ object Recipe:
            yeasts = List( Yeast("Wyeast American Ale 1056", 5.0, UoM.oz, 0) ),
            created = now())
 
+@upickle.implicits.serializeDefaults(true)
 final case class Recipe(name: String = "",
                         style: String = "",
                         water: String = "",

@@ -75,6 +75,7 @@ object Batch:
                           potentialFermentableExtract: Double): Int =
     ( (actualFermentableExtract / potentialFermentableExtract) * 100 ).toInt
 
+@upickle.implicits.serializeDefaults(true)
 final case class Batch(recipe: String = "",
                        style: String = "",
                        volume: Volume = Volume(0.0, UoM.gl),
@@ -97,6 +98,6 @@ final case class Batch(recipe: String = "",
                        appearance: Int = 1,
                        aroma: Int = 1,
                        taste: Int = 1,
-                       log: List[String] = List.empty[String],
+                       log: List[String] = List(""),
                        started: String = now(),
                        completed: String = now()) derives JsonSupport
