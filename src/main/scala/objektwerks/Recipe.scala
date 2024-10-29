@@ -33,8 +33,7 @@ object Recipe:
            adjuncts = List.empty[Adjunct],
            yeasts = List( Yeast("Wyeast American Ale 1056", 5.0, UoM.oz, 0) ) )
 
-final case class Recipe(created: String = now(),
-                        name: String = "",
+final case class Recipe(name: String = "",
                         style: String = "",
                         water: String = "",
                         batchVolume: Volume = Volume(0.0, UoM.gl),
@@ -61,7 +60,8 @@ final case class Recipe(created: String = now(),
                         grains: List[Grain] = List.empty[Grain],
                         hops: List[Hop] = List.empty[Hop],
                         adjuncts: List[Adjunct] = List.empty[Adjunct],
-                        yeasts: List[Yeast] = List.empty[Yeast]) derives JsonSupport
+                        yeasts: List[Yeast] = List.empty[Yeast],
+                        created: String = now()) derives JsonSupport
 
 enum MixinStep derives JsonSupport:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
