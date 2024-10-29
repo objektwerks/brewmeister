@@ -103,3 +103,5 @@ final case class Batch(recipe: String = "",
                        completed: String = "") derives JsonSupport
 
 final case class Process() derives JsonSupport
+
+final case class Step() derives JsonSupport
