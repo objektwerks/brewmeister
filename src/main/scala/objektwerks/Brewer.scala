@@ -282,13 +282,13 @@ final class Kegger(listener: ActorRef[Listener]):
           listener.ask( _.finalGravity )
         ),
         List(
-          s"Conditioned within this temp range / duration: ${keg.recipe.packagingTempDuration}",
+          s"Conditioned within this temp range / duration: ${keg.recipe.keggingTempDuration}",
           s"Hop bitterness should be within this range: ${keg.recipe.ibuBitterness}",
           s"Alcohol by volume should be within this range: ${keg.recipe.alcoholByVolume}",
           s"Alcohol by weight should be within this range: ${keg.recipe.alcoholByWeight}",
           s"Calories should be within this range: ${keg.recipe.calories}",
           s"Should have a brew efficiency within this range: ${keg.recipe.brewhouseEfficiency}",
-          s"Should refrigerate within this temp range: ${keg.recipe.refrigerateTempRange}",
+          s"Should refrigerate within this temp range: ${keg.recipe.refrigeratingTempRange}",
         ),
       )
     )
