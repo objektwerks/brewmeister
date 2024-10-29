@@ -6,8 +6,7 @@ import scalafx.application.JFXApp3
 import scalafx.scene.image.Image
 
 object App extends JFXApp3:
-  val config = ConfigFactory.load("app.conf")
-  val context = Context(config)
+  val context = Context( ConfigFactory.load("app.conf") )
 
   override def start(): Unit =
     stage = new JFXApp3.PrimaryStage:
