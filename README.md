@@ -4,6 +4,7 @@ Brewmeister
 
 Todo
 ----
+* How to capture the state of batch process steps?
 * App
 
 Process
