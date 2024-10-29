@@ -98,6 +98,6 @@ final case class Batch(recipe: String = "",
                        appearance: Int = 1,
                        aroma: Int = 1,
                        taste: Int = 1,
-                       log: List[String] = List(""),
+                       log: List[String] = List.empty[String],
                        started: String = now(),
                        completed: String = "") derives JsonSupport
