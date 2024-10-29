@@ -10,9 +10,8 @@ object App extends JFXApp3:
   val context = Context(config)
 
   override def start(): Unit =
-    val view = View(context)
     stage = new JFXApp3.PrimaryStage:
-      scene = view.scene
+      scene = View(context).scene
       title = context.windowTitle
       minWidth = context.windowWidth
       minHeight = context.windowHeight
