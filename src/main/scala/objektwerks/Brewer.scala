@@ -271,7 +271,7 @@ final class Kegger(listener: ActorRef[Listener]):
           listener.ask( _.finalGravity )
         ),
         alcoholByWeight = Batch.alcoholByWeight(
-          Batch.alcoholByVolume(
+          Batch.alcoholByWeight(
             listener.ask( _.originalGravity ),
             listener.ask( _.finalGravity ) ),
             listener.ask( _.finalGravity )
