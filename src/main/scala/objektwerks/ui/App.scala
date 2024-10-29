@@ -10,10 +10,11 @@ object App extends JFXApp3:
   val context = Context(config)
 
   override def start(): Unit =
+    val view = View(context)
     stage = new JFXApp3.PrimaryStage:
-      scene = View.scene
-      title = "Brewmeister"
-      minWidth = View.width
-      minHeight = View.height
-      icons.add( new Image( Image.getClass.getResourceAsStream("/beer.png") ) )
+      scene = view.scene
+      title = context.windowTitle
+      minWidth = context.windowWidth
+      minHeight = context.windowHeight
+      icons.add(context.logo)
     stage.show()
