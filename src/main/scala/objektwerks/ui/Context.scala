@@ -11,7 +11,6 @@ final class Context(config: Config):
 
   def logoImage = loadImageView("/logo.png")
   def addImage = loadImageView("/add.png")
-  def editImage = loadImageView("/edit.png")
 
   def logo = new Image(Image.getClass.getResourceAsStream("/logo.png"))
 
