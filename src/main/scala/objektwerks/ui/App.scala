@@ -16,5 +16,5 @@ object App extends JFXApp3:
       title = context.windowTitle
       minWidth = context.windowWidth
       minHeight = context.windowHeight
-      icons.add(context.logo)
+      icons.add(context.logoImage)
     stage.show()
