@@ -108,10 +108,13 @@ final case class Batch(recipe: String = "",
 final case class Process(steps: List[Step] = Step.defaultSteps) derives JsonSupport
 
 object Step:
-  val defaultSteps = List( Step(1), Step(2), Step(3), Step(4), Step(5), Step(6), Step(7),
-                           Step(8), Step(9), Step(10), Step(11), Step(12), Step(13) )
+  val defaultSteps = List( Step(1, "Sanitizing"), Step(2, "Preparing"), Step(3, "Malting"), Step(4, "Milling"),
+                           Step(5, "Mashing"), Step(6, "Lautering"), Step(7, "Sparging"), Step(8, "Boiling"),
+                           Step(9, "Cooling"), Step(10, "Whirlpooling"), Step(11, "Fermenting"), Step(12, "Conditioning"),
+                           Step(13, "Kegging") )
 
 @upickle.implicits.serializeDefaults(true)
 final case class Step(number: Int,
+                      name: String,
                       started: String = "",
                       completed: String = "") derives JsonSupport
