@@ -28,7 +28,8 @@ object Batch:
           appearance = 3,
           aroma = 3,
           taste = 3,
-          log = List("Completed brewing process."))
+          log = List("Completed brewing process."),
+          completed = now())
 
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
     val sum = grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.volume) }.sum
