@@ -284,10 +284,16 @@ final class Whirlpooler(listener: ActorRef[Listener]):
 final class Fermenter(listener: ActorRef[Listener]):
   def ferment(ferment: Ferment): Unit =
     listener.tell( _.onEvent:
+      Fermenting(
+        List( "Fermenting wort." )
+      )
+    )
+    listener.tell( _.onEvent:
       Fermented(
         List(
           s"Fermented within this temp range / duration: ${ferment.recipe.fermentatingTempDuration}",
-          s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
+          s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}",
+          "Fermented wort."
         )
       )
     )
