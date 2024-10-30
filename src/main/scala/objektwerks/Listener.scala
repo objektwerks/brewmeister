@@ -82,6 +82,8 @@ final class Listener:
           batch = batch.copy(boilingTemp = boilingTemp,
                              coolingTemp = coolingTemp,
                              originalGravity = originalGravity)
+        case Fermenting(log) =>
+          batch = batch.copy(log = batch.log ++ log)
         case Fermented(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case FermentingTempFinalGravityLogged(fermentingTemp,
