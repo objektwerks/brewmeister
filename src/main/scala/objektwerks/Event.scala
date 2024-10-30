@@ -23,6 +23,7 @@ final case class MashingTempPhLogged(mashingTemp: Int,
 final case class Lautering(log: List[String]) extends Event
 final case class Lautered(log: List[String]) extends Event
 
+final case class Sparging(log: List[String]) extends Event
 final case class Sparged(log: List[String]) extends Event
 
 final case class MashEfficiencyLogged(mashEfficiency: Int) extends Event
