@@ -90,6 +90,8 @@ final class Listener:
                                               finalGravity) =>
           batch = batch.copy(fermentingTemp = fermentingTemp,
                              finalGravity = finalGravity)
+        case Conditioning(log) =>
+          batch = batch.copy(log = batch.log ++ log)
         case Conditioned(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case ConditioningTempSrmColorLogged(conditioningTemp,
