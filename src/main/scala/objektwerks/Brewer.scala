@@ -190,6 +190,11 @@ final class Masher(listener: ActorRef[Listener]):
 final class Lauterer(listener: ActorRef[Listener]):
   def lauter(lauter: Lauter): Unit =
     listener.tell( _.onEvent:
+      Lautering(
+        List( "Lautering wort." )
+      )
+    )
+    listener.tell( _.onEvent:
       Lautered(
         List( "Lautered wort." )
       )
