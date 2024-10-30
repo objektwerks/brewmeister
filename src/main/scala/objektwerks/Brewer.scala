@@ -334,6 +334,11 @@ final class Conditioner(listener: ActorRef[Listener]):
 final class Kegger(listener: ActorRef[Listener]):
   def keg(keg: Keg): Unit =
     listener.tell( _.onEvent:
+      Kegging(
+        List( "Kegging wort." )
+      )
+    )
+    listener.tell( _.onEvent:
       Kegged(
         ibuBitterness = Batch.ibuBitterness(keg.recipe.hops),
         alcoholByVolume = Batch.alcoholByVolume(
@@ -357,7 +362,8 @@ final class Kegger(listener: ActorRef[Listener]):
           s"Alcohol by volume should be within this range: ${keg.recipe.alcoholByVolume}",
           s"Alcohol by weight should be within this range: ${keg.recipe.alcoholByWeight}",
           s"Calories should be within this range: ${keg.recipe.calories}",
-          s"Should have a brew efficiency within this range: ${keg.recipe.brewhouseEfficiency}"
+          s"Should have a brew efficiency within this range: ${keg.recipe.brewhouseEfficiency}",
+          "Kegged wort."
         ),
       )
     )
