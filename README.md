@@ -4,7 +4,6 @@ Brewmeister
 
 Todo
 ----
-* Emit *ing brewer events?
 * App
 
 Process
