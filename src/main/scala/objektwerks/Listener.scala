@@ -36,6 +36,8 @@ final class Listener:
           batch = batch.copy(log = batch.log ++ log)
         case Sanitized(log) =>
           batch = batch.copy(log = batch.log ++ log)
+        case Preparing(log) =>
+          batch = batch.copy(log = batch.log ++ log)
         case Prepared(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case Malted(log) =>
