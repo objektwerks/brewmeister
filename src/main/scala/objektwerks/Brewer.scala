@@ -165,6 +165,11 @@ final class Miller(listener: ActorRef[Listener]):
 final class Masher(listener: ActorRef[Listener]):
   def mash(mash: Mash): Unit =
     listener.tell( _.onEvent:
+      Mashing(
+        List( "Mashing grist into wort." )
+      )
+    )
+    listener.tell( _.onEvent:
       Mashed(
         List(
           s"Mashed grist into a wort within this temp range / duration: ${mash.recipe.mashingTempDuration}",
