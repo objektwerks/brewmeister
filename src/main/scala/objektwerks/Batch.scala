@@ -29,6 +29,8 @@ object Batch:
           aroma = 3,
           taste = 3,
           log = List("Completed brewing process."),
+          started = now(),
+          process = Process( List( Step(1) ) ),
           completed = now())
 
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
