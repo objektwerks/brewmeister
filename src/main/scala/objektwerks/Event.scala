@@ -28,6 +28,7 @@ final case class Sparged(log: List[String]) extends Event
 
 final case class MashEfficiencyLogged(mashEfficiency: Int) extends Event
 
+final case class Boiling(log: List[String]) extends Event
 final case class Boiled(log: List[String]) extends Event
 
 final case class Cooled(log: List[String]) extends Event
