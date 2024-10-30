@@ -243,8 +243,16 @@ final class Boiler(listener: ActorRef[Listener]):
 final class Cooler(listener: ActorRef[Listener]):
   def cool(cool: Cool): Unit =
     listener.tell( _.onEvent:
+      Cooling(
+        List( "Cooling wort." )
+      )
+    )
+    listener.tell( _.onEvent:
       Cooled(
-        List( s"Cooled the wort within this temp range: ${cool.recipe.coolingTempRange}" )
+        List(
+          s"Cooled the wort within this temp range: ${cool.recipe.coolingTempRange}",
+          "Cooled wort."
+        )
       )
     )
 
