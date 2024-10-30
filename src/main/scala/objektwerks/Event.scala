@@ -20,6 +20,7 @@ final case class Mashed(log: List[String]) extends Event
 final case class MashingTempPhLogged(mashingTemp: Int,
                                      pH: Double) extends Event
 
+final case class Lautering(log: List[String]) extends Event
 final case class Lautered(log: List[String]) extends Event
 
 final case class Sparged(log: List[String]) extends Event
