@@ -64,6 +64,8 @@ final class Listener:
           batch = batch.copy(log = batch.log ++ log)
         case MashEfficiencyLogged(mashEfficiency) =>
           batch = batch.copy(mashEfficiency = mashEfficiency)
+        case Boiling(log) =>
+          batch = batch.copy(log = batch.log ++ log)
         case Boiled(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case Cooled(log) =>
