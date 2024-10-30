@@ -259,10 +259,16 @@ final class Cooler(listener: ActorRef[Listener]):
 final class Whirlpooler(listener: ActorRef[Listener]):
   def whirlpool(whirlpool: Whirlpool): Unit =
     listener.tell( _.onEvent:
+      Whirlpooling(
+        List( "Whirlpooling wort." )
+      )
+    )
+    listener.tell( _.onEvent:
       Whirlpooled(
         List(
           s"Optionally added hops: ${whirlpool.recipe.hops}",
-          s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}"
+          s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}",
+          "Whirlpooled wort."
         )
       )
     )
