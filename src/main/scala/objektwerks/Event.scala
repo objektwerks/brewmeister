@@ -41,6 +41,7 @@ final case class BoilingCoolingTempOriginalGravityLogged(boilingTemp: Int,
                                                          coolingTemp: Int,
                                                          originalGravity: Double) extends Event
 
+final case class Fermenting(log: List[String]) extends Event
 final case class Fermented(log: List[String]) extends Event
 
 final case class FermentingTempFinalGravityLogged(fermentingTemp: Int,
