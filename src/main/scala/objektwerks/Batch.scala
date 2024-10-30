@@ -30,7 +30,13 @@ object Batch:
           taste = 3,
           log = List("Completed brewing process."),
           started = now(),
-          process = Process(),
+          process = Process(
+            List( Step(1, "Sanitizing", now(), now()), Step(2, "Preparing", now(), now()), Step(3, "Malting", now(), now()),
+                  Step(4, "Milling", now(), now()), Step(5, "Mashing", now(), now()), Step(6, "Lautering", now(), now()),
+                  Step(7, "Sparging", now(), now()), Step(8, "Boiling", now(), now()), Step(9, "Cooling", now(), now()),
+                  Step(10, "Whirlpooling", now(), now()), Step(11, "Fermenting", now(), now()), Step(12, "Conditioning", now(), now()),
+                  Step(13, "Kegging", now(), now()) )
+          ),
           completed = now())
 
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
