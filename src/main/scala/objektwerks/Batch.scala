@@ -111,4 +111,4 @@ final case class Process(steps: List[Step] = List.empty[Step]) derives JsonSuppo
 @upickle.implicits.serializeDefaults(true)
 final case class Step(number: Int = 1,
                       started: String = now(),
-                      completed: String = now()) derives JsonSupport
+                      completed: String = "") derives JsonSupport
