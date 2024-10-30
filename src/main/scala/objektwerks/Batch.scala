@@ -114,10 +114,11 @@ final case class Batch(recipe: String = "",
 final case class Process(steps: List[Step] = Step.default) derives JsonSupport
 
 object Step:
-  def default: List[Step] = List( Step(1, "Sanitizing"), Step(2, "Preparing"), Step(3, "Malting"), Step(4, "Milling"),
-                                  Step(5, "Mashing"), Step(6, "Lautering"), Step(7, "Sparging"), Step(8, "Boiling"),
-                                  Step(9, "Cooling"), Step(10, "Whirlpooling"), Step(11, "Fermenting"), Step(12, "Conditioning"),
-                                  Step(13, "Kegging") )
+  def default: List[Step] =
+    List( Step(1, "Sanitizing"), Step(2, "Preparing"), Step(3, "Malting"), Step(4, "Milling"),
+          Step(5, "Mashing"), Step(6, "Lautering"), Step(7, "Sparging"), Step(8, "Boiling"),
+          Step(9, "Cooling"), Step(10, "Whirlpooling"), Step(11, "Fermenting"), Step(12, "Conditioning"),
+          Step(13, "Kegging") )
 
 @upickle.implicits.serializeDefaults(true)
 final case class Step(number: Int,
