@@ -203,8 +203,16 @@ final class Lauterer(listener: ActorRef[Listener]):
 final class Sparger(listener: ActorRef[Listener]):
   def sparge(sparge: Sparge): Unit =
     listener.tell( _.onEvent:
+      Sparging(
+        List( "Sparging wort." )
+      )
+    )
+    listener.tell( _.onEvent:
       Sparged(
-        List( s"Should have a mash efficiency within this range: ${sparge.recipe.mashEfficiency}" )
+        List(
+          s"Should have a mash efficiency within this range: ${sparge.recipe.mashEfficiency}",
+          "Sparged wort."
+        )
       )
     )
   def logMashEfficiency(logMashEfficiency: LogMashEfficiency): Unit =
