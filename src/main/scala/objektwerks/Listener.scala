@@ -44,6 +44,8 @@ final class Listener:
           batch = batch.copy(log = batch.log ++ log)
         case Malted(log) =>
           batch = batch.copy(log = batch.log ++ log)
+        case Milling(log) =>
+          batch = batch.copy(log = batch.log ++ log)
         case Milled(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case Mashed(log) =>
