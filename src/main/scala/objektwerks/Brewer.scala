@@ -225,11 +225,17 @@ final class Sparger(listener: ActorRef[Listener]):
 final class Boiler(listener: ActorRef[Listener]):
   def boil(boil: Boil): Unit =
     listener.tell( _.onEvent:
+      Boiling(
+        List( "Boiling wort." )
+      )
+    )
+    listener.tell( _.onEvent:
       Boiled(
         List(
           s"Boiled wort within this temp range / duration: ${boil.recipe.boilingTempDuration}",
           s"Added hops: ${boil.recipe.hops}",
-          s"Optionally added adjuncts: ${boil.recipe.adjuncts}"
+          s"Optionally added adjuncts: ${boil.recipe.adjuncts}",
+          "Boiled wort."
         )
       )
     )
