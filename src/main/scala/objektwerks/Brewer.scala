@@ -308,12 +308,18 @@ final class Fermenter(listener: ActorRef[Listener]):
 final class Conditioner(listener: ActorRef[Listener]):
   def condition(condition: Condition): Unit =
     listener.tell( _.onEvent:
+      Conditioning(
+        List( "Conditioning wort." )
+      )
+    )
+    listener.tell( _.onEvent:
       Conditioned(
         List(
           s"Conditioned within this temp range / duration: ${condition.recipe.conditioningTempDuration}",
           s"Optionally added adjuncts: ${condition.recipe.adjuncts}",
           s"Optionally added hops: ${condition.recipe.hops}",
-          s"Should have an SRM color within this range: ${condition.recipe.srmColor}"
+          s"Should have an SRM color within this range: ${condition.recipe.srmColor}",
+          "Conditioned wort."
         )
       )
     )
