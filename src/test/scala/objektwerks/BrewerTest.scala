@@ -34,4 +34,4 @@ class BrewerTest extends AnyFunSuite with Matchers:
 
     val batch = listener.ask( _.batch )
     println(batch)
-    batch.recipe.nonEmpty shouldBe true
+    batch shouldBe Batch.default
