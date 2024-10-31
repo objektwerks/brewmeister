@@ -38,8 +38,8 @@ final case class Boiled(log: List[String], completed: String = now()) extends Ev
 final case class Cooling(log: List[String], started: String = now()) extends Event
 final case class Cooled(log: List[String], completed: String = now()) extends Event
 
-final case class Whirlpooling(log: List[String]) extends Event
-final case class Whirlpooled(log: List[String]) extends Event
+final case class Whirlpooling(log: List[String], started: String = now()) extends Event
+final case class Whirlpooled(log: List[String], completed: String = now()) extends Event
 
 final case class BoilingCoolingTempOriginalGravityLogged(boilingTemp: Int,
                                                          coolingTemp: Int,
