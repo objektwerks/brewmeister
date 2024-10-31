@@ -3,7 +3,7 @@ package objektwerks
 import ox.channels.{Actor, ActorRef}
 import ox.supervised
 
-final class Brewer(listener: ActorRef[Listener]):
+final class Brewer(listener: Listener):
   def brew(command: Command): Unit =
     command match
       case sanitize: Sanitize =>
@@ -102,28 +102,28 @@ final class Brewer(listener: ActorRef[Listener]):
             .create( Kegger(listener) )
             .ask( _.logKeggingTempBrewhouseEfficiency( logKeggingTempBrewhouseEfficiency ) )
 
-final class Sanitizer(listener: ActorRef[Listener]):
+final class Sanitizer(listener: Listener):
   def sanitize(sanitize: Sanitize): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Sanitizing(
         List( "Sanitizing brewing components." )
       )
     )
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Sanitized(
         List( "Sanitized brewing components." )
       )
     )
 
 
-final class Preparer(listener: ActorRef[Listener]):
+final class Preparer(listener: Listener):
   def prepare(prepare: Prepare): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Preparing(
         List( "Preparing recipe ingredients." )
       )
     )
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Prepared(
         List(
           "Preparing the following recipe ingredients:",
@@ -136,40 +136,40 @@ final class Preparer(listener: ActorRef[Listener]):
       )
     )
 
-final class Malter(listener: ActorRef[Listener]):
+final class Malter(listener: Listener):
   def malt(malt: Malt): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Malting(
         List( "Malting grains." )
       )
     )
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Malted(
         List( "Malted grains." )
       )
     )
 
-final class Miller(listener: ActorRef[Listener]):
+final class Miller(listener: Listener):
   def mill(mill: Mill): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Milling(
         List( "Milling grains into a grist." )
       )
     )
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Milled(
         List( "Milled grains into a grist." )
       )
     )
 
-final class Masher(listener: ActorRef[Listener]):
+final class Masher(listener: Listener):
   def mash(mash: Mash): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Mashing(
         List( "Mashing grist into wort." )
       )
     )
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Mashed(
         List(
           s"Mashed grist into a wort within this temp range / duration: ${mash.recipe.mashingTempDuration}",
@@ -180,34 +180,34 @@ final class Masher(listener: ActorRef[Listener]):
       )
     )
   def logMashTempPh(logMashTempPh: LogMashingTempPh): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       MashingTempPhLogged(
         mashingTemp = logMashTempPh.mashingTemp,
         pH = logMashTempPh.pH
       )
     )
 
-final class Lauterer(listener: ActorRef[Listener]):
+final class Lauterer(listener: Listener):
   def lauter(lauter: Lauter): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Lautering(
         List( "Lautering wort." )
       )
     )
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Lautered(
         List( "Lautered wort." )
       )
     )
 
-final class Sparger(listener: ActorRef[Listener]):
+final class Sparger(listener: Listener):
   def sparge(sparge: Sparge): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Sparging(
         List( "Sparging wort." )
       )
     )
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Sparged(
         List(
           s"Should have a mash efficiency within this range: ${sparge.recipe.mashEfficiency}",
@@ -216,20 +216,20 @@ final class Sparger(listener: ActorRef[Listener]):
       )
     )
   def logMashEfficiency(logMashEfficiency: LogMashEfficiency): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       MashEfficiencyLogged(
         mashEfficiency = Batch.mashEfficiency(logMashEfficiency.actualMashExtract, logMashEfficiency.recipe.potentialMashExtract)
       )
     )
 
-final class Boiler(listener: ActorRef[Listener]):
+final class Boiler(listener: Listener):
   def boil(boil: Boil): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Boiling(
         List( "Boiling wort." )
       )
     )
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Boiled(
         List(
           s"Boiled wort within this temp range / duration: ${boil.recipe.boilingTempDuration}",
@@ -240,14 +240,14 @@ final class Boiler(listener: ActorRef[Listener]):
       )
     )
 
-final class Cooler(listener: ActorRef[Listener]):
+final class Cooler(listener: Listener):
   def cool(cool: Cool): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Cooling(
         List( "Cooling wort." )
       )
     )
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Cooled(
         List(
           s"Cooled the wort within this temp range: ${cool.recipe.coolingTempRange}",
@@ -256,14 +256,14 @@ final class Cooler(listener: ActorRef[Listener]):
       )
     )
 
-final class Whirlpooler(listener: ActorRef[Listener]):
+final class Whirlpooler(listener: Listener):
   def whirlpool(whirlpool: Whirlpool): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Whirlpooling(
         List( "Whirlpooling wort." )
       )
     )
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Whirlpooled(
         List(
           s"Optionally added hops: ${whirlpool.recipe.hops}",
@@ -273,7 +273,7 @@ final class Whirlpooler(listener: ActorRef[Listener]):
       )
     )
   def logBoilingCoolingTempOriginalGravity(logBoilingCoolingTempOriginalGravity: LogBoilingCoolingTempOriginalGravity): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       BoilingCoolingTempOriginalGravityLogged(
         boilingTemp = logBoilingCoolingTempOriginalGravity.boilingTemp,
         coolingTemp = logBoilingCoolingTempOriginalGravity.coolingTemp,
@@ -281,14 +281,14 @@ final class Whirlpooler(listener: ActorRef[Listener]):
       )
     )
 
-final class Fermenter(listener: ActorRef[Listener]):
+final class Fermenter(listener: Listener):
   def ferment(ferment: Ferment): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Fermenting(
         List( "Fermenting wort." )
       )
     )
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Fermented(
         List(
           s"Fermented within this temp range / duration: ${ferment.recipe.fermentatingTempDuration}",
@@ -298,21 +298,21 @@ final class Fermenter(listener: ActorRef[Listener]):
       )
     )
   def logFermentingTempFinalGravity(logFermentingTempFinalGravity: LogFermentingTempFinalGravity): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       FermentingTempFinalGravityLogged(
         fermentingTemp = logFermentingTempFinalGravity.fermentingTemp,
         finalGravity = logFermentingTempFinalGravity.finalGravity
       )
     )
 
-final class Conditioner(listener: ActorRef[Listener]):
+final class Conditioner(listener: Listener):
   def condition(condition: Condition): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Conditioning(
         List( "Conditioning wort." )
       )
     )
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Conditioned(
         List(
           s"Conditioned within this temp range / duration: ${condition.recipe.conditioningTempDuration}",
@@ -324,21 +324,21 @@ final class Conditioner(listener: ActorRef[Listener]):
       )
     )
   def logConditioningSrmColor(logConditioningTempSrmColor: LogConditioningTempSrmColor): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       ConditioningTempSrmColorLogged(
         conditioningTemp = logConditioningTempSrmColor.conditioningTemp,
         srmColor = logConditioningTempSrmColor.srmColor
       )
     )
 
-final class Kegger(listener: ActorRef[Listener]):
+final class Kegger(listener: Listener):
   def keg(keg: Keg): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Kegging(
         List( "Kegging wort." )
       )
     )
-    listener.ask( _.onEvent:
+    listener.onEvent(
       Kegged(
         ibuBitterness = Batch.ibuBitterness(keg.recipe.hops),
         alcoholByVolume = Batch.alcoholByVolume(
@@ -368,7 +368,7 @@ final class Kegger(listener: ActorRef[Listener]):
       )
     )
   def logKeggingTempBrewhouseEfficiency(logKeggingTempBrewhouseEfficiency: LogKeggingTempBrewhouseEfficiency): Unit =
-    listener.ask( _.onEvent:
+    listener.onEvent(
       KeggingTempBrewhouseEfficiencyLogged(
         keggingTemp = logKeggingTempBrewhouseEfficiency.keggingTemp,
         brewhouseEfficiency = Batch.brewhouseEfficiency(
