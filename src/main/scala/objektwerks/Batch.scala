@@ -30,13 +30,7 @@ object Batch:
           taste = 3,
           log = List("Completed brewing process."),
           started = now(),
-          process = Process(
-            List( Step(1, "Sanitizing", now(), now()), Step(2, "Preparing", now(), now()), Step(3, "Malting", now(), now()),
-                  Step(4, "Milling", now(), now()), Step(5, "Mashing", now(), now()), Step(6, "Lautering", now(), now()),
-                  Step(7, "Sparging", now(), now()), Step(8, "Boiling", now(), now()), Step(9, "Cooling", now(), now()),
-                  Step(10, "Whirlpooling", now(), now()), Step(11, "Fermenting", now(), now()), Step(12, "Conditioning", now(), now()),
-                  Step(13, "Kegging", now(), now()) )
-          ),
+          process = Process(),
           completed = now())
 
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
@@ -111,17 +105,19 @@ final case class Batch(recipe: String = "",
                        completed: String = "") derives JsonSupport
 
 @upickle.implicits.serializeDefaults(true)
-final case class Process(steps: List[Step] = Step.default) derives JsonSupport
-
-object Step:
-  def default: List[Step] =
-    List( Step(1, "Sanitizing"), Step(2, "Preparing"), Step(3, "Malting"), Step(4, "Milling"),
-          Step(5, "Mashing"), Step(6, "Lautering"), Step(7, "Sparging"), Step(8, "Boiling"),
-          Step(9, "Cooling"), Step(10, "Whirlpooling"), Step(11, "Fermenting"), Step(12, "Conditioning"),
-          Step(13, "Kegging") )
+final case class Process(sanitizeStep: Step = Step(),
+                         prepareStep: Step = Step(),
+                         maltStep: Step = Step(),
+                         millStep: Step = Step(),
+                         mashStep: Step = Step(),
+                         lauterStep: Step = Step(),
+                         spargeStep: Step = Step(),
+                         boilStep: Step = Step(),
+                         coolStep: Step = Step(),
+                         whirlpoolStep: Step = Step(),
+                         fermentStep: Step = Step(),
+                         conditionStep: Step = Step(),
+                         kegStep: Step = Step()) derives JsonSupport
 
 @upickle.implicits.serializeDefaults(true)
-final case class Step(number: Int,
-                      name: String,
-                      started: String = "",
-                      completed: String = "") derives JsonSupport
+final case class Step(started: String = "", completed: String = "") derives JsonSupport
