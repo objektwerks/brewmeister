@@ -7,14 +7,16 @@ import scala.annotation.nowarn
 @nowarn
 final class StoreTest extends AnyFunSuite:
   test("store"):
+    val brewer = Brewer(Listener())
+    val recipe = Recipe.default
+    val batch = brewer.simulate(recipe)
+
     val store = Store()
 
-    val recipe = Recipe.default
     store.writeRecipe(recipe)
     assert( store.readRecipe(recipe.name) == recipe )
     assert( store.listRecipes.length >= 1 )
 
-    val batch = Batch.default
     store.writeBatch(batch)
     assert( store.readBatch(batch.recipe, batch.started) == batch )
     assert( store.listBatches.length >= 1 )
