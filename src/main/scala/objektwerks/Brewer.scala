@@ -42,9 +42,10 @@ final class Brewer(listener: Listener):
       case logKeggingTempBrewhouseEfficiency: LogKeggingTempBrewhouseEfficiency =>
         Kegger(listener).logKeggingTempBrewhouseEfficiency( logKeggingTempBrewhouseEfficiency )
 
-def simulate(recipe: Recipe): Batch =
+def simulate: Batch =
   val listener = Listener()
   val brewer = Brewer(listener)
+  val recipe = Recipe.default
 
   brewer.brew( Sanitize(recipe) )
   brewer.brew( Prepare(recipe) )
