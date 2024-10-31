@@ -1,106 +1,46 @@
 package objektwerks
 
-import ox.channels.{Actor, ActorRef}
-import ox.supervised
-
 final class Brewer(listener: Listener):
   def brew(command: Command): Unit =
     command match
       case sanitize: Sanitize =>
-        supervised:
-          Actor
-            .create( Sanitizer(listener) )
-            .ask( _.sanitize( sanitize ) )
+        Sanitizer(listener).sanitize( sanitize )
       case prepare: Prepare =>
-        supervised:
-          Actor
-            .create( Preparer(listener) )
-            .ask( _.prepare( prepare ) )
+        Preparer(listener).prepare( prepare )
       case malt: Malt =>
-        supervised:
-          Actor
-            .create( Malter(listener) )
-            .ask( _.malt( malt ) )
+        Malter(listener).malt( malt )
       case mill: Mill =>
-        supervised:
-          Actor
-            .create( Miller(listener) )
-            .ask( _.mill( mill ) )
+        Miller(listener).mill( mill )
       case mash: Mash =>
-        supervised:
-          Actor
-            .create( Masher(listener) )
-            .ask( _.mash( mash ) )
+        Masher(listener).mash( mash )
       case logMashTempPh: LogMashingTempPh =>
-        supervised:
-          Actor
-            .create( Masher(listener) )
-            .ask( _.logMashTempPh( logMashTempPh ) )
+        Masher(listener).logMashTempPh( logMashTempPh )
       case lauter: Lauter =>
-        supervised:
-          Actor
-            .create( Lauterer(listener) )
-            .ask( _.lauter( lauter ) )
+        Lauterer(listener).lauter( lauter )
       case sparge: Sparge =>
-        supervised:
-          Actor
-            .create( Sparger(listener) )
-            .ask( _.sparge( sparge ) )
+        Sparger(listener).sparge( sparge )
       case logMashEfficiency: LogMashEfficiency =>
-        supervised:
-          Actor
-            .create( Sparger(listener) )
-            .ask( _.logMashEfficiency( logMashEfficiency ) )
+        Sparger(listener).logMashEfficiency( logMashEfficiency )
       case boil: Boil =>
-        supervised:
-          Actor
-            .create( Boiler(listener) )
-            .ask( _.boil( boil ) )
+        Boiler(listener).boil( boil )
       case cool: Cool =>
-        supervised:
-          Actor
-            .create( Cooler(listener) )
-            .ask( _.cool( cool ) )
+        Cooler(listener).cool( cool )
       case whirlpool: Whirlpool =>
-        supervised:
-          Actor
-            .create( Whirlpooler(listener) )
-            .ask( _.whirlpool( whirlpool ) )
+        Whirlpooler(listener).whirlpool( whirlpool )
       case logBoilingCoolingTempOriginalGravity: LogBoilingCoolingTempOriginalGravity =>
-        supervised:
-          Actor
-            .create( Whirlpooler(listener) )
-            .ask( _.logBoilingCoolingTempOriginalGravity( logBoilingCoolingTempOriginalGravity ) )
+        Whirlpooler(listener).logBoilingCoolingTempOriginalGravity( logBoilingCoolingTempOriginalGravity )
       case ferment: Ferment =>
-        supervised:
-          Actor
-            .create( Fermenter(listener) )
-            .ask( _.ferment( ferment ) )
+        Fermenter(listener).ferment( ferment )
       case logFermentingTempFinalGravity: LogFermentingTempFinalGravity =>
-        supervised:
-          Actor
-            .create( Fermenter(listener) )
-            .ask( _.logFermentingTempFinalGravity( logFermentingTempFinalGravity ) )
+        Fermenter(listener).logFermentingTempFinalGravity( logFermentingTempFinalGravity )
       case condition: Condition =>
-        supervised:
-          Actor
-            .create( Conditioner(listener) )
-            .ask( _.condition( condition ) )
+        Conditioner(listener).condition( condition )
       case logConditioningTempSrmColor: LogConditioningTempSrmColor =>
-        supervised:
-          Actor
-            .create( Conditioner(listener) )
-            .ask( _.logConditioningSrmColor( logConditioningTempSrmColor ) )
+        Conditioner(listener).logConditioningSrmColor( logConditioningTempSrmColor )
       case keg: Keg =>
-        supervised:
-          Actor
-            .create( Kegger(listener) )
-            .ask( _.keg( keg ) )
+        Kegger(listener).keg( keg )
       case logKeggingTempBrewhouseEfficiency: LogKeggingTempBrewhouseEfficiency =>
-        supervised:
-          Actor
-            .create( Kegger(listener) )
-            .ask( _.logKeggingTempBrewhouseEfficiency( logKeggingTempBrewhouseEfficiency ) )
+        Kegger(listener).logKeggingTempBrewhouseEfficiency( logKeggingTempBrewhouseEfficiency )
 
 final class Sanitizer(listener: Listener):
   def sanitize(sanitize: Sanitize): Unit =
@@ -342,19 +282,19 @@ final class Kegger(listener: Listener):
       Kegged(
         ibuBitterness = Batch.ibuBitterness(keg.recipe.hops),
         alcoholByVolume = Batch.alcoholByVolume(
-          listener.ask( _.originalGravity ),
-          listener.ask( _.finalGravity )
+          listener.originalGravity,
+          listener.finalGravity
         ),
         alcoholByWeight = Batch.alcoholByWeight(
           Batch.alcoholByWeight(
-            listener.ask( _.originalGravity ),
-            listener.ask( _.finalGravity ) ),
-            listener.ask( _.finalGravity )
+            listener.originalGravity ,
+            listener.finalGravity ),
+            listener.finalGravity
           ),
         calories = Batch.calories(
           keg.recipe.packageVolume.volume,
-          listener.ask( _.originalGravity ),
-          listener.ask( _.finalGravity )
+          listener.originalGravity,
+          listener.finalGravity
         ),
         List(
           s"Conditioned within this temp range / duration: ${keg.recipe.keggingTempDuration}",
