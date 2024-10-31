@@ -24,6 +24,7 @@ class BrewerTest extends AnyFunSuite with Matchers:
     brewer.handle( Boil(recipe) )
     brewer.handle( Cool(recipe) )
     brewer.handle( Whirlpool(recipe) )
+    brewer.handle( LogBoilingCoolingTempOriginalGravity(150, 72, 1.012) )
 
     val batch = listener.ask( _.batch )
     batch.recipe.nonEmpty shouldBe true
