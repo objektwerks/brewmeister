@@ -18,6 +18,7 @@ scalacOptions ++= Seq(
   "-Wall"
 )
 outputStrategy := Some(StdoutOutput)
+parallelExecution := false
 
 // Begin: Assembly Tasks
 
