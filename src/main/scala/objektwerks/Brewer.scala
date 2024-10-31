@@ -4,7 +4,7 @@ import ox.channels.{Actor, ActorRef}
 import ox.supervised
 
 final class Brewer(listener: ActorRef[Listener]):
-  def handle(command: Command): Unit =
+  def brew(command: Command): Unit =
     command match
       case sanitize: Sanitize =>
         supervised:
