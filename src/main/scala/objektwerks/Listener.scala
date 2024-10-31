@@ -32,10 +32,10 @@ final class Listener:
     var batch = Batch()
     events.foreach: event =>
       event match
-        case Sanitizing(log) =>
-          batch = batch.copy(log = batch.log ++ log)
-        case Sanitized(log) =>
-          batch = batch.copy(log = batch.log ++ log)
+        case Sanitizing(log, started) =>
+          batch = batch.copy(log = batch.log ++ log, started = started)
+        case Sanitized(log, completed) =>
+          batch = batch.copy(log = batch.log ++ log, completed = completed)
         case Preparing(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case Prepared(recipe, style, volume, log) =>
