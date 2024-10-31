@@ -3,12 +3,9 @@ package objektwerks
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-import ox.channels.Actor
-import ox.supervised
-
 class BrewerTest extends AnyFunSuite with Matchers:
   test("brew"):
-    val listener = supervised( Actor.create( Listener() ) )
+    val listener = Listener()
     val brewer = Brewer(listener)
     val recipe = Recipe.default
 
@@ -32,6 +29,6 @@ class BrewerTest extends AnyFunSuite with Matchers:
     brewer.brew( Keg(recipe) )
     brewer.brew( LogKeggingTempBrewhouseEfficiency(recipe, 72, 4.0) )
 
-    val batch = listener.ask( _.batch )
+    val batch = listener.batch
     println(batch)
     batch shouldBe Batch.default
