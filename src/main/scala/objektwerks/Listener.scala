@@ -34,16 +34,16 @@ final class Listener:
       event match
         case Sanitizing(log, started) =>
           batch = batch.copy(log = batch.log ++ log)
-          batch = batch.copy(process = batch.process.copy(sanitizeStep = batch.process.sanitizeStep.copy(started = started)))
+          batch = batch.copy(process = batch.process.copy(sanitizeStarted = started))
         case Sanitized(log, completed) =>
           batch = batch.copy(log = batch.log ++ log)
-          batch = batch.copy(process = batch.process.copy(sanitizeStep = batch.process.sanitizeStep.copy(completed = completed)))
+          batch = batch.copy(process = batch.process.copy(sanitizeCompleted = completed))
         case Preparing(log, started) =>
           batch = batch.copy(log = batch.log ++ log)
-          batch = batch.copy(process = batch.process.copy(prepareStep = batch.process.prepareStep.copy(started = started)))
+          batch = batch.copy(process = batch.process.copy(prepareStarted = started))
         case Prepared(recipe, style, volume, log, completed) =>
           batch = batch.copy(recipe = recipe, style = style, volume = volume, log = batch.log ++ log)
-          batch = batch.copy(process = batch.process.copy(prepareStep = batch.process.prepareStep.copy(completed = completed)))
+          batch = batch.copy(process = batch.process.copy(prepareCompleted = completed))
         case Malting(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case Malted(log) =>
