@@ -33,13 +33,17 @@ final class Listener:
     events.foreach: event =>
       event match
         case Sanitizing(log, started) =>
-          batch = batch.copy(log = batch.log ++ log, started = started)
+          batch = batch.copy(log = batch.log ++ log)
+          batch = batch.copy(process = batch.process.copy(sanitizeStep = batch.process.sanitizeStep.copy(started = started)))
         case Sanitized(log, completed) =>
-          batch = batch.copy(log = batch.log ++ log, completed = completed)
+          batch = batch.copy(log = batch.log ++ log)
+          batch = batch.copy(process = batch.process.copy(sanitizeStep = batch.process.sanitizeStep.copy(completed = completed)))
         case Preparing(log, started) =>
-          batch = batch.copy(log = batch.log ++ log, started = started)
+          batch = batch.copy(log = batch.log ++ log)
+          batch = batch.copy(process = batch.process.copy(prepareStep = batch.process.prepareStep.copy(started = started)))
         case Prepared(recipe, style, volume, log, completed) =>
-          batch = batch.copy(recipe = recipe, style = style, volume = volume, log = batch.log ++ log, completed = completed)
+          batch = batch.copy(recipe = recipe, style = style, volume = volume, log = batch.log ++ log)
+          batch = batch.copy(process = batch.process.copy(prepareStep = batch.process.prepareStep.copy(completed = completed)))
         case Malting(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case Malted(log) =>
