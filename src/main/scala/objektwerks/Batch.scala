@@ -30,7 +30,7 @@ object Batch:
           taste = 3,
           log = List("Completed brewing process."),
           started = now(),
-          process = Process(),
+          process = Process.default,
           completed = now())
 
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
@@ -103,6 +103,35 @@ final case class Batch(recipe: String = "",
                        started: String = now(),
                        process: Process = Process(),
                        completed: String = "") derives JsonSupport
+
+object Process:
+  def default: Process =
+    Process(sanitizeStarted = now(),
+            sanitizeCompleted = now(),
+            prepareStarted = now(),
+            prepareCompleted = now(),
+            maltStarted = now(),
+            maltCompleted = now(),
+            millStarted = now(),
+            millCompleted = now(),
+            mashStarted = now(),
+            mashCompleted = now(),
+            lauterStarted = now(),
+            lauterCompleted = now(),
+            spargeStarted = now(),
+            spargeCompleted = now(),
+            boilStarted = now(),
+            boilCompleted = now(),
+            coolStarted = now(),
+            coolCompleted = now(),
+            whirlpoolStarted = now(),
+            whirlpoolCompleted = now(),
+            fermentStarted = now(),
+            fermentCompleted = now(),
+            conditionStarted = now(),
+            conditionCompleted = now(),
+            kegStarted = now(),
+            kegCompleted = now())
 
 @upickle.implicits.serializeDefaults(true)
 final case class Process(sanitizeStarted: String = "",
