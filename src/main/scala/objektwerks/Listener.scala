@@ -38,7 +38,8 @@ final class Listener:
           batch = batch.copy(log = batch.log ++ log)
         case Preparing(log) =>
           batch = batch.copy(log = batch.log ++ log)
-        case Prepared(log) =>
+        case Prepared(recipe, style, volume, log) =>
+          batch = batch.copy(recipe = recipe, style = style, volume = volume)
           batch = batch.copy(log = batch.log ++ log)
         case Malting(log) =>
           batch = batch.copy(log = batch.log ++ log)

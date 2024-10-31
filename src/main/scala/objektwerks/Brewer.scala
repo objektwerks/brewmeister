@@ -65,6 +65,9 @@ final class Preparer(listener: Listener):
     )
     listener.onEvent(
       Prepared(
+        prepare.recipe.name,
+        prepare.recipe.style,
+        prepare.recipe.batchVolume,
         List(
           "Preparing the following recipe ingredients:",
           s"Grains: ${prepare.recipe.grains}",
