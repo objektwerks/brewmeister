@@ -289,11 +289,9 @@ final class Kegger(listener: Listener):
           listener.finalGravity
         ),
         alcoholByWeight = Batch.alcoholByWeight(
-          Batch.alcoholByWeight(
-            listener.originalGravity ,
-            listener.finalGravity ),
-            listener.finalGravity
-          ),
+          Batch.alcoholByVolume(listener.originalGravity, listener.finalGravity),
+          listener.finalGravity
+        ),
         calories = Batch.calories(
           keg.recipe.packageVolume.volume,
           listener.originalGravity,
