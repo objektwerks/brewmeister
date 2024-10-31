@@ -44,10 +44,12 @@ final class Listener:
         case Prepared(recipe, style, volume, log, completed) =>
           batch = batch.copy(recipe = recipe, style = style, volume = volume, log = batch.log ++ log)
           batch = batch.copy(process = batch.process.copy(prepareCompleted = completed))
-        case Malting(log) =>
+        case Malting(log, started) =>
           batch = batch.copy(log = batch.log ++ log)
-        case Malted(log) =>
+          batch = batch.copy(process = batch.process.copy(maltStarted = started))
+        case Malted(log, completed) =>
           batch = batch.copy(log = batch.log ++ log)
+          batch = batch.copy(process = batch.process.copy(maltCompleted = completed))
         case Milling(log) =>
           batch = batch.copy(log = batch.log ++ log)
         case Milled(log) =>
