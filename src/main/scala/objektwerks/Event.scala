@@ -5,11 +5,12 @@ sealed trait Event
 final case class Sanitizing(log: List[String], started: String = now()) extends Event
 final case class Sanitized(log: List[String], completed: String = now()) extends Event
 
-final case class Preparing(log: List[String]) extends Event
+final case class Preparing(log: List[String], started: String = now()) extends Event
 final case class Prepared(recipe: String,
                           style: String,
                           volume: Volume,
-                          log: List[String]) extends Event
+                          log: List[String],
+                          completed: String = now()) extends Event
 
 final case class Malting(log: List[String]) extends Event
 final case class Malted(log: List[String]) extends Event
