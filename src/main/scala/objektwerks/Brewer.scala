@@ -42,9 +42,7 @@ final class Brewer(listener: Listener):
       case logKeggingTempBrewhouseEfficiency: LogKeggingTempBrewhouseEfficiency =>
         Kegger(listener).logKeggingTempBrewhouseEfficiency( logKeggingTempBrewhouseEfficiency )
 
-  def simulate: Batch =
-    val recipe = Recipe.default
-
+  def simulate(recipe: Recipe): Batch =
     brew( Sanitize(recipe) )
     brew( Prepare(recipe) )
     brew( Malt(recipe) )
@@ -64,7 +62,6 @@ final class Brewer(listener: Listener):
     brew( LogConditioningTempSrmColor(72, 9) )
     brew( Keg(recipe) )
     brew( LogKeggingTempBrewhouseEfficiency(recipe, 72, 4.0) )
-
     listener.batch
 
 final class Sanitizer(listener: Listener):
