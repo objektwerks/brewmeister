@@ -112,7 +112,9 @@ final class Listener:
                              calories = calories,
                              log = batch.log ++ log)
         case KeggingTempBrewhouseEfficiencyLogged(keggingTemp,
-                                                  brewhouseEfficiency) =>
+                                                  brewhouseEfficiency,
+                                                  completed) =>
           batch = batch.copy(keggingTemp = keggingTemp,
-                             brewhouseEfficiency = brewhouseEfficiency)
+                             brewhouseEfficiency = brewhouseEfficiency,
+                             completed = completed)
     batch
