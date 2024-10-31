@@ -15,6 +15,7 @@ class BrewerTest extends AnyFunSuite with Matchers:
     brewer.handle( Sanitize(recipe) )
     brewer.handle( Prepare(recipe) )
     brewer.handle( Malt(recipe) )
+    brewer.handle( Mill(recipe) )
 
     val batch = listener.ask( _.batch )
     batch.recipe.nonEmpty shouldBe true
