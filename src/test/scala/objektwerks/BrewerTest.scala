@@ -29,6 +29,7 @@ class BrewerTest extends AnyFunSuite with Matchers:
     brewer.handle( LogFermentingTempFinalGravity(72, 1.012) )
     brewer.handle( Condition(recipe) )
     brewer.handle( LogConditioningTempSrmColor(72, 9) )
+    brewer.handle( Keg(recipe) )
 
     val batch = listener.ask( _.batch )
     batch.recipe.nonEmpty shouldBe true
