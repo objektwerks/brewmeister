@@ -11,5 +11,8 @@ class BrewerTest extends AnyFunSuite with Matchers:
     val listener = supervised( Actor.create( Listener() ) )
     val brewer = Brewer(listener)
     val recipe = Recipe.default
-    
+
     brewer.handle( Sanitize(recipe) )
+
+    val batch = listener.ask( _.batch )
+    batch.recipe.nonEmpty shouldBe true
