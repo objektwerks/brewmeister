@@ -372,7 +372,7 @@ final class Kegger(listener: Listener):
         taste = keg.taste,
         List(
           s"Conditioned within this temp range / duration: ${keg.recipe.keggingTempDuration}",
-          s"IBU bitterness should be within this range: ${keg.recipe.ibuBitterness}",
+          s"IBU hop bitterness should be within this range: ${keg.recipe.ibuBitterness}",
           s"Alcohol by volume should be within this range: ${keg.recipe.alcoholByVolume}",
           s"Alcohol by weight should be within this range: ${keg.recipe.alcoholByWeight}",
           s"Calories should be within this range: ${keg.recipe.calories}",
