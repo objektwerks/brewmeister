@@ -8,7 +8,7 @@ object Recipe:
            style = "American IPA",
            water = "spring",
            batchVolume = Volume(5.0, UoM.gl),
-           packageVolume = Volume(12.0, UoM.oz),
+           packageVolume = Volume(5.0, UoM.gl),
            grains = List( Grain("pale ale", 4.0, UoM.lb, 6.0, 1.8, 0) ),
            hops = List( Hop("chinook", 2.0, 10.0, UoM.oz, 13.0, 30) ),
            adjuncts = List.empty[Adjunct],
