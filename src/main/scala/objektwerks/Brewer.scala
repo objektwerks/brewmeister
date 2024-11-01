@@ -210,7 +210,7 @@ final class Sparger(listener: Listener):
     listener.onEvent(
       MashEfficiencyLogged(
         mashEfficiency = mashEfficiency,
-        log = List(s"Mash efficiency is: $mashEfficiency")
+        log = List(s"Mash efficiency: $mashEfficiency")
       )
     )
 
