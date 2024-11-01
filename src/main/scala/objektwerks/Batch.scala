@@ -5,34 +5,6 @@ import scala.math.pow
 import upickle.default.{ReadWriter => JsonSupport}
 
 object Batch:
-  def default: Batch =
-    Batch(recipe = "Objektwerks IPA",
-          style = "American IPA",
-          volume = Volume(5.0, UoM.gl),
-          mashingTemp = 150,
-          pH = 5.6,
-          boilingTemp = 150,
-          coolingTemp = 72,
-          mashEfficiency = 70,
-          originalGravity = 1.060,
-          fermentingTemp = 72,
-          finalGravity = 1.012,
-          conditioningTemp = 72,
-          srmColor = 9,
-          ibuBitterness = 68,
-          alcoholByVolume = 6.4,
-          alcoholByWeight = 6.0,
-          calories = 190,
-          keggingTemp = 43,
-          brewhouseEfficiency = 71,
-          appearance = 3,
-          aroma = 3,
-          taste = 3,
-          log = List("Completed brewing process."),
-          started = now(),
-          process = Process.default,
-          completed = now())
-
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
     val sum = grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.volume) }.sum
     ( sum / grains.length ).toInt
