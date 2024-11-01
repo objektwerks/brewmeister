@@ -257,16 +257,16 @@ final class Whirlpooler(listener: Listener):
   def whirlpool(whirlpool: Whirlpool): Unit =
     listener.onEvent(
       Whirlpooling(
-        List( "Whirlpooling wort." )
+        List(
+          "Whirlpooling wort.",
+          s"Optionally added hops: ${whirlpool.recipe.hops}",
+          s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}"
+        )
       )
     )
     listener.onEvent(
       Whirlpooled(
-        List(
-          s"Optionally added hops: ${whirlpool.recipe.hops}",
-          s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}",
-          "Whirlpooled wort."
-        )
+        List( "Whirlpooled wort." )
       )
     )
   def logBoilingCoolingTempOriginalGravity(logBoilingCoolingTempOriginalGravity: LogBoilingCoolingTempOriginalGravity): Unit =
