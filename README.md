@@ -4,6 +4,7 @@ Brewmeister
 
 Todo
 ----
+* Test Batch Formulas
 * App
 
 Process
