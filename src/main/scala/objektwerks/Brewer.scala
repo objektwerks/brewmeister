@@ -316,18 +316,18 @@ final class Conditioner(listener: Listener):
   def condition(condition: Condition): Unit =
     listener.onEvent(
       Conditioning(
-        List( "Conditioning wort." )
+        List(
+          "Conditioning wort.",
+          s"Conditioning within this temp range / duration: ${condition.recipe.conditioningTempDuration}",
+          s"Optionally added adjuncts: ${condition.recipe.adjuncts}",
+          s"Optionally added hops: ${condition.recipe.hops}",
+          s"Should have an SRM color within this range: ${condition.recipe.srmColor}"
+        )
       )
     )
     listener.onEvent(
       Conditioned(
-        List(
-          s"Conditioned within this temp range / duration: ${condition.recipe.conditioningTempDuration}",
-          s"Optionally added adjuncts: ${condition.recipe.adjuncts}",
-          s"Optionally added hops: ${condition.recipe.hops}",
-          s"Should have an SRM color within this range: ${condition.recipe.srmColor}",
-          "Conditioned wort."
-        )
+        List( "Conditioned wort." )
       )
     )
   def logConditioningSrmColor(logConditioningTempSrmColor: LogConditioningTempSrmColor): Unit =
