@@ -1,7 +1,8 @@
 package objektwerks
 
 object Brewer:
-  def simulate(recipe: Recipe,
+  def simulate(listener: Listener,
+               recipe: Recipe,
                mashingTemp: Int = 150,
                pH: Double = 5.6,
                actualMashExtract: Double = 4.0,
@@ -13,8 +14,7 @@ object Brewer:
                conditioningTemp: Int = 72,
                srmColor: Int = 9,
                keggingTemp: Int = 72,
-               actualFermentableExtract: Double = 4.0): Batch =
-    val listener = Listener()
+               actualFermentableExtract: Double = 4.0): Unit =
     val brewer = Brewer(listener)
     brewer.brew( Sanitize(recipe) )
     brewer.brew( Prepare(recipe) )
@@ -35,7 +35,6 @@ object Brewer:
     brewer.brew( LogConditioningTempSrmColor(conditioningTemp = 72, srmColor = 9) )
     brewer.brew( Keg(recipe) )
     brewer.brew( LogKeggingTempBrewhouseEfficiency(recipe, keggingTemp = 72, actualFermentableExtract = 4.0) )
-    listener.batch
 
 final class Brewer(listener: Listener):
   def brew(command: Command): Unit =
