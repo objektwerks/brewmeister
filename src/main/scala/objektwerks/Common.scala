@@ -30,4 +30,4 @@ extension (now: String)
 
 def now(): String = LocalDateTime.now.format(formatter)
 
-private val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH.mm.ss")
+private val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH.mm.ss.SSS")
