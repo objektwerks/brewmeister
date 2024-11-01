@@ -298,7 +298,11 @@ final class Fermenter(listener: Listener):
     listener.onEvent(
       FermentingTempFinalGravityLogged(
         fermentingTemp = logFermentingTempFinalGravity.fermentingTemp,
-        finalGravity = logFermentingTempFinalGravity.finalGravity
+        finalGravity = logFermentingTempFinalGravity.finalGravity,
+        log = List(
+          s"Fermenting temp: ${logFermentingTempFinalGravity.fermentingTemp}",
+          s"Final gravity: ${logFermentingTempFinalGravity.finalGravity}"
+        )
       )
     )
 

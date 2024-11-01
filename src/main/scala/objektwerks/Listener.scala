@@ -114,9 +114,11 @@ final class Listener:
           batch = batch.copy(log = batch.log ++ log)
           batch = batch.copy(process = batch.process.copy(fermentCompleted = completed))
         case FermentingTempFinalGravityLogged(fermentingTemp,
-                                              finalGravity) =>
+                                              finalGravity,
+                                              log) =>
           batch = batch.copy(fermentingTemp = fermentingTemp,
-                             finalGravity = finalGravity)
+                             finalGravity = finalGravity,
+                             log = batch.log ++ log)
         case Conditioning(log, started) =>
           batch = batch.copy(log = batch.log ++ log)
           batch = batch.copy(process = batch.process.copy(conditionStarted = started))
