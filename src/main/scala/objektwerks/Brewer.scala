@@ -108,11 +108,15 @@ final class Preparer(listener: Listener):
         prepare.recipe.style,
         prepare.recipe.batchVolume,
         List(
-          "Preparing the following recipe ingredients:",
+          "Prepared:",
           s"Grains: ${prepare.recipe.grains}",
           s"Hops: ${prepare.recipe.hops}",
           s"Adjuncts: ${prepare.recipe.adjuncts}",
           s"Yeasts: ${prepare.recipe.yeasts}",
+          "For:",
+          s"Recipe: ${prepare.recipe.name}",
+          s"Style: ${prepare.recipe.style}",
+          s"Batch: ${prepare.recipe.batchVolume}",
           "Prepared all recipe ingredients."
         )
       )
@@ -165,7 +169,11 @@ final class Masher(listener: Listener):
     listener.onEvent(
       MashingTempPhLogged(
         mashingTemp = logMashTempPh.mashingTemp,
-        pH = logMashTempPh.pH
+        pH = logMashTempPh.pH,
+        List(
+          s"Mashing temp is: ${logMashTempPh.mashingTemp}",
+          s"Mash pH is: ${logMashTempPh.pH}"
+        )
       )
     )
 
