@@ -223,17 +223,17 @@ final class Boiler(listener: Listener):
   def boil(boil: Boil): Unit =
     listener.onEvent(
       Boiling(
-        List( "Boiling wort." )
+        List(
+          "Boiling wort.",
+          s"Boiling wort within this temp range / duration: ${boil.recipe.boilingTempDuration}",
+          s"Added hops: ${boil.recipe.hops}",
+          s"Optionally added adjuncts: ${boil.recipe.adjuncts}"
+        )
       )
     )
     listener.onEvent(
       Boiled(
-        List(
-          s"Boiled wort within this temp range / duration: ${boil.recipe.boilingTempDuration}",
-          s"Added hops: ${boil.recipe.hops}",
-          s"Optionally added adjuncts: ${boil.recipe.adjuncts}",
-          "Boiled wort."
-        )
+        List( "Boiled wort." )
       )
     )
 
