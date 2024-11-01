@@ -153,17 +153,17 @@ final class Masher(listener: Listener):
   def mash(mash: Mash): Unit =
     listener.onEvent(
       Mashing(
-        List( "Mashing grist into wort." )
+        List(
+          "Mashing grist into wort.",
+          s"Mashing grist into a wort within this temp range / duration: ${mash.recipe.mashingTempDuration}",
+          s"Optionally added adjuncts: ${mash.recipe.adjuncts}",
+          s"pH should be: ${mash.recipe.pH}",
+        )
       )
     )
     listener.onEvent(
       Mashed(
-        List(
-          s"Mashed grist into a wort within this temp range / duration: ${mash.recipe.mashingTempDuration}",
-          s"Optionally added adjuncts: ${mash.recipe.adjuncts}",
-          s"pH should be: ${mash.recipe.pH}",
-          "Mashed wort."
-        )
+        List( "Mashed wort." )
       )
     )
   def logMashTempPh(logMashTempPh: LogMashingTempPh): Unit =
