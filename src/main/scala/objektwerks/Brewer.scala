@@ -11,7 +11,8 @@ object Brewer:
                fermentingTemp: Int = 72,
                finalGravity: Double = 1.012,
                conditioningTemp: Int = 72,
-               srmColor: Int = 9): Batch =
+               srmColor: Int = 9,
+               keggingTemp: Int = 72): Batch =
     val listener = Listener()
     val brewer = Brewer(listener)
     brewer.brew( Sanitize(recipe) )
