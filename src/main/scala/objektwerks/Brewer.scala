@@ -382,6 +382,6 @@ final class Kegger(listener: Listener):
     listener.onEvent(
       KeggingTempBrewhouseEfficiencyLogged(
         brewhouseEfficiency = brewhouseEfficiency,
-        log = List(s"Brewhouse efficiency is: $brewhouseEfficiency")
+        log = List(s"Brewhouse efficiency: $brewhouseEfficiency")
       )
     )
