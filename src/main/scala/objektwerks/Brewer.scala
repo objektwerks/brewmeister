@@ -344,6 +344,17 @@ final class Conditioner(listener: Listener):
 
 final class Kegger(listener: Listener):
   def keg(keg: Keg): Unit =
+    val ibuBitterness = Batch.ibuBitterness(keg.recipe.hops)
+    val alcoholByVolume = Batch.alcoholByVolume(listener.originalGravity, listener.finalGravity)
+    val alcoholByWeight = Batch.alcoholByWeight(
+      Batch.alcoholByVolume(listener.originalGravity, listener.finalGravity),
+      listener.finalGravity
+    )
+    val calories = Batch.calories(
+      keg.recipe.volume.value,
+      listener.originalGravity,
+      listener.finalGravity
+    )
     listener.onEvent(
       Kegging(
         List( "Kegging wort." )
@@ -351,20 +362,10 @@ final class Kegger(listener: Listener):
     )
     listener.onEvent(
       Kegged(
-        ibuBitterness = Batch.ibuBitterness(keg.recipe.hops),
-        alcoholByVolume = Batch.alcoholByVolume(
-          listener.originalGravity,
-          listener.finalGravity
-        ),
-        alcoholByWeight = Batch.alcoholByWeight(
-          Batch.alcoholByVolume(listener.originalGravity, listener.finalGravity),
-          listener.finalGravity
-        ),
-        calories = Batch.calories(
-          keg.recipe.volume.value,
-          listener.originalGravity,
-          listener.finalGravity
-        ),
+        ibuBitterness = ibuBitterness,
+        alcoholByVolume = alcoholByVolume,
+        alcoholByWeight = alcoholByWeight,
+        calories = calories,
         keggingTemp = keg.keggingTemp,
         appearance = keg.appearance,
         aroma = keg.aroma,
@@ -376,6 +377,14 @@ final class Kegger(listener: Listener):
           s"Alcohol by weight should be within this range: ${keg.recipe.alcoholByWeight}",
           s"Calories should be within this range: ${keg.recipe.calories}",
           s"Should have a brew efficiency within this range: ${keg.recipe.brewhouseEfficiency}",
+          s"IBU Bitterness: $ibuBitterness",
+          s"ABV: $alcoholByVolume",
+          s"ABW: $alcoholByWeight",
+          s"Calories: $calories",
+          s"Kegging temp: ${keg.keggingTemp}",
+          s"Appearance: ${keg.appearance}",
+          s"Aroma: ${keg.aroma}",
+          s"Taste: ${keg.taste}",
           "Kegged wort."
         ),
       )
