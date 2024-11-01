@@ -287,17 +287,17 @@ final class Fermenter(listener: Listener):
   def ferment(ferment: Ferment): Unit =
     listener.onEvent(
       Fermenting(
-        List( "Fermenting wort." )
+        List(
+          "Fermenting wort.",
+          s"Fermenting within this temp range / duration: ${ferment.recipe.fermentatingTempDuration}",
+          s"Potential fermentable extract: ${ferment.recipe.potentialFermentableExtract}",
+          s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
+        )
       )
     )
     listener.onEvent(
       Fermented(
-        List(
-          s"Fermented within this temp range / duration: ${ferment.recipe.fermentatingTempDuration}",
-          s"Potential fermentable extract: ${ferment.recipe.potentialFermentableExtract}",
-          s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}",
-          "Fermented wort."
-        )
+        List( "Fermented wort." )
       )
     )
   def logFermentingTempFinalGravity(logFermentingTempFinalGravity: LogFermentingTempFinalGravity): Unit =
