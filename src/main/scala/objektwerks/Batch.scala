@@ -16,8 +16,7 @@ object Batch:
     ( 1.4922 * pow(maltColorUnits, 0.6859) ).toInt
 
   def ibuBitterness(hops: List[Hop]): Int =
-    val sum = hops.map { hop => ibuBitterness(hop.alphaAcid, hop.weight, hop.volume) }.sum
-    ( sum / hops.length ).toInt
+    hops.map { hop => ibuBitterness(hop.alphaAcid, hop.weight, hop.volume) }.sum
 
   def ibuBitterness(hopAlphaAcid: Double,
                     hopWeight: Double,
