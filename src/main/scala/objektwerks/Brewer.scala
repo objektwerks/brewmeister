@@ -99,7 +99,13 @@ final class Preparer(listener: Listener):
   def prepare(prepare: Prepare): Unit =
     listener.onEvent(
       Preparing(
-        List( "Preparing recipe ingredients." )
+        List(
+          "Preparing recipe ingredients:",
+          s"Grains: ${prepare.recipe.grains}",
+          s"Hops: ${prepare.recipe.hops}",
+          s"Adjuncts: ${prepare.recipe.adjuncts}",
+          s"Yeasts: ${prepare.recipe.yeasts}"
+        )
       )
     )
     listener.onEvent(
@@ -108,16 +114,10 @@ final class Preparer(listener: Listener):
         prepare.recipe.style,
         prepare.recipe.batchVolume,
         List(
-          "Prepared:",
-          s"Grains: ${prepare.recipe.grains}",
-          s"Hops: ${prepare.recipe.hops}",
-          s"Adjuncts: ${prepare.recipe.adjuncts}",
-          s"Yeasts: ${prepare.recipe.yeasts}",
-          "For:",
+          "Prepared recipe ingredients for:",
           s"Recipe: ${prepare.recipe.name}",
           s"Style: ${prepare.recipe.style}",
-          s"Batch: ${prepare.recipe.batchVolume}",
-          "Prepared all recipe ingredients."
+          s"Batch: ${prepare.recipe.batchVolume}"
         )
       )
     )
