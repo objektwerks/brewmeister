@@ -9,7 +9,8 @@ object Brewer:
                coolingTemp: Int = 72,
                originalGravity: Double = 1.060,
                fermentingTemp: Int = 72,
-               finalGravity: Double = 1.012): Batch =
+               finalGravity: Double = 1.012,
+               conditioningTemp: Int = 72): Batch =
     val listener = Listener()
     val brewer = Brewer(listener)
     brewer.brew( Sanitize(recipe) )
