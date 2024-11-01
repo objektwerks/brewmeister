@@ -7,9 +7,8 @@ import scala.annotation.nowarn
 @nowarn
 final class StoreTest extends AnyFunSuite:
   test("store"):
-    val brewer = Brewer(Listener())
     val recipe = Recipe.default
-    val batch = brewer.simulate(recipe)
+    val batch = Brewer.simulate(recipe)
 
     val store = Store()
 
