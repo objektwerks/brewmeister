@@ -195,15 +195,15 @@ final class Sparger(listener: Listener):
   def sparge(sparge: Sparge): Unit =
     listener.onEvent(
       Sparging(
-        List( "Sparging wort." )
+        List(
+          "Sparging wort.",
+          s"Mash efficiency should be within this range: ${sparge.recipe.mashEfficiency}"
+        )
       )
     )
     listener.onEvent(
       Sparged(
-        List(
-          s"Mash efficiency should be within this range: ${sparge.recipe.mashEfficiency}",
-          "Sparged wort."
-        )
+        List( "Sparged wort." )
       )
     )
   def logMashEfficiency(logMashEfficiency: LogMashEfficiency): Unit =
