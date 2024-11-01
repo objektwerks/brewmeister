@@ -357,7 +357,15 @@ final class Kegger(listener: Listener):
     )
     listener.onEvent(
       Kegging(
-        List( "Kegging wort." )
+        List(
+          "Kegging wort.",
+          s"Conditioning within this temp range / duration: ${keg.recipe.keggingTempDuration}",
+          s"IBU hop bitterness should be within this range: ${keg.recipe.ibuBitterness}",
+          s"Alcohol by volume should be within this range: ${keg.recipe.alcoholByVolume}",
+          s"Alcohol by weight should be within this range: ${keg.recipe.alcoholByWeight}",
+          s"Calories should be within this range: ${keg.recipe.calories}",
+          s"Should have a brew efficiency within this range: ${keg.recipe.brewhouseEfficiency}"
+        )
       )
     )
     listener.onEvent(
@@ -371,12 +379,6 @@ final class Kegger(listener: Listener):
         aroma = keg.aroma,
         taste = keg.taste,
         List(
-          s"Conditioned within this temp range / duration: ${keg.recipe.keggingTempDuration}",
-          s"IBU hop bitterness should be within this range: ${keg.recipe.ibuBitterness}",
-          s"Alcohol by volume should be within this range: ${keg.recipe.alcoholByVolume}",
-          s"Alcohol by weight should be within this range: ${keg.recipe.alcoholByWeight}",
-          s"Calories should be within this range: ${keg.recipe.calories}",
-          s"Should have a brew efficiency within this range: ${keg.recipe.brewhouseEfficiency}",
           s"IBU hop bitterness: $ibuBitterness",
           s"ABV: $alcoholByVolume",
           s"ABW: $alcoholByWeight",
