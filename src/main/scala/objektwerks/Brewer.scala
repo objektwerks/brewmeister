@@ -6,7 +6,8 @@ object Brewer:
                pH: Double = 5.6,
                actualMashExtract: Double = 4.0,
                boilingTemp: Int = 150,
-               coolingTemp: Int = 72): Batch =
+               coolingTemp: Int = 72,
+               originalGravity: Double = 1.060): Batch =
     val listener = Listener()
     val brewer = Brewer(listener)
     brewer.brew( Sanitize(recipe) )
