@@ -3,7 +3,8 @@ package objektwerks
 object Brewer:
   def simulate(recipe: Recipe,
                mashingTemp: Int = 150,
-               pH: Double = 5.6): Batch =
+               pH: Double = 5.6,
+               actualMashExtract: Double = 4.0): Batch =
     val listener = Listener()
     val brewer = Brewer(listener)
     brewer.brew( Sanitize(recipe) )
