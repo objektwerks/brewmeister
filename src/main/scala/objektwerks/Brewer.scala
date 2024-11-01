@@ -171,8 +171,8 @@ final class Masher(listener: Listener):
         mashingTemp = logMashTempPh.mashingTemp,
         pH = logMashTempPh.pH,
         List(
-          s"Mashing temp is: ${logMashTempPh.mashingTemp}",
-          s"Mash pH is: ${logMashTempPh.pH}"
+          s"Mash temp: ${logMashTempPh.mashingTemp}",
+          s"Mash pH: ${logMashTempPh.pH}"
         )
       )
     )
