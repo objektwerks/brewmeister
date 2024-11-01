@@ -112,13 +112,13 @@ final class Preparer(listener: Listener):
       Prepared(
         prepare.recipe.name,
         prepare.recipe.style,
-        prepare.recipe.batchVolume,
+        prepare.recipe.volume,
         List(
           "Prepared recipe ingredients for:",
           s"Recipe: ${prepare.recipe.name}",
           s"Style: ${prepare.recipe.style}",
           s"Water: ${prepare.recipe.water}",
-          s"Batch: ${prepare.recipe.batchVolume}"
+          s"Batch: ${prepare.recipe.volume}"
         )
       )
     )
@@ -361,7 +361,7 @@ final class Kegger(listener: Listener):
           listener.finalGravity
         ),
         calories = Batch.calories(
-          keg.recipe.packageVolume.volume,
+          keg.recipe.volume.value,
           listener.originalGravity,
           listener.finalGravity
         ),
