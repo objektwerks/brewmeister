@@ -198,9 +198,11 @@ final class Sparger(listener: Listener):
       )
     )
   def logMashEfficiency(logMashEfficiency: LogMashEfficiency): Unit =
+    val mashEfficiency = Batch.mashEfficiency(logMashEfficiency.actualMashExtract, logMashEfficiency.recipe.potentialMashExtract)
     listener.onEvent(
       MashEfficiencyLogged(
-        mashEfficiency = Batch.mashEfficiency(logMashEfficiency.actualMashExtract, logMashEfficiency.recipe.potentialMashExtract)
+        mashEfficiency = mashEfficiency,
+        log = List(s"Mash efficiency is: $mashEfficiency")
       )
     )
 
