@@ -5,7 +5,7 @@ object Brewer:
                recipe: Recipe,
                mashingTemp: Int = 150,
                pH: Double = 5.6,
-               actualMashExtract: Double = 4.0,
+               actualMashExtract: Double = 4.5,
                boilingTemp: Int = 150,
                coolingTemp: Int = 72,
                originalGravity: Double = 1.060,
@@ -17,7 +17,7 @@ object Brewer:
                appearance: Int = 3,
                aroma: Int = 3,
                taste: Int = 3,
-               actualFermentableExtract: Double = 4.0): Unit =
+               actualFermentableExtract: Double = 4.5): Unit =
     val brewer = Brewer(listener)
     brewer.brew( Sanitize(recipe) )
     brewer.brew( Prepare(recipe) )
