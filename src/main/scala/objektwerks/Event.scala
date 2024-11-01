@@ -45,7 +45,8 @@ final case class Whirlpooled(log: List[String], completed: String = now()) exten
 
 final case class BoilingCoolingTempOriginalGravityLogged(boilingTemp: Int,
                                                          coolingTemp: Int,
-                                                         originalGravity: Double) extends Event
+                                                         originalGravity: Double,
+                                                         log: List[String]) extends Event
 
 final case class Fermenting(log: List[String], started: String = now()) extends Event
 final case class Fermented(log: List[String], completed: String = now()) extends Event

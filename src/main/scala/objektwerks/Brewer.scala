@@ -269,7 +269,12 @@ final class Whirlpooler(listener: Listener):
       BoilingCoolingTempOriginalGravityLogged(
         boilingTemp = logBoilingCoolingTempOriginalGravity.boilingTemp,
         coolingTemp = logBoilingCoolingTempOriginalGravity.coolingTemp,
-        originalGravity = logBoilingCoolingTempOriginalGravity.originalGravity
+        originalGravity = logBoilingCoolingTempOriginalGravity.originalGravity,
+        log = List(
+          s"Boiling temp: ${logBoilingCoolingTempOriginalGravity.boilingTemp}",
+          s"Cooling temp: ${logBoilingCoolingTempOriginalGravity.coolingTemp}",
+          s"Original gravity: ${logBoilingCoolingTempOriginalGravity.originalGravity}"
+        )
       )
     )
 
