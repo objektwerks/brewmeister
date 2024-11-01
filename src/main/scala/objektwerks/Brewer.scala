@@ -328,7 +328,11 @@ final class Conditioner(listener: Listener):
     listener.onEvent(
       ConditioningTempSrmColorLogged(
         conditioningTemp = logConditioningTempSrmColor.conditioningTemp,
-        srmColor = logConditioningTempSrmColor.srmColor
+        srmColor = logConditioningTempSrmColor.srmColor,
+        log = List(
+          s"Conditioning temp: ${logConditioningTempSrmColor.conditioningTemp}",
+          s"SRM color: ${logConditioningTempSrmColor.srmColor}"
+        )
       )
     )
 
