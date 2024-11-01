@@ -336,10 +336,10 @@ final class Kegger(listener: Listener):
           listener.originalGravity,
           listener.finalGravity
         ),
-        keggingTemp = 0,
-        appearance = 3,
-        aroma = 3,
-        taste = 3,
+        keggingTemp = keg.keggingTemp,
+        appearance = keg.appearance,
+        aroma = keg.aroma,
+        taste = keg.taste,
         List(
           s"Conditioned within this temp range / duration: ${keg.recipe.keggingTempDuration}",
           s"Hop bitterness should be within this range: ${keg.recipe.ibuBitterness}",
