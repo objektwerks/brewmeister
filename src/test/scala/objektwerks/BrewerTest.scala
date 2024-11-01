@@ -7,16 +7,18 @@ import scala.annotation.nowarn
 
 @nowarn
 class BrewerTest extends AnyFunSuite with Matchers:
-  test("brew > store"):
-    val recipe = Recipe.default
-    val batch = Brewer.simulate(recipe)
-
+  test("store > brew"):
     val store = Store()
 
+    val recipe = Recipe.default
     store.writeRecipe(recipe)
     store.readRecipe(recipe.name) shouldBe recipe
     store.listRecipes.length should be >= 1
 
+    val listener = Listener()
+    Brewer.simulate(listener, recipe)
+
+    val batch = listener.batch
     store.writeBatch(batch)
     store.readBatch(batch.recipe, batch.started) shouldBe batch
     store.listBatches.length should be >= 1
