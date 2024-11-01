@@ -14,6 +14,9 @@ object Brewer:
                conditioningTemp: Int = 72,
                srmColor: Int = 9,
                keggingTemp: Int = 72,
+               appearance: Int = 3,
+               aroma: Int = 3,
+               taste: Int = 3,
                actualFermentableExtract: Double = 4.0): Unit =
     val brewer = Brewer(listener)
     brewer.brew( Sanitize(recipe) )
@@ -33,8 +36,8 @@ object Brewer:
     brewer.brew( LogFermentingTempFinalGravity(fermentingTemp = 72, finalGravity = 1.012) )
     brewer.brew( Condition(recipe) )
     brewer.brew( LogConditioningTempSrmColor(conditioningTemp = 72, srmColor = 9) )
-    brewer.brew( Keg(recipe) )
-    brewer.brew( LogKeggingTempBrewhouseEfficiency(recipe, keggingTemp = 72, actualFermentableExtract = 4.0) )
+    brewer.brew( Keg(recipe, keggingTemp, appearance, aroma, taste) )
+    brewer.brew( LogKeggingTempBrewhouseEfficiency(recipe, actualFermentableExtract = 4.0) )
 
 final class Brewer(listener: Listener):
   def brew(command: Command): Unit =
@@ -333,6 +336,10 @@ final class Kegger(listener: Listener):
           listener.originalGravity,
           listener.finalGravity
         ),
+        keggingTemp = 0,
+        appearance = 3,
+        aroma = 3,
+        taste = 3,
         List(
           s"Conditioned within this temp range / duration: ${keg.recipe.keggingTempDuration}",
           s"Hop bitterness should be within this range: ${keg.recipe.ibuBitterness}",
@@ -347,7 +354,6 @@ final class Kegger(listener: Listener):
   def logKeggingTempBrewhouseEfficiency(logKeggingTempBrewhouseEfficiency: LogKeggingTempBrewhouseEfficiency): Unit =
     listener.onEvent(
       KeggingTempBrewhouseEfficiencyLogged(
-        keggingTemp = logKeggingTempBrewhouseEfficiency.keggingTemp,
         brewhouseEfficiency = Batch.brewhouseEfficiency(
           logKeggingTempBrewhouseEfficiency.actualFermentableExtract,
           logKeggingTempBrewhouseEfficiency.recipe.potentialFermentableExtract

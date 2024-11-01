@@ -42,8 +42,11 @@ final case class Condition(recipe: Recipe) extends Command
 final case class LogConditioningTempSrmColor(conditioningTemp: Int,
                                              srmColor: Int) extends Command
 
-final case class Keg(recipe: Recipe) extends Command
+final case class Keg(recipe: Recipe,
+                     keggingTemp: Int,
+                     appearance: Int,
+                     aroma: Int,
+                     taste: Int) extends Command
 
 final case class LogKeggingTempBrewhouseEfficiency(recipe: Recipe,
-                                                   keggingTemp: Int,
                                                    actualFermentableExtract: Double) extends Command

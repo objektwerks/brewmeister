@@ -129,18 +129,24 @@ final class Listener:
                     alcoholByVolume,
                     alcoholByWeight,
                     calories,
+                    keggingTemp,
+                    appearance,
+                    aroma,
+                    taste,
                     log,
                     completed) =>
           batch = batch.copy(ibuBitterness = ibuBitterness,
                              alcoholByVolume = alcoholByVolume,
                              alcoholByWeight = alcoholByWeight,
                              calories = calories,
+                             keggingTemp = keggingTemp,
+                             appearance = appearance,
+                             aroma = aroma,
+                             taste = taste,
                              log = batch.log ++ log)
           batch = batch.copy(process = batch.process.copy(kegCompleted = completed))
-        case KeggingTempBrewhouseEfficiencyLogged(keggingTemp,
-                                                  brewhouseEfficiency,
+        case KeggingTempBrewhouseEfficiencyLogged(brewhouseEfficiency,
                                                   completed) =>
-          batch = batch.copy(keggingTemp = keggingTemp,
-                             brewhouseEfficiency = brewhouseEfficiency,
+          batch = batch.copy(brewhouseEfficiency = brewhouseEfficiency,
                              completed = completed)
     batch
