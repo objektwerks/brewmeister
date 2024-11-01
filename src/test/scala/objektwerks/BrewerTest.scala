@@ -19,7 +19,7 @@ class BrewerTest extends AnyFunSuite with Matchers:
     val batchAsJson = write(batch)
     batch shouldBe read[Batch](batchAsJson)
 
-  test("store"):
+  test("brew > store"):
     val recipe = Recipe.default
     val batch = Brewer.simulate(recipe)
 
@@ -32,8 +32,3 @@ class BrewerTest extends AnyFunSuite with Matchers:
     store.writeBatch(batch)
     assert( store.readBatch(batch.recipe, batch.started) == batch )
     assert( store.listBatches.length >= 1 )
-
-  test("brew"):
-    val batch = Brewer.simulate(Recipe.default)
-    Store().writeBatch(batch)
-    batch.recipe.nonEmpty shouldBe true
