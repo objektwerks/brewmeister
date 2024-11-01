@@ -241,15 +241,15 @@ final class Cooler(listener: Listener):
   def cool(cool: Cool): Unit =
     listener.onEvent(
       Cooling(
-        List( "Cooling wort." )
+        List(
+          "Cooling wort.",
+          s"Cooling the wort within this temp range: ${cool.recipe.coolingTempRange}"
+        )
       )
     )
     listener.onEvent(
       Cooled(
-        List(
-          s"Cooled the wort within this temp range: ${cool.recipe.coolingTempRange}",
-          "Cooled wort."
-        )
+        List( "Cooled wort." )
       )
     )
 
