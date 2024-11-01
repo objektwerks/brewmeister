@@ -377,7 +377,7 @@ final class Kegger(listener: Listener):
           s"Alcohol by weight should be within this range: ${keg.recipe.alcoholByWeight}",
           s"Calories should be within this range: ${keg.recipe.calories}",
           s"Should have a brew efficiency within this range: ${keg.recipe.brewhouseEfficiency}",
-          s"IBU Bitterness: $ibuBitterness",
+          s"IBU hop bitterness: $ibuBitterness",
           s"ABV: $alcoholByVolume",
           s"ABW: $alcoholByWeight",
           s"Calories: $calories",
