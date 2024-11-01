@@ -201,7 +201,7 @@ final class Sparger(listener: Listener):
     listener.onEvent(
       Sparged(
         List(
-          s"Should have a mash efficiency within this range: ${sparge.recipe.mashEfficiency}",
+          s"Mash efficiency should be within this range: ${sparge.recipe.mashEfficiency}",
           "Sparged wort."
         )
       )
