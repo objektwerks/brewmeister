@@ -6,6 +6,11 @@ import org.scalatest.matchers.should.Matchers
 import upickle.default.*
 
 class BrewerTest extends AnyFunSuite with Matchers:
+  test("recipe"):
+    val recipe = Recipe.default
+    val recipeAsJson = write(recipe)
+    recipe shouldBe read[Recipe](recipeAsJson)
+
   test("batch"):
     val batch = Batch.default
     val batchAsJson = write(batch)
