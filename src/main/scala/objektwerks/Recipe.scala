@@ -9,6 +9,10 @@ object Recipe:
            water = "spring",
            batchVolume = Volume(5.0, UoM.gl),
            packageVolume = Volume(12.0, UoM.oz),
+           grains = List( Grain("pale ale", 4.0, UoM.lb, 6.0, 1.8, 0) ),
+           hops = List( Hop("chinook", 2.0, 10.0, UoM.oz, 13.0, 30) ),
+           adjuncts = List.empty[Adjunct],
+           yeasts = List( Yeast("Wyeast American Ale 1056", 5.0, UoM.oz, 0) ),
            mashingTempDuration = TempDuration( IntRange(148, 152), 60, UoT.minutes ),
            potentialMashExtract = 4.0,
            boilingTempDuration = TempDuration( IntRange(148, 152), 60, UoT.minutes ),
@@ -27,10 +31,6 @@ object Recipe:
            calories = IntRange(180, 200),
            mashEfficiency = IntRange(70, 80),
            brewhouseEfficiency = IntRange(72, 80),
-           grains = List( Grain("pale ale", 4.0, UoM.lb, 6.0, 1.8, 0) ),
-           hops = List( Hop("chinook", 2.0, 10.0, UoM.oz, 13.0, 30) ),
-           adjuncts = List.empty[Adjunct],
-           yeasts = List( Yeast("Wyeast American Ale 1056", 5.0, UoM.oz, 0) ),
            created = now())
 
 @upickle.implicits.serializeDefaults(true)
@@ -39,6 +39,10 @@ final case class Recipe(name: String = "",
                         water: String = "",
                         batchVolume: Volume = Volume(0.0, UoM.gl),
                         packageVolume: Volume = Volume(0.0, UoM.gl),
+                        grains: List[Grain] = List.empty[Grain],
+                        hops: List[Hop] = List.empty[Hop],
+                        adjuncts: List[Adjunct] = List.empty[Adjunct],
+                        yeasts: List[Yeast] = List.empty[Yeast],
                         mashingTempDuration: TempDuration = TempDuration(IntRange(0, 0), 0, UoT.minutes ),
                         potentialMashExtract: Double = 0.0,
                         boilingTempDuration: TempDuration = TempDuration(IntRange(0, 0), 0, UoT.minutes ),
@@ -57,10 +61,6 @@ final case class Recipe(name: String = "",
                         calories: IntRange = IntRange(0, 0),
                         mashEfficiency: IntRange = IntRange(0, 0),
                         brewhouseEfficiency: IntRange = IntRange(0, 0),
-                        grains: List[Grain] = List.empty[Grain],
-                        hops: List[Hop] = List.empty[Hop],
-                        adjuncts: List[Adjunct] = List.empty[Adjunct],
-                        yeasts: List[Yeast] = List.empty[Yeast],
                         created: String = now()) derives JsonSupport
 
 enum MixinStep derives JsonSupport:
