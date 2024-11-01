@@ -146,7 +146,9 @@ final class Listener:
                              log = batch.log ++ log)
           batch = batch.copy(process = batch.process.copy(kegCompleted = completed))
         case KeggingTempBrewhouseEfficiencyLogged(brewhouseEfficiency,
+                                                  log,
                                                   completed) =>
           batch = batch.copy(brewhouseEfficiency = brewhouseEfficiency,
+                             log = batch.log ++ log,
                              completed = completed)
     batch

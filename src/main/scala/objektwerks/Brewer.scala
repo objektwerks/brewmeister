@@ -352,11 +352,13 @@ final class Kegger(listener: Listener):
       )
     )
   def logKeggingTempBrewhouseEfficiency(logKeggingTempBrewhouseEfficiency: LogKeggingTempBrewhouseEfficiency): Unit =
+    val brewhouseEfficiency = Batch.brewhouseEfficiency(
+      logKeggingTempBrewhouseEfficiency.actualFermentableExtract,
+      logKeggingTempBrewhouseEfficiency.recipe.potentialFermentableExtract
+    )
     listener.onEvent(
       KeggingTempBrewhouseEfficiencyLogged(
-        brewhouseEfficiency = Batch.brewhouseEfficiency(
-          logKeggingTempBrewhouseEfficiency.actualFermentableExtract,
-          logKeggingTempBrewhouseEfficiency.recipe.potentialFermentableExtract
-        )
+        brewhouseEfficiency = brewhouseEfficiency,
+        log = List(s"Brewhouse efficiency is: $brewhouseEfficiency")
       )
     )
