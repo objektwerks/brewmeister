@@ -117,7 +117,7 @@ final class Preparer(listener: Listener):
           "Prepared recipe ingredients for:",
           s"Recipe: ${prepare.recipe.name}",
           s"Style: ${prepare.recipe.style}",
-          s"Water: ${prepare.recipe.water}"
+          s"Water: ${prepare.recipe.water}",
           s"Batch: ${prepare.recipe.batchVolume}",
           s"Package: ${prepare.recipe.packageVolume}"
         )
