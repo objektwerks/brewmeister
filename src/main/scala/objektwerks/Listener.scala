@@ -48,8 +48,8 @@ final class Listener:
                              volume = volume,
                              log = batch.log ++ log)
         case Malting(log, started) =>
-          batch = batch.copy(log = batch.log ++ log)
-          batch = batch.copy(process = batch.process.copy(maltStarted = started))
+          batch = batch.copy(process = batch.process.copy(maltStarted = started),
+                             log = batch.log ++ log)
         case Malted(log, completed) =>
           batch = batch.copy(log = batch.log ++ log)
           batch = batch.copy(process = batch.process.copy(maltCompleted = completed))
