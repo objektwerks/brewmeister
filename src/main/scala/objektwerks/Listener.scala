@@ -70,8 +70,8 @@ final class Listener:
                              pH = pH,
                              log = batch.log ++ log)
         case Lautering(log, started) =>
-          batch = batch.copy(log = batch.log ++ log)
-          batch = batch.copy(process = batch.process.copy(lauterStarted = started))
+          batch = batch.copy(process = batch.process.copy(lauterStarted = started),
+                             log = batch.log ++ log)
         case Lautered(log, completed) =>
           batch = batch.copy(log = batch.log ++ log)
           batch = batch.copy(process = batch.process.copy(lauterCompleted = completed))
