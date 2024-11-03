@@ -180,10 +180,10 @@ Assembly
 Execute
 -------
 >To execute an assembled jar locally:
-* java -jar .assembly/brewmeister-mac-0.48.jar
-* java -jar .assembly/brewmeister-m1-0.48.jar
-* java -jar .assembly/brewmeister-win-0.48.jar
-* java -jar .assembly/brewmeister-linux-0.48.jar
+* java -jar .assembly/brewmeister-mac-0.49.jar
+* java -jar .assembly/brewmeister-m1-0.49.jar
+* java -jar .assembly/brewmeister-win-0.49.jar
+* java -jar .assembly/brewmeister-linux-0.49.jar
 
 Deploy
 ------
