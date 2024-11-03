@@ -126,8 +126,8 @@ final class Listener:
           batch = batch.copy(process = batch.process.copy(conditionStarted = started),
                              log = batch.log ++ log)
         case Conditioned(log, completed) =>
-          batch = batch.copy(log = batch.log ++ log)
-          batch = batch.copy(process = batch.process.copy(conditionCompleted = completed))
+          batch = batch.copy(process = batch.process.copy(conditionCompleted = completed),
+                             log = batch.log ++ log)
         case ConditioningTempSrmColorLogged(conditioningTemp,
                                             srmColor,
                                             log) =>
