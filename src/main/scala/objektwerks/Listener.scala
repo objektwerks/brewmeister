@@ -79,8 +79,8 @@ final class Listener:
           batch = batch.copy(process = batch.process.copy(spargeStarted = started),
                              log = batch.log ++ log)
         case Sparged(log, completed) =>
-          batch = batch.copy(log = batch.log ++ log)
-          batch = batch.copy(process = batch.process.copy(spargeCompleted = completed))
+          batch = batch.copy(process = batch.process.copy(spargeCompleted = completed),
+                             log = batch.log ++ log)
         case MashEfficiencyLogged(mashEfficiency, log) =>
           batch = batch.copy(mashEfficiency = mashEfficiency,
                              log = batch.log ++ log)
