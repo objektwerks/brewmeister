@@ -57,8 +57,8 @@ final class Listener:
           batch = batch.copy(process = batch.process.copy(millStarted = started),
                              log = batch.log ++ log)
         case Milled(log, completed) =>
-          batch = batch.copy(log = batch.log ++ log)
-          batch = batch.copy(process = batch.process.copy(millCompleted = completed))
+          batch = batch.copy(process = batch.process.copy(millCompleted = completed),
+                             log = batch.log ++ log)
         case Mashing(log, started) =>
           batch = batch.copy(log = batch.log ++ log)
           batch = batch.copy(process = batch.process.copy(mashStarted = started))
