@@ -13,3 +13,7 @@ final class RecipePane(context: Context, model: Model) extends TabPane:
   tabs = List(recipeTab)
 
   VBox.setVgrow(this, Priority.Always)
+
+  model.selectedRecipe.onChange { (_, oldRecipe, newRecipe) =>
+
+  }
