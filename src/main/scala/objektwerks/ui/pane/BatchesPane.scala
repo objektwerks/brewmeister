@@ -6,11 +6,11 @@ import scalafx.scene.layout.{Priority, VBox}
 import objektwerks.ui.Context
 
 final class BatchesPane(context: Context) extends TabPane:
-  val recipesTab = new Tab:
-  	text = "Recipes"
+  val batchesTab = new Tab:
+  	text = "Batches"
   	closable = false
-  	content = RecipesPane(context)
+  	content = BatchesPane(context)
 
-  tabs = List(recipesTab)
+  tabs = List(batchesTab)
 
   VBox.setVgrow(this, Priority.Always)
