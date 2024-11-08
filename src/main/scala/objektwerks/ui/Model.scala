@@ -9,5 +9,5 @@ final class Model:
   val observableRecipes = ObservableBuffer[Recipe]()
   val observableBatches = ObservableBuffer[Batch]()
 
-  val selectedRecipe = ObjectProperty[String]("")
-  val selectedBatch = ObjectProperty[String]("")
+  val selectedRecipe = ObjectProperty[Recipe]( Recipe() )
+  val selectedBatch = ObjectProperty[Batch]( Batch() )
