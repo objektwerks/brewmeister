@@ -13,7 +13,7 @@ final class View(context: Context):
   @nowarn
   val splitPane = new SplitPane:
     orientation = Orientation.Horizontal
-    items.addAll(LeftPane(context), RightPane())
+    items.addAll(LeftPane(context), RightPane(context))
 
   splitPane.setDividerPositions(0.20, 0.80)
   VBox.setVgrow(splitPane, Priority.Always)
