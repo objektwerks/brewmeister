@@ -1,15 +1,16 @@
 package objektwerks.ui
 
-import scalafx.Includes.*
-
 import scalafx.geometry.Orientation
 import scalafx.scene.Scene
-import javafx.scene.control.SplitPane
+import scalafx.scene.control.SplitPane
 import scalafx.scene.layout.{Priority, VBox}
+
+import scala.annotation.nowarn
 
 import pane.{LeftPane, RightPane}
 
 final class View(context: Context):
+  @nowarn
   val splitPane = new SplitPane:
     orientation = Orientation.Horizontal
     items.addAll(LeftPane(), RightPane())
