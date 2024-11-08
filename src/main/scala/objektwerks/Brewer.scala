@@ -42,20 +42,20 @@ object Brewer:
 final class Brewer(listener: Listener):
   def brew(command: Command): Unit =
     command match
-      case sanitize: Sanitize =>
-        Sanitizer(listener).sanitize( sanitize )
+      case _: Sanitize =>
+        Sanitizer(listener).sanitize()
       case prepare: Prepare =>
         Preparer(listener).prepare( prepare )
-      case malt: Malt =>
-        Malter(listener).malt( malt )
-      case mill: Mill =>
-        Miller(listener).mill( mill )
+      case _: Malt =>
+        Malter(listener).malt()
+      case _: Mill =>
+        Miller(listener).mill()
       case mash: Mash =>
         Masher(listener).mash( mash )
       case logMashTempPh: LogMashingTempPh =>
         Masher(listener).logMashTempPh( logMashTempPh )
-      case lauter: Lauter =>
-        Lauterer(listener).lauter( lauter )
+      case _: Lauter =>
+        Lauterer(listener).lauter()
       case sparge: Sparge =>
         Sparger(listener).sparge( sparge )
       case logMashEfficiency: LogMashEfficiency =>
@@ -82,7 +82,7 @@ final class Brewer(listener: Listener):
         Kegger(listener).logKeggingTempBrewhouseEfficiency( logKeggingTempBrewhouseEfficiency )
 
 final class Sanitizer(listener: Listener):
-  def sanitize(sanitize: Sanitize): Unit =
+  def sanitize(): Unit =
     listener.onEvent(
       Sanitizing(
         List( "Sanitizing brewing components." )
@@ -124,7 +124,7 @@ final class Preparer(listener: Listener):
     )
 
 final class Malter(listener: Listener):
-  def malt(malt: Malt): Unit =
+  def malt(): Unit =
     listener.onEvent(
       Malting(
         List( "Malting grains." )
@@ -137,7 +137,7 @@ final class Malter(listener: Listener):
     )
 
 final class Miller(listener: Listener):
-  def mill(mill: Mill): Unit =
+  def mill(): Unit =
     listener.onEvent(
       Milling(
         List( "Milling grains into a grist." )
@@ -179,7 +179,7 @@ final class Masher(listener: Listener):
     )
 
 final class Lauterer(listener: Listener):
-  def lauter(lauter: Lauter): Unit =
+  def lauter(): Unit =
     listener.onEvent(
       Lautering(
         List( "Lautering wort." )
