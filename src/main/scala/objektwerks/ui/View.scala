@@ -9,11 +9,11 @@ import scala.annotation.nowarn
 
 import pane.{LeftPane, RightPane}
 
-final class View(context: Context):
+final class View(context: Context, model: Model):
   @nowarn
   val splitPane = new SplitPane:
     orientation = Orientation.Horizontal
-    items.addAll(LeftPane(context), RightPane(context))
+    items.addAll(LeftPane(context, model), RightPane(context, model))
 
   splitPane.setDividerPositions(0.20, 0.80)
   VBox.setVgrow(splitPane, Priority.Always)
