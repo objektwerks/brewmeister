@@ -13,3 +13,7 @@ final class BatchPane(context: Context, model: Model) extends TabPane:
   tabs = List(batchTab)
 
   VBox.setVgrow(this, Priority.Always)
+
+  model.selectedBatch.onChange { (_, oldBatch, newBatch) =>
+
+  }

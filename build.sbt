@@ -15,7 +15,7 @@ libraryDependencies ++= {
   )
 }
 scalacOptions ++= Seq(
-  "-Wall"
+  // "-Wall"
 )
 outputStrategy := Some(StdoutOutput)
 parallelExecution := false
