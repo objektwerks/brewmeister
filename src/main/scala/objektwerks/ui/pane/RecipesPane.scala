@@ -2,4 +2,6 @@ package objektwerks.ui.pane
 
 import scalafx.scene.control.TabPane
 
-final class RecipesPane extends TabPane
+import objektwerks.ui.Context
+
+final class RecipesPane(context: Context) extends TabPane

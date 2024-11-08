@@ -2,4 +2,6 @@ package objektwerks.ui.pane
 
 import scalafx.scene.control.TabPane
 
-final class BatchesPane extends TabPane
+import objektwerks.ui.Context
+
+final class BatchesPane(context: Context) extends TabPane
