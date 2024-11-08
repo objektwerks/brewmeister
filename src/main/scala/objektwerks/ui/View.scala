@@ -20,5 +20,5 @@ final class View(context: Context, model: Model):
     prefHeight = context.windowHeight
     children = List(splitPane)
 
-  val scene: Scene = new Scene:
+  val scene = new Scene:
     root = rootBox
