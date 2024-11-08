@@ -27,11 +27,11 @@ createAssemblyDir := {
   import java.nio.file.*
 
   val assemblyDir: File = baseDirectory.value / ".assembly"
-  val assemblyPath: Path = assemblyDir.toPath()
+  val assemblyPath: Path = assemblyDir.toPath
 
   if (!Files.exists(assemblyPath)) Files.createDirectory(assemblyPath)
 
-  println(s"[createAssemblyDir] assembly dir: ${assemblyPath} is valid: ${Files.isDirectory(assemblyPath)}")
+  println(s"[createAssemblyDir] assembly dir: $assemblyPath is valid: ${Files.isDirectory(assemblyPath)}")
 
   assemblyDir
 }
@@ -46,8 +46,8 @@ copyAssemblyJar := {
   val source: Path = (assembly / assemblyOutputPath).value.toPath
   val target: Path = Paths.get(assemblyPath)
 
-  println(s"[copyAssemblyJar] source: ${source}")
-  println(s"[copyAssemblyJar] target: ${target}")
+  println(s"[copyAssemblyJar] source: $source")
+  println(s"[copyAssemblyJar] target: $target")
 
   Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING)
 }
@@ -83,7 +83,7 @@ libraryDependencies ++= javafxModules.map( module =>
 )
 
 assembly / assemblyMergeStrategy := {
-  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+  case PathList("META-INF", xs*) => MergeStrategy.discard
   case x => MergeStrategy.first
 }
 
