@@ -3,13 +3,12 @@ package objektwerks.ui.pane
 import scalafx.scene.control.{Tab, TabPane}
 import scalafx.scene.layout.{Priority, VBox}
 
-import objektwerks.ui.Context
+import objektwerks.ui.{Context, Model}
 
-final class BatchesPane(context: Context) extends TabPane:
+final class BatchesPane(context: Context, model: Model) extends TabPane:
   val batchesTab = new Tab:
   	text = context.tabBatches
   	closable = false
-  	content = BatchesPane(context)
 
   tabs = List(batchesTab)
 
