@@ -8,17 +8,17 @@ import scalafx.scene.layout.{Priority, VBox}
 import pane.{LeftPane, RightPane}
 
 final class View(context: Context, model: Model):
-  val splitPane = new SplitPane:
+  private val splitPane = new SplitPane:
     orientation = Orientation.Horizontal
     items.addAll(LeftPane(context, model), RightPane(context, model))
 
   splitPane.setDividerPositions(0.30, 0.70)
   VBox.setVgrow(splitPane, Priority.Always)
 
-  val rootBox = new VBox:
+  private val rootBox = new VBox:
     prefWidth = context.windowWidth
     prefHeight = context.windowHeight
     children = List(splitPane)
 
-  val scene = new Scene:
+  val scene: Scene = new Scene:
     root = rootBox
