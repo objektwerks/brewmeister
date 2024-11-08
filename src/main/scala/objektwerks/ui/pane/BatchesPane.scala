@@ -7,7 +7,7 @@ import objektwerks.ui.Context
 
 final class BatchesPane(context: Context) extends TabPane:
   val batchesTab = new Tab:
-  	text = "Batches"
+  	text = context.tabBatches
   	closable = false
   	content = BatchesPane(context)
 
