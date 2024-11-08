@@ -11,6 +11,11 @@ final class Context(config: Config):
 
   val buttonAdd = config.getString("button.add")
 
+  val tabBatches = config.getString("tab.batches")
+  val tabBatch = config.getString("tab.batch")
+  val tabRecipes = config.getString("tab.recipes")
+  val tabRecipe = config.getString("tab.recipe")
+
   def logoImageView = loadImageView("/image/logo.png")
   def addImageView = loadImageView("/image/add.png")
   def logoImage = new Image(Image.getClass.getResourceAsStream("/image/logo.png"))
