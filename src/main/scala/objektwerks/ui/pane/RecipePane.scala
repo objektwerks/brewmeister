@@ -7,7 +7,7 @@ import objektwerks.ui.Context
 
 final class RecipePane(context: Context) extends TabPane:
   val recipeTab = new Tab:
-  	text = "Recipe"
+  	text = context.tabRecipe
   	closable = false
   	content = RecipePane(context)
 
