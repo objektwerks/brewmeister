@@ -7,7 +7,7 @@ import upickle.default.{ReadWriter => JsonSupport}
 object Batch:
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
     val sum = grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.value) }.sum
-    ( sum / grains.length ).toInt
+    sum / grains.length
 
   def srmColor(grainWeight: Double,
                grainColor: Double,
