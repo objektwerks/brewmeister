@@ -5,12 +5,9 @@ import scalafx.scene.Scene
 import scalafx.scene.control.SplitPane
 import scalafx.scene.layout.{Priority, VBox}
 
-import scala.annotation.nowarn
-
 import pane.{LeftPane, RightPane}
 
 final class View(context: Context, model: Model):
-  @nowarn
   val splitPane = new SplitPane:
     orientation = Orientation.Horizontal
     items.addAll(LeftPane(context, model), RightPane(context, model))
