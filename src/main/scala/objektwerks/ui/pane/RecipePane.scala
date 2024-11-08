@@ -3,10 +3,9 @@ package objektwerks.ui.pane
 import scalafx.scene.control.{Tab, TabPane}
 import scalafx.scene.layout.{Priority, VBox}
 
-import objektwerks.Recipe
-import objektwerks.ui.Context
+import objektwerks.ui.{Context, Model}
 
-final class RecipePane(context: Context, recipe: Recipe) extends TabPane:
+final class RecipePane(context: Context, model: Model) extends TabPane:
   val recipeTab = new Tab:
   	text = context.tabRecipe
   	closable = false
