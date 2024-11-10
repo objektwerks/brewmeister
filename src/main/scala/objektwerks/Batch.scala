@@ -2,6 +2,8 @@ package objektwerks
 
 import scala.math.pow
 
+import scalafx.beans.property.ObjectProperty
+
 import upickle.default.{ReadWriter => JsonSupport}
 
 object Batch:
@@ -73,7 +75,9 @@ final case class Batch(recipe: String = "",
                        log: List[String] = List.empty[String],
                        started: String = now(),
                        process: Process = Process(),
-                       completed: String = "") derives JsonSupport
+                       completed: String = "") derives JsonSupport:
+  val recipeProperty = ObjectProperty[String](this, "recipe", recipe)
+  val batch = this
 
 @upickle.implicits.serializeDefaults(true)
 final case class Process(sanitizeStarted: String = "",
