@@ -51,4 +51,11 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
 
   tabs = List(tab)
 
+  VBox.setVgrow(tableView, Priority.Always)
   VBox.setVgrow(this, Priority.Always)
+
+  def add(): Unit = ???
+
+  def update(): Unit = ???
+
+  def simulate(): Unit = ???
