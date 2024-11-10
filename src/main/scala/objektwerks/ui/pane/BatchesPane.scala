@@ -1,7 +1,8 @@
 package objektwerks.ui.pane
 
+import scalafx.Includes.*
 import scalafx.geometry.Insets
-import scalafx.scene.control.{Tab, TabPane, TableColumn, TableView}
+import scalafx.scene.control.{SelectionMode, Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.layout.{Priority, VBox}
 
 import objektwerks.Batch
@@ -16,6 +17,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
     )
     items = model.observableBatches
   tableView.columnResizePolicy = TableView.ConstrainedResizePolicy
+  tableView.selectionModel().selectionModeProperty.value = SelectionMode.Single
 
   val vbox = new VBox:
     spacing = 3
