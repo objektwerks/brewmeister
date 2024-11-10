@@ -29,9 +29,15 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     disable = true
     onAction = { _ => update() }
 
+  val simulateButton = new Button:
+    graphic = context.logoImageView
+    text = context.buttonAdd
+    disable = false
+    onAction = { _ => simulate() }
+
   val buttonBar = new HBox:
     spacing = 6
-    children = List(addButton, editButton)
+    children = List(addButton, editButton, simulateButton)
 
   val vbox = new VBox:
     spacing = 3
