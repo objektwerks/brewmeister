@@ -1,6 +1,8 @@
 package objektwerks
 
-import upickle.default.{ReadWriter => JsonSupport}
+import scalafx.beans.property.ObjectProperty
+
+import upickle.default.ReadWriter as JsonSupport
 
 object Recipe:
   def default: Recipe =
@@ -59,7 +61,9 @@ final case class Recipe(name: String = "",
                         calories: IntRange = IntRange(0, 0),
                         mashEfficiency: IntRange = IntRange(0, 0),
                         brewhouseEfficiency: IntRange = IntRange(0, 0),
-                        created: String = now()) derives JsonSupport
+                        created: String = now()) derives JsonSupport:
+  val nameProperty = ObjectProperty[String](this, "name", name)
+  val recipe = this
 
 enum MixinStep derives JsonSupport:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
