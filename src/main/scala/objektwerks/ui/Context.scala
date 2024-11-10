@@ -16,6 +16,9 @@ final class Context(config: Config):
   val tabRecipes = config.getString("tab.recipes")
   val tabRecipe = config.getString("tab.recipe")
 
+  val columnBatch = config.getString("column.batch")
+  val columnRecipe = config.getString("column.recipe")
+
   def logoImageView = loadImageView("/image/logo.png")
   def addImageView = loadImageView("/image/add.png")
   def editImageView = loadImageView("/image/edit.png")
