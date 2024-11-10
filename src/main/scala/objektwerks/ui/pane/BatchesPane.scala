@@ -22,8 +22,9 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
     children = List(tableView)
 
   val tab = new Tab:
-  	text = context.tabBatches
-  	closable = false
+    text = context.tabBatches
+    closable = false
+    content = vbox
 
   tabs = List(tab)
 
