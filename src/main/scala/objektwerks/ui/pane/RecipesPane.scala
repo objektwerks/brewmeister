@@ -36,7 +36,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   val vbox = new VBox:
     spacing = 3
     padding = Insets(3)
-    children = List(tableView)
+    children = List(tableView, buttonBar)
 
   val tab = new Tab:
     text = context.tabRecipes
