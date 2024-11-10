@@ -1,7 +1,7 @@
 package objektwerks.ui.pane
 
 import scalafx.geometry.Insets
-import scalafx.scene.control.{Tab, TabPane, TableColumn, TableView}
+import scalafx.scene.control.{Button, Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.layout.{Priority, VBox}
 
 import objektwerks.Recipe
@@ -16,6 +16,12 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     )
     items = model.observableRecipes
   tableView.columnResizePolicy = TableView.ConstrainedResizePolicy
+
+  val addButton = new Button:
+    graphic = context.addImageView
+    text = context.buttonAdd
+    disable = false
+    onAction = { _ => add() }
 
   val vbox = new VBox:
     spacing = 3
