@@ -18,6 +18,12 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     items = model.observableRecipes
   tableView.columnResizePolicy = TableView.ConstrainedResizePolicy
   tableView.selectionModel().selectionModeProperty.value = SelectionMode.Single
+  tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedItem) =>
+    if selectedItem != null then
+      model.selectedRecipe.value = selectedItem
+      editButton.disable = false
+      simulateButton.disable = false
+  }
 
   val addButton = new Button:
     graphic = context.addImageView
@@ -55,13 +61,6 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
 
   VBox.setVgrow(vbox, Priority.Always)
   VBox.setVgrow(this, Priority.Always)
-
-  tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedItem) =>
-    if selectedItem != null then
-      model.selectedRecipe.value = selectedItem
-      editButton.disable = false
-      simulateButton.disable = false
-  }
 
   def add(): Unit = ???
 
