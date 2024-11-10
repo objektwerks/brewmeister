@@ -15,6 +15,11 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     )
     items = model.observableRecipes
 
+  private content = new VBox:
+    spacing = 3
+    padding = Insets(3)
+    children = List(tableView)
+
   private val recipesTab = new Tab:
   	text = context.tabRecipes
   	closable = false
