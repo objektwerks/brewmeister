@@ -1,5 +1,6 @@
 package objektwerks.ui.pane
 
+import scalafx.geometry.Insets
 import scalafx.scene.control.{Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.layout.{Priority, VBox}
 
@@ -15,15 +16,16 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     )
     items = model.observableRecipes
 
-  private content = new VBox:
+  private val vbox = new VBox:
     spacing = 3
     padding = Insets(3)
     children = List(tableView)
 
-  private val recipesTab = new Tab:
-  	text = context.tabRecipes
-  	closable = false
+  private val tab = new Tab:
+    text = context.tabRecipes
+    closable = false
+    content = vbox
 
-  tabs = List(recipesTab)
+  tabs = List(tab)
 
   VBox.setVgrow(this, Priority.Always)
