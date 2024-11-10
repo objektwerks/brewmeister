@@ -15,6 +15,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
         cellValueFactory = _.value.nameProperty
     )
     items = model.observableRecipes
+  tableView.columnResizePolicy = TableView.ConstrainedResizePolicy
 
   val vbox = new VBox:
     spacing = 3

@@ -15,6 +15,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
         cellValueFactory = _.value.recipeProperty
     )
     items = model.observableBatches
+  tableView.columnResizePolicy = TableView.ConstrainedResizePolicy
 
   val vbox = new VBox:
     spacing = 3
