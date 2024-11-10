@@ -2,7 +2,7 @@ package objektwerks.ui.pane
 
 import scalafx.geometry.Insets
 import scalafx.scene.control.{Button, Tab, TabPane, TableColumn, TableView}
-import scalafx.scene.layout.{Priority, VBox}
+import scalafx.scene.layout.{HBox, Priority, VBox}
 
 import objektwerks.Recipe
 import objektwerks.ui.{Context, Model}
@@ -28,6 +28,10 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     text = context.buttonEdit
     disable = true
     onAction = { _ => update() }
+
+  val buttonBar = new HBox:
+    spacing = 6
+    children = List(addButton, editButton)
 
   val vbox = new VBox:
     spacing = 3
