@@ -8,7 +8,7 @@ import objektwerks.Recipe
 import objektwerks.ui.{Context, Model}
 
 final class RecipesPane(context: Context, model: Model) extends TabPane:
-  private val tableView = new TableView[Recipe]():
+  val tableView = new TableView[Recipe]():
     columns ++= List(
       new TableColumn[Recipe, String]:
         text = "Recipe"
@@ -16,12 +16,12 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     )
     items = model.observableRecipes
 
-  private val vbox = new VBox:
+  val vbox = new VBox:
     spacing = 3
     padding = Insets(3)
     children = List(tableView)
 
-  private val tab = new Tab:
+  val tab = new Tab:
     text = context.tabRecipes
     closable = false
     content = vbox
