@@ -11,7 +11,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     columns ++= List(
       new TableColumn[Recipe, String]:
         text = "Recipe"
-        cellValueFactory = _.value.name
+        cellValueFactory = _.value.nameProperty
     )
     items = model.observableRecipes
 
