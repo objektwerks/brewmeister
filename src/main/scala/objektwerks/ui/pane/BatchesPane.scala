@@ -11,7 +11,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
   val tableView = new TableView[Batch]():
     columns ++= List(
       new TableColumn[Batch, String]:
-        text = context.tabBatch
+        text = context.columnBatch
         cellValueFactory = _.value.recipeProperty
     )
     items = model.observableBatches
