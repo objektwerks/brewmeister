@@ -34,7 +34,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   val simulateButton = new Button:
     graphic = context.logoImageView
     text = context.buttonAdd
-    disable = false
+    disable = true
     onAction = { _ => simulate() }
 
   val buttonBar = new HBox:
@@ -55,6 +55,12 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
 
   VBox.setVgrow(vbox, Priority.Always)
   VBox.setVgrow(this, Priority.Always)
+
+  tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedItem) =>
+    if selectedItem != null then
+      editButton.disable = false
+      simulateButton.disable = false
+  }
 
   def add(): Unit = ???
 
