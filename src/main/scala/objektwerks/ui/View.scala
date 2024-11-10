@@ -22,3 +22,4 @@ final class View(context: Context, model: Model):
 
   val scene = new Scene:
     root = rootBox
+    stylesheets = List("/style.css")
