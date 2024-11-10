@@ -1,7 +1,8 @@
 package objektwerks.ui.pane
 
+import scalafx.Includes.*
 import scalafx.geometry.Insets
-import scalafx.scene.control.{Button, Tab, TabPane, TableColumn, TableView}
+import scalafx.scene.control.{Button, SelectionMode, Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.layout.{HBox, Priority, VBox}
 
 import objektwerks.Recipe
@@ -16,6 +17,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     )
     items = model.observableRecipes
   tableView.columnResizePolicy = TableView.ConstrainedResizePolicy
+  tableView.selectionModel().selectionModeProperty.value = SelectionMode.Single
 
   val addButton = new Button:
     graphic = context.addImageView
