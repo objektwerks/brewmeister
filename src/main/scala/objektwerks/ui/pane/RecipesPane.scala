@@ -11,7 +11,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   val tableView = new TableView[Recipe]():
     columns ++= List(
       new TableColumn[Recipe, String]:
-        text = "Recipe"
+        text = context.tabRecipe
         cellValueFactory = _.value.nameProperty
     )
     items = model.observableRecipes
