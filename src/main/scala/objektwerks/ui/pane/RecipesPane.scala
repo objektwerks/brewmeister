@@ -58,6 +58,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
 
   tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedItem) =>
     if selectedItem != null then
+      model.selectedRecipe.value = selectedItem
       editButton.disable = false
       simulateButton.disable = false
   }
