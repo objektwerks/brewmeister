@@ -1,5 +1,6 @@
 package objektwerks.ui.pane
 
+import scalafx.geometry.Insets
 import scalafx.scene.control.{Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.layout.{Priority, VBox}
 
@@ -14,6 +15,11 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
         cellValueFactory = _.value.recipeProperty
     )
     items = model.observableBatches
+
+  val vbox = new VBox:
+    spacing = 3
+    padding = Insets(3)
+    children = List(tableView)
 
   val tab = new Tab:
   	text = context.tabBatches
