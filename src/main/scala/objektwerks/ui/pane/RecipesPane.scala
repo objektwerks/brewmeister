@@ -23,6 +23,12 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     disable = false
     onAction = { _ => add() }
 
+  val editButton = new Button:
+    graphic = context.editImageView
+    text = context.buttonEdit
+    disable = true
+    onAction = { _ => update() }
+
   val vbox = new VBox:
     spacing = 3
     padding = Insets(3)
