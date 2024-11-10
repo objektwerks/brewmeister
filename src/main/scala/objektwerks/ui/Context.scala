@@ -11,6 +11,7 @@ final class Context(config: Config):
 
   val buttonAdd = config.getString("button.add")
   val buttonEdit = config.getString("button.edit")
+  val buttonSimulate = config.getString("button.simulate")
 
   val tabBatches = config.getString("tab.batches")
   val tabBatch = config.getString("tab.batch")
