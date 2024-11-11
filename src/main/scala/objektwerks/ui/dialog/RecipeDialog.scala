@@ -8,3 +8,4 @@ import objektwerks.ui.{App, Context}
 final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe]:
   initOwner(App.stage)
   title = context.windowTitle
+  headerText = context.dialogRecipe
