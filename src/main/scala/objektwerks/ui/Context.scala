@@ -12,6 +12,7 @@ final class Context(config: Config):
   val buttonAdd = config.getString("button.add")
   val buttonEdit = config.getString("button.edit")
   val buttonSimulate = config.getString("button.simulate")
+  val buttonRemove = config.getString("button.remove")
 
   val tabBatches = config.getString("tab.batches")
   val tabBatch = config.getString("tab.batch")
@@ -20,6 +21,8 @@ final class Context(config: Config):
 
   val columnBatch = config.getString("column.batch")
   val columnRecipe = config.getString("column.recipe")
+
+  val dialogRecipe = config.getString("dialog.recipe")
 
   def logoImageView = loadImageView("/image/logo.png")
   def addImageView = loadImageView("/image/add.png")
