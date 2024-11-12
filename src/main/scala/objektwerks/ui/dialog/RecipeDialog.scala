@@ -14,3 +14,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
+
+  resultConverter = dialogButton =>
+    if dialogButton == saveButtonType then
+      recipe // TODO
+    else null
