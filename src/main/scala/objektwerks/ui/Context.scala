@@ -11,6 +11,7 @@ final class Context(config: Config):
 
   val buttonAdd = config.getString("button.add")
   val buttonEdit = config.getString("button.edit")
+  val buttonSave = config.getString("button.save")
   val buttonSimulate = config.getString("button.simulate")
   val buttonRemove = config.getString("button.remove")
 
