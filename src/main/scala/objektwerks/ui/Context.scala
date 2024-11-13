@@ -74,6 +74,7 @@ final class Context(config: Config):
   val labelPotentialFermentableExtract = config.getString("label.potentialFermentableExtract")
   val labelConditioningTempDuration = config.getString("label.conditioningTempDuration")
   val labelKeggingTempDuration = config.getString("label.keggingTempDuration")
+  val labelPh = config.getString("label.pH")
 
 
 
