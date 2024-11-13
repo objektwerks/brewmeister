@@ -61,6 +61,10 @@ final class Context(config: Config):
   val labelStyle = config.getString("label.style")
   val labelWater = config.getString("label.water")
   val labelVolume = config.getString("label.volume")
+  val labelGrains = config.getString("label.grains")
+  val labelHops = config.getString("label.hops")
+  val labelAdjuncts = config.getString("label.adjuncts")
+  val labelYeasts = config.getString("label.yeasts")
 
 
   def logoImageView = loadImageView("/image/logo.png")
