@@ -78,6 +78,7 @@ final class Context(config: Config):
   val labelOriginalGravity = config.getString("label.originalGravity")
   val labelFinalGravity = config.getString("label.finalGravity")
   val labelSrmColor = config.getString("label.srmColor")
+  val labelIbuBitterness = config.getString("label.ibuBitterness")
 
 
   def logoImageView = loadImageView("/image/logo.png")
