@@ -29,6 +29,38 @@ final class Context(config: Config):
   val dialogAdjunct = config.getString("dialog.adjunct")
   val dialogYeast = config.getString("dialog.yeast")
 
+  /* 
+  style = "Style:"
+  water = "Water:"
+  volume = "Volume:"
+  grains = "Grains:"
+  hops = "Hops:"
+  adjuncts = "Adjuncts:"
+  yeasts = "Yeasts:"
+  mashingTempDuration = "Mashing Temp Duration:"
+  potentialMashExtract = "Potential Mash Extract:"
+  boilingTempDuration = "Boiling Temp Duration:"
+  coolingTempRange = "Cooling Temp Range:"
+  fermentingTempDuration = "Fermenting Temp Duration:"
+  potentialFermentableExtract = "Potential Fermentable Extract:"
+  conditioningTempDuration = "Conditioning Temp Duration:"
+  keggingTempDuration = "Kegging Temp Duration:"
+  pH = "pH:"
+  originalGravity = "Original Gravity:"
+  finalGravity = "Final Gravity:"
+  srmColor = "SRM Color:"
+  ibuBitterness = "IBU Bitterness:"
+  alcoholByVolume = "Alchohol By Volume:"
+  alcoholByWeight = "Alchohol By Weight:"
+  calories = "Calories:"
+  mashEfficiency = "Mash Efficiency:"
+  brewhouseEfficiency = "Brewhouse Efficiency:"
+  created = "Created:"
+   */
+
+  val labelStyle = config.getString("label.style")
+
+
   def logoImageView = loadImageView("/image/logo.png")
   def addImageView = loadImageView("/image/add.png")
   def editImageView = loadImageView("/image/edit.png")
