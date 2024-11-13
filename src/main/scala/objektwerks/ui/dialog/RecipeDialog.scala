@@ -17,5 +17,5 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      grain // TODO
+      recipe // TODO
     else null
