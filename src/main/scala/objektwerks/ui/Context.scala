@@ -67,6 +67,7 @@ final class Context(config: Config):
   val labelYeasts = config.getString("label.yeasts")
 
   val labelMashingTempDuration = config.getString("label.mashingTempDuration")
+  val labelPotentialMashExtract = config.getString("label.potentialMashExtract")
 
 
 
