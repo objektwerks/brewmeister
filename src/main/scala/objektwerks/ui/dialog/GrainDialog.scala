@@ -7,7 +7,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 import objektwerks.Grain
 import objektwerks.ui.{App, Context}
 
-final class RecipeDialog(context: Context, grain: Grain) extends Dialog[Grain]:
+final class GrainDialog(context: Context, grain: Grain) extends Dialog[Grain]:
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogGrain
