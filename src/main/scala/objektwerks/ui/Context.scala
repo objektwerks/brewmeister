@@ -66,6 +66,9 @@ final class Context(config: Config):
   val labelAdjuncts = config.getString("label.adjuncts")
   val labelYeasts = config.getString("label.yeasts")
 
+  val labelMashingTempDuration = config.getString("label.mashingTempDuration")
+
+
 
   def logoImageView = loadImageView("/image/logo.png")
   def addImageView = loadImageView("/image/add.png")
