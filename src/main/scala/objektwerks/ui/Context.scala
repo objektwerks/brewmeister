@@ -75,6 +75,7 @@ final class Context(config: Config):
   val labelConditioningTempDuration = config.getString("label.conditioningTempDuration")
   val labelKeggingTempDuration = config.getString("label.keggingTempDuration")
   val labelPh = config.getString("label.pH")
+  val labelOriginalGravity = config.getString("label.originalGravity")
 
 
 
