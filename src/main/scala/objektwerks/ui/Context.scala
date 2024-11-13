@@ -82,6 +82,7 @@ final class Context(config: Config):
   val labelAlcoholByVolume = config.getString("label.alcoholByVolume")
   val labelAlcoholByWeight = config.getString("label.alcoholByWeight")
   val labelCalories = config.getString("label.calories")
+  val labelMashEfficiency = config.getString("label.mashEfficiency")
 
 
   def logoImageView = loadImageView("/image/logo.png")
