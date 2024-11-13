@@ -69,6 +69,7 @@ final class Context(config: Config):
   val labelMashingTempDuration = config.getString("label.mashingTempDuration")
   val labelPotentialMashExtract = config.getString("label.potentialMashExtract")
   val labelBoilingTempDuration = config.getString("label.boilingTempDuration")
+  val labelCoolingTempRange = config.getString("label.coolingTempRange")
 
 
 
