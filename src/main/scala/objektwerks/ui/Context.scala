@@ -56,7 +56,6 @@ final class Context(config: Config):
   val labelBrewhouseEfficiency = config.getString("label.brewhouseEfficiency")
   val labelCreated = config.getString("label.created")
 
-
   def logoImageView = loadImageView("/image/logo.png")
   def addImageView = loadImageView("/image/add.png")
   def editImageView = loadImageView("/image/edit.png")
