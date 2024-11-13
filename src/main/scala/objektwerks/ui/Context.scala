@@ -24,6 +24,10 @@ final class Context(config: Config):
   val columnRecipe = config.getString("column.recipe")
 
   val dialogRecipe = config.getString("dialog.recipe")
+  val dialogGrain = config.getString("dialog.grain")
+  val dialogHop = config.getString("dialog.hop")
+  val dialogAdjunct = config.getString("dialog.adjunct")
+  val dialogYeast = config.getString("dialog.yeast")
 
   def logoImageView = loadImageView("/image/logo.png")
   def addImageView = loadImageView("/image/add.png")
