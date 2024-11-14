@@ -99,6 +99,9 @@ final class Context(config: Config):
   kegCompleted = "Keg Completed:"
  */
 
+  val labelSanitizeStarted = config.getString("label.sanitizeStarted")
+  val labelSanitizeCompleted = config.getString("label.sanitizeCompleted")
+
   val labelKegStarted = config.getString("label.kegStarted")
   val labelKegCompleted = config.getString("label.kegCompleted")
 
