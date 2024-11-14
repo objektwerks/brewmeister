@@ -64,7 +64,6 @@ final class Context(config: Config):
   fermentingTemp = "Fermenting Temp:"
   conditioningTemp = "Conditioning Temp:"
   keggingTemp = "Kegging Temp:"
-  brewhouseEfficiency = "Brewhouse Efficiency:"
   appearance = "Appearance:"
   aroma = "Aroma:"
   taste = "Taste:"
