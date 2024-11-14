@@ -57,20 +57,12 @@ final class Context(config: Config):
   val labelCreated = config.getString("label.created")
 
   /* 
-  recipe = "Recipe:"
-  mashingTemp = "Mashing Temp:"
-  boilingTemp = "Boiling Temp:"
-  coolingTemp = "Cooling Temp:"
-  fermentingTemp = "Fermenting Temp:"
-  conditioningTemp = "Conditioning Temp:"
-  keggingTemp = "Kegging Temp:"
   appearance = "Appearance:"
   aroma = "Aroma:"
   taste = "Taste:"
   log = "Log:"
   started = "Started:"
   process = "Process:"
-  completed = "Completed:"
    */
 
   val labelRecipe = config.getString("label.recipe")
