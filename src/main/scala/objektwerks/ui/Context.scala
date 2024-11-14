@@ -70,9 +70,7 @@ final class Context(config: Config):
   val labelProcessed = config.getString("label.processed")
   val labelCompleted = config.getString("label.completed")
 
-/* 
-  lauterStarted = "Lauter Started:"
-  lauterCompleted = "Lauter Completed:"
+/*
   spargeStarted = "Sparge Started:"
   spargeCompleted = "Sparge Completed:"
   boilStarted = "Boil Started:"
@@ -99,6 +97,8 @@ final class Context(config: Config):
   val labelMashCompleted = config.getString("label.mashCompleted")
   val labelLauterStarted = config.getString("label.lauterStarted")
   val labelLauterCompleted = config.getString("label.lauterCompleted")
+  val labelSpargeStarted = config.getString("label.spargeStarted")
+  val labelSpargeCompleted = config.getString("label.spargeCompleted")
 
   val labelKegStarted = config.getString("label.kegStarted")
   val labelKegCompleted = config.getString("label.kegCompleted")
