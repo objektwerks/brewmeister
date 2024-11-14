@@ -61,7 +61,6 @@ final class Context(config: Config):
   mashingTemp = "Mashing Temp:"
   boilingTemp = "Boiling Temp:"
   coolingTemp = "Cooling Temp:"
-  mashEfficiency = "Mass Efficiency:"
   fermentingTemp = "Fermenting Temp:"
   conditioningTemp = "Conditioning Temp:"
   keggingTemp = "Kegging Temp:"
@@ -79,6 +78,7 @@ final class Context(config: Config):
   val labelMashingTemp = config.getString("label.mashingTemp")
   val labelBoilingTemp = config.getString("label.boilingTemp")
   val labelCoolingTemp = config.getString("label.coolingTemp")
+  val labelFermentingTemp = config.getString("label.fermentingTemp")
 
   val labelCompleted = config.getString("label.completed")
 
