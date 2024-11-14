@@ -57,9 +57,6 @@ final class Context(config: Config):
   val labelCreated = config.getString("label.created")
 
   /* 
-  appearance = "Appearance:"
-  aroma = "Aroma:"
-  taste = "Taste:"
   log = "Log:"
   started = "Started:"
   process = "Process:"
@@ -74,6 +71,7 @@ final class Context(config: Config):
   val labelKeggingTemp = config.getString("label.keggingTemp")
   val labelAppearance = config.getString("label.appearance")
   val labelAroma = config.getString("label.aroma")
+  val labelTaste = config.getString("label.taste")
 
   val labelCompleted = config.getString("label.completed")
 
