@@ -55,13 +55,6 @@ final class Context(config: Config):
   val labelMashEfficiency = config.getString("label.mashEfficiency")
   val labelBrewhouseEfficiency = config.getString("label.brewhouseEfficiency")
   val labelCreated = config.getString("label.created")
-
-  /* 
-  log = "Log:"
-  started = "Started:"
-  process = "Process:"
-   */
-
   val labelRecipe = config.getString("label.recipe")
   val labelMashingTemp = config.getString("label.mashingTemp")
   val labelBoilingTemp = config.getString("label.boilingTemp")
@@ -74,9 +67,8 @@ final class Context(config: Config):
   val labelTaste = config.getString("label.taste")
   val labelLog = config.getString("label.log")
   val labelStarted = config.getString("label.started")
-
+  val labelProcessed = config.getString("label.processed")
   val labelCompleted = config.getString("label.completed")
-
 
   def logoImageView = loadImageView("/image/logo.png")
   def addImageView = loadImageView("/image/add.png")
