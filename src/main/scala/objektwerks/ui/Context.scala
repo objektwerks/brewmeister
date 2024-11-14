@@ -70,6 +70,38 @@ final class Context(config: Config):
   val labelProcessed = config.getString("label.processed")
   val labelCompleted = config.getString("label.completed")
 
+/* 
+  sanitizeStarted = "Sanitize Started:"
+  sanitizeCompleted = "Sanitize Completed:"
+  prepareStarted = "Prepare Started:"
+  prepareCompleted = "Prepare Completed:"
+  maltStarted = "Malt Started:"
+  maltCompleted = "Malt Completed:"
+  millStarted = "Mill Started:"
+  millCompleted = "Mill Completed:"
+  mashStarted = "Mash Started:"
+  mashCompleted = "Mash Completed:"
+  lauterStarted = "Lauter Started:"
+  lauterCompleted = "Lauter Completed:"
+  spargeStarted = "Sparge Started:"
+  spargeCompleted = "Sparge Completed:"
+  boilStarted = "Boil Started:"
+  boilCompleted = "Boil Completed:"
+  coolStarted = "Cool Started:"
+  coolCompleted = "Cool Completed:"
+  whirlpoolStarted = "Whirlpool Started:"
+  whirlpoolCompleted = "Whirlpool Completed:"
+  fermentStarted = "Feremented Started:"
+  fermentCompleted = "Fermented Completed:"
+  conditionStarted = "Condition Started:"
+  conditionCompleted = "Condition Completed:"
+  kegStarted = "Keg Started:"
+  kegCompleted = "Keg Completed:"
+ */
+
+  val labelKegStarted = config.getString("label.kegStarted")
+  val labelKegCompleted = config.getString("label.kegCompleted")
+
   def logoImageView = loadImageView("/image/logo.png")
   def addImageView = loadImageView("/image/add.png")
   def editImageView = loadImageView("/image/edit.png")
