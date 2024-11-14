@@ -76,6 +76,7 @@ final class Context(config: Config):
    */
 
   val labelRecipe = config.getString("label.recipe")
+  val labelMashingTemp = config.getString("label.mashingTemp")
 
   val labelCompleted = config.getString("label.completed")
 
