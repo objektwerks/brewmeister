@@ -56,6 +56,30 @@ final class Context(config: Config):
   val labelBrewhouseEfficiency = config.getString("label.brewhouseEfficiency")
   val labelCreated = config.getString("label.created")
 
+  /* 
+  recipe = "Recipe:"
+  mashingTemp = "Mashing Temp:"
+  boilingTemp = "Boiling Temp:"
+  coolingTemp = "Cooling Temp:"
+  mashEfficiency = "Mass Efficiency:"
+  fermentingTemp = "Fermenting Temp:"
+  conditioningTemp = "Conditioning Temp:"
+  keggingTemp = "Kegging Temp:"
+  brewhouseEfficiency = "Brewhouse Efficiency:"
+  appearance = "Appearance:"
+  aroma = "Aroma:"
+  taste = "Taste:"
+  log = "Log:"
+  started = "Started:"
+  process = "Process:"
+  completed = "Completed:"
+   */
+
+  val labelRecipe = config.getString("label.recipe")
+
+  val labelCompleted = config.getString("label.completed")
+
+
   def logoImageView = loadImageView("/image/logo.png")
   def addImageView = loadImageView("/image/add.png")
   def editImageView = loadImageView("/image/edit.png")
