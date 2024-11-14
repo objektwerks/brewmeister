@@ -97,6 +97,8 @@ final class Context(config: Config):
   val labelCoolCompleted = config.getString("label.coolCompleted")
   val labelWhirlpoolStarted = config.getString("label.whirlpoolStarted")
   val labelWhirlpoolCompleted = config.getString("label.whirlpoolCompleted")
+  val labelFermentStarted = config.getString("label.fermentStarted")
+  val labelFermentCompleted = config.getString("label.fermentCompleted")
 
   val labelKegStarted = config.getString("label.kegStarted")
   val labelKegCompleted = config.getString("label.kegCompleted")
