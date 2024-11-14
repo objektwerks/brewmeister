@@ -101,6 +101,8 @@ final class Context(config: Config):
 
   val labelSanitizeStarted = config.getString("label.sanitizeStarted")
   val labelSanitizeCompleted = config.getString("label.sanitizeCompleted")
+  val labelPrepareStarted = config.getString("label.prepareStarted")
+  val labelPrepareCompleted = config.getString("label.prepareCompleted")
 
   val labelKegStarted = config.getString("label.kegStarted")
   val labelKegCompleted = config.getString("label.kegCompleted")
