@@ -79,6 +79,7 @@ final class Context(config: Config):
   val labelBoilingTemp = config.getString("label.boilingTemp")
   val labelCoolingTemp = config.getString("label.coolingTemp")
   val labelFermentingTemp = config.getString("label.fermentingTemp")
+  val labelConditioningTemp = config.getString("label.conditioningTemp")
 
   val labelCompleted = config.getString("label.completed")
 
