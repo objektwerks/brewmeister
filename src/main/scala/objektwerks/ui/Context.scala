@@ -71,10 +71,6 @@ final class Context(config: Config):
   val labelCompleted = config.getString("label.completed")
 
 /*
-  coolStarted = "Cool Started:"
-  coolCompleted = "Cool Completed:"
-  whirlpoolStarted = "Whirlpool Started:"
-  whirlpoolCompleted = "Whirlpool Completed:"
   fermentStarted = "Feremented Started:"
   fermentCompleted = "Fermented Completed:"
   conditionStarted = "Condition Started:"
@@ -99,6 +95,8 @@ final class Context(config: Config):
   val labelBoilCompleted = config.getString("label.boilCompleted")
   val labelCoolStarted = config.getString("label.coolStarted")
   val labelCoolCompleted = config.getString("label.coolCompleted")
+  val labelWhirlpoolStarted = config.getString("label.whirlpoolStarted")
+  val labelWhirlpoolCompleted = config.getString("label.whirlpoolCompleted")
 
   val labelKegStarted = config.getString("label.kegStarted")
   val labelKegCompleted = config.getString("label.kegCompleted")
