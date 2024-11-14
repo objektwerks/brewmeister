@@ -71,12 +71,6 @@ final class Context(config: Config):
   val labelCompleted = config.getString("label.completed")
 
 /* 
-  sanitizeStarted = "Sanitize Started:"
-  sanitizeCompleted = "Sanitize Completed:"
-  prepareStarted = "Prepare Started:"
-  prepareCompleted = "Prepare Completed:"
-  maltStarted = "Malt Started:"
-  maltCompleted = "Malt Completed:"
   millStarted = "Mill Started:"
   millCompleted = "Mill Completed:"
   mashStarted = "Mash Started:"
@@ -95,8 +89,6 @@ final class Context(config: Config):
   fermentCompleted = "Fermented Completed:"
   conditionStarted = "Condition Started:"
   conditionCompleted = "Condition Completed:"
-  kegStarted = "Keg Started:"
-  kegCompleted = "Keg Completed:"
  */
 
   val labelSanitizeStarted = config.getString("label.sanitizeStarted")
@@ -105,6 +97,8 @@ final class Context(config: Config):
   val labelPrepareCompleted = config.getString("label.prepareCompleted")
   val labelMaltStarted = config.getString("label.maltStarted")
   val labelMaltCompleted = config.getString("label.maltCompleted")
+  val labelMillStarted = config.getString("label.millStarted")
+  val labelMillCompleted = config.getString("label.millCompleted")
 
   val labelKegStarted = config.getString("label.kegStarted")
   val labelKegCompleted = config.getString("label.kegCompleted")
