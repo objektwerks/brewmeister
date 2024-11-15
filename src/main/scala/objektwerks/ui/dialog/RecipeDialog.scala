@@ -41,6 +41,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelMashingTempDuration = Label( context.labelMashingTempDuration )
 
   val labelPotentialMashExtract = Label( context.labelPotentialMashExtract )
+  val potentialMashExtractTextField = new DoubleTextField:
+    text = recipe.potentialMashExtract.toString
 
   val labelBoilingTempDuration = Label( context.labelBoilingTempDuration )
 
