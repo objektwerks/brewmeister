@@ -61,7 +61,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelSrmColor = Label( context.labelSrmColor )
 
-  ibuBitterness = 
+  val labelIbuBitterness = Label( context.labelIbuBitterness )
 
   alcoholByVolume = 
 
