@@ -27,6 +27,14 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val waterTextField = new NonEmptyTextField:
     text = recipe.water
 
+  val labelVolume = Label( context.labelVolume )
+
+  grains = 
+  hops = 
+  adjuncts = 
+  yeasts = 
+  mashingTempDuration = 
+
   val controls = List[(Label, Node)](
     labelName -> nameTextField,
     labelStyle -> styleTextField,
