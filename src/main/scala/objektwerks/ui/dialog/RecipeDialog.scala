@@ -74,6 +74,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelBrewhouseEfficiency = Label( context.labelBrewhouseEfficiency )
 
   val labelCreated = Label( context.labelCreated )
+  val createdTextField = new NonEmptyTextField:
+    text = recipe.created
 
   val controls = List[(Label, Node)](
     labelName -> nameTextField,
