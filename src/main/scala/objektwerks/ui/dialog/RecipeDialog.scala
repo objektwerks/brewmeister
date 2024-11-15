@@ -89,6 +89,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     labelStyle -> textFieldStyle,
     labelWater -> textFieldWater,
     labelPotentialMashExtract -> textFieldPotentialMashExtract,
+    labelPotentialFermentableExtract -> textFieldPotentialFermentableExtract,
     labelCreated -> createdTextField
   )
 
