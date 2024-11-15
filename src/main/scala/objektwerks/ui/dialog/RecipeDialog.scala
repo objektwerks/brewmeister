@@ -17,15 +17,15 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   headerText = context.dialogRecipe
 
   val labelName = Label( context.labelName )
-  val nameTextField = new NonEmptyTextField:
+  val textFieldName = new NonEmptyTextField:
     text = recipe.name
 
   val labelStyle = Label( context.labelStyle )
-  val styleTextField = new NonEmptyTextField:
+  val textFieldStyle = new NonEmptyTextField:
     text = recipe.style
 
   val labelWater = Label( context.labelWater )
-  val waterTextField = new NonEmptyTextField:
+  val textFieldWater = new NonEmptyTextField:
     text = recipe.water
 
   val labelVolume = Label( context.labelVolume )
@@ -41,7 +41,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelMashingTempDuration = Label( context.labelMashingTempDuration )
 
   val labelPotentialMashExtract = Label( context.labelPotentialMashExtract )
-  val potentialMashExtractTextField = new DoubleTextField:
+  val textFieldPotentialMashExtract = new DoubleTextField:
     text = recipe.potentialMashExtract.toString
 
   val labelBoilingTempDuration = Label( context.labelBoilingTempDuration )
@@ -51,7 +51,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelFermentingTempDuration = Label( context.labelFermentingTempDuration )
 
   val labelPotentialFermentableExtract = Label( context.labelPotentialFermentableExtract )
-  val potentialFermentableExtractTextField = new DoubleTextField:
+  val textFieldPotentialFermentableExtract = new DoubleTextField:
     text = recipe.potentialFermentableExtract.toString
 
   val labelConditioningTempDuration = Label( context.labelConditioningTempDuration )
@@ -59,7 +59,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelKeggingTempDuration = Label( context.labelKeggingTempDuration )
 
   val labelPh = Label( context.labelPh )
-  val pHTextField = new DoubleTextField:
+  val textFieldPh = new DoubleTextField:
     text = recipe.pH.toString
 
   val labelOriginalGravity = Label( context.labelOriginalGravity )
@@ -85,10 +85,10 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     text = recipe.created
 
   val controls = List[(Label, Node)](
-    labelName -> nameTextField,
-    labelStyle -> styleTextField,
-    labelWater -> waterTextField,
-    labelPotentialMashExtract -> potentialMashExtractTextField,
+    labelName -> textFieldName,
+    labelStyle -> textFieldStyle,
+    labelWater -> textFieldWater,
+    labelPotentialMashExtract -> textFieldPotentialMashExtract,
     labelCreated -> createdTextField
   )
 
