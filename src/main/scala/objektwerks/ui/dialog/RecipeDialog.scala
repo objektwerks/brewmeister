@@ -38,25 +38,25 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelYeasts = Label( context.labelYeasts )
 
-  val labelMashingTempDuration = Label( context.labelMashingTempDuration )
+  val labelMashingTempDuration = Label( context.labelMashingTempRangeDuration )
 
   val labelPotentialMashExtract = Label( context.labelPotentialMashExtract )
   val textFieldPotentialMashExtract = new DoubleTextField:
     text = recipe.potentialMashExtract.toString
 
-  val labelBoilingTempDuration = Label( context.labelBoilingTempDuration )
+  val labelBoilingTempRangeDuration = Label( context.labelBoilingTempRangeDuration )
 
   val labelCoolingTempRange = Label( context.labelCoolingTempRange )
 
-  val labelFermentingTempDuration = Label( context.labelFermentingTempDuration )
+  val labelFermentingTempRangeDuration = Label( context.labelFermentingTempRangeDuration )
 
   val labelPotentialFermentableExtract = Label( context.labelPotentialFermentableExtract )
   val textFieldPotentialFermentableExtract = new DoubleTextField:
     text = recipe.potentialFermentableExtract.toString
 
-  val labelConditioningTempDuration = Label( context.labelConditioningTempDuration )
+  val labelConditioningTempRangeDuration = Label( context.labelConditioningTempRangeDuration )
 
-  val labelKeggingTempDuration = Label( context.labelKeggingTempDuration )
+  val labelKeggingTempRangeDuration = Label( context.labelKeggingTempRangeDuration )
 
   val labelPh = Label( context.labelPh )
   val textFieldPh = new DoubleTextField:
