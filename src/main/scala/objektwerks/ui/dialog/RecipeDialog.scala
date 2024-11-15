@@ -29,7 +29,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelVolume = Label( context.labelVolume )
 
-  grains = 
+  val labelGrains = Label( context.labelGrains )
+  
   hops = 
   adjuncts = 
   yeasts = 
