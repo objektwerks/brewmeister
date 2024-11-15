@@ -42,8 +42,9 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelPotentialMashExtract = Label( context.labelPotentialMashExtract )
 
   val labelBoilingTempDuration = Label ( context.labelBoilingTempDuration )
-  
-  coolingTempRange = 
+
+  val labelCoolingTempRange = Label( context.labelCoolingTempRange )
+
   fermentingTempDuration = 
   potentialFermentableExtract = 
   conditioningTempDuration = 
