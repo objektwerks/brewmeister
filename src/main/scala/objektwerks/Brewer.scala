@@ -155,7 +155,7 @@ final class Masher(listener: Listener):
       Mashing(
         List(
           "Mashing grist into wort.",
-          s"Mashing grist into a wort within this temp range / duration: ${mash.recipe.mashingTempDuration}",
+          s"Mashing grist into a wort within this temp range / duration: ${mash.recipe.mashingTempRangeDuration}",
           s"Optionally added adjuncts: ${mash.recipe.adjuncts}",
           s"pH should be: ${mash.recipe.pH}",
         )
@@ -225,7 +225,7 @@ final class Boiler(listener: Listener):
       Boiling(
         List(
           "Boiling wort.",
-          s"Boiling wort within this temp range / duration: ${boil.recipe.boilingTempDuration}",
+          s"Boiling wort within this temp range / duration: ${boil.recipe.boilingTempRangeDuration}",
           s"Added hops: ${boil.recipe.hops}",
           s"Optionally added adjuncts: ${boil.recipe.adjuncts}"
         )
@@ -289,7 +289,7 @@ final class Fermenter(listener: Listener):
       Fermenting(
         List(
           "Fermenting wort.",
-          s"Fermenting within this temp range / duration: ${ferment.recipe.fermentingTempDuration}",
+          s"Fermenting within this temp range / duration: ${ferment.recipe.fermentingTempRangeDuration}",
           s"Potential fermentable extract: ${ferment.recipe.potentialFermentableExtract}",
           s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
         )
@@ -318,7 +318,7 @@ final class Conditioner(listener: Listener):
       Conditioning(
         List(
           "Conditioning wort.",
-          s"Conditioning within this temp range / duration: ${condition.recipe.conditioningTempDuration}",
+          s"Conditioning within this temp range / duration: ${condition.recipe.conditioningTempRangeDuration}",
           s"Optionally added adjuncts: ${condition.recipe.adjuncts}",
           s"Optionally added hops: ${condition.recipe.hops}",
           s"Should have an SRM color within this range: ${condition.recipe.srmColor}"
@@ -359,7 +359,7 @@ final class Kegger(listener: Listener):
       Kegging(
         List(
           "Kegging wort.",
-          s"Conditioning within this temp range / duration: ${keg.recipe.keggingTempDuration}",
+          s"Conditioning within this temp range / duration: ${keg.recipe.keggingTempRangeDuration}",
           s"IBU hop bitterness should be within this range: ${keg.recipe.ibuBitterness}",
           s"Alcohol by volume should be within this range: ${keg.recipe.alcoholByVolume}",
           s"Alcohol by weight should be within this range: ${keg.recipe.alcoholByWeight}",
