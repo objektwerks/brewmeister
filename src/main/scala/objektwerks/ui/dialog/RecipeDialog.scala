@@ -32,8 +32,9 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelGrains = Label( context.labelGrains )
   
   val labelHops = Label( context.labelHops )
+
+  val labelAdjuncts = Label ( context.labelAdjuncts )
   
-  adjuncts = 
   yeasts = 
   mashingTempDuration = 
 
