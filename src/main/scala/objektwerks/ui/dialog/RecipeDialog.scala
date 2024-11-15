@@ -55,8 +55,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelPh = Label( context.labelPh )
 
-  originalGravity = 
-
+  val labelOriginalGravity = Label( context.labelOriginalGravity )
+ 
   finalGravity = 
 
   srmColor = 
