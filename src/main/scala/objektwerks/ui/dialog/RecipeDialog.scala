@@ -36,8 +36,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelAdjuncts = Label ( context.labelAdjuncts )
 
   val labelYeasts = Label( context.labelYeasts )
-  
-  mashingTempDuration = 
+
+  val labelMashingTempDuration = Label( context.labelMashingTempDuration )
 
   val controls = List[(Label, Node)](
     labelName -> nameTextField,
