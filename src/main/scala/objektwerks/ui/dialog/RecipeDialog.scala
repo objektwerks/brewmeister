@@ -53,6 +53,28 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelKeggingTempDuration = Label( context.labelKeggingTempDuration )
 
+  val labelPh = Label( context.labelPh )
+
+  originalGravity = 
+
+  finalGravity = 
+
+  srmColor = 
+
+  ibuBitterness = 
+
+  alcoholByVolume = 
+
+  alcoholByWeight = 
+
+  calories = 
+
+  mashEfficiency = 
+
+  brewhouseEfficiency = 
+
+  created = 
+
   val controls = List[(Label, Node)](
     labelName -> nameTextField,
     labelStyle -> styleTextField,
