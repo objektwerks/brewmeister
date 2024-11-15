@@ -51,6 +51,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelFermentingTempDuration = Label( context.labelFermentingTempDuration )
 
   val labelPotentialFermentableExtract = Label( context.labelPotentialFermentableExtract )
+  val potentialFermentableExtractTextField = new DoubleTextField:
+    text = recipe.potentialFermentableExtract.toString
 
   val labelConditioningTempDuration = Label( context.labelConditioningTempDuration )
 
