@@ -80,7 +80,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val controls = List[(Label, Node)](
     labelName -> nameTextField,
     labelStyle -> styleTextField,
-    labelWater -> waterTextField
+    labelWater -> waterTextField,
+    labelCreated -> createdTextField
   )
 
   dialogPane().content = ControlGrid(controls)
