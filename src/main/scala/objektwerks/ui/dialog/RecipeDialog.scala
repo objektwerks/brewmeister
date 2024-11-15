@@ -24,7 +24,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     text = recipe.water
 
   val controls = List[(String, Region)](
-    context.labelName -> nameTextField
+    context.labelName -> nameTextField,
+    context.labelStyle -> styleTextField
   )
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
