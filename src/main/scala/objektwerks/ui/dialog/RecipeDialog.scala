@@ -9,6 +9,7 @@ import objektwerks.Recipe
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, NonEmptyTextField}
 import scalafx.scene.Node
+import objektwerks.ui.control.DoubleTextField
 
 final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe]:
   initOwner(App.stage)
@@ -54,6 +55,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelKeggingTempDuration = Label( context.labelKeggingTempDuration )
 
   val labelPh = Label( context.labelPh )
+  val pHTextField = new DoubleTextField:
+    text = recipe.pH.toString
 
   val labelOriginalGravity = Label( context.labelOriginalGravity )
  
