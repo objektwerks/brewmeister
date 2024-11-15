@@ -67,7 +67,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelAlcoholByWeight = Label( context.labelAlcoholByWeight )
 
-  calories = 
+  val labelCalories = Label( context.labelCalories )
 
   mashEfficiency = 
 
