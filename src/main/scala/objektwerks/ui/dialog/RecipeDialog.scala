@@ -51,7 +51,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelConditioningTempDuration = Label( context.labelConditioningTempDuration )
 
-  keggingTempDuration = 
+  val labelKeggingTempDuration = Label( context.labelKeggingTempDuration )
 
   val controls = List[(Label, Node)](
     labelName -> nameTextField,
