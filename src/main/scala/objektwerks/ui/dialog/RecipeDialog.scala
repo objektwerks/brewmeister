@@ -158,6 +158,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
         water = textFieldWater.string,
         potentialMashExtract = textFieldPotentialMashExtract.double.format,
         potentialFermentableExtract = textFieldPotentialFermentableExtract.double.format,
+        coolingTempRange = IntRange( rangeSliderCoolingTempRange.getLowValue.toInt, rangeSliderCoolingTempRange.getHighValue.toInt ),
         pH = textFieldPh.double.format,
         originalGravity = DoubleRange( rangeSliderOriginalGravity.getLowValue, rangeSliderOriginalGravity.getHighValue ),
         finalGravity = DoubleRange( rangeSliderFinalGravity.getLowValue, rangeSliderFinalGravity.getHighValue ),
