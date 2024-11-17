@@ -120,8 +120,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
      setBlockIncrement(10)
 
   val labelCreated = Label( context.labelCreated )
-  val createdTextField = new NonEmptyTextField:
-    text = recipe.created
+  val createdTextField = Label( recipe.created )
 
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
