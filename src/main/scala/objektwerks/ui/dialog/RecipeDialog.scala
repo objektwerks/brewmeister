@@ -49,6 +49,10 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelBoilingTempRangeDuration = Label( context.labelBoilingTempRangeDuration )
 
   val labelCoolingTempRange = Label( context.labelCoolingTempRange )
+  val rangeSliderCoolingTempRange = new RangeSlider(67, 73, recipe.coolingTempRange.low, recipe.coolingTempRange.high):
+     setShowTickMarks(true)
+     setShowTickLabels(true)
+     setBlockIncrement(1)
 
   val labelFermentingTempRangeDuration = Label( context.labelFermentingTempRangeDuration )
 
@@ -78,7 +82,6 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelSrmColor = Label( context.labelSrmColor )
   val rangeSliderSrmColor = new RangeSlider(1, 80, recipe.srmColor.low, recipe.srmColor.high):
-
      setShowTickMarks(true)
      setShowTickLabels(true)
      setBlockIncrement(10)
