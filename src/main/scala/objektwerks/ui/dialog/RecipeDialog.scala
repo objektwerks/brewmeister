@@ -158,6 +158,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
         pH = textFieldPh.double.format,
         originalGravity = DoubleRange( rangeSliderOriginalGravity.getLowValue, rangeSliderOriginalGravity.getHighValue ),
         finalGravity = DoubleRange( rangeSliderFinalGravity.getLowValue, rangeSliderFinalGravity.getHighValue ),
+        srmColor = IntRange( rangeSliderSrmColor.getLowValue.toInt, rangeSliderSrmColor.getHighValue.toInt ),
 
       )
     else null
