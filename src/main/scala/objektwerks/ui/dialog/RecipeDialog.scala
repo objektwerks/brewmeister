@@ -71,7 +71,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
      setBlockIncrement(0.10)
 
   val labelFinalGravity = Label( context.labelFinalGravity )
-  val rangeSliderFinalGravity = new RangeSlider(1.000, 1.050, 1.010, 1.020):
+  val rangeSliderFinalGravity = new RangeSlider(1.000, 1.050, recipe.finalGravity.low, recipe.finalGravity.high):
      setShowTickMarks(true)
      setShowTickLabels(true)
      setBlockIncrement(0.10)
