@@ -38,7 +38,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelYeasts = Label( context.labelYeasts )
 
-  val labelMashingTempDuration = Label( context.labelMashingTempRangeDuration )
+  val labelMashingTempRangeDuration = Label( context.labelMashingTempRangeDuration )
 
   val labelPotentialMashExtract = Label( context.labelPotentialMashExtract )
   val textFieldPotentialMashExtract = new DoubleTextField:
