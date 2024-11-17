@@ -156,6 +156,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
         potentialMashExtract = textFieldPotentialMashExtract.double.format,
         potentialFermentableExtract = textFieldPotentialFermentableExtract.double.format,
         pH = textFieldPh.double.format,
-        originalGravity = DoubleRange( rangeSliderOriginalGravity.getLowValue, rangeSliderOriginalGravity.getHighValue )
+        originalGravity = DoubleRange( rangeSliderOriginalGravity.getLowValue, rangeSliderOriginalGravity.getHighValue ),
+        finalGravity = DoubleRange( rangeSliderFinalGravity.getLowValue, rangeSliderFinalGravity.getHighValue ),
+
       )
     else null
