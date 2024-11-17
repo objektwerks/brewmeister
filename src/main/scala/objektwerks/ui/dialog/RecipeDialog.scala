@@ -154,6 +154,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
         style = textFieldStyle.string,
         water = textFieldWater.string,
         potentialMashExtract = textFieldPotentialMashExtract.double.format,
-        potentialFermentableExtract = textFieldPotentialFermentableExtract.double.format
+        potentialFermentableExtract = textFieldPotentialFermentableExtract.double.format,
+        pH = textFieldPh.double.format
       )
     else null
