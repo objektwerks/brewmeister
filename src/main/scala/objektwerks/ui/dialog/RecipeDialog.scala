@@ -102,6 +102,10 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
      setBlockIncrement(1.0)
 
   val labelCalories = Label( context.labelCalories )
+  val rangeSliderCalories = new RangeSlider(50, 250, recipe.calories.low, recipe.calories.high):
+     setShowTickMarks(true)
+     setShowTickLabels(true)
+     setBlockIncrement(50)
 
   val labelMashEfficiency = Label( context.labelMashEfficiency )
 
