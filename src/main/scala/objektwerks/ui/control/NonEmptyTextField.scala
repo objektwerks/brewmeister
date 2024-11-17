@@ -10,3 +10,5 @@ class NonEmptyTextField extends TextField:
   }
 
   textFormatter = TextFormatter[String](filter)
+
+  def string = text.value

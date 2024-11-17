@@ -17,4 +17,6 @@ class DoubleTextField extends TextField:
 
   textFormatter = TextFormatter[Double](converter, 0.0, filter)
 
+  def double: Double = text.value.toDouble
+
   def double(default: Double): Double = text.value.toDoubleOption.getOrElse(default)
