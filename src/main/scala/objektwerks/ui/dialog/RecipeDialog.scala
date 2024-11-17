@@ -83,6 +83,10 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
      setBlockIncrement(10)
 
   val labelIbuBitterness = Label( context.labelIbuBitterness )
+  val rangeSliderIbuBitterness = new RangeSlider(1, 80, 60, 75):
+     setShowTickMarks(true)
+     setShowTickLabels(true)
+     setBlockIncrement(10)
 
   val labelAlcoholByVolume = Label( context.labelAlcoholByVolume )
 
