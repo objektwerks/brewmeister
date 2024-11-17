@@ -114,6 +114,10 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
      setBlockIncrement(10)
 
   val labelBrewhouseEfficiency = Label( context.labelBrewhouseEfficiency )
+  val rangeSliderBrewhouseEfficiency = new RangeSlider(50, 100, recipe.brewhouseEfficiency.low, recipe.brewhouseEfficiency.high):
+     setShowTickMarks(true)
+     setShowTickLabels(true)
+     setBlockIncrement(10)
 
   val labelCreated = Label( context.labelCreated )
   val createdTextField = new NonEmptyTextField:
