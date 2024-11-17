@@ -8,7 +8,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.Region
 import scalafx.scene.Node
 
-import objektwerks.Recipe
+import objektwerks.*
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, NonEmptyTextField}
 import objektwerks.ui.control.DoubleTextField
@@ -152,6 +152,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
       recipe.copy(
         name = textFieldName.text.value,
         style = textFieldStyle.text.value,
-        water = textFieldWater.text.value
+        water = textFieldWater.text.value,
+        potentialMashExtract = textFieldPotentialMashExtract.text.value.toDouble.format
       )
     else null
