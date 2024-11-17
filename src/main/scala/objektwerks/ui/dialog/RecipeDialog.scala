@@ -151,6 +151,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     if dialogButton == saveButtonType then
       recipe.copy(
         name = textFieldName.text.value,
-        style = textFieldStyle.text.value
+        style = textFieldStyle.text.value,
+        water = textFieldWater.text.value
       )
     else null
