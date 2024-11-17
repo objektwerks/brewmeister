@@ -23,7 +23,7 @@ object Recipe:
            conditioningTempRangeDuration = TempRangeDuration( IntRange(68, 72), 2, UoT.days ),
            keggingTempRangeDuration = TempRangeDuration( IntRange(42, 45), 2, UoT.days ),
            pH = 5.6,
-           originalGravity = DoubleRange(1.057, 1.67),
+           originalGravity = DoubleRange(1.057, 1.067),
            finalGravity = DoubleRange(1.010, 1.015),
            srmColor = IntRange(6, 12),
            ibuBitterness = IntRange(60, 75),

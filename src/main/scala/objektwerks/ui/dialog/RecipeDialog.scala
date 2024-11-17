@@ -1,14 +1,16 @@
 package objektwerks.ui.dialog
 
+import org.controlsfx.control.RangeSlider
+
 import scalafx.Includes.*
 import scalafx.scene.control.{ButtonType, Dialog, Label}
 import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.Region
+import scalafx.scene.Node
 
 import objektwerks.Recipe
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, NonEmptyTextField}
-import scalafx.scene.Node
 import objektwerks.ui.control.DoubleTextField
 
 final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe]:
@@ -63,7 +65,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     text = recipe.pH.toString
 
   val labelOriginalGravity = Label( context.labelOriginalGravity )
- 
+  val rangeSliderOriginalGravity = RangeSlider(1.000, 1.200, 1.057, 1.067)
+
   val labelFinalGravity = Label( context.labelFinalGravity )
 
   val labelSrmColor = Label( context.labelSrmColor )
