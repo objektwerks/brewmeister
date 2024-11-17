@@ -78,12 +78,13 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelSrmColor = Label( context.labelSrmColor )
   val rangeSliderSrmColor = new RangeSlider(1, 80, recipe.srmColor.low, recipe.srmColor.high):
+
      setShowTickMarks(true)
      setShowTickLabels(true)
      setBlockIncrement(10)
 
   val labelIbuBitterness = Label( context.labelIbuBitterness )
-  val rangeSliderIbuBitterness = new RangeSlider(1, 80, 60, 75):
+  val rangeSliderIbuBitterness = new RangeSlider(1, 80, recipe.ibuBitterness.low, recipe.ibuBitterness.high):
      setShowTickMarks(true)
      setShowTickLabels(true)
      setBlockIncrement(10)
