@@ -132,6 +132,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     labelPh -> textFieldPh,
     labelOriginalGravity -> rangeSliderOriginalGravity,
     labelFinalGravity -> rangeSliderFinalGravity,
+    labelMashEfficiency -> rangeSliderMashEfficiency,
     labelBrewhouseEfficiency -> rangeSliderBrewhouseEfficiency,
     labelCreated -> createdTextField
   )
