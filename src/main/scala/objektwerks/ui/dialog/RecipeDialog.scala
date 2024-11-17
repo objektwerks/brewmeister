@@ -65,12 +65,16 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     text = recipe.pH.toString
 
   val labelOriginalGravity = Label( context.labelOriginalGravity )
-  val rangeSliderOriginalGravity = new RangeSlider(1.000, 1.200, 1.050, 1.070):
+  val rangeSliderOriginalGravity = new RangeSlider(1.000, 1.100, 1.050, 1.070):
      setShowTickMarks(true)
      setShowTickLabels(true)
      setBlockIncrement(0.10)
 
   val labelFinalGravity = Label( context.labelFinalGravity )
+  val rangeSliderFinalGravity = new RangeSlider(1.000, 1.050, 1.010, 1.020):
+     setShowTickMarks(true)
+     setShowTickLabels(true)
+     setBlockIncrement(0.10)
 
   val labelSrmColor = Label( context.labelSrmColor )
 
