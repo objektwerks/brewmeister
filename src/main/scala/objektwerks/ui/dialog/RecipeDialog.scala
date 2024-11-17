@@ -50,9 +50,9 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelCoolingTempRange = Label( context.labelCoolingTempRange )
   val rangeSliderCoolingTempRange = new RangeSlider(67, 73, recipe.coolingTempRange.low, recipe.coolingTempRange.high):
-     setShowTickMarks(true)
-     setShowTickLabels(true)
-     setBlockIncrement(1)
+    setShowTickMarks(true)
+    setShowTickLabels(true)
+    setBlockIncrement(1)
 
   val labelFermentingTempRangeDuration = Label( context.labelFermentingTempRangeDuration )
 
@@ -70,57 +70,57 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelOriginalGravity = Label( context.labelOriginalGravity )
   val rangeSliderOriginalGravity = new RangeSlider(1.000, 1.100, recipe.originalGravity.low, recipe.originalGravity.high):
-     setShowTickMarks(true)
-     setShowTickLabels(true)
-     setBlockIncrement(0.10)
+    setShowTickMarks(true)
+    setShowTickLabels(true)
+    setBlockIncrement(0.10)
 
   val labelFinalGravity = Label( context.labelFinalGravity )
   val rangeSliderFinalGravity = new RangeSlider(1.000, 1.050, recipe.finalGravity.low, recipe.finalGravity.high):
-     setShowTickMarks(true)
-     setShowTickLabels(true)
-     setBlockIncrement(0.10)
+    setShowTickMarks(true)
+    setShowTickLabels(true)
+    setBlockIncrement(0.10)
 
   val labelSrmColor = Label( context.labelSrmColor )
   val rangeSliderSrmColor = new RangeSlider(1, 80, recipe.srmColor.low, recipe.srmColor.high):
-     setShowTickMarks(true)
-     setShowTickLabels(true)
-     setBlockIncrement(10)
+    setShowTickMarks(true)
+    setShowTickLabels(true)
+    setBlockIncrement(10)
 
   val labelIbuBitterness = Label( context.labelIbuBitterness )
   val rangeSliderIbuBitterness = new RangeSlider(1, 80, recipe.ibuBitterness.low, recipe.ibuBitterness.high):
-     setShowTickMarks(true)
-     setShowTickLabels(true)
-     setBlockIncrement(10)
+    setShowTickMarks(true)
+    setShowTickLabels(true)
+    setBlockIncrement(10)
 
   val labelAlcoholByVolume = Label( context.labelAlcoholByVolume )
   val rangeSliderAlcoholByVolume = new RangeSlider(1.0, 12.0, recipe.alcoholByVolume.low, recipe.alcoholByVolume.high):
-     setShowTickMarks(true)
-     setShowTickLabels(true)
-     setBlockIncrement(1.0)
+    setShowTickMarks(true)
+    setShowTickLabels(true)
+    setBlockIncrement(1.0)
 
   val labelAlcoholByWeight = Label( context.labelAlcoholByWeight )
   val rangeSliderAlcoholByWeight = new RangeSlider(1.0, 12.0, recipe.alcoholByWeight.low, recipe.alcoholByWeight.high):
-     setShowTickMarks(true)
-     setShowTickLabels(true)
-     setBlockIncrement(1.0)
+    setShowTickMarks(true)
+    setShowTickLabels(true)
+    setBlockIncrement(1.0)
 
   val labelCalories = Label( context.labelCalories )
   val rangeSliderCalories = new RangeSlider(50, 250, recipe.calories.low, recipe.calories.high):
-     setShowTickMarks(true)
-     setShowTickLabels(true)
-     setBlockIncrement(50)
+    setShowTickMarks(true)
+    setShowTickLabels(true)
+    setBlockIncrement(50)
 
   val labelMashEfficiency = Label( context.labelMashEfficiency )
   val rangeSliderMashEfficiency = new RangeSlider(50, 100, recipe.mashEfficiency.low, recipe.mashEfficiency.high):
-     setShowTickMarks(true)
-     setShowTickLabels(true)
-     setBlockIncrement(10)
+    setShowTickMarks(true)
+    setShowTickLabels(true)
+    setBlockIncrement(10)
 
   val labelBrewhouseEfficiency = Label( context.labelBrewhouseEfficiency )
   val rangeSliderBrewhouseEfficiency = new RangeSlider(50, 100, recipe.brewhouseEfficiency.low, recipe.brewhouseEfficiency.high):
-     setShowTickMarks(true)
-     setShowTickLabels(true)
-     setBlockIncrement(10)
+    setShowTickMarks(true)
+    setShowTickLabels(true)
+    setBlockIncrement(10)
 
   val labelCreated = Label( context.labelCreated )
   val createdTextField = Label( recipe.created )
