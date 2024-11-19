@@ -8,7 +8,7 @@ import scalafx.scene.layout.HBox
 trait LabelButton[E] extends HBox:
   val value = new ObjectProperty[E]()
   val labelText = new ObjectProperty[String]()
-  val buttonAction = new ObjectProperty[() => E]()
+  val buttonAction: ObjectProperty[() => E] = new ObjectProperty[() => E]()
 
   spacing = 6
 
