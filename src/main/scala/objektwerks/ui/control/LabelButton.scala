@@ -17,3 +17,5 @@ final class LabelButton(labelText: String,
     onAction = { _ =>
       buttonAction()
     }
+
+  children = List(label, button)
