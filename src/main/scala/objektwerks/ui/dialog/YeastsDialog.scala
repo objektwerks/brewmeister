@@ -7,7 +7,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 import objektwerks.Yeast
 import objektwerks.ui.{App, Context}
 
-final class YeastDialog(context: Context, yeast: Yeast) extends Dialog[Yeast]:
+final class YeastsDialog(context: Context, yeast: Yeast) extends Dialog[Yeast]:
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogGrain
