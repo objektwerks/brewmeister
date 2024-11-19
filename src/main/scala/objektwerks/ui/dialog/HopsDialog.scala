@@ -7,7 +7,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 import objektwerks.Hop
 import objektwerks.ui.{App, Context}
 
-final class HopsDialog(context: Context, hop: Hop) extends Dialog[Hop]:
+final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[Hop]]:
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogGrain
@@ -17,5 +17,5 @@ final class HopsDialog(context: Context, hop: Hop) extends Dialog[Hop]:
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      hop // TODO
+      hops // TODO
     else null
