@@ -5,7 +5,6 @@ import org.controlsfx.control.RangeSlider
 import scalafx.Includes.*
 import scalafx.scene.control.{ButtonType, Dialog, Label}
 import scalafx.scene.control.ButtonBar.ButtonData
-import scalafx.scene.layout.Region
 import scalafx.scene.Node
 
 import objektwerks.*

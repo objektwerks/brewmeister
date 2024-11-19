@@ -16,7 +16,7 @@ libraryDependencies ++= {
   )
 }
 scalacOptions ++= Seq(
-  //"-Wconf:any:error"
+  "-Wunused:all"
 )
 outputStrategy := Some(StdoutOutput)
 parallelExecution := false
