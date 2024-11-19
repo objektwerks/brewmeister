@@ -7,7 +7,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 import objektwerks.Adjunct
 import objektwerks.ui.{App, Context}
 
-final class AdjunctDialog(context: Context, adjunct: Adjunct) extends Dialog[Adjunct]:
+final class AdjunctsDialog(context: Context, adjunct: Adjunct) extends Dialog[Adjunct]:
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogGrain
