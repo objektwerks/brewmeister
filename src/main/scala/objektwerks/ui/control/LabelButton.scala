@@ -5,10 +5,17 @@ import scalafx.geometry.Pos
 import scalafx.scene.control.{Button, Label}
 import scalafx.scene.layout.HBox
 
+import scala.annotation.meta.setter
+
 trait LabelButton[E] extends HBox:
   val value = new ObjectProperty[E]()
+  @setter def value_=(e: E): Unit = value = e
+
   val labelText = new ObjectProperty[String]()
+  @setter def labelText_=(text: String): Unit = labelText = text
+
   val buttonAction: ObjectProperty[() => E] = new ObjectProperty[() => E]()
+  @setter def buttonAction_=(fn: () => E): Unit = buttonAction = fn
 
   spacing = 6
 
