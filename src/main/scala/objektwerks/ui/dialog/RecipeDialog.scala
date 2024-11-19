@@ -31,8 +31,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelVolume = Label( context.labelVolume )
   val labelButtonVolume = new LabelButton[Volume]:
-    labelText.value = s"${recipe.volume.value} ${recipe.volume.unit.toString}"
-    buttonAction.value = VolumeDialog(context, recipe.volume).showAndWait() match
+    labelText = s"${recipe.volume.value} ${recipe.volume.unit.toString}"
+    buttonAction = VolumeDialog(context, recipe.volume).showAndWait() match
       case Some(volume: Volume) => () => volume
       case _ => () => recipe.volume
 
