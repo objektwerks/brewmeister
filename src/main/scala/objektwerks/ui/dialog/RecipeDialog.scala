@@ -57,6 +57,12 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     text = recipe.potentialMashExtract.toString
 
   val labelBoilingTempRangeDuration = Label( context.labelBoilingTempRangeDuration )
+  val labelButtonBoilingTempRangeDuration = new LabelButton[TempRangeDuration]:
+    labelText = s"""${recipe.boilingTempRangeDuration.tempRange.low} - ${recipe.boilingTempRangeDuration.tempRange.high},
+                    ${recipe.boilingTempRangeDuration.duration} ${recipe.boilingTempRangeDuration.unit.toString}"""
+    buttonAction = TempRangeDurationDialog(context, recipe.mashingTempRangeDuration).showAndWait() match
+      case Some(tempRangeDuration: TempRangeDuration) => () => tempRangeDuration
+      case _ => () => recipe.mashingTempRangeDuration
 
   val labelCoolingTempRange = Label( context.labelCoolingTempRange )
   val rangeSliderCoolingTempRange = new RangeSlider(67, 73, recipe.coolingTempRange.low, recipe.coolingTempRange.high):
