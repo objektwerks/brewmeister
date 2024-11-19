@@ -68,7 +68,7 @@ final case class Recipe(name: String = "",
 enum MixinStep derives JsonSupport:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
 
-final case class Grain(typeof: String,
+final case class Grain(name: String,
                        weight: Double,
                        unit: UoM,
                        color: Double,
