@@ -37,7 +37,6 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
         case Some(volume: Volume) => () => volume
         case _ => () => recipe.volume
 
-
   val labelGrains = Label( context.labelGrains )
   
   val labelHops = Label( context.labelHops )
