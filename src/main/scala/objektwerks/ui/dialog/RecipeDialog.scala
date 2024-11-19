@@ -62,7 +62,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
                     ${recipe.boilingTempRangeDuration.duration} ${recipe.boilingTempRangeDuration.unit.toString}"""
     buttonAction = TempRangeDurationDialog(context, recipe.mashingTempRangeDuration).showAndWait() match
       case Some(tempRangeDuration: TempRangeDuration) => () => tempRangeDuration
-      case _ => () => recipe.mashingTempRangeDuration
+      case _ => () => recipe.boilingTempRangeDuration
 
   val labelCoolingTempRange = Label( context.labelCoolingTempRange )
   val rangeSliderCoolingTempRange = new RangeSlider(67, 73, recipe.coolingTempRange.low, recipe.coolingTempRange.high):
@@ -71,6 +71,12 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     setBlockIncrement(1)
 
   val labelFermentingTempRangeDuration = Label( context.labelFermentingTempRangeDuration )
+  val labelButtonFermentingTempRangeDuration = new LabelButton[TempRangeDuration]:
+    labelText = s"""${recipe.fermentingTempRangeDuration.tempRange.low} - ${recipe.fermentingTempRangeDuration.tempRange.high},
+                    ${recipe.fermentingTempRangeDuration.duration} ${recipe.fermentingTempRangeDuration.unit.toString}"""
+    buttonAction = TempRangeDurationDialog(context, recipe.mashingTempRangeDuration).showAndWait() match
+      case Some(tempRangeDuration: TempRangeDuration) => () => tempRangeDuration
+      case _ => () => recipe.fermentingTempRangeDuration
 
   val labelPotentialFermentableExtract = Label( context.labelPotentialFermentableExtract )
   val textFieldPotentialFermentableExtract = new DoubleTextField:
