@@ -5,7 +5,6 @@ import scalafx.scene.control.{Button, Label}
 import scalafx.scene.layout.HBox
 
 final class LabelButton(labelText: String,
-                        buttonText: String,
                         buttonAction: () => Unit) extends HBox:
   spacing = 6
   padding = Insets(6)
@@ -16,7 +15,7 @@ final class LabelButton(labelText: String,
 
   val button = new Button:
     prefWidth = 75
-    text = buttonText
+    text = "..."
     onAction = { _ =>
       buttonAction()
     }
