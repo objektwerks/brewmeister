@@ -7,7 +7,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 import objektwerks.Grain
 import objektwerks.ui.{App, Context}
 
-final class GrainDialog(context: Context, grain: Grain) extends Dialog[Grain]:
+final class GrainDialog(context: Context, grains: Array[Grain]) extends Dialog[Array[Grain]]:
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogGrain
@@ -17,5 +17,5 @@ final class GrainDialog(context: Context, grain: Grain) extends Dialog[Grain]:
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      grain // TODO
+      grains // TODO
     else null
