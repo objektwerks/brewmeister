@@ -9,6 +9,8 @@ class BrewerTest extends AnyFunSuite with Matchers:
 
     val recipe = Recipe.default
     store.writeRecipe(recipe)
+    println(s"Recipe write: $recipe")
+    println(s"Recipe read: ${store.readRecipe(recipe.name)}")
     store.readRecipe(recipe.name) shouldBe recipe
     store.listRecipes.length should be >= 1
 
