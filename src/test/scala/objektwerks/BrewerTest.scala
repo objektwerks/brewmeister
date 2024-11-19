@@ -3,9 +3,6 @@ package objektwerks
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-import scala.annotation.nowarn
-
-@nowarn
 class BrewerTest extends AnyFunSuite with Matchers:
   test("store > brew"):
     val store = Store()
