@@ -90,7 +90,7 @@ final case class Adjunct(name: String,
                          mixinMinute: Int,
                          mixinStep: MixinStep = MixinStep.Mashing) derives JsonSupport // or Boiling or Conditioning
 
-final case class Yeast(typeof: String,
+final case class Yeast(name: String,
                        weight: Double,
                        unit: UoM,
                        mixinMinute: Int,
