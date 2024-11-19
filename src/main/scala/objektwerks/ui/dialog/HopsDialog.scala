@@ -7,7 +7,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 import objektwerks.Hop
 import objektwerks.ui.{App, Context}
 
-final class HopDialog(context: Context, hop: Hop) extends Dialog[Hop]:
+final class HopsDialog(context: Context, hop: Hop) extends Dialog[Hop]:
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogGrain
