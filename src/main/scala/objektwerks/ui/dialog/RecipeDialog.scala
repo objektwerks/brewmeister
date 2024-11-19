@@ -58,6 +58,11 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
       case _ => () => recipe.adjuncts
 
   val labelYeasts = Label( context.labelYeasts )
+  val labelButtonYeasts = new LabelButton[Array[Yeast]]:
+    labelText = s"${recipe.yeasts.map(_.name).mkString(",")}"
+    buttonAction = YeastsDialog(context, recipe.yeasts).showAndWait() match
+      case Some(yeasts: Array[Yeast]) => () => yeasts
+      case _ => () => recipe.yeasts
 
   val labelMashingTempRangeDuration = Label( context.labelMashingTempRangeDuration )
   val labelButtonMashingTempRangeDuration = new LabelButton[TempRangeDuration]:
