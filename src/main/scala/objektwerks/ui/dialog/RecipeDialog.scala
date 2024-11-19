@@ -60,7 +60,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelButtonBoilingTempRangeDuration = new LabelButton[TempRangeDuration]:
     labelText = s"""${recipe.boilingTempRangeDuration.tempRange.low} - ${recipe.boilingTempRangeDuration.tempRange.high},
                     ${recipe.boilingTempRangeDuration.duration} ${recipe.boilingTempRangeDuration.unit.toString}"""
-    buttonAction = TempRangeDurationDialog(context, recipe.mashingTempRangeDuration).showAndWait() match
+    buttonAction = TempRangeDurationDialog(context, recipe.boilingTempRangeDuration).showAndWait() match
       case Some(tempRangeDuration: TempRangeDuration) => () => tempRangeDuration
       case _ => () => recipe.boilingTempRangeDuration
 
@@ -74,7 +74,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelButtonFermentingTempRangeDuration = new LabelButton[TempRangeDuration]:
     labelText = s"""${recipe.fermentingTempRangeDuration.tempRange.low} - ${recipe.fermentingTempRangeDuration.tempRange.high},
                     ${recipe.fermentingTempRangeDuration.duration} ${recipe.fermentingTempRangeDuration.unit.toString}"""
-    buttonAction = TempRangeDurationDialog(context, recipe.mashingTempRangeDuration).showAndWait() match
+    buttonAction = TempRangeDurationDialog(context, recipe.fermentingTempRangeDuration).showAndWait() match
       case Some(tempRangeDuration: TempRangeDuration) => () => tempRangeDuration
       case _ => () => recipe.fermentingTempRangeDuration
 
@@ -83,6 +83,12 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     text = recipe.potentialFermentableExtract.toString
 
   val labelConditioningTempRangeDuration = Label( context.labelConditioningTempRangeDuration )
+  val labelButtonConditioningTempRangeDuration = new LabelButton[TempRangeDuration]:
+    labelText = s"""${recipe.conditioningTempRangeDuration.tempRange.low} - ${recipe.conditioningTempRangeDuration.tempRange.high},
+                    ${recipe.conditioningTempRangeDuration.duration} ${recipe.conditioningTempRangeDuration.unit.toString}"""
+    buttonAction = TempRangeDurationDialog(context, recipe.conditioningTempRangeDuration).showAndWait() match
+      case Some(tempRangeDuration: TempRangeDuration) => () => tempRangeDuration
+      case _ => () => recipe.conditioningTempRangeDuration
 
   val labelKeggingTempRangeDuration = Label( context.labelKeggingTempRangeDuration )
 
