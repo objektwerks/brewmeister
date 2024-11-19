@@ -70,6 +70,13 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
         tableView.selectionModel().select(0)
       case _ =>
 
-  def update(): Unit = ???
+  def update(): Unit =
+    val selectedIndex = tableView.selectionModel().getSelectedIndex
+    val recipe = tableView.selectionModel().getSelectedItem.recipe
+    RecipeDialog(context, recipe).showAndWait() match
+      case Some(recipe: Recipe) =>
+        model.observableRecipes.update(selectedIndex, recipe)
+        tableView.selectionModel().select(selectedIndex)
+      case _ =>
 
   def simulate(): Unit = ???
