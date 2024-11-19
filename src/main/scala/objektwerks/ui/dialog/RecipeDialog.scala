@@ -9,7 +9,7 @@ import scalafx.scene.Node
 
 import objektwerks.*
 import objektwerks.ui.{App, Context}
-import objektwerks.ui.control.{ControlGrid, NonEmptyTextField}
+import objektwerks.ui.control.{ControlGrid, LabelButton, NonEmptyTextField}
 import objektwerks.ui.control.DoubleTextField
 
 final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe]:
@@ -30,6 +30,12 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     text = recipe.water
 
   val labelVolume = Label( context.labelVolume )
+  val labelButtonVolume = new LabelButton:
+    labelText.value = s"${recipe.volume.value} ${recipe.volume.unit.toString}"
+    buttonAction.value = {
+      null // TODO!
+    }
+
 
   val labelGrains = Label( context.labelGrains )
   

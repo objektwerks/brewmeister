@@ -1,22 +1,26 @@
 package objektwerks.ui.control
 
+import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Pos
 import scalafx.scene.control.{Button, Label}
 import scalafx.scene.layout.HBox
 
-final class LabelButton(labelText: String,
-                        buttonAction: () => Unit) extends HBox:
+trait LabelButton[E] extends HBox:
+  val value = new ObjectProperty[E]()
+  val labelText = new ObjectProperty[String]()
+  val buttonAction = new ObjectProperty[() => E]()
+
   spacing = 6
 
   val label = new Label:
     alignment = Pos.CenterLeft
-    text = labelText
+    text = labelText.value
 
   val button = new Button:
     prefWidth = 75
     text = "..."
     onAction = { _ =>
-      buttonAction()
+      value.value = buttonAction.value()
     }
 
   children = List(label, button)
