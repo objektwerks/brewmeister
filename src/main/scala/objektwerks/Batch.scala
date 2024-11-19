@@ -17,7 +17,7 @@ object Batch:
     val maltColorUnits = (grainWeight * grainColor) / batchVolume
     ( 1.4922 * pow(maltColorUnits, 0.6859) ).toInt
 
-  def ibuBitterness(hops: Array[Hop]): Int =
+  def ibuBitterness(hops: List[Hop]): Int =
     hops.map { hop => ibuBitterness(hop.alphaAcid, hop.weight, hop.volume) }.sum
 
   def ibuBitterness(hopAlphaAcid: Double,

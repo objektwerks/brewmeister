@@ -37,32 +37,32 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
       case _ => () => recipe.volume
 
   val labelGrains = Label( context.labelGrains )
-  val labelButtonGrains = new LabelButton[Array[Grain]]:
+  val labelButtonGrains = new LabelButton[List[Grain]]:
     labelText = s"${recipe.grains.map(_.name).mkString(",")}"
     buttonAction = GrainsDialog(context, recipe.grains.toArray).showAndWait() match
-      case Some(grains: Array[Grain]) => () => grains
-      case _ => () => recipe.grains
+      case Some(grains: Array[Grain]) => () => grains.toList
+      case _ => () => recipe.grains.toList
   
   val labelHops = Label( context.labelHops )
-  val labelButtonHops = new LabelButton[Array[Hop]]:
+  val labelButtonHops = new LabelButton[List[Hop]]:
     labelText = s"${recipe.hops.map(_.name).mkString(",")}"
-    buttonAction = HopsDialog(context, recipe.hops).showAndWait() match
-      case Some(hops: Array[Hop]) => () => hops
-      case _ => () => recipe.hops
+    buttonAction = HopsDialog(context, recipe.hops.toArray).showAndWait() match
+      case Some(hops: Array[Hop]) => () => hops.toList
+      case _ => () => recipe.hops.toList
 
   val labelAdjuncts = Label( context.labelAdjuncts )
-  val labelButtonAdjuncts = new LabelButton[Array[Adjunct]]:
+  val labelButtonAdjuncts = new LabelButton[List[Adjunct]]:
     labelText = s"${recipe.adjuncts.map(_.name).mkString(",")}"
-    buttonAction = AdjunctsDialog(context, recipe.adjuncts).showAndWait() match
-      case Some(adjuncts: Array[Adjunct]) => () => adjuncts
-      case _ => () => recipe.adjuncts
+    buttonAction = AdjunctsDialog(context, recipe.adjuncts.toArray).showAndWait() match
+      case Some(adjuncts: Array[Adjunct]) => () => adjuncts.toList
+      case _ => () => recipe.adjuncts.toList
 
   val labelYeasts = Label( context.labelYeasts )
-  val labelButtonYeasts = new LabelButton[Array[Yeast]]:
+  val labelButtonYeasts = new LabelButton[List[Yeast]]:
     labelText = s"${recipe.yeasts.map(_.name).mkString(",")}"
-    buttonAction = YeastsDialog(context, recipe.yeasts).showAndWait() match
-      case Some(yeasts: Array[Yeast]) => () => yeasts
-      case _ => () => recipe.yeasts
+    buttonAction = YeastsDialog(context, recipe.yeasts.toArray).showAndWait() match
+      case Some(yeasts: Array[Yeast]) => () => yeasts.toList
+      case _ => () => recipe.yeasts.toList
 
   val labelMashingTempRangeDuration = Label( context.labelMashingTempRangeDuration )
   val labelButtonMashingTempRangeDuration = new LabelButton[TempRangeDuration]:
