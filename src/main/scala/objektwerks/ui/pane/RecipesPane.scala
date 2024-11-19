@@ -7,6 +7,7 @@ import scalafx.scene.layout.{HBox, Priority, VBox}
 
 import objektwerks.Recipe
 import objektwerks.ui.{Context, Model}
+import objektwerks.ui.dialog.RecipeDialog
 
 final class RecipesPane(context: Context, model: Model) extends TabPane:
   val tableView = new TableView[Recipe]():
@@ -62,7 +63,12 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   VBox.setVgrow(vbox, Priority.Always)
   VBox.setVgrow(this, Priority.Always)
 
-  def add(): Unit = ???
+  def add(): Unit =
+    RecipeDialog(context, model.selectedRecipe.value).showAndWait() match
+      case Some(recipe: Recipe) =>
+        model.observableRecipes.add(0, recipe)
+        tableView.selectionModel().select(0)
+      case _ =>
 
   def update(): Unit = ???
 
