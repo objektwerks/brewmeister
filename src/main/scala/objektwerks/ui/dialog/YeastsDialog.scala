@@ -7,7 +7,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 import objektwerks.Yeast
 import objektwerks.ui.{App, Context}
 
-final class YeastsDialog(context: Context, yeast: Yeast) extends Dialog[Yeast]:
+final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[Array[Yeast]]:
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogGrain
@@ -17,5 +17,5 @@ final class YeastsDialog(context: Context, yeast: Yeast) extends Dialog[Yeast]:
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      yeast // TODO
+      yeasts // TODO
     else null
