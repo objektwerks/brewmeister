@@ -79,4 +79,4 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
         tableView.selectionModel().select(selectedIndex)
       case _ =>
 
-  def simulate(): Unit = ???
+  def simulate(): Unit = ??? // TODO

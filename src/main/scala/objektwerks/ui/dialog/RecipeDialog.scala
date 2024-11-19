@@ -217,7 +217,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
   resultConverter = dialogButton =>
-    if dialogButton == saveButtonType then
+    if dialogButton == saveButtonType then // TODO
       recipe.copy(
         name = textFieldName.string,
         style = textFieldStyle.string,
