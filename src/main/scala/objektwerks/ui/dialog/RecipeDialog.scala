@@ -184,6 +184,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     labelStyle -> textFieldStyle,
     labelWater -> textFieldWater,
     labelVolume -> labelButtonVolume,
+    labelGrains -> labelButtonGrains,
     // grains, hops. adjuncts, yeasts
     labelMashingTempRangeDuration -> labelButtonMashingTempRangeDuration,
     labelPotentialMashExtract -> textFieldPotentialMashExtract,
