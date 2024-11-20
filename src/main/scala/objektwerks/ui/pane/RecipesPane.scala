@@ -36,7 +36,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     graphic = context.editImageView
     text = context.buttonEdit
     disable = true
-    onAction = { _ => update() }
+    onAction = { _ => edit() }
 
   val simulateButton = new Button:
     graphic = context.logoImageView
@@ -70,7 +70,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
         tableView.selectionModel().select(0)
       case _ =>
 
-  def update(): Unit =
+  def edit(): Unit =
     val selectedIndex = tableView.selectionModel().getSelectedIndex
     val recipe = tableView.selectionModel().getSelectedItem.recipe
     RecipeDialog(context, recipe).showAndWait() match
