@@ -94,4 +94,4 @@ final case class Yeast(name: String,
                        weight: Double,
                        unit: UoM,
                        mixinMinute: Int,
-                       mixinStep: MixinStep = MixinStep.Fermenting) derives JsonSupport
+                       mixinStep: MixinStep = MixinStep.Fermenting) derives CanEqual, JsonSupport
