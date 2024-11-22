@@ -177,7 +177,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     setBlockIncrement(10)
 
   val labelCreated = Label( context.labelCreated )
-  val createdTextField = Label( recipe.created )
+  val labelFieldCreated = Label( recipe.created )
 
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
@@ -206,7 +206,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     labelCalories -> rangeSliderCalories,
     labelMashEfficiency -> rangeSliderMashEfficiency,
     labelBrewhouseEfficiency -> rangeSliderBrewhouseEfficiency,
-    labelCreated -> createdTextField
+    labelCreated -> labelFieldCreated
   )
 
   dialogPane().content = ControlGrid(controls)
