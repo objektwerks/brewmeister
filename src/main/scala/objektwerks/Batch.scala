@@ -105,4 +105,4 @@ final case class Process(sanitizeStarted: String = "",
                          conditionStarted: String = "",
                          conditionCompleted: String = "",
                          kegStarted: String = "",
-                         kegCompleted: String = "") derives JsonSupport
+                         kegCompleted: String = "") derives CanEqual, JsonSupport
