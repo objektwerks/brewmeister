@@ -61,7 +61,7 @@ final case class Recipe(name: String = "",
                         calories: IntRange = IntRange(0, 0),
                         mashEfficiency: IntRange = IntRange(0, 0),
                         brewhouseEfficiency: IntRange = IntRange(0, 0),
-                        created: String = now()) derives JsonSupport:
+                        created: String = now()) derives CanEqual, JsonSupport:
   val nameProperty = ObjectProperty[String](this, "name", name)
   val recipe = this
 
