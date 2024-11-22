@@ -82,7 +82,7 @@ final case class Hop(name: String,
                      unit: UoM,
                      alphaAcid: Double,
                      mixinMinute: Int,
-                     mixinStep: MixinStep = MixinStep.Boiling) derives JsonSupport // or Whirlpooling or Conditioning
+                     mixinStep: MixinStep = MixinStep.Boiling) derives CanEqual, JsonSupport // or Whirlpooling or Conditioning
 
 final case class Adjunct(name: String,
                          weight: Double,
