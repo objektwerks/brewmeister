@@ -225,6 +225,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
         volume = labelButtonVolume.value.value,
         grains = labelButtonGrains.value.value,
         hops = labelButtonHops.value.value,
+        adjuncts = labelButtonAdjuncts.value.value,
         potentialMashExtract = textFieldPotentialMashExtract.double.format,
         potentialFermentableExtract = textFieldPotentialFermentableExtract.double.format,
         coolingTempRange = IntRange( rangeSliderCoolingTempRange.getLowValue.toInt, rangeSliderCoolingTempRange.getHighValue.toInt ),
