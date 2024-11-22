@@ -18,7 +18,7 @@ final case class Volume(value: Double, unit: UoM) derives CanEqual, JsonSupport
 enum UoM derives CanEqual, JsonSupport:
   case oz, gl, ml, l, lb, kg
 
-enum UoT derives JsonSupport:
+enum UoT derives CanEqual, JsonSupport:
   case minutes, days, weeks, months
 
 extension (double: Double)
