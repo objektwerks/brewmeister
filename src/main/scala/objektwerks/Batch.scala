@@ -75,7 +75,7 @@ final case class Batch(recipe: String = "",
                        log: List[String] = List.empty[String],
                        started: String = now(),
                        process: Process = Process(),
-                       completed: String = "") derives JsonSupport:
+                       completed: String = "") derives CanEqual, JsonSupport:
   val recipeProperty = ObjectProperty[String](this, "recipe", recipe)
   val batch = this
 
