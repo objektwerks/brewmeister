@@ -65,7 +65,7 @@ final case class Recipe(name: String = "",
   val nameProperty = ObjectProperty[String](this, "name", name)
   val recipe = this
 
-enum MixinStep derives JsonSupport:
+enum MixinStep derives CanEqual, JsonSupport:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
 
 final case class Grain(name: String,
