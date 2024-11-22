@@ -13,7 +13,7 @@ final case class IntRange(low: Int, high: Int) derives CanEqual, JsonSupport:
 
 final case class TempRangeDuration(tempRange: IntRange, duration: Int, unit: UoT) derives CanEqual, JsonSupport
 
-final case class Volume(value: Double, unit: UoM) derives JsonSupport
+final case class Volume(value: Double, unit: UoM) derives CanEqual, JsonSupport
 
 enum UoM derives JsonSupport:
   case oz, gl, ml, l, lb, kg
