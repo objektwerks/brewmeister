@@ -192,7 +192,6 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     labelPotentialMashExtract -> textFieldPotentialMashExtract,
     labelBoilingTempRangeDuration -> labelButtonBoilingTempRangeDuration,
     labelCoolingTempRange -> rangeSliderCoolingTempRange,
-    labelConditioningTempRangeDuration -> labelButtonConditioningTempRangeDuration,
     labelFermentingTempRangeDuration -> labelButtonFermentingTempRangeDuration,
     labelPotentialFermentableExtract -> textFieldPotentialFermentableExtract,
     labelConditioningTempRangeDuration -> labelButtonConditioningTempRangeDuration,
