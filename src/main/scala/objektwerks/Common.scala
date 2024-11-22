@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter
 
 import upickle.default.{ReadWriter => JsonSupport}
 
-final case class DoubleRange(low: Double, high: Double) derives JsonSupport:
+final case class DoubleRange(low: Double, high: Double) derives CanEqual, JsonSupport:
   def avg: Double = format( (low + high) / 2 )
 
 final case class IntRange(low: Int, high: Int) derives JsonSupport:
