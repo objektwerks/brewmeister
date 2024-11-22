@@ -11,7 +11,7 @@ final case class DoubleRange(low: Double, high: Double) derives CanEqual, JsonSu
 final case class IntRange(low: Int, high: Int) derives CanEqual, JsonSupport:
   def avg: Int = (low + high) / 2
 
-final case class TempRangeDuration(tempRange: IntRange, duration: Int, unit: UoT) derives JsonSupport
+final case class TempRangeDuration(tempRange: IntRange, duration: Int, unit: UoT) derives CanEqual, JsonSupport
 
 final case class Volume(value: Double, unit: UoM) derives JsonSupport
 
