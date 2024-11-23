@@ -7,6 +7,8 @@ import scalafx.beans.property.ObjectProperty
 import upickle.default.{ReadWriter => JsonSupport}
 
 object Batch:
+  given Ordering[Batch] = Ordering.by[Batch, String](b => b.completed).reverse
+
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
     val sum = grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.value) }.sum
     sum / grains.length
