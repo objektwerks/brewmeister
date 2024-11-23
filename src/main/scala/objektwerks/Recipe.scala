@@ -5,6 +5,8 @@ import scalafx.beans.property.ObjectProperty
 import upickle.default.ReadWriter as JsonSupport
 
 object Recipe:
+  given Ordering[Recipe] = Ordering.by[Recipe, String](r => r.name)
+
   def default: Recipe =
     Recipe(name = "Objektwerks IPA",
            style = "American IPA",
