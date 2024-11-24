@@ -6,6 +6,7 @@ import scalafx.scene.Node
 import scalafx.scene.control.{ButtonType, ChoiceBox, Dialog, Label}
 import scalafx.scene.control.ButtonBar.ButtonData
 
+import objektwerks.*
 import objektwerks.{UoM, Volume}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.DoubleTextField
@@ -34,5 +35,7 @@ final class VolumeDialog(context: Context, volume: Volume) extends Dialog[Volume
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      volume // TODO
+      volume.copy(
+        value = textFieldValue.double.format
+      )
     else null
