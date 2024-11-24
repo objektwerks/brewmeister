@@ -25,7 +25,8 @@ final class VolumeDialog(context: Context, volume: Volume) extends Dialog[Volume
   	value = volume.unit.toString
 
   val controls = List[(Label, Node)](
-    labelValue -> textFieldValue
+    labelValue -> textFieldValue,
+    labelUnit -> choiceBoxUnit
   )
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
