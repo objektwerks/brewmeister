@@ -15,6 +15,9 @@ final case class TempRangeDuration(tempRange: IntRange, duration: Int, unit: UoT
 
 final case class Volume(value: Double, unit: UoM) derives CanEqual, JsonSupport
 
+object UoM:
+  def toList: List[String] = UoM.values.map(uom => uom.toString).toList
+
 enum UoM derives CanEqual, JsonSupport:
   case oz, gl, ml, l, lb, kg
 
