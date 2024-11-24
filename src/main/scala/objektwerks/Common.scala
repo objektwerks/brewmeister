@@ -21,6 +21,9 @@ object UoM:
 enum UoM derives CanEqual, JsonSupport:
   case oz, gl, ml, l, lb, kg
 
+object UoT:
+  def toList: List[String] = UoT.values.map(uot => uot.toString).toList
+
 enum UoT derives CanEqual, JsonSupport:
   case minutes, days, weeks, months
 
