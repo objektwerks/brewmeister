@@ -18,6 +18,8 @@ final class VolumeDialog(context: Context, volume: Volume) extends Dialog[Volume
   val textFieldValue = new DoubleTextField:
     text = volume.value.toString
 
+  val labelUnit = Label( context.labelUnit )
+
   val controls = List[(Label, Node)](
     labelValue -> textFieldValue
   )
