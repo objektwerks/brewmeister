@@ -4,4 +4,4 @@ import scalafx.scene.control.Dialog
 
 import objektwerks.Batch
 
-final class BatchDialog extends Dialog[Batch]
+final class SimulateDialog extends Dialog[Batch]
