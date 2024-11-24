@@ -1,6 +1,7 @@
 package objektwerks.ui.dialog
 
 import scalafx.Includes.*
+import scalafx.scene.Node
 import scalafx.scene.control.{ButtonType, Dialog, Label}
 import scalafx.scene.control.ButtonBar.ButtonData
 
@@ -16,6 +17,9 @@ final class VolumeDialog(context: Context, volume: Volume) extends Dialog[Volume
   val labelValue = Label( context.labelValue )
   val textFieldValue = new DoubleTextField:
     text = volume.value.toString
+
+  val controls = List[(Label, Node)](
+  )
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
