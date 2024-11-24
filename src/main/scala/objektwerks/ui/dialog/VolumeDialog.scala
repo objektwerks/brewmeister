@@ -1,8 +1,9 @@
 package objektwerks.ui.dialog
 
 import scalafx.Includes.*
+import scalafx.collections.ObservableBuffer
 import scalafx.scene.Node
-import scalafx.scene.control.{ButtonType, Dialog, Label}
+import scalafx.scene.control.{ButtonType, ChoiceBox, Dialog, Label}
 import scalafx.scene.control.ButtonBar.ButtonData
 
 import objektwerks.Volume
@@ -19,6 +20,9 @@ final class VolumeDialog(context: Context, volume: Volume) extends Dialog[Volume
     text = volume.value.toString
 
   val labelUnit = Label( context.labelUnit )
+  val choiceBoxUnit = new ChoiceBox[String]:
+  	items = ObservableBuffer.from( volume.units )
+  	value = volume.unit.toString
 
   val controls = List[(Label, Node)](
     labelValue -> textFieldValue
