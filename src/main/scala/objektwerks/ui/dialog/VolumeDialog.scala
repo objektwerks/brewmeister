@@ -9,7 +9,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 import objektwerks.*
 import objektwerks.{UoM, Volume}
 import objektwerks.ui.{App, Context}
-import objektwerks.ui.control.DoubleTextField
+import objektwerks.ui.control.{ControlGrid, DoubleTextField}
 
 final class VolumeDialog(context: Context, volume: Volume) extends Dialog[Volume]:
   initOwner(App.stage)
@@ -29,6 +29,8 @@ final class VolumeDialog(context: Context, volume: Volume) extends Dialog[Volume
     labelValue -> textFieldValue,
     labelUnit -> choiceBoxUnit
   )
+
+  dialogPane().content = ControlGrid(controls)
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
