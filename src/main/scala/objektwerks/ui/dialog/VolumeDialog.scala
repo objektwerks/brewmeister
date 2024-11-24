@@ -36,6 +36,7 @@ final class VolumeDialog(context: Context, volume: Volume) extends Dialog[Volume
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
       volume.copy(
-        value = textFieldValue.double.format
+        value = textFieldValue.double.format,
+        unit = UoM.valueOf( choiceBoxUnit.value.value )
       )
     else null
