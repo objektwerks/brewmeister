@@ -51,6 +51,7 @@ final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRan
     if dialogButton == saveButtonType then
       tempRangeDuration.copy(
         tempRange = IntRange( rangeSliderTempRange.getLowValue.toInt, rangeSliderTempRange.getHighValue.toInt ),
-        duration = textFieldDuration.int
+        duration = textFieldDuration.int,
+        unit = UoT.valueOf( choiceBoxUnit.value.value )
       )
     else null
