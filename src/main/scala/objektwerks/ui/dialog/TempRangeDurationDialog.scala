@@ -31,7 +31,8 @@ final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRan
     text = tempRangeDuration.duration.toString
 
   val controls = List[(Label, Node)](
-    labelTempRange -> rangeSliderTempRange
+    labelTempRange -> rangeSliderTempRange,
+    labelDuration -> rangeSliderTempRange
   )
 
   dialogPane().content = ControlGrid(controls)
