@@ -17,4 +17,6 @@ class IntTextField extends TextField:
 
   textFormatter = TextFormatter[Int](converter, 0, filter)
 
+  def int: Int = text.value.toInt
+
   def int(default: Int): Int = text.value.toIntOption.getOrElse(default)
