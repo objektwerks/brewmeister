@@ -1,5 +1,7 @@
 package objektwerks.ui.dialog
 
+import org.controlsfx.control.RangeSlider
+
 import scalafx.Includes.*
 import scalafx.scene.control.{ButtonType, Dialog, Label}
 import scalafx.scene.control.ButtonBar.ButtonData
@@ -13,6 +15,14 @@ final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRan
   headerText = context.dialogGrain
 
   val labelTempRange = Label( context.labelTempRange )
+  val rangeSliderTempRange = new RangeSlider(
+    tempRangeDuration.tempRange.low,
+    tempRangeDuration.tempRange.high,
+    tempRangeDuration.tempRange.low,
+    tempRangeDuration.tempRange.high ):
+      setShowTickMarks(true)
+      setShowTickLabels(true)
+      setBlockIncrement(1)
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
