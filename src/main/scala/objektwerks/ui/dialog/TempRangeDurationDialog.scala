@@ -9,7 +9,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 
 import objektwerks.TempRangeDuration
 import objektwerks.ui.{App, Context}
-import objektwerks.ui.control.ControlGrid
+import objektwerks.ui.control.{ControlGrid, IntTextField}
 
 final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRangeDuration) extends Dialog[TempRangeDuration]:
   initOwner(App.stage)
@@ -27,6 +27,8 @@ final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRan
       setBlockIncrement(1)
 
   val labelDuration = Label( context.labelDuration )
+  val textFieldDuration = new IntTextField:
+    text = tempRangeDuration.duration.toString
 
   val controls = List[(Label, Node)](
     labelTempRange -> rangeSliderTempRange
