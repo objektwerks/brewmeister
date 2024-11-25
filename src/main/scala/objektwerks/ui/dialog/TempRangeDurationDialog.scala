@@ -8,7 +8,7 @@ import scalafx.scene.Node
 import scalafx.scene.control.{ButtonType, ChoiceBox, Dialog, Label}
 import scalafx.scene.control.ButtonBar.ButtonData
 
-import objektwerks.{TempRangeDuration, UoT}
+import objektwerks.{IntRange, TempRangeDuration, UoT}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, IntTextField}
 
@@ -49,5 +49,7 @@ final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRan
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      tempRangeDuration // TODO
+      tempRangeDuration.copy(
+        tempRange = IntRange( rangeSliderTempRange.getLowValue.toInt, rangeSliderTempRange.getHighValue.toInt )
+      )
     else null
