@@ -6,8 +6,11 @@ import scalafx.scene.control.{Button, Label}
 import scalafx.scene.layout.HBox
 
 import scala.annotation.meta.setter
+import scala.language.strictEquality
 
 trait LabelButton[E] extends HBox:
+  given CanEqual[E, E] = CanEqual.derived
+
   val value = new ObjectProperty[E]()
   @setter def value_=(e: E): Unit = value = e
 
@@ -27,7 +30,8 @@ trait LabelButton[E] extends HBox:
     prefWidth = 75
     text = "..."
     onAction = { _ =>
-      value.value = buttonAction.value()
+      val newValue = buttonAction.value()
+      if newValue != value.value then value.value = newValue
     }
 
   children = List(label, button)
