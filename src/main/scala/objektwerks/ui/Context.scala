@@ -40,6 +40,7 @@ final class Context(config: Config):
   val labelAdjuncts = config.getString("label.adjuncts")
   val labelYeasts = config.getString("label.yeasts")
   val labelTempRange = config.getString("label.tempRange")
+  val labelDuration = config.getString("label.duration")
   val labelMashingTempRangeDuration = config.getString("label.mashingTempRangeDuration")
   val labelPotentialMashExtract = config.getString("label.potentialMashExtract")
   val labelBoilingTempRangeDuration = config.getString("label.boilingTempRangeDuration")
