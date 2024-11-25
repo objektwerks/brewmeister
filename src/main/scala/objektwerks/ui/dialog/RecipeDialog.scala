@@ -86,6 +86,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelButtonBoilingTempRangeDuration = new LabelButton[TempRangeDuration]:
     labelText = s"""${recipe.boilingTempRangeDuration.tempRange.low} - ${recipe.boilingTempRangeDuration.tempRange.high},
                     ${recipe.boilingTempRangeDuration.duration} ${recipe.boilingTempRangeDuration.unit.toString}"""
+    value = recipe.boilingTempRangeDuration
     buttonAction = TempRangeDurationDialog(context, recipe.boilingTempRangeDuration).showAndWait() match
       case Some(tempRangeDuration: TempRangeDuration) => () => tempRangeDuration
       case _ => () => recipe.boilingTempRangeDuration
