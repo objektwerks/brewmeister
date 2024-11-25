@@ -26,6 +26,8 @@ final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRan
       setShowTickLabels(true)
       setBlockIncrement(1)
 
+  val labelDuration = Label( context.labelDuration )
+
   val controls = List[(Label, Node)](
     labelTempRange -> rangeSliderTempRange
   )
