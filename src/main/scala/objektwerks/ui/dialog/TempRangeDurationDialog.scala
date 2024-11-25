@@ -9,6 +9,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 
 import objektwerks.TempRangeDuration
 import objektwerks.ui.{App, Context}
+import objektwerks.ui.control.ControlGrid
 
 final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRangeDuration) extends Dialog[TempRangeDuration]:
   initOwner(App.stage)
@@ -28,6 +29,8 @@ final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRan
   val controls = List[(Label, Node)](
     labelTempRange -> rangeSliderTempRange
   )
+
+  dialogPane().content = ControlGrid(controls)
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
