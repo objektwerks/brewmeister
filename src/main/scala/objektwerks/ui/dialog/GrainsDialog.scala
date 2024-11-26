@@ -12,6 +12,7 @@ import scalafx.scene.layout.{HBox, VBox}
 import objektwerks.{Grain, MixinStep, UoM}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField, NonEmptyTextField}
+import objektwerks.format
 
 final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[Array[Grain]]:
   initOwner(App.stage)
@@ -19,11 +20,11 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   headerText = context.dialogGrains
 
   // Model
-  var updatedGrains = grains.map(identity)
+  var updatedGrains = grains.map(identity).toBuffer
 
   // List
   val listViewGrains = new ListView[Grain]:
-    items = ObservableBuffer.from(grains)
+    items = ObservableBuffer.from(updatedGrains)
     cellFactory = (cell, grain) => cell.text = grain.name
 
   listViewGrains.selectionModel().setSelectionMode(SelectionMode.SINGLE)
@@ -46,10 +47,21 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val removeButton = new Button:
     text = context.buttonSave
     disable = true
-    onAction = { _ => remove() }
+    onAction = { _ => remove( listViewGrains.selectionModel().selectedItem.value ) }
 
-  def add(): Unit = ???
-  def remove(): Unit = ???
+  def add(): Unit =
+    val grain = Grain(
+      name = textFieldName.text.value,
+      weight = textFieldWeight.text.value.toDouble.format,
+      unit = UoM.valueOf( choiceBoxUnit.value.value ),
+      color = textFieldColor.text.value.toDouble.format,
+      lovibond = textFieldLovibond.text.value.toDouble.format,
+      mixinMinute = textFieldMixinMinute.text.value.toInt,
+      mixinStep = MixinStep.valueOf( choiceBoxMixinStep.value.value )
+    )
+    updatedGrains += grain
+
+  def remove(grain: Grain): Unit = updatedGrains -= grain
 
   val buttonBarGrains = new HBox:
     spacing = 6
@@ -99,7 +111,10 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     disable = true
     onAction = { _ => save() }
 
-  def save(): Unit = ???
+  def save(): Unit =
+    val index = listViewGrains.selectionModel().selectedIndex.value
+    val grain = listViewGrains.selectionModel().selectedItem.value
+    updatedGrains.update(index, grain)
 
   val buttonBarControls = new HBox:
     spacing = 6
@@ -123,5 +138,5 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      updatedGrains
+      updatedGrains.toArray
     else null
