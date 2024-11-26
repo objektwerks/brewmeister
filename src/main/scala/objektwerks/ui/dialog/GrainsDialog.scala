@@ -33,7 +33,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   listViewGrains.selectionModel().selectedItem.onChange { (_, _, newName) =>
     saveButton.disable = false
     selectedName.value = newName
-    // TODO find grain and bind all fields
+    // TODO! Find selected grain and bind all fields.
   }
 
   val labelName = Label(context.labelName)
@@ -79,7 +79,9 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val saveButton = new Button:
     text = context.buttonSave
     disable = true
-    // onAction = { _ => }
+    onAction = { _ => save() }
+
+  val save = () => () // TODO!
 
   val buttonBar = new HBox:
     spacing = 6
