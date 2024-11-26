@@ -20,7 +20,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   title = context.windowTitle
   headerText = context.dialogGrains
 
-  var updatedGrains = grains.map(g => g).toArray
+  var updatedGrains = grains.map(identity)
 
   val selectedName = ObjectProperty[String]("")
   val selectedWeight = ObjectProperty[String]("")
