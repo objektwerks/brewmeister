@@ -21,6 +21,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   var selectedName = ObjectProperty[String]("")
   val selectedWeight = ObjectProperty[String]("")
+  val selectedUnit = ObjectProperty[String]("")
 
   val listViewGrains = new ListView[String]:
     items = ObservableBuffer.from(grains.map(_.name))
@@ -40,7 +41,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val labelUnit = Label( context.labelUnit )
   val choiceBoxUnit = new ChoiceBox[String]:
   	items = ObservableBuffer.from( UoM.toList )
-  	value = volume.unit.toString
+  	value <== selectedUnit
 
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
