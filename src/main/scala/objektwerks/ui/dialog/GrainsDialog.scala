@@ -48,8 +48,8 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     disable = true
     onAction = { _ => remove() }
 
-  val add = () => () // TODO!
-  val remove = () => () // TODO!
+  def add(): Unit = ??? // TODO!
+  def remove(): Unit = ??? // TODO!
 
   val buttonBarGrains = new HBox:
     spacing = 6
@@ -99,7 +99,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     disable = true
     onAction = { _ => save() }
 
-  val save = () => () // TODO!
+  def save(): Unit = ??? // TODO!
 
   val buttonBarControls = new HBox:
     spacing = 6
