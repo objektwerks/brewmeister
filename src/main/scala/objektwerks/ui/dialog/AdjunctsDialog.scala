@@ -10,7 +10,7 @@ import objektwerks.ui.{App, Context}
 final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends Dialog[Array[Adjunct]]:
   initOwner(App.stage)
   title = context.windowTitle
-  headerText = context.dialogGrain
+  headerText = context.dialogAdjuncts
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
