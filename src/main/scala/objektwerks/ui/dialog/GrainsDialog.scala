@@ -60,6 +60,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
       mixinStep = MixinStep.valueOf( choiceBoxMixinStep.value.value )
     )
     updatedGrains += grain
+    listViewGrains.selectionModel().select(grain)
 
   def remove(grain: Grain): Unit = updatedGrains -= grain
 
