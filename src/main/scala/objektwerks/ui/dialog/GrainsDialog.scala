@@ -20,6 +20,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   title = context.windowTitle
   headerText = context.dialogGrains
 
+  // Model
   var updatedGrains = grains.map(identity)
 
   val selectedName = ObjectProperty[String]("")
@@ -31,7 +32,6 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val selectedMixinStep = ObjectProperty[String]("")
 
   // List
-
   val listViewGrains = new ListView[Grain]:
     items = ObservableBuffer.from(grains)
     cellFactory = (cell, grain) => cell.text = grain.name
