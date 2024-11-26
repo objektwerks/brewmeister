@@ -47,6 +47,9 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   	items = ObservableBuffer.from( UoM.toList )
   	value <== selectedUnit
 
+  val labelColor = Label(context.labelColor)
+
+
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
     labelWeight -> textFieldWeight,
