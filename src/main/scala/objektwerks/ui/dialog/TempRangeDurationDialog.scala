@@ -15,7 +15,7 @@ import objektwerks.ui.control.{ControlGrid, IntTextField}
 final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRangeDuration) extends Dialog[TempRangeDuration]:
   initOwner(App.stage)
   title = context.windowTitle
-  headerText = context.dialogGrain
+  headerText = context.dialogTempRangeDuration
 
   val labelTempRange = Label( context.labelTempRange )
   val rangeSliderTempRange = new RangeSlider(
