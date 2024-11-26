@@ -6,7 +6,7 @@ import scalafx.Includes.*
 import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Insets
 import scalafx.scene.Node
-import scalafx.scene.control.{ButtonType, ChoiceBox, Dialog, Label, ListView}
+import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, ListView}
 import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.{HBox, VBox}
 
@@ -74,10 +74,20 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     labelMixinMinute -> textFieldMixinMinute,
     labelMixinStep -> choiceBoxMixinStep
   )
+
+  val saveButton = new Button:
+    text = context.buttonSave
+    disable = true
+    // onAction = { _ => }
+
+  val buttonBar = new HBox:
+    spacing = 6
+    children = List(saveButton)  
+
   val vboxControls = new VBox:
     spacing = 6
     padding = Insets(6)
-    children = List( ControlGrid(controls) )
+    children = List( ControlGrid(controls), buttonBar )
 
   val hboxContent = new HBox:
     spacing = 6
