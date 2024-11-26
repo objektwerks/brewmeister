@@ -44,7 +44,7 @@ final class Context(config: Config):
   val labelWeight = config.getString("label.weight")
   val labelColor = config.getString("label.color")
   val labelLovibond = config.getString("label.lovibond")
-  val labeMixinMinute = config.getString("label.mixinMinute")
+  val labelMixinMinute = config.getString("label.mixinMinute")
   val labelMixinStep = config.getString("label.mixinStep")
   val labelAlphaAcid = config.getString("label.alphaAcid")
   val labelTempRange = config.getString("label.tempRange")

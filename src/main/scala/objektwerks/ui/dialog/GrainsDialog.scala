@@ -12,7 +12,7 @@ import scalafx.scene.layout.{HBox, VBox}
 
 import objektwerks.{Grain, UoM}
 import objektwerks.ui.{App, Context}
-import objektwerks.ui.control.{ControlGrid, DoubleTextField, NonEmptyTextField}
+import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField, NonEmptyTextField}
 
 final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[Array[Grain]]:
   initOwner(App.stage)
@@ -54,6 +54,10 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val labelLovibond = Label(context.labelLovibond)
   val textFieldLovibond = new DoubleTextField:
     text <== selectedLovibond
+
+  val labelMixinMinute = Label(context.labelMixinMinute)
+  val textFieldMixinMinute = new IntTextField:
+    text <== selectedMixinMinute
 
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
