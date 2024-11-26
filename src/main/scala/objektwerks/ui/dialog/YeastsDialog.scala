@@ -10,7 +10,7 @@ import objektwerks.ui.{App, Context}
 final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[Array[Yeast]]:
   initOwner(App.stage)
   title = context.windowTitle
-  headerText = context.dialogGrain
+  headerText = context.dialogYeasts
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
