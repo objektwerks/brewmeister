@@ -9,10 +9,9 @@ import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, List
 import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.{HBox, VBox}
 
-import objektwerks.{Grain, UoM}
+import objektwerks.{Grain, MixinStep, UoM}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField, NonEmptyTextField}
-import objektwerks.MixinStep
 
 final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[Array[Grain]]:
   initOwner(App.stage)
