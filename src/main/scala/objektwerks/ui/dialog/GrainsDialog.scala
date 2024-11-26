@@ -37,6 +37,23 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     // TODO! Find selected grain and bind all fields.
   }
 
+  val addButton = new Button:
+    text = context.buttonSave
+    disable = true
+    onAction = { _ => add() }
+
+  val removeButton = new Button:
+    text = context.buttonSave
+    disable = true
+    onAction = { _ => remove() }
+
+  val add = () => () // TODO!
+  val remove = () => () // TODO!
+
+  val grainsButtonBar = new HBox:
+    spacing = 6
+    children = List(saveButton) 
+
   val labelName = Label(context.labelName)
   val textFieldName = new NonEmptyTextField:
     text <== selectedName
