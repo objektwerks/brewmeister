@@ -5,7 +5,7 @@ import scalafx.collections.ObservableBuffer
 import scalafx.Includes.*
 import scalafx.geometry.Insets
 import scalafx.scene.Node
-import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, ListView}
+import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, ListView, SelectionMode}
 import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.{HBox, VBox}
 
@@ -27,6 +27,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     items = ObservableBuffer.from(grains)
     cellFactory = (cell, grain) => cell.text = grain.name
 
+  listViewGrains.selectionModel().setSelectionMode(SelectionMode.SINGLE)
   listViewGrains.selectionModel().selectedItem.onChange { (_, _, grain) =>
     saveButton.disable = false
     textFieldName.text = grain.name
