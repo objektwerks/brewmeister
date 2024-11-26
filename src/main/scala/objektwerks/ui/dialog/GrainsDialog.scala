@@ -54,7 +54,8 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
     labelWeight -> textFieldWeight,
-    labelUnit -> choiceBoxUnit
+    labelUnit -> choiceBoxUnit,
+    labelColor -> textFieldColor
   )
   val vboxControls = new VBox:
     spacing = 6
