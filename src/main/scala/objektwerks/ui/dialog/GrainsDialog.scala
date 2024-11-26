@@ -6,11 +6,11 @@ import scalafx.Includes.*
 import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Insets
 import scalafx.scene.Node
-import scalafx.scene.control.{ButtonType, Dialog, Label, ListView}
+import scalafx.scene.control.{ButtonType, ChoiceBox, Dialog, Label, ListView}
 import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.{HBox, VBox}
 
-import objektwerks.Grain
+import objektwerks.{Grain, UoM}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, DoubleTextField, NonEmptyTextField}
 
@@ -37,6 +37,11 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val textFieldWeight = new DoubleTextField:
     text <== selectedWeight
 
+  val labelUnit = Label( context.labelUnit )
+  val choiceBoxUnit = new ChoiceBox[String]:
+  	items = ObservableBuffer.from( UoM.toList )
+  	value = volume.unit.toString
+
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
     labelWeight -> textFieldWeight
@@ -46,12 +51,12 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     padding = Insets(6)
     children = List( ControlGrid(controls) )
 
-  val hboxForm = new HBox:
+  val hboxContent = new HBox:
     spacing = 6
     padding = Insets(6)
     children = List(listViewGrains, vboxControls)
 
-  dialogPane().content = hboxForm
+  dialogPane().content = hboxContent
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
