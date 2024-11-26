@@ -63,7 +63,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelYeasts = Label( context.labelYeasts )
   val labelButtonYeasts = new LabelButton[List[Yeast]]:
-    labelText = s"${recipe.yeasts.map(_.name).mkString(",")}"
+    labelText = s"${recipe.yeasts.map(_.name).mkString(", ")}"
     value = recipe.yeasts
     buttonAction = YeastsDialog(context, recipe.yeasts.toArray).showAndWait() match
       case Some(yeasts: Array[Yeast]) => () => yeasts.toList
