@@ -20,6 +20,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   title = context.windowTitle
   headerText = context.dialogGrains
 
+  // TODO! var updatedGrains = Array.empty[Grain]
   val selectedName = ObjectProperty[String]("")
   val selectedWeight = ObjectProperty[String]("")
   val selectedUnit = ObjectProperty[String]("")
