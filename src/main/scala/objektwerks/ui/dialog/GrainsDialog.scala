@@ -29,6 +29,8 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val selectedMixinMinute = ObjectProperty[String]("")
   val selectedMixinStep = ObjectProperty[String]("")
 
+  // List
+
   val listViewGrains = new ListView[String]:
     items = ObservableBuffer.from(grains.map(_.name))
   listViewGrains.selectionModel().selectedItem.onChange { (_, _, newName) =>
@@ -59,6 +61,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     padding = Insets(6)
     children = List( listViewGrains, buttonBarGrains )
 
+  // Item
   val labelName = Label(context.labelName)
   val textFieldName = new NonEmptyTextField:
     text <== selectedName
@@ -115,6 +118,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     padding = Insets(6)
     children = List( ControlGrid(controls), buttonBarControls )
 
+  // Content
   val hboxContent = new HBox:
     spacing = 6
     padding = Insets(6)
