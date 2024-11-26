@@ -3,37 +3,46 @@ package objektwerks.ui.dialog
 import scalafx.collections.ObservableBuffer
 
 import scalafx.Includes.*
+import scalafx.beans.property.ObjectProperty
+import scalafx.geometry.Insets
 import scalafx.scene.Node
 import scalafx.scene.control.{ButtonType, Dialog, Label, ListView}
 import scalafx.scene.control.ButtonBar.ButtonData
-import javafx.scene.layout.HBox
+import scalafx.scene.layout.{HBox, VBox}
 
 import objektwerks.Grain
 import objektwerks.ui.{App, Context}
-import objektwerks.ui.control.NonEmptyTextField
+import objektwerks.ui.control.{ControlGrid, NonEmptyTextField}
 
 final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[Array[Grain]]:
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogGrains
 
-  var selectedGrain = ""
+  var selectedGrain = ObjectProperty[String]("")
 
   val listViewGrains = new ListView[String]:
     items = ObservableBuffer.from(grains.map(_.name))
-    prefHeight = 100.0
-  listViewGrains.selectionModel().selectedItem.onChange { (_, _, newValue) => selectedGrain = newValue }
+  listViewGrains.selectionModel().selectedItem.onChange { (_, _, newValue) => selectedGrain.value = newValue }
 
   val labelName = Label(context.labelName)
   val textFieldName = new NonEmptyTextField:
-    text = selectedGrain
+    text <== selectedGrain
 
   val controls = List[(Label, Node)](
     labelName -> textFieldName
   )
+  val vboxControls = new VBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List( ControlGrid(controls) )
 
-  val hbox = new HBox:
-    children = List(listViewGrains, controls)
+  val hboxForm = new HBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List(listViewGrains, vboxControls)
+
+  dialogPane().content = hboxForm
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
