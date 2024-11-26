@@ -24,10 +24,10 @@ final class Context(config: Config):
   val columnRecipe = config.getString("column.recipe")
 
   val dialogRecipe = config.getString("dialog.recipe")
-  val dialogGrain = config.getString("dialog.grain")
-  val dialogHop = config.getString("dialog.hop")
-  val dialogAdjunct = config.getString("dialog.adjunct")
-  val dialogYeast = config.getString("dialog.yeast")
+  val dialogGrains = config.getString("dialog.grains")
+  val dialogHops = config.getString("dialog.hops")
+  val dialogAdjuncts = config.getString("dialog.adjuncts")
+  val dialogYeasts = config.getString("dialog.yeasts")
 
   val labelName = config.getString("label.name")
   val labelStyle = config.getString("label.style")
