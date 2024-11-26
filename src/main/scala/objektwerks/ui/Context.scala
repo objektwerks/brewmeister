@@ -39,7 +39,16 @@ final class Context(config: Config):
   val labelHops = config.getString("label.hops")
   val labelAdjuncts = config.getString("label.adjuncts")
   val labelYeasts = config.getString("label.yeasts")
-  
+  /* 
+    weight = "Weight:"
+    color = "Color:"
+    lovibond = "Lovibond:"
+    mixinMinute = "Mixin Minute:"
+    mixinStep = "Mixin Step:"
+    alphaAcid = "Alpha Acid:"
+   */
+  val labelWeight = config.getString("label.weight")
+
   val labelTempRange = config.getString("label.tempRange")
   val labelDuration = config.getString("label.duration")
   val labelMashingTempRangeDuration = config.getString("label.mashingTempRangeDuration")
