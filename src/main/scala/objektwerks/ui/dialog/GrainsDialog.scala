@@ -12,22 +12,30 @@ import scalafx.scene.layout.{HBox, VBox}
 
 import objektwerks.Grain
 import objektwerks.ui.{App, Context}
-import objektwerks.ui.control.{ControlGrid, NonEmptyTextField}
+import objektwerks.ui.control.{ControlGrid, DoubleTextField, NonEmptyTextField}
 
 final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[Array[Grain]]:
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogGrains
 
-  var selectedGrain = ObjectProperty[String]("")
+  var selectedName = ObjectProperty[String]("")
+  val selectedWeight = ObjectProperty[String]("")
 
   val listViewGrains = new ListView[String]:
     items = ObservableBuffer.from(grains.map(_.name))
-  listViewGrains.selectionModel().selectedItem.onChange { (_, _, newValue) => selectedGrain.value = newValue }
+  listViewGrains.selectionModel().selectedItem.onChange { (_, _, newName) =>
+    selectedName.value = newName
+    // TODO find grain and bind all fields
+  }
 
   val labelName = Label(context.labelName)
   val textFieldName = new NonEmptyTextField:
-    text <== selectedGrain
+    text <== selectedName
+
+  val labelWeight = Label(context.labelWeight)
+  val textFieldWeight = new DoubleTextField:
+    text <== selectedWeight
 
   val controls = List[(Label, Node)](
     labelName -> textFieldName
