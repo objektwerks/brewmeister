@@ -48,6 +48,7 @@ final class Context(config: Config):
     alphaAcid = "Alpha Acid:"
    */
   val labelWeight = config.getString("label.weight")
+  val labelColor = config.getString("label.color")
 
   val labelTempRange = config.getString("label.tempRange")
   val labelDuration = config.getString("label.duration")
