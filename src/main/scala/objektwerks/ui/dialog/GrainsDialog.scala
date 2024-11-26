@@ -50,9 +50,14 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val add = () => () // TODO!
   val remove = () => () // TODO!
 
-  val grainsButtonBar = new HBox:
+  val buttonBarGrains = new HBox:
     spacing = 6
-    children = List(saveButton) 
+    children = List(addButton, removeButton)
+
+  val vboxGrains = new VBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List( listViewGrains, buttonBarGrains )
 
   val labelName = Label(context.labelName)
   val textFieldName = new NonEmptyTextField:
@@ -101,19 +106,19 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   val save = () => () // TODO!
 
-  val controlsButtonBar = new HBox:
+  val buttonBarControls = new HBox:
     spacing = 6
     children = List(saveButton)  
 
   val vboxControls = new VBox:
     spacing = 6
     padding = Insets(6)
-    children = List( ControlGrid(controls), controlsButtonBar )
+    children = List( ControlGrid(controls), buttonBarControls )
 
   val hboxContent = new HBox:
     spacing = 6
     padding = Insets(6)
-    children = List(listViewGrains, vboxControls)
+    children = List(vboxGrains, vboxControls)
 
   dialogPane().content = hboxContent
 
