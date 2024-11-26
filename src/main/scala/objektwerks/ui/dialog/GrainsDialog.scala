@@ -22,6 +22,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val selectedName = ObjectProperty[String]("")
   val selectedWeight = ObjectProperty[String]("")
   val selectedUnit = ObjectProperty[String]("")
+  val selectedColor = ObjectProperty[String]("")
 
   val listViewGrains = new ListView[String]:
     items = ObservableBuffer.from(grains.map(_.name))
