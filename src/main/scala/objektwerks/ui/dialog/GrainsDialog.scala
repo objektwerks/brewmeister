@@ -8,17 +8,22 @@ import scalafx.scene.control.ButtonBar.ButtonData
 
 import objektwerks.Grain
 import objektwerks.ui.{App, Context}
+import objektwerks.ui.control.NonEmptyTextField
 
 final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[Array[Grain]]:
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogGrains
 
+  var selectedGrain = ???
+
   val listView = new ListView[String]:
     items = ObservableBuffer.from(grains.map(_.name))
     prefHeight = 100.0
 
   val labelName = Label(context.labelName)
+  val textFieldName = new NonEmptyTextField:
+    text = ""
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
