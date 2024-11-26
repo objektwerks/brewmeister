@@ -28,6 +28,8 @@ final class Context(config: Config):
   val dialogHops = config.getString("dialog.hops")
   val dialogAdjuncts = config.getString("dialog.adjuncts")
   val dialogYeasts = config.getString("dialog.yeasts")
+  val dialogTempRangeDuration = config.getString("dialog.tempRangeDuration")
+  val dialogVolume = config.getString("dialog.volume")
 
   val labelName = config.getString("label.name")
   val labelStyle = config.getString("label.style")
