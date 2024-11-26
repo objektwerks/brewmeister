@@ -51,6 +51,10 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val textFieldColor = new DoubleTextField:
     text <== selectedColor
 
+  val labelLovibond = Label(context.labelLovibond)
+  val textFieldLovibond = new DoubleTextField:
+    text <== selectedLovibond
+
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
     labelWeight -> textFieldWeight,
