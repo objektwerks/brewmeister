@@ -20,7 +20,6 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   title = context.windowTitle
   headerText = context.dialogGrains
 
-  // TODO! var updatedGrains = Array.empty[Grain]
   val selectedName = ObjectProperty[String]("")
   val selectedWeight = ObjectProperty[String]("")
   val selectedUnit = ObjectProperty[String]("")
@@ -31,12 +30,19 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   // List
 
-  val listViewGrains = new ListView[String]:
-    items = ObservableBuffer.from(grains.map(_.name))
-  listViewGrains.selectionModel().selectedItem.onChange { (_, _, newName) =>
+  val listViewGrains = new ListView[Grain]:
+    items = ObservableBuffer.from(grains)
+    cellFactory = (cell, grain) => cell.text = grain.name
+
+  listViewGrains.selectionModel().selectedItem.onChange { (_, _, grain) =>
     saveButton.disable = false
-    selectedName.value = newName
-    // TODO! Find selected grain and bind all fields.
+    selectedName.value = grain.name
+    selectedWeight.value = grain.weight.toString
+    selectedUnit.value = grain.unit.toString
+    selectedColor.value = grain.color.toString
+    selectedLovibond.value = grain.lovibond.toString
+    selectedMixinMinute.value = grain.mixinMinute.toString
+    selectedMixinStep.value = grain.mixinStep.toString
   }
 
   val addButton = new Button:
