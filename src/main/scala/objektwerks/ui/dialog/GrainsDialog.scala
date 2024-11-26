@@ -31,6 +31,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val listViewGrains = new ListView[String]:
     items = ObservableBuffer.from(grains.map(_.name))
   listViewGrains.selectionModel().selectedItem.onChange { (_, _, newName) =>
+    saveButton.disable = false
     selectedName.value = newName
     // TODO find grain and bind all fields
   }
