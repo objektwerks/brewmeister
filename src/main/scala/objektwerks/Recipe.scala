@@ -67,6 +67,9 @@ final case class Recipe(name: String = "",
   val nameProperty = ObjectProperty[String](this, "name", name)
   val recipe = this
 
+object MixinStep:
+  def toList: List[String] = MixinStep.values.map(ms => ms.toString).toList
+
 enum MixinStep derives CanEqual, JsonSupport:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
 

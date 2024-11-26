@@ -13,6 +13,7 @@ import scalafx.scene.layout.{HBox, VBox}
 import objektwerks.{Grain, UoM}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField, NonEmptyTextField}
+import objektwerks.MixinStep
 
 final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[Array[Grain]]:
   initOwner(App.stage)
@@ -58,6 +59,11 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val labelMixinMinute = Label(context.labelMixinMinute)
   val textFieldMixinMinute = new IntTextField:
     text <== selectedMixinMinute
+
+  val labelMixinStep = Label( context.labelMixinStep )
+  val choiceBoxMixinStep = new ChoiceBox[String]:
+  	items = ObservableBuffer.from( MixinStep.toList )
+  	value <== selectedMixinStep
 
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
