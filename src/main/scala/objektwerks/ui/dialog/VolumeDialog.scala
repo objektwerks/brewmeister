@@ -14,7 +14,7 @@ import objektwerks.ui.control.{ControlGrid, DoubleTextField}
 final class VolumeDialog(context: Context, volume: Volume) extends Dialog[Volume]:
   initOwner(App.stage)
   title = context.windowTitle
-  headerText = context.dialogGrain
+  headerText = context.dialogVolume
 
   val labelValue = Label( context.labelValue )
   val textFieldValue = new DoubleTextField:
