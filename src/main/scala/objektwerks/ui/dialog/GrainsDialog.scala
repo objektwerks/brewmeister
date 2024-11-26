@@ -123,5 +123,5 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      grains // TODO
+      updatedGrains
     else null
