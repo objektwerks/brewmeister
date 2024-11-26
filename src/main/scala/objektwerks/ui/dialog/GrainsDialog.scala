@@ -1,7 +1,9 @@
 package objektwerks.ui.dialog
 
+import scalafx.collections.ObservableBuffer
+
 import scalafx.Includes.*
-import scalafx.scene.control.{ButtonType, Dialog}
+import scalafx.scene.control.{ButtonType, Dialog, Label, ListView}
 import scalafx.scene.control.ButtonBar.ButtonData
 
 import objektwerks.Grain
@@ -11,6 +13,12 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogGrains
+
+  val listView = new ListView[String]:
+    items = ObservableBuffer.from(grains.map(_.name))
+    prefHeight = 100.0
+
+  val labelName = Label(context.labelName)
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
