@@ -15,15 +15,17 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   title = context.windowTitle
   headerText = context.dialogGrains
 
-  var selectedGrain = ???
+  var selectedGrain = ""
 
-  val listView = new ListView[String]:
+  val listViewGrains = new ListView[String]:
     items = ObservableBuffer.from(grains.map(_.name))
     prefHeight = 100.0
+  listViewGrains.selectionModel().selectedItem.onChange { (_, _, newValue) => selectedGrain = newValue }
+
 
   val labelName = Label(context.labelName)
   val textFieldName = new NonEmptyTextField:
-    text = ""
+    text = selectedGrain
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
