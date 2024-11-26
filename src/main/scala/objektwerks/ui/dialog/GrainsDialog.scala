@@ -10,7 +10,7 @@ import objektwerks.ui.{App, Context}
 final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[Array[Grain]]:
   initOwner(App.stage)
   title = context.windowTitle
-  headerText = context.dialogGrain
+  headerText = context.dialogGrains
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
