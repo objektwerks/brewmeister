@@ -84,14 +84,14 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   val save = () => () // TODO!
 
-  val buttonBar = new HBox:
+  val controlsButtonBar = new HBox:
     spacing = 6
     children = List(saveButton)  
 
   val vboxControls = new VBox:
     spacing = 6
     padding = Insets(6)
-    children = List( ControlGrid(controls), buttonBar )
+    children = List( ControlGrid(controls), controlsButtonBar )
 
   val hboxContent = new HBox:
     spacing = 6
