@@ -2,6 +2,8 @@ package objektwerks
 
 import scalafx.beans.property.ObjectProperty
 
+import scala.util.Random
+
 import upickle.default.ReadWriter as JsonSupport
 
 object Recipe:
@@ -76,7 +78,7 @@ enum MixinStep derives CanEqual, JsonSupport:
 object Grain:
   given Ordering[Grain] = Ordering.by[Grain, String](g => g.name)
 
-final case class Grain(name: String = "name",
+final case class Grain(name: String = Random.alphanumeric.take(7).mkString,
                        weight: Double = 0.0,
                        unit: UoM = UoM.gl,
                        color: Double = 0.0,
