@@ -10,9 +10,7 @@ import objektwerks.Store
 object App extends JFXApp3:
   val context = Context( ConfigFactory.load("app.conf") )
   val store = Store()
-  val recipes = store.listRecipes
-  val batches = store.listBatches
-  val model = Model()
+  val model = Model(store.listRecipes, store.listBatches)
 
   override def start(): Unit =
     stage = new JFXApp3.PrimaryStage:

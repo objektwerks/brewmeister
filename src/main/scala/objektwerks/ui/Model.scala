@@ -5,9 +5,9 @@ import scalafx.collections.ObservableBuffer
 
 import objektwerks.{Batch, Recipe}
 
-final class Model:
-  val observableBatches = ObservableBuffer[Batch]()
-  val observableRecipes = ObservableBuffer[Recipe]()
+final class Model(recipes: List[Recipe], batches: List[Batch]):
+  val observableRecipes = ObservableBuffer.from(recipes)
+  val observableBatches = ObservableBuffer.from(batches)
 
-  val selectedBatch = ObjectProperty[Batch]( Batch() )
-  val selectedRecipe = ObjectProperty[Recipe]( Recipe() )
+  val selectedBatch = ObjectProperty( Batch() )
+  val selectedRecipe = ObjectProperty( Recipe() )
