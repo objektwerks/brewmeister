@@ -71,8 +71,8 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   def remove(grain: Grain): Unit =
     updatedGrains -= grain
-    if listViewGrains.selectionModel().isEmpty then resetControls()
-    else listViewGrains.selectionModel().select(0)
+    resetControls()
+    if !listViewGrains.selectionModel().isEmpty then listViewGrains.selectionModel().select(0)
 
   val addButton = new Button:
     graphic = context.addImageView
