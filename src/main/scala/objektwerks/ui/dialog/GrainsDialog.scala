@@ -18,7 +18,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   title = context.windowTitle
   headerText = context.dialogGrains
 
-  // Model
+  // Bindings
   val updatedGrains = grains.map(identity).toBuffer.sorted
 
   // Methods
@@ -52,6 +52,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     textFieldMixinMinute.text = ""
     choiceBoxMixinStep.value = ""
 
+  // Methods
   def add(): Unit =
     val grain = Grain()
     updatedGrains += grain // listview items refresh?
