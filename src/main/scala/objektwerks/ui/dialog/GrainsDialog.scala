@@ -53,6 +53,13 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
       mixinStep = MixinStep.valueOf( choiceBoxMixinStep.value.value )
     )
 
+  def add(): Unit =
+    val grain = controlsToGrain()
+    updatedGrains += grain
+    listViewGrains.selectionModel().select(grain)
+
+  def remove(grain: Grain): Unit = updatedGrains -= grain
+
   val addButton = new Button:
     text = context.buttonSave
     disable = true
@@ -62,13 +69,6 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     text = context.buttonSave
     disable = true
     onAction = { _ => remove( listViewGrains.selectionModel().selectedItem.value ) }
-
-  def add(): Unit =
-    val grain = controlsToGrain()
-    updatedGrains += grain
-    listViewGrains.selectionModel().select(grain)
-
-  def remove(grain: Grain): Unit = updatedGrains -= grain
 
   val buttonBarGrains = new HBox:
     spacing = 6
