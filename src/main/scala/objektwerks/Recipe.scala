@@ -79,11 +79,11 @@ object Grain:
   given Ordering[Grain] = Ordering.by[Grain, String](g => g.name)
 
 final case class Grain(name: String = Random.alphanumeric.take(7).mkString,
-                       weight: Double = 0.0,
+                       weight: Double = 1.0,
                        unit: UoM = UoM.gl,
-                       color: Double = 0.0,
-                       lovibond: Double = 0.0,
-                       mixinMinute: Int = 0,
+                       color: Double = 1.0,
+                       lovibond: Double = 1.0,
+                       mixinMinute: Int = 1,
                        mixinStep: MixinStep = MixinStep.Mashing) derives CanEqual, JsonSupport
 
 final case class Hop(name: String,
