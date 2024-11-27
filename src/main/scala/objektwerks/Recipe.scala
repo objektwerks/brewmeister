@@ -73,12 +73,12 @@ object MixinStep:
 enum MixinStep derives CanEqual, JsonSupport:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
 
-final case class Grain(name: String,
-                       weight: Double,
-                       unit: UoM,
-                       color: Double,
-                       lovibond: Double,
-                       mixinMinute: Int,
+final case class Grain(name: String = "name",
+                       weight: Double = 0.0,
+                       unit: UoM = UoM.gl,
+                       color: Double = 0.0,
+                       lovibond: Double = 0.0,
+                       mixinMinute: Int = 0,
                        mixinStep: MixinStep = MixinStep.Mashing) derives CanEqual, JsonSupport
 
 final case class Hop(name: String,
