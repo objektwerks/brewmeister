@@ -5,8 +5,13 @@ import com.typesafe.config.ConfigFactory
 import scalafx.application.JFXApp3
 import scalafx.scene.image.Image
 
+import objektwerks.Store
+
 object App extends JFXApp3:
   val context = Context( ConfigFactory.load("app.conf") )
+  val store = Store()
+  val recipes = store.listRecipes
+  val batches = store.listBatches
   val model = Model()
 
   override def start(): Unit =
