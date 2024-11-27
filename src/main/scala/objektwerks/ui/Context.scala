@@ -114,6 +114,7 @@ final class Context(config: Config):
   def bangImageView = loadImageView("/image/bang.png")
   def editImageView = loadImageView("/image/edit.png")
   def removeImageView = loadImageView("/image/remove.png")
+  def saveImage = loadImageView("/image/save.png")
   def plusImage = loadImageView("/image/plus.png")
   def minusImage = loadImageView("/image/minus.png")
   def logoImage = new Image(Image.getClass.getResourceAsStream("/image/logo.png"))
