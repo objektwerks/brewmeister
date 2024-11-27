@@ -89,15 +89,15 @@ final case class Grain(name: String = Random.alphanumeric.take(7).mkString,
 final case class Hop(name: String = Random.alphanumeric.take(7).mkString,
                      weight: Double = 1.0,
                      volume: Double = 1.0,
-                     unit: UoM = UoM.gl,
+                     unit: UoM = UoM.oz,
                      alphaAcid: Double = 1.0,
                      mixinMinute: Int = 1,
                      mixinStep: MixinStep = MixinStep.Boiling) derives CanEqual, JsonSupport // or Whirlpooling or Conditioning
 
-final case class Adjunct(name: String,
-                         weight: Double,
-                         unit: UoM,
-                         mixinMinute: Int,
+final case class Adjunct(name: String = Random.alphanumeric.take(7).mkString,
+                         weight: Double = 1.0,
+                         unit: UoM = UoM.oz,
+                         mixinMinute: Int = 1,
                          mixinStep: MixinStep = MixinStep.Mashing) derives CanEqual, JsonSupport // or Boiling or Conditioning
 
 final case class Yeast(name: String,
