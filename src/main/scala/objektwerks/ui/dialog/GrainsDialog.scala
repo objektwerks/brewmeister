@@ -92,7 +92,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     items = ObservableBuffer.from(updatedGrains)
     cellFactory = (cell, grain) => cell.text = grain.name
 
-  listViewGrains.selectionModel().setSelectionMode(SelectionMode.SINGLE)
+  listViewGrains.selectionModel().selectionModeProperty.value = SelectionMode.Single
   listViewGrains.selectionModel().selectedItem.onChange { (_, _, grain) =>
     saveButton.disable = false
     grainToControls(grain)
