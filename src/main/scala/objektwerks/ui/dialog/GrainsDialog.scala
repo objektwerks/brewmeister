@@ -54,6 +54,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     )
 
   def resetControls(): Unit =
+    saveButton.disable = true
     textFieldName.text = ""
     textFieldWeight.text = ""
     choiceBoxUnit.value = ""
