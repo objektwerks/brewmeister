@@ -9,7 +9,7 @@ import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, List
 import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.{HBox, VBox}
 
-import objektwerks.{format, Grain, MixinStep, UoM}
+import objektwerks.{Grain, MixinStep, UoM}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField, NonEmptyTextField}
 
@@ -30,17 +30,6 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     textFieldLovibond.text = grain.lovibond.toString
     textFieldMixinMinute.text = grain.mixinMinute.toString
     choiceBoxMixinStep.value = grain.mixinStep.toString
-
-  def controlsToGrain(): Grain =
-    Grain(
-      name = textFieldName.text.value,
-      weight = textFieldWeight.text.value.toDouble.format,
-      unit = UoM.valueOf( choiceBoxUnit.value.value ),
-      color = textFieldColor.text.value.toDouble.format,
-      lovibond = textFieldLovibond.text.value.toDouble.format,
-      mixinMinute = textFieldMixinMinute.text.value.toInt,
-      mixinStep = MixinStep.valueOf( choiceBoxMixinStep.value.value )
-    )
 
   def resetControls(): Unit =
     saveButton.disable = true
