@@ -19,7 +19,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   headerText = context.dialogGrains
 
   // Model
-  val updatedGrains = grains.map(identity).toBuffer
+  val updatedGrains = grains.map(identity).toBuffer.sorted
 
   // Methods
   def grainToControls(grain: Grain): Unit =
