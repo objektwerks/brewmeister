@@ -30,6 +30,10 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   listViewGrains.selectionModel().setSelectionMode(SelectionMode.SINGLE)
   listViewGrains.selectionModel().selectedItem.onChange { (_, _, grain) =>
     saveButton.disable = false
+    grainToControls(grain)
+  }
+
+  def grainToControls(grain: Grain): Unit =
     textFieldName.text = grain.name
     textFieldWeight.text = grain.weight.toString
     choiceBoxUnit.value = grain.unit.toString
@@ -37,7 +41,6 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     textFieldLovibond.text = grain.lovibond.toString
     textFieldMixinMinute.text = grain.mixinMinute.toString
     choiceBoxMixinStep.value = grain.mixinStep.toString
-  }
 
   val addButton = new Button:
     text = context.buttonSave
