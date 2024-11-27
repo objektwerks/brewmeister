@@ -73,6 +73,9 @@ object MixinStep:
 enum MixinStep derives CanEqual, JsonSupport:
   case Mashing, Boiling, Wirlpooling, Fermenting, Conditioning
 
+object Grain:
+  given Ordering[Grain] = Ordering.by[Grain, String](g => g.name)
+
 final case class Grain(name: String = "name",
                        weight: Double = 0.0,
                        unit: UoM = UoM.gl,
