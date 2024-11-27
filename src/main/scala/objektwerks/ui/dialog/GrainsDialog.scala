@@ -42,6 +42,17 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     textFieldMixinMinute.text = grain.mixinMinute.toString
     choiceBoxMixinStep.value = grain.mixinStep.toString
 
+  def controlsToGrain(): Grain =
+    Grain(
+      name = textFieldName.text.value,
+      weight = textFieldWeight.text.value.toDouble.format,
+      unit = UoM.valueOf( choiceBoxUnit.value.value ),
+      color = textFieldColor.text.value.toDouble.format,
+      lovibond = textFieldLovibond.text.value.toDouble.format,
+      mixinMinute = textFieldMixinMinute.text.value.toInt,
+      mixinStep = MixinStep.valueOf( choiceBoxMixinStep.value.value )
+    )
+
   val addButton = new Button:
     text = context.buttonSave
     disable = true
@@ -53,15 +64,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     onAction = { _ => remove( listViewGrains.selectionModel().selectedItem.value ) }
 
   def add(): Unit =
-    val grain = Grain(
-      name = textFieldName.text.value,
-      weight = textFieldWeight.text.value.toDouble.format,
-      unit = UoM.valueOf( choiceBoxUnit.value.value ),
-      color = textFieldColor.text.value.toDouble.format,
-      lovibond = textFieldLovibond.text.value.toDouble.format,
-      mixinMinute = textFieldMixinMinute.text.value.toInt,
-      mixinStep = MixinStep.valueOf( choiceBoxMixinStep.value.value )
-    )
+    val grain = controlsToGrain()
     updatedGrains += grain
     listViewGrains.selectionModel().select(grain)
 
