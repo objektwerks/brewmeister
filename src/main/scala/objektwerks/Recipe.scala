@@ -100,8 +100,8 @@ final case class Adjunct(name: String = Random.alphanumeric.take(7).mkString,
                          mixinMinute: Int = 1,
                          mixinStep: MixinStep = MixinStep.Mashing) derives CanEqual, JsonSupport // or Boiling or Conditioning
 
-final case class Yeast(name: String,
-                       weight: Double,
-                       unit: UoM,
-                       mixinMinute: Int,
+final case class Yeast(name: String = Random.alphanumeric.take(7).mkString,
+                       weight: Double = 1.0,
+                       unit: UoM = UoM.oz,
+                       mixinMinute: Int = 1,
                        mixinStep: MixinStep = MixinStep.Fermenting) derives CanEqual, JsonSupport
