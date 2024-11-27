@@ -127,7 +127,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   )
 
   val saveButton = new Button:
-    text = context.buttonSave
+    graphic = context.saveImageView
     disable = true
     onAction = { _ => save() }
 
