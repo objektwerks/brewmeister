@@ -59,7 +59,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     grainToControls(grain)
 
   def remove(grain: Grain): Unit =
-    updatedGrains -= grain
+    updatedGrains -= grain // listview items refresh?
     resetControls()
     if !listViewGrains.selectionModel().isEmpty then listViewGrains.selectionModel().select(0)
 
