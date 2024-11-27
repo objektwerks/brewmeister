@@ -96,6 +96,8 @@ final case class Hop(name: String = Random.alphanumeric.take(7).mkString,
                      alphaAcid: Double = 1.0,
                      mixinMinute: Int = 1,
                      mixinStep: MixinStep = MixinStep.Boiling) derives CanEqual, JsonSupport // or Whirlpooling or Conditioning
+object Adjunct:
+  given Ordering[Adjunct] = Ordering.by[Adjunct, String](a => a.name)
 
 final case class Adjunct(name: String = Random.alphanumeric.take(7).mkString,
                          weight: Double = 1.0,
