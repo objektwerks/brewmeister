@@ -58,7 +58,9 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     updatedGrains += grain
     listViewGrains.selectionModel().select(grain)
 
-  def remove(grain: Grain): Unit = updatedGrains -= grain
+  def remove(grain: Grain): Unit =
+    updatedGrains -= grain
+    if !listViewGrains.selectionModel().isEmpty then listViewGrains.selectionModel().select(0)
 
   val addButton = new Button:
     text = context.buttonSave
