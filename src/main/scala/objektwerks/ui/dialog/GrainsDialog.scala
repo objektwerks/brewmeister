@@ -22,17 +22,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   // Model
   var updatedGrains = grains.map(identity).toBuffer
 
-  // List
-  val listViewGrains = new ListView[Grain]:
-    items = ObservableBuffer.from(updatedGrains)
-    cellFactory = (cell, grain) => cell.text = grain.name
-
-  listViewGrains.selectionModel().setSelectionMode(SelectionMode.SINGLE)
-  listViewGrains.selectionModel().selectedItem.onChange { (_, _, grain) =>
-    saveButton.disable = false
-    grainToControls(grain)
-  }
-
+  // Methods
   def grainToControls(grain: Grain): Unit =
     textFieldName.text = grain.name
     textFieldWeight.text = grain.weight.toString
@@ -74,6 +64,11 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     resetControls()
     if !listViewGrains.selectionModel().isEmpty then listViewGrains.selectionModel().select(0)
 
+  def save(): Unit =
+    val index = listViewGrains.selectionModel().selectedIndex.value
+    val grain = listViewGrains.selectionModel().selectedItem.value
+    updatedGrains.update(index, grain)
+
   val addButton = new Button:
     graphic = context.addImageView
     disable = true
@@ -92,6 +87,17 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     spacing = 6
     padding = Insets(6)
     children = List( listViewGrains, buttonBarGrains )
+
+  // List
+  val listViewGrains = new ListView[Grain]:
+    items = ObservableBuffer.from(updatedGrains)
+    cellFactory = (cell, grain) => cell.text = grain.name
+
+  listViewGrains.selectionModel().setSelectionMode(SelectionMode.SINGLE)
+  listViewGrains.selectionModel().selectedItem.onChange { (_, _, grain) =>
+    saveButton.disable = false
+    grainToControls(grain)
+  }
 
   // Item
   val labelName = Label(context.labelName)
@@ -131,11 +137,6 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     graphic = context.saveImageView
     disable = true
     onAction = { _ => save() }
-
-  def save(): Unit =
-    val index = listViewGrains.selectionModel().selectedIndex.value
-    val grain = listViewGrains.selectionModel().selectedItem.value
-    updatedGrains.update(index, grain)
 
   val buttonBarControls = new HBox:
     spacing = 6
