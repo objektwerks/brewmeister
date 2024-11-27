@@ -42,6 +42,10 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     choiceBoxMixinStep.value = ""
 
   // Methods
+  def select(grain: Grain): Unit =
+    saveButton.disable = false
+    grainToControls(grain)
+
   def add(): Unit =
     val grain = Grain()
     updatedGrains += grain // listview items refresh?
@@ -84,9 +88,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   listViewGrains.selectionModel().selectionModeProperty.value = SelectionMode.Single
   listViewGrains.selectionModel().selectedItemProperty().addListener { (_, _, selectedGrain) =>
-    if selectedGrain != null then
-      saveButton.disable = false
-      grainToControls(selectedGrain)
+    if selectedGrain != null then select(selectedGrain)
   }
 
   // Item
