@@ -86,6 +86,9 @@ final case class Grain(name: String = Random.alphanumeric.take(7).mkString,
                        mixinMinute: Int = 1,
                        mixinStep: MixinStep = MixinStep.Mashing) derives CanEqual, JsonSupport
 
+object Hop:
+  given Ordering[Hop] = Ordering.by[Hop, String](h => h.name)
+
 final case class Hop(name: String = Random.alphanumeric.take(7).mkString,
                      weight: Double = 1.0,
                      volume: Double = 1.0,
