@@ -66,7 +66,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   def save(): Unit =
     val index = listViewGrains.selectionModel().selectedIndex.value
     val grain = listViewGrains.selectionModel().selectedItem.value
-    updatedGrains.update(index, grain)
+    updatedGrains.update(index, grain) // listview items refresh?
 
   val addButton = new Button:
     graphic = context.addImageView
