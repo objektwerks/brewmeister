@@ -18,10 +18,10 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   title = context.windowTitle
   headerText = context.dialogGrains
 
-  // Bindings
+  // Model
   val updatedGrains = grains.map(identity).toBuffer.sorted
 
-  // Methods
+  // Bindings
   def grainToControls(grain: Grain): Unit =
     textFieldName.text = grain.name
     textFieldWeight.text = grain.weight.toString
