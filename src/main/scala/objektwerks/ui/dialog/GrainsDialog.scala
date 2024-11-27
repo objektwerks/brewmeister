@@ -74,7 +74,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     else listViewGrains.selectionModel().select(0)
 
   val addButton = new Button:
-    text = context.buttonSave
+    graphic = context.addImageView
     disable = true
     onAction = { _ => add() }
 
