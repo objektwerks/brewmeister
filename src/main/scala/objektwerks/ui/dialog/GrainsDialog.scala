@@ -64,9 +64,10 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     choiceBoxMixinStep.value = ""
 
   def add(): Unit =
-    val grain = controlsToGrain()
-    updatedGrains += grain
+    val grain = Grain()
+    updatedGrains += grain // listview items refresh?
     listViewGrains.selectionModel().select(grain)
+    grainToControls(grain)
 
   def remove(grain: Grain): Unit =
     updatedGrains -= grain
