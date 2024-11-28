@@ -10,7 +10,7 @@ import scalafx.scene.layout.{HBox, VBox}
 
 import objektwerks.{Hop, MixinStep, UoM}
 import objektwerks.ui.{App, Context}
-import objektwerks.ui.control.{DoubleTextField, IntTextField, NonEmptyTextField}
+import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField, NonEmptyTextField}
 
 final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[Hop]]:
   initOwner(App.stage)
@@ -97,7 +97,12 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   val buttonBarControls = new HBox:
     spacing = 6
-    children = List(saveButton) 
+    children = List(saveButton)
+
+  val vboxControls = new VBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List( ControlGrid(controls), buttonBarControls )
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
