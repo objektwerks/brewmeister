@@ -7,7 +7,7 @@ import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, List
 import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.{HBox, VBox}
 
-import objektwerks.{Hop, UoM}
+import objektwerks.{Hop, MixinStep, UoM}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{DoubleTextField, IntTextField, NonEmptyTextField}
 
@@ -74,6 +74,10 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   val labelMixinMinute = Label(context.labelMixinMinute)
   val textFieldMixinMinute = IntTextField()
+
+  val labelMixinStep = Label( context.labelMixinStep )
+  val choiceBoxMixinStep = new ChoiceBox[String]:
+  	items = ObservableBuffer.from( MixinStep.toList )
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
