@@ -30,6 +30,16 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     textFieldMixinMinute.text = hop.mixinMinute.toString
     choiceBoxMixinStep.value = hop.mixinStep.toString
 
+  def resetControls(): Unit =
+    saveButton.disable = true
+    textFieldName.text = ""
+    textFieldWeight.text = ""
+    textFieldVolume.text = ""
+    choiceBoxUnit.value = ""
+    textFieldAlphaAcid.text = ""
+    textFieldMixinMinute.text = ""
+    choiceBoxMixinStep.value = ""
+
   // Methods
   def select(hop: Hop): Unit =
     saveButton.disable = false
