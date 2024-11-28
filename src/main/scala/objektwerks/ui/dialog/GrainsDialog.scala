@@ -61,6 +61,16 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     val grain = listViewGrains.selectionModel().selectedItem.value
     updatedGrains.update(index, grain) // listview items refresh?
 
+  // List
+  val listViewGrains = new ListView[Grain]:
+    items = ObservableBuffer.from(updatedGrains)
+    cellFactory = (cell, grain) => cell.text = grain.name
+
+  listViewGrains.selectionModel().selectionModeProperty.value = SelectionMode.Single
+  listViewGrains.selectionModel().selectedItemProperty().addListener { (_, _, selectedGrain) =>
+    if selectedGrain != null then select(selectedGrain)
+  }
+
   val addButton = new Button:
     graphic = context.addImageView
     disable = true
@@ -79,16 +89,6 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     spacing = 6
     padding = Insets(6)
     children = List( listViewGrains, buttonBarGrains )
-
-  // List
-  val listViewGrains = new ListView[Grain]:
-    items = ObservableBuffer.from(updatedGrains)
-    cellFactory = (cell, grain) => cell.text = grain.name
-
-  listViewGrains.selectionModel().selectionModeProperty.value = SelectionMode.Single
-  listViewGrains.selectionModel().selectedItemProperty().addListener { (_, _, selectedGrain) =>
-    if selectedGrain != null then select(selectedGrain)
-  }
 
   // Item
   val labelName = Label(context.labelName)
