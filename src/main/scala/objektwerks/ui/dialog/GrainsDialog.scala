@@ -49,8 +49,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   def add(): Unit =
     val grain = Grain()
     updatedGrains += grain // listview items refresh?
-    listViewGrains.selectionModel().select(grain)
-    grainToControls(grain)
+    select(grain)
 
   def remove(grain: Grain): Unit =
     updatedGrains -= grain // listview items refresh?
