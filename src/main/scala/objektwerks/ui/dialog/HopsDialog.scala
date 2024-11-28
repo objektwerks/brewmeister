@@ -2,9 +2,10 @@ package objektwerks.ui.dialog
 
 import scalafx.Includes.*
 import scalafx.collections.ObservableBuffer
+import scalafx.geometry.Insets
 import scalafx.scene.control.{Button, ButtonType, Dialog, ListView, SelectionMode}
 import scalafx.scene.control.ButtonBar.ButtonData
-import scalafx.scene.layout.HBox
+import scalafx.scene.layout.{HBox, VBox}
 
 import objektwerks.Hop
 import objektwerks.ui.{App, Context}
@@ -47,6 +48,11 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val buttonBarHops = new HBox:
     spacing = 6
     children = List(addButton, removeButton)
+
+  val vboxGrains = new VBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List( listViewHops, buttonBarHops )
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
