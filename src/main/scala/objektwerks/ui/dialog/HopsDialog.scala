@@ -52,6 +52,14 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     updatedHops += hop // listview items refresh?
     select(hop)
 
+  def remove(hop: Hop): Unit =
+    updatedHops -= hop // listview items refresh?
+    resetControls()
+    saveButton.disable = true
+    if !listViewHops.selectionModel().isEmpty() then
+      listViewHops.selectionModel().select(0)
+      select( listViewHops.selectionModel().selectedItem() )
+
   // List
   val listViewHops = new ListView[Hop]:
     items = ObservableBuffer.from(updatedHops)
