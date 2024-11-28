@@ -1,7 +1,8 @@
 package objektwerks.ui.dialog
 
 import scalafx.Includes.*
-import scalafx.scene.control.{ButtonType, Dialog}
+import scalafx.collections.ObservableBuffer
+import scalafx.scene.control.{ButtonType, Dialog, ListView}
 import scalafx.scene.control.ButtonBar.ButtonData
 
 import objektwerks.Hop
@@ -14,6 +15,11 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   // Model
   val updatedHops = hops.map(identity).toBuffer.sorted
+
+  // List
+  val listViewHops = new ListView[Hop]:
+    items = ObservableBuffer.from(updatedHops)
+    cellFactory = (cell, hop) => cell.text = hop.name
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
