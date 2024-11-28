@@ -3,11 +3,11 @@ package objektwerks.ui.dialog
 import scalafx.Includes.*
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.Insets
-import scalafx.scene.control.{Button, ButtonType, Dialog, Label, ListView, SelectionMode}
+import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, ListView, SelectionMode}
 import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.{HBox, VBox}
 
-import objektwerks.Hop
+import objektwerks.{Hop, UoM}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{DoubleTextField, NonEmptyTextField}
 
@@ -64,6 +64,10 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   val labelVolume = Label(context.labelVolume)
   val textFieldVolume = DoubleTextField()
+
+  val labelUnit = Label( context.labelUnit )
+  val choiceBoxUnit = new ChoiceBox[String]:
+  	items = ObservableBuffer.from( UoM.toList )
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
