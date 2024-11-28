@@ -16,6 +16,13 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   // Model
   val updatedHops = hops.map(identity).toBuffer.sorted
 
+  // Methods
+  def select(hop: Hop): Unit =
+    //saveButton.disable = false
+    listViewHops.selectionModel().select(hop)
+    //hopToControls(hop)
+    listViewHops.scrollTo(hop)
+
   // List
   val listViewHops = new ListView[Hop]:
     items = ObservableBuffer.from(updatedHops)
