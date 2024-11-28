@@ -44,7 +44,9 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   // Methods
   def select(grain: Grain): Unit =
     saveButton.disable = false
+    listViewGrains.selectionModel().select(grain)
     grainToControls(grain)
+    listViewGrains.scrollTo(grain)
 
   def add(): Unit =
     val grain = Grain()
@@ -54,7 +56,10 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   def remove(grain: Grain): Unit =
     updatedGrains -= grain // listview items refresh?
     resetControls()
-    if !listViewGrains.selectionModel().isEmpty then listViewGrains.selectionModel().select(0)
+    saveButton.disable = true
+    if !listViewGrains.selectionModel().isEmpty() then
+      listViewGrains.selectionModel().select(0)
+      select( listViewGrains.selectionModel().selectedItem() )
 
   def save(): Unit =
     val index = listViewGrains.selectionModel().selectedIndex.value
