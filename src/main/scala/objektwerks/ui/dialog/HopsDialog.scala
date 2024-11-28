@@ -38,6 +38,11 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     disable = true
     onAction = { _ => add() }
 
+  val removeButton = new Button:
+    graphic = context.removeImageView
+    disable = true
+    onAction = { _ => remove( listViewHops.selectionModel().selectedItem.value ) }
+
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
