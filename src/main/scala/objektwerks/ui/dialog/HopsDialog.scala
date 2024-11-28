@@ -4,6 +4,7 @@ import scalafx.Includes.*
 import scalafx.collections.ObservableBuffer
 import scalafx.scene.control.{Button, ButtonType, Dialog, ListView, SelectionMode}
 import scalafx.scene.control.ButtonBar.ButtonData
+import scalafx.scene.layout.HBox
 
 import objektwerks.Hop
 import objektwerks.ui.{App, Context}
@@ -42,6 +43,10 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     graphic = context.removeImageView
     disable = true
     onAction = { _ => remove( listViewHops.selectionModel().selectedItem.value ) }
+
+  val buttonBarHops = new HBox:
+    spacing = 6
+    children = List(addButton, removeButton)
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
