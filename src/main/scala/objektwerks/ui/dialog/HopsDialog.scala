@@ -51,7 +51,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     spacing = 6
     children = List(addButton, removeButton)
 
-  val vboxGrains = new VBox:
+  val vboxHops = new VBox:
     spacing = 6
     padding = Insets(6)
     children = List( listViewHops, buttonBarHops )
@@ -103,6 +103,12 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     spacing = 6
     padding = Insets(6)
     children = List( ControlGrid(controls), buttonBarControls )
+
+  // Content
+  val hboxContent = new HBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List(vboxHops, vboxControls)
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
