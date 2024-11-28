@@ -90,6 +90,11 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     labelMixinStep -> choiceBoxMixinStep
   )
 
+  val saveButton = new Button:
+    graphic = context.saveImageView
+    disable = true
+    onAction = { _ => save() }
+
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
