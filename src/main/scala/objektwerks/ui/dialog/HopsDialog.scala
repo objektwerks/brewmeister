@@ -69,6 +69,9 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val choiceBoxUnit = new ChoiceBox[String]:
   	items = ObservableBuffer.from( UoM.toList )
 
+  val labelAlphaAcid = Label(context.labelAlphaAcid)
+  val textFieldAlphaAcid = DoubleTextField()
+
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
