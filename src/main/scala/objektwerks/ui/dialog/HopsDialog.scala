@@ -60,6 +60,11 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
       listViewHops.selectionModel().select(0)
       select( listViewHops.selectionModel().selectedItem() )
 
+  def save(): Unit =
+    val index = listViewHops.selectionModel().selectedIndex.value
+    val hop = listViewHops.selectionModel().selectedItem.value
+    updatedHops.update(index, hop) // listview items refresh?
+
   // List
   val listViewHops = new ListView[Hop]:
     items = ObservableBuffer.from(updatedHops)
