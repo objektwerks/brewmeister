@@ -47,6 +47,11 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     hopToControls(hop)
     listViewHops.scrollTo(hop)
 
+  def add(): Unit =
+    val hop = Hop()
+    updatedHops += hop // listview items refresh?
+    select(hop)
+
   // List
   val listViewHops = new ListView[Hop]:
     items = ObservableBuffer.from(updatedHops)
