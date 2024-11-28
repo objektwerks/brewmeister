@@ -62,6 +62,9 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val labelWeight = Label(context.labelWeight)
   val textFieldWeight = DoubleTextField()
 
+  val labelVolume = Label(context.labelVolume)
+  val textFieldVolume = DoubleTextField()
+
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
