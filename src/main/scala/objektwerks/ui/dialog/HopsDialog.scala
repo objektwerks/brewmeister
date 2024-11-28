@@ -20,6 +20,16 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   // Model
   val updatedHops = hops.map(identity).toBuffer.sorted
 
+  // Bindings
+  def hopToControls(hop: Hop): Unit =
+    textFieldName.text = hop.name
+    textFieldWeight.text = hop.weight.toString
+    textFieldVolume.text = hop.volume.toString
+    choiceBoxUnit.value = hop.unit.toString
+    textFieldAlphaAcid.text = hop.alphaAcid.toString
+    textFieldMixinMinute.text = hop.mixinMinute.toString
+    choiceBoxMixinStep.value = hop.mixinStep.toString
+
   // Methods
   def select(hop: Hop): Unit =
     //saveButton.disable = false
