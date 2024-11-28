@@ -12,6 +12,9 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   title = context.windowTitle
   headerText = context.dialogHops
 
+  // Model
+  val updatedHops = hops.map(identity).toBuffer.sorted
+
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
