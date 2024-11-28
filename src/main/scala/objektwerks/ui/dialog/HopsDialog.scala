@@ -95,6 +95,10 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     disable = true
     onAction = { _ => save() }
 
+  val buttonBarControls = new HBox:
+    spacing = 6
+    children = List(saveButton) 
+
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
