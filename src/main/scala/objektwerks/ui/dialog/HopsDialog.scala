@@ -9,7 +9,7 @@ import scalafx.scene.layout.{HBox, VBox}
 
 import objektwerks.{Hop, UoM}
 import objektwerks.ui.{App, Context}
-import objektwerks.ui.control.{DoubleTextField, NonEmptyTextField}
+import objektwerks.ui.control.{DoubleTextField, IntTextField, NonEmptyTextField}
 
 final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[Hop]]:
   initOwner(App.stage)
@@ -71,6 +71,9 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   val labelAlphaAcid = Label(context.labelAlphaAcid)
   val textFieldAlphaAcid = DoubleTextField()
+
+  val labelMixinMinute = Label(context.labelMixinMinute)
+  val textFieldMixinMinute = IntTextField()
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
