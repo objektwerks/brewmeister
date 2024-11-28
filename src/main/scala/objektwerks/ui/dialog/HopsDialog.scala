@@ -32,9 +32,9 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   // Methods
   def select(hop: Hop): Unit =
-    //saveButton.disable = false
+    saveButton.disable = false
     listViewHops.selectionModel().select(hop)
-    //hopToControls(hop)
+    hopToControls(hop)
     listViewHops.scrollTo(hop)
 
   // List
