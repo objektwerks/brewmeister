@@ -9,7 +9,7 @@ import scalafx.scene.layout.{HBox, VBox}
 
 import objektwerks.Hop
 import objektwerks.ui.{App, Context}
-import objektwerks.ui.control.NonEmptyTextField
+import objektwerks.ui.control.{DoubleTextField, NonEmptyTextField}
 
 final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[Hop]]:
   initOwner(App.stage)
@@ -58,6 +58,9 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   // Item
   val labelName = Label(context.labelName)
   val textFieldName = NonEmptyTextField()
+
+  val labelWeight = Label(context.labelWeight)
+  val textFieldWeight = DoubleTextField()
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
