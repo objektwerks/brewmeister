@@ -117,5 +117,5 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      hops // TODO
+      updatedHops.toArray
     else null
