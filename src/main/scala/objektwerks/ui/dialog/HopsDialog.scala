@@ -2,7 +2,7 @@ package objektwerks.ui.dialog
 
 import scalafx.Includes.*
 import scalafx.collections.ObservableBuffer
-import scalafx.scene.control.{ButtonType, Dialog, ListView, SelectionMode}
+import scalafx.scene.control.{Button, ButtonType, Dialog, ListView, SelectionMode}
 import scalafx.scene.control.ButtonBar.ButtonData
 
 import objektwerks.Hop
@@ -32,6 +32,11 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   listViewHops.selectionModel().selectedItemProperty().addListener { (_, _, selectedHop) =>
     if selectedHop != null then select(selectedHop)
   }
+
+  val addButton = new Button:
+    graphic = context.addImageView
+    disable = true
+    onAction = { _ => add() }
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
