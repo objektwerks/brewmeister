@@ -12,13 +12,13 @@ trait LabelButton[E] extends HBox:
   given CanEqual[E, E] = CanEqual.derived
 
   val value = new ObjectProperty[E]()
-  @setter def value_=(e: E): Unit = value = e
+  @setter def value_=(e: E): Unit = value.value = e
 
   val labelText = new ObjectProperty[String]()
-  @setter def labelText_=(text: String): Unit = labelText = text
+  @setter def labelText_=(text: String): Unit = labelText.value = text
 
   val buttonAction: ObjectProperty[() => E] = new ObjectProperty[() => E]()
-  @setter def buttonAction_=(fn: () => E): Unit = buttonAction = fn
+  @setter def buttonAction_=(fn: () => E): Unit = buttonAction.value = fn
 
   spacing = 6
 
