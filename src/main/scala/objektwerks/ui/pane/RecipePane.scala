@@ -18,17 +18,17 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
   padding = Insets(3)
 
   val recipe = model.selectedRecipe
-  
+
   model.selectedRecipe.onChange { (_, _, newRecipe) =>
     textFieldName.text = newRecipe.name
+    textFieldStyle.text = newRecipe.style
   }
 
   val labelName = Label( context.labelName )
   val textFieldName = NonEmptyTextField()
 
   val labelStyle = Label( context.labelStyle )
-  val textFieldStyle = new NonEmptyTextField:
-    text = recipe.value.style
+  val textFieldStyle = NonEmptyTextField()
 
   val labelWater = Label( context.labelWater )
   val textFieldWater = new NonEmptyTextField:
