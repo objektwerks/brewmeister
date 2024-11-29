@@ -41,6 +41,8 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
       s"${recipe.value.boilingTempRangeDuration.tempRange.low} - ${recipe.value.boilingTempRangeDuration.tempRange.high}, " +
       s"${recipe.value.boilingTempRangeDuration.duration} ${recipe.value.boilingTempRangeDuration.unit.toString}"
     labelButtonBoilingTempRangeDuration.value = recipe.value.boilingTempRangeDuration
+    rangeSliderCoolingTempRange.setLowValue(recipe.value.coolingTempRange.low)
+    rangeSliderCoolingTempRange.setHighValue(recipe.value.coolingTempRange.high)
 
     textFieldPotentialMashExtract.text = recipe.value.potentialMashExtract.toString
     textFieldPotentialFermentableExtract.text = recipe.value.potentialFermentableExtract.toString
