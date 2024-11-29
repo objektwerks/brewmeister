@@ -22,7 +22,7 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
   model.selectedRecipe.onChange { (_, _, newRecipe) =>
     textFieldName.text = newRecipe.name
     textFieldStyle.text = newRecipe.style
-    textFieldWater.text = newRecipe.water
+    textFieldWater.text = newRecipe.water // TODO!
   }
 
   val labelName = Label( context.labelName )
