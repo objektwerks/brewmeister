@@ -88,6 +88,9 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     rangeSliderCalories.setLowValue(recipe.value.calories.low)
     rangeSliderCalories.setHighValue(recipe.value.calories.high)
 
+    rangeSliderMashEfficiency.setLowValue(recipe.value.mashEfficiency.low)
+    rangeSliderMashEfficiency.setHighValue(recipe.value.mashEfficiency.high)
+
     textFieldPotentialMashExtract.text = recipe.value.potentialMashExtract.toString
     textFieldPotentialFermentableExtract.text = recipe.value.potentialFermentableExtract.toString
     textFieldPh.text = recipe.value.pH.toString
