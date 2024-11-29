@@ -33,7 +33,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelVolume = Label( context.labelVolume )
   val labelButtonVolume = new LabelButton[Volume]:
-    labelText = s"${recipe.volume.value} ${recipe.volume.unit.toString}"
+    text = s"${recipe.volume.value} ${recipe.volume.unit.toString}"
     value = recipe.volume
     buttonAction = () => {
       VolumeDialog(context, recipe.volume).showAndWait() match
@@ -43,7 +43,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelGrains = Label( context.labelGrains )
   val labelButtonGrains = new LabelButton[List[Grain]]:
-    labelText = s"${recipe.grains.map(_.name).mkString(", ")}"
+    text = s"${recipe.grains.map(_.name).mkString(", ")}"
     value = recipe.grains
     buttonAction = () => {
       GrainsDialog(context, recipe.grains.toArray).showAndWait() match
@@ -53,7 +53,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   
   val labelHops = Label( context.labelHops )
   val labelButtonHops = new LabelButton[List[Hop]]:
-    labelText = s"${recipe.hops.map(_.name).mkString(", ")}"
+    text = s"${recipe.hops.map(_.name).mkString(", ")}"
     value = recipe.hops
     buttonAction = () => {
       HopsDialog(context, recipe.hops.toArray).showAndWait() match
@@ -63,7 +63,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelAdjuncts = Label( context.labelAdjuncts )
   val labelButtonAdjuncts = new LabelButton[List[Adjunct]]:
-    labelText = s"${recipe.adjuncts.map(_.name).mkString(", ")}"
+    text = s"${recipe.adjuncts.map(_.name).mkString(", ")}"
     value = recipe.adjuncts
     buttonAction = () => {
       AdjunctsDialog(context, recipe.adjuncts.toArray).showAndWait() match
@@ -73,7 +73,7 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelYeasts = Label( context.labelYeasts )
   val labelButtonYeasts = new LabelButton[List[Yeast]]:
-    labelText = s"${recipe.yeasts.map(_.name).mkString(", ")}"
+    text = s"${recipe.yeasts.map(_.name).mkString(", ")}"
     value = recipe.yeasts
     buttonAction = () => {
       YeastsDialog(context, recipe.yeasts.toArray).showAndWait() match
@@ -83,8 +83,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelMashingTempRangeDuration = Label( context.labelMashingTempRangeDuration )
   val labelButtonMashingTempRangeDuration = new LabelButton[TempRangeDuration]:
-    labelText = s"""${recipe.mashingTempRangeDuration.tempRange.low} - ${recipe.mashingTempRangeDuration.tempRange.high},
-                    ${recipe.mashingTempRangeDuration.duration} ${recipe.mashingTempRangeDuration.unit.toString}"""
+    text = s"""${recipe.mashingTempRangeDuration.tempRange.low} - ${recipe.mashingTempRangeDuration.tempRange.high},
+               ${recipe.mashingTempRangeDuration.duration} ${recipe.mashingTempRangeDuration.unit.toString}"""
     value = recipe.mashingTempRangeDuration
     buttonAction = () => {
       TempRangeDurationDialog(context, recipe.mashingTempRangeDuration).showAndWait() match
@@ -98,8 +98,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelBoilingTempRangeDuration = Label( context.labelBoilingTempRangeDuration )
   val labelButtonBoilingTempRangeDuration = new LabelButton[TempRangeDuration]:
-    labelText = s"""${recipe.boilingTempRangeDuration.tempRange.low} - ${recipe.boilingTempRangeDuration.tempRange.high},
-                    ${recipe.boilingTempRangeDuration.duration} ${recipe.boilingTempRangeDuration.unit.toString}"""
+    text = s"""${recipe.boilingTempRangeDuration.tempRange.low} - ${recipe.boilingTempRangeDuration.tempRange.high},
+               ${recipe.boilingTempRangeDuration.duration} ${recipe.boilingTempRangeDuration.unit.toString}"""
     value = recipe.boilingTempRangeDuration
     buttonAction = () => {
       TempRangeDurationDialog(context, recipe.boilingTempRangeDuration).showAndWait() match
@@ -115,8 +115,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelFermentingTempRangeDuration = Label( context.labelFermentingTempRangeDuration )
   val labelButtonFermentingTempRangeDuration = new LabelButton[TempRangeDuration]:
-    labelText = s"""${recipe.fermentingTempRangeDuration.tempRange.low} - ${recipe.fermentingTempRangeDuration.tempRange.high},
-                    ${recipe.fermentingTempRangeDuration.duration} ${recipe.fermentingTempRangeDuration.unit.toString}"""
+    text = s"""${recipe.fermentingTempRangeDuration.tempRange.low} - ${recipe.fermentingTempRangeDuration.tempRange.high},
+               ${recipe.fermentingTempRangeDuration.duration} ${recipe.fermentingTempRangeDuration.unit.toString}"""
     value = recipe.fermentingTempRangeDuration
     buttonAction = () => {
       TempRangeDurationDialog(context, recipe.fermentingTempRangeDuration).showAndWait() match
@@ -130,8 +130,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelConditioningTempRangeDuration = Label( context.labelConditioningTempRangeDuration )
   val labelButtonConditioningTempRangeDuration = new LabelButton[TempRangeDuration]:
-    labelText = s"""${recipe.conditioningTempRangeDuration.tempRange.low} - ${recipe.conditioningTempRangeDuration.tempRange.high},
-                    ${recipe.conditioningTempRangeDuration.duration} ${recipe.conditioningTempRangeDuration.unit.toString}"""
+    text = s"""${recipe.conditioningTempRangeDuration.tempRange.low} - ${recipe.conditioningTempRangeDuration.tempRange.high},
+               ${recipe.conditioningTempRangeDuration.duration} ${recipe.conditioningTempRangeDuration.unit.toString}"""
     value = recipe.conditioningTempRangeDuration
     buttonAction = () => {
       TempRangeDurationDialog(context, recipe.conditioningTempRangeDuration).showAndWait() match
@@ -141,8 +141,8 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
 
   val labelKeggingTempRangeDuration = Label( context.labelKeggingTempRangeDuration )
   val labelButtonKeggingTempRangeDuration = new LabelButton[TempRangeDuration]:
-    labelText = s"""${recipe.keggingTempRangeDuration.tempRange.low} - ${recipe.keggingTempRangeDuration.tempRange.high},
-                    ${recipe.keggingTempRangeDuration.duration} ${recipe.keggingTempRangeDuration.unit.toString}"""
+    text = s"""${recipe.keggingTempRangeDuration.tempRange.low} - ${recipe.keggingTempRangeDuration.tempRange.high},
+               ${recipe.keggingTempRangeDuration.duration} ${recipe.keggingTempRangeDuration.unit.toString}"""
     value = recipe.keggingTempRangeDuration
     buttonAction = () => {
       TempRangeDurationDialog(context, recipe.keggingTempRangeDuration).showAndWait() match
