@@ -93,7 +93,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val vboxGrains = new VBox:
     spacing = 6
     padding = Insets(6)
-    children = List( listViewGrains, buttonBarGrains )
+    children = List(listViewGrains, buttonBarGrains)
 
   // Item
   val labelName = Label(context.labelName)
@@ -102,7 +102,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val labelWeight = Label(context.labelWeight)
   val textFieldWeight = DoubleTextField()
 
-  val labelUnit = Label( context.labelUnit )
+  val labelUnit = Label(context.labelUnit)
   val choiceBoxUnit = new ChoiceBox[String]:
   	items = ObservableBuffer.from( UoM.toList )
 
@@ -115,7 +115,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val labelMixinMinute = Label(context.labelMixinMinute)
   val textFieldMixinMinute = IntTextField()
 
-  val labelMixinStep = Label( context.labelMixinStep )
+  val labelMixinStep = Label(context.labelMixinStep)
   val choiceBoxMixinStep = new ChoiceBox[String]:
   	items = ObservableBuffer.from( MixinStep.toList )
 
