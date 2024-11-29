@@ -3,7 +3,6 @@ package objektwerks.ui.pane
 import org.controlsfx.control.RangeSlider
 
 import scalafx.Includes.*
-import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Insets
 import scalafx.scene.Node
 import scalafx.scene.control.{Label, ScrollPane}
@@ -18,8 +17,7 @@ import objektwerks.ui.dialog.{AdjunctsDialog, GrainsDialog, HopsDialog, TempRang
 final class RecipePane(context: Context, model: Model) extends ScrollPane:
   padding = Insets(3)
 
-  val recipe = ObjectProperty[Recipe](model.selectedRecipe.value)
-  recipe <== model.selectedRecipe
+  val recipe = model.selectedRecipe
 
   val labelName = Label( context.labelName )
   val textFieldName = new NonEmptyTextField:
