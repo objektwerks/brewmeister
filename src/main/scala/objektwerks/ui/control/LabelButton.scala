@@ -1,7 +1,6 @@
 package objektwerks.ui.control
 
 import scalafx.beans.property.ObjectProperty
-import scalafx.scene.Node
 import scalafx.scene.control.{Button, Label}
 import scalafx.scene.layout.HBox
 
@@ -20,7 +19,8 @@ trait LabelButton[E] extends HBox:
   val buttonAction: ObjectProperty[() => E] = new ObjectProperty[() => E]()
   @setter def buttonAction_=(fn: () => E): Unit = buttonAction.value = fn
 
-  val label = Label( text.value )
+  val label = Label("n/a")
+  label.text <== text
 
   val button = new Button:
     prefWidth = 25
@@ -30,9 +30,5 @@ trait LabelButton[E] extends HBox:
     }
   button.text = "..."
 
-  val controls = List[(Label, Node)](
-    label -> button
-  )
-
   spacing = 3
-  children = List( ControlGrid(controls) )
+  children = List(label, button)
