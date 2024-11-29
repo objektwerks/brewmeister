@@ -79,6 +79,9 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     rangeSliderIbuBitterness.setLowValue(recipe.value.ibuBitterness.low)
     rangeSliderIbuBitterness.setHighValue(recipe.value.ibuBitterness.high)
 
+    rangeSliderAlcoholByVolume.setLowValue(recipe.value.alcoholByVolume.low)
+    rangeSliderAlcoholByVolume.setHighValue(recipe.value.alcoholByVolume.high)
+
     textFieldPotentialMashExtract.text = recipe.value.potentialMashExtract.toString
     textFieldPotentialFermentableExtract.text = recipe.value.potentialFermentableExtract.toString
     textFieldPh.text = recipe.value.pH.toString
