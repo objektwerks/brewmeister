@@ -27,7 +27,7 @@ trait LabelButton[E] extends HBox:
     text = labelText.value
 
   val button = new Button:
-    prefWidth = 75
+    prefWidth = 25
     text = "..."
     onAction = { _ =>
       val newValue = buttonAction.value()
