@@ -62,6 +62,9 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     rangeSliderFinalGravity.setLowValue(recipe.value.finalGravity.low)
     rangeSliderFinalGravity.setHighValue(recipe.value.finalGravity.high)
 
+    rangeSliderSrmColor.setLowValue(recipe.value.srmColor.low)
+    rangeSliderSrmColor.setHighValue(recipe.value.srmColor.high)
+
     textFieldPotentialMashExtract.text = recipe.value.potentialMashExtract.toString
     textFieldPotentialFermentableExtract.text = recipe.value.potentialFermentableExtract.toString
     textFieldPh.text = recipe.value.pH.toString
