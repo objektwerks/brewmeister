@@ -55,9 +55,11 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelButtonHops = new LabelButton[List[Hop]]:
     labelText = s"${recipe.hops.map(_.name).mkString(", ")}"
     value = recipe.hops
-    buttonAction = HopsDialog(context, recipe.hops.toArray).showAndWait() match
-      case Some(hops: Array[Hop]) => () => hops.toList
-      case _ => () => recipe.hops
+    buttonAction = () => {
+      HopsDialog(context, recipe.hops.toArray).showAndWait() match
+        case Some(hops: Array[Hop]) => hops.toList
+        case _ => recipe.hops
+    }
 
   val labelAdjuncts = Label( context.labelAdjuncts )
   val labelButtonAdjuncts = new LabelButton[List[Adjunct]]:
