@@ -101,9 +101,11 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     labelText = s"""${recipe.boilingTempRangeDuration.tempRange.low} - ${recipe.boilingTempRangeDuration.tempRange.high},
                     ${recipe.boilingTempRangeDuration.duration} ${recipe.boilingTempRangeDuration.unit.toString}"""
     value = recipe.boilingTempRangeDuration
-    buttonAction = TempRangeDurationDialog(context, recipe.boilingTempRangeDuration).showAndWait() match
-      case Some(tempRangeDuration: TempRangeDuration) => () => tempRangeDuration
-      case _ => () => recipe.boilingTempRangeDuration
+    buttonAction = () => {
+      TempRangeDurationDialog(context, recipe.boilingTempRangeDuration).showAndWait() match
+        case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
+        case _ => recipe.boilingTempRangeDuration
+    }
 
   val labelCoolingTempRange = Label( context.labelCoolingTempRange )
   val rangeSliderCoolingTempRange = new RangeSlider(67, 73, recipe.coolingTempRange.low, recipe.coolingTempRange.high):
