@@ -12,7 +12,7 @@ final class RightPane(context: Context, model: Model) extends VBox:
   val recipeTab = new Tab:
     text = context.tabRecipe
     closable = false
-    content = RecipePane(context, model.selectedRecipe.value)
+    content = RecipePane(context, model)
 
   val recipeTabPane = new TabPane:
     tabs = List(recipeTab)

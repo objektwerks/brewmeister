@@ -3,211 +3,215 @@ package objektwerks.ui.pane
 import org.controlsfx.control.RangeSlider
 
 import scalafx.Includes.*
+import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Insets
 import scalafx.scene.Node
 import scalafx.scene.control.{Label, ScrollPane}
 import scalafx.scene.layout.{Priority, VBox}
 
 import objektwerks.*
-import objektwerks.ui.Context
+import objektwerks.ui.{Context, Model}
 import objektwerks.ui.control.{ControlGrid, LabelButton, NonEmptyTextField}
 import objektwerks.ui.control.DoubleTextField
 import objektwerks.ui.dialog.{AdjunctsDialog, GrainsDialog, HopsDialog, TempRangeDurationDialog, VolumeDialog, YeastsDialog}
 
-final class RecipePane(context: Context, recipe: Recipe) extends ScrollPane:
+final class RecipePane(context: Context, model: Model) extends ScrollPane:
   padding = Insets(3)
+
+  val recipe = ObjectProperty[Recipe](model.selectedRecipe.value)
+  recipe <== model.selectedRecipe
 
   val labelName = Label( context.labelName )
   val textFieldName = new NonEmptyTextField:
-    text = recipe.name
+    text <== recipe.value.nameProperty
 
   val labelStyle = Label( context.labelStyle )
   val textFieldStyle = new NonEmptyTextField:
-    text = recipe.style
+    text = recipe.value.style
 
   val labelWater = Label( context.labelWater )
   val textFieldWater = new NonEmptyTextField:
-    text = recipe.water
+    text = recipe.value.water
 
   val labelVolume = Label( context.labelVolume )
   val labelButtonVolume = new LabelButton[Volume]:
-    text = s"${recipe.volume.value} ${recipe.volume.unit.toString}"
-    value = recipe.volume
+    text = s"${recipe.value.volume.value} ${recipe.value.volume.unit.toString}"
+    value = recipe.value.volume
     buttonAction = () => {
-      VolumeDialog(context, recipe.volume).showAndWait() match
+      VolumeDialog(context, recipe.value.volume).showAndWait() match
         case Some(volume: Volume) => volume
-        case _ => recipe.volume
+        case _ => recipe.value.volume
     }
 
   val labelGrains = Label( context.labelGrains )
   val labelButtonGrains = new LabelButton[List[Grain]]:
-    text = s"${recipe.grains.map(_.name).mkString(", ")}"
-    value = recipe.grains
+    text = s"${recipe.value.grains.map(_.name).mkString(", ")}"
+    value = recipe.value.grains
     buttonAction = () => {
-      GrainsDialog(context, recipe.grains.toArray).showAndWait() match
+      GrainsDialog(context, recipe.value.grains.toArray).showAndWait() match
         case Some(grains: Array[Grain]) => grains.toList
-        case _ => recipe.grains
+        case _ => recipe.value.grains
     }
   
   val labelHops = Label( context.labelHops )
   val labelButtonHops = new LabelButton[List[Hop]]:
-    text = s"${recipe.hops.map(_.name).mkString(", ")}"
-    value = recipe.hops
+    text = s"${recipe.value.hops.map(_.name).mkString(", ")}"
+    value = recipe.value.hops
     buttonAction = () => {
-      HopsDialog(context, recipe.hops.toArray).showAndWait() match
+      HopsDialog(context, recipe.value.hops.toArray).showAndWait() match
         case Some(hops: Array[Hop]) => hops.toList
-        case _ => recipe.hops
+        case _ => recipe.value.hops
     }
 
   val labelAdjuncts = Label( context.labelAdjuncts )
   val labelButtonAdjuncts = new LabelButton[List[Adjunct]]:
-    text = s"${recipe.adjuncts.map(_.name).mkString(", ")}"
-    value = recipe.adjuncts
+    text = s"${recipe.value.adjuncts.map(_.name).mkString(", ")}"
+    value = recipe.value.adjuncts
     buttonAction = () => {
-      AdjunctsDialog(context, recipe.adjuncts.toArray).showAndWait() match
+      AdjunctsDialog(context, recipe.value.adjuncts.toArray).showAndWait() match
         case Some(adjuncts: Array[Adjunct]) => adjuncts.toList
-        case _ => recipe.adjuncts
+        case _ => recipe.value.adjuncts
     }
 
   val labelYeasts = Label( context.labelYeasts )
   val labelButtonYeasts = new LabelButton[List[Yeast]]:
-    text = s"${recipe.yeasts.map(_.name).mkString(", ")}"
-    value = recipe.yeasts
+    text = s"${recipe.value.yeasts.map(_.name).mkString(", ")}"
+    value = recipe.value.yeasts
     buttonAction = () => {
-      YeastsDialog(context, recipe.yeasts.toArray).showAndWait() match
+      YeastsDialog(context, recipe.value.yeasts.toArray).showAndWait() match
         case Some(yeasts: Array[Yeast]) => yeasts.toList
-        case _ => recipe.yeasts
+        case _ => recipe.value.yeasts
     }
 
   val labelMashingTempRangeDuration = Label( context.labelMashingTempRangeDuration )
   val labelButtonMashingTempRangeDuration = new LabelButton[TempRangeDuration]:
-    text = s"${recipe.mashingTempRangeDuration.tempRange.low} - ${recipe.mashingTempRangeDuration.tempRange.high}, " +
-           s"${recipe.mashingTempRangeDuration.duration} ${recipe.mashingTempRangeDuration.unit.toString}"
-    value = recipe.mashingTempRangeDuration
+    text = s"${recipe.value.mashingTempRangeDuration.tempRange.low} - ${recipe.value.mashingTempRangeDuration.tempRange.high}, " +
+           s"${recipe.value.mashingTempRangeDuration.duration} ${recipe.value.mashingTempRangeDuration.unit.toString}"
+    value = recipe.value.mashingTempRangeDuration
     buttonAction = () => {
-      TempRangeDurationDialog(context, recipe.mashingTempRangeDuration).showAndWait() match
+      TempRangeDurationDialog(context, recipe.value.mashingTempRangeDuration).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
-        case _ => recipe.mashingTempRangeDuration
+        case _ => recipe.value.mashingTempRangeDuration
     }
 
   val labelPotentialMashExtract = Label( context.labelPotentialMashExtract )
   val textFieldPotentialMashExtract = new DoubleTextField:
-    text = recipe.potentialMashExtract.toString
+    text = recipe.value.potentialMashExtract.toString
 
   val labelBoilingTempRangeDuration = Label( context.labelBoilingTempRangeDuration )
   val labelButtonBoilingTempRangeDuration = new LabelButton[TempRangeDuration]:
-    text = s"${recipe.boilingTempRangeDuration.tempRange.low} - ${recipe.boilingTempRangeDuration.tempRange.high}, " +
-           s"${recipe.boilingTempRangeDuration.duration} ${recipe.boilingTempRangeDuration.unit.toString}"
-    value = recipe.boilingTempRangeDuration
+    text = s"${recipe.value.boilingTempRangeDuration.tempRange.low} - ${recipe.value.boilingTempRangeDuration.tempRange.high}, " +
+           s"${recipe.value.boilingTempRangeDuration.duration} ${recipe.value.boilingTempRangeDuration.unit.toString}"
+    value = recipe.value.boilingTempRangeDuration
     buttonAction = () => {
-      TempRangeDurationDialog(context, recipe.boilingTempRangeDuration).showAndWait() match
+      TempRangeDurationDialog(context, recipe.value.boilingTempRangeDuration).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
-        case _ => recipe.boilingTempRangeDuration
+        case _ => recipe.value.boilingTempRangeDuration
     }
 
   val labelCoolingTempRange = Label( context.labelCoolingTempRange )
-  val rangeSliderCoolingTempRange = new RangeSlider(67, 73, recipe.coolingTempRange.low, recipe.coolingTempRange.high):
+  val rangeSliderCoolingTempRange = new RangeSlider(67, 73, recipe.value.coolingTempRange.low, recipe.value.coolingTempRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1)
 
   val labelFermentingTempRangeDuration = Label( context.labelFermentingTempRangeDuration )
   val labelButtonFermentingTempRangeDuration = new LabelButton[TempRangeDuration]:
-    text = s"${recipe.fermentingTempRangeDuration.tempRange.low} - ${recipe.fermentingTempRangeDuration.tempRange.high}, " +
-           s"${recipe.fermentingTempRangeDuration.duration} ${recipe.fermentingTempRangeDuration.unit.toString}"
-    value = recipe.fermentingTempRangeDuration
+    text = s"${recipe.value.fermentingTempRangeDuration.tempRange.low} - ${recipe.value.fermentingTempRangeDuration.tempRange.high}, " +
+           s"${recipe.value.fermentingTempRangeDuration.duration} ${recipe.value.fermentingTempRangeDuration.unit.toString}"
+    value = recipe.value.fermentingTempRangeDuration
     buttonAction = () => {
-      TempRangeDurationDialog(context, recipe.fermentingTempRangeDuration).showAndWait() match
+      TempRangeDurationDialog(context, recipe.value.fermentingTempRangeDuration).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
-        case _ => recipe.fermentingTempRangeDuration
+        case _ => recipe.value.fermentingTempRangeDuration
     }
 
   val labelPotentialFermentableExtract = Label( context.labelPotentialFermentableExtract )
   val textFieldPotentialFermentableExtract = new DoubleTextField:
-    text = recipe.potentialFermentableExtract.toString
+    text = recipe.value.potentialFermentableExtract.toString
 
   val labelConditioningTempRangeDuration = Label( context.labelConditioningTempRangeDuration )
   val labelButtonConditioningTempRangeDuration = new LabelButton[TempRangeDuration]:
-    text = s"${recipe.conditioningTempRangeDuration.tempRange.low} - ${recipe.conditioningTempRangeDuration.tempRange.high}, " +
-           s"${recipe.conditioningTempRangeDuration.duration} ${recipe.conditioningTempRangeDuration.unit.toString}"
-    value = recipe.conditioningTempRangeDuration
+    text = s"${recipe.value.conditioningTempRangeDuration.tempRange.low} - ${recipe.value.conditioningTempRangeDuration.tempRange.high}, " +
+           s"${recipe.value.conditioningTempRangeDuration.duration} ${recipe.value.conditioningTempRangeDuration.unit.toString}"
+    value = recipe.value.conditioningTempRangeDuration
     buttonAction = () => {
-      TempRangeDurationDialog(context, recipe.conditioningTempRangeDuration).showAndWait() match
+      TempRangeDurationDialog(context, recipe.value.conditioningTempRangeDuration).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
-        case _ => recipe.conditioningTempRangeDuration
+        case _ => recipe.value.conditioningTempRangeDuration
     }
 
   val labelKeggingTempRangeDuration = Label( context.labelKeggingTempRangeDuration )
   val labelButtonKeggingTempRangeDuration = new LabelButton[TempRangeDuration]:
-    text = s"${recipe.keggingTempRangeDuration.tempRange.low} - ${recipe.keggingTempRangeDuration.tempRange.high}, " +
-           s"${recipe.keggingTempRangeDuration.duration} ${recipe.keggingTempRangeDuration.unit.toString}"
-    value = recipe.keggingTempRangeDuration
+    text = s"${recipe.value.keggingTempRangeDuration.tempRange.low} - ${recipe.value.keggingTempRangeDuration.tempRange.high}, " +
+           s"${recipe.value.keggingTempRangeDuration.duration} ${recipe.value.keggingTempRangeDuration.unit.toString}"
+    value = recipe.value.keggingTempRangeDuration
     buttonAction = () => {
-      TempRangeDurationDialog(context, recipe.keggingTempRangeDuration).showAndWait() match
+      TempRangeDurationDialog(context, recipe.value.keggingTempRangeDuration).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
-        case _ => recipe.keggingTempRangeDuration
+        case _ => recipe.value.keggingTempRangeDuration
     }
 
   val labelPh = Label( context.labelPh )
   val textFieldPh = new DoubleTextField:
-    text = recipe.pH.toString
+    text = recipe.value.pH.toString
 
   val labelOriginalGravity = Label( context.labelOriginalGravity )
-  val rangeSliderOriginalGravity = new RangeSlider(1.000, 1.100, recipe.originalGravity.low, recipe.originalGravity.high):
+  val rangeSliderOriginalGravity = new RangeSlider(1.000, 1.100, recipe.value.originalGravity.low, recipe.value.originalGravity.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(0.10)
 
   val labelFinalGravity = Label( context.labelFinalGravity )
-  val rangeSliderFinalGravity = new RangeSlider(1.000, 1.050, recipe.finalGravity.low, recipe.finalGravity.high):
+  val rangeSliderFinalGravity = new RangeSlider(1.000, 1.050, recipe.value.finalGravity.low, recipe.value.finalGravity.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(0.10)
 
   val labelSrmColor = Label( context.labelSrmColor )
-  val rangeSliderSrmColor = new RangeSlider(1, 80, recipe.srmColor.low, recipe.srmColor.high):
+  val rangeSliderSrmColor = new RangeSlider(1, 80, recipe.value.srmColor.low, recipe.value.srmColor.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(10)
 
   val labelIbuBitterness = Label( context.labelIbuBitterness )
-  val rangeSliderIbuBitterness = new RangeSlider(1, 80, recipe.ibuBitterness.low, recipe.ibuBitterness.high):
+  val rangeSliderIbuBitterness = new RangeSlider(1, 80, recipe.value.ibuBitterness.low, recipe.value.ibuBitterness.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(10)
 
   val labelAlcoholByVolume = Label( context.labelAlcoholByVolume )
-  val rangeSliderAlcoholByVolume = new RangeSlider(1.0, 12.0, recipe.alcoholByVolume.low, recipe.alcoholByVolume.high):
+  val rangeSliderAlcoholByVolume = new RangeSlider(1.0, 12.0, recipe.value.alcoholByVolume.low, recipe.value.alcoholByVolume.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1.0)
 
   val labelAlcoholByWeight = Label( context.labelAlcoholByWeight )
-  val rangeSliderAlcoholByWeight = new RangeSlider(1.0, 12.0, recipe.alcoholByWeight.low, recipe.alcoholByWeight.high):
+  val rangeSliderAlcoholByWeight = new RangeSlider(1.0, 12.0, recipe.value.alcoholByWeight.low, recipe.value.alcoholByWeight.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1.0)
 
   val labelCalories = Label( context.labelCalories )
-  val rangeSliderCalories = new RangeSlider(50, 250, recipe.calories.low, recipe.calories.high):
+  val rangeSliderCalories = new RangeSlider(50, 250, recipe.value.calories.low, recipe.value.calories.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(50)
 
   val labelMashEfficiency = Label( context.labelMashEfficiency )
-  val rangeSliderMashEfficiency = new RangeSlider(50, 100, recipe.mashEfficiency.low, recipe.mashEfficiency.high):
+  val rangeSliderMashEfficiency = new RangeSlider(50, 100, recipe.value.mashEfficiency.low, recipe.value.mashEfficiency.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(10)
 
   val labelBrewhouseEfficiency = Label( context.labelBrewhouseEfficiency )
-  val rangeSliderBrewhouseEfficiency = new RangeSlider(50, 100, recipe.brewhouseEfficiency.low, recipe.brewhouseEfficiency.high):
+  val rangeSliderBrewhouseEfficiency = new RangeSlider(50, 100, recipe.value.brewhouseEfficiency.low, recipe.value.brewhouseEfficiency.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(10)
 
   val labelCreated = Label( context.labelCreated )
-  val labelFieldCreated = Label( recipe.created )
+  val labelFieldCreated = Label( recipe.value.created )
 
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
