@@ -23,6 +23,8 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     textFieldName.text = newRecipe.name
     textFieldStyle.text = newRecipe.style
     textFieldWater.text = newRecipe.water
+    labelButtonVolume.text = s"${recipe.value.volume.value} ${recipe.value.volume.unit.toString}"
+    labelButtonVolume.value = recipe.value.volume
 
     textFieldPotentialMashExtract.text = recipe.value.potentialMashExtract.toString
     textFieldPotentialFermentableExtract.text = recipe.value.potentialFermentableExtract.toString
@@ -40,8 +42,6 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
 
   val labelVolume = Label( context.labelVolume )
   val labelButtonVolume = new LabelButton[Volume]:
-    text = s"${recipe.value.volume.value} ${recipe.value.volume.unit.toString}"
-    value = recipe.value.volume
     buttonAction = () => {
       VolumeDialog(context, recipe.value.volume).showAndWait() match
         case Some(volume: Volume) => volume
