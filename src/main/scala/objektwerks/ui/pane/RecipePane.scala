@@ -98,8 +98,7 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     }
 
   val labelPotentialMashExtract = Label( context.labelPotentialMashExtract )
-  val textFieldPotentialMashExtract = new DoubleTextField:
-    text = recipe.value.potentialMashExtract.toString
+  val textFieldPotentialMashExtract = DoubleTextField()
 
   val labelBoilingTempRangeDuration = Label( context.labelBoilingTempRangeDuration )
   val labelButtonBoilingTempRangeDuration = new LabelButton[TempRangeDuration]:
