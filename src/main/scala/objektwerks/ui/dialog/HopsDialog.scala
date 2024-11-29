@@ -92,7 +92,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val vboxHops = new VBox:
     spacing = 6
     padding = Insets(6)
-    children = List( listViewHops, buttonBarHops )
+    children = List(listViewHops, buttonBarHops)
 
   // Item
   val labelName = Label(context.labelName)
@@ -104,7 +104,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val labelVolume = Label(context.labelVolume)
   val textFieldVolume = DoubleTextField()
 
-  val labelUnit = Label( context.labelUnit )
+  val labelUnit = Label(context.labelUnit)
   val choiceBoxUnit = new ChoiceBox[String]:
   	items = ObservableBuffer.from( UoM.toList )
 
@@ -114,7 +114,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val labelMixinMinute = Label(context.labelMixinMinute)
   val textFieldMixinMinute = IntTextField()
 
-  val labelMixinStep = Label( context.labelMixinStep )
+  val labelMixinStep = Label(context.labelMixinStep)
   val choiceBoxMixinStep = new ChoiceBox[String]:
   	items = ObservableBuffer.from( MixinStep.toList )
 
