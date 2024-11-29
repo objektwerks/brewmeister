@@ -1,13 +1,11 @@
 package objektwerks.ui.pane
 
-import scalafx.scene.control.Tab
+import scalafx.scene.layout.{Priority, VBox}
 
 import objektwerks.ui.{Context, Model}
 
-final class BatchPane(context: Context, model: Model) extends Tab:
-  text = context.tabBatch
-  closable = false
+final class BatchPane(context: Context, model: Model) extends VBox:
+  println(context)
+  println(model)
 
-  model.selectedBatch.onChange { (_, _, newBatch) =>
-
-  }
+  VBox.setVgrow(this, Priority.Always)

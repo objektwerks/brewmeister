@@ -12,7 +12,7 @@ final class View(context: Context, model: Model):
     orientation = Orientation.Horizontal
     items.addAll(LeftPane(context, model), RightPane(context, model))
 
-  splitPane.setDividerPositions(0.30, 0.70)
+  splitPane.setDividerPositions(0.40, 0.60)
   VBox.setVgrow(splitPane, Priority.Always)
 
   private val rootBox = new VBox:

@@ -1,7 +1,6 @@
 package objektwerks.ui.pane
 
 import scalafx.Includes.*
-import scalafx.geometry.Insets
 import scalafx.scene.control.{Button, SelectionMode, Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.layout.{HBox, Priority, VBox}
 
@@ -16,7 +15,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
         text = context.columnRecipe
         cellValueFactory = _.value.nameProperty
     )
-    items = model.observableRecipes
+    items = model.observableRecipes.sorted
   tableView.columnResizePolicy = TableView.ConstrainedResizePolicy
   tableView.selectionModel().selectionModeProperty.value = SelectionMode.Single
   tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedItem) =>
@@ -49,8 +48,6 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     children = List(addButton, editButton, simulateButton)
 
   val vbox = new VBox:
-    spacing = 3
-    padding = Insets(3)
     children = List(tableView, buttonBar)
 
   val tab = new Tab:
