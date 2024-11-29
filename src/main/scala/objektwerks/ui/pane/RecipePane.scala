@@ -47,6 +47,10 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
       s"${recipe.value.fermentingTempRangeDuration.tempRange.low} - ${recipe.value.fermentingTempRangeDuration.tempRange.high}, " +
       s"${recipe.value.fermentingTempRangeDuration.duration} ${recipe.value.fermentingTempRangeDuration.unit.toString}"
     labelButtonFermentingTempRangeDuration.value = recipe.value.fermentingTempRangeDuration
+    labelButtonConditioningTempRangeDuration.text =
+      s"${recipe.value.conditioningTempRangeDuration.tempRange.low} - ${recipe.value.conditioningTempRangeDuration.tempRange.high}, " +
+      s"${recipe.value.conditioningTempRangeDuration.duration} ${recipe.value.conditioningTempRangeDuration.unit.toString}"
+    labelButtonConditioningTempRangeDuration.value = recipe.value.conditioningTempRangeDuration
 
     textFieldPotentialMashExtract.text = recipe.value.potentialMashExtract.toString
     textFieldPotentialFermentableExtract.text = recipe.value.potentialFermentableExtract.toString
@@ -140,9 +144,6 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
 
   val labelConditioningTempRangeDuration = Label( context.labelConditioningTempRangeDuration )
   val labelButtonConditioningTempRangeDuration = new LabelButton[TempRangeDuration]:
-    text = s"${recipe.value.conditioningTempRangeDuration.tempRange.low} - ${recipe.value.conditioningTempRangeDuration.tempRange.high}, " +
-           s"${recipe.value.conditioningTempRangeDuration.duration} ${recipe.value.conditioningTempRangeDuration.unit.toString}"
-    value = recipe.value.conditioningTempRangeDuration
     buttonAction = () => {
       TempRangeDurationDialog(context, recipe.value.conditioningTempRangeDuration).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
