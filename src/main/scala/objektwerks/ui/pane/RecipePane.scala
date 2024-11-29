@@ -56,6 +56,9 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
       s"${recipe.value.keggingTempRangeDuration.duration} ${recipe.value.keggingTempRangeDuration.unit.toString}"
     labelButtonKeggingTempRangeDuration.value = recipe.value.keggingTempRangeDuration
 
+    rangeSliderOriginalGravity.setLowValue(recipe.value.originalGravity.low)
+    rangeSliderOriginalGravity.setHighValue(recipe.value.originalGravity.high)
+
     textFieldPotentialMashExtract.text = recipe.value.potentialMashExtract.toString
     textFieldPotentialFermentableExtract.text = recipe.value.potentialFermentableExtract.toString
     textFieldPh.text = recipe.value.pH.toString
