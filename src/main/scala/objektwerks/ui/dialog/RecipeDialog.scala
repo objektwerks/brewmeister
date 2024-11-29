@@ -86,9 +86,11 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     labelText = s"""${recipe.mashingTempRangeDuration.tempRange.low} - ${recipe.mashingTempRangeDuration.tempRange.high},
                     ${recipe.mashingTempRangeDuration.duration} ${recipe.mashingTempRangeDuration.unit.toString}"""
     value = recipe.mashingTempRangeDuration
-    buttonAction = TempRangeDurationDialog(context, recipe.mashingTempRangeDuration).showAndWait() match
-      case Some(tempRangeDuration: TempRangeDuration) => () => tempRangeDuration
-      case _ => () => recipe.mashingTempRangeDuration
+    buttonAction = () => {
+      TempRangeDurationDialog(context, recipe.mashingTempRangeDuration).showAndWait() match
+        case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
+        case _ => recipe.mashingTempRangeDuration
+    }
 
   val labelPotentialMashExtract = Label( context.labelPotentialMashExtract )
   val textFieldPotentialMashExtract = new DoubleTextField:
