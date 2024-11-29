@@ -51,6 +51,10 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
       s"${recipe.value.conditioningTempRangeDuration.tempRange.low} - ${recipe.value.conditioningTempRangeDuration.tempRange.high}, " +
       s"${recipe.value.conditioningTempRangeDuration.duration} ${recipe.value.conditioningTempRangeDuration.unit.toString}"
     labelButtonConditioningTempRangeDuration.value = recipe.value.conditioningTempRangeDuration
+    labelButtonKeggingTempRangeDuration.text =
+      s"${recipe.value.keggingTempRangeDuration.tempRange.low} - ${recipe.value.keggingTempRangeDuration.tempRange.high}, " +
+      s"${recipe.value.keggingTempRangeDuration.duration} ${recipe.value.keggingTempRangeDuration.unit.toString}"
+    labelButtonKeggingTempRangeDuration.value = recipe.value.keggingTempRangeDuration
 
     textFieldPotentialMashExtract.text = recipe.value.potentialMashExtract.toString
     textFieldPotentialFermentableExtract.text = recipe.value.potentialFermentableExtract.toString
@@ -152,9 +156,6 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
 
   val labelKeggingTempRangeDuration = Label( context.labelKeggingTempRangeDuration )
   val labelButtonKeggingTempRangeDuration = new LabelButton[TempRangeDuration]:
-    text = s"${recipe.value.keggingTempRangeDuration.tempRange.low} - ${recipe.value.keggingTempRangeDuration.tempRange.high}, " +
-           s"${recipe.value.keggingTempRangeDuration.duration} ${recipe.value.keggingTempRangeDuration.unit.toString}"
-    value = recipe.value.keggingTempRangeDuration
     buttonAction = () => {
       TempRangeDurationDialog(context, recipe.value.keggingTempRangeDuration).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
