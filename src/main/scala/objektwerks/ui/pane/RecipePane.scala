@@ -22,6 +22,7 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
   model.selectedRecipe.onChange { (_, _, newRecipe) =>
     textFieldName.text = newRecipe.name
     textFieldStyle.text = newRecipe.style
+    textFieldWater.text = newRecipe.water
   }
 
   val labelName = Label( context.labelName )
@@ -31,8 +32,7 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
   val textFieldStyle = NonEmptyTextField()
 
   val labelWater = Label( context.labelWater )
-  val textFieldWater = new NonEmptyTextField:
-    text = recipe.value.water
+  val textFieldWater = NonEmptyTextField()
 
   val labelVolume = Label( context.labelVolume )
   val labelButtonVolume = new LabelButton[Volume]:
