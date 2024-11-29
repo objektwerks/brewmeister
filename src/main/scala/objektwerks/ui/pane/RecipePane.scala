@@ -25,6 +25,7 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     textFieldWater.text = newRecipe.water
 
     textFieldPotentialMashExtract.text = recipe.value.potentialMashExtract.toString
+    textFieldPotentialFermentableExtract.text = recipe.value.potentialFermentableExtract.toString
   }
 
   val labelName = Label( context.labelName )
@@ -129,8 +130,7 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     }
 
   val labelPotentialFermentableExtract = Label( context.labelPotentialFermentableExtract )
-  val textFieldPotentialFermentableExtract = new DoubleTextField:
-    text = recipe.value.potentialFermentableExtract.toString
+  val textFieldPotentialFermentableExtract = DoubleTextField()
 
   val labelConditioningTempRangeDuration = Label( context.labelConditioningTempRangeDuration )
   val labelButtonConditioningTempRangeDuration = new LabelButton[TempRangeDuration]:
