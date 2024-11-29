@@ -23,34 +23,45 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     textFieldName.text = newRecipe.name
     textFieldStyle.text = newRecipe.style
     textFieldWater.text = newRecipe.water
+
     labelButtonVolume.text = s"${recipe.value.volume.value} ${recipe.value.volume.unit.toString}"
     labelButtonVolume.value = recipe.value.volume
+
     labelButtonGrains.text = s"${recipe.value.grains.map(_.name).mkString(", ")}"
     labelButtonGrains.value = recipe.value.grains
+
     labelButtonHops.text = s"${recipe.value.hops.map(_.name).mkString(", ")}"
     labelButtonHops.value = recipe.value.hops
+
     labelButtonAdjuncts.text = s"${recipe.value.adjuncts.map(_.name).mkString(", ")}"
     labelButtonAdjuncts.value = recipe.value.adjuncts
+
     labelButtonYeasts.text = s"${recipe.value.yeasts.map(_.name).mkString(", ")}"
     labelButtonYeasts.value = recipe.value.yeasts
+    
     labelButtonMashingTempRangeDuration.text =
       s"${recipe.value.mashingTempRangeDuration.tempRange.low} - ${recipe.value.mashingTempRangeDuration.tempRange.high}, " +
       s"${recipe.value.mashingTempRangeDuration.duration} ${recipe.value.mashingTempRangeDuration.unit.toString}"
     labelButtonMashingTempRangeDuration.value = recipe.value.mashingTempRangeDuration
+    
     labelButtonBoilingTempRangeDuration.text =
       s"${recipe.value.boilingTempRangeDuration.tempRange.low} - ${recipe.value.boilingTempRangeDuration.tempRange.high}, " +
       s"${recipe.value.boilingTempRangeDuration.duration} ${recipe.value.boilingTempRangeDuration.unit.toString}"
     labelButtonBoilingTempRangeDuration.value = recipe.value.boilingTempRangeDuration
+    
     rangeSliderCoolingTempRange.setLowValue(recipe.value.coolingTempRange.low)
     rangeSliderCoolingTempRange.setHighValue(recipe.value.coolingTempRange.high)
+    
     labelButtonFermentingTempRangeDuration.text =
       s"${recipe.value.fermentingTempRangeDuration.tempRange.low} - ${recipe.value.fermentingTempRangeDuration.tempRange.high}, " +
       s"${recipe.value.fermentingTempRangeDuration.duration} ${recipe.value.fermentingTempRangeDuration.unit.toString}"
     labelButtonFermentingTempRangeDuration.value = recipe.value.fermentingTempRangeDuration
+    
     labelButtonConditioningTempRangeDuration.text =
       s"${recipe.value.conditioningTempRangeDuration.tempRange.low} - ${recipe.value.conditioningTempRangeDuration.tempRange.high}, " +
       s"${recipe.value.conditioningTempRangeDuration.duration} ${recipe.value.conditioningTempRangeDuration.unit.toString}"
     labelButtonConditioningTempRangeDuration.value = recipe.value.conditioningTempRangeDuration
+    
     labelButtonKeggingTempRangeDuration.text =
       s"${recipe.value.keggingTempRangeDuration.tempRange.low} - ${recipe.value.keggingTempRangeDuration.tempRange.high}, " +
       s"${recipe.value.keggingTempRangeDuration.duration} ${recipe.value.keggingTempRangeDuration.unit.toString}"
