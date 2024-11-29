@@ -26,6 +26,7 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
 
     textFieldPotentialMashExtract.text = recipe.value.potentialMashExtract.toString
     textFieldPotentialFermentableExtract.text = recipe.value.potentialFermentableExtract.toString
+    textFieldPh.text = recipe.value.pH.toString
   }
 
   val labelName = Label( context.labelName )
@@ -155,8 +156,7 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     }
 
   val labelPh = Label( context.labelPh )
-  val textFieldPh = new DoubleTextField:
-    text = recipe.value.pH.toString
+  val textFieldPh = DoubleTextField()
 
   val labelOriginalGravity = Label( context.labelOriginalGravity )
   val rangeSliderOriginalGravity = new RangeSlider(1.000, 1.100, recipe.value.originalGravity.low, recipe.value.originalGravity.high):
