@@ -45,9 +45,11 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
   val labelButtonGrains = new LabelButton[List[Grain]]:
     labelText = s"${recipe.grains.map(_.name).mkString(", ")}"
     value = recipe.grains
-    buttonAction = GrainsDialog(context, recipe.grains.toArray).showAndWait() match
-      case Some(grains: Array[Grain]) => () => grains.toList
-      case _ => () => recipe.grains
+    buttonAction = () => {
+      GrainsDialog(context, recipe.grains.toArray).showAndWait() match
+        case Some(grains: Array[Grain]) => grains.toList
+        case _ => recipe.grains
+    }
   
   val labelHops = Label( context.labelHops )
   val labelButtonHops = new LabelButton[List[Hop]]:
