@@ -290,6 +290,8 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     labelCreated -> labelFieldCreated
   )
 
+  // TODO! Button Bar - Save
+
   content = new VBox:
     children = List( ControlGrid(controls) )
   
