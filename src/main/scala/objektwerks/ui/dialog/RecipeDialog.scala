@@ -3,9 +3,11 @@ package objektwerks.ui.dialog
 import org.controlsfx.control.RangeSlider
 
 import scalafx.Includes.*
+import scalafx.geometry.Pos
+import scalafx.scene.Node
 import scalafx.scene.control.{ButtonType, Dialog, Label}
 import scalafx.scene.control.ButtonBar.ButtonData
-import scalafx.scene.Node
+import scalafx.scene.layout.VBox
 
 import objektwerks.*
 import objektwerks.ui.{App, Context}
@@ -219,7 +221,9 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     labelCreated -> labelFieldCreated
   )
 
-  dialogPane().content = ControlGrid(controls)
+  dialogPane().content =  new VBox:
+    alignment = Pos.CENTER
+    children = List( ControlGrid(controls) )
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
