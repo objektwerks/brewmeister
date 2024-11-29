@@ -27,6 +27,8 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     labelButtonVolume.value = recipe.value.volume
     labelButtonGrains.text = s"${recipe.value.grains.map(_.name).mkString(", ")}"
     labelButtonGrains.value = recipe.value.grains
+    labelButtonHops.text = s"${recipe.value.hops.map(_.name).mkString(", ")}"
+    labelButtonHops.value = recipe.value.hops
 
     textFieldPotentialMashExtract.text = recipe.value.potentialMashExtract.toString
     textFieldPotentialFermentableExtract.text = recipe.value.potentialFermentableExtract.toString
@@ -60,8 +62,6 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
   
   val labelHops = Label( context.labelHops )
   val labelButtonHops = new LabelButton[List[Hop]]:
-    text = s"${recipe.value.hops.map(_.name).mkString(", ")}"
-    value = recipe.value.hops
     buttonAction = () => {
       HopsDialog(context, recipe.value.hops.toArray).showAndWait() match
         case Some(hops: Array[Hop]) => hops.toList
