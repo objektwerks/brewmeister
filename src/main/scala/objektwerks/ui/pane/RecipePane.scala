@@ -33,6 +33,10 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     labelButtonAdjuncts.value = recipe.value.adjuncts
     labelButtonYeasts.text = s"${recipe.value.yeasts.map(_.name).mkString(", ")}"
     labelButtonYeasts.value = recipe.value.yeasts
+    labelButtonMashingTempRangeDuration.text =
+      s"${recipe.value.mashingTempRangeDuration.tempRange.low} - ${recipe.value.mashingTempRangeDuration.tempRange.high}, " +
+      s"${recipe.value.mashingTempRangeDuration.duration} ${recipe.value.mashingTempRangeDuration.unit.toString}"
+    labelButtonMashingTempRangeDuration.value = recipe.value.mashingTempRangeDuration
 
     textFieldPotentialMashExtract.text = recipe.value.potentialMashExtract.toString
     textFieldPotentialFermentableExtract.text = recipe.value.potentialFermentableExtract.toString
@@ -90,9 +94,6 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
 
   val labelMashingTempRangeDuration = Label( context.labelMashingTempRangeDuration )
   val labelButtonMashingTempRangeDuration = new LabelButton[TempRangeDuration]:
-    text = s"${recipe.value.mashingTempRangeDuration.tempRange.low} - ${recipe.value.mashingTempRangeDuration.tempRange.high}, " +
-           s"${recipe.value.mashingTempRangeDuration.duration} ${recipe.value.mashingTempRangeDuration.unit.toString}"
-    value = recipe.value.mashingTempRangeDuration
     buttonAction = () => {
       TempRangeDurationDialog(context, recipe.value.mashingTempRangeDuration).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
