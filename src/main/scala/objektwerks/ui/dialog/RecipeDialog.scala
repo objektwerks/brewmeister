@@ -133,9 +133,11 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     labelText = s"""${recipe.conditioningTempRangeDuration.tempRange.low} - ${recipe.conditioningTempRangeDuration.tempRange.high},
                     ${recipe.conditioningTempRangeDuration.duration} ${recipe.conditioningTempRangeDuration.unit.toString}"""
     value = recipe.conditioningTempRangeDuration
-    buttonAction = TempRangeDurationDialog(context, recipe.conditioningTempRangeDuration).showAndWait() match
-      case Some(tempRangeDuration: TempRangeDuration) => () => tempRangeDuration
-      case _ => () => recipe.conditioningTempRangeDuration
+    buttonAction = () => {
+      TempRangeDurationDialog(context, recipe.conditioningTempRangeDuration).showAndWait() match
+        case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
+        case _ => recipe.conditioningTempRangeDuration
+    }
 
   val labelKeggingTempRangeDuration = Label( context.labelKeggingTempRangeDuration )
   val labelButtonKeggingTempRangeDuration = new LabelButton[TempRangeDuration]:
