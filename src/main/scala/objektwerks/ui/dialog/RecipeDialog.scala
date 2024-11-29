@@ -118,9 +118,11 @@ final class RecipeDialog(context: Context, recipe: Recipe) extends Dialog[Recipe
     labelText = s"""${recipe.fermentingTempRangeDuration.tempRange.low} - ${recipe.fermentingTempRangeDuration.tempRange.high},
                     ${recipe.fermentingTempRangeDuration.duration} ${recipe.fermentingTempRangeDuration.unit.toString}"""
     value = recipe.fermentingTempRangeDuration
-    buttonAction = TempRangeDurationDialog(context, recipe.fermentingTempRangeDuration).showAndWait() match
-      case Some(tempRangeDuration: TempRangeDuration) => () => tempRangeDuration
-      case _ => () => recipe.fermentingTempRangeDuration
+    buttonAction = () => {
+      TempRangeDurationDialog(context, recipe.fermentingTempRangeDuration).showAndWait() match
+        case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
+        case _ => recipe.fermentingTempRangeDuration
+    }
 
   val labelPotentialFermentableExtract = Label( context.labelPotentialFermentableExtract )
   val textFieldPotentialFermentableExtract = new DoubleTextField:
