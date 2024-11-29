@@ -2,6 +2,7 @@ package objektwerks.ui.control
 
 import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Pos
+import scalafx.scene.Node
 import scalafx.scene.control.{Button, Label}
 import scalafx.scene.layout.HBox
 
@@ -32,5 +33,9 @@ trait LabelButton[E] extends HBox:
       if newValue != value.value then value.value = newValue
     }
 
+  val controls = List[(Label, Node)](
+    label -> button
+  )
+
   spacing = 3
-  children = List(label, button)
+  children = List( ControlGrid(controls) )
