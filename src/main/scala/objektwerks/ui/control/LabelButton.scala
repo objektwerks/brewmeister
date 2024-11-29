@@ -20,8 +20,6 @@ trait LabelButton[E] extends HBox:
   val buttonAction: ObjectProperty[() => E] = new ObjectProperty[() => E]()
   @setter def buttonAction_=(fn: () => E): Unit = buttonAction.value = fn
 
-  spacing = 6
-
   val label = new Label:
     alignment = Pos.CenterLeft
     text = labelText.value
@@ -34,4 +32,5 @@ trait LabelButton[E] extends HBox:
       if newValue != value.value then value.value = newValue
     }
 
+  spacing = 3
   children = List(label, button)
