@@ -144,12 +144,12 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     children = List( ControlGrid(controls), buttonBarControls )
 
   // Content
-  val hboxContent = new HBox:
+  val content = new VBox:
     spacing = 6
     padding = Insets(6)
     children = List(vboxGrains, vboxControls)
 
-  dialogPane().content = hboxContent
+  dialogPane().content = content
 
   val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
