@@ -6,7 +6,7 @@ import scalafx.Includes.*
 import scalafx.geometry.Insets
 import scalafx.scene.Node
 import scalafx.scene.control.{Label, ScrollPane}
-import scalafx.scene.layout.{Priority, VBox}
+import scalafx.scene.layout.{Priority, HBox, VBox}
 
 import objektwerks.*
 import objektwerks.ui.{Context, Model}
@@ -290,7 +290,10 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     labelCreated -> labelFieldCreated
   )
 
-  // TODO! Button Bar - Save
+  val buttonBar = new HBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List()
 
   content = new VBox:
     children = List( ControlGrid(controls) )
