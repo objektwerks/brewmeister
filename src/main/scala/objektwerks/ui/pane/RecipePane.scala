@@ -5,7 +5,7 @@ import org.controlsfx.control.RangeSlider
 import scalafx.Includes.*
 import scalafx.geometry.Insets
 import scalafx.scene.Node
-import scalafx.scene.control.{Label, ScrollPane}
+import scalafx.scene.control.{Button, Label, ScrollPane}
 import scalafx.scene.layout.{Priority, HBox, VBox}
 
 import objektwerks.*
@@ -290,12 +290,18 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     labelCreated -> labelFieldCreated
   )
 
+  val saveButton = new Button:
+    graphic = context.saveImageView
+    text = context.buttonSave
+    disable = true
+    onAction = { _ => save() }
+
   val buttonBar = new HBox:
     spacing = 6
     padding = Insets(6)
-    children = List()
+    children = List(saveButton)
 
   content = new VBox:
-    children = List( ControlGrid(controls) )
+    children = List( ControlGrid(controls), buttonBar )
   
   VBox.setVgrow(this, Priority.Always)
