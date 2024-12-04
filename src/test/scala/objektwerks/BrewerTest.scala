@@ -4,10 +4,10 @@ import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
 class BrewerTest extends AnyFunSuite with Matchers:
-  test("store > brew"):
-    val store = Store()
-
+  test("brew"):
     val recipe = Recipe.default
+    val store = Store()
+    
     store.writeRecipe(recipe)
     store.readRecipe(recipe.name) shouldBe recipe
     store.listRecipes.length should be >= 1
