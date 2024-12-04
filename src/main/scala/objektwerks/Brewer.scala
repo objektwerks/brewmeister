@@ -260,7 +260,7 @@ final class Whirlpooler(listener: Listener):
         List(
           "Whirlpooling wort.",
           s"Optionally added hops: ${whirlpool.recipe.hops}",
-          s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravity}"
+          s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravityRange}"
         )
       )
     )

@@ -77,8 +77,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
     textFieldPh.text = recipe.pH.toString
 
-    rangeSliderOriginalGravity.setLowValue(recipe.originalGravity.low)
-    rangeSliderOriginalGravity.setHighValue(recipe.originalGravity.high)
+    rangeSliderOriginalGravity.setLowValue(recipe.originalGravityRange.low)
+    rangeSliderOriginalGravity.setHighValue(recipe.originalGravityRange.high)
 
     rangeSliderFinalGravity.setLowValue(recipe.finalGravity.low)
     rangeSliderFinalGravity.setHighValue(recipe.finalGravity.high)
@@ -123,7 +123,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         conditioningTempRangeDuration = labelButtonConditioningTempRangeDuration.value.value,
         keggingTempRangeDuration = labelButtonKeggingTempRangeDuration.value.value,
         pH = textFieldPh.double.format,
-        originalGravity = DoubleRange( rangeSliderOriginalGravity.getLowValue, rangeSliderOriginalGravity.getHighValue ),
+        originalGravityRange = DoubleRange( rangeSliderOriginalGravity.getLowValue, rangeSliderOriginalGravity.getHighValue ),
         finalGravity = DoubleRange( rangeSliderFinalGravity.getLowValue, rangeSliderFinalGravity.getHighValue ),
         srmColor = IntRange( rangeSliderSrmColor.getLowValue.toInt, rangeSliderSrmColor.getHighValue.toInt ),
         ibuBitterness = IntRange( rangeSliderIbuBitterness.getLowValue.toInt, rangeSliderIbuBitterness.getHighValue.toInt ),
@@ -244,7 +244,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val textFieldPh = DoubleTextField()
 
   val labelOriginalGravity = Label( context.labelOriginalGravity )
-  val rangeSliderOriginalGravity = new RangeSlider(1.000, 1.100, model.selectedRecipe.value.originalGravity.low, model.selectedRecipe.value.originalGravity.high):
+  val rangeSliderOriginalGravity = new RangeSlider(1.000, 1.100, model.selectedRecipe.value.originalGravityRange.low, model.selectedRecipe.value.originalGravityRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(0.01)
