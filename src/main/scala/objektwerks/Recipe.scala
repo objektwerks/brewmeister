@@ -34,7 +34,7 @@ object Recipe:
            alcoholByVolumeRange = DoubleRange(6.0, 7.0),
            alcoholByWeightRange = DoubleRange(5.8, 6.8),
            calorieRange = IntRange(180, 200),
-           mashEfficiency = IntRange(70, 80),
+           mashEfficiencyRange = IntRange(70, 80),
            brewhouseEfficiency = IntRange(72, 80),
            created = now())
 
@@ -63,7 +63,7 @@ final case class Recipe(name: String = "",
                         alcoholByVolumeRange: DoubleRange = DoubleRange(0.0, 0.0),
                         alcoholByWeightRange: DoubleRange = DoubleRange(0.0, 0.0),
                         calorieRange: IntRange = IntRange(0, 0),
-                        mashEfficiency: IntRange = IntRange(0, 0),
+                        mashEfficiencyRange: IntRange = IntRange(0, 0),
                         brewhouseEfficiency: IntRange = IntRange(0, 0),
                         created: String = now()) derives CanEqual, JsonSupport:
   val nameProperty = ObjectProperty[String](this, "name", name)

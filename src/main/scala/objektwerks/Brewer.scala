@@ -197,7 +197,7 @@ final class Sparger(listener: Listener):
       Sparging(
         List(
           "Sparging wort.",
-          s"Mash efficiency should be within this range: ${sparge.recipe.mashEfficiency}"
+          s"Mash efficiency should be within this range: ${sparge.recipe.mashEfficiencyRange}"
         )
       )
     )

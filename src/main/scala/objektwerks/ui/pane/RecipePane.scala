@@ -98,8 +98,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     rangeSliderCalories.setLowValue(recipe.calorieRange.low)
     rangeSliderCalories.setHighValue(recipe.calorieRange.high)
 
-    rangeSliderMashEfficiency.setLowValue(recipe.mashEfficiency.low)
-    rangeSliderMashEfficiency.setHighValue(recipe.mashEfficiency.high)
+    rangeSliderMashEfficiency.setLowValue(recipe.mashEfficiencyRange.low)
+    rangeSliderMashEfficiency.setHighValue(recipe.mashEfficiencyRange.high)
 
     rangeSliderBrewhouseEfficiency.setLowValue(recipe.brewhouseEfficiency.low)
     rangeSliderBrewhouseEfficiency.setHighValue(recipe.brewhouseEfficiency.high)
@@ -130,7 +130,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         alcoholByVolumeRange = DoubleRange( rangeSliderAlcoholByVolume.getLowValue, rangeSliderAlcoholByVolume.getHighValue ),
         alcoholByWeightRange = DoubleRange( rangeSliderAlcoholByWeight.getLowValue, rangeSliderAlcoholByWeight.getHighValue ),
         calorieRange = IntRange( rangeSliderCalories.getLowValue.toInt, rangeSliderCalories.getHighValue.toInt ),
-        mashEfficiency = IntRange( rangeSliderMashEfficiency.getLowValue.toInt, rangeSliderMashEfficiency.getHighValue.toInt ),
+        mashEfficiencyRange = IntRange( rangeSliderMashEfficiency.getLowValue.toInt, rangeSliderMashEfficiency.getHighValue.toInt ),
         brewhouseEfficiency = IntRange( rangeSliderBrewhouseEfficiency.getLowValue.toInt, rangeSliderBrewhouseEfficiency.getHighValue.toInt )
       )
 
@@ -286,7 +286,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     setBlockIncrement(25)
 
   val labelMashEfficiency = Label( context.labelMashEfficiency )
-  val rangeSliderMashEfficiency = new RangeSlider(50, 100, model.selectedRecipe.value.mashEfficiency.low, model.selectedRecipe.value.mashEfficiency.high):
+  val rangeSliderMashEfficiency = new RangeSlider(50, 100, model.selectedRecipe.value.mashEfficiencyRange.low, model.selectedRecipe.value.mashEfficiencyRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(10)
