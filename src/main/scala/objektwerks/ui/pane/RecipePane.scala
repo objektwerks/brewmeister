@@ -83,8 +83,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     rangeSliderFinalGravity.setLowValue(recipe.finalGravityRange.low)
     rangeSliderFinalGravity.setHighValue(recipe.finalGravityRange.high)
 
-    rangeSliderSrmColor.setLowValue(recipe.srmColor.low)
-    rangeSliderSrmColor.setHighValue(recipe.srmColor.high)
+    rangeSliderSrmColor.setLowValue(recipe.srmColorRange.low)
+    rangeSliderSrmColor.setHighValue(recipe.srmColorRange.high)
 
     rangeSliderIbuBitterness.setLowValue(recipe.ibuBitterness.low)
     rangeSliderIbuBitterness.setHighValue(recipe.ibuBitterness.high)
@@ -125,7 +125,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         pH = textFieldPh.double.format,
         originalGravityRange = DoubleRange( rangeSliderOriginalGravity.getLowValue, rangeSliderOriginalGravity.getHighValue ),
         finalGravityRange = DoubleRange( rangeSliderFinalGravity.getLowValue, rangeSliderFinalGravity.getHighValue ),
-        srmColor = IntRange( rangeSliderSrmColor.getLowValue.toInt, rangeSliderSrmColor.getHighValue.toInt ),
+        srmColorRange = IntRange( rangeSliderSrmColor.getLowValue.toInt, rangeSliderSrmColor.getHighValue.toInt ),
         ibuBitterness = IntRange( rangeSliderIbuBitterness.getLowValue.toInt, rangeSliderIbuBitterness.getHighValue.toInt ),
         alcoholByVolume = DoubleRange( rangeSliderAlcoholByVolume.getLowValue, rangeSliderAlcoholByVolume.getHighValue ),
         alcoholByWeight = DoubleRange( rangeSliderAlcoholByWeight.getLowValue, rangeSliderAlcoholByWeight.getHighValue ),
@@ -256,7 +256,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     setBlockIncrement(0.01)
 
   val labelSrmColor = Label( context.labelSrmColor )
-  val rangeSliderSrmColor = new RangeSlider(1, 80, model.selectedRecipe.value.srmColor.low, model.selectedRecipe.value.srmColor.high):
+  val rangeSliderSrmColor = new RangeSlider(1, 80, model.selectedRecipe.value.srmColorRange.low, model.selectedRecipe.value.srmColorRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1)

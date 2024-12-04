@@ -321,7 +321,7 @@ final class Conditioner(listener: Listener):
           s"Conditioning within this temp range / duration: ${condition.recipe.conditioningTempRangeDuration}",
           s"Optionally added adjuncts: ${condition.recipe.adjuncts}",
           s"Optionally added hops: ${condition.recipe.hops}",
-          s"Should have an SRM color within this range: ${condition.recipe.srmColor}"
+          s"Should have an SRM color within this range: ${condition.recipe.srmColorRange}"
         )
       )
     )
