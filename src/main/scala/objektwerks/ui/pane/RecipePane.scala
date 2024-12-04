@@ -309,6 +309,7 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
   content = new VBox:
     children = List( ControlGrid(controls), buttonBar )
 
-  def save(): Unit = ???
-  
+  def save(): Unit =
+    saveButton.disable = true
+
   VBox.setVgrow(this, Priority.Always)
