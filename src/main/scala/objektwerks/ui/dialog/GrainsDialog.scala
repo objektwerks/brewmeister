@@ -68,6 +68,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   // List
   val listViewGrains = new ListView[Grain]:
+    prefHeight = 200
     items = ObservableBuffer.from(updatedGrains)
     cellFactory = (cell, grain) => cell.text = grain.name
 
