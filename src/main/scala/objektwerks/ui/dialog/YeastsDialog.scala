@@ -12,7 +12,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   title = context.windowTitle
   headerText = context.dialogYeasts
 
-  val saveButtonType = new ButtonType(context.buttonSave, ButtonData.OKDone)
+  val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
   resultConverter = dialogButton =>

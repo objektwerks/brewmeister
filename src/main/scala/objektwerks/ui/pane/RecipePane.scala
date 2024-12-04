@@ -335,7 +335,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val saveButton = new Button:
     graphic = context.saveImageView
-    text = context.buttonSave
+    text = context.tooltipSave
     disable = true
     onAction = { _ => save() }
 
