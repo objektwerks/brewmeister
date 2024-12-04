@@ -120,8 +120,6 @@ final class Context(config: Config):
   def logoImageView = loadImageView("/image/logo.png")
   def addImageView = loadImageView("/image/add.png")
   def bangImageView = loadImageView("/image/bang.png")
-  def editImageView = loadImageView("/image/edit.png")
-  def removeImageView = loadImageView("/image/remove.png")
   def saveImageView = loadImageView("/image/save.png")
   def plusImageView = loadImageView("/image/plus.png")
   def minusImageView = loadImageView("/image/minus.png")
