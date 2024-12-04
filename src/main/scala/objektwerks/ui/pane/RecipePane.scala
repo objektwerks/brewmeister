@@ -80,8 +80,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     rangeSliderOriginalGravity.setLowValue(recipe.originalGravityRange.low)
     rangeSliderOriginalGravity.setHighValue(recipe.originalGravityRange.high)
 
-    rangeSliderFinalGravity.setLowValue(recipe.finalGravity.low)
-    rangeSliderFinalGravity.setHighValue(recipe.finalGravity.high)
+    rangeSliderFinalGravity.setLowValue(recipe.finalGravityRange.low)
+    rangeSliderFinalGravity.setHighValue(recipe.finalGravityRange.high)
 
     rangeSliderSrmColor.setLowValue(recipe.srmColor.low)
     rangeSliderSrmColor.setHighValue(recipe.srmColor.high)
@@ -124,7 +124,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         keggingTempRangeDuration = labelButtonKeggingTempRangeDuration.value.value,
         pH = textFieldPh.double.format,
         originalGravityRange = DoubleRange( rangeSliderOriginalGravity.getLowValue, rangeSliderOriginalGravity.getHighValue ),
-        finalGravity = DoubleRange( rangeSliderFinalGravity.getLowValue, rangeSliderFinalGravity.getHighValue ),
+        finalGravityRange = DoubleRange( rangeSliderFinalGravity.getLowValue, rangeSliderFinalGravity.getHighValue ),
         srmColor = IntRange( rangeSliderSrmColor.getLowValue.toInt, rangeSliderSrmColor.getHighValue.toInt ),
         ibuBitterness = IntRange( rangeSliderIbuBitterness.getLowValue.toInt, rangeSliderIbuBitterness.getHighValue.toInt ),
         alcoholByVolume = DoubleRange( rangeSliderAlcoholByVolume.getLowValue, rangeSliderAlcoholByVolume.getHighValue ),
@@ -250,7 +250,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     setBlockIncrement(0.01)
 
   val labelFinalGravity = Label( context.labelFinalGravity )
-  val rangeSliderFinalGravity = new RangeSlider(1.000, 1.050, model.selectedRecipe.value.finalGravity.low, model.selectedRecipe.value.finalGravity.high):
+  val rangeSliderFinalGravity = new RangeSlider(1.000, 1.050, model.selectedRecipe.value.finalGravityRange.low, model.selectedRecipe.value.finalGravityRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(0.01)

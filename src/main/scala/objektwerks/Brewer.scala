@@ -291,7 +291,7 @@ final class Fermenter(listener: Listener):
           "Fermenting wort.",
           s"Fermenting within this temp range / duration: ${ferment.recipe.fermentingTempRangeDuration}",
           s"Potential fermentable extract: ${ferment.recipe.potentialFermentableExtract}",
-          s"Should have a final gravity within this range: ${ferment.recipe.finalGravity}"
+          s"Should have a final gravity within this range: ${ferment.recipe.finalGravityRange}"
         )
       )
     )
