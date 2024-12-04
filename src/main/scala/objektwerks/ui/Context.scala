@@ -73,7 +73,7 @@ final class Context(config: Config):
   val labelIbuBitternessRange = config.getString("label.ibuBitternessRange")
   val labelAlcoholByVolumeRange = config.getString("label.alcoholByVolumeRange")
   val labelAlcoholByWeightRange = config.getString("label.alcoholByWeightRange")
-  val labelCaloriesRange = config.getString("label.calorieRange")
+  val labelCalorieRange = config.getString("label.calorieRange")
   val labelMashEfficiencyRange = config.getString("label.mashEfficiencyRange")
   val labelBrewhouseEfficiencyRange = config.getString("label.brewhouseEfficiencyRange")
   val labelCreated = config.getString("label.created")
