@@ -103,6 +103,10 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     textFieldPotentialFermentableExtract.text = recipe.potentialFermentableExtract.toString
     textFieldPh.text = recipe.pH.toString
 
+  // Methods
+  def save(): Unit =
+    saveButton.disable = true
+
   // Controls
   val labelName = Label( context.labelName )
   val textFieldName = NonEmptyTextField()
@@ -308,8 +312,5 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
 
   content = new VBox:
     children = List( ControlGrid(controls), buttonBar )
-
-  def save(): Unit =
-    saveButton.disable = true
 
   VBox.setVgrow(this, Priority.Always)
