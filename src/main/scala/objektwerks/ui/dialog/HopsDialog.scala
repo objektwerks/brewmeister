@@ -75,13 +75,13 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     if selectedHop != null then select(selectedHop)
   }
 
-  val addButton = new Button:
+  val buttonAdd = new Button:
     graphic = context.addImageView
     tooltip = context.tooltipAdd
     disable = true
     onAction = { _ => add() }
 
-  val removeButton = new Button:
+  val buttonRemove = new Button:
     graphic = context.removeImageView
     tooltip = context.tooltipRemove
     disable = true
@@ -89,7 +89,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   val buttonBarHops = new HBox:
     spacing = 6
-    children = List(addButton, removeButton)
+    children = List(buttonAdd, buttonRemove)
 
   val vboxHops = new VBox:
     spacing = 6
