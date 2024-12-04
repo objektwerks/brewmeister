@@ -331,7 +331,6 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   )
 
   val controlsGrid = ControlGrid(controls)
-  HBox.setHgrow(controlsGrid, Priority.Always)
 
   val scrollPaneControls = new ScrollPane:
     content = controlsGrid
