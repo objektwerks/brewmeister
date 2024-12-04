@@ -361,7 +361,7 @@ final class Kegger(listener: Listener):
           "Kegging wort.",
           s"Conditioning within this temp range / duration: ${keg.recipe.keggingTempRangeDuration}",
           s"IBU hop bitterness should be within this range: ${keg.recipe.ibuBitternessRange}",
-          s"Alcohol by volume should be within this range: ${keg.recipe.alcoholByVolume}",
+          s"Alcohol by volume should be within this range: ${keg.recipe.alcoholByVolumeRange}",
           s"Alcohol by weight should be within this range: ${keg.recipe.alcoholByWeight}",
           s"Calories should be within this range: ${keg.recipe.calories}",
           s"Should have a brew efficiency within this range: ${keg.recipe.brewhouseEfficiency}"
