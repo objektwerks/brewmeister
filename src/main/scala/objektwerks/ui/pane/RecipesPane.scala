@@ -25,13 +25,13 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   }
 
   val buttonAdd = new Button:
-    graphic = context.addImageView
+    graphic = context.imageViewAdd
     tooltip = context.tooltipAdd
     disable = false
     onAction = { _ => add() }
 
   val buttonBrew = new Button:
-    graphic = context.bangImageView
+    graphic = context.imageViewBang
     tooltip = context.tooltipBrew
     disable = true
     onAction = { _ => brew() }

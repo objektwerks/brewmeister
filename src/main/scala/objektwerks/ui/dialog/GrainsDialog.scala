@@ -77,13 +77,13 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   }
 
   val buttonAdd = new Button:
-    graphic = context.addImageView
+    graphic = context.imageViewAdd
     tooltip = context.tooltipAdd
     disable = true
     onAction = { _ => add() }
 
   val buttonRemove = new Button:
-    graphic = context.minusImageView
+    graphic = context.imageViewMinus
     tooltip = context.tooltipRemove
     disable = true
     onAction = { _ => remove( listViewGrains.selectionModel().selectedItem.value ) }
@@ -132,7 +132,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   )
 
   val saveButton = new Button:
-    graphic = context.saveImageView
+    graphic = context.imageViewSave
     disable = true
     onAction = { _ => save() }
 

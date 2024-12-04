@@ -117,12 +117,12 @@ final class Context(config: Config):
   val tooltipRemove = config.getString("tooltip.remove")
   val tooltipBrew = config.getString("tooltip.brew")
 
-  def logoImageView = loadImageView("/image/logo.png")
-  def addImageView = loadImageView("/image/add.png")
-  def bangImageView = loadImageView("/image/bang.png")
-  def saveImageView = loadImageView("/image/save.png")
-  def plusImageView = loadImageView("/image/plus.png")
-  def minusImageView = loadImageView("/image/minus.png")
+  def imageViewLogo = loadImageView("/image/logo.png")
+  def imageViewAdd = loadImageView("/image/add.png")
+  def imageViewBang = loadImageView("/image/bang.png")
+  def imageViewSave = loadImageView("/image/save.png")
+  def imageViewPlus = loadImageView("/image/plus.png")
+  def imageViewMinus = loadImageView("/image/minus.png")
   def logoImage = new Image(Image.getClass.getResourceAsStream("/image/logo.png"))
 
   private def loadImageView(path: String): ImageView = new ImageView:
