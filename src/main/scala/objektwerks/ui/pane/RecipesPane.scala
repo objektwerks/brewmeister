@@ -18,9 +18,9 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     items = model.observableRecipes.sorted
   tableView.columnResizePolicy = TableView.ConstrainedResizePolicy
   tableView.selectionModel().selectionModeProperty.value = SelectionMode.Single
-  tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedItem) =>
-    if selectedItem != null then
-      model.selectedRecipe.value = selectedItem
+  tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedRecipe) =>
+    if selectedRecipe != null then
+      model.selectedRecipe.value = selectedRecipe
       simulateButton.disable = false
   }
 
