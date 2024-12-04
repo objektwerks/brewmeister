@@ -247,25 +247,25 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val rangeSliderOriginalGravity = new RangeSlider(1.000, 1.100, model.selectedRecipe.value.originalGravity.low, model.selectedRecipe.value.originalGravity.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
-    setBlockIncrement(0.10)
+    setBlockIncrement(0.01)
 
   val labelFinalGravity = Label( context.labelFinalGravity )
   val rangeSliderFinalGravity = new RangeSlider(1.000, 1.050, model.selectedRecipe.value.finalGravity.low, model.selectedRecipe.value.finalGravity.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
-    setBlockIncrement(0.10)
+    setBlockIncrement(0.01)
 
   val labelSrmColor = Label( context.labelSrmColor )
   val rangeSliderSrmColor = new RangeSlider(1, 80, model.selectedRecipe.value.srmColor.low, model.selectedRecipe.value.srmColor.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
-    setBlockIncrement(10)
+    setBlockIncrement(1)
 
   val labelIbuBitterness = Label( context.labelIbuBitterness )
   val rangeSliderIbuBitterness = new RangeSlider(1, 80, model.selectedRecipe.value.ibuBitterness.low, model.selectedRecipe.value.ibuBitterness.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
-    setBlockIncrement(10)
+    setBlockIncrement(1)
 
   val labelAlcoholByVolume = Label( context.labelAlcoholByVolume )
   val rangeSliderAlcoholByVolume = new RangeSlider(1.0, 12.0, model.selectedRecipe.value.alcoholByVolume.low, model.selectedRecipe.value.alcoholByVolume.high):
@@ -283,7 +283,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val rangeSliderCalories = new RangeSlider(50, 250, model.selectedRecipe.value.calories.low, model.selectedRecipe.value.calories.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
-    setBlockIncrement(50)
+    setBlockIncrement(25)
 
   val labelMashEfficiency = Label( context.labelMashEfficiency )
   val rangeSliderMashEfficiency = new RangeSlider(50, 100, model.selectedRecipe.value.mashEfficiency.low, model.selectedRecipe.value.mashEfficiency.high):
