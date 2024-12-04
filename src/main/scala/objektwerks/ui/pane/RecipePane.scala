@@ -72,6 +72,8 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
       s"${recipe.keggingTempRangeDuration.duration} ${recipe.keggingTempRangeDuration.unit.toString}"
     labelButtonKeggingTempRangeDuration.value = recipe.keggingTempRangeDuration
 
+    textFieldPh.text = recipe.pH.toString
+
     rangeSliderOriginalGravity.setLowValue(recipe.originalGravity.low)
     rangeSliderOriginalGravity.setHighValue(recipe.originalGravity.high)
 
@@ -101,7 +103,36 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
 
     textFieldPotentialMashExtract.text = recipe.potentialMashExtract.toString
     textFieldPotentialFermentableExtract.text = recipe.potentialFermentableExtract.toString
-    textFieldPh.text = recipe.pH.toString
+
+  def controlsToRecipe(recipe: Recipe): Recipe =
+      recipe.copy(
+        name = textFieldName.string,
+        style = textFieldStyle.string,
+        water = textFieldWater.string,
+        volume = labelButtonVolume.value.value,
+        grains = labelButtonGrains.value.value,
+        hops = labelButtonHops.value.value,
+        adjuncts = labelButtonAdjuncts.value.value,
+        yeasts = labelButtonYeasts.value.value,
+        mashingTempRangeDuration = labelButtonMashingTempRangeDuration.value.value,
+        potentialMashExtract = textFieldPotentialMashExtract.double.format,
+        boilingTempRangeDuration = labelButtonBoilingTempRangeDuration.value.value,
+        coolingTempRange = IntRange( rangeSliderCoolingTempRange.getLowValue.toInt, rangeSliderCoolingTempRange.getHighValue.toInt ),
+        fermentingTempRangeDuration = labelButtonFermentingTempRangeDuration.value.value,
+        potentialFermentableExtract = textFieldPotentialFermentableExtract.double.format,
+        conditioningTempRangeDuration = labelButtonConditioningTempRangeDuration.value.value,
+        keggingTempRangeDuration = labelButtonKeggingTempRangeDuration.value.value,
+        pH = textFieldPh.double.format,
+        originalGravity = DoubleRange( rangeSliderOriginalGravity.getLowValue, rangeSliderOriginalGravity.getHighValue ),
+        finalGravity = DoubleRange( rangeSliderFinalGravity.getLowValue, rangeSliderFinalGravity.getHighValue ),
+        srmColor = IntRange( rangeSliderSrmColor.getLowValue.toInt, rangeSliderSrmColor.getHighValue.toInt ),
+        ibuBitterness = IntRange( rangeSliderIbuBitterness.getLowValue.toInt, rangeSliderIbuBitterness.getHighValue.toInt ),
+        alcoholByVolume = DoubleRange( rangeSliderAlcoholByVolume.getLowValue, rangeSliderAlcoholByVolume.getHighValue ),
+        alcoholByWeight = DoubleRange( rangeSliderAlcoholByWeight.getLowValue, rangeSliderAlcoholByWeight.getHighValue ),
+        calories = IntRange( rangeSliderCalories.getLowValue.toInt, rangeSliderCalories.getHighValue.toInt ),
+        mashEfficiency = IntRange( rangeSliderMashEfficiency.getLowValue.toInt, rangeSliderMashEfficiency.getHighValue.toInt ),
+        brewhouseEfficiency = IntRange( rangeSliderBrewhouseEfficiency.getLowValue.toInt, rangeSliderBrewhouseEfficiency.getHighValue.toInt )
+      )
 
   // Methods
   def save(): Unit =
