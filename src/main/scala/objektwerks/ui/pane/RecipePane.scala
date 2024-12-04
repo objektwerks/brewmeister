@@ -95,8 +95,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     rangeSliderAlcoholByWeight.setLowValue(recipe.alcoholByWeightRange.low)
     rangeSliderAlcoholByWeight.setHighValue(recipe.alcoholByWeightRange.high)
 
-    rangeSliderCalories.setLowValue(recipe.calories.low)
-    rangeSliderCalories.setHighValue(recipe.calories.high)
+    rangeSliderCalories.setLowValue(recipe.calorieRange.low)
+    rangeSliderCalories.setHighValue(recipe.calorieRange.high)
 
     rangeSliderMashEfficiency.setLowValue(recipe.mashEfficiency.low)
     rangeSliderMashEfficiency.setHighValue(recipe.mashEfficiency.high)
@@ -129,7 +129,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         ibuBitternessRange = IntRange( rangeSliderIbuBitterness.getLowValue.toInt, rangeSliderIbuBitterness.getHighValue.toInt ),
         alcoholByVolumeRange = DoubleRange( rangeSliderAlcoholByVolume.getLowValue, rangeSliderAlcoholByVolume.getHighValue ),
         alcoholByWeightRange = DoubleRange( rangeSliderAlcoholByWeight.getLowValue, rangeSliderAlcoholByWeight.getHighValue ),
-        calories = IntRange( rangeSliderCalories.getLowValue.toInt, rangeSliderCalories.getHighValue.toInt ),
+        calorieRange = IntRange( rangeSliderCalories.getLowValue.toInt, rangeSliderCalories.getHighValue.toInt ),
         mashEfficiency = IntRange( rangeSliderMashEfficiency.getLowValue.toInt, rangeSliderMashEfficiency.getHighValue.toInt ),
         brewhouseEfficiency = IntRange( rangeSliderBrewhouseEfficiency.getLowValue.toInt, rangeSliderBrewhouseEfficiency.getHighValue.toInt )
       )
@@ -280,7 +280,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     setBlockIncrement(1.0)
 
   val labelCalories = Label( context.labelCalories )
-  val rangeSliderCalories = new RangeSlider(50, 250, model.selectedRecipe.value.calories.low, model.selectedRecipe.value.calories.high):
+  val rangeSliderCalories = new RangeSlider(50, 250, model.selectedRecipe.value.calorieRange.low, model.selectedRecipe.value.calorieRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(25)

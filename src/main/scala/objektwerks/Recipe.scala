@@ -33,7 +33,7 @@ object Recipe:
            ibuBitternessRange = IntRange(60, 75),
            alcoholByVolumeRange = DoubleRange(6.0, 7.0),
            alcoholByWeightRange = DoubleRange(5.8, 6.8),
-           calories = IntRange(180, 200),
+           calorieRange = IntRange(180, 200),
            mashEfficiency = IntRange(70, 80),
            brewhouseEfficiency = IntRange(72, 80),
            created = now())
@@ -62,7 +62,7 @@ final case class Recipe(name: String = "",
                         ibuBitternessRange: IntRange = IntRange(0, 0),
                         alcoholByVolumeRange: DoubleRange = DoubleRange(0.0, 0.0),
                         alcoholByWeightRange: DoubleRange = DoubleRange(0.0, 0.0),
-                        calories: IntRange = IntRange(0, 0),
+                        calorieRange: IntRange = IntRange(0, 0),
                         mashEfficiency: IntRange = IntRange(0, 0),
                         brewhouseEfficiency: IntRange = IntRange(0, 0),
                         created: String = now()) derives CanEqual, JsonSupport:
