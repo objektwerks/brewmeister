@@ -13,7 +13,7 @@ class BrewerTest extends AnyFunSuite with Matchers:
     store.listRecipes.length should be >= 1
 
     val listener = Listener()
-    Brewer.simulate(listener, recipe)
+    Brewer.brew(listener, recipe)
 
     val batch = listener.batch
     store.writeBatch(batch)

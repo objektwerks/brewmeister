@@ -82,7 +82,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     onAction = { _ => add() }
 
   val buttonRemove = new Button:
-    graphic = context.removeImageView
+    graphic = context.minusImageView
     tooltip = context.tooltipRemove
     disable = true
     onAction = { _ => remove( listViewHops.selectionModel().selectedItem.value ) }
