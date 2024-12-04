@@ -22,6 +22,7 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     recipeToControls(newRecipe)
   }
 
+  // Bindings
   def recipeToControls(recipe: Recipe): Unit =
     textFieldName.text = recipe.name
     textFieldStyle.text = recipe.style
@@ -101,6 +102,7 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     textFieldPotentialFermentableExtract.text = recipe.potentialFermentableExtract.toString
     textFieldPh.text = recipe.pH.toString
 
+  // Controls
   val labelName = Label( context.labelName )
   val textFieldName = NonEmptyTextField()
 
