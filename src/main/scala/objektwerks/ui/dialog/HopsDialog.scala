@@ -67,7 +67,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   // List
   val listViewHops = new ListView[Hop]:
-    prefHeight = 200
+    prefHeight = 100
     items = ObservableBuffer.from(updatedHops)
     cellFactory = (cell, hop) => cell.text = hop.name
 
