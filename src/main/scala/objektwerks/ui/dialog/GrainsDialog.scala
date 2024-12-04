@@ -77,7 +77,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   }
 
   val buttonAdd = new Button:
-    graphic = context.imageViewAdd
+    graphic = context.imageViewPlus
     tooltip = context.tooltipAdd
     disable = true
     onAction = { _ => add() }

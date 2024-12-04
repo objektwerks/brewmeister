@@ -118,7 +118,6 @@ final class Context(config: Config):
   val tooltipBrew = config.getString("tooltip.brew")
 
   def imageViewLogo = loadImageView("/image/logo.png")
-  def imageViewAdd = loadImageView("/image/add.png")
   def imageViewBang = loadImageView("/image/bang.png")
   def imageViewSave = loadImageView("/image/save.png")
   def imageViewPlus = loadImageView("/image/plus.png")

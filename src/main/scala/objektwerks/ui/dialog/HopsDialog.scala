@@ -76,7 +76,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   }
 
   val buttonAdd = new Button:
-    graphic = context.imageViewAdd
+    graphic = context.imageViewPlus
     tooltip = context.tooltipAdd
     disable = true
     onAction = { _ => add() }
