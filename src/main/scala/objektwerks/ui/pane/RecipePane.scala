@@ -57,8 +57,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
       s"${recipe.boilingTempRangeDuration.duration} ${recipe.boilingTempRangeDuration.unit.toString}"
     labelButtonBoilingTempRangeDuration.value = recipe.boilingTempRangeDuration
     
-    rangeSliderCoolingTempRange.setLowValue(recipe.coolingTempRange.low)
-    rangeSliderCoolingTempRange.setHighValue(recipe.coolingTempRange.high)
+    rangeSliderCoolingTemp.setLowValue(recipe.coolingTempRange.low)
+    rangeSliderCoolingTemp.setHighValue(recipe.coolingTempRange.high)
     
     labelButtonFermentingTempRangeDuration.text =
       s"${recipe.fermentingTempRangeDuration.tempRange.low} - ${recipe.fermentingTempRangeDuration.tempRange.high}, " +
@@ -117,7 +117,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         mashingTempRangeDuration = labelButtonMashingTempRangeDuration.value.value,
         potentialMashExtract = textFieldPotentialMashExtract.double.format,
         boilingTempRangeDuration = labelButtonBoilingTempRangeDuration.value.value,
-        coolingTempRange = IntRange( rangeSliderCoolingTempRange.getLowValue.toInt, rangeSliderCoolingTempRange.getHighValue.toInt ),
+        coolingTempRange = IntRange( rangeSliderCoolingTemp.getLowValue.toInt, rangeSliderCoolingTemp.getHighValue.toInt ),
         fermentingTempRangeDuration = labelButtonFermentingTempRangeDuration.value.value,
         potentialFermentableExtract = textFieldPotentialFermentableExtract.double.format,
         conditioningTempRangeDuration = labelButtonConditioningTempRangeDuration.value.value,
@@ -208,7 +208,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     }
 
   val labelCoolingTempRange = Label( context.labelCoolingTempRange )
-  val rangeSliderCoolingTempRange = new RangeSlider(67, 73, model.selectedRecipe.value.coolingTempRange.low, model.selectedRecipe.value.coolingTempRange.high):
+  val rangeSliderCoolingTemp = new RangeSlider(67, 73, model.selectedRecipe.value.coolingTempRange.low, model.selectedRecipe.value.coolingTempRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1)
@@ -312,7 +312,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     labelMashingTempRangeDuration -> labelButtonMashingTempRangeDuration,
     labelPotentialMashExtract -> textFieldPotentialMashExtract,
     labelBoilingTempRangeDuration -> labelButtonBoilingTempRangeDuration,
-    labelCoolingTempRange -> rangeSliderCoolingTempRange,
+    labelCoolingTempRange -> rangeSliderCoolingTemp,
     labelFermentingTempRangeDuration -> labelButtonFermentingTempRangeDuration,
     labelPotentialFermentableExtract -> textFieldPotentialFermentableExtract,
     labelConditioningTempRangeDuration -> labelButtonConditioningTempRangeDuration,
