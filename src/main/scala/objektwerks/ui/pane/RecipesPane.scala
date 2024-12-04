@@ -32,7 +32,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
 
   val simulateButton = new Button:
     graphic = context.bangImageView
-    tooltip = context.buttonSimulate
+    tooltip = context.buttonRun
     disable = true
     onAction = { _ => simulate() }
 

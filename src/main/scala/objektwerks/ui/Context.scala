@@ -10,9 +10,8 @@ final class Context(config: Config):
   val windowHeight = config.getDouble("window.height")
 
   val buttonAdd = config.getString("button.add")
-  val buttonEdit = config.getString("button.edit")
   val buttonSave = config.getString("button.save")
-  val buttonSimulate = config.getString("button.simulate")
+  val buttonRun = config.getString("button.run")
   val buttonRemove = config.getString("button.remove")
 
   val tabBatches = config.getString("tab.batches")
