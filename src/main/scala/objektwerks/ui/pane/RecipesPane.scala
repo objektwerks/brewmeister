@@ -34,7 +34,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     graphic = context.bangImageView
     tooltip = context.tooltipRun
     disable = true
-    onAction = { _ => simulate() }
+    onAction = { _ => run() }
 
   val buttonBar = new HBox:
     spacing = 6
@@ -57,5 +57,5 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     model.observableRecipes.add(0, Recipe())
     tableView.selectionModel().select(0)
 
-  def simulate(): Unit =
+  def run(): Unit =
     simulateButton.disable = true // TODO
