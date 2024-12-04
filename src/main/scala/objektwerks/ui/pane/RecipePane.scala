@@ -19,7 +19,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   // Model
   model.selectedRecipe.onChange { (_, _, newRecipe) =>
-    saveButton.disable = false
+    buttonSave.disable = false
     recipeToControls(newRecipe)
   }
 
@@ -136,7 +136,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   // Methods
   def save(): Unit =
-    saveButton.disable = true // TODO
+    buttonSave.disable = true // TODO
 
   // Controls
   val labelName = Label( context.labelName )
@@ -333,7 +333,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val scrollPaneControls = new ScrollPane:
     content = ControlGrid(controls)
 
-  val saveButton = new Button:
+  val buttonSave = new Button:
     graphic = context.saveImageView
     tooltip = context.tooltipSave
     disable = true
@@ -342,7 +342,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val buttonBar = new HBox:
     spacing = 6
     padding = Insets(3)
-    children = List(saveButton)
+    children = List(buttonSave)
 
   children = List(scrollPaneControls, buttonBar)
 
