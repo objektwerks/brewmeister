@@ -243,55 +243,55 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelPh = Label( context.labelPh )
   val textFieldPh = DoubleTextField()
 
-  val labelOriginalGravity = Label( context.labelOriginalGravityRange )
+  val labelOriginalGravityRange = Label( context.labelOriginalGravityRange )
   val rangeSliderOriginalGravity = new RangeSlider(1.000, 1.100, model.selectedRecipe.value.originalGravityRange.low, model.selectedRecipe.value.originalGravityRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(0.01)
 
-  val labelFinalGravity = Label( context.labelFinalGravityRange )
+  val labelFinalGravityRange = Label( context.labelFinalGravityRange )
   val rangeSliderFinalGravity = new RangeSlider(1.000, 1.050, model.selectedRecipe.value.finalGravityRange.low, model.selectedRecipe.value.finalGravityRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(0.01)
 
-  val labelSrmColor = Label( context.labelSrmColorRange )
+  val labelSrmColorRange = Label( context.labelSrmColorRange )
   val rangeSliderSrmColor = new RangeSlider(1, 80, model.selectedRecipe.value.srmColorRange.low, model.selectedRecipe.value.srmColorRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1)
 
-  val labelIbuBitterness = Label( context.labelIbuBitternessRange )
+  val labelIbuBitternessRange = Label( context.labelIbuBitternessRange )
   val rangeSliderIbuBitterness = new RangeSlider(1, 80, model.selectedRecipe.value.ibuBitternessRange.low, model.selectedRecipe.value.ibuBitternessRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1)
 
-  val labelAlcoholByVolume = Label( context.labelAlcoholByVolumeRange )
+  val labelAlcoholByVolumeRange = Label( context.labelAlcoholByVolumeRange )
   val rangeSliderAlcoholByVolume = new RangeSlider(1.0, 12.0, model.selectedRecipe.value.alcoholByVolumeRange.low, model.selectedRecipe.value.alcoholByVolumeRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1.0)
 
-  val labelAlcoholByWeight = Label( context.labelAlcoholByWeightRange )
+  val labelAlcoholByWeightRange = Label( context.labelAlcoholByWeightRange )
   val rangeSliderAlcoholByWeight = new RangeSlider(1.0, 12.0, model.selectedRecipe.value.alcoholByWeightRange.low, model.selectedRecipe.value.alcoholByWeightRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1.0)
 
-  val labelCalories = Label( context.labelCalorieRange )
+  val labelCalorieRange = Label( context.labelCalorieRange )
   val rangeSliderCalories = new RangeSlider(50, 250, model.selectedRecipe.value.calorieRange.low, model.selectedRecipe.value.calorieRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(25)
 
-  val labelMashEfficiency = Label( context.labelMashEfficiencyRange )
+  val labelMashEfficiencyRange = Label( context.labelMashEfficiencyRange )
   val rangeSliderMashEfficiency = new RangeSlider(50, 100, model.selectedRecipe.value.mashEfficiencyRange.low, model.selectedRecipe.value.mashEfficiencyRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(10)
 
-  val labelBrewhouseEfficiency = Label( context.labelBrewhouseEfficiencyRange )
+  val labelBrewhouseEfficiencyRange = Label( context.labelBrewhouseEfficiencyRange )
   val rangeSliderBrewhouseEfficiency = new RangeSlider(50, 100, model.selectedRecipe.value.brewhouseEfficiencyRange.low, model.selectedRecipe.value.brewhouseEfficiencyRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
@@ -318,15 +318,15 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     labelConditioningTempRangeDuration -> labelButtonConditioningTempRangeDuration,
     labelKeggingTempRangeDuration -> labelButtonKeggingTempRangeDuration,
     labelPh -> textFieldPh,
-    labelOriginalGravity -> rangeSliderOriginalGravity,
-    labelFinalGravity -> rangeSliderFinalGravity,
-    labelSrmColor -> rangeSliderSrmColor,
-    labelIbuBitterness -> rangeSliderIbuBitterness,
-    labelAlcoholByVolume -> rangeSliderAlcoholByVolume,
-    labelAlcoholByWeight -> rangeSliderAlcoholByWeight,
-    labelCalories -> rangeSliderCalories,
-    labelMashEfficiency -> rangeSliderMashEfficiency,
-    labelBrewhouseEfficiency -> rangeSliderBrewhouseEfficiency,
+    labelOriginalGravityRange -> rangeSliderOriginalGravity,
+    labelFinalGravityRange -> rangeSliderFinalGravity,
+    labelSrmColorRange -> rangeSliderSrmColor,
+    labelIbuBitternessRange -> rangeSliderIbuBitterness,
+    labelAlcoholByVolumeRange -> rangeSliderAlcoholByVolume,
+    labelAlcoholByWeightRange -> rangeSliderAlcoholByWeight,
+    labelCalorieRange -> rangeSliderCalories,
+    labelMashEfficiencyRange -> rangeSliderMashEfficiency,
+    labelBrewhouseEfficiencyRange -> rangeSliderBrewhouseEfficiency,
     labelCreated -> labelFieldCreated
   )
 
