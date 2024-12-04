@@ -101,8 +101,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     rangeSliderMashEfficiency.setLowValue(recipe.mashEfficiencyRange.low)
     rangeSliderMashEfficiency.setHighValue(recipe.mashEfficiencyRange.high)
 
-    rangeSliderBrewhouseEfficiency.setLowValue(recipe.brewhouseEfficiency.low)
-    rangeSliderBrewhouseEfficiency.setHighValue(recipe.brewhouseEfficiency.high)
+    rangeSliderBrewhouseEfficiency.setLowValue(recipe.brewhouseEfficiencyRange.low)
+    rangeSliderBrewhouseEfficiency.setHighValue(recipe.brewhouseEfficiencyRange.high)
 
   def controlsToRecipe(recipe: Recipe): Recipe =
       recipe.copy(
@@ -131,7 +131,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         alcoholByWeightRange = DoubleRange( rangeSliderAlcoholByWeight.getLowValue, rangeSliderAlcoholByWeight.getHighValue ),
         calorieRange = IntRange( rangeSliderCalories.getLowValue.toInt, rangeSliderCalories.getHighValue.toInt ),
         mashEfficiencyRange = IntRange( rangeSliderMashEfficiency.getLowValue.toInt, rangeSliderMashEfficiency.getHighValue.toInt ),
-        brewhouseEfficiency = IntRange( rangeSliderBrewhouseEfficiency.getLowValue.toInt, rangeSliderBrewhouseEfficiency.getHighValue.toInt )
+        brewhouseEfficiencyRange = IntRange( rangeSliderBrewhouseEfficiency.getLowValue.toInt, rangeSliderBrewhouseEfficiency.getHighValue.toInt )
       )
 
   // Methods
@@ -292,7 +292,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     setBlockIncrement(10)
 
   val labelBrewhouseEfficiency = Label( context.labelBrewhouseEfficiency )
-  val rangeSliderBrewhouseEfficiency = new RangeSlider(50, 100, model.selectedRecipe.value.brewhouseEfficiency.low, model.selectedRecipe.value.brewhouseEfficiency.high):
+  val rangeSliderBrewhouseEfficiency = new RangeSlider(50, 100, model.selectedRecipe.value.brewhouseEfficiencyRange.low, model.selectedRecipe.value.brewhouseEfficiencyRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(10)
