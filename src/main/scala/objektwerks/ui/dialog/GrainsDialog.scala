@@ -76,13 +76,13 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     if selectedGrain != null then select(selectedGrain)
   }
 
-  val addButton = new Button:
+  val buttonAdd = new Button:
     graphic = context.addImageView
     tooltip = context.tooltipAdd
     disable = true
     onAction = { _ => add() }
 
-  val removeButton = new Button:
+  val buttonRemove = new Button:
     graphic = context.removeImageView
     tooltip = context.tooltipRemove
     disable = true
@@ -90,7 +90,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   val buttonBarGrains = new HBox:
     spacing = 6
-    children = List(addButton, removeButton)
+    children = List(buttonAdd, buttonRemove)
 
   val vboxGrains = new VBox:
     spacing = 6
