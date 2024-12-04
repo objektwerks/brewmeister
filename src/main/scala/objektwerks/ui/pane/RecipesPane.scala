@@ -62,4 +62,5 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
         tableView.selectionModel().select(0)
       case _ =>
 
-  def simulate(): Unit = ??? // TODO
+  def simulate(): Unit =
+    simulateButton.disable = true // TODO
