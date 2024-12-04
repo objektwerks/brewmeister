@@ -18,7 +18,8 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
   padding = Insets(3)
 
   // Model
-  model.selectedRecipe.onChange { (_, _, newRecipe) => // REDO!
+  model.selectedRecipe.onChange { (_, _, newRecipe) =>
+    saveButton.disable = false
     recipeToControls(newRecipe)
   }
 
