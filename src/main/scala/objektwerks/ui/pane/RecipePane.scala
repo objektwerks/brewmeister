@@ -341,7 +341,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val buttonBar = new HBox:
     spacing = 6
-    padding = Insets(6)
+    padding = Insets(3)
     children = List(saveButton)
 
   children = List(scrollPaneControls, buttonBar)

@@ -38,7 +38,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
 
   val buttonBar = new HBox:
     spacing = 6
-    padding = Insets(6)
+    padding = Insets(3)
     children = List(addButton, simulateButton)
 
   val vbox = new VBox:
