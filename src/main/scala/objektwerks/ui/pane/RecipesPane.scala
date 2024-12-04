@@ -22,7 +22,6 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedItem) =>
     if selectedItem != null then
       model.selectedRecipe.value = selectedItem
-      editButton.disable = false
       simulateButton.disable = false
   }
 
@@ -31,12 +30,6 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     text = context.buttonAdd
     disable = false
     onAction = { _ => add() }
-
-  val editButton = new Button:
-    graphic = context.editImageView
-    text = context.buttonEdit
-    disable = true
-    onAction = { _ => edit() }
 
   val simulateButton = new Button:
     graphic = context.bangImageView
@@ -47,7 +40,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   val buttonBar = new HBox:
     spacing = 6
     padding = Insets(6)
-    children = List(addButton, editButton, simulateButton)
+    children = List(addButton, simulateButton)
 
   val vbox = new VBox:
     children = List(tableView, buttonBar)
@@ -67,15 +60,6 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
       case Some(recipe: Recipe) =>
         model.observableRecipes.add(0, recipe)
         tableView.selectionModel().select(0)
-      case _ =>
-
-  def edit(): Unit =
-    val selectedIndex = tableView.selectionModel().getSelectedIndex
-    val recipe = tableView.selectionModel().getSelectedItem.recipe
-    RecipeDialog(context, recipe).showAndWait() match
-      case Some(recipe: Recipe) =>
-        model.observableRecipes.update(selectedIndex, recipe)
-        tableView.selectionModel().select(selectedIndex)
       case _ =>
 
   def simulate(): Unit = ??? // TODO
