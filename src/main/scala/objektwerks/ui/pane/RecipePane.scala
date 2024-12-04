@@ -17,8 +17,6 @@ import objektwerks.ui.dialog.{AdjunctsDialog, GrainsDialog, HopsDialog, TempRang
 final class RecipePane(context: Context, model: Model) extends ScrollPane:
   padding = Insets(3)
 
-  val recipe = model.selectedRecipe // REDO!
-
   model.selectedRecipe.onChange { (_, _, newRecipe) => // REDO!
     textFieldName.text = newRecipe.name
     textFieldStyle.text = newRecipe.style
