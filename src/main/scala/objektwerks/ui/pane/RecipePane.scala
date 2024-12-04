@@ -48,6 +48,9 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
       s"${recipe.mashingTempRangeDuration.tempRange.low} - ${recipe.mashingTempRangeDuration.tempRange.high}, " +
       s"${recipe.mashingTempRangeDuration.duration} ${recipe.mashingTempRangeDuration.unit.toString}"
     labelButtonMashingTempRangeDuration.value = recipe.mashingTempRangeDuration
+
+    textFieldPotentialMashExtract.text = recipe.potentialMashExtract.toString
+    textFieldPotentialFermentableExtract.text = recipe.potentialFermentableExtract.toString
     
     labelButtonBoilingTempRangeDuration.text =
       s"${recipe.boilingTempRangeDuration.tempRange.low} - ${recipe.boilingTempRangeDuration.tempRange.high}, " +
@@ -100,9 +103,6 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
 
     rangeSliderBrewhouseEfficiency.setLowValue(recipe.brewhouseEfficiency.low)
     rangeSliderBrewhouseEfficiency.setHighValue(recipe.brewhouseEfficiency.high)
-
-    textFieldPotentialMashExtract.text = recipe.potentialMashExtract.toString
-    textFieldPotentialFermentableExtract.text = recipe.potentialFermentableExtract.toString
 
   def controlsToRecipe(recipe: Recipe): Recipe =
       recipe.copy(
