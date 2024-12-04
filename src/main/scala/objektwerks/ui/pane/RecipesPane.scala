@@ -21,25 +21,25 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedRecipe) =>
     if selectedRecipe != null then
       model.selectedRecipe.value = selectedRecipe
-      simulateButton.disable = false
+      buttonBrew.disable = false
   }
 
-  val addButton = new Button:
+  val buttonAdd = new Button:
     graphic = context.addImageView
     tooltip = context.tooltipAdd
     disable = false
     onAction = { _ => add() }
 
-  val simulateButton = new Button:
+  val buttonBrew = new Button:
     graphic = context.bangImageView
     tooltip = context.tooltipRun
     disable = true
-    onAction = { _ => run() }
+    onAction = { _ => brew() }
 
   val buttonBar = new HBox:
     spacing = 6
     padding = Insets(3)
-    children = List(addButton, simulateButton)
+    children = List(buttonAdd, buttonBrew)
 
   val vbox = new VBox:
     children = List(tableView, buttonBar)
@@ -57,5 +57,5 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     model.observableRecipes.add(0, Recipe())
     tableView.selectionModel().select(0)
 
-  def run(): Unit =
-    simulateButton.disable = true // TODO
+  def brew(): Unit =
+    buttonBrew.disable = true // TODO
