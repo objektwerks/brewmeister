@@ -92,8 +92,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     rangeSliderAlcoholByVolume.setLowValue(recipe.alcoholByVolumeRange.low)
     rangeSliderAlcoholByVolume.setHighValue(recipe.alcoholByVolumeRange.high)
 
-    rangeSliderAlcoholByWeight.setLowValue(recipe.alcoholByWeight.low)
-    rangeSliderAlcoholByWeight.setHighValue(recipe.alcoholByWeight.high)
+    rangeSliderAlcoholByWeight.setLowValue(recipe.alcoholByWeightRange.low)
+    rangeSliderAlcoholByWeight.setHighValue(recipe.alcoholByWeightRange.high)
 
     rangeSliderCalories.setLowValue(recipe.calories.low)
     rangeSliderCalories.setHighValue(recipe.calories.high)
@@ -128,7 +128,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         srmColorRange = IntRange( rangeSliderSrmColor.getLowValue.toInt, rangeSliderSrmColor.getHighValue.toInt ),
         ibuBitternessRange = IntRange( rangeSliderIbuBitterness.getLowValue.toInt, rangeSliderIbuBitterness.getHighValue.toInt ),
         alcoholByVolumeRange = DoubleRange( rangeSliderAlcoholByVolume.getLowValue, rangeSliderAlcoholByVolume.getHighValue ),
-        alcoholByWeight = DoubleRange( rangeSliderAlcoholByWeight.getLowValue, rangeSliderAlcoholByWeight.getHighValue ),
+        alcoholByWeightRange = DoubleRange( rangeSliderAlcoholByWeight.getLowValue, rangeSliderAlcoholByWeight.getHighValue ),
         calories = IntRange( rangeSliderCalories.getLowValue.toInt, rangeSliderCalories.getHighValue.toInt ),
         mashEfficiency = IntRange( rangeSliderMashEfficiency.getLowValue.toInt, rangeSliderMashEfficiency.getHighValue.toInt ),
         brewhouseEfficiency = IntRange( rangeSliderBrewhouseEfficiency.getLowValue.toInt, rangeSliderBrewhouseEfficiency.getHighValue.toInt )
@@ -274,7 +274,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     setBlockIncrement(1.0)
 
   val labelAlcoholByWeight = Label( context.labelAlcoholByWeight )
-  val rangeSliderAlcoholByWeight = new RangeSlider(1.0, 12.0, model.selectedRecipe.value.alcoholByWeight.low, model.selectedRecipe.value.alcoholByWeight.high):
+  val rangeSliderAlcoholByWeight = new RangeSlider(1.0, 12.0, model.selectedRecipe.value.alcoholByWeightRange.low, model.selectedRecipe.value.alcoholByWeightRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1.0)
