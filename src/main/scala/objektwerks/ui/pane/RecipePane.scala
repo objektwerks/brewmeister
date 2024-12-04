@@ -330,8 +330,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     labelCreated -> labelFieldCreated
   )
 
+  val controlsGrid = ControlGrid(controls)
+  HBox.setHgrow(controlsGrid, Priority.Always)
+
   val scrollPaneControls = new ScrollPane:
-    content = ControlGrid(controls)
+    content = controlsGrid
 
   val saveButton = new Button:
     graphic = context.saveImageView
