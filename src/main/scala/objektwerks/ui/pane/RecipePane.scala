@@ -14,7 +14,7 @@ import objektwerks.ui.control.{ControlGrid, LabelButton, NonEmptyTextField}
 import objektwerks.ui.control.DoubleTextField
 import objektwerks.ui.dialog.{AdjunctsDialog, GrainsDialog, HopsDialog, TempRangeDurationDialog, VolumeDialog, YeastsDialog}
 
-final class RecipePane(context: Context, model: Model) extends ScrollPane:
+final class RecipePane(context: Context, model: Model) extends VBox:
   padding = Insets(3)
 
   // Model
@@ -330,6 +330,9 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     labelCreated -> labelFieldCreated
   )
 
+  val scrollPaneControls = new ScrollPane:
+    content = ControlGrid(controls)
+
   val saveButton = new Button:
     graphic = context.saveImageView
     text = context.buttonSave
@@ -341,7 +344,6 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
     padding = Insets(6)
     children = List(saveButton)
 
-  content = new VBox:
-    children = List( ControlGrid(controls), buttonBar )
+  children = List(scrollPaneControls, buttonBar)
 
   VBox.setVgrow(this, Priority.Always)
