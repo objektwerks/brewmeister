@@ -7,7 +7,6 @@ import scalafx.scene.layout.{HBox, Priority, VBox}
 
 import objektwerks.Recipe
 import objektwerks.ui.{Context, Model}
-import objektwerks.ui.dialog.RecipeDialog
 
 final class RecipesPane(context: Context, model: Model) extends TabPane:
   val tableView = new TableView[Recipe]():
@@ -56,11 +55,8 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   VBox.setVgrow(this, Priority.Always)
 
   def add(): Unit =
-    RecipeDialog(context, model.selectedRecipe.value).showAndWait() match
-      case Some(recipe: Recipe) =>
-        model.observableRecipes.add(0, recipe)
-        tableView.selectionModel().select(0)
-      case _ =>
+    model.observableRecipes.add(0, Recipe())
+    tableView.selectionModel().select(0)
 
   def simulate(): Unit =
     simulateButton.disable = true // TODO
