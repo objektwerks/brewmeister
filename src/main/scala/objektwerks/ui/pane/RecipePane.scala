@@ -136,7 +136,7 @@ final class RecipePane(context: Context, model: Model) extends ScrollPane:
 
   // Methods
   def save(): Unit =
-    saveButton.disable = true
+    saveButton.disable = true // TODO
 
   // Controls
   val labelName = Label( context.labelName )
