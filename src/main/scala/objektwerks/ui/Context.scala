@@ -9,11 +9,6 @@ final class Context(config: Config):
   val windowWidth = config.getDouble("window.width")
   val windowHeight = config.getDouble("window.height")
 
-  val tooltipAdd = config.getString("tooltip.add")
-  val tooltipSave = config.getString("tooltip.save")
-  val tooltipRemove = config.getString("tooltip.remove")
-  val tooltipRun = config.getString("tooltip.run")
-
   val tabBatches = config.getString("tab.batches")
   val tabBatch = config.getString("tab.batch")
   val tabRecipes = config.getString("tab.recipes")
@@ -116,6 +111,11 @@ final class Context(config: Config):
   val labelConditionCompleted = config.getString("label.conditionCompleted")
   val labelKegStarted = config.getString("label.kegStarted")
   val labelKegCompleted = config.getString("label.kegCompleted")
+
+  val tooltipAdd = config.getString("tooltip.add")
+  val tooltipSave = config.getString("tooltip.save")
+  val tooltipRemove = config.getString("tooltip.remove")
+  val tooltipRun = config.getString("tooltip.run")
 
   def logoImageView = loadImageView("/image/logo.png")
   def addImageView = loadImageView("/image/add.png")
