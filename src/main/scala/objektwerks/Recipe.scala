@@ -87,6 +87,7 @@ final case class Recipe(name: String = "",
   val srmColorRangeProperty = ObjectProperty[IntRange](this, "srmColorRange", srmColorRange)
   val ibuBitternessRangeProperty = ObjectProperty[IntRange](this, "ibuBitternessRange", ibuBitternessRange)
   val alcoholByVolumeRangeProperty = ObjectProperty[DoubleRange](this, "alcoholByVolumeRange", alcoholByVolumeRange)
+  val alcoholByWeightRangeProperty = ObjectProperty[DoubleRange](this, "alcoholByWeightRange", alcoholByWeightRange)
 
   val recipe = this
 
