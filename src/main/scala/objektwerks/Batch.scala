@@ -103,6 +103,7 @@ final case class Batch(recipe: String = "",
   val logProperty = ObjectProperty[List[String]](this, "log", log)
   val startedProperty = ObjectProperty[String](this, "started", started)
 
+  val completedProperty = ObjectProperty[String](this, "completed", completed)
   val batch = this
 
 @upickle.implicits.serializeDefaults(true)
