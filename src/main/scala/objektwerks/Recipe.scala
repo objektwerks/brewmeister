@@ -77,6 +77,7 @@ final case class Recipe(name: String = "",
   val potentialMashExtractProperty = ObjectProperty[Double](this, "potentialMashExtract", potentialMashExtract)
   val boilingTempRangeDurationProperty = ObjectProperty[TempRangeDuration](this, "boilingTempRangeDuration", boilingTempRangeDuration)
   val coolingTempRangeProperty = ObjectProperty[IntRange](this, "coolingTempRange", coolingTempRange)
+  val fermentingTempRangeDurationProperty = ObjectProperty[TempRangeDuration](this, "fermentingTempRangeDuration", fermentingTempRangeDuration)
 
   val recipe = this
 
