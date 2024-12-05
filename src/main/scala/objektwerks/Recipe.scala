@@ -68,6 +68,8 @@ final case class Recipe(name: String = "",
                         created: String = now()) derives CanEqual, JsonSupport:
   val nameProperty = ObjectProperty[String](this, "name", name)
   val styleProperty = ObjectProperty[String](this, "style", style)
+  val waterProperty = ObjectProperty[String](this, "water", water)
+
   val recipe = this
 
 object MixinStep:
