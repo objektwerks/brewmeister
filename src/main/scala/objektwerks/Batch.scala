@@ -100,6 +100,7 @@ final case class Batch(recipe: String = "",
   val appearanceProperty = ObjectProperty[Int](this, "appearance", appearance)
   val aromaProperty = ObjectProperty[Int](this, "aroma", aroma)
   val tasteProperty = ObjectProperty[Int](this, "taste", taste)
+  val logProperty = ObjectProperty[List[String]](this, "log", log)
 
   val batch = this
 
