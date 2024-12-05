@@ -81,6 +81,7 @@ final case class Recipe(name: String = "",
   val potentialFermentableExtractProperty = ObjectProperty[Double](this, "potentialFermentableExtract", potentialFermentableExtract)
   val conditioningTempRangeDurationProperty = ObjectProperty[TempRangeDuration](this, "conditioningTempRangeDuration", conditioningTempRangeDuration)
   val keggingTempRangeDurationProperty = ObjectProperty[TempRangeDuration](this, "keggingTempRangeDuration", keggingTempRangeDuration)
+  val phProperty = ObjectProperty[Double](this, "pH", pH)
 
   val recipe = this
 
