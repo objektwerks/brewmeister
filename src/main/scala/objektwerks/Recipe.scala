@@ -84,6 +84,7 @@ final case class Recipe(name: String = "",
   val phProperty = ObjectProperty[Double](this, "pH", pH)
   val originalGravityRangeProperty = ObjectProperty[DoubleRange](this, "originalGravityRange", originalGravityRange)
   val finalGravityRangeProperty = ObjectProperty[DoubleRange](this, "finalGravityRange", finalGravityRange)
+  val srmColorRangeProperty = ObjectProperty[IntRange](this, "srmColorRange", srmColorRange)
 
   val recipe = this
 
