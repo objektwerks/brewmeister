@@ -90,6 +90,7 @@ final case class Recipe(name: String = "",
   val alcoholByWeightRangeProperty = ObjectProperty[DoubleRange](this, "alcoholByWeightRange", alcoholByWeightRange)
   val calorieRangeProperty = ObjectProperty[IntRange](this, "calorieRange", calorieRange)
   val mashEfficiencyRangeProperty = ObjectProperty[IntRange](this, "mashEfficiencyRange", mashEfficiencyRange)
+  val brewhouseEfficiencyRangeProperty = ObjectProperty[IntRange](this, "brewhouseEfficiencyRange", brewhouseEfficiencyRange)
 
   val recipe = this
 
