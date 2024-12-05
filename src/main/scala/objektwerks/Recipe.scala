@@ -69,6 +69,7 @@ final case class Recipe(name: String = "",
   val nameProperty = ObjectProperty[String](this, "name", name)
   val styleProperty = ObjectProperty[String](this, "style", style)
   val waterProperty = ObjectProperty[String](this, "water", water)
+  val grainsProperty = ObjectProperty[List[Grain]](this, "grains", grains)
 
   val recipe = this
 
