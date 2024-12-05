@@ -92,6 +92,7 @@ final case class Batch(recipe: String = "",
   val conditioningTempProperty = ObjectProperty[Int](this, "conditioningTemp", conditioningTemp)
   val srmColorProperty = ObjectProperty[Int](this, "srmColor", srmColor)
   val ibuBitternessProperty = ObjectProperty[Int](this, "ibuBitterness", ibuBitterness)
+  val alcoholByVolumeProperty = ObjectProperty[Double](this, "alcoholByVolume", alcoholByVolume)
 
   val batch = this
 
