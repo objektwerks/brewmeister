@@ -91,7 +91,7 @@ final case class Recipe(name: String = "",
   val calorieRangeProperty = ObjectProperty[IntRange](this, "calorieRange", calorieRange)
   val mashEfficiencyRangeProperty = ObjectProperty[IntRange](this, "mashEfficiencyRange", mashEfficiencyRange)
   val brewhouseEfficiencyRangeProperty = ObjectProperty[IntRange](this, "brewhouseEfficiencyRange", brewhouseEfficiencyRange)
-
+  val createdProperty = ObjectProperty[String](this, "created", created)
   val recipe = this
 
 object MixinStep:
