@@ -74,6 +74,7 @@ final case class Recipe(name: String = "",
   val adjunctsProperty = ObjectProperty[List[Adjunct]](this, "adjuncts", adjuncts)
   val yeastsProperty = ObjectProperty[List[Yeast]](this, "yeasts", yeasts)
   val mashingTempRangeDurationProperty = ObjectProperty[TempRangeDuration](this, "mashingTempRangeDuration", mashingTempRangeDuration)
+  val potentialMashExtractProperty = ObjectProperty[Double](this, "potentialMashExtract", potentialMashExtract)
 
   val recipe = this
 
