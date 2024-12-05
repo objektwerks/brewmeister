@@ -79,6 +79,8 @@ final case class Batch(recipe: String = "",
                        process: Process = Process(),
                        completed: String = "") derives CanEqual, JsonSupport:
   val nameProperty = ObjectProperty[String](this, "name", s"$recipe.$completed")
+  val styleProperty = ObjectProperty[String](this, "style", style)
+
   val batch = this
 
 @upickle.implicits.serializeDefaults(true)
