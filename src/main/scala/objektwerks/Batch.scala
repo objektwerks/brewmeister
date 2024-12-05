@@ -81,6 +81,7 @@ final case class Batch(recipe: String = "",
   val nameProperty = ObjectProperty[String](this, "name", s"$recipe.$completed")
   val styleProperty = ObjectProperty[String](this, "style", style)
   val volumeProperty = ObjectProperty[Volume](this, "volume", volume)
+  val mashingTempProperty = ObjectProperty[Int](this, "mashingTemp", mashingTemp)
 
   val batch = this
 
