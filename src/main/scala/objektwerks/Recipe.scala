@@ -166,4 +166,5 @@ final case class Yeast(name: String = Random.alphanumeric.take(7).mkString,
   val weightProperty = ObjectProperty[Double](this, "weight", weight)
   val unitProperty = ObjectProperty[UoM](this, "unit", unit)
   val mixinMinuteProperty = ObjectProperty[Int](this, "mixinMinute", mixinMinute)
+  val mixinStepProperty = ObjectProperty[MixinStep](this, "mixinStep", mixinStep)
   val yeast = this
