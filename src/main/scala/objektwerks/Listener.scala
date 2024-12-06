@@ -136,7 +136,7 @@ final class Listener:
           srmColor = srmColor,
           log = batch.log ++ log)
       case Kegging(log, started) =>
-        batch = batch.copy(process = batch.process.copy(kegStarted = started),
+        batch = batch.copy(process = batch.process.copy(keggingStarted = started),
           log = batch.log ++ log)
       case Kegged(ibuBitterness,
       alcoholByVolume,
@@ -157,7 +157,7 @@ final class Listener:
           aroma = aroma,
           taste = taste,
           log = batch.log ++ log)
-        batch = batch.copy(process = batch.process.copy(kegCompleted = completed))
+        batch = batch.copy(process = batch.process.copy(keggingCompleted = completed))
       case KeggingTempBrewhouseEfficiencyLogged(brewhouseEfficiency,
       log,
       completed) =>
