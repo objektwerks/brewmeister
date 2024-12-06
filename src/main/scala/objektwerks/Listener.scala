@@ -124,10 +124,10 @@ final class Listener:
           finalGravity = finalGravity,
           log = batch.log ++ log)
       case Conditioning(log, started) =>
-        batch = batch.copy(process = batch.process.copy(conditionStarted = started),
+        batch = batch.copy(process = batch.process.copy(conditioningStarted = started),
           log = batch.log ++ log)
       case Conditioned(log, completed) =>
-        batch = batch.copy(process = batch.process.copy(conditionCompleted = completed),
+        batch = batch.copy(process = batch.process.copy(conditioningCompleted = completed),
           log = batch.log ++ log)
       case ConditioningTempSrmColorLogged(conditioningTemp,
       srmColor,
