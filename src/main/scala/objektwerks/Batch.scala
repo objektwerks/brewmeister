@@ -135,3 +135,4 @@ final case class Process(sanitizeStarted: String = "",
                          kegCompleted: String = "") derives CanEqual, JsonSupport:
   val sanitizeStartedProperty = ObjectProperty[String](this, "sanitizeStarted", sanitizeStarted)
   val sanitizeCompletedProperty = ObjectProperty[String](this, "sanitizeCompleted", sanitizeCompleted)
+  val process = this
