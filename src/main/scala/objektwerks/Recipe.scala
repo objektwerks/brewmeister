@@ -122,7 +122,8 @@ final case class Recipe(name: String = "",
       alcoholByWeightRange = alcoholByWeightRangeProperty.value,
       calorieRange = calorieRangeProperty.value,
       mashEfficiencyRange = mashEfficiencyRangeProperty.value,
-      brewhouseEfficiencyRange = brewhouseEfficiencyRangeProperty.value
+      brewhouseEfficiencyRange = brewhouseEfficiencyRangeProperty.value,
+      created = createdProperty.value
     )
 
 object MixinStep:
