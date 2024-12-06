@@ -148,6 +148,7 @@ final case class Adjunct(name: String = Random.alphanumeric.take(7).mkString,
                          mixinMinute: Int = 1,
                          mixinStep: MixinStep = MixinStep.Mashing) derives CanEqual, JsonSupport: // or Boiling or Conditioning
   val nameProperty = ObjectProperty[String](this, "name", name)
+  val weightProperty = ObjectProperty[Double](this, "weight", weight)
   val adjunct = this
 
 object Yeast:
