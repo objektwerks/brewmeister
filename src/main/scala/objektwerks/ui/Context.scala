@@ -112,6 +112,9 @@ final class Context(config: Config):
   val labelKegStarted = config.getString("label.kegStarted")
   val labelKegCompleted = config.getString("label.kegCompleted")
 
+  val menuMenu = config.getString("menu.menu")
+  val menuExit = config.getString("menu.exit")
+
   val tooltipAdd = config.getString("tooltip.add")
   val tooltipSave = config.getString("tooltip.save")
   val tooltipRemove = config.getString("tooltip.remove")
