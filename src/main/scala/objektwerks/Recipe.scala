@@ -163,3 +163,4 @@ final case class Yeast(name: String = Random.alphanumeric.take(7).mkString,
                        mixinMinute: Int = 1,
                        mixinStep: MixinStep = MixinStep.Fermenting) derives CanEqual, JsonSupport:
   val nameProperty = ObjectProperty[String](this, "name", name)
+  val yeast = this
