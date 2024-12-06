@@ -1,12 +1,10 @@
 * {
   -fx-text-fill: navy;
 }
-
 .label {
   -fx-font-weight: normal;
 }
-
 .tooltip {
   -fx-show-delay: 100ms;
-  -fx-show-duration: 6s
+  -fx-show-duration: 6s;
 }
