@@ -119,7 +119,10 @@ final case class Recipe(name: String = "",
       srmColorRange = srmColorRangeProperty.value,
       ibuBitternessRange = ibuBitternessRangeProperty.value,
       alcoholByVolumeRange = alcoholByVolumeRangeProperty.value,
-      alcoholByWeightRange = alcoholByWeightRangeProperty.value
+      alcoholByWeightRange = alcoholByWeightRangeProperty.value,
+      calorieRange = calorieRangeProperty.value,
+      mashEfficiencyRange = mashEfficiencyRangeProperty.value,
+      brewhouseEfficiencyRange = brewhouseEfficiencyRangeProperty.value
     )
 
 object MixinStep:
