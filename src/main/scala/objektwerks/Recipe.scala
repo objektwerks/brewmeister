@@ -118,7 +118,8 @@ final case class Recipe(name: String = "",
       finalGravityRange = finalGravityRangeProperty.value,
       srmColorRange = srmColorRangeProperty.value,
       ibuBitternessRange = ibuBitternessRangeProperty.value,
-      
+      alcoholByVolumeRange = alcoholByVolumeRangeProperty.value,
+      alcoholByWeightRange = alcoholByWeightRangeProperty.value
     )
 
 object MixinStep:
