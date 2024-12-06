@@ -141,5 +141,7 @@ final case class Process(sanitizeStarted: String = "",
   val maltCompletedProperty = ObjectProperty[String](this, "maltCompleted", maltCompleted)
   val millStartedProperty = ObjectProperty[String](this, "millStarted", millStarted)
   val millCompletedProperty = ObjectProperty[String](this, "millCompleted", millCompleted) 
+  val mashStartedProperty = ObjectProperty[String](this, "mashStarted", mashStarted)
+  val mashCompletedProperty = ObjectProperty[String](this, "mashCompleted", mashCompleted)
 
   val process = this
