@@ -40,10 +40,10 @@ final class Listener:
         batch = batch.copy(process = batch.process.copy(sanitizingCompleted = completed),
           log = batch.log ++ log)
       case Preparing(log, started) =>
-        batch = batch.copy(process = batch.process.copy(prepareStarted = started),
+        batch = batch.copy(process = batch.process.copy(preparingStarted = started),
           log = batch.log ++ log)
       case Prepared(recipe, style, volume, log, completed) =>
-        batch = batch.copy(process = batch.process.copy(prepareCompleted = completed),
+        batch = batch.copy(process = batch.process.copy(preparingCompleted = completed),
           recipe = recipe,
           style = style,
           volume = volume,
