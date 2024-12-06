@@ -25,7 +25,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     textFieldName.text = hop.name
     textFieldWeight.text = hop.weight.toString
     textFieldVolume.text = hop.volume.toString
-    choiceBoxUnit.value = hop.unit.toString
+    choiceBoxVolumeUnit.value = hop.volumeUnit.toString
     textFieldAlphaAcid.text = hop.alphaAcid.toString
     textFieldMixinMinute.text = hop.mixinMinute.toString
     choiceBoxMixinStep.value = hop.mixinStep.toString
@@ -35,7 +35,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     textFieldName.text = ""
     textFieldWeight.text = ""
     textFieldVolume.text = ""
-    choiceBoxUnit.value = ""
+    choiceBoxVolumeUnit.value = ""
     textFieldAlphaAcid.text = ""
     textFieldMixinMinute.text = ""
     choiceBoxMixinStep.value = ""
@@ -107,8 +107,8 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val labelVolume = Label(context.labelVolume)
   val textFieldVolume = DoubleTextField()
 
-  val labelUnit = Label(context.labelUnit)
-  val choiceBoxUnit = new ChoiceBox[String]:
+  val labelVolumeUnit = Label(context.labelUnit)
+  val choiceBoxVolumeUnit = new ChoiceBox[String]:
   	items = ObservableBuffer.from( UoM.toList )
 
   val labelAlphaAcid = Label(context.labelAlphaAcid)
@@ -125,7 +125,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     labelName -> textFieldName,
     labelWeight -> textFieldWeight,
     labelVolume -> textFieldVolume,
-    labelUnit -> choiceBoxUnit,
+    labelVolumeUnit -> choiceBoxVolumeUnit,
     labelAlphaAcid -> textFieldAlphaAcid,
     labelMixinMinute -> textFieldMixinMinute,
     labelMixinStep -> choiceBoxMixinStep

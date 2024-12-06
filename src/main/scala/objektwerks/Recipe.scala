@@ -15,7 +15,7 @@ object Recipe:
            water = "spring",
            volume = Volume(5.0, UoM.gl),
            grains = List( Grain("pale ale", 4.0, UoM.lb, 6.0, 1.8, 0) ),
-           hops = List( Hop("chinook", 2.0, 10.0, UoM.oz, 13.0, 30) ),
+           hops = List( Hop("chinook", 2.0, UoM.oz, 10.0, UoM.oz, 13.0, 30) ),
            adjuncts = List.empty[Adjunct],
            yeasts = List( Yeast("Wyeast American Ale 1056", 5.0, UoM.oz, 0) ),
            mashingTempRangeDuration = TempRangeDuration( IntRange(148, 152), 60, UoT.minutes ),
@@ -125,15 +125,17 @@ object Hop:
 
 final case class Hop(name: String = Random.alphanumeric.take(7).mkString,
                      weight: Double = 1.0,
+                     weightUnit: UoM = UoM.oz,
                      volume: Double = 1.0,
-                     unit: UoM = UoM.oz,
+                     volumeUnit: UoM = UoM.oz,
                      alphaAcid: Double = 1.0,
                      mixinMinute: Int = 1,
                      mixinStep: MixinStep = MixinStep.Boiling) derives CanEqual, JsonSupport: // or Whirlpooling or Conditioning
   val nameProperty = ObjectProperty[String](this, "name", name)
   val weightProperty = ObjectProperty[Double](this, "weight", weight)
+  val weightUnitProperty = ObjectProperty[UoM](this, "weightUnit", weightUnit)
   val volumeProperty = ObjectProperty[Double](this, "volume", volume)
-  val unitProperty = ObjectProperty[UoM](this, "unit", unit)
+  val volumeUnitProperty = ObjectProperty[UoM](this, "volumeUnit", volumeUnit)
   val alphaAcidProperty = ObjectProperty[Double](this, "alphaAcid", alphaAcid)
   val mixinMinuteProperty = ObjectProperty[Int](this, "mixinMinute", mixinMinute)
   val mixinStepProperty = ObjectProperty[MixinStep](this, "mixinStep", mixinStep)
