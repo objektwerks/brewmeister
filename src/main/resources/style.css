@@ -1,3 +1,7 @@
-.table-view .column-header .label {
+.label {
   -fx-font-weight: normal;
+}
+
+.text {
+  -fx-text-fill: navy;
 }
