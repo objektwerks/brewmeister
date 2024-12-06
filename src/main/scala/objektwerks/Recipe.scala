@@ -133,6 +133,7 @@ final case class Hop(name: String = Random.alphanumeric.take(7).mkString,
   val nameProperty = ObjectProperty[String](this, "name", name)
   val weightProperty = ObjectProperty[Double](this, "weight", weight)
   val volumeProperty = ObjectProperty[Double](this, "volume", volume)
+  val unitProperty = ObjectProperty[UoM](this, "unit", unit)
   val hop = this
 
 object Adjunct:
