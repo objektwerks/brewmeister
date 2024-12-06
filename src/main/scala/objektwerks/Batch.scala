@@ -107,8 +107,8 @@ final case class Batch(recipe: String = "",
   val batch = this
 
 @upickle.implicits.serializeDefaults(true)
-final case class Process(sanitizeStarted: String = "",
-                         sanitizeCompleted: String = "",
+final case class Process(sanitizingStarted: String = "",
+                         sanitizingCompleted: String = "",
                          prepareStarted: String = "",
                          prepareCompleted: String = "",
                          maltStarted: String = "",
@@ -133,8 +133,8 @@ final case class Process(sanitizeStarted: String = "",
                          conditionCompleted: String = "",
                          kegStarted: String = "",
                          kegCompleted: String = "") derives CanEqual, JsonSupport:
-  val sanitizeStartedProperty = ObjectProperty[String](this, "sanitizeStarted", sanitizeStarted)
-  val sanitizeCompletedProperty = ObjectProperty[String](this, "sanitizeCompleted", sanitizeCompleted)
+  val sanitizingStartedProperty = ObjectProperty[String](this, "sanitizingStarted", sanitizingStarted)
+  val sanitizingCompletedProperty = ObjectProperty[String](this, "sanitizingCompleted", sanitizingCompleted)
   val prepareStartedProperty = ObjectProperty[String](this, "prepareStarted", prepareStarted)
   val prepareCompletedProperty = ObjectProperty[String](this, "prepareCompleted", prepareCompleted)
   val maltStartedProperty = ObjectProperty[String](this, "maltStarted", maltStarted)
