@@ -107,7 +107,10 @@ final case class Recipe(name: String = "",
       yeasts = yeastsProperty.value,
       mashingTempRangeDuration = mashingTempRangeDurationProperty.value,
       potentialMashExtract = potentialMashExtractProperty.value,
-      boilingTempRangeDuration = boilingTempRangeDurationProperty.value
+      boilingTempRangeDuration = boilingTempRangeDurationProperty.value,
+      coolingTempRange = coolingTempRangeProperty.value,
+      fermentingTempRangeDuration = fermentingTempRangeDurationProperty.value,
+      potentialFermentableExtract = potentialFermentableExtractProperty.value
     )
 
 object MixinStep:
