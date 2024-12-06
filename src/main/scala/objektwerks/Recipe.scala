@@ -129,7 +129,9 @@ final case class Hop(name: String = Random.alphanumeric.take(7).mkString,
                      unit: UoM = UoM.oz,
                      alphaAcid: Double = 1.0,
                      mixinMinute: Int = 1,
-                     mixinStep: MixinStep = MixinStep.Boiling) derives CanEqual, JsonSupport // or Whirlpooling or Conditioning
+                     mixinStep: MixinStep = MixinStep.Boiling) derives CanEqual, JsonSupport: // or Whirlpooling or Conditioning
+  val nameProperty = ObjectProperty[String](this, "name", name)
+
 object Adjunct:
   given Ordering[Adjunct] = Ordering.by[Adjunct, String](a => a.name)
 
