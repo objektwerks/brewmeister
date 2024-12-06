@@ -130,7 +130,11 @@ final case class Batch(recipe: String = "",
       brewhouseEfficiency = brewhouseEfficiencyProperty.value,
       appearance = appearanceProperty.value,
       aroma = aromaProperty.value,
-      taste = tasteProperty.value
+      taste = tasteProperty.value,
+      log = logProperty.value,
+      started = startedProperty.value,
+      process = processProperty.value,
+      completed = completedProperty.value
     )
 
 @upickle.implicits.serializeDefaults(true)
