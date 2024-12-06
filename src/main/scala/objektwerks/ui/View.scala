@@ -16,11 +16,11 @@ final class View(context: Context, model: Model):
   splitPane.setDividerPositions(0.40, 0.60)
   VBox.setVgrow(splitPane, Priority.Always)
 
-  val rootBox = new VBox:
+  val vboxRoot = new VBox:
     prefWidth = context.windowWidth
     prefHeight = context.windowHeight
     children = List(menu, splitPane)
 
   val scene = new Scene:
-    root = rootBox
+    root = vboxRoot
     stylesheets = List("/style.css")
