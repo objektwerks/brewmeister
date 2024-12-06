@@ -128,6 +128,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
     labelWeight -> textFieldWeight,
+    labelWeightUnit -> choiceBoxWeightUnit,
     labelVolume -> textFieldVolume,
     labelVolumeUnit -> choiceBoxVolumeUnit,
     labelAlphaAcid -> textFieldAlphaAcid,
