@@ -1,5 +1,6 @@
 .label {
   -fx-font-weight: normal;
+  -fx-text-fill: navy;
 }
 
 .text {
