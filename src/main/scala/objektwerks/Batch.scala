@@ -125,7 +125,9 @@ final case class Batch(recipe: String = "",
       ibuBitterness = ibuBitternessProperty.value,
       alcoholByVolume = alcoholByVolumeProperty.value,
       alcoholByWeight = alcoholByWeightProperty.value,
-      calories = caloriesProperty.value
+      calories = caloriesProperty.value,
+      keggingTemp = keggingTempProperty.value,
+      brewhouseEfficiency = brewhouseEfficiencyProperty.value
     )
 
 @upickle.implicits.serializeDefaults(true)
