@@ -116,6 +116,7 @@ final case class Grain(name: String = Random.alphanumeric.take(7).mkString,
   val unitProperty = ObjectProperty[UoM](this, "unit", unit)
   val colorProperty = ObjectProperty[Double](this, "color", color)
   val lovibondProperty = ObjectProperty[Double](this, "lovibond", lovibond)
+  val mixinMinuteProperty = ObjectProperty[Int](this, "mixinMinute", mixinMinute)
   val grain = this
 
 object Hop:
