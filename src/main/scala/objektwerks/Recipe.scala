@@ -113,6 +113,7 @@ final case class Grain(name: String = Random.alphanumeric.take(7).mkString,
                        mixinStep: MixinStep = MixinStep.Mashing) derives CanEqual, JsonSupport:
   val nameProperty = ObjectProperty[String](this, "name", name)
   val weightProperty = ObjectProperty[Double](this, "weight", weight)
+  val unitProperty = ObjectProperty[UoM](this, "unit", unit)
   val grain = this
 
 object Hop:
