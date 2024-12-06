@@ -151,5 +151,7 @@ final case class Process(sanitizeStarted: String = "",
   val boilCompletedProperty = ObjectProperty[String](this, "boilCompleted", boilCompleted)
   val coolStartedProperty = ObjectProperty[String](this, "coolStarted", coolStarted)
   val coolCompletedProperty = ObjectProperty[String](this, "coolCompleted", coolCompleted)
+  val whirlpoolStartedProperty = ObjectProperty[String](this, "whirlpoolStarted", whirlpoolStarted)
+  val whirlpoolCompletedProperty = ObjectProperty[String](this, "whirlpoolCompleted", whirlpoolCompleted)
   
   val process = this
