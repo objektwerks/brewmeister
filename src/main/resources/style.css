@@ -1,8 +1,11 @@
-.label {
-  -fx-font-weight: normal;
+* {
   -fx-text-fill: navy;
 }
 
-.text {
-  -fx-text-fill: navy;
+.label {
+  -fx-font-weight: normal;
+}
+
+.table-view .column-header .label {
+  -fx-font-weight: normal;
 }
