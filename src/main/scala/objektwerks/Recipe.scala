@@ -110,7 +110,9 @@ final case class Grain(name: String = Random.alphanumeric.take(7).mkString,
                        color: Double = 1.0,
                        lovibond: Double = 1.0,
                        mixinMinute: Int = 1,
-                       mixinStep: MixinStep = MixinStep.Mashing) derives CanEqual, JsonSupport
+                       mixinStep: MixinStep = MixinStep.Mashing) derives CanEqual, JsonSupport:
+  val nameProperty = ObjectProperty[String](this, "name", name)
+
 
 object Hop:
   given Ordering[Hop] = Ordering.by[Hop, String](h => h.name)
