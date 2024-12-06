@@ -150,6 +150,7 @@ final case class Adjunct(name: String = Random.alphanumeric.take(7).mkString,
   val nameProperty = ObjectProperty[String](this, "name", name)
   val weightProperty = ObjectProperty[Double](this, "weight", weight)
   val unitProperty = ObjectProperty[UoM](this, "unit", unit)
+  val mixinMinuteProperty = ObjectProperty[Int](this, "mixinMinute", mixinMinute)
   val adjunct = this
 
 object Yeast:
