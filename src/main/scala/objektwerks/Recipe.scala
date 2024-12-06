@@ -95,6 +95,13 @@ final case class Recipe(name: String = "",
   val createdProperty = ObjectProperty[String](this, "created", created)
   val recipe = this
 
+  def propertiesToRecipe(): Recipe =
+    Recipe(
+      name = nameProperty.value,
+      style = styleProperty.value,
+      water = waterProperty.value
+    )
+
 object MixinStep:
   def toList: List[String] = MixinStep.values.map(ms => ms.toString).toList
 
