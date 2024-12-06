@@ -116,7 +116,10 @@ final case class Batch(recipe: String = "",
       pH = phProperty.value,
       boilingTemp = boilingTempProperty.value,
       coolingTemp = coolingTempProperty.value,
-      mashEfficiency = mashEfficiencyProperty.value
+      mashEfficiency = mashEfficiencyProperty.value,
+      originalGravity = originalGravityProperty.value,
+      fermentingTemp = fermentingTempProperty.value,
+      finalGravity = finalGravityProperty.value
     )
 
 @upickle.implicits.serializeDefaults(true)
