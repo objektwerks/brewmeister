@@ -99,7 +99,12 @@ final case class Recipe(name: String = "",
     Recipe(
       name = nameProperty.value,
       style = styleProperty.value,
-      water = waterProperty.value
+      water = waterProperty.value,
+      volume = volumeProperty.value,
+      grains = grainsProperty.value,
+      hops = hopsProperty.value,
+      adjuncts = adjunctsProperty.value,
+      yeasts = yeastsProperty.value
     )
 
 object MixinStep:
