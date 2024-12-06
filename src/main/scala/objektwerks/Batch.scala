@@ -122,7 +122,10 @@ final case class Batch(recipe: String = "",
       finalGravity = finalGravityProperty.value,
       conditioningTemp = conditioningTempProperty.value,
       srmColor = srmColorProperty.value,
-      ibuBitterness = ibuBitternessProperty.value
+      ibuBitterness = ibuBitternessProperty.value,
+      alcoholByVolume = alcoholByVolumeProperty.value,
+      alcoholByWeight = alcoholByWeightProperty.value,
+      calories = caloriesProperty.value
     )
 
 @upickle.implicits.serializeDefaults(true)
