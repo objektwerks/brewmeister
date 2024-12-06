@@ -92,10 +92,10 @@ final class Listener:
         batch = batch.copy(process = batch.process.copy(boilingCompleted = completed),
           log = batch.log ++ log)
       case Cooling(log, started) =>
-        batch = batch.copy(process = batch.process.copy(coolStarted = started),
+        batch = batch.copy(process = batch.process.copy(coolingStarted = started),
           log = batch.log ++ log)
       case Cooled(log, completed) =>
-        batch = batch.copy(process = batch.process.copy(coolCompleted = completed),
+        batch = batch.copy(process = batch.process.copy(coolingCompleted = completed),
           log = batch.log ++ log)
       case Whirlpooling(log, started) =>
         batch = batch.copy(process = batch.process.copy(whirlpoolStarted = started),
