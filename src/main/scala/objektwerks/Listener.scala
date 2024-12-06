@@ -112,10 +112,10 @@ final class Listener:
           originalGravity = originalGravity,
           log = batch.log ++ log)
       case Fermenting(log, started) =>
-        batch = batch.copy(process = batch.process.copy(fermentStarted = started),
+        batch = batch.copy(process = batch.process.copy(fermentingStarted = started),
           log = batch.log ++ log)
       case Fermented(log, completed) =>
-        batch = batch.copy(process = batch.process.copy(fermentCompleted = completed),
+        batch = batch.copy(process = batch.process.copy(fermentingCompleted = completed),
           log = batch.log ++ log)
       case FermentingTempFinalGravityLogged(fermentingTemp,
       finalGravity,
