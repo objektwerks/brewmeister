@@ -104,6 +104,10 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val labelWeight = Label(context.labelWeight)
   val textFieldWeight = DoubleTextField()
 
+  val labelWeightUnit = Label(context.labelUnit)
+  val choiceBoxWeightUnit = new ChoiceBox[String]:
+  	items = ObservableBuffer.from( UoM.toList )
+
   val labelVolume = Label(context.labelVolume)
   val textFieldVolume = DoubleTextField()
 
