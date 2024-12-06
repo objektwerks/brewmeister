@@ -2,15 +2,15 @@ package objektwerks.ui
 
 import scalafx.Includes._
 import scalafx.event.ActionEvent
-import scalafx.scene.control.{Menu, MenuBar, MenuItem}
+import scalafx.scene.control.{Menu => MenuRoot, MenuBar, MenuItem}
 
 final class Menu(context: Context) extends MenuBar:
   val menuItemExit = new MenuItem:
-    text = context.labelAdjuncts
+    text = context.menuExit
     onAction = (_: ActionEvent) => System.exit(0)
 
-  val menu = new Menu():
-    text = context.labelAdjuncts
+  val menuRoot = new MenuRoot():
+    text = context.menuMenu
     items = List(menuItemExit)
 
-  menus = List(menu)
+  menus = List(menuRoot)
