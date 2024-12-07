@@ -192,7 +192,7 @@ final case class Hop(name: String = Random.alphanumeric.take(7).mkString,
       volumeUnit = volumeUnitProperty.value,
       alphaAcid = alphaAcidProperty.value,
       mixinMinute = mixinMinuteProperty.value,
-
+      mixinStep = mixinStepProperty.value
     )
 
 object Adjunct:
