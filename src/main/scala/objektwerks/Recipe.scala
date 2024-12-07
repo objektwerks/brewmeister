@@ -216,7 +216,7 @@ final case class Adjunct(name: String = Random.alphanumeric.take(7).mkString,
       weight = weightProperty.value,
       unit = unitProperty.value,
       mixinMinute = mixinMinuteProperty.value,
-
+      mixinStep = mixinStepProperty.value
     )
 
 object Yeast:
