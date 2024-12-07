@@ -187,6 +187,7 @@ final case class Hop(name: String = Random.alphanumeric.take(7).mkString,
     Hop(
       name = nameProperty.value,
       weight = weightProperty.value,
+      weightUnit = weightUnitProperty.value,
 
     )
 
