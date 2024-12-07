@@ -191,3 +191,8 @@ final case class Process(sanitizingStarted: String = "",
   val keggingStartedProperty = ObjectProperty[String](this, "keggingStarted", keggingStarted)
   val keggingCompletedProperty = ObjectProperty[String](this, "keggingCompleted", keggingCompleted)
   val process = this
+
+  def propertiesToProcess(): Process =
+    Process(
+      
+    )
