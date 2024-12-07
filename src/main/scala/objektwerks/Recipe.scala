@@ -240,5 +240,5 @@ final case class Yeast(name: String = Random.alphanumeric.take(7).mkString,
       weight = weightProperty.value,
       unit = unitProperty.value,
       mixinMinute = mixinMinuteProperty.value,
-
+      mixinStep = mixinStepProperty.value
     )
