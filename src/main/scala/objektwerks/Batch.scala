@@ -194,5 +194,7 @@ final case class Process(sanitizingStarted: String = "",
 
   def propertiesToProcess(): Process =
     Process(
-      
+      sanitizingStarted = sanitizingStartedProperty.value,
+      sanitizingCompleted = sanitizingCompletedProperty.value,
+
     )
