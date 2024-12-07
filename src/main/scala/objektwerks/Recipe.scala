@@ -237,5 +237,6 @@ final case class Yeast(name: String = Random.alphanumeric.take(7).mkString,
   def propertiesToYeast(): Yeast =
     Yeast(
       name = nameProperty.value,
+      weight = weightProperty.value,
 
     )
