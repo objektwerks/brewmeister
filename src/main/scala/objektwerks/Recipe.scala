@@ -210,6 +210,12 @@ final case class Adjunct(name: String = Random.alphanumeric.take(7).mkString,
   val mixinStepProperty = ObjectProperty[MixinStep](this, "mixinStep", mixinStep)
   val adjunct = this
 
+  def propertiesToAdjunct(): Adjunct =
+    Adjunct(
+      name = nameProperty.value,
+
+    )
+
 object Yeast:
   given Ordering[Yeast] = Ordering.by[Yeast, String](y => y.name)
 
