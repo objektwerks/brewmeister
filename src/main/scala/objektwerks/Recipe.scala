@@ -188,7 +188,8 @@ final case class Hop(name: String = Random.alphanumeric.take(7).mkString,
       name = nameProperty.value,
       weight = weightProperty.value,
       weightUnit = weightUnitProperty.value,
-
+      volume = volumeProperty.value,
+      volumeUnit = volumeUnitProperty.value,
     )
 
 object Adjunct:
