@@ -151,6 +151,11 @@ final case class Grain(name: String = Random.alphanumeric.take(7).mkString,
   val mixinStepProperty = ObjectProperty[MixinStep](this, "mixinStep", mixinStep)
   val grain = this
 
+  def propertiesToGrain(): Grain =
+    Grain(
+      name = nameProperty.value
+    )
+
 object Hop:
   given Ordering[Hop] = Ordering.by[Hop, String](h => h.name)
 
