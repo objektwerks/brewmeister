@@ -160,7 +160,6 @@ final case class Grain(name: String = Random.alphanumeric.take(7).mkString,
       lovibond = lovibondProperty.value,
       mixinMinute = mixinMinuteProperty.value,
       mixinStep = mixinStepProperty.value
-
     )
 
 object Hop:
