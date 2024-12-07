@@ -183,6 +183,12 @@ final case class Hop(name: String = Random.alphanumeric.take(7).mkString,
   val mixinStepProperty = ObjectProperty[MixinStep](this, "mixinStep", mixinStep)
   val hop = this
 
+  def propertiesToHop(): Hop =
+    Hop(
+      name = nameProperty.value,
+
+    )
+
 object Adjunct:
   given Ordering[Adjunct] = Ordering.by[Adjunct, String](a => a.name)
 
