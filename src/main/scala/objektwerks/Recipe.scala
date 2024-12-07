@@ -154,7 +154,8 @@ final case class Grain(name: String = Random.alphanumeric.take(7).mkString,
   def propertiesToGrain(): Grain =
     Grain(
       name = nameProperty.value,
-      weight = weightProperty.value
+      weight = weightProperty.value,
+      unit = unitProperty.value
     )
 
 object Hop:
