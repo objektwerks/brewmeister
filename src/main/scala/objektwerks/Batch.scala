@@ -206,5 +206,7 @@ final case class Process(sanitizingStarted: String = "",
       mashingCompleted = mashingCompletedProperty.value,
       lauteringStarted = lauteringStartedProperty.value,
       lauteringCompleted = lauteringCompletedProperty.value,
+      spargingStarted = spargingStartedProperty.value,
+      spargingCompleted = spargingCompletedProperty.value,
       
     )
