@@ -213,6 +213,7 @@ final case class Adjunct(name: String = Random.alphanumeric.take(7).mkString,
   def propertiesToAdjunct(): Adjunct =
     Adjunct(
       name = nameProperty.value,
+      weight = weightProperty.value,
 
     )
 
