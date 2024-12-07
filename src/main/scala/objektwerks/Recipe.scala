@@ -233,3 +233,9 @@ final case class Yeast(name: String = Random.alphanumeric.take(7).mkString,
   val mixinMinuteProperty = ObjectProperty[Int](this, "mixinMinute", mixinMinute)
   val mixinStepProperty = ObjectProperty[MixinStep](this, "mixinStep", mixinStep)
   val yeast = this
+
+  def propertiesToYeast(): Yeast =
+    Yeast(
+      name = nameProperty.value,
+
+    )
