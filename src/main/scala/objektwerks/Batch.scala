@@ -218,5 +218,6 @@ final case class Process(sanitizingStarted: String = "",
       fermentingCompleted = fermentingCompletedProperty.value,
       conditioningStarted = conditioningStartedProperty.value,
       conditioningCompleted = conditioningCompletedProperty.value,
-      
+      keggingStarted = keggingStartedProperty.value,
+      keggingCompleted = keggingCompletedProperty.value
     )
