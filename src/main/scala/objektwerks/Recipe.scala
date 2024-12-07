@@ -156,7 +156,8 @@ final case class Grain(name: String = Random.alphanumeric.take(7).mkString,
       name = nameProperty.value,
       weight = weightProperty.value,
       unit = unitProperty.value,
-      color = colorProperty.value
+      color = colorProperty.value,
+      lovibond = lovibondProperty.value
 
     )
 
