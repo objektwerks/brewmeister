@@ -200,5 +200,7 @@ final case class Process(sanitizingStarted: String = "",
       preparingCompleted = preparingCompletedProperty.value,
       maltingStarted = maltingStartedProperty.value,
       maltingCompleted = maltingCompletedProperty.value,
+      millingStarted = millingStartedProperty.value,
+      millingCompleted = millingCompletedProperty.value,
       
     )
