@@ -208,5 +208,7 @@ final case class Process(sanitizingStarted: String = "",
       lauteringCompleted = lauteringCompletedProperty.value,
       spargingStarted = spargingStartedProperty.value,
       spargingCompleted = spargingCompletedProperty.value,
+      boilingStarted = boilingStartedProperty.value,
+      boilingCompleted = boilingCompletedProperty.value,
       
     )
