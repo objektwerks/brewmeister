@@ -190,6 +190,7 @@ final case class Hop(name: String = Random.alphanumeric.take(7).mkString,
       weightUnit = weightUnitProperty.value,
       volume = volumeProperty.value,
       volumeUnit = volumeUnitProperty.value,
+      alphaAcid = alphaAcidProperty.value
     )
 
 object Adjunct:
