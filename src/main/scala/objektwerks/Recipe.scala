@@ -238,5 +238,6 @@ final case class Yeast(name: String = Random.alphanumeric.take(7).mkString,
     Yeast(
       name = nameProperty.value,
       weight = weightProperty.value,
+      unit = unitProperty.value,
 
     )
