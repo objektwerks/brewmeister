@@ -170,6 +170,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   
   val labelHops = Label( context.labelHops )
   val labelButtonHops = new LabelButton[List[Hop]]:
+    value = model.selectedRecipe.value.hops
     buttonAction = () => {
       HopsDialog(context, model.selectedRecipe.value.hops.toArray).showAndWait() match
         case Some(hops: Array[Hop]) => hops.toList
