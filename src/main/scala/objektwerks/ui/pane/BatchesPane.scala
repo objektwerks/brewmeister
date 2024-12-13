@@ -17,9 +17,10 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
     items = model.observableBatches.sorted
   tableView.columnResizePolicy = TableView.ConstrainedResizePolicy
   tableView.selectionModel().selectionModeProperty.value = SelectionMode.Single
-  tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedItem) =>
-    if selectedItem != null then
-      model.selectedBatch.value = selectedItem
+  tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedBatch) =>
+    if selectedBatch != null then
+      model.selectedBatchIndex.value = tableView.selectionModel().selectedIndex.value
+      model.selectedBatch.value = selectedBatch
   }
 
   val vbox = new VBox:
