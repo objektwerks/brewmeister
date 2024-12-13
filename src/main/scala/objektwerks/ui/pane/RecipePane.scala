@@ -179,6 +179,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelAdjuncts = Label( context.labelAdjuncts )
   val labelButtonAdjuncts = new LabelButton[List[Adjunct]]:
+    value = model.selectedRecipe.value.adjuncts
     buttonAction = () => {
       AdjunctsDialog(context, model.selectedRecipe.value.adjuncts.toArray).showAndWait() match
         case Some(adjuncts: Array[Adjunct]) => adjuncts.toList
