@@ -95,28 +95,7 @@ final case class Hop(name: String = Random.alphanumeric.take(7).mkString,
                      volumeUnit: UoM = UoM.oz,
                      alphaAcid: Double = 1.0,
                      mixinMinute: Int = 1,
-                     mixinStep: MixinStep = MixinStep.Boiling) derives CanEqual, JsonSupport: // or Whirlpooling or Conditioning
-  val nameProperty = ObjectProperty(name)
-  val weightProperty = ObjectProperty(weight)
-  val weightUnitProperty = ObjectProperty(weightUnit)
-  val volumeProperty = ObjectProperty(volume)
-  val volumeUnitProperty = ObjectProperty(volumeUnit)
-  val alphaAcidProperty = ObjectProperty(alphaAcid)
-  val mixinMinuteProperty = ObjectProperty(mixinMinute)
-  val mixinStepProperty = ObjectProperty(mixinStep)
-  val hop = this
-
-  def propertiesToHop(): Hop =
-    Hop(
-      name = nameProperty.value,
-      weight = weightProperty.value,
-      weightUnit = weightUnitProperty.value,
-      volume = volumeProperty.value,
-      volumeUnit = volumeUnitProperty.value,
-      alphaAcid = alphaAcidProperty.value,
-      mixinMinute = mixinMinuteProperty.value,
-      mixinStep = mixinStepProperty.value
-    )
+                     mixinStep: MixinStep = MixinStep.Boiling) derives CanEqual, JsonSupport // or Whirlpooling or Conditioning
 
 object Adjunct:
   given Ordering[Adjunct] = Ordering.by[Adjunct, String](a => a.name)
