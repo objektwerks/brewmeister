@@ -16,7 +16,7 @@ Note
 
   val labelName = Label( context.labelName )
   val textFieldName = new TextField():
-    text <==> model.selectedRecipe.value.nameProperty
+    text <==> model.selectedPerson.value.nameProperty
 ```
 
 Process
