@@ -95,37 +95,6 @@ final case class Recipe(name: String = "",
   val createdProperty = ObjectProperty(created)
   val recipe = this
 
-  def propertiesToRecipe(): Recipe =
-    Recipe(
-      name = nameProperty.value,
-      style = styleProperty.value,
-      water = waterProperty.value,
-      volume = volumeProperty.value,
-      grains = grainsProperty.value,
-      hops = hopsProperty.value,
-      adjuncts = adjunctsProperty.value,
-      yeasts = yeastsProperty.value,
-      mashingTempRangeDuration = mashingTempRangeDurationProperty.value,
-      potentialMashExtract = potentialMashExtractProperty.value,
-      boilingTempRangeDuration = boilingTempRangeDurationProperty.value,
-      coolingTempRange = coolingTempRangeProperty.value,
-      fermentingTempRangeDuration = fermentingTempRangeDurationProperty.value,
-      potentialFermentableExtract = potentialFermentableExtractProperty.value,
-      conditioningTempRangeDuration = conditioningTempRangeDurationProperty.value,
-      keggingTempRangeDuration = keggingTempRangeDurationProperty.value,
-      pH = phProperty.value,
-      originalGravityRange = originalGravityRangeProperty.value,
-      finalGravityRange = finalGravityRangeProperty.value,
-      srmColorRange = srmColorRangeProperty.value,
-      ibuBitternessRange = ibuBitternessRangeProperty.value,
-      alcoholByVolumeRange = alcoholByVolumeRangeProperty.value,
-      alcoholByWeightRange = alcoholByWeightRangeProperty.value,
-      calorieRange = calorieRangeProperty.value,
-      mashEfficiencyRange = mashEfficiencyRangeProperty.value,
-      brewhouseEfficiencyRange = brewhouseEfficiencyRangeProperty.value,
-      created = createdProperty.value
-    )
-
 object MixinStep:
   def toList: List[String] = MixinStep.values.map(ms => ms.toString).toList
 
