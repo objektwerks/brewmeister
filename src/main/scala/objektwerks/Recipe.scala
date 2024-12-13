@@ -1,5 +1,7 @@
 package objektwerks
 
+import scalafx.Includes.*
+import scalafx.beans.binding.Bindings
 import scalafx.beans.property.ObjectProperty
 
 import scala.util.Random
@@ -66,7 +68,9 @@ final case class Recipe(name: String = "",
                         mashEfficiencyRange: IntRange = IntRange(0, 0),
                         brewhouseEfficiencyRange: IntRange = IntRange(0, 0),
                         created: String = now()) derives CanEqual, JsonSupport:
-  val nameProperty = ObjectProperty[String](this, "name", name)
+  val nameProperty = ObjectProperty(name)
+  nameProperty.bind( Bindings.createObjectBinding(() => this.name, nameProperty) )
+
   val styleProperty = ObjectProperty[String](this, "style", style)
   val waterProperty = ObjectProperty[String](this, "water", water)
   val volumeProperty = ObjectProperty[Volume](this, "volume", volume)

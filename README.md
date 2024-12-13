@@ -6,6 +6,19 @@ Todo
 ----
 * App
 
+Note
+----
+1. Unable to bind case class fields / properties to controls:
+```
+  case class Person(name: String):
+    val nameProperty = ObjectProperty(name)
+    nameProperty.bind( Bindings.createObjectBinding(() => this.name, nameProperty) )
+
+  val labelName = Label( context.labelName )
+  val textFieldName = new TextField():
+    text <==> model.selectedRecipe.value.nameProperty
+```
+
 Process
 -------
 >Steps used in ***all grain*** brewing. ***Extract*** brewing excludes steps 3-7.
