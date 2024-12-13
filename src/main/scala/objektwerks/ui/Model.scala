@@ -12,4 +12,5 @@ final class Model(store: Store):
   val selectedRecipeIndex = ObjectProperty[Int](0)
   val selectedRecipe = ObjectProperty( Recipe() )
 
+  val selectedBatchIndex = ObjectProperty[Int](0)
   val selectedBatch = ObjectProperty( Batch() )
