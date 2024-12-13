@@ -67,33 +67,6 @@ final case class Recipe(name: String = "",
                         brewhouseEfficiencyRange: IntRange = IntRange(0, 0),
                         created: String = now()) derives CanEqual, JsonSupport:
   val nameProperty = ObjectProperty(name)
-  val styleProperty = ObjectProperty(style)
-  val waterProperty = ObjectProperty(water)
-  val volumeProperty = ObjectProperty(volume)
-  val grainsProperty = ObjectProperty(grains)
-  val hopsProperty = ObjectProperty(hops)
-  val adjunctsProperty = ObjectProperty(adjuncts)
-  val yeastsProperty = ObjectProperty(yeasts)
-  val mashingTempRangeDurationProperty = ObjectProperty(mashingTempRangeDuration)
-  val potentialMashExtractProperty = ObjectProperty(potentialMashExtract)
-  val boilingTempRangeDurationProperty = ObjectProperty(boilingTempRangeDuration)
-  val coolingTempRangeProperty = ObjectProperty(coolingTempRange)
-  val fermentingTempRangeDurationProperty = ObjectProperty(fermentingTempRangeDuration)
-  val potentialFermentableExtractProperty = ObjectProperty(potentialFermentableExtract)
-  val conditioningTempRangeDurationProperty = ObjectProperty(conditioningTempRangeDuration)
-  val keggingTempRangeDurationProperty = ObjectProperty(keggingTempRangeDuration)
-  val phProperty = ObjectProperty(pH)
-  val originalGravityRangeProperty = ObjectProperty(originalGravityRange)
-  val finalGravityRangeProperty = ObjectProperty(finalGravityRange)
-  val srmColorRangeProperty = ObjectProperty(srmColorRange)
-  val ibuBitternessRangeProperty = ObjectProperty(ibuBitternessRange)
-  val alcoholByVolumeRangeProperty = ObjectProperty(alcoholByVolumeRange)
-  val alcoholByWeightRangeProperty = ObjectProperty(alcoholByWeightRange)
-  val calorieRangeProperty = ObjectProperty(calorieRange)
-  val mashEfficiencyRangeProperty = ObjectProperty(mashEfficiencyRange)
-  val brewhouseEfficiencyRangeProperty = ObjectProperty(brewhouseEfficiencyRange)
-  val createdProperty = ObjectProperty(created)
-  val recipe = this
 
 object MixinStep:
   def toList: List[String] = MixinStep.values.map(ms => ms.toString).toList
