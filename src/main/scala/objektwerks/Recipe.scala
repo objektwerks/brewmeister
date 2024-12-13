@@ -126,9 +126,6 @@ final case class Recipe(name: String = "",
       created = createdProperty.value
     )
 
-  def recipeToProperites(): Unit =
-    nameProperty.value = recipe.name
-
 object MixinStep:
   def toList: List[String] = MixinStep.values.map(ms => ms.toString).toList
 
