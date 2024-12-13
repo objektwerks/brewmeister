@@ -197,6 +197,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelMashingTempRangeDuration = Label( context.labelMashingTempRangeDuration )
   val labelButtonMashingTempRangeDuration = new LabelButton[TempRangeDuration]:
+    value = model.selectedRecipe.value.mashingTempRangeDuration
     buttonAction = () => {
       TempRangeDurationDialog(context, model.selectedRecipe.value.mashingTempRangeDuration).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
