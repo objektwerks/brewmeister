@@ -8,7 +8,7 @@ Todo
 
 Note
 ----
-1. ScalaFx failed to bind case class fields / properties to controls:
+1. ScalaFx binding for case class fields / properties / controls doesn't appear to work:
 ```
   case class Person(name: String):
     val nameProperty = ObjectProperty(name)
