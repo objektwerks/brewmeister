@@ -126,7 +126,7 @@ final case class Recipe(name: String = "",
       created = createdProperty.value
     )
 
-  def recipeToProperites(recipe: Recipe): Unit =
+  def recipeToProperites(): Unit =
     nameProperty.value = recipe.name
 
 object MixinStep:

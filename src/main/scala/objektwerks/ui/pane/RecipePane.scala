@@ -18,9 +18,9 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   padding = Insets(3)
 
   // Model
-  model.selectedRecipe.onChange { (_, _, newRecipe) =>
+  model.selectedRecipe.onChange { (_, _, selectedRecipe) =>
     buttonSave.disable = false
-    recipeToControls(newRecipe)
+    recipeToControls(selectedRecipe)
   }
 
   // Bindings
@@ -141,6 +141,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   // Controls
   val labelName = Label( context.labelName )
   val textFieldName = NonEmptyTextField()
+
   val labelStyle = Label( context.labelStyle )
   val textFieldStyle = NonEmptyTextField()
 
