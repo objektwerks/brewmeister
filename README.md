@@ -18,6 +18,7 @@ Note
   val textFieldName = new TextField():
     text <==> model.selectedPerson.value.nameProperty
 ```
+>Used manual binding, instead.
 
 Process
 -------
