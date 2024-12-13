@@ -9,5 +9,5 @@ final class Model(store: Store):
   val observableRecipes = ObservableBuffer.from(store.listRecipes)
   val observableBatches = ObservableBuffer.from(store.listBatches)
 
-  val selectedBatch = ObjectProperty( Batch() )
   val selectedRecipe = ObjectProperty( Recipe() )
+  val selectedBatch = ObjectProperty( Batch() )
