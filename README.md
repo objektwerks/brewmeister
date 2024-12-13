@@ -8,7 +8,7 @@ Todo
 
 Note
 ----
-1. Unable to bind case class fields / properties to controls:
+1. Unable to use ScalaFx to bind case class fields / properties to controls:
 ```
   case class Person(name: String):
     val nameProperty = ObjectProperty(name)
