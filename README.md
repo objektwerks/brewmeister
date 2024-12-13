@@ -8,7 +8,7 @@ Todo
 
 Note
 ----
-1. ScalaFx binding for case class fields / properties / controls doesn't appear to work:
+1. ScalaFx property binding for case class / properties / controls doesn't appear to work:
 ```
   case class Person(name: String):
     val nameProperty = ObjectProperty(name)
@@ -18,7 +18,7 @@ Note
   val textFieldName = new TextField():
     text <==> model.selectedPerson.value.nameProperty
 ```
->Used manual binding, instead.
+>Simple ScalaFx property binding does work, though. Currently using manual case class / property binding.
 
 Process
 -------
