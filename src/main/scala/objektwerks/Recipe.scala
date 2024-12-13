@@ -113,19 +113,4 @@ final case class Yeast(name: String = Random.alphanumeric.take(7).mkString,
                        weight: Double = 1.0,
                        unit: UoM = UoM.oz,
                        mixinMinute: Int = 1,
-                       mixinStep: MixinStep = MixinStep.Fermenting) derives CanEqual, JsonSupport:
-  val nameProperty = ObjectProperty(name)
-  val weightProperty = ObjectProperty(weight)
-  val unitProperty = ObjectProperty(unit)
-  val mixinMinuteProperty = ObjectProperty(mixinMinute)
-  val mixinStepProperty = ObjectProperty(mixinStep)
-  val yeast = this
-
-  def propertiesToYeast(): Yeast =
-    Yeast(
-      name = nameProperty.value,
-      weight = weightProperty.value,
-      unit = unitProperty.value,
-      mixinMinute = mixinMinuteProperty.value,
-      mixinStep = mixinStepProperty.value
-    )
+                       mixinStep: MixinStep = MixinStep.Fermenting) derives CanEqual, JsonSupport
