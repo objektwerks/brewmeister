@@ -1,11 +1,13 @@
 package objektwerks.ui.dialog
 
 import scalafx.Includes.*
-import scalafx.scene.control.{Button, ButtonType, Dialog, ListView, SelectionMode}
+import scalafx.scene.control.{Button, ButtonType, Dialog, Label, ListView, SelectionMode}
 import scalafx.scene.control.ButtonBar.ButtonData
 
-import objektwerks.Yeast
+import objektwerks.{MixinStep, UoM, Yeast}
 import objektwerks.ui.{App, Context}
+import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField, NonEmptyTextField}
+
 
 final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[Array[Yeast]]:
   initOwner(App.stage)
@@ -87,6 +89,24 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     spacing = 6
     padding = Insets(6)
     children = List(listViewYeasts, buttonBarYeasts)
+
+  // Item
+  val labelName = Label(context.labelName)
+  val textFieldName = NonEmptyTextField()
+
+  val labelWeight = Label(context.labelWeight)
+  val textFieldWeight = DoubleTextField()
+
+  val labelUnit = Label(context.labelUnit)
+  val choiceBoxUnit = new ChoiceBox[String]:
+  	items = ObservableBuffer.from( UoM.toList )
+
+  val labelMixinMinute = Label(context.labelMixinMinute)
+  val textFieldMixinMinute = IntTextField()
+
+  val labelMixinStep = Label(context.labelMixinStep)
+  val choiceBoxMixinStep = new ChoiceBox[String]:
+  	items = ObservableBuffer.from( MixinStep.toList )
 
   val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
