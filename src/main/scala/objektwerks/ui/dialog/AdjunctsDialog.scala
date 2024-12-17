@@ -65,7 +65,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   val listViewAdjuncts = new ListView[Adjunct]:
     prefHeight = 100
     items = ObservableBuffer.from(updatedAdjuncts)
-    cellFactory = (cell, hop) => cell.text = hop.name
+    cellFactory = (cell, adjunct) => cell.text = adjunct.name
 
   listViewAdjuncts.selectionModel().selectionModeProperty.value = SelectionMode.Single
   listViewAdjuncts.selectionModel().selectedItemProperty().addListener { (_, _, selectedAdjunct) =>
