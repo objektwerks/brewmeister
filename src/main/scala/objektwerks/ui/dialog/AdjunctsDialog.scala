@@ -12,6 +12,9 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   title = context.windowTitle
   headerText = context.dialogAdjuncts
 
+  // Model
+  val updatedAdjuncts = adjuncts.map(identity).toBuffer.sorted
+
   val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
