@@ -43,6 +43,11 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     adjunctToControls(adjunct)
     listViewAdjuncts.scrollTo(adjunct)
 
+  def add(): Unit =
+    val adjunct = Adjunct()
+    updatedAdjuncts += adjunct // listview items refresh?
+    select(adjunct)
+
   // List
   val listViewAdjuncts = new ListView[Adjunct]:
     prefHeight = 100
