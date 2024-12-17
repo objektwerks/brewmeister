@@ -16,7 +16,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   val updatedYeasts = yeasts.map(identity).toBuffer.sorted
 
   // Bindings
-  def adjunctToControls(adjunct: Adjunct): Unit =
+  def adjunctToControls(adjunct: Yeast): Unit =
     textFieldName.text = adjunct.name
     textFieldWeight.text = adjunct.weight.toString
     choiceBoxUnit.value = adjunct.unit.toString
@@ -30,6 +30,31 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     choiceBoxUnit.value = ""
     textFieldMixinMinute.text = ""
     choiceBoxMixinStep.value = ""
+
+  // Methods
+  def select(adjunct: Yeast): Unit =
+    saveButton.disable = false
+    listViewYeasts.selectionModel().select(adjunct)
+    adjunctToControls(adjunct)
+    listViewYeasts.scrollTo(adjunct)
+
+  def add(): Unit =
+    val adjunct = Yeast()
+    updatedYeasts += adjunct // listview items refresh?
+    select(adjunct)
+
+  def remove(adjunct: Yeast): Unit =
+    updatedYeasts -= adjunct // listview items refresh?
+    resetControls()
+    saveButton.disable = true
+    if !listViewYeasts.selectionModel().isEmpty() then
+      listViewYeasts.selectionModel().select(0)
+      select( listViewYeasts.selectionModel().selectedItem() )
+
+  def save(): Unit =
+    val index = listViewYeasts.selectionModel().selectedIndex.value
+    val adjunct = listViewYeasts.selectionModel().selectedItem.value
+    updatedYeasts.update(index, adjunct) // listview items refresh?
 
   val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
