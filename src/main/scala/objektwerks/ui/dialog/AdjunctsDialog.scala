@@ -112,5 +112,5 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      adjuncts // TODO
+      updatedAdjuncts.toArray
     else null
