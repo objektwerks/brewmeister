@@ -10,7 +10,7 @@ import scalafx.scene.layout.{HBox, VBox}
 
 import objektwerks.{Adjunct, MixinStep, UoM}
 import objektwerks.ui.{App, Context}
-import objektwerks.ui.control.{DoubleTextField, IntTextField, NonEmptyTextField}
+import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField, NonEmptyTextField}
 
 final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends Dialog[Array[Adjunct]]:
   initOwner(App.stage)
@@ -94,11 +94,16 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     spacing = 6
     children = List(saveButton)
 
+  val vboxControls = new VBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List( ControlGrid(controls), buttonBarControls )
+
   // Content
   val content = new VBox:
     spacing = 6
     padding = Insets(6)
-    children = List(vboxHops, vboxControls)
+    children = List(vboxAdjuncts, vboxControls)
 
   dialogPane().content = content
 
