@@ -12,7 +12,6 @@ import objektwerks.{MixinStep, UoM, Yeast}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField, NonEmptyTextField}
 
-
 final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[Array[Yeast]]:
   initOwner(App.stage)
   title = context.windowTitle
