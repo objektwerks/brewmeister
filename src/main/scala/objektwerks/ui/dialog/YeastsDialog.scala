@@ -66,7 +66,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   val listViewYeasts = new ListView[Yeast]:
     prefHeight = 100
     items = ObservableBuffer.from(updatedYeasts)
-    cellFactory = (cell, hop) => cell.text = hop.name
+    cellFactory = (cell, yeast) => cell.text = yeast.name
 
   listViewYeasts.selectionModel().selectionModeProperty.value = SelectionMode.Single
   listViewYeasts.selectionModel().selectedItemProperty().addListener { (_, _, selectedYeast) =>
