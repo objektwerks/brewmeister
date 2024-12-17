@@ -4,6 +4,7 @@ import scalafx.Includes.*
 import scalafx.collections.ObservableBuffer
 import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, ListView, SelectionMode}
 import scalafx.scene.control.ButtonBar.ButtonData
+import scalafx.scene.layout.{HBox, VBox}
 
 import objektwerks.{MixinStep, UoM, Yeast}
 import objektwerks.ui.{App, Context}
@@ -116,6 +117,20 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     labelMixinMinute -> textFieldMixinMinute,
     labelMixinStep -> choiceBoxMixinStep
   )
+
+  val saveButton = new Button:
+    graphic = context.imageViewSave
+    disable = true
+    onAction = { _ => save() }
+
+  val buttonBarControls = new HBox:
+    spacing = 6
+    children = List(saveButton)
+
+  val vboxControls = new VBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List( ControlGrid(controls), buttonBarControls )
 
   val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
