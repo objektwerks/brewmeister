@@ -22,7 +22,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   val updatedYeasts = yeasts.map(identity).toBuffer.sorted
 
   // Bindings
-  def adjunctToControls(adjunct: Yeast): Unit =
+  def yeastToControls(adjunct: Yeast): Unit =
     textFieldName.text = adjunct.name
     textFieldWeight.text = adjunct.weight.toString
     choiceBoxUnit.value = adjunct.unit.toString
@@ -41,7 +41,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   def select(adjunct: Yeast): Unit =
     saveButton.disable = false
     listViewYeasts.selectionModel().select(adjunct)
-    adjunctToControls(adjunct)
+    yeastToControls(adjunct)
     listViewYeasts.scrollTo(adjunct)
 
   def add(): Unit =
