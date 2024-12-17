@@ -57,6 +57,15 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     padding = Insets(6)
     children = List(listViewAdjuncts, buttonBarHops)
 
+  val saveButton = new Button:
+    graphic = context.imageViewSave
+    disable = true
+    onAction = { _ => save() }
+
+  val buttonBarControls = new HBox:
+    spacing = 6
+    children = List(saveButton)
+
   val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
