@@ -147,5 +147,5 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      yeasts // TODO
+      updatedYeasts.toArray
     else null
