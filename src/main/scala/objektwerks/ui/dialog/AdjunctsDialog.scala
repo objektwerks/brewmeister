@@ -3,6 +3,7 @@ package objektwerks.ui.dialog
 import scalafx.Includes.*
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.Insets
+import scalafx.scene.Node
 import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, ListView, SelectionMode}
 import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.{HBox, VBox}
@@ -66,7 +67,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   val textFieldWeight = DoubleTextField()
 
   val labelUnit = Label(context.labelUnit)
-  val choiceBoxWeightUnit = new ChoiceBox[String]:
+  val choiceBoxUnit = new ChoiceBox[String]:
   	items = ObservableBuffer.from( UoM.toList )
 
   val labelMixinMinute = Label(context.labelMixinMinute)
@@ -75,6 +76,14 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   val labelMixinStep = Label(context.labelMixinStep)
   val choiceBoxMixinStep = new ChoiceBox[String]:
   	items = ObservableBuffer.from( MixinStep.toList )
+
+  val controls = List[(Label, Node)](
+    labelName -> textFieldName,
+    labelWeight -> textFieldWeight,
+    labelUnit -> choiceBoxUnit,
+    labelMixinMinute -> textFieldMixinMinute,
+    labelMixinStep -> choiceBoxMixinStep
+  )
 
   val saveButton = new Button:
     graphic = context.imageViewSave
