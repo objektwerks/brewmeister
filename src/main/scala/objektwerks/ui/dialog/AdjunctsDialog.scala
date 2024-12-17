@@ -20,6 +20,22 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   // Model
   val updatedAdjuncts = adjuncts.map(identity).toBuffer.sorted
 
+  // Bindings
+  def hopToControls(adjunct: Adjunct): Unit =
+    textFieldName.text = adjunct.name
+    textFieldWeight.text = adjunct.weight.toString
+    choiceBoxUnit.value = adjunct.unit.toString
+    textFieldMixinMinute.text = adjunct.mixinMinute.toString
+    choiceBoxMixinStep.value = adjunct.mixinStep.toString
+
+  def resetControls(): Unit =
+    saveButton.disable = true
+    textFieldName.text = ""
+    textFieldWeight.text = ""
+    choiceBoxUnit.value = ""
+    textFieldMixinMinute.text = ""
+    choiceBoxMixinStep.value = ""
+
   // Methods
   def select(adjunct: Adjunct): Unit =
     saveButton.disable = false
