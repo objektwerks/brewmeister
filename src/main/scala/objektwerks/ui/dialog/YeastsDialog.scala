@@ -22,12 +22,12 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   val updatedYeasts = yeasts.map(identity).toBuffer.sorted
 
   // Bindings
-  def yeastToControls(adjunct: Yeast): Unit =
-    textFieldName.text = adjunct.name
-    textFieldWeight.text = adjunct.weight.toString
-    choiceBoxUnit.value = adjunct.unit.toString
-    textFieldMixinMinute.text = adjunct.mixinMinute.toString
-    choiceBoxMixinStep.value = adjunct.mixinStep.toString
+  def yeastToControls(yeast: Yeast): Unit =
+    textFieldName.text = yeast.name
+    textFieldWeight.text = yeast.weight.toString
+    choiceBoxUnit.value = yeast.unit.toString
+    textFieldMixinMinute.text = yeast.mixinMinute.toString
+    choiceBoxMixinStep.value = yeast.mixinStep.toString
 
   def resetControls(): Unit =
     saveButton.disable = true
@@ -38,11 +38,11 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     choiceBoxMixinStep.value = ""
 
   // Methods
-  def select(adjunct: Yeast): Unit =
+  def select(yeast: Yeast): Unit =
     saveButton.disable = false
-    listViewYeasts.selectionModel().select(adjunct)
-    yeastToControls(adjunct)
-    listViewYeasts.scrollTo(adjunct)
+    listViewYeasts.selectionModel().select(yeast)
+    yeastToControls(yeast)
+    listViewYeasts.scrollTo(yeast)
 
   def add(): Unit =
     val yeast = Yeast()
