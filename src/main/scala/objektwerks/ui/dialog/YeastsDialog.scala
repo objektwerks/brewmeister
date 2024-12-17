@@ -1,7 +1,7 @@
 package objektwerks.ui.dialog
 
 import scalafx.Includes.*
-import scalafx.scene.control.{ButtonType, Dialog, ListView}
+import scalafx.scene.control.{Button, ButtonType, Dialog, ListView, SelectionMode}
 import scalafx.scene.control.ButtonBar.ButtonData
 
 import objektwerks.Yeast
@@ -66,6 +66,27 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   listViewYeasts.selectionModel().selectedItemProperty().addListener { (_, _, selectedYeast) =>
     if selectedYeast != null then select(selectedYeast)
   }
+
+  val buttonAdd = new Button:
+    graphic = context.imageViewPlus
+    tooltip = context.tooltipAdd
+    disable = true
+    onAction = { _ => add() }
+
+  val buttonRemove = new Button:
+    graphic = context.imageViewMinus
+    tooltip = context.tooltipRemove
+    disable = true
+    onAction = { _ => remove( listViewYeasts.selectionModel().selectedItem.value ) }
+
+  val buttonBarYeasts = new HBox:
+    spacing = 6
+    children = List(buttonAdd, buttonRemove)
+
+  val vboxYeasts = new VBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List(listViewYeasts, buttonBarYeasts)
 
   val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
