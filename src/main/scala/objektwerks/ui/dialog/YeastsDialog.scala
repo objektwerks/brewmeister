@@ -133,6 +133,14 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     padding = Insets(6)
     children = List( ControlGrid(controls), buttonBarControls )
 
+  // Content
+  val content = new VBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List(vboxYeasts, vboxControls)
+
+  dialogPane().content = content
+
   val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
