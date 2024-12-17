@@ -16,6 +16,13 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   // Model
   val updatedAdjuncts = adjuncts.map(identity).toBuffer.sorted
 
+  // Methods
+  def select(adjunct: Adjunct): Unit =
+    saveButton.disable = false
+    listViewAdjuncts.selectionModel().select(adjunct)
+    adjunctToControls(adjunct)
+    listViewAdjuncts.scrollTo(adjunct)
+
   // List
   val listViewAdjuncts = new ListView[Adjunct]:
     prefHeight = 100
@@ -24,7 +31,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
 
   listViewAdjuncts.selectionModel().selectionModeProperty.value = SelectionMode.Single
   listViewAdjuncts.selectionModel().selectedItemProperty().addListener { (_, _, selectedAdjunct) =>
-    // if selectedAdjunct != null then select(selectedAdjunct)
+    if selectedAdjunct != null then select(selectedAdjunct)
   }
 
   val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
