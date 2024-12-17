@@ -1,7 +1,8 @@
 package objektwerks.ui.dialog
 
 import scalafx.Includes.*
-import scalafx.scene.control.{ButtonType, Dialog}
+import scalafx.collections.ObservableBuffer
+import scalafx.scene.control.{ButtonType, Dialog, ListView, SelectionMode}
 import scalafx.scene.control.ButtonBar.ButtonData
 
 import objektwerks.Adjunct
@@ -14,6 +15,17 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
 
   // Model
   val updatedAdjuncts = adjuncts.map(identity).toBuffer.sorted
+
+  // List
+  val listViewAdjuncts = new ListView[Adjunct]:
+    prefHeight = 100
+    items = ObservableBuffer.from(updatedAdjuncts)
+    cellFactory = (cell, hop) => cell.text = hop.name
+
+  listViewAdjuncts.selectionModel().selectionModeProperty.value = SelectionMode.Single
+  listViewAdjuncts.selectionModel().selectedItemProperty().addListener { (_, _, selectedAdjunct) =>
+    // if selectedAdjunct != null then select(selectedAdjunct)
+  }
 
   val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
