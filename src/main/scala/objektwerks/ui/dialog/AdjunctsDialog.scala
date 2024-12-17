@@ -21,7 +21,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   val updatedAdjuncts = adjuncts.map(identity).toBuffer.sorted
 
   // Bindings
-  def hopToControls(adjunct: Adjunct): Unit =
+  def adjunctToControls(adjunct: Adjunct): Unit =
     textFieldName.text = adjunct.name
     textFieldWeight.text = adjunct.weight.toString
     choiceBoxUnit.value = adjunct.unit.toString
