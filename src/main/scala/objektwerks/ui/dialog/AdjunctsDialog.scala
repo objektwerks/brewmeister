@@ -3,7 +3,7 @@ package objektwerks.ui.dialog
 import scalafx.Includes.*
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.Insets
-import scalafx.scene.control.{Button, ButtonType, Dialog, ListView, SelectionMode}
+import scalafx.scene.control.{Button, ButtonType, Dialog, Label, ListView, SelectionMode}
 import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.{HBox, VBox}
 
@@ -48,14 +48,32 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     disable = true
     onAction = { _ => remove( listViewAdjuncts.selectionModel().selectedItem.value ) }
 
-  val buttonBarHops = new HBox:
+  val buttonBarAdjuncts = new HBox:
     spacing = 6
     children = List(buttonAdd, buttonRemove)
 
-  val vboxHops = new VBox:
+  val vboxAdjuncts = new VBox:
     spacing = 6
     padding = Insets(6)
-    children = List(listViewAdjuncts, buttonBarHops)
+    children = List(listViewAdjuncts, buttonBarAdjuncts)
+
+  // Item
+  val labelName = Label(context.labelName)
+  val textFieldName = NonEmptyTextField()
+
+  val labelWeight = Label(context.labelWeight)
+  val textFieldWeight = DoubleTextField()
+
+  val labelUnit = Label(context.labelUnit)
+  val choiceBoxWeightUnit = new ChoiceBox[String]:
+  	items = ObservableBuffer.from( UoM.toList )
+
+  val labelMixinMinute = Label(context.labelMixinMinute)
+  val textFieldMixinMinute = IntTextField()
+
+  val labelMixinStep = Label(context.labelMixinStep)
+  val choiceBoxMixinStep = new ChoiceBox[String]:
+  	items = ObservableBuffer.from( MixinStep.toList )
 
   val saveButton = new Button:
     graphic = context.imageViewSave
