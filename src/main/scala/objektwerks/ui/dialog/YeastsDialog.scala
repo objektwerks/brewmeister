@@ -45,12 +45,12 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     listViewYeasts.scrollTo(adjunct)
 
   def add(): Unit =
-    val adjunct = Yeast()
-    updatedYeasts += adjunct // listview items refresh?
-    select(adjunct)
+    val yeast = Yeast()
+    updatedYeasts += yeast // listview items refresh?
+    select(yeast)
 
-  def remove(adjunct: Yeast): Unit =
-    updatedYeasts -= adjunct // listview items refresh?
+  def remove(yeast: Yeast): Unit =
+    updatedYeasts -= yeast // listview items refresh?
     resetControls()
     saveButton.disable = true
     if !listViewYeasts.selectionModel().isEmpty() then
@@ -59,8 +59,8 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
 
   def save(): Unit =
     val index = listViewYeasts.selectionModel().selectedIndex.value
-    val adjunct = listViewYeasts.selectionModel().selectedItem.value
-    updatedYeasts.update(index, adjunct) // listview items refresh?
+    val yeast = listViewYeasts.selectionModel().selectedItem.value
+    updatedYeasts.update(index, yeast) // listview items refresh?
 
   // List
   val listViewYeasts = new ListView[Yeast]:
