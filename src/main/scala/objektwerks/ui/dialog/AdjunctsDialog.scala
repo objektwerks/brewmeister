@@ -48,6 +48,14 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     updatedAdjuncts += adjunct // listview items refresh?
     select(adjunct)
 
+  def remove(adjunct: Adjunct): Unit =
+    updatedAdjuncts -= adjunct // listview items refresh?
+    resetControls()
+    saveButton.disable = true
+    if !listViewAdjuncts.selectionModel().isEmpty() then
+      listViewAdjuncts.selectionModel().select(0)
+      select( listViewAdjuncts.selectionModel().selectedItem() )
+
   // List
   val listViewAdjuncts = new ListView[Adjunct]:
     prefHeight = 100
