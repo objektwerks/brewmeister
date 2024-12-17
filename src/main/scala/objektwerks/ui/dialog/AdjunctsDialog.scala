@@ -2,8 +2,10 @@ package objektwerks.ui.dialog
 
 import scalafx.Includes.*
 import scalafx.collections.ObservableBuffer
-import scalafx.scene.control.{ButtonType, Dialog, ListView, SelectionMode}
+import scalafx.geometry.Insets
+import scalafx.scene.control.{Button, ButtonType, Dialog, ListView, SelectionMode}
 import scalafx.scene.control.ButtonBar.ButtonData
+import scalafx.scene.layout.{HBox, VBox}
 
 import objektwerks.Adjunct
 import objektwerks.ui.{App, Context}
@@ -33,6 +35,27 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   listViewAdjuncts.selectionModel().selectedItemProperty().addListener { (_, _, selectedAdjunct) =>
     if selectedAdjunct != null then select(selectedAdjunct)
   }
+
+  val buttonAdd = new Button:
+    graphic = context.imageViewPlus
+    tooltip = context.tooltipAdd
+    disable = true
+    onAction = { _ => add() }
+
+  val buttonRemove = new Button:
+    graphic = context.imageViewMinus
+    tooltip = context.tooltipRemove
+    disable = true
+    onAction = { _ => remove( listViewAdjuncts.selectionModel().selectedItem.value ) }
+
+  val buttonBarHops = new HBox:
+    spacing = 6
+    children = List(buttonAdd, buttonRemove)
+
+  val vboxHops = new VBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List(listViewAdjuncts, buttonBarHops)
 
   val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
