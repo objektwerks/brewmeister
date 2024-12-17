@@ -3,12 +3,13 @@ package objektwerks.ui.dialog
 import scalafx.Includes.*
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.Insets
-import scalafx.scene.control.{Button, ButtonType, Dialog, Label, ListView, SelectionMode}
+import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, ListView, SelectionMode}
 import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.{HBox, VBox}
 
-import objektwerks.Adjunct
+import objektwerks.{Adjunct, MixinStep, UoM}
 import objektwerks.ui.{App, Context}
+import objektwerks.ui.control.{DoubleTextField, IntTextField, NonEmptyTextField}
 
 final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends Dialog[Array[Adjunct]]:
   initOwner(App.stage)
