@@ -66,6 +66,14 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     spacing = 6
     children = List(saveButton)
 
+  // Content
+  val content = new VBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List(vboxHops, vboxControls)
+
+  dialogPane().content = content
+
   val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
