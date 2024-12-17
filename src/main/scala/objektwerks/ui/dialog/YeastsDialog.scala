@@ -12,6 +12,9 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   title = context.windowTitle
   headerText = context.dialogYeasts
 
+  // Model
+  val updatedYeasts = yeasts.map(identity).toBuffer.sorted
+
   val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
