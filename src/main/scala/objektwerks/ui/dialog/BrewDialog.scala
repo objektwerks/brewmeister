@@ -4,11 +4,11 @@ import scalafx.scene.Node
 import scalafx.scene.control.{ButtonType, Dialog, Label}
 import scalafx.scene.control.ButtonBar.ButtonData
 
-import objektwerks.Batch
+import objektwerks.{Batch, Listener}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.ControlGrid
 
-final class BrewDialog(context: Context) extends Dialog[Batch]:
+final class BrewDialog(context: Context, listener: Listener) extends Dialog[Batch]:
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogBrew
