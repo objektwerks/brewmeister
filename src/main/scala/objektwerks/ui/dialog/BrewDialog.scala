@@ -30,7 +30,8 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
 
   val controls = List[(Label, Node)](
     labelRecipe -> textRecipe,
-    labelMashingTemmp -> textFieldMashingTemp
+    labelMashingTemmp -> textFieldMashingTemp,
+    labelPh -> textFieldPh
   )
 
   dialogPane().content = ControlGrid(controls)
