@@ -1,5 +1,7 @@
 package objektwerks.ui.dialog
 
+import org.controlsfx.control.Rating
+
 import scalafx.Includes.*
 import scalafx.scene.Node
 import scalafx.scene.control.{ButtonType, Dialog, Label}
@@ -64,11 +66,13 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
     text = 72.toString
 
   val labelAppearance = Label( context.labelAppearance )
+  val ratingAppearance = Rating(2, 2)
 
   val labelAroma = Label( context.labelAroma )
+  val ratingAroma = Rating(2, 2)
 
   val labelTaste = Label( context.labelTaste )
-
+  val ratingTaste = Rating(2, 2)
 
   val labelActualFermentableExtract = Label( context.labelActualFermentableExtract )
   val textFieldActualFermentableExtract = new DoubleTextField:
