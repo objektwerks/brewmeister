@@ -10,6 +10,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 import objektwerks.{Batch, Brewer, Listener, Recipe}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField}
+import objektwerks.formatGravity
 
 final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) extends Dialog[Batch]:
   initOwner(App.stage)
@@ -110,8 +111,8 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
         actualMashExtract = textFieldActualMashExtract.double,
         boilingTemp = textFieldBoilingTemp.int,
         coolingTemp = textFieldCoolingTemp.int,
-        originalGravity = 1.060,
-        fermentingTemp = 72,
+        originalGravity = textFieldOriginalGravity.double.formatGravity,
+        fermentingTemp = textFieldFermentingTemp.int,
         finalGravity = 1.012,
         conditioningTemp = 72,
         srmColor = 9,
