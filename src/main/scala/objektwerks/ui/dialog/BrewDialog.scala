@@ -8,4 +8,4 @@ import objektwerks.ui.Context
 final class BrewDialog(context: Context) extends Dialog[Batch]:
   initOwner(App.stage)
   title = context.windowTitle
-  headerText = context.dialogVolume
+  headerText = context.dialogBrew
