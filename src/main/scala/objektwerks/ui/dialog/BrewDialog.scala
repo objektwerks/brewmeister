@@ -7,7 +7,7 @@ import scalafx.scene.Node
 import scalafx.scene.control.{ButtonType, Dialog, Label}
 import scalafx.scene.control.ButtonBar.ButtonData
 
-import objektwerks.{Batch, Listener, Recipe}
+import objektwerks.{Batch, Brewer, Listener, Recipe}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField}
 
@@ -104,5 +104,6 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
+      Brewer.brew(listener, recipe)
       listener.batch
     else null
