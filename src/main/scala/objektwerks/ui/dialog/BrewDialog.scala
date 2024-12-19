@@ -74,7 +74,8 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
     labelFermentingTemmp -> textFieldFermentingTemp,
     labelFinalGravity -> textFieldFinalGravity,
     labelConditioningTemmp -> textFieldConditioningTemp,
-    labelSrmColor -> textFieldSrmColor
+    labelSrmColor -> textFieldSrmColor,
+    labelKeggingTemmp -> textFieldKeggingTemp
   )
 
   dialogPane().content = ControlGrid(controls)
