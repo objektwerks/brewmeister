@@ -102,6 +102,24 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      Brewer.brew(listener, recipe)
+      Brewer.brew(
+        listener = listener,
+        recipe = recipe,
+        mashingTemp = 150,
+        pH = 5.6,
+        actualMashExtract = 4.5,
+        boilingTemp = 150,
+        coolingTemp = 72,
+        originalGravity = 1.060,
+        fermentingTemp = 72,
+        finalGravity = 1.012,
+        conditioningTemp = 72,
+        srmColor = 9,
+        keggingTemp = 72,
+        appearance = 3,
+        aroma = 3,
+        taste = 3,
+        actualFermentableExtract = 4.5
+      )
       listener.batch
     else null
