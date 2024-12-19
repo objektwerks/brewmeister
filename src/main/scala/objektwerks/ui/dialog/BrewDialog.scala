@@ -1,5 +1,6 @@
 package objektwerks.ui.dialog
 
+import scalafx.Includes.*
 import scalafx.scene.Node
 import scalafx.scene.control.{ButtonType, Dialog, Label}
 import scalafx.scene.control.ButtonBar.ButtonData
@@ -12,6 +13,8 @@ final class BrewDialog(context: Context, listener: Listener) extends Dialog[Batc
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogBrew
+
+  println(listener) // REMOVE
 
   val controls = List[(Label, Node)](
   )
