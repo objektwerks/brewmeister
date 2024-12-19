@@ -117,9 +117,9 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
         conditioningTemp = textFieldConditioningTemp.int,
         srmColor = textFieldSrmColor.int,
         keggingTemp = textFieldKeggingTemp.int,
-        appearance = 3,
-        aroma = 3,
-        taste = 3,
+        appearance = ratingAppearance.getRating.toInt + 1,
+        aroma = ratingAroma.getRating.toInt + 1,
+        taste = ratingTaste.getRating.toInt + 1,
         actualFermentableExtract = 4.5
       )
       listener.batch
