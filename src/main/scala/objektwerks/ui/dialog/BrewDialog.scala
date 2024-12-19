@@ -47,6 +47,10 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
   val textFieldFermentingTemp = new IntTextField:
     text = 72.toString
 
+  val labelFinalGravity = Label( context.labelFinalGravity )
+  val textFieldFinalGravity = new DoubleTextField:
+    text = 1.012.toString
+
   val controls = List[(Label, Node)](
     labelRecipe -> textRecipe,
     labelMashingTemmp -> textFieldMashingTemp,
