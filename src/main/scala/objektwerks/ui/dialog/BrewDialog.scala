@@ -16,8 +16,6 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
   title = context.windowTitle
   headerText = context.dialogBrew
 
-  println(listener) // REMOVE
-
   val labelRecipe = Label( context.labelRecipe )
   val textRecipe = Label( recipe.name )
 
