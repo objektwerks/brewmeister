@@ -17,7 +17,11 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
   println(listener) // REMOVE
   println(recipe) // REMOVE
 
+  val labelRecipe = Label( context.labelRecipe )
+  val textRecipe = Label( recipe.name )
+
   val controls = List[(Label, Node)](
+    labelRecipe -> textRecipe
   )
 
   dialogPane().content = ControlGrid(controls)
