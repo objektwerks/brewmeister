@@ -105,8 +105,8 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
       Brewer.brew(
         listener = listener,
         recipe = recipe,
-        mashingTemp = 150,
-        pH = 5.6,
+        mashingTemp = textFieldMashingTemp.int,
+        pH = textFieldPh.double,
         actualMashExtract = 4.5,
         boilingTemp = 150,
         coolingTemp = 72,
