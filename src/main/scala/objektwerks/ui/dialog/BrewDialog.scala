@@ -27,6 +27,10 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
   val textFieldPh = new DoubleTextField:
     text = 5.6.toString
 
+  val labelActualMashExtract = Label( context.labelActualMashExtract )
+  val textFieldActualMashExtract = new DoubleTextField:
+    text = 4.5.toString
+
   val controls = List[(Label, Node)](
     labelRecipe -> textRecipe,
     labelMashingTemmp -> textFieldMashingTemp,
