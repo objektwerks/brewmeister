@@ -112,6 +112,7 @@ final class Context(config: Config):
   val labelConditionCompleted = config.getString("label.conditionCompleted")
   val labelKegStarted = config.getString("label.kegStarted")
   val labelKegCompleted = config.getString("label.kegCompleted")
+  val labelActualMashExtract = config.getString("label.actualMashExtract")
 
   val menuMenu = config.getString("menu.menu")
   val menuExit = config.getString("menu.exit")
