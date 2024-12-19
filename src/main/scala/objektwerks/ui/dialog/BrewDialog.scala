@@ -120,7 +120,7 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
         appearance = ratingAppearance.getRating.toInt + 1,
         aroma = ratingAroma.getRating.toInt + 1,
         taste = ratingTaste.getRating.toInt + 1,
-        actualFermentableExtract = 4.5
+        actualFermentableExtract = textFieldActualFermentableExtract.double
       )
       listener.batch
     else null
