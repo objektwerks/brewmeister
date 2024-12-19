@@ -91,6 +91,9 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
     labelConditioningTemmp -> textFieldConditioningTemp,
     labelSrmColor -> textFieldSrmColor,
     labelKeggingTemmp -> textFieldKeggingTemp,
+    labelAppearance -> ratingAppearance,
+    labelAroma -> ratingAroma,
+    labelTaste -> ratingTaste,
     labelActualFermentableExtract -> textFieldActualFermentableExtract
   )
 
