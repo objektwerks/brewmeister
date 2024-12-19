@@ -104,5 +104,5 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      null // TODO
+      listener.batch
     else null
