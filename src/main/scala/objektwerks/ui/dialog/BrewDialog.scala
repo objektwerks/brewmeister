@@ -63,6 +63,12 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
   val textFieldKeggingTemp = new IntTextField:
     text = 72.toString
 
+  val labelAppearance = Label( context.labelAppearance )
+
+  val labelAroma = Label( context.labelAroma )
+
+  val labelTaste = Label( context.labelTaste )
+
 
   val labelActualFermentableExtract = Label( context.labelActualFermentableExtract )
   val textFieldActualFermentableExtract = new DoubleTextField:
