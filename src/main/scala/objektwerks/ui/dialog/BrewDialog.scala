@@ -7,7 +7,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 
 import objektwerks.{Batch, Listener, Recipe}
 import objektwerks.ui.{App, Context}
-import objektwerks.ui.control.ControlGrid
+import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField}
 
 final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) extends Dialog[Batch]:
   initOwner(App.stage)
@@ -19,6 +19,10 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
 
   val labelRecipe = Label( context.labelRecipe )
   val textRecipe = Label( recipe.name )
+
+  val labelMashingTemmp = Label( context.labelMashingTemp )
+  val textFieldMashingTemp = new IntTextField:
+    text = 150.toString
 
   val controls = List[(Label, Node)](
     labelRecipe -> textRecipe
