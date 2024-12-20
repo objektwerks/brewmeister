@@ -61,6 +61,6 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     padding = Insets(3)
     children = List(buttonLog, buttonProcess)
 
-  children = List(scrollPaneControls)
+  children = List(scrollPaneControls, buttonBar)
 
   VBox.setVgrow(this, Priority.Always)
