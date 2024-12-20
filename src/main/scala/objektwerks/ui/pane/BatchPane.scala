@@ -49,6 +49,7 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   val controls = List[(Label, Node)](
     labelRecipe -> textRecipe,
     labelStyle -> textStyle,
+    labelVolume -> textVolume,
     labelAppearance -> textAppearance,
     labelAroma -> textAroma,
     labelTaste -> textTaste,
