@@ -29,7 +29,9 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     textMashEfficiency.text = batch.mashEfficiency.toString
     textOriginalGravity.text = batch.originalGravity.toString
     textFermentingTemp.text = batch.fermentingTemp.toString
-
+    textFinalGravity.text = batch.finalGravity.toString
+    textConditioningTemp.text = batch.conditioningTemp.toString
+    textSrmColor.text = batch.srmColor.toString
 
   // Methods
   def log(): Unit = ??? // TODO
