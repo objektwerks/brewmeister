@@ -17,7 +17,7 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     batchToControls(selectedBatch)
   }
 
-  // Bindings
+  // Binding
   def batchToControls(batch: Batch): Unit =
     textRecipe.text = batch.recipe
     textStyle.text = batch.style
