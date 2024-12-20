@@ -64,6 +64,9 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   val labelIbuBitterness = Label( context.labelIbuBitterness )
   val textIbuBitterness = Label( model.selectedBatch.value.ibuBitterness.toString )
 
+  val labelAlcoholByVolume = Label( context.labelAlcoholByVolume )
+  val textAlcoholByVolume = Label( model.selectedBatch.value.alcoholByVolume.toString )
+
   val labelAppearance = Label( context.labelAppearance )
   val textAppearance = Label( model.selectedBatch.value.appearance.toString )
 
