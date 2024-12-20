@@ -31,7 +31,8 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   val controls = List[(Label, Node)](
     labelRecipe -> textRecipe,
     labelStyle -> textStyle,
-    labelStarted -> textStarted
+    labelStarted -> textStarted,
+    labelCompleted -> textCompleted
   )
 
   val scrollPaneControls = new ScrollPane:
