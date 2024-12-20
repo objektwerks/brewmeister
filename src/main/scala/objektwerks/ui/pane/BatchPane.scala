@@ -30,4 +30,6 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   val scrollPaneControls = new ScrollPane:
     content = ControlGrid(controls)
 
+  children = List(scrollPaneControls)
+
   VBox.setVgrow(this, Priority.Always)
