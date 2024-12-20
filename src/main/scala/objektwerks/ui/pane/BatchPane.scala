@@ -76,6 +76,9 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   val labelKeggingTemp = Label( context.labelKeggingTemp )
   val textKeggingTemp = Label( model.selectedBatch.value.keggingTemp.toString )
 
+  val labelBrewhouseEfficiency = Label( context.labelBrewhouseEfficiency )
+  val textBrewhouseEfficiency = Label( model.selectedBatch.value.brewhouseEfficiency.toString )
+
   val labelAppearance = Label( context.labelAppearance )
   val textAppearance = Label( model.selectedBatch.value.appearance.toString )
 
