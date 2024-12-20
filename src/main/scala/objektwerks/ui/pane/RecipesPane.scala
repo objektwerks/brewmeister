@@ -5,8 +5,9 @@ import scalafx.geometry.Insets
 import scalafx.scene.control.{Button, SelectionMode, Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.layout.{HBox, Priority, VBox}
 
-import objektwerks.Recipe
+import objektwerks.{Batch, Recipe}
 import objektwerks.ui.{Context, Model}
+import objektwerks.ui.dialog.BrewDialog
 
 final class RecipesPane(context: Context, model: Model) extends TabPane:
   val tableView = new TableView[Recipe]():
@@ -59,4 +60,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     tableView.selectionModel().select(0)
 
   def brew(): Unit =
-    buttonBrew.disable = true // TODO
+    buttonBrew.disable = true
+    BrewDialog(context, model.selectedRecipe.value).showAndWait() match
+      case Some(batch: Batch) => // TODO
+      case _ =>

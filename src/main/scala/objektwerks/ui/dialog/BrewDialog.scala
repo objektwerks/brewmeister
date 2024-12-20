@@ -12,7 +12,7 @@ import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField}
 import objektwerks.formatGravity
 
-final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) extends Dialog[Batch]:
+final class BrewDialog(context: Context, recipe: Recipe) extends Dialog[Batch]:
   initOwner(App.stage)
   title = context.windowTitle
   headerText = context.dialogBrew
@@ -103,6 +103,7 @@ final class BrewDialog(context: Context, listener: Listener, recipe: Recipe) ext
 
   resultConverter = dialogButton =>
     if dialogButton == okButtonType then
+      val listener = Listener()
       Brewer.brew(
         listener = listener,
         recipe = recipe,
