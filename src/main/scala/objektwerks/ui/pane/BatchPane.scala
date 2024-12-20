@@ -34,6 +34,9 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   val labelMashingTemp = Label( context.labelMashingTemp )
   val textMashingTemp = Label( model.selectedBatch.value.mashingTemp.toString )
 
+  val labelPh = Label( context.labelPh )
+  val textPh = Label( model.selectedBatch.value.pH.toString )
+
   val labelAppearance = Label( context.labelAppearance )
   val textAppearance = Label( model.selectedBatch.value.appearance.toString )
 
