@@ -131,6 +131,7 @@ final class Context(config: Config):
   def imageViewSave = loadImageView("/image/save.png")
   def imageViewPlus = loadImageView("/image/plus.png")
   def imageViewMinus = loadImageView("/image/minus.png")
+  def imageViewLog = loadImageView("/image/log.png")
   def logoImage = new Image(Image.getClass.getResourceAsStream("/image/logo.png"))
 
   private def loadImageView(path: String): ImageView = new ImageView:
