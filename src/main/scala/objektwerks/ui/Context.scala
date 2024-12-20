@@ -25,6 +25,8 @@ final class Context(config: Config):
   val dialogTempRangeDuration = config.getString("dialog.tempRangeDuration")
   val dialogVolume = config.getString("dialog.volume")
   val dialogBrew = config.getString("dialog.brew")
+  val dialogLog = config.getString("dialog.log")
+  val dialogProcess = config.getString("dialog.process")
 
   val labelName = config.getString("label.name")
   val labelStyle = config.getString("label.style")
