@@ -49,6 +49,12 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     disable = true
     onAction = { _ => log() }
 
+  val buttonProcess = new Button:
+    graphic = context.imageViewSave
+    tooltip = context.tooltipSave
+    disable = true
+    onAction = { _ => process() }
+
   children = List(scrollPaneControls)
 
   VBox.setVgrow(this, Priority.Always)
