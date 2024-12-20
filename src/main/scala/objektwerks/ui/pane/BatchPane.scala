@@ -17,9 +17,9 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   }
 
   // Methods
-  def log(): Unit = ???
+  def log(): Unit = ??? // TODO
 
-  def process(): Unit = ???
+  def process(): Unit = ??? // TODO
 
   // Controls
   val labelRecipe = Label( context.labelRecipe )
