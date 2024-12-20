@@ -14,6 +14,8 @@ final class BatchPane(context: Context, model: Model) extends VBox:
 
   // Model
   model.selectedBatch.onChange { (_, _, selectedBatch) =>
+    buttonLog.disable = false
+    buttonProcess.disable = false
     batchToControls(selectedBatch)
   }
 
