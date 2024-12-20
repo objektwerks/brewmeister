@@ -37,6 +37,10 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     textAlcoholByWeight.text = batch.alcoholByWeight.toString
     textCalories.text = batch.calories.toString
     textKeggingTemp.text = batch.keggingTemp.toString
+    textBrewhouseEfficiency.text = batch.brewhouseEfficiency.toString
+    textAppearance.text = batch.appearance.toString
+    textAroma.text = batch.aroma.toString
+    textTaste.text = batch.taste.toString
 
   // Methods
   def log(): Unit = ??? // TODO
