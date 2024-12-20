@@ -55,6 +55,9 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   val labelFinalGravity = Label( context.labelFinalGravity )
   val textFinalGravity = Label( model.selectedBatch.value.finalGravity.toString )
 
+  val labelConditioningTemp = Label( context.labelConditioningTemp )
+  val textConditioningTemp = Label( model.selectedBatch.value.conditioningTemp.toString )
+
   val labelAppearance = Label( context.labelAppearance )
   val textAppearance = Label( model.selectedBatch.value.appearance.toString )
 
