@@ -6,6 +6,10 @@ import objektwerks.ui.{Context, Model}
 
 final class BatchPane(context: Context, model: Model) extends VBox:
   println(context)
-  println(model)
+
+  // Model
+  model.selectedBatch.onChange { (_, _, selectedBatch) =>
+    // TODO - bind selected batch to this pane!
+  }
 
   VBox.setVgrow(this, Priority.Always)
