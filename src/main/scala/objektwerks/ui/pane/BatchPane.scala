@@ -10,7 +10,7 @@ import objektwerks.ui.{Context, Model}
 import objektwerks.ui.control.ControlGrid
 
 final class BatchPane(context: Context, model: Model) extends VBox:
-  println(context)
+  padding = Insets(3)
 
   // Model
   model.selectedBatch.onChange { (_, _, selectedBatch) =>
