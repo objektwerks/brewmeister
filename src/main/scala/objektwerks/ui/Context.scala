@@ -122,6 +122,7 @@ final class Context(config: Config):
   val tooltipSave = config.getString("tooltip.save")
   val tooltipRemove = config.getString("tooltip.remove")
   val tooltipBrew = config.getString("tooltip.brew")
+  val tooltipOk = config.getString("tooltip.ok")
 
   def imageViewLogo = loadImageView("/image/logo.png")
   def imageViewBang = loadImageView("/image/bang.png")
