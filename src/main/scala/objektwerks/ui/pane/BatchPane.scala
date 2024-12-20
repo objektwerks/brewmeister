@@ -1,7 +1,7 @@
 package objektwerks.ui.pane
 
 import scalafx.scene.Node
-import scalafx.scene.control.{Label, ScrollPane}
+import scalafx.scene.control.{Button, Label, ScrollPane}
 import scalafx.scene.layout.{Priority, VBox}
 
 import objektwerks.ui.{Context, Model}
@@ -14,6 +14,11 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   model.selectedBatch.onChange { (_, _, selectedBatch) =>
     // TODO - bind selected batch to this pane!
   }
+
+  // Methods
+  def log(): Unit = ???
+
+  def process(): Unit = ???
 
   // Controls
   val labelRecipe = Label( context.labelRecipe )
@@ -37,6 +42,12 @@ final class BatchPane(context: Context, model: Model) extends VBox:
 
   val scrollPaneControls = new ScrollPane:
     content = ControlGrid(controls)
+
+  val buttonLog = new Button:
+    graphic = context.imageViewSave
+    tooltip = context.tooltipSave
+    disable = true
+    onAction = { _ => log() }
 
   children = List(scrollPaneControls)
 
