@@ -158,7 +158,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   dialogPane().content = content
 
-  val saveButtonType = new ButtonType(context.tooltipSave, ButtonData.OKDone)
+  val saveButtonType = ButtonType(context.tooltipSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
   resultConverter = dialogButton =>
