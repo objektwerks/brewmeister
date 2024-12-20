@@ -37,6 +37,9 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   val labelPh = Label( context.labelPh )
   val textPh = Label( model.selectedBatch.value.pH.toString )
 
+  val labelBoilingTemp = Label( context.labelBoilingTemp )
+  val textBoilingTemp = Label( model.selectedBatch.value.boilingTemp.toString )
+
   val labelAppearance = Label( context.labelAppearance )
   val textAppearance = Label( model.selectedBatch.value.appearance.toString )
 
