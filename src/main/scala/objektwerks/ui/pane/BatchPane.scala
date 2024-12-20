@@ -22,6 +22,9 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     textRecipe.text = batch.recipe
     textStyle.text = batch.style
     textVolume.text = s"${batch.volume.value} ${batch.volume.unit.toString}"
+    textMashingTemp.text = batch.mashingTemp.toString
+    textPh.text = batch.pH.toString
+    textBoilingTemp.text = batch.boilingTemp.toString
 
 
   // Methods
