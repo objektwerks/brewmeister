@@ -21,6 +21,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
     if selectedBatch != null then
       model.selectedBatchIndex.value = tableView.selectionModel().selectedIndex.value
       model.selectedBatch.value = selectedBatch
+      // TODO - Bind selected batch to batch pane!
   }
 
   val vbox = new VBox:
