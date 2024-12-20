@@ -22,6 +22,9 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   val labelStyle = Label( context.labelStyle )
   val textStyle = Label( model.selectedBatch.value.style )
 
+  val labelStarted = Label( context.labelStarted )
+  val textStarted = Label( model.selectedBatch.value.started )
+
   val controls = List[(Label, Node)](
     labelRecipe -> textRecipe,
     labelStyle -> textStyle
