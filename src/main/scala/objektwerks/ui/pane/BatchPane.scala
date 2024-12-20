@@ -1,10 +1,11 @@
 package objektwerks.ui.pane
 
 import scalafx.scene.Node
-import scalafx.scene.control.Label
+import scalafx.scene.control.{Label, ScrollPane}
 import scalafx.scene.layout.{Priority, VBox}
 
 import objektwerks.ui.{Context, Model}
+import objektwerks.ui.control.ControlGrid
 
 final class BatchPane(context: Context, model: Model) extends VBox:
   println(context)
@@ -25,5 +26,8 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     labelRecipe -> textRecipe,
     labelStyle -> textStyle
   )
+
+  val scrollPaneControls = new ScrollPane:
+    content = ControlGrid(controls)
 
   VBox.setVgrow(this, Priority.Always)
