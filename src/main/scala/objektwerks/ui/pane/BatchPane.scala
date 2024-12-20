@@ -1,8 +1,9 @@
 package objektwerks.ui.pane
 
+import scalafx.geometry.Insets
 import scalafx.scene.Node
 import scalafx.scene.control.{Button, Label, ScrollPane}
-import scalafx.scene.layout.{Priority, VBox}
+import scalafx.scene.layout.{HBox, Priority, VBox}
 
 import objektwerks.ui.{Context, Model}
 import objektwerks.ui.control.ControlGrid
@@ -54,6 +55,11 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     tooltip = context.tooltipSave
     disable = true
     onAction = { _ => process() }
+
+  val buttonBar = new HBox:
+    spacing = 6
+    padding = Insets(3)
+    children = List(buttonLog, buttonProcess)
 
   children = List(scrollPaneControls)
 
