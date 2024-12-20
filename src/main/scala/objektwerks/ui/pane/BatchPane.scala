@@ -49,6 +49,9 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   val labelOriginalGravity = Label( context.labelOriginalGravity )
   val textOriginalGravity = Label( model.selectedBatch.value.originalGravity.toString )
 
+  val labelFermentingTemp = Label( context.labelFermentingTemp )
+  val textFermentingTemp = Label( model.selectedBatch.value.fermentingTemp.toString )
+
   val labelAppearance = Label( context.labelAppearance )
   val textAppearance = Label( model.selectedBatch.value.appearance.toString )
 
