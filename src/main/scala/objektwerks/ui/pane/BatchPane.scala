@@ -41,6 +41,8 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     textAppearance.text = batch.appearance.toString
     textAroma.text = batch.aroma.toString
     textTaste.text = batch.taste.toString
+    textStarted.text = batch.started.toString
+    textCompleted.text = batch.completed.toString
 
   // Methods
   def log(): Unit = ??? // TODO
