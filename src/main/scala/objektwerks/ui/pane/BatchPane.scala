@@ -105,6 +105,7 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     labelIbuBitterness -> textIbuBitterness,
     labelAlcoholByVolume -> textAlcoholByVolume,
     labelAlcoholByWeight -> textAlcoholByWeight,
+    labelCalories -> textCalories,
     labelAppearance -> textAppearance,
     labelAroma -> textAroma,
     labelTaste -> textTaste,
