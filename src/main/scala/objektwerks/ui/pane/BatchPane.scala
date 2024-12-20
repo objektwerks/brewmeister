@@ -1,5 +1,6 @@
 package objektwerks.ui.pane
 
+import scalafx.scene.Node
 import scalafx.scene.control.Label
 import scalafx.scene.layout.{Priority, VBox}
 
@@ -19,5 +20,9 @@ final class BatchPane(context: Context, model: Model) extends VBox:
 
   val labelStyle = Label( context.labelStyle )
   val textFieldStyle = Label( model.selectedBatch.value.style )
+
+  val controls = List[(Label, Node)](
+    labelRecipe -> textRecipe
+  )
 
   VBox.setVgrow(this, Priority.Always)
