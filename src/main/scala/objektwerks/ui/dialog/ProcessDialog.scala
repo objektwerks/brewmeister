@@ -7,4 +7,4 @@ import objektwerks.ui.{App, Context}
 final class ProcessDialog(context: Context) extends Dialog[Unit]:
   initOwner(App.stage)
   title = context.windowTitle
-  headerText = context.dialogBrew
+  headerText = context.dialogProcess
