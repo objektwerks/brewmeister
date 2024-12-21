@@ -1,9 +1,11 @@
 package objektwerks.ui.dialog
 
+import scalafx.Includes.*
 import scalafx.scene.Node
 import scalafx.scene.control.{Dialog, Label, TextArea}
 
 import objektwerks.ui.{App, Context, Model}
+import objektwerks.ui.control.ControlGrid
 
 final class LogDialog(context: Context, model: Model) extends Dialog[Unit]:
   initOwner(App.stage)
@@ -17,3 +19,5 @@ final class LogDialog(context: Context, model: Model) extends Dialog[Unit]:
   val controls = List[(Label, Node)](
     labelLog -> textAreaLog
   )
+
+  dialogPane().content = ControlGrid(controls)
