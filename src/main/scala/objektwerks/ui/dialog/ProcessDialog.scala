@@ -2,7 +2,7 @@ package objektwerks.ui.dialog
 
 import scalafx.Includes.*
 import scalafx.scene.Node
-import scalafx.scene.control.{Dialog, Label}
+import scalafx.scene.control.{ButtonType, Dialog, Label}
 
 import objektwerks.ui.{App, Context, Model}
 import objektwerks.ui.control.ControlGrid
@@ -22,3 +22,5 @@ final class ProcessDialog(context: Context, model: Model) extends Dialog[Unit]:
   )
 
   dialogPane().content = ControlGrid(controls)
+
+  dialogPane().buttonTypes = List(ButtonType.Close)
