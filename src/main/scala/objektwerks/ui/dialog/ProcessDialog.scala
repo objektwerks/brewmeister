@@ -14,18 +14,18 @@ final class ProcessDialog(context: Context, model: Model) extends Dialog[Unit]:
 
   val process = model.selectedBatch.value.process
 
-  val labelSanitizeStarted = Label( context.labelSanitizeStarted )
-  val textSanitizedStarted = Label( process.sanitizingStarted )
+  val labelSanitizingStarted = Label( context.labelSanitizingStarted )
+  val textSanitizingStarted = Label( process.sanitizingStarted )
 
-  val labelSanitizeCompleted = Label( context.labelSanitizeCompleted )
-  val textSanitizedCompleted = Label( process.sanitizingCompleted )
+  val labelSanitizingCompleted = Label( context.labelSanitizingCompleted )
+  val textSanitizingCompleted = Label( process.sanitizingCompleted )
 
-  val labelPreparingStarted = Label( context.labelPrepareStarted )
+  val labelPreparingStarted = Label( context.labelPreparingStarted )
   val textPreparingStarted = Label( process.preparingStarted )
 
   val controls = List[(Label, Node)](
-    labelSanitizeStarted -> textSanitizedStarted,
-    labelSanitizeCompleted -> textSanitizedCompleted
+    labelSanitizingStarted -> textSanitizingStarted,
+    labelSanitizingCompleted -> textSanitizingCompleted
   )
 
   dialogPane().content = ControlGrid(controls)
