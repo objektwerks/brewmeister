@@ -2,7 +2,8 @@ package objektwerks.ui.dialog
 
 import scalafx.Includes.*
 import scalafx.scene.Node
-import scalafx.scene.control.{Dialog, Label, TextArea}
+import scalafx.scene.control.{ButtonType, Dialog, Label, TextArea}
+import scalafx.scene.control.ButtonBar.ButtonData
 
 import objektwerks.ui.{App, Context, Model}
 import objektwerks.ui.control.ControlGrid
@@ -21,3 +22,6 @@ final class LogDialog(context: Context, model: Model) extends Dialog[Unit]:
   )
 
   dialogPane().content = ControlGrid(controls)
+
+  val okButtonType = ButtonType(context.tooltipOk, ButtonData.OKDone)
+  dialogPane().buttonTypes = List(okButtonType)
