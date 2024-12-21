@@ -29,6 +29,9 @@ final class ProcessDialog(context: Context, model: Model) extends Dialog[Unit]:
   val labelMaltingStarted = Label( context.labelMaltingStarted )
   val textMaltingStarted = Label( process.maltingStarted )
 
+  val labelMaltingCompleted = Label( context.labelMaltingCompleted )
+  val textMaltingCompleted = Label( process.maltingCompleted )
+
   val controls = List[(Label, Node)](
     labelSanitizingStarted -> textSanitizingStarted,
     labelSanitizingCompleted -> textSanitizingCompleted,
