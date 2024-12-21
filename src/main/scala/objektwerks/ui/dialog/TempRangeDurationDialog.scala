@@ -44,7 +44,7 @@ final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRan
 
   dialogPane().content = ControlGrid(controls)
 
-  val saveButtonType = ButtonType(context.tooltipSave, ButtonData.OKDone)
+  val saveButtonType = ButtonType(context.buttonSave, ButtonData.OKDone)
   dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
 
   resultConverter = dialogButton =>
