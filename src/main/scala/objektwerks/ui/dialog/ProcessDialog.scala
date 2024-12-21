@@ -28,7 +28,9 @@ final class ProcessDialog(context: Context, model: Model) extends Dialog[Unit]:
 
   val controls = List[(Label, Node)](
     labelSanitizingStarted -> textSanitizingStarted,
-    labelSanitizingCompleted -> textSanitizingCompleted
+    labelSanitizingCompleted -> textSanitizingCompleted,
+    labelPreparingStarted -> textPreparingStarted,
+    labelPreparingCompleted -> textPreparingCompleted
   )
 
   dialogPane().content = ControlGrid(controls)
