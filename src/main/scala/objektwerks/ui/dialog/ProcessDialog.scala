@@ -36,7 +36,9 @@ final class ProcessDialog(context: Context, model: Model) extends Dialog[Unit]:
     labelSanitizingStarted -> textSanitizingStarted,
     labelSanitizingCompleted -> textSanitizingCompleted,
     labelPreparingStarted -> textPreparingStarted,
-    labelPreparingCompleted -> textPreparingCompleted
+    labelPreparingCompleted -> textPreparingCompleted,
+    labelMaltingStarted -> textMaltingStarted,
+    labelMaltingCompleted -> textMaltingCompleted
   )
 
   dialogPane().content = ControlGrid(controls)
