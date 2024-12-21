@@ -120,13 +120,8 @@ final class Context(config: Config):
   val menuMenu = config.getString("menu.menu")
   val menuExit = config.getString("menu.exit")
 
-  val buttonAdd = config.getString("button.add")
   val buttonSave = config.getString("button.save")
-  val buttonRemove = config.getString("button.remove")
   val buttonBrew = config.getString("button.brew")
-  val buttonOk = config.getString("button.ok")
-  val buttonLog = config.getString("button.log")
-  val buttonProcess = config.getString("button.process")
 
   val tooltipAdd = config.getString("tooltip.add")
   val tooltipSave = config.getString("tooltip.save")

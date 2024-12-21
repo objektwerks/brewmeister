@@ -98,11 +98,11 @@ final class BrewDialog(context: Context, recipe: Recipe) extends Dialog[Batch]:
 
   dialogPane().content = ControlGrid(controls)
 
-  val okButtonType = ButtonType(context.buttonOk, ButtonData.OKDone)
-  dialogPane().buttonTypes = List(okButtonType, ButtonType.Cancel)
+  val brewButtonType = ButtonType(context.buttonBrew, ButtonData.OKDone)
+  dialogPane().buttonTypes = List(brewButtonType, ButtonType.Cancel)
 
   resultConverter = dialogButton =>
-    if dialogButton == okButtonType then
+    if dialogButton == brewButtonType then
       val listener = Listener()
       Brewer.brew(
         listener = listener,
