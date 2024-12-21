@@ -1,5 +1,7 @@
 package objektwerks.ui.dialog
 
+import scalafx.Includes.*
+import scalafx.scene.Node
 import scalafx.scene.control.{Dialog, Label}
 
 import objektwerks.ui.{App, Context, Model}
@@ -13,3 +15,7 @@ final class ProcessDialog(context: Context, model: Model) extends Dialog[Unit]:
 
   val labelSanitizeStarted = Label( context.labelSanitizeStarted )
   val textSanitizedStarted = Label( process.sanitizingStarted )
+
+  val controls = List[(Label, Node)](
+    labelSanitizeStarted -> textSanitizedStarted
+  )
