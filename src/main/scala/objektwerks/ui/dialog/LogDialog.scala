@@ -1,11 +1,10 @@
 package objektwerks.ui.dialog
 
 import scalafx.Includes.*
-import scalafx.scene.Node
 import scalafx.scene.control.{ButtonType, Dialog, Label, TextArea}
+import scalafx.scene.layout.VBox
 
 import objektwerks.ui.{App, Context, Model}
-import objektwerks.ui.control.ControlGrid
 
 final class LogDialog(context: Context, model: Model) extends Dialog[Unit]:
   initOwner(App.stage)
@@ -16,10 +15,10 @@ final class LogDialog(context: Context, model: Model) extends Dialog[Unit]:
   val textAreaLog = new TextArea( model.selectedBatch.value.log.mkString ):
     wrapText = true
 
-  val controls = List[(Label, Node)](
-    labelLog -> textAreaLog
-  )
-
-  dialogPane().content = ControlGrid(controls)
+  dialogPane().content = new VBox:
+    prefWidth = 400
+    prefHeight = 200
+    spacing = 3
+    children = List(labelLog, textAreaLog)
 
   dialogPane().buttonTypes = List(ButtonType.Close)
