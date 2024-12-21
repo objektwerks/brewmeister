@@ -25,3 +25,8 @@ final class LogDialog(context: Context, model: Model) extends Dialog[Unit]:
 
   val okButtonType = ButtonType(context.tooltipOk, ButtonData.OKDone)
   dialogPane().buttonTypes = List(okButtonType)
+
+  resultConverter = dialogButton =>
+    if dialogButton == okButtonType then
+      ()
+    else ()
