@@ -8,8 +8,7 @@ import scalafx.scene.layout.{HBox, Priority, VBox}
 import objektwerks.Batch
 import objektwerks.ui.{Context, Model}
 import objektwerks.ui.control.ControlGrid
-import objektwerks.ui.dialog.LogDialog
-import objektwerks.ui.dialog.ProcessDialog
+import objektwerks.ui.dialog.{LogDialog, ProcessDialog}
 
 final class BatchPane(context: Context, model: Model) extends VBox:
   padding = Insets(3)
