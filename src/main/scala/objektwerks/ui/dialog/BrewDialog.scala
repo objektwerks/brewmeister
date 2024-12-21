@@ -98,7 +98,7 @@ final class BrewDialog(context: Context, recipe: Recipe) extends Dialog[Batch]:
 
   dialogPane().content = ControlGrid(controls)
 
-  val okButtonType = ButtonType(context.tooltipOk, ButtonData.OKDone)
+  val okButtonType = ButtonType(context.buttonOk, ButtonData.OKDone)
   dialogPane().buttonTypes = List(okButtonType, ButtonType.Cancel)
 
   resultConverter = dialogButton =>
