@@ -1,5 +1,6 @@
 package objektwerks.ui.dialog
 
+import scalafx.scene.Node
 import scalafx.scene.control.{Dialog, Label, TextArea}
 
 import objektwerks.ui.{App, Context, Model}
@@ -12,3 +13,7 @@ final class LogDialog(context: Context, model: Model) extends Dialog[Unit]:
   val labelLog = Label( context.labelLog )
   val textAreaLog = new TextArea( model.selectedBatch.value.log.mkString ):
     wrapText = true
+
+  val controls = List[(Label, Node)](
+    labelLog -> textAreaLog
+  )
