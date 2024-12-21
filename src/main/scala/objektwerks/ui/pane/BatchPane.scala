@@ -9,6 +9,7 @@ import objektwerks.Batch
 import objektwerks.ui.{Context, Model}
 import objektwerks.ui.control.ControlGrid
 import objektwerks.ui.dialog.LogDialog
+import objektwerks.ui.dialog.ProcessDialog
 
 final class BatchPane(context: Context, model: Model) extends VBox:
   padding = Insets(3)
@@ -50,7 +51,7 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   // Methods
   def log(): Unit = LogDialog(context, model).showAndWait()
 
-  def process(): Unit = ??? // TODO
+  def process(): Unit = ProcessDialog(context, model).showAndWait()
 
   // Controls
   val labelRecipe = Label( context.labelRecipe )
