@@ -16,4 +16,3 @@ final class Model(store: Store):
   val selectedBatch = ObjectProperty( Batch() )
 
   def save(recipe: Recipe): Unit = store.writeRecipe(recipe)
-  def save(batch: Batch): Unit = store.writeBatch(batch)
