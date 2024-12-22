@@ -137,8 +137,9 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   // Methods
   def save(): Unit =
     buttonSave.disable = true
-    controlsToRecipe(model.selectedRecipe.value)
-    model.observableRecipes.update(model.selectedRecipeIndex.value, model.selectedRecipe.value)
+    controlsToRecipe( model.selectedRecipe.value )
+    model.observableRecipes.update( model.selectedRecipeIndex.value, model.selectedRecipe.value )
+    model.save( model.selectedRecipe.value )
 
   // Controls
   val labelName = Label( context.labelName )
