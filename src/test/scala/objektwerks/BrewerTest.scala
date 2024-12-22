@@ -9,7 +9,7 @@ class BrewerTest extends AnyFunSuite with Matchers:
     val store = Store()
     
     store.writeRecipe(recipe)
-    store.readRecipe(recipe.name) shouldBe recipe
+    store.readRecipe(recipe.fileProperty.value) shouldBe recipe
     store.listRecipes.length should be >= 1
 
     val listener = Listener()
@@ -17,5 +17,6 @@ class BrewerTest extends AnyFunSuite with Matchers:
 
     val batch = listener.batch
     store.writeBatch(batch)
+    println(batch.fileProperty.value)
     store.readBatch(batch.fileProperty.value) shouldBe batch
     store.listBatches.length should be >= 1
