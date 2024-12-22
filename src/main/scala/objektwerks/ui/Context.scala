@@ -86,7 +86,6 @@ final class Context(config: Config):
   val labelAppearance = config.getString("label.appearance")
   val labelAroma = config.getString("label.aroma")
   val labelTaste = config.getString("label.taste")
-  val labelLog = config.getString("label.log")
   val labelStarted = config.getString("label.started")
   val labelProcessed = config.getString("label.processed")
   val labelCompleted = config.getString("label.completed")
