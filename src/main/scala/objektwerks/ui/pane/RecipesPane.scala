@@ -64,5 +64,5 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     BrewDialog(context, model.selectedRecipe.value).showAndWait() match
       case Some(batch: Batch) =>
         model.observableBatches.addOne(batch)
-        //model.save(batch)
+        model.save(batch)
       case _ =>
