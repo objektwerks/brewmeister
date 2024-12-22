@@ -15,7 +15,7 @@ final class LogDialog(context: Context, model: Model) extends Dialog[Unit]:
 
   dialogPane().content = new VBox:
     prefWidth = 600
-    prefHeight = 600
+    prefHeight = 400
     spacing = 3
     children = List(listViewLog)
 
