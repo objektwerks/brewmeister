@@ -67,6 +67,7 @@ final case class Recipe(name: String = "",
                         brewhouseEfficiencyRange: IntRange = IntRange(0, 0),
                         created: String = now()) derives CanEqual, JsonSupport:
   val nameProperty = ObjectProperty(name)
+  val fileProperty = ObjectProperty(s"$name.json")
 
 object MixinStep:
   def toList: List[String] = MixinStep.values.map(ms => ms.toString).toList
