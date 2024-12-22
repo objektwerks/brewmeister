@@ -33,10 +33,6 @@ final class Store:
     val batchAsJson = writeJson(batch)
     os.write.over(batchesPath / batch.fileProperty.value, batchAsJson)
 
-  def readBatch(name: String): Batch =
-    val batchAsJson = os.read(batchesPath / name)
-    readJson[Batch](batchAsJson)
-
-  def readBatch(recipe: String, started: String): Batch =
-    val batchAsJson = os.read(batchesPath / s"$recipe.$started.json")
+  def readBatch(file: String): Batch =
+    val batchAsJson = os.read(batchesPath / file)
     readJson[Batch](batchAsJson)
