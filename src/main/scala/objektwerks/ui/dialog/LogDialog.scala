@@ -1,7 +1,7 @@
 package objektwerks.ui.dialog
 
 import scalafx.Includes.*
-import scalafx.scene.control.{ButtonType, Dialog, TextArea}
+import scalafx.scene.control.{ButtonType, Dialog, ListView}
 import scalafx.scene.layout.VBox
 
 import objektwerks.ui.{App, Context, Model}
@@ -11,13 +11,12 @@ final class LogDialog(context: Context, model: Model) extends Dialog[Unit]:
   title = context.windowTitle
   headerText = context.dialogLog
 
-  val textAreaLog = new TextArea( model.selectedBatch.value.log.mkString ):
-    wrapText = true
+  val listViewLog = ListView( model.selectedBatch.value.log )
 
   dialogPane().content = new VBox:
-    prefWidth = 500
-    prefHeight = 250
+    prefWidth = 600
+    prefHeight = 400
     spacing = 3
-    children = List(textAreaLog)
+    children = List(listViewLog)
 
   dialogPane().buttonTypes = List(ButtonType.Close)
