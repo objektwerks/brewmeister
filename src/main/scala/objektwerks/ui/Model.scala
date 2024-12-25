@@ -17,3 +17,5 @@ final class Model(store: Store):
 
   def save(recipe: Recipe): Unit = store.writeRecipe(recipe)
   def save(batch: Batch): Unit = store.writeBatch(batch)
+
+  def remove(recipe: Recipe): Unit = ???
