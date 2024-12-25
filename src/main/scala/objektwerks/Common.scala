@@ -25,7 +25,7 @@ object UoT:
   def toList: List[String] = UoT.values.map(uot => uot.toString).toList
 
 enum UoT derives CanEqual, JsonSupport:
-  case minutes, days, weeks, months
+  case minutes, days, weeks
 
 extension (double: Double)
   def format: Double = f"$double%1.1f".toDouble
