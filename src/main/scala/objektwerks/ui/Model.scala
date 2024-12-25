@@ -22,4 +22,6 @@ final class Model(store: Store):
     store.removeRecipe(recipe)
     observableRecipes.remove(selectedRecipeIndex)
 
-  def remove(batch: Batch): Unit = ???
+  def remove(batch: Batch): Unit =
+    store.removeBatch(batch)
+    observableBatches.remove(selectedBatch)
