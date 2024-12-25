@@ -47,7 +47,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   val buttonBar = new HBox:
     spacing = 6
     padding = Insets(3)
-    children = List(buttonAdd, buttonBrew)
+    children = List(buttonAdd, buttonRemove, buttonBrew)
 
   val vbox = new VBox:
     children = List(tableView, buttonBar)
@@ -64,6 +64,8 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   def add(): Unit =
     model.observableRecipes.add(0, Recipe())
     tableView.selectionModel().select(0)
+
+  
 
   def brew(): Unit =
     buttonBrew.disable = true
