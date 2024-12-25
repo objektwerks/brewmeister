@@ -2,7 +2,7 @@ package objektwerks.ui.pane
 
 import scalafx.Includes.*
 import scalafx.geometry.Insets
-import scalafx.scene.control.{SelectionMode, Tab, TabPane, TableColumn, TableView}
+import scalafx.scene.control.{Button, SelectionMode, Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.layout.{HBox, Priority, VBox}
 
 import objektwerks.Batch
@@ -24,10 +24,16 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
       model.selectedBatch.value = selectedBatch
   }
 
+  val buttonRemove = new Button:
+    graphic = context.imageViewMinus
+    tooltip = context.tooltipRemove
+    disable = true
+    onAction = { _ => remove() }
+
   val buttonBar = new HBox:
     spacing = 6
     padding = Insets(3)
-    children = List()
+    children = List(buttonRemove)
 
   val vbox = new VBox:
     children = List(tableView, buttonBar)
