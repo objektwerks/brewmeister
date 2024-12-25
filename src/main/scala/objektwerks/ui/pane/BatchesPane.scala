@@ -46,3 +46,6 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
   tabs = List(tab)
 
   VBox.setVgrow(this, Priority.Always)
+
+  def remove(): Unit =
+    model.remove(model.selectedBatch.value)
