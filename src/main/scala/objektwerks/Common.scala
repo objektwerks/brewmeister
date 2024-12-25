@@ -19,7 +19,7 @@ object UoM:
   def toList: List[String] = UoM.values.map(uom => uom.toString).toList
 
 enum UoM derives CanEqual, JsonSupport:
-  case oz, gl, ml, lb
+  case oz, gl, lb
 
 object UoT:
   def toList: List[String] = UoT.values.map(uot => uot.toString).toList
