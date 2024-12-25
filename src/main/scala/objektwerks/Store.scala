@@ -39,3 +39,6 @@ final class Store:
   def readBatch(file: String): Batch =
     val batchAsJson = os.read(batchesPath / file)
     readJson[Batch](batchAsJson)
+
+  def removeBatch(batch: Batch): Unit =
+    os.remove(batchesPath / batch.fileProperty.value)
