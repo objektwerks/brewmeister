@@ -19,7 +19,7 @@ final class Model(store: Store):
   def save(batch: Batch): Unit = store.writeBatch(batch)
 
   def remove(recipe: Recipe): Unit =
-    // TODO
+    store.removeRecipe(recipe)
     observableRecipes.remove(selectedRecipeIndex)
 
   def remove(batch: Batch): Unit = ???
