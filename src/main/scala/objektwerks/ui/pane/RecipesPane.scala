@@ -32,6 +32,12 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     disable = false
     onAction = { _ => add() }
 
+  val buttonRemove = new Button:
+    graphic = context.imageViewMinus
+    tooltip = context.tooltipRemove
+    disable = false
+    onAction = { _ => remove() }
+
   val buttonBrew = new Button:
     graphic = context.imageViewBang
     tooltip = context.tooltipBrew
