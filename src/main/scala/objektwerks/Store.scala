@@ -26,6 +26,9 @@ final class Store:
     val recipeAsJson = os.read(recipesPath / file)
     readJson[Recipe](recipeAsJson)
 
+  def removeRecipe(recipe: Recipe): Unit =
+    os.remove(recipesPath / recipe.fileProperty.value)
+
   def listBatches: List[Batch] =
     os.list(batchesPath).map { path => readBatch(s"${path.baseName}.json") }.toList
 
