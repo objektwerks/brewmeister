@@ -23,6 +23,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     if selectedRecipe != null then
       model.selectedRecipeIndex.value = tableView.selectionModel().selectedIndex.value
       model.selectedRecipe.value = selectedRecipe
+      buttonRemove.disable = false
       buttonBrew.disable = false
   }
 
