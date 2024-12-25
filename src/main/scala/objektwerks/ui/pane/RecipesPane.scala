@@ -65,7 +65,8 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     model.observableRecipes.add(0, Recipe())
     tableView.selectionModel().select(0)
 
-  
+  def remove(): Unit =
+    model.observableRecipes.remove(tableView.selectionModel().selectedIndex.value)
 
   def brew(): Unit =
     buttonBrew.disable = true
