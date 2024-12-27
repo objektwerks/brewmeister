@@ -166,7 +166,8 @@ final class Masher(listener: Listener):
           s"Mashing grist into a wort within this temp range / duration: ${mash.recipe.mashingTempRangeDuration}",
           s"Optionally added adjuncts: ${mash.recipe.adjuncts}",
           s"pH should be: ${mash.recipe.pH}",
-        )
+        ),
+        started = listener.incrementRollingDateTime
       )
     )
     listener.onEvent(
