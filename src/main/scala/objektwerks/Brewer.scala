@@ -299,7 +299,8 @@ final class Fermenter(listener: Listener):
     )
     listener.onEvent(
       Fermented(
-        List( "Fermented wort." )
+        List( "Fermented wort." ),
+        completed = UoT.add(ferment.recipe.fermentingTempRangeDuration.duration, ferment.recipe.fermentingTempRangeDuration.unit)
       )
     )
   def logFermentingTempFinalGravity(logFermentingTempFinalGravity: LogFermentingTempFinalGravity): Unit =
