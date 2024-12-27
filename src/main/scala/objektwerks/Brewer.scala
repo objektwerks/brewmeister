@@ -242,7 +242,8 @@ final class Boiler(listener: Listener):
           s"Boiling wort within this temp range / duration: ${boil.recipe.boilingTempRangeDuration}",
           s"Added hops: ${boil.recipe.hops}",
           s"Optionally added adjuncts: ${boil.recipe.adjuncts}"
-        )
+        ),
+        started = listener.incrementRollingDateTime
       )
     )
     listener.onEvent(
