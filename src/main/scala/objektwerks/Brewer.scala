@@ -330,7 +330,8 @@ final class Conditioner(listener: Listener):
     )
     listener.onEvent(
       Conditioned(
-        List( "Conditioned wort." )
+        List( "Conditioned wort." ),
+        completed = UoT.add(condition.recipe.conditioningTempRangeDuration.duration, condition.recipe.conditioningTempRangeDuration.unit)
       )
     )
   def logConditioningSrmColor(logConditioningTempSrmColor: LogConditioningTempSrmColor): Unit =
