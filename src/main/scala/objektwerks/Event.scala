@@ -19,7 +19,7 @@ final case class Milling(log: List[String], started: String = now()) extends Eve
 final case class Milled(log: List[String], completed: String = now()) extends Event
 
 final case class Mashing(log: List[String], started: String = now()) extends Event
-final case class Mashed(log: List[String], completed: String = now()) extends Event
+final case class Mashed(log: List[String], completed: String) extends Event
 
 final case class MashingTempPhLogged(mashingTemp: Int,
                                      pH: Double,
