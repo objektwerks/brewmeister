@@ -72,7 +72,7 @@ final case class Kegged(ibuBitterness: Int,
                         aroma: Int,
                         taste: Int,
                         log: List[String],
-                        completed: String = now()) extends Event
+                        completed: String) extends Event
 
 final case class KeggingTempBrewhouseEfficiencyLogged(brewhouseEfficiency: Int,
                                                       log: List[String],

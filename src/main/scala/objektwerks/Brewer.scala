@@ -393,6 +393,7 @@ final class Kegger(listener: Listener):
           s"Taste: ${keg.taste}",
           "Kegged wort."
         ),
+        completed = UoT.add(keg.recipe.keggingTempRangeDuration.duration, keg.recipe.keggingTempRangeDuration.unit)
       )
     )
   def logKeggingTempBrewhouseEfficiency(logKeggingTempBrewhouseEfficiency: LogKeggingTempBrewhouseEfficiency): Unit =
