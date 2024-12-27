@@ -173,7 +173,7 @@ final class Masher(listener: Listener):
     listener.onEvent(
       Mashed(
         List( "Mashed wort." ),
-        completed = UoT.add(mash.recipe.mashingTempRangeDuration.duration, mash.recipe.mashingTempRangeDuration.unit)
+        completed = listener.incrementRollingDateTime(mash.recipe.mashingTempRangeDuration.duration, mash.recipe.mashingTempRangeDuration.unit)
       )
     )
   def logMashTempPh(logMashTempPh: LogMashingTempPh): Unit =
@@ -244,7 +244,7 @@ final class Boiler(listener: Listener):
     listener.onEvent(
       Boiled(
         List( "Boiled wort." ),
-        completed = UoT.add(boil.recipe.boilingTempRangeDuration.duration, boil.recipe.boilingTempRangeDuration.unit)
+        completed = listener.incrementRollingDateTime(boil.recipe.boilingTempRangeDuration.duration, boil.recipe.boilingTempRangeDuration.unit)
       )
     )
 
@@ -309,7 +309,7 @@ final class Fermenter(listener: Listener):
     listener.onEvent(
       Fermented(
         List( "Fermented wort." ),
-        completed = UoT.add(ferment.recipe.fermentingTempRangeDuration.duration, ferment.recipe.fermentingTempRangeDuration.unit)
+        completed = listener.incrementRollingDateTime(ferment.recipe.fermentingTempRangeDuration.duration, ferment.recipe.fermentingTempRangeDuration.unit)
       )
     )
   def logFermentingTempFinalGravity(logFermentingTempFinalGravity: LogFermentingTempFinalGravity): Unit =
@@ -340,7 +340,7 @@ final class Conditioner(listener: Listener):
     listener.onEvent(
       Conditioned(
         List( "Conditioned wort." ),
-        completed = UoT.add(condition.recipe.conditioningTempRangeDuration.duration, condition.recipe.conditioningTempRangeDuration.unit)
+        completed = listener.incrementRollingDateTime(condition.recipe.conditioningTempRangeDuration.duration, condition.recipe.conditioningTempRangeDuration.unit)
       )
     )
   def logConditioningSrmColor(logConditioningTempSrmColor: LogConditioningTempSrmColor): Unit =
@@ -402,7 +402,7 @@ final class Kegger(listener: Listener):
           s"Taste: ${keg.taste}",
           "Kegged wort."
         ),
-        completed = UoT.add(keg.recipe.keggingTempRangeDuration.duration, keg.recipe.keggingTempRangeDuration.unit)
+        completed = listener.incrementRollingDateTime(keg.recipe.keggingTempRangeDuration.duration, keg.recipe.keggingTempRangeDuration.unit)
       )
     )
   def logKeggingTempBrewhouseEfficiency(logKeggingTempBrewhouseEfficiency: LogKeggingTempBrewhouseEfficiency): Unit =

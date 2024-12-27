@@ -24,13 +24,6 @@ enum UoM derives CanEqual, JsonSupport:
 object UoT:
   def toList: List[String] = UoT.values.map(uot => uot.toString).toList
 
-  def add(number: Int, uot: UoT, localDateTime: LocalDateTime = LocalDateTime.now): String =
-    uot.toString match
-      case "minutes" => localDateTime.plusMinutes(number).asFormattedString
-      case "hours" => localDateTime.plusHours(number).asFormattedString
-      case "days" => localDateTime.plusDays(number).asFormattedString
-      case "weeks" => localDateTime.plusWeeks(number).asFormattedString
-
 enum UoT derives CanEqual, JsonSupport:
   case minutes, hours, days, weeks
 

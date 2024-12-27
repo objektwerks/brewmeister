@@ -13,6 +13,14 @@ final class Listener:
     rollingDateTime = rollingDateTime.plusMinutes(1)
     rollingDateTime.asFormattedString
 
+  def incrementRollingDateTime(number: Int, uot: UoT): String =
+    rollingDateTime = uot.toString match
+      case "minutes" => rollingDateTime.plusMinutes(number)
+      case "hours" => rollingDateTime.plusHours(number)
+      case "days" => rollingDateTime.plusDays(number)
+      case "weeks" => rollingDateTime.plusWeeks(number)
+    rollingDateTime.asFormattedString
+
   def register(listener: Listener): Unit =
     listeners += listener
     ()
