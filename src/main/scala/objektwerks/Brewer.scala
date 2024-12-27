@@ -210,12 +210,14 @@ final class Sparger(listener: Listener):
         List(
           "Sparging wort.",
           s"Mash efficiency should be within this range: ${sparge.recipe.mashEfficiencyRange}"
-        )
+        ),
+        started = listener.incrementRollingDateTime
       )
     )
     listener.onEvent(
       Sparged(
-        List( "Sparged wort." )
+        List( "Sparged wort." ),
+        completed = listener.incrementRollingDateTime
       )
     )
   def logMashEfficiency(logMashEfficiency: LogMashEfficiency): Unit =
