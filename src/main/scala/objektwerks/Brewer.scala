@@ -163,7 +163,8 @@ final class Masher(listener: Listener):
     )
     listener.onEvent(
       Mashed(
-        List( "Mashed wort." )
+        List( "Mashed wort." ),
+        completed = now() // TODO
       )
     )
   def logMashTempPh(logMashTempPh: LogMashingTempPh): Unit =
