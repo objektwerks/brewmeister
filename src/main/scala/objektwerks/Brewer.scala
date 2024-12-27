@@ -260,12 +260,14 @@ final class Cooler(listener: Listener):
         List(
           "Cooling wort.",
           s"Cooling the wort within this temp range: ${cool.recipe.coolingTempRange}"
-        )
+        ),
+        started = listener.incrementRollingDateTime
       )
     )
     listener.onEvent(
       Cooled(
-        List( "Cooled wort." )
+        List( "Cooled wort." ),
+        completed = listener.incrementRollingDateTime
       )
     )
 

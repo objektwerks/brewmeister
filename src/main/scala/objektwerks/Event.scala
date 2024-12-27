@@ -37,8 +37,8 @@ final case class MashEfficiencyLogged(mashEfficiency: Int,
 final case class Boiling(log: List[String], started: String) extends Event
 final case class Boiled(log: List[String], completed: String) extends Event
 
-final case class Cooling(log: List[String], started: String = now()) extends Event
-final case class Cooled(log: List[String], completed: String = now()) extends Event
+final case class Cooling(log: List[String], started: String) extends Event
+final case class Cooled(log: List[String], completed: String) extends Event
 
 final case class Whirlpooling(log: List[String], started: String = now()) extends Event
 final case class Whirlpooled(log: List[String], completed: String = now()) extends Event
