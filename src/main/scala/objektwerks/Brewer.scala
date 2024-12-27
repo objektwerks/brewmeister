@@ -146,12 +146,14 @@ final class Miller(listener: Listener):
   def mill(): Unit =
     listener.onEvent(
       Milling(
-        List( "Milling grains into a grist." )
+        List( "Milling grains into a grist." ),
+        started = listener.incrementRollingDateTime
       )
     )
     listener.onEvent(
       Milled(
-        List( "Milled grains into a grist." )
+        List( "Milled grains into a grist." ),
+        completed = listener.incrementRollingDateTime
       )
     )
 
