@@ -192,12 +192,14 @@ final class Lauterer(listener: Listener):
   def lauter(): Unit =
     listener.onEvent(
       Lautering(
-        List( "Lautering wort." )
+        List( "Lautering wort." ),
+        started = listener.incrementRollingDateTime
       )
     )
     listener.onEvent(
       Lautered(
-        List( "Lautered wort." )
+        List( "Lautered wort." ),
+        completed = listener.incrementRollingDateTime
       )
     )
 

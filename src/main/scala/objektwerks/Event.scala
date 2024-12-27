@@ -25,8 +25,8 @@ final case class MashingTempPhLogged(mashingTemp: Int,
                                      pH: Double,
                                      log: List[String]) extends Event
 
-final case class Lautering(log: List[String], started: String = now()) extends Event
-final case class Lautered(log: List[String], completed: String = now()) extends Event
+final case class Lautering(log: List[String], started: String) extends Event
+final case class Lautered(log: List[String], completed: String) extends Event
 
 final case class Sparging(log: List[String], started: String = now()) extends Event
 final case class Sparged(log: List[String], completed: String = now()) extends Event
