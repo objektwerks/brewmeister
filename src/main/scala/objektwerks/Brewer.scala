@@ -107,7 +107,8 @@ final class Preparer(listener: Listener):
           s"Hops: ${prepare.recipe.hops}",
           s"Adjuncts: ${prepare.recipe.adjuncts}",
           s"Yeasts: ${prepare.recipe.yeasts}"
-        )
+        ),
+        started = listener.incrementRollingDateTime
       )
     )
     listener.onEvent(
@@ -121,7 +122,8 @@ final class Preparer(listener: Listener):
           s"Style: ${prepare.recipe.style}",
           s"Water: ${prepare.recipe.water}",
           s"Batch: ${prepare.recipe.volume}"
-        )
+        ),
+        completed = listener.incrementRollingDateTime
       )
     )
 
