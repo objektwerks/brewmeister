@@ -2,8 +2,8 @@ package objektwerks
 
 sealed trait Event
 
-final case class Sanitizing(log: List[String], started: String = now()) extends Event
-final case class Sanitized(log: List[String], completed: String = now()) extends Event
+final case class Sanitizing(log: List[String], started: String) extends Event
+final case class Sanitized(log: List[String], completed: String) extends Event
 
 final case class Preparing(log: List[String], started: String = now()) extends Event
 final case class Prepared(recipe: String,

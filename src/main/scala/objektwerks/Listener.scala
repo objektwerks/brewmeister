@@ -1,10 +1,18 @@
 package objektwerks
 
+import java.time.LocalDateTime
+
 import scala.collection.mutable
 
 final class Listener:
   private val listeners = mutable.ListBuffer.empty[Listener]
   private val events = mutable.ListBuffer.empty[Event]
+
+  var rollingDateTime = LocalDateTime.now
+
+  def incrementRollingDateTime: String =
+    rollingDateTime = rollingDateTime.plusMinutes(1)
+    rollingDateTime.asFormattedString
 
   def register(listener: Listener): Unit =
     listeners += listener

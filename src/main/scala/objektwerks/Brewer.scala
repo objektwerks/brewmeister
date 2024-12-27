@@ -85,12 +85,14 @@ final class Sanitizer(listener: Listener):
   def sanitize(): Unit =
     listener.onEvent(
       Sanitizing(
-        List( "Sanitizing brewing components." )
+        List( "Sanitizing brewing components." ),
+        started = listener.incrementRollingDateTime
       )
     )
     listener.onEvent(
       Sanitized(
-        List( "Sanitized brewing components." )
+        List( "Sanitized brewing components." ),
+        completed = listener.incrementRollingDateTime
       )
     )
 
