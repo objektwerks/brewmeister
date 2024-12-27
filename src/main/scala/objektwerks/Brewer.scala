@@ -234,7 +234,8 @@ final class Boiler(listener: Listener):
     )
     listener.onEvent(
       Boiled(
-        List( "Boiled wort." )
+        List( "Boiled wort." ),
+        completed = UoT.add(boil.recipe.boilingTempRangeDuration.duration, boil.recipe.boilingTempRangeDuration.unit)
       )
     )
 
