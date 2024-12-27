@@ -7,8 +7,7 @@ import scala.collection.mutable
 final class Listener:
   private val listeners = mutable.ListBuffer.empty[Listener]
   private val events = mutable.ListBuffer.empty[Event]
-
-  var rollingDateTime = LocalDateTime.now
+  private var rollingDateTime = LocalDateTime.now
 
   def incrementRollingDateTime: String =
     rollingDateTime = rollingDateTime.plusMinutes(1)
