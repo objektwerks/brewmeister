@@ -131,12 +131,14 @@ final class Malter(listener: Listener):
   def malt(): Unit =
     listener.onEvent(
       Malting(
-        List( "Malting grains." )
+        List( "Malting grains." ),
+        started = listener.incrementRollingDateTime
       )
     )
     listener.onEvent(
       Malted(
-        List( "Malted grains." )
+        List( "Malted grains." ),
+        completed = listener.incrementRollingDateTime
       )
     )
 

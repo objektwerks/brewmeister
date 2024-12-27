@@ -12,8 +12,8 @@ final case class Prepared(recipe: String,
                           log: List[String],
                           completed: String) extends Event
 
-final case class Malting(log: List[String], started: String = now()) extends Event
-final case class Malted(log: List[String], completed: String = now()) extends Event
+final case class Malting(log: List[String], started: String) extends Event
+final case class Malted(log: List[String], completed: String) extends Event
 
 final case class Milling(log: List[String], started: String = now()) extends Event
 final case class Milled(log: List[String], completed: String = now()) extends Event
