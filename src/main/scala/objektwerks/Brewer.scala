@@ -389,7 +389,8 @@ final class Kegger(listener: Listener):
           s"Alcohol by weight should be within this range: ${keg.recipe.alcoholByWeightRange}",
           s"Calories should be within this range: ${keg.recipe.calorieRange}",
           s"Should have a brew efficiency within this range: ${keg.recipe.brewhouseEfficiencyRange}"
-        )
+        ),
+        started = listener.incrementRollingDateTime
       )
     )
     listener.onEvent(

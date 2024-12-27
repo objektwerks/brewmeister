@@ -62,7 +62,7 @@ final case class ConditioningTempSrmColorLogged(conditioningTemp: Int,
                                                 srmColor: Int,
                                                 log: List[String]) extends Event
 
-final case class Kegging(log: List[String], started: String = now()) extends Event
+final case class Kegging(log: List[String], started: String) extends Event
 final case class Kegged(ibuBitterness: Int,
                         alcoholByVolume: Double,
                         alcoholByWeight: Double,
