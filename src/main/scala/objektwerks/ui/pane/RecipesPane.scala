@@ -2,12 +2,12 @@ package objektwerks.ui.pane
 
 import scalafx.Includes.*
 import scalafx.geometry.Insets
-import scalafx.scene.control.{Button, SelectionMode, Tab, TabPane, TableColumn, TableView}
+import scalafx.scene.control.{Button, ButtonType, SelectionMode, Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.layout.{HBox, Priority, VBox}
 
 import objektwerks.{Batch, Recipe}
 import objektwerks.ui.{Context, Model}
-import objektwerks.ui.dialog.BrewDialog
+import objektwerks.ui.dialog.{BrewDialog, RemoveConfirmationDialog}
 
 final class RecipesPane(context: Context, model: Model) extends TabPane:
   val tableView = new TableView[Recipe]():
@@ -67,7 +67,11 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     tableView.selectionModel().select(0)
 
   def remove(): Unit =
-    model.remove(model.selectedRecipe.value)
+    RemoveConfirmationDialog(context).showAndWait() match
+      case Some(ButtonType.OK) =>
+        model.remove(model.selectedRecipe.value)
+        buttonRemove.disable = true
+      case _ =>
 
   def brew(): Unit =
     buttonBrew.disable = true
