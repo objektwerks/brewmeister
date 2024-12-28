@@ -5,6 +5,7 @@ Brewmeister
 Todo
 ----
 * Add confirmation dialog to remove buttons.
+* Test app.
 
 Note
 ----
