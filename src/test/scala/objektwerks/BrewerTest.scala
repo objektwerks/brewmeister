@@ -26,3 +26,6 @@ class BrewerTest extends AnyFunSuite with Matchers:
 
     store.listBatches.foreach { batch => store.removeBatch(batch) }
     store.listBatches.isEmpty shouldBe true
+
+    store.writeRecipe(recipe)
+    store.writeBatch(batch)
