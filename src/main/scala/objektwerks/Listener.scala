@@ -11,10 +11,6 @@ final class Listener:
   private val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
   private var rollingDateTime = LocalDateTime.now
 
-  def incrProcessDateTime: String =
-    rollingDateTime = rollingDateTime.plusMinutes(1)
-    rollingDateTime.format(formatter)
-
   def incrProcessDateTime(number: Int, uot: UoT): String =
     rollingDateTime = uot match
       case UoT.minutes => rollingDateTime.plusMinutes(number)
