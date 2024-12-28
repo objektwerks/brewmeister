@@ -86,13 +86,13 @@ final class Sanitizer(listener: Listener):
     listener.onEvent(
       Sanitizing(
         List( "Sanitizing brewing components." ),
-        started = listener.incrementRollingDateTime
+        started = listener.incrProcessDateTime
       )
     )
     listener.onEvent(
       Sanitized(
         List( "Sanitized brewing components." ),
-        completed = listener.incrementRollingDateTime
+        completed = listener.incrProcessDateTime
       )
     )
 
@@ -108,7 +108,7 @@ final class Preparer(listener: Listener):
           s"Adjuncts: ${prepare.recipe.adjuncts}",
           s"Yeasts: ${prepare.recipe.yeasts}"
         ),
-        started = listener.incrementRollingDateTime
+        started = listener.incrProcessDateTime
       )
     )
     listener.onEvent(
@@ -123,7 +123,7 @@ final class Preparer(listener: Listener):
           s"Water: ${prepare.recipe.water}",
           s"Batch: ${prepare.recipe.volume}"
         ),
-        completed = listener.incrementRollingDateTime
+        completed = listener.incrProcessDateTime
       )
     )
 
@@ -132,13 +132,13 @@ final class Malter(listener: Listener):
     listener.onEvent(
       Malting(
         List( "Malting grains." ),
-        started = listener.incrementRollingDateTime
+        started = listener.incrProcessDateTime
       )
     )
     listener.onEvent(
       Malted(
         List( "Malted grains." ),
-        completed = listener.incrementRollingDateTime
+        completed = listener.incrProcessDateTime
       )
     )
 
@@ -147,13 +147,13 @@ final class Miller(listener: Listener):
     listener.onEvent(
       Milling(
         List( "Milling grains into a grist." ),
-        started = listener.incrementRollingDateTime
+        started = listener.incrProcessDateTime
       )
     )
     listener.onEvent(
       Milled(
         List( "Milled grains into a grist." ),
-        completed = listener.incrementRollingDateTime
+        completed = listener.incrProcessDateTime
       )
     )
 
@@ -167,13 +167,13 @@ final class Masher(listener: Listener):
           s"Optionally added adjuncts: ${mash.recipe.adjuncts}",
           s"pH should be: ${mash.recipe.pH}",
         ),
-        started = listener.incrementRollingDateTime
+        started = listener.incrProcessDateTime
       )
     )
     listener.onEvent(
       Mashed(
         List( "Mashed wort." ),
-        completed = listener.incrementRollingDateTime(mash.recipe.mashingTempRangeDuration.duration, mash.recipe.mashingTempRangeDuration.unit)
+        completed = listener.incrProcessDateTime(mash.recipe.mashingTempRangeDuration.duration, mash.recipe.mashingTempRangeDuration.unit)
       )
     )
   def logMashTempPh(logMashTempPh: LogMashingTempPh): Unit =
@@ -193,13 +193,13 @@ final class Lauterer(listener: Listener):
     listener.onEvent(
       Lautering(
         List( "Lautering wort." ),
-        started = listener.incrementRollingDateTime
+        started = listener.incrProcessDateTime
       )
     )
     listener.onEvent(
       Lautered(
         List( "Lautered wort." ),
-        completed = listener.incrementRollingDateTime
+        completed = listener.incrProcessDateTime
       )
     )
 
@@ -211,13 +211,13 @@ final class Sparger(listener: Listener):
           "Sparging wort.",
           s"Mash efficiency should be within this range: ${sparge.recipe.mashEfficiencyRange}"
         ),
-        started = listener.incrementRollingDateTime
+        started = listener.incrProcessDateTime
       )
     )
     listener.onEvent(
       Sparged(
         List( "Sparged wort." ),
-        completed = listener.incrementRollingDateTime
+        completed = listener.incrProcessDateTime
       )
     )
   def logMashEfficiency(logMashEfficiency: LogMashEfficiency): Unit =
@@ -243,13 +243,13 @@ final class Boiler(listener: Listener):
           s"Added hops: ${boil.recipe.hops}",
           s"Optionally added adjuncts: ${boil.recipe.adjuncts}"
         ),
-        started = listener.incrementRollingDateTime
+        started = listener.incrProcessDateTime
       )
     )
     listener.onEvent(
       Boiled(
         List( "Boiled wort." ),
-        completed = listener.incrementRollingDateTime(boil.recipe.boilingTempRangeDuration.duration, boil.recipe.boilingTempRangeDuration.unit)
+        completed = listener.incrProcessDateTime(boil.recipe.boilingTempRangeDuration.duration, boil.recipe.boilingTempRangeDuration.unit)
       )
     )
 
@@ -261,13 +261,13 @@ final class Cooler(listener: Listener):
           "Cooling wort.",
           s"Cooling the wort within this temp range: ${cool.recipe.coolingTempRange}"
         ),
-        started = listener.incrementRollingDateTime
+        started = listener.incrProcessDateTime
       )
     )
     listener.onEvent(
       Cooled(
         List( "Cooled wort." ),
-        completed = listener.incrementRollingDateTime
+        completed = listener.incrProcessDateTime
       )
     )
 
@@ -280,13 +280,13 @@ final class Whirlpooler(listener: Listener):
           s"Optionally added hops: ${whirlpool.recipe.hops}",
           s"Should have an orginal gravity within this range: ${whirlpool.recipe.originalGravityRange}"
         ),
-        started = listener.incrementRollingDateTime
+        started = listener.incrProcessDateTime
       )
     )
     listener.onEvent(
       Whirlpooled(
         List( "Whirlpooled wort." ),
-        completed = listener.incrementRollingDateTime
+        completed = listener.incrProcessDateTime
       )
     )
   def logBoilingCoolingTempOriginalGravity(logBoilingCoolingTempOriginalGravity: LogBoilingCoolingTempOriginalGravity): Unit =
@@ -313,13 +313,13 @@ final class Fermenter(listener: Listener):
           s"Potential fermentable extract: ${ferment.recipe.potentialFermentableExtract}",
           s"Should have a final gravity within this range: ${ferment.recipe.finalGravityRange}"
         ),
-        started = listener.incrementRollingDateTime
+        started = listener.incrProcessDateTime
       )
     )
     listener.onEvent(
       Fermented(
         List( "Fermented wort." ),
-        completed = listener.incrementRollingDateTime(ferment.recipe.fermentingTempRangeDuration.duration, ferment.recipe.fermentingTempRangeDuration.unit)
+        completed = listener.incrProcessDateTime(ferment.recipe.fermentingTempRangeDuration.duration, ferment.recipe.fermentingTempRangeDuration.unit)
       )
     )
   def logFermentingTempFinalGravity(logFermentingTempFinalGravity: LogFermentingTempFinalGravity): Unit =
@@ -345,13 +345,13 @@ final class Conditioner(listener: Listener):
           s"Optionally added hops: ${condition.recipe.hops}",
           s"Should have an SRM color within this range: ${condition.recipe.srmColorRange}"
         ),
-        started = listener.incrementRollingDateTime
+        started = listener.incrProcessDateTime
       )
     )
     listener.onEvent(
       Conditioned(
         List( "Conditioned wort." ),
-        completed = listener.incrementRollingDateTime(condition.recipe.conditioningTempRangeDuration.duration, condition.recipe.conditioningTempRangeDuration.unit)
+        completed = listener.incrProcessDateTime(condition.recipe.conditioningTempRangeDuration.duration, condition.recipe.conditioningTempRangeDuration.unit)
       )
     )
   def logConditioningSrmColor(logConditioningTempSrmColor: LogConditioningTempSrmColor): Unit =
@@ -390,7 +390,7 @@ final class Kegger(listener: Listener):
           s"Calories should be within this range: ${keg.recipe.calorieRange}",
           s"Should have a brew efficiency within this range: ${keg.recipe.brewhouseEfficiencyRange}"
         ),
-        started = listener.incrementRollingDateTime
+        started = listener.incrProcessDateTime
       )
     )
     listener.onEvent(
@@ -414,7 +414,7 @@ final class Kegger(listener: Listener):
           s"Taste: ${keg.taste}",
           "Kegged wort."
         ),
-        completed = listener.incrementRollingDateTime(keg.recipe.keggingTempRangeDuration.duration, keg.recipe.keggingTempRangeDuration.unit)
+        completed = listener.incrProcessDateTime(keg.recipe.keggingTempRangeDuration.duration, keg.recipe.keggingTempRangeDuration.unit)
       )
     )
   def logKeggingTempBrewhouseEfficiency(logKeggingTempBrewhouseEfficiency: LogKeggingTempBrewhouseEfficiency): Unit =

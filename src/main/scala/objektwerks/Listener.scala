@@ -9,11 +9,11 @@ final class Listener:
   private val events = mutable.ListBuffer.empty[Event]
   private var rollingDateTime = LocalDateTime.now
 
-  def incrementRollingDateTime: String =
+  def incrProcessDateTime: String =
     rollingDateTime = rollingDateTime.plusMinutes(1)
     rollingDateTime.asFormattedString
 
-  def incrementRollingDateTime(number: Int, uot: UoT): String =
+  def incrProcessDateTime(number: Int, uot: UoT): String =
     rollingDateTime = uot match
       case UoT.minutes => rollingDateTime.plusMinutes(number)
       case UoT.hours => rollingDateTime.plusHours(number)
