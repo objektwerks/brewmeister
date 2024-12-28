@@ -31,9 +31,6 @@ extension (double: Double)
   def format: Double = f"$double%1.1f".toDouble
   def formatGravity: Double = f"$double%1.3f".toDouble
 
-extension(localDateTime: LocalDateTime)
-  def asFormattedString: String = localDateTime.format(formatter)
-
 extension (now: String)
   def localDateTime: LocalDateTime = if now.nonEmpty then LocalDateTime.parse(now, formatter) else LocalDateTime.now
 
