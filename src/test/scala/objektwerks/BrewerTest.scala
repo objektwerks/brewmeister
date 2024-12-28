@@ -20,3 +20,9 @@ class BrewerTest extends AnyFunSuite with Matchers:
     println(batch.fileProperty.value)
     store.readBatch(batch.fileProperty.value) shouldBe batch
     store.listBatches.length should be >= 1
+
+    store.listRecipes.foreach { recipe => store.removeRecipe(recipe) }
+    store.listRecipes.isEmpty shouldBe true
+
+    store.listBatches.foreach { batch => store.removeBatch(batch) }
+    store.listBatches.isEmpty shouldBe true
