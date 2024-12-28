@@ -13,7 +13,7 @@ final class Listener:
 
   def incrProcessDateTime: String =
     rollingDateTime = rollingDateTime.plusMinutes(1)
-    rollingDateTime.asFormattedString
+    rollingDateTime.format(formatter)
 
   def incrProcessDateTime(number: Int, uot: UoT): String =
     rollingDateTime = uot match
