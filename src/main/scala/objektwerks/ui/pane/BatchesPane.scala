@@ -2,11 +2,12 @@ package objektwerks.ui.pane
 
 import scalafx.Includes.*
 import scalafx.geometry.Insets
-import scalafx.scene.control.{Button, SelectionMode, Tab, TabPane, TableColumn, TableView}
+import scalafx.scene.control.{Button, ButtonType, SelectionMode, Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.layout.{HBox, Priority, VBox}
 
 import objektwerks.Batch
 import objektwerks.ui.{Context, Model}
+import objektwerks.ui.dialog.RemoveConfirmationDialog
 
 final class BatchesPane(context: Context, model: Model) extends TabPane:
   val tableView = new TableView[Batch]():
@@ -49,4 +50,6 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
   VBox.setVgrow(this, Priority.Always)
 
   def remove(): Unit =
-    model.remove(model.selectedBatch.value)
+    RemoveConfirmationDialog().showAndWait() match
+      case Some(ButtonType.OK) => model.remove(model.selectedBatch.value)
+      case _ =>
