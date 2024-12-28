@@ -28,6 +28,10 @@ final class Context(config: Config):
   val dialogLog = config.getString("dialog.log")
   val dialogProcess = config.getString("dialog.process")
 
+  val confirmationDialogTitle = config.getString("confirmation.dialog.title")
+  val confirmationDialogHeaderText = config.getString("confirmation.dialog.headerText")
+  val confirmationDialogContentText = config.getString("confirmation.dialog.contentText")
+
   val labelName = config.getString("label.name")
   val labelStyle = config.getString("label.style")
   val labelWater = config.getString("label.water")
