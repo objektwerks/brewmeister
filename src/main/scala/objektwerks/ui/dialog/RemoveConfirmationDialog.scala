@@ -3,10 +3,10 @@ package objektwerks.ui.dialog
 import scalafx.scene.control.Alert
 import scalafx.scene.control.Alert.AlertType
 
-import objektwerks.ui.App
+import objektwerks.ui.{App, Context}
 
-final class RemoveConfirmationDialog() extends Alert(AlertType.Confirmation):
+final class RemoveConfirmationDialog(context: Context) extends Alert(AlertType.Confirmation):
   initOwner(App.stage)
-  title = "Remove Confirmation Dialog"
-  headerText = "Confirm Remove"
-  contentText = "Select Ok to confirm, Cancel to cancel."
+  title = context.confirmationDialogTitle
+  headerText = context.confirmationDialogHeaderText
+  contentText = context.confirmationDialogContentText

@@ -50,6 +50,6 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
   VBox.setVgrow(this, Priority.Always)
 
   def remove(): Unit =
-    RemoveConfirmationDialog().showAndWait() match
+    RemoveConfirmationDialog(context).showAndWait() match
       case Some(ButtonType.OK) => model.remove(model.selectedBatch.value)
       case _ =>
