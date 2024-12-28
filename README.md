@@ -4,12 +4,7 @@ Brewmeister
 
 Todo
 ----
-* The current simulation ignores the following time durations:
-1. mashing
-2. boiling
-3. fermenting
-4. conditioning
-5. kegging
+* Add confirmation dialog to remove buttons.
 
 Note
 ----
