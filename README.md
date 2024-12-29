@@ -4,9 +4,10 @@ Brewmeister
 
 Usage
 -----
-1. Create beer recipe.
-2. Brew beer recipe.
-3. Analzye brewing batch output.
+1. sbt clean test run
+2. Create beer recipe.
+3. Brew beer recipe.
+4. Analzye brewing batch output.
 
 Note
 ----
