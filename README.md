@@ -9,20 +9,6 @@ Usage
 3. Brew selected beer recipe.
 4. Analzye brewing batch output.
 
-Note
-----
-1. ScalaFx property binding for case class / properties / controls doesn't appear to work:
-```
-  case class Person(name: String):
-    val nameProperty = ObjectProperty(name)
-    nameProperty.bind( Bindings.createObjectBinding(() => this.name, nameProperty) )
-
-  val labelName = Label( context.labelName )
-  val textFieldName = new TextField():
-    text <==> model.selectedPerson.value.nameProperty
-```
->Simple ScalaFx property binding does work, though. Currently using manual case class / property binding.
-
 Process
 -------
 >Steps used in ***all grain*** brewing. ***Extract*** brewing excludes steps 3-7.
@@ -224,6 +210,20 @@ Resources
 * [OG & FG Chart](https://www.brewersfriend.com/2017/05/07/beer-styles-original-gravity-and-final-gravity-chart-2017-update/)
 * [More Ways to Get Hoppy](https://beerandbrewing.com/learning-lab-more-ways-to-get-hoppy/)
 * [Beer Color](https://beermaverick.com/understanding-srm-and-lovibond-beer-color-calculations/)
+
+Note
+----
+1. ScalaFx property binding for case class / properties / controls doesn't appear to work:
+```
+  case class Person(name: String):
+    val nameProperty = ObjectProperty(name)
+    nameProperty.bind( Bindings.createObjectBinding(() => this.name, nameProperty) )
+
+  val labelName = Label( context.labelName )
+  val textFieldName = new TextField():
+    text <==> model.selectedPerson.value.nameProperty
+```
+>Simple ScalaFx property binding does work, though. Currently using manual case class / property binding.
 
 License
 -------
