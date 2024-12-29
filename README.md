@@ -2,9 +2,11 @@ Brewmeister
 -----------
 >Brewing process simulation using ScalaFx, uPickle, Os-Lib annd Scala 3.
 
-Todo
-----
-* Test app.
+Usage
+-----
+1. Create beer recipe.
+2. Brew beer recipe.
+3. Analzye brewing batch output.
 
 Note
 ----
