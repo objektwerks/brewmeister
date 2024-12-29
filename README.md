@@ -1,6 +1,6 @@
 Brewmeister
 -----------
->Brewing process simulation using ScalaFx, uPickle, Os-Lib annd Scala 3.
+>Brewing process simulation using ScalaFx, ControlsFx, uPickle, Os-Lib annd Scala 3.
 
 Usage
 -----
