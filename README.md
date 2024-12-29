@@ -183,7 +183,7 @@ Review
 1. Appearance
 2. Aroma
 3. Taste
->Scoring is 3, 2 and 1. Higher is better. ;)
+>Review ratings include: 3, 2 and 1 stars. Higher is better. ;)
 
 Persistence
 -----------
