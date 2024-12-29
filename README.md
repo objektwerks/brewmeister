@@ -187,9 +187,9 @@ Review
 
 Persistence
 -----------
->Recipes and Batches are stored here:
+>Recipes and Batches are stored as json files here:
 ```
-$home/.brewmeister/store/batches | recipes
+~/.brewmeister/store/batches | recipes
 ```
 
 Assembly
