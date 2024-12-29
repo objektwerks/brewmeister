@@ -185,6 +185,13 @@ Review
 3. Taste
 >Scoring is 3 stars, 2 stars and 1 star. Higher is better. ;)
 
+Persistence
+-----------
+>Recipes and Batches are stored here:
+```
+$home/.brewmeister/store/batches | recipes
+```
+
 Assembly
 --------
 >To build for a "mac", "m1', "win" or "linux" os target:
