@@ -31,10 +31,13 @@ extension (double: Double)
   def format: Double = f"$double%1.1f".toDouble
   def formatGravity: Double = f"$double%1.3f".toDouble
 
-def fileNow(): String = LocalDateTime.now.format(fileFormatter)
+extension (now: String)
+  def toFileNow: String = if now.nonEmpty then LocalDateTime.parse(now, nowFormatter).format(nowFileFormatter) else LocalDateTime.now.format(nowFileFormatter)
 
 def now(): String = LocalDateTime.now.format(nowFormatter)
 
-private val fileFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH.mm.ss.SSS")
+def nowFile(): String = LocalDateTime.now.format(nowFileFormatter)
 
 private val nowFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
+
+private val nowFileFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH.mm.ss.SSS")

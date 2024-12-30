@@ -253,7 +253,8 @@ final class Listener:
         batch = batch.copy(
           brewhouseEfficiency = brewhouseEfficiency,
           log = batch.log ++ log,
-          completed = now()
+          completed = now(),
+          file = nowFile()
         )
     }
     batch
