@@ -1,14 +1,12 @@
 package objektwerks
 
 import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 import scala.collection.mutable
 
 final class Listener:
   private val listeners = mutable.ListBuffer.empty[Listener]
   private val events = mutable.ListBuffer.empty[Event]
-  private val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
   private var rollingDateTime = LocalDateTime.now
 
   def incrProcessDateTime(number: Int, uot: UoT): String =
@@ -17,7 +15,7 @@ final class Listener:
       case UoT.hours => rollingDateTime.plusHours(number)
       case UoT.days => rollingDateTime.plusDays(number)
       case UoT.weeks => rollingDateTime.plusWeeks(number)
-    rollingDateTime.format(formatter)
+    rollingDateTime.format(nowFormatter)
 
   def register(listener: Listener): Unit =
     listeners += listener
@@ -251,11 +249,11 @@ final class Listener:
           process = batch.process.copy(keggingCompleted = completed)
         )
 
-      case KeggingTempBrewhouseEfficiencyLogged(brewhouseEfficiency, log, completed) =>
+      case KeggingTempBrewhouseEfficiencyLogged(brewhouseEfficiency, log) =>
         batch = batch.copy(
           brewhouseEfficiency = brewhouseEfficiency,
           log = batch.log ++ log,
-          completed = completed
+          completed = now()
         )
     }
     batch
