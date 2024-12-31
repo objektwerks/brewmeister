@@ -39,7 +39,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     )
 
   def resetControls(): Unit =
-    saveButton.disable = true
+    buttonSave.disable = true
     textFieldName.text = ""
     textFieldWeight.text = ""
     choiceBoxUnit.value = ""
@@ -48,7 +48,8 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
 
   // Methods
   def select(adjunct: Adjunct): Unit =
-    saveButton.disable = false
+    buttonRemove.disable = false
+    buttonSave.disable = false
     listViewAdjuncts.selectionModel().select(adjunct)
     adjunctToControls(adjunct)
     listViewAdjuncts.scrollTo(adjunct)
@@ -61,7 +62,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   def remove(adjunct: Adjunct): Unit =
     observableAdjuncts -= adjunct // listview items refresh?
     resetControls()
-    saveButton.disable = true
+    buttonSave.disable = true
     if !listViewAdjuncts.selectionModel().isEmpty() then
       listViewAdjuncts.selectionModel().select(0)
       select( listViewAdjuncts.selectionModel().selectedItem() )
@@ -129,14 +130,14 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     labelMixinStep -> choiceBoxMixinStep
   )
 
-  val saveButton = new Button:
+  val buttonSave = new Button:
     graphic = context.imageViewSave
     disable = true
     onAction = { _ => update( controlsToAdjunct() ) }
 
   val buttonBarControls = new HBox:
     spacing = 6
-    children = List(saveButton)
+    children = List(buttonSave)
 
   val vboxControls = new VBox:
     spacing = 6
