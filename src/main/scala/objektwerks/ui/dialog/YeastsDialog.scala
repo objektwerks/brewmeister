@@ -1,6 +1,7 @@
 package objektwerks.ui.dialog
 
 import scalafx.Includes.*
+import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.Insets
 import scalafx.scene.Node
@@ -65,9 +66,10 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   val listViewYeasts = new ListView[Yeast]:
     prefHeight = 100
     items = ObservableBuffer.from(updatedYeasts)
+    items <== ObjectProperty(ObservableBuffer.from(updatedYeasts))
     cellFactory = (cell, yeast) => cell.text = yeast.name
+    selectionModel().selectionModeProperty.value = SelectionMode.Single
 
-  listViewYeasts.selectionModel().selectionModeProperty.value = SelectionMode.Single
   listViewYeasts.selectionModel().selectedItemProperty().addListener { (_, _, selectedYeast) =>
     if selectedYeast != null then select(selectedYeast)
   }
@@ -75,7 +77,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   val buttonAdd = new Button:
     graphic = context.imageViewPlus
     tooltip = context.tooltipAdd
-    disable = true
+    disable = false
     onAction = { _ => add() }
 
   val buttonRemove = new Button:
