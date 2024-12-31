@@ -31,11 +31,11 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   def add(): Unit =
     val grain = Grain()
-    observableGrains += grain // listview items refresh?
+    observableGrains += grain
     select(grain)
 
   def remove(grain: Grain): Unit =
-    observableGrains -= grain // listview items refresh?
+    observableGrains -= grain
     resetControls()
     saveButton.disable = true
     if !listViewGrains.selectionModel().isEmpty() then
