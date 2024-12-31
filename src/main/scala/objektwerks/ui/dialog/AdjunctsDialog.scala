@@ -19,7 +19,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   headerText = context.dialogAdjuncts
 
   // Model
-  val updatedAdjuncts = adjuncts.map(identity).toBuffer.sorted
+  val observableAdjuncts = ObservableBuffer.from( adjuncts.map(identity).toBuffer.sorted )
 
   // Bindings
   def adjunctToControls(adjunct: Adjunct): Unit =
@@ -46,11 +46,11 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
 
   def add(): Unit =
     val adjunct = Adjunct()
-    updatedAdjuncts += adjunct // listview items refresh?
+    observableAdjuncts += adjunct // listview items refresh?
     select(adjunct)
 
   def remove(adjunct: Adjunct): Unit =
-    updatedAdjuncts -= adjunct // listview items refresh?
+    observableAdjuncts -= adjunct // listview items refresh?
     resetControls()
     saveButton.disable = true
     if !listViewAdjuncts.selectionModel().isEmpty() then
@@ -60,13 +60,13 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   def save(): Unit =
     val index = listViewAdjuncts.selectionModel().selectedIndex.value
     val adjunct = listViewAdjuncts.selectionModel().selectedItem.value
-    updatedAdjuncts.update(index, adjunct) // listview items refresh?
+    observableAdjuncts.update(index, adjunct) // listview items refresh?
 
   // List
   val listViewAdjuncts = new ListView[Adjunct]:
     prefHeight = 100
-    items = ObservableBuffer.from(updatedAdjuncts)
-    items <== ObjectProperty(ObservableBuffer.from(updatedAdjuncts))
+    items = observableAdjuncts
+    items <== ObjectProperty(observableAdjuncts)
     cellFactory = (cell, adjunct) => cell.text = adjunct.name
     selectionModel().selectionModeProperty.value = SelectionMode.Single
 
@@ -148,5 +148,5 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      updatedAdjuncts.toArray
+      observableAdjuncts.toArray
     else null
