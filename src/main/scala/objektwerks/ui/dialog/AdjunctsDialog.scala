@@ -62,9 +62,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     observableAdjuncts -= adjunct
     resetControls()
 
-  def update(adjunct: Adjunct): Unit =
-    val index = listViewAdjuncts.selectionModel().selectedIndex.value
-    observableAdjuncts.update(index, adjunct)
+  def save(index: Int, adjunct: Adjunct): Unit = sobservableAdjuncts.update(index, adjunct)
 
   // List
   val listViewAdjuncts = new ListView[Adjunct]:
@@ -128,7 +126,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   val buttonSave = new Button:
     graphic = context.imageViewSave
     disable = true
-    onAction = { _ => update( controlsToAdjunct() ) }
+    onAction = { _ => save( listViewAdjuncts.selectionModel().selectedIndex.value, controlsToAdjunct() ) }
 
   val buttonBarControls = new HBox:
     spacing = 6
