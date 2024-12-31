@@ -162,7 +162,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelButtonGrains = new LabelButton[List[Grain]]:
     value = model.selectedRecipe.value.grains
     buttonAction = () => {
-      GrainsDialog(context, model.selectedRecipe.value.grains.toArray).showAndWait() match
+      GrainsDialog(context, value.value.toArray).showAndWait() match
         case Some(grains: Array[Grain]) =>
           text = s"${grains.map(_.name).mkString(", ")}"
           grains.toList
@@ -173,7 +173,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelButtonHops = new LabelButton[List[Hop]]:
     value = model.selectedRecipe.value.hops
     buttonAction = () => {
-      HopsDialog(context, model.selectedRecipe.value.hops.toArray).showAndWait() match
+      HopsDialog(context, value.value.toArray).showAndWait() match
         case Some(hops: Array[Hop]) =>
           text = s"${hops.map(_.name).mkString(", ")}"
           hops.toList
@@ -184,7 +184,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelButtonAdjuncts = new LabelButton[List[Adjunct]]:
     value = model.selectedRecipe.value.adjuncts
     buttonAction = () => {
-      AdjunctsDialog(context, model.selectedRecipe.value.adjuncts.toArray).showAndWait() match
+      AdjunctsDialog(context, value.value.toArray).showAndWait() match
         case Some(adjuncts: Array[Adjunct]) =>
           text = s"${adjuncts.map(_.name).mkString(", ")}"
           adjuncts.toList
@@ -195,7 +195,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelButtonYeasts = new LabelButton[List[Yeast]]:
     value = model.selectedRecipe.value.yeasts
     buttonAction = () => {
-      YeastsDialog(context, model.selectedRecipe.value.yeasts.toArray).showAndWait() match
+      YeastsDialog(context, value.value.toArray).showAndWait() match
         case Some(yeasts: Array[Yeast]) =>
           text = s"${yeasts.map(_.name).mkString(", ")}"
           yeasts.toList
