@@ -254,7 +254,7 @@ final class Listener:
           brewhouseEfficiency = brewhouseEfficiency,
           log = batch.log ++ log,
           completed = now(),
-          stored = nowFile()
+          stored = nowStored()
         )
     }
     batch

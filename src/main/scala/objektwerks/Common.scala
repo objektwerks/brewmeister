@@ -33,7 +33,7 @@ extension (double: Double)
 
 def now(): String = LocalDateTime.now.format(nowFormatter)
 
-def nowFile(): String = LocalDateTime.now.format(nowFileFormatter)
+def nowStored(): String = LocalDateTime.now.format(nowFileFormatter)
 
 private val nowFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
 
