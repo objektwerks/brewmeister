@@ -78,9 +78,9 @@ final case class Batch(recipe: String = "",
                        started: String = "",
                        process: Process = Process(),
                        completed: String = "",
-                       file: String = "") derives CanEqual, JsonSupport:
-  val nameProperty = ObjectProperty(s"$recipe.$file")
-  val fileProperty = ObjectProperty(s"$recipe.$file.json")
+                       stored: String = "") derives CanEqual, JsonSupport:
+  val nameProperty = ObjectProperty(s"$recipe.$stored")
+  val fileProperty = ObjectProperty(s"$recipe.$stored.json")
 
 @upickle.implicits.serializeDefaults(true)
 final case class Process(sanitizingStarted: String = "",
