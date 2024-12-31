@@ -11,6 +11,7 @@ import scalafx.scene.layout.{HBox, VBox}
 import objektwerks.{Adjunct, MixinStep, UoM}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField, NonEmptyTextField}
+import scalafx.beans.property.ObjectProperty
 
 final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends Dialog[Array[Adjunct]]:
   initOwner(App.stage)
@@ -65,9 +66,10 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   val listViewAdjuncts = new ListView[Adjunct]:
     prefHeight = 100
     items = ObservableBuffer.from(updatedAdjuncts)
+    items <== ObjectProperty(ObservableBuffer.from(updatedAdjuncts))
     cellFactory = (cell, adjunct) => cell.text = adjunct.name
-
-  listViewAdjuncts.selectionModel().selectionModeProperty.value = SelectionMode.Single
+    selectionModel().selectionModeProperty.value = SelectionMode.Single
+    
   listViewAdjuncts.selectionModel().selectedItemProperty().addListener { (_, _, selectedAdjunct) =>
     if selectedAdjunct != null then select(selectedAdjunct)
   }
