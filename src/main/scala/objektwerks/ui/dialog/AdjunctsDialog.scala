@@ -55,18 +55,18 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
 
   def add(): Unit =
     val adjunct = Adjunct()
-    observableAdjuncts += adjunct // listview items refresh?
+    observableAdjuncts += adjunct
     select(adjunct)
 
   def remove(adjunct: Adjunct): Unit =
     buttonRemove.disable = true
     buttonSave.disable = true
-    observableAdjuncts -= adjunct // listview items refresh?
+    observableAdjuncts -= adjunct
     resetControls()
 
   def update(adjunct: Adjunct): Unit =
     val index = listViewAdjuncts.selectionModel().selectedIndex.value
-    observableAdjuncts.update(index, adjunct) // listview items refresh?
+    observableAdjuncts.update(index, adjunct)
 
   // List
   val listViewAdjuncts = new ListView[Adjunct]:
