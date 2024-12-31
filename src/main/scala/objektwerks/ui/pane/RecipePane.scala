@@ -198,7 +198,9 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     value = model.selectedRecipe.value.yeasts
     buttonAction = () => {
       YeastsDialog(context, model.selectedRecipe.value.yeasts.toArray).showAndWait() match
-        case Some(yeasts: Array[Yeast]) => yeasts.toList
+        case Some(yeasts: Array[Yeast]) =>
+          text = s"${yeasts.map(_.name).mkString(", ")}"
+          yeasts.toList
         case _ => model.selectedRecipe.value.yeasts
     }
 
