@@ -21,6 +21,27 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   // Model
   val observableAdjuncts = ObservableBuffer.from( adjuncts.map(identity).toBuffer.sorted )
 
+  // Methods
+  def select(adjunct: Adjunct): Unit =
+    buttonRemove.disable = false
+    buttonSave.disable = false
+    listViewAdjuncts.selectionModel().select(adjunct)
+    adjunctToControls(adjunct)
+    listViewAdjuncts.scrollTo(adjunct)
+
+  def add(): Unit =
+    val adjunct = Adjunct()
+    observableAdjuncts += adjunct
+    select(adjunct)
+
+  def remove(adjunct: Adjunct): Unit =
+    buttonRemove.disable = true
+    buttonSave.disable = true
+    observableAdjuncts -= adjunct
+    resetControls()
+
+  def save(index: Int, adjunct: Adjunct): Unit = observableAdjuncts.update(index, adjunct)
+
   // Bindings
   def adjunctToControls(adjunct: Adjunct): Unit =
     textFieldName.text = adjunct.name
@@ -42,27 +63,6 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     textFieldName.text = "name"
     textFieldWeight.text = "0.0"
     textFieldMixinMinute.text = "0"
-
-  // Methods
-  def select(adjunct: Adjunct): Unit =
-    buttonRemove.disable = false
-    buttonSave.disable = false
-    listViewAdjuncts.selectionModel().select(adjunct)
-    adjunctToControls(adjunct)
-    listViewAdjuncts.scrollTo(adjunct)
-
-  def add(): Unit =
-    val adjunct = Adjunct()
-    observableAdjuncts += adjunct
-    select(adjunct)
-
-  def remove(adjunct: Adjunct): Unit =
-    buttonRemove.disable = true
-    buttonSave.disable = true
-    observableAdjuncts -= adjunct
-    resetControls()
-
-  def save(index: Int, adjunct: Adjunct): Unit = sobservableAdjuncts.update(index, adjunct)
 
   // List
   val listViewAdjuncts = new ListView[Adjunct]:
@@ -123,6 +123,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     labelMixinStep -> choiceBoxMixinStep
   )
 
+  // Buttons
   val buttonSave = new Button:
     graphic = context.imageViewSave
     disable = true
