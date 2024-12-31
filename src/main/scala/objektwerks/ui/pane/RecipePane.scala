@@ -176,7 +176,9 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     value = model.selectedRecipe.value.hops
     buttonAction = () => {
       HopsDialog(context, model.selectedRecipe.value.hops.toArray).showAndWait() match
-        case Some(hops: Array[Hop]) => hops.toList
+        case Some(hops: Array[Hop]) =>
+          text = s"${hops.map(_.name).mkString(", ")}"
+          hops.toList
         case _ => model.selectedRecipe.value.hops
     }
 
