@@ -19,7 +19,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   headerText = context.dialogYeasts
 
   // Model
-  val updatedYeasts = yeasts.map(identity).toBuffer.sorted
+  val observableYeasts = ObservableBuffer.from( yeasts.map(identity).toBuffer.sorted )
 
   // Bindings
   def yeastToControls(yeast: Yeast): Unit =
@@ -46,11 +46,11 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
 
   def add(): Unit =
     val yeast = Yeast()
-    updatedYeasts += yeast // listview items refresh?
+    observableYeasts += yeast // listview items refresh?
     select(yeast)
 
   def remove(yeast: Yeast): Unit =
-    updatedYeasts -= yeast // listview items refresh?
+    observableYeasts -= yeast // listview items refresh?
     resetControls()
     saveButton.disable = true
     if !listViewYeasts.selectionModel().isEmpty() then
@@ -60,13 +60,13 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   def save(): Unit =
     val index = listViewYeasts.selectionModel().selectedIndex.value
     val yeast = listViewYeasts.selectionModel().selectedItem.value
-    updatedYeasts.update(index, yeast) // listview items refresh?
+    observableYeasts.update(index, yeast) // listview items refresh?
 
   // List
   val listViewYeasts = new ListView[Yeast]:
     prefHeight = 100
-    items = ObservableBuffer.from(updatedYeasts)
-    items <== ObjectProperty(ObservableBuffer.from(updatedYeasts))
+    items = observableYeasts
+    items <== ObjectProperty(observableYeasts)
     cellFactory = (cell, yeast) => cell.text = yeast.name
     selectionModel().selectionModeProperty.value = SelectionMode.Single
 
@@ -148,5 +148,5 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      updatedYeasts.toArray
+      observableYeasts.toArray
     else null
