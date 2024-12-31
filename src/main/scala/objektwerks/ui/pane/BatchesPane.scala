@@ -18,7 +18,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
         cellValueFactory = _.value.nameProperty
     )
     items = model.observableBatches.sorted
-    items <== ObjectProperty(model.observableBatches)
+    items <== ObjectProperty(model.observableBatches.sorted)
     columnResizePolicy = TableView.ConstrainedResizePolicy
     selectionModel().selectionModeProperty.value = SelectionMode.Single
 
