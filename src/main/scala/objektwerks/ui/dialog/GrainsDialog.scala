@@ -22,26 +22,6 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   // Model
   val observableGrains = ObservableBuffer.from( grains.map(identity).toBuffer.sorted )
 
-  // Bindings
-  def grainToControls(grain: Grain): Unit =
-    textFieldName.text = grain.name
-    textFieldWeight.text = grain.weight.toString
-    choiceBoxUnit.value = grain.unit.toString
-    textFieldColor.text = grain.color.toString
-    textFieldLovibond.text = grain.lovibond.toString
-    textFieldMixinMinute.text = grain.mixinMinute.toString
-    choiceBoxMixinStep.value = grain.mixinStep.toString
-
-  def resetControls(): Unit =
-    saveButton.disable = true
-    textFieldName.text = ""
-    textFieldWeight.text = ""
-    choiceBoxUnit.value = ""
-    textFieldColor.text = ""
-    textFieldLovibond.text = ""
-    textFieldMixinMinute.text = ""
-    choiceBoxMixinStep.value = ""
-
   // Methods
   def select(grain: Grain): Unit =
     saveButton.disable = false
@@ -66,6 +46,26 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     val index = listViewGrains.selectionModel().selectedIndex.value
     val grain = listViewGrains.selectionModel().selectedItem.value
     observableGrains.update(index, grain) // listview items refresh?
+
+  // Bindings
+  def grainToControls(grain: Grain): Unit =
+    textFieldName.text = grain.name
+    textFieldWeight.text = grain.weight.toString
+    choiceBoxUnit.value = grain.unit.toString
+    textFieldColor.text = grain.color.toString
+    textFieldLovibond.text = grain.lovibond.toString
+    textFieldMixinMinute.text = grain.mixinMinute.toString
+    choiceBoxMixinStep.value = grain.mixinStep.toString
+
+  def resetControls(): Unit =
+    saveButton.disable = true
+    textFieldName.text = ""
+    textFieldWeight.text = ""
+    choiceBoxUnit.value = ""
+    textFieldColor.text = ""
+    textFieldLovibond.text = ""
+    textFieldMixinMinute.text = ""
+    choiceBoxMixinStep.value = ""
 
   // List
   val listViewGrains = new ListView[Grain]:
