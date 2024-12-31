@@ -3,6 +3,7 @@ package objektwerks.ui.dialog
 import scalafx.collections.ObservableBuffer
 
 import scalafx.Includes.*
+import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Insets
 import scalafx.scene.Node
 import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, ListView, SelectionMode}
@@ -70,9 +71,10 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val listViewGrains = new ListView[Grain]:
     prefHeight = 100
     items = ObservableBuffer.from(updatedGrains)
+    items <== ObjectProperty(ObservableBuffer.from(updatedGrains))
     cellFactory = (cell, grain) => cell.text = grain.name
+    selectionModel().selectionModeProperty.value = SelectionMode.Single
 
-  listViewGrains.selectionModel().selectionModeProperty.value = SelectionMode.Single
   listViewGrains.selectionModel().selectedItemProperty().addListener { (_, _, selectedGrain) =>
     if selectedGrain != null then select(selectedGrain)
   }
@@ -80,7 +82,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val buttonAdd = new Button:
     graphic = context.imageViewPlus
     tooltip = context.tooltipAdd
-    disable = true
+    disable = false
     onAction = { _ => add() }
 
   val buttonRemove = new Button:
