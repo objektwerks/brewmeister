@@ -183,7 +183,9 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     value = model.selectedRecipe.value.adjuncts
     buttonAction = () => {
       AdjunctsDialog(context, model.selectedRecipe.value.adjuncts.toArray).showAndWait() match
-        case Some(adjuncts: Array[Adjunct]) => adjuncts.toList
+        case Some(adjuncts: Array[Adjunct]) =>
+          text = s"${adjuncts.map(_.name).mkString(", ")}"
+          adjuncts.toList
         case _ => model.selectedRecipe.value.adjuncts
     }
 
