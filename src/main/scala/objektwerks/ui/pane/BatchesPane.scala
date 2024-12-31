@@ -1,6 +1,7 @@
 package objektwerks.ui.pane
 
 import scalafx.Includes.*
+import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Insets
 import scalafx.scene.control.{Button, ButtonType, SelectionMode, Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.layout.{HBox, Priority, VBox}
@@ -17,8 +18,10 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
         cellValueFactory = _.value.nameProperty
     )
     items = model.observableBatches.sorted
-  tableView.columnResizePolicy = TableView.ConstrainedResizePolicy
-  tableView.selectionModel().selectionModeProperty.value = SelectionMode.Single
+    items <== ObjectProperty(model.observableBatches)
+    columnResizePolicy = TableView.ConstrainedResizePolicy
+    selectionModel().selectionModeProperty.value = SelectionMode.Single
+
   tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedBatch) =>
     if selectedBatch != null then
       model.selectedBatchIndex.value = tableView.selectionModel().selectedIndex.value
