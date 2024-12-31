@@ -76,6 +76,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     if selectedAdjunct != null then select(selectedAdjunct)
   }
 
+  // Buttons
   val buttonAdd = new Button:
     graphic = context.imageViewPlus
     tooltip = context.tooltipAdd
