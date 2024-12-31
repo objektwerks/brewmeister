@@ -165,7 +165,9 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     value = model.selectedRecipe.value.grains
     buttonAction = () => {
       GrainsDialog(context, model.selectedRecipe.value.grains.toArray).showAndWait() match
-        case Some(grains: Array[Grain]) => grains.toList
+        case Some(grains: Array[Grain]) =>
+          text = s"${grains.map(_.name).mkString(", ")}"
+          grains.toList
         case _ => model.selectedRecipe.value.grains
     }
   
