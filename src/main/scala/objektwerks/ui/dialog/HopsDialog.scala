@@ -19,7 +19,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   headerText = context.dialogHops
 
   // Model
-  val updatedHops = hops.map(identity).toBuffer.sorted
+  val observableHops = ObservableBuffer.from( hops.map(identity).toBuffer.sorted )
 
   // Bindings
   def hopToControls(hop: Hop): Unit =
@@ -50,11 +50,11 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   def add(): Unit =
     val hop = Hop()
-    updatedHops += hop // listview items refresh?
+    observableHops += hop // listview items refresh?
     select(hop)
 
   def remove(hop: Hop): Unit =
-    updatedHops -= hop // listview items refresh?
+    observableHops -= hop // listview items refresh?
     resetControls()
     saveButton.disable = true
     if !listViewHops.selectionModel().isEmpty() then
@@ -64,13 +64,13 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   def save(): Unit =
     val index = listViewHops.selectionModel().selectedIndex.value
     val hop = listViewHops.selectionModel().selectedItem.value
-    updatedHops.update(index, hop) // listview items refresh?
+    observableHops.update(index, hop) // listview items refresh?
 
   // List
   val listViewHops = new ListView[Hop]:
     prefHeight = 100
-    items = ObservableBuffer.from(updatedHops)
-    items <== ObjectProperty(ObservableBuffer.from(updatedHops))
+    items = observableHops
+    items <== ObjectProperty(observableHops)
     cellFactory = (cell, hop) => cell.text = hop.name
     selectionModel().selectionModeProperty.value = SelectionMode.Single
 
@@ -165,5 +165,5 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      updatedHops.toArray
+      observableHops.toArray
     else null
