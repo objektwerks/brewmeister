@@ -132,7 +132,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   val saveButton = new Button:
     graphic = context.imageViewSave
     disable = true
-    onAction = { _ => update( listViewAdjuncts.selectionModel().selectedItem.value ) }
+    onAction = { _ => update( controlsToAdjunct() ) }
 
   val buttonBarControls = new HBox:
     spacing = 6
