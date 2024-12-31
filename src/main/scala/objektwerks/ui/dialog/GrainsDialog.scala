@@ -20,7 +20,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   headerText = context.dialogGrains
 
   // Model
-  val updatedGrains = grains.map(identity).toBuffer.sorted
+  val observableGrains = ObservableBuffer.from( grains.map(identity).toBuffer.sorted )
 
   // Bindings
   def grainToControls(grain: Grain): Unit =
@@ -51,11 +51,11 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   def add(): Unit =
     val grain = Grain()
-    updatedGrains += grain // listview items refresh?
+    observableGrains += grain // listview items refresh?
     select(grain)
 
   def remove(grain: Grain): Unit =
-    updatedGrains -= grain // listview items refresh?
+    observableGrains -= grain // listview items refresh?
     resetControls()
     saveButton.disable = true
     if !listViewGrains.selectionModel().isEmpty() then
@@ -65,13 +65,13 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   def save(): Unit =
     val index = listViewGrains.selectionModel().selectedIndex.value
     val grain = listViewGrains.selectionModel().selectedItem.value
-    updatedGrains.update(index, grain) // listview items refresh?
+    observableGrains.update(index, grain) // listview items refresh?
 
   // List
   val listViewGrains = new ListView[Grain]:
     prefHeight = 100
-    items = ObservableBuffer.from(updatedGrains)
-    items <== ObjectProperty(ObservableBuffer.from(updatedGrains))
+    items = observableGrains
+    items <== ObjectProperty(observableGrains)
     cellFactory = (cell, grain) => cell.text = grain.name
     selectionModel().selectionModeProperty.value = SelectionMode.Single
 
@@ -161,5 +161,5 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
-      updatedGrains.toArray
+      observableGrains.toArray
     else null
