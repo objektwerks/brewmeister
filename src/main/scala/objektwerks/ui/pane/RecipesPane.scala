@@ -18,7 +18,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
         cellValueFactory = _.value.nameProperty
     )
     items = model.observableRecipes.sorted
-    items <== ObjectProperty(model.observableRecipes)
+    items <== ObjectProperty(model.observableRecipes.sorted)
     columnResizePolicy = TableView.ConstrainedResizePolicy
     selectionModel().selectionModeProperty.value = SelectionMode.Single
 
