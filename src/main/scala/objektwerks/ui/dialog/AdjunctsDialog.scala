@@ -1,6 +1,7 @@
 package objektwerks.ui.dialog
 
 import scalafx.Includes.*
+import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.Insets
 import scalafx.scene.Node
@@ -11,7 +12,6 @@ import scalafx.scene.layout.{HBox, VBox}
 import objektwerks.{Adjunct, MixinStep, UoM}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, DoubleTextField, IntTextField, NonEmptyTextField}
-import scalafx.beans.property.ObjectProperty
 
 final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends Dialog[Array[Adjunct]]:
   initOwner(App.stage)
@@ -69,7 +69,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     items <== ObjectProperty(ObservableBuffer.from(updatedAdjuncts))
     cellFactory = (cell, adjunct) => cell.text = adjunct.name
     selectionModel().selectionModeProperty.value = SelectionMode.Single
-    
+
   listViewAdjuncts.selectionModel().selectedItemProperty().addListener { (_, _, selectedAdjunct) =>
     if selectedAdjunct != null then select(selectedAdjunct)
   }
@@ -77,7 +77,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   val buttonAdd = new Button:
     graphic = context.imageViewPlus
     tooltip = context.tooltipAdd
-    disable = true
+    disable = false
     onAction = { _ => add() }
 
   val buttonRemove = new Button:
