@@ -1,6 +1,7 @@
 package objektwerks.ui.dialog
 
 import scalafx.Includes.*
+import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.Insets
 import scalafx.scene.Node
@@ -69,9 +70,10 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val listViewHops = new ListView[Hop]:
     prefHeight = 100
     items = ObservableBuffer.from(updatedHops)
+    items <== ObjectProperty(ObservableBuffer.from(updatedHops))
     cellFactory = (cell, hop) => cell.text = hop.name
+    selectionModel().selectionModeProperty.value = SelectionMode.Single
 
-  listViewHops.selectionModel().selectionModeProperty.value = SelectionMode.Single
   listViewHops.selectionModel().selectedItemProperty().addListener { (_, _, selectedHop) =>
     if selectedHop != null then select(selectedHop)
   }
@@ -79,7 +81,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val buttonAdd = new Button:
     graphic = context.imageViewPlus
     tooltip = context.tooltipAdd
-    disable = true
+    disable = false
     onAction = { _ => add() }
 
   val buttonRemove = new Button:
