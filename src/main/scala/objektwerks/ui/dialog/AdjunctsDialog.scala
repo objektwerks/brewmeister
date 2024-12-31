@@ -147,10 +147,10 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
 
   dialogPane().content = content
 
-  val saveButtonType = ButtonType(context.buttonSave, ButtonData.OKDone)
-  dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
+  val buttonTypeSave = ButtonType(context.buttonSave, ButtonData.OKDone)
+  dialogPane().buttonTypes = List(buttonTypeSave, ButtonType.Cancel)
 
   resultConverter = dialogButton =>
-    if dialogButton == saveButtonType then
+    if dialogButton == buttonTypeSave then
       observableAdjuncts.toArray
     else null
