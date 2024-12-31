@@ -39,11 +39,9 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     )
 
   def resetControls(): Unit =
-    textFieldName.text = ""
-    textFieldWeight.text = ""
-    choiceBoxUnit.value = ""
-    textFieldMixinMinute.text = ""
-    choiceBoxMixinStep.value = ""
+    textFieldName.text = "name"
+    textFieldWeight.text = "0.0"
+    textFieldMixinMinute.text = "0"
 
   // Methods
   def select(adjunct: Adjunct): Unit =
