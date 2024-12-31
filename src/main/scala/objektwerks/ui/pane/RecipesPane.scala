@@ -77,6 +77,6 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     buttonBrew.disable = true
     BrewDialog(context, model.selectedRecipe.value).showAndWait() match
       case Some(batch: Batch) =>
-        model.observableBatches.addOne(batch)
+        model.observableBatches.add(0, batch)
         model.save(batch)
       case _ =>
