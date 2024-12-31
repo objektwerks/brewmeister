@@ -29,6 +29,15 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     textFieldMixinMinute.text = adjunct.mixinMinute.toString
     choiceBoxMixinStep.value = adjunct.mixinStep.toString
 
+  def controlsToAdjunct(): Adjunct = 
+    Adjunct(
+      name = textFieldName.text.value,
+      weight = textFieldWeight.text.value.toDouble,
+      unit = UoM.valueOf(choiceBoxUnit.value.value),
+      mixinMinute = textFieldMixinMinute.int,
+      mixinStep = MixinStep.valueOf(choiceBoxMixinStep.value.value)
+    )
+
   def resetControls(): Unit =
     saveButton.disable = true
     textFieldName.text = ""
@@ -57,9 +66,8 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
       listViewAdjuncts.selectionModel().select(0)
       select( listViewAdjuncts.selectionModel().selectedItem() )
 
-  def save(): Unit =
+  def update(adjunct: Adjunct): Unit =
     val index = listViewAdjuncts.selectionModel().selectedIndex.value
-    val adjunct = listViewAdjuncts.selectionModel().selectedItem.value
     observableAdjuncts.update(index, adjunct) // listview items refresh?
 
   // List
@@ -124,7 +132,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   val saveButton = new Button:
     graphic = context.imageViewSave
     disable = true
-    onAction = { _ => save() }
+    onAction = { _ => update( listViewAdjuncts.selectionModel().selectedItem.value ) }
 
   val buttonBarControls = new HBox:
     spacing = 6
