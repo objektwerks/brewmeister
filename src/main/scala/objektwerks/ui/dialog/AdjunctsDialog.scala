@@ -39,7 +39,6 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     )
 
   def resetControls(): Unit =
-    buttonSave.disable = true
     textFieldName.text = ""
     textFieldWeight.text = ""
     choiceBoxUnit.value = ""
@@ -60,12 +59,10 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     select(adjunct)
 
   def remove(adjunct: Adjunct): Unit =
+    buttonRemove.disable = true
+    buttonSave.disable = true
     observableAdjuncts -= adjunct // listview items refresh?
     resetControls()
-    buttonSave.disable = true
-    if !listViewAdjuncts.selectionModel().isEmpty() then
-      listViewAdjuncts.selectionModel().select(0)
-      select( listViewAdjuncts.selectionModel().selectedItem() )
 
   def update(adjunct: Adjunct): Unit =
     val index = listViewAdjuncts.selectionModel().selectedIndex.value
