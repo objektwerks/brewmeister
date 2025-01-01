@@ -38,6 +38,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     buttonRemove.disable = true
     buttonSave.disable = true
     observableAdjuncts -= adjunct
+    observableAdjuncts.sorted
     resetControls()
 
   def save(index: Int, adjunct: Adjunct): Unit = observableAdjuncts.update(index, adjunct)
