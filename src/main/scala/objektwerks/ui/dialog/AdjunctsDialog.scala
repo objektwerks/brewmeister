@@ -31,7 +31,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
 
   def add(): Unit =
     val adjunct = Adjunct()
-    observableAdjuncts += adjunct
+    observableAdjuncts.add(0, adjunct)
     select(adjunct)
 
   def remove(adjunct: Adjunct): Unit =
