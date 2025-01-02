@@ -7,6 +7,6 @@ import objektwerks.ui.{App, Context}
 final class RecipeNameDialog(context: Context,
                              defaultValue: String) extends TextInputDialog(defaultValue):
   initOwner(App.stage)
-  title = context.recipenameDialogTitle
+  title = context.windowTitle
   headerText = context.recipenameDialogHeaderText
   contentText = context.recipenameDialogContentText
