@@ -39,7 +39,7 @@ object Recipe:
            created = now())
 
 @upickle.implicits.serializeDefaults(true)
-final case class Recipe(name: String = "",
+final case class Recipe(name: String = Random.alphanumeric.take(7).mkString,
                         style: String = "",
                         water: String = "",
                         volume: Volume = Volume(0.0, UoM.gl),
