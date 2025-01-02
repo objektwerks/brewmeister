@@ -6,8 +6,8 @@ import scalafx.collections.ObservableBuffer
 import objektwerks.{Batch, Recipe, Store}
 
 final class Model(store: Store):
-  val observableRecipes = ObservableBuffer.from(store.listRecipes)
-  val observableBatches = ObservableBuffer.from(store.listBatches)
+  var observableRecipes = ObservableBuffer.from(store.listRecipes)
+  var observableBatches = ObservableBuffer.from(store.listBatches)
 
   val selectedRecipeIndex = ObjectProperty(0)
   val selectedRecipe = ObjectProperty( Recipe() )
@@ -17,8 +17,8 @@ final class Model(store: Store):
 
   def add(recipe: Recipe): Unit =
     store.writeRecipe(recipe)
-    observableRecipes.addOne(recipe)
-    observableRecipes.sortInPlace
+    observableRecipes.insert(0, recipe)
+    observableRecipes = observableRecipes.sortInPlace
 
   def add(batch: Batch): Unit =
     store.writeBatch(batch)
@@ -28,7 +28,8 @@ final class Model(store: Store):
     observableRecipes.update(selectedRecipeIndex.value, recipe)
     save(recipe)
 
-  def save(recipe: Recipe): Unit = store.writeRecipe(recipe)
+  def save(recipe: Recipe): Unit =
+    store.writeRecipe(recipe)
 
   def remove(recipe: Recipe): Unit =
     store.removeRecipe(recipe)
