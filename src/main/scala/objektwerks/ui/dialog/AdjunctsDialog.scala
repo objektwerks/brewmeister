@@ -29,8 +29,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     adjunctToControls(adjunct)
     listViewAdjuncts.scrollTo(adjunct)
 
-  def add(): Unit =
-    val adjunct = Adjunct()
+  def add(adjunct: Adjunct): Unit =
     observableAdjuncts.add(0, adjunct)
     select(adjunct)
 
@@ -83,7 +82,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     graphic = context.imageViewPlus
     tooltip = context.tooltipAdd
     disable = false
-    onAction = { _ => add() }
+    onAction = { _ => add( Adjunct() ) }
 
   val buttonRemove = new Button:
     graphic = context.imageViewMinus
