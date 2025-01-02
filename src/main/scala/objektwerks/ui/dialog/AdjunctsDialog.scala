@@ -19,7 +19,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   headerText = context.dialogAdjuncts
 
   // Model
-  val observableAdjuncts = ObservableBuffer.from( adjuncts.map(identity).toBuffer.sorted )
+  var observableAdjuncts = ObservableBuffer.from( adjuncts.map(identity).toBuffer.sorted )
 
   // Methods
   def select(adjunct: Adjunct): Unit =
@@ -30,15 +30,15 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     adjunctToControls(adjunct)
 
   def add(adjunct: Adjunct): Unit =
-    observableAdjuncts.addOne(adjunct)
-    observableAdjuncts.sortInPlace
+    observableAdjuncts = observableAdjuncts.addOne(adjunct)
+    observableAdjuncts = observableAdjuncts.sortInPlace
     select(adjunct)
 
   def remove(index: Int): Unit =
     buttonRemove.disable = true
     buttonSave.disable = true
     observableAdjuncts.remove(index)
-    observableAdjuncts.sortInPlace
+    observableAdjuncts = observableAdjuncts.sortInPlace
     resetControls()
 
   def save(index: Int, adjunct: Adjunct): Unit =
