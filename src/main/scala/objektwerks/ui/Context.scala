@@ -32,6 +32,10 @@ final class Context(config: Config):
   val confirmationDialogHeaderText = config.getString("confirmation.dialog.headerText")
   val confirmationDialogContentText = config.getString("confirmation.dialog.contentText")
 
+  val textinputDialogTitle = config.getString("textinput.dialog.title")
+  val textinputDialogHeaderText = config.getString("textinput.dialog.headerText")
+  val textinputDialogContentText = config.getString("textinput.dialog.contentText")
+
   val labelName = config.getString("label.name")
   val labelStyle = config.getString("label.style")
   val labelWater = config.getString("label.water")
