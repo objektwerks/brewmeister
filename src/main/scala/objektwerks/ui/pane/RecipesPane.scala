@@ -66,7 +66,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   VBox.setVgrow(this, Priority.Always)
 
   def add(): Unit =
-    model.add( Recipe() )
+    model.add( Recipe() ) // TODO: Popup for name?
     tableView.selectionModel().select(0)
     tableView.scrollTo(0)
     buttonRemove.disable = false
