@@ -33,10 +33,10 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     observableAdjuncts.add(0, adjunct)
     select(adjunct)
 
-  def remove(adjunct: Adjunct): Unit =
+  def remove(index: Int): Unit =
     buttonRemove.disable = true
     buttonSave.disable = true
-    observableAdjuncts.remove(adjunct)
+    observableAdjuncts.remove(index)
     observableAdjuncts.sort(Adjunct.given_Ordering_Adjunct)
     resetControls()
 
@@ -88,7 +88,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     graphic = context.imageViewMinus
     tooltip = context.tooltipRemove
     disable = true
-    onAction = { _ => remove( listViewAdjuncts.selectionModel().selectedItem.value ) }
+    onAction = { _ => remove( listViewAdjuncts.selectionModel().selectedIndex.value ) }
 
   val buttonBarAdjuncts = new HBox:
     spacing = 6
