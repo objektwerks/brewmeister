@@ -68,7 +68,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   // List
   val listViewAdjuncts = new ListView[Adjunct]:
     prefHeight = 100
-    items = observableAdjuncts
+    items = observableAdjuncts.sorted()
     items <== ObjectProperty(observableAdjuncts)
     cellFactory = (cell, adjunct) => cell.text = adjunct.name
     selectionModel().selectionModeProperty.value = SelectionMode.Single
