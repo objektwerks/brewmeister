@@ -30,7 +30,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     adjunctToControls(adjunct)
 
   def add(adjunct: Adjunct): Unit =
-    observableAdjuncts = observableAdjuncts.addOne(adjunct)
+    observableAdjuncts.insert(0, adjunct)
     observableAdjuncts = observableAdjuncts.sortInPlace
     select(adjunct)
 
