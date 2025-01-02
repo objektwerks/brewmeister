@@ -31,14 +31,14 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
 
   def add(adjunct: Adjunct): Unit =
     observableAdjuncts.insert(0, adjunct)
-    observableAdjuncts = observableAdjuncts.sortInPlace
+    observableAdjuncts = observableAdjuncts.sorted
     select(adjunct)
 
   def remove(index: Int): Unit =
     buttonRemove.disable = true
     buttonSave.disable = true
     observableAdjuncts.remove(index)
-    observableAdjuncts = observableAdjuncts.sortInPlace
+    observableAdjuncts = observableAdjuncts.sorted
     resetControls()
 
   def save(index: Int, adjunct: Adjunct): Unit =
