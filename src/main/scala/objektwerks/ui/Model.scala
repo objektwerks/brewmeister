@@ -25,10 +25,10 @@ final class Model(store: Store):
 
   def remove(recipe: Recipe): Unit =
     store.removeRecipe(recipe)
-    observableRecipes.remove(recipe)
+    observableRecipes.remove(selectedRecipeIndex)
     selectedRecipe.value = Recipe()
 
   def remove(batch: Batch): Unit =
     store.removeBatch(batch)
-    observableBatches.remove(batch)
+    observableBatches.remove(selectedBatchIndex)
     selectedBatch.value = Batch()
