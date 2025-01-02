@@ -38,7 +38,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     buttonRemove.disable = true
     buttonSave.disable = true
     observableAdjuncts -= adjunct
-    observableAdjuncts.sort()
+    observableAdjuncts.sort(Adjunct.given_Ordering_Adjunct)
     resetControls()
 
   def save(index: Int, adjunct: Adjunct): Unit = observableAdjuncts.update(index, adjunct)
@@ -68,7 +68,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   // List
   val listViewAdjuncts = new ListView[Adjunct]:
     prefHeight = 100
-    items = observableAdjuncts.sorted()
+    items = observableAdjuncts.sorted
     items <== ObjectProperty(observableAdjuncts)
     cellFactory = (cell, adjunct) => cell.text = adjunct.name
     selectionModel().selectionModeProperty.value = SelectionMode.Single
