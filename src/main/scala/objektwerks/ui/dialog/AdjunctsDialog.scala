@@ -30,7 +30,8 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     listViewAdjuncts.scrollTo(adjunct)
 
   def add(adjunct: Adjunct): Unit =
-    observableAdjuncts.add(0, adjunct)
+    observableAdjuncts.addOne(adjunct)
+    observableAdjuncts.sort(Adjunct.given_Ordering_Adjunct)
     select(adjunct)
 
   def remove(index: Int): Unit =
