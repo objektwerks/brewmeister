@@ -23,6 +23,8 @@ final class Model(store: Store):
 
   def save(batch: Batch): Unit = store.writeBatch(batch)
 
+  def insert(batch: Batch): Unit = observableBatches.insert(0, batch)
+
   def remove(recipe: Recipe): Unit =
     store.removeRecipe(recipe)
     observableRecipes.remove(selectedRecipeIndex)
