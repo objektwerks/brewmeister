@@ -28,11 +28,9 @@ final class Context(config: Config):
   val dialogLog = config.getString("dialog.log")
   val dialogProcess = config.getString("dialog.process")
 
-  val removeDialogTitle = config.getString("remove.dialog.title")
   val removeDialogHeaderText = config.getString("remove.dialog.headerText")
   val removeDialogContentText = config.getString("remove.dialog.contentText")
 
-  val recipenameDialogTitle = config.getString("textinput.dialog.title")
   val recipenameDialogHeaderText = config.getString("textinput.dialog.headerText")
   val recipenameDialogContentText = config.getString("textinput.dialog.contentText")
 
