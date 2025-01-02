@@ -15,7 +15,9 @@ final class Model(store: Store):
   val selectedBatchIndex = ObjectProperty(0)
   val selectedBatch = ObjectProperty( Batch() )
 
-  def insert(recipe: Recipe): Unit = observableRecipes.insert(0, recipe)
+  def add(recipe: Recipe): Unit =
+    observableRecipes.addOne(recipe)
+    observableRecipes.sortInPlace
 
   def update(recipe: Recipe): Unit =
     observableRecipes.update(selectedRecipeIndex.value, recipe)

@@ -66,7 +66,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   VBox.setVgrow(this, Priority.Always)
 
   def add(): Unit =
-    model.observableRecipes.add(0, Recipe())
+    model.insert( Recipe() )
     tableView.selectionModel().select(0)
 
   def remove(): Unit =
