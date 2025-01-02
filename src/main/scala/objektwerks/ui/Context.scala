@@ -32,9 +32,9 @@ final class Context(config: Config):
   val removeDialogHeaderText = config.getString("remove.dialog.headerText")
   val removeDialogContentText = config.getString("remove.dialog.contentText")
 
-  val textinputDialogTitle = config.getString("textinput.dialog.title")
-  val textinputDialogHeaderText = config.getString("textinput.dialog.headerText")
-  val textinputDialogContentText = config.getString("textinput.dialog.contentText")
+  val recipenameDialogTitle = config.getString("textinput.dialog.title")
+  val recipenameDialogHeaderText = config.getString("textinput.dialog.headerText")
+  val recipenameDialogContentText = config.getString("textinput.dialog.contentText")
 
   val labelName = config.getString("label.name")
   val labelStyle = config.getString("label.style")
