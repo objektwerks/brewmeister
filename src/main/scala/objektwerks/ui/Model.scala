@@ -34,9 +34,11 @@ final class Model(store: Store):
   def remove(recipe: Recipe): Unit =
     store.removeRecipe(recipe)
     observableRecipes.remove(selectedRecipeIndex)
+    selectedRecipeIndex.value = 0
     selectedRecipe.value = Recipe()
 
   def remove(batch: Batch): Unit =
     store.removeBatch(batch)
     observableBatches.remove(selectedBatchIndex)
+    selectedBatchIndex.value = 0
     selectedBatch.value = Batch()
