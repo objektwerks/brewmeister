@@ -66,8 +66,11 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   VBox.setVgrow(this, Priority.Always)
 
   def add(): Unit =
-    model.insert( Recipe() )
+    model.add( Recipe() )
     tableView.selectionModel().select(0)
+    tableView.scrollTo(0)
+    buttonRemove.disable = false
+    buttonBrew.disable = false
 
   def remove(): Unit =
     RemoveConfirmationDialog(context).showAndWait() match
@@ -79,5 +82,5 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
 
   def brew(): Unit =
     BrewDialog(context, model.selectedRecipe.value).showAndWait() match
-      case Some(batch: Batch) => model.save(batch)
+      case Some(batch: Batch) => model.add(batch)
       case _ =>
