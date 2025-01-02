@@ -25,7 +25,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   // Bindings
   def recipeToControls(recipe: Recipe): Unit =
-    textFieldName.text = recipe.name
+    textName.text = recipe.name
     textFieldStyle.text = recipe.style
     textFieldWater.text = recipe.water
 
@@ -106,7 +106,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   def controlsToRecipe(recipe: Recipe): Recipe =
       recipe.copy(
-        name = textFieldName.string,
+        name = textName.text.toString,
         style = textFieldStyle.string,
         water = textFieldWater.string,
         volume = labelButtonVolume.value.value,
@@ -141,7 +141,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   // Controls
   val labelName = Label( context.labelName )
-  val textFieldName = NonEmptyTextField()
+  val textName = Label("")
 
   val labelStyle = Label( context.labelStyle )
   val textFieldStyle = NonEmptyTextField()
@@ -320,7 +320,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelFieldCreated = Label( model.selectedRecipe.value.created )
 
   val controls = List[(Label, Node)](
-    labelName -> textFieldName,
+    labelName -> textName,
     labelStyle -> textFieldStyle,
     labelWater -> textFieldWater,
     labelVolume -> labelButtonVolume,
