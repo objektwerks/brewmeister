@@ -34,6 +34,7 @@ final class Model(store: Store):
   def remove(recipe: Recipe): Unit =
     store.removeRecipe(recipe)
     observableRecipes.remove(selectedRecipeIndex)
+    observableRecipes = observableRecipes.sorted
     selectedRecipeIndex.value = 0
     selectedRecipe.value = Recipe()
 
