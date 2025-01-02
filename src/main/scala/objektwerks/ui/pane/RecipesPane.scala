@@ -8,7 +8,7 @@ import scalafx.scene.layout.{HBox, Priority, VBox}
 
 import objektwerks.{Batch, Recipe}
 import objektwerks.ui.{Context, Model}
-import objektwerks.ui.dialog.{BrewDialog, RemoveConfirmationDialog}
+import objektwerks.ui.dialog.{BrewDialog, RecipeNameDialog, RemoveConfirmationDialog}
 
 final class RecipesPane(context: Context, model: Model) extends TabPane:
   val tableView = new TableView[Recipe]():
@@ -66,8 +66,9 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   VBox.setVgrow(this, Priority.Always)
 
   def add(): Unit =
-    // TODO: Build text input dialog for name!
-    model.add( Recipe() )
+    RecipeNameDialog(context, "name").showAndWait() match
+      case Some(name) if name.nonEmpty => model.add( Recipe(name = name) )
+      case _ =>
     tableView.selectionModel().select(0)
     tableView.scrollTo(0)
     buttonRemove.disable = false
