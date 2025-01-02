@@ -17,7 +17,7 @@ final class Model(store: Store):
   def add(recipe: Recipe): Unit =
     store.writeRecipe(recipe)
     observableRecipes.insert(0, recipe)
-    observableRecipes = observableRecipes.sortInPlace
+    observableRecipes = observableRecipes.sorted
     selectedRecipeIndex.value = observableRecipes.indexOf(recipe)
     selectedRecipe.value = recipe
 
