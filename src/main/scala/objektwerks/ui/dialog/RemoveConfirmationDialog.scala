@@ -7,6 +7,6 @@ import objektwerks.ui.{App, Context}
 
 final class RemoveConfirmationDialog(context: Context) extends Alert(AlertType.Confirmation):
   initOwner(App.stage)
-  title = context.confirmationDialogTitle
-  headerText = context.confirmationDialogHeaderText
-  contentText = context.confirmationDialogContentText
+  title = context.removeDialogTitle
+  headerText = context.removeDialogHeaderText
+  contentText = context.removeDialogContentText
