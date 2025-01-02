@@ -19,11 +19,13 @@ final class Model(store: Store):
     store.writeRecipe(recipe)
     observableRecipes.insert(0, recipe)
     observableRecipes = observableRecipes.sortInPlace
+    selectedRecipeIndex.value = observableRecipes.indexOf(recipe)
     selectedRecipe.value = recipe
 
   def add(batch: Batch): Unit =
     store.writeBatch(batch)
     observableBatches.insert(0, batch)
+    selectedBatchIndex.value = observableBatches.indexOf(batch)
     selectedBatch.value = batch
 
   def save(recipe: Recipe): Unit =
