@@ -122,6 +122,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     labelMixinStep -> choiceBoxMixinStep
   )
 
+  // Buttons
   val buttonSave = new Button:
     graphic = context.imageViewSave
     disable = true
