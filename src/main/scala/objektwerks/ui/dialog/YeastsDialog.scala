@@ -52,6 +52,15 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     textFieldMixinMinute.text = yeast.mixinMinute.toString
     choiceBoxMixinStep.value = yeast.mixinStep.toString
 
+  def controlsToYeast(): Yeast =
+    Yeast(
+      name = textFieldName.text.value,
+      weight = textFieldWeight.text.value.toDouble,
+      unit = UoM.valueOf(choiceBoxUnit.value.value),
+      mixinMinute = textFieldMixinMinute.int,
+      mixinStep = MixinStep.valueOf(choiceBoxMixinStep.value.value)
+    )
+
   def resetControls(): Unit =
     buttonSave.disable = true
     textFieldName.text = ""
