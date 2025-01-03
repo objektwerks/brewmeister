@@ -89,7 +89,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     graphic = context.imageViewMinus
     tooltip = context.tooltipRemove
     disable = true
-    onAction = { _ => remove( listViewYeasts.selectionModel().selectedItem.value ) }
+    onAction = { _ => remove( listViewYeasts.selectionModel().selectedIndex.value ) }
 
   val buttonBarYeasts = new HBox:
     spacing = 6
