@@ -130,7 +130,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   val buttonSave = new Button:
     graphic = context.imageViewSave
     disable = true
-    onAction = { _ => save() }
+    onAction = { _ => save( listViewYeasts.selectionModel().selectedIndex.value, controlsToYeast() ) }
 
   val buttonBarControls = new HBox:
     spacing = 6
