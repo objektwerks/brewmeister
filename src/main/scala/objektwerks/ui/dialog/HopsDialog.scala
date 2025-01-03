@@ -139,7 +139,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val buttonSave = new Button:
     graphic = context.imageViewSave
     disable = true
-    onAction = { _ => save() }
+    onAction = { _ => save( listViewHops.selectionModel().selectedIndex.value, controlsToHop() ) }
 
   val buttonBarControls = new HBox:
     spacing = 6
