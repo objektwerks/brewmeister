@@ -41,10 +41,8 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     observableHops = observableHops.sorted
     resetControls()
 
-  def save(): Unit =
-    val index = listViewHops.selectionModel().selectedIndex.value
-    val hop = listViewHops.selectionModel().selectedItem.value
-    observableHops.update(index, hop) // listview items refresh?
+  def save(index: Int, hop: Hop): Unit =
+    observableHops.update(index, hop)
 
   // Bindings
   def hopToControls(hop: Hop): Unit =
