@@ -144,10 +144,10 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
 
   dialogPane().content = content
 
-  val saveButtonType = ButtonType(context.buttonSave, ButtonData.OKDone)
-  dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
+  val buttonTypeSave = ButtonType(context.buttonSave, ButtonData.OKDone)
+  dialogPane().buttonTypes = List(buttonTypeSave, ButtonType.Cancel)
 
   resultConverter = dialogButton =>
-    if dialogButton == saveButtonType then
+    if dialogButton == buttonTypeSave then
       observableYeasts.toArray
     else null
