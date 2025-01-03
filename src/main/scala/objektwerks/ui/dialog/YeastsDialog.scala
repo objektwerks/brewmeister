@@ -75,6 +75,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     if selectedYeast != null then select(selectedYeast)
   }
 
+  // Buttons
   val buttonAdd = new Button:
     graphic = context.imageViewPlus
     tooltip = context.tooltipAdd
