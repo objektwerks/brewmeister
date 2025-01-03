@@ -85,6 +85,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     if selectedGrain != null then select(selectedGrain)
   }
 
+  // Buttons
   val buttonAdd = new Button:
     graphic = context.imageViewPlus
     tooltip = context.tooltipAdd
