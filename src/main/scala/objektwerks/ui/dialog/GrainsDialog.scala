@@ -55,15 +55,23 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     textFieldMixinMinute.text = grain.mixinMinute.toString
     choiceBoxMixinStep.value = grain.mixinStep.toString
 
+  def controlsToGrain(): Grain =
+    Grain(
+      name = textFieldName.text.value,
+      weight = textFieldWeight.text.value.toDouble,
+      unit = UoM.valueOf(choiceBoxUnit.value.value),
+      color = textFieldColor.text.value.toDouble,
+      lovibond = textFieldLovibond.text.value.toDouble,
+      mixinMinute = textFieldMixinMinute.int,
+      mixinStep = MixinStep.valueOf(choiceBoxMixinStep.value.value)
+    )
+
   def resetControls(): Unit =
-    buttonSave.disable = true
-    textFieldName.text = ""
+    textFieldName.text = "name"
     textFieldWeight.text = ""
-    choiceBoxUnit.value = ""
     textFieldColor.text = ""
     textFieldLovibond.text = ""
     textFieldMixinMinute.text = ""
-    choiceBoxMixinStep.value = ""
 
   // List
   val listViewGrains = new ListView[Grain]:
@@ -135,7 +143,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val buttonSave = new Button:
     graphic = context.imageViewSave
     disable = true
-    onAction = { _ => save() }
+    onAction = { _ => save( listViewGrains.selectionModel().selectedIndex.value, controlsToGrain() ) }
 
   val buttonBarControls = new HBox:
     spacing = 6
