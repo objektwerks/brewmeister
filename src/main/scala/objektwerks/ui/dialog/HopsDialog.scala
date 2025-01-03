@@ -146,6 +146,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     labelMixinStep -> choiceBoxMixinStep
   )
 
+  // Buttons
   val buttonSave = new Button:
     graphic = context.imageViewSave
     disable = true
