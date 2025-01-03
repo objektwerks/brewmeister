@@ -24,7 +24,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   // Methods
   def select(grain: Grain): Unit =
-    saveButton.disable = false
+    buttonSave.disable = false
     listViewGrains.selectionModel().select(grain)
     grainToControls(grain)
     listViewGrains.scrollTo(grain)
@@ -37,7 +37,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   def remove(grain: Grain): Unit =
     observableGrains -= grain
     resetControls()
-    saveButton.disable = true
+    buttonSave.disable = true
     if !listViewGrains.selectionModel().isEmpty() then
       listViewGrains.selectionModel().select(0)
       select( listViewGrains.selectionModel().selectedItem() )
@@ -58,7 +58,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     choiceBoxMixinStep.value = grain.mixinStep.toString
 
   def resetControls(): Unit =
-    saveButton.disable = true
+    buttonSave.disable = true
     textFieldName.text = ""
     textFieldWeight.text = ""
     choiceBoxUnit.value = ""
@@ -134,14 +134,14 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     labelMixinStep -> choiceBoxMixinStep
   )
 
-  val saveButton = new Button:
+  val buttonSave = new Button:
     graphic = context.imageViewSave
     disable = true
     onAction = { _ => save() }
 
   val buttonBarControls = new HBox:
     spacing = 6
-    children = List(saveButton)  
+    children = List(buttonSave)  
 
   val vboxControls = new VBox:
     spacing = 6
