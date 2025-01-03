@@ -54,15 +54,24 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     textFieldMixinMinute.text = hop.mixinMinute.toString
     choiceBoxMixinStep.value = hop.mixinStep.toString
 
+  def controlsToHop(): Hop = 
+    Hop(
+      name = textFieldName.text.value,
+      weight = textFieldWeight.text.value.toDouble,
+      weightUnit = UoM.valueOf(choiceBoxWeightUnit.value.value),
+      volume = textFieldVolume.text.value.toDouble,
+      volumeUnit = UoM.valueOf(choiceBoxVolumeUnit.value.value),
+      alphaAcid = textFieldAlphaAcid.text.value.toDouble,
+      mixinMinute = textFieldMixinMinute.int,
+      mixinStep = MixinStep.valueOf(choiceBoxMixinStep.value.value)
+    )
+
   def resetControls(): Unit =
-    buttonSave.disable = true
-    textFieldName.text = ""
-    textFieldWeight.text = ""
-    textFieldVolume.text = ""
-    choiceBoxVolumeUnit.value = ""
-    textFieldAlphaAcid.text = ""
-    textFieldMixinMinute.text = ""
-    choiceBoxMixinStep.value = ""
+    textFieldName.text = "name"
+    textFieldWeight.text = "0.0"
+    textFieldVolume.text = "0.0"
+    textFieldAlphaAcid.text = "0.0"
+    textFieldMixinMinute.text = "0"
 
   // List
   val listViewHops = new ListView[Hop]:
