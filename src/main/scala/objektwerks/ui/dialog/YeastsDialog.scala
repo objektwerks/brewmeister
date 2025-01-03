@@ -21,22 +21,6 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   // Model
   var observableYeasts = ObservableBuffer.from( yeasts.map(identity).toBuffer.sorted )
 
-  // Bindings
-  def yeastToControls(yeast: Yeast): Unit =
-    textFieldName.text = yeast.name
-    textFieldWeight.text = yeast.weight.toString
-    choiceBoxUnit.value = yeast.unit.toString
-    textFieldMixinMinute.text = yeast.mixinMinute.toString
-    choiceBoxMixinStep.value = yeast.mixinStep.toString
-
-  def resetControls(): Unit =
-    saveButton.disable = true
-    textFieldName.text = ""
-    textFieldWeight.text = ""
-    choiceBoxUnit.value = ""
-    textFieldMixinMinute.text = ""
-    choiceBoxMixinStep.value = ""
-
   // Methods
   def select(yeast: Yeast): Unit =
     saveButton.disable = false
@@ -61,6 +45,22 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     val index = listViewYeasts.selectionModel().selectedIndex.value
     val yeast = listViewYeasts.selectionModel().selectedItem.value
     observableYeasts.update(index, yeast) // listview items refresh?
+
+  // Bindings
+  def yeastToControls(yeast: Yeast): Unit =
+    textFieldName.text = yeast.name
+    textFieldWeight.text = yeast.weight.toString
+    choiceBoxUnit.value = yeast.unit.toString
+    textFieldMixinMinute.text = yeast.mixinMinute.toString
+    choiceBoxMixinStep.value = yeast.mixinStep.toString
+
+  def resetControls(): Unit =
+    saveButton.disable = true
+    textFieldName.text = ""
+    textFieldWeight.text = ""
+    choiceBoxUnit.value = ""
+    textFieldMixinMinute.text = ""
+    choiceBoxMixinStep.value = ""
 
   // List
   val listViewYeasts = new ListView[Yeast]:
