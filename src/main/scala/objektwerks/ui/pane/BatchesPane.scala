@@ -16,6 +16,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
       new TableColumn[Batch, String]:
         text = context.columnBatch
         cellValueFactory = _.value.nameProperty
+        sortable = true
     )
     items = model.observableBatches
     items <== ObjectProperty(model.observableBatches)
