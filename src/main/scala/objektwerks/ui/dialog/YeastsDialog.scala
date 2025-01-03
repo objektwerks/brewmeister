@@ -23,10 +23,11 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
 
   // Methods
   def select(yeast: Yeast): Unit =
+    buttonRemove.disable = false
     saveButton.disable = false
     listViewYeasts.selectionModel().select(yeast)
-    yeastToControls(yeast)
     listViewYeasts.scrollTo(yeast)
+    yeastToControls(yeast)
 
   def add(): Unit =
     val yeast = Yeast()
