@@ -34,13 +34,12 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     observableHops = observableHops.sorted
     select(hop)
 
-  def remove(hop: Hop): Unit =
-    observableHops -= hop // listview items refresh?
-    resetControls()
+  def remove(index: Int): Unit =
+    buttonRemove.disable = true
     buttonSave.disable = true
-    if !listViewHops.selectionModel().isEmpty() then
-      listViewHops.selectionModel().select(0)
-      select( listViewHops.selectionModel().selectedItem() )
+    observableHops.remove(index)
+    observableHops = observableHops.sorted
+    resetControls()
 
   def save(): Unit =
     val index = listViewHops.selectionModel().selectedIndex.value
