@@ -68,10 +68,10 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   def resetControls(): Unit =
     textFieldName.text = "name"
-    textFieldWeight.text = ""
-    textFieldColor.text = ""
-    textFieldLovibond.text = ""
-    textFieldMixinMinute.text = ""
+    textFieldWeight.text = "0.0"
+    textFieldColor.text = "0.0"
+    textFieldLovibond.text = "0.0"
+    textFieldMixinMinute.text = "0"
 
   // List
   val listViewGrains = new ListView[Grain]:
