@@ -29,9 +29,9 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     listViewYeasts.scrollTo(yeast)
     yeastToControls(yeast)
 
-  def add(): Unit =
-    val yeast = Yeast()
-    observableYeasts += yeast // listview items refresh?
+  def add(yeast: Yeast): Unit =
+    observableYeasts.insert(0, yeast)
+    observableYeasts = observableYeasts.sorted
     select(yeast)
 
   def remove(yeast: Yeast): Unit =
@@ -80,7 +80,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     graphic = context.imageViewPlus
     tooltip = context.tooltipAdd
     disable = false
-    onAction = { _ => add() }
+    onAction = { _ => add( Yeast() ) }
 
   val buttonRemove = new Button:
     graphic = context.imageViewMinus
