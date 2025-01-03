@@ -35,13 +35,12 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     observableGrains = observableGrains.sorted
     select(grain)
 
-  def remove(grain: Grain): Unit =
-    observableGrains -= grain
-    resetControls()
+  def remove(index: Int): Unit =
+    buttonRemove.disable = true
     buttonSave.disable = true
-    if !listViewGrains.selectionModel().isEmpty() then
-      listViewGrains.selectionModel().select(0)
-      select( listViewGrains.selectionModel().selectedItem() )
+    observableGrains.remove(index)
+    observableGrains = observableGrains.sorted
+    resetControls()
 
   def save(): Unit =
     val index = listViewGrains.selectionModel().selectedIndex.value
