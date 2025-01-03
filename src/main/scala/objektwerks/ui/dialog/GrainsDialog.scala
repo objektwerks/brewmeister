@@ -30,9 +30,9 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     listViewGrains.scrollTo(grain)
     grainToControls(grain)
 
-  def add(): Unit =
-    val grain = Grain()
-    observableGrains += grain
+  def add(grain: Grain): Unit =
+    observableGrains.insert(0, grain)
+    observableGrains = observableGrains.sorted
     select(grain)
 
   def remove(grain: Grain): Unit =
