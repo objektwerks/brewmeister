@@ -23,10 +23,11 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   // Methods
   def select(hop: Hop): Unit =
+    buttonRemove.disable = false
     buttonSave.disable = false
     listViewHops.selectionModel().select(hop)
-    hopToControls(hop)
     listViewHops.scrollTo(hop)
+    hopToControls(hop)
 
   def add(): Unit =
     val hop = Hop()
