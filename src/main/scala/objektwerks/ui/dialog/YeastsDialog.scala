@@ -24,7 +24,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   // Methods
   def select(yeast: Yeast): Unit =
     buttonRemove.disable = false
-    saveButton.disable = false
+    buttonSave.disable = false
     listViewYeasts.selectionModel().select(yeast)
     listViewYeasts.scrollTo(yeast)
     yeastToControls(yeast)
@@ -37,7 +37,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   def remove(yeast: Yeast): Unit =
     observableYeasts -= yeast // listview items refresh?
     resetControls()
-    saveButton.disable = true
+    buttonSave.disable = true
     if !listViewYeasts.selectionModel().isEmpty() then
       listViewYeasts.selectionModel().select(0)
       select( listViewYeasts.selectionModel().selectedItem() )
@@ -56,7 +56,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     choiceBoxMixinStep.value = yeast.mixinStep.toString
 
   def resetControls(): Unit =
-    saveButton.disable = true
+    buttonSave.disable = true
     textFieldName.text = ""
     textFieldWeight.text = ""
     choiceBoxUnit.value = ""
@@ -122,14 +122,14 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     labelMixinStep -> choiceBoxMixinStep
   )
 
-  val saveButton = new Button:
+  val buttonSave = new Button:
     graphic = context.imageViewSave
     disable = true
     onAction = { _ => save() }
 
   val buttonBarControls = new HBox:
     spacing = 6
-    children = List(saveButton)
+    children = List(buttonSave)
 
   val vboxControls = new VBox:
     spacing = 6
