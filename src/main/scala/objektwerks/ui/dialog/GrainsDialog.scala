@@ -156,10 +156,10 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   dialogPane().content = content
 
-  val saveButtonType = ButtonType(context.buttonSave, ButtonData.OKDone)
-  dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
+  val buttonTypeSave = ButtonType(context.buttonSave, ButtonData.OKDone)
+  dialogPane().buttonTypes = List(buttonTypeSave, ButtonType.Cancel)
 
   resultConverter = dialogButton =>
-    if dialogButton == saveButtonType then
+    if dialogButton == buttonTypeSave then
       observableGrains.toArray
     else null
