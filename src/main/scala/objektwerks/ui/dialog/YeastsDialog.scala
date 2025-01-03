@@ -34,13 +34,12 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     observableYeasts = observableYeasts.sorted
     select(yeast)
 
-  def remove(yeast: Yeast): Unit =
-    observableYeasts -= yeast // listview items refresh?
-    resetControls()
+  def remove(index: Int): Unit =
+    buttonRemove.disable = true
     buttonSave.disable = true
-    if !listViewYeasts.selectionModel().isEmpty() then
-      listViewYeasts.selectionModel().select(0)
-      select( listViewYeasts.selectionModel().selectedItem() )
+    observableYeasts.remove(index)
+    observableYeasts = observableYeasts.sorted
+    resetControls()
 
   def save(): Unit =
     val index = listViewYeasts.selectionModel().selectedIndex.value
