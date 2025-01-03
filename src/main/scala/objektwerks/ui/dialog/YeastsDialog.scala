@@ -62,12 +62,9 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     )
 
   def resetControls(): Unit =
-    buttonSave.disable = true
-    textFieldName.text = ""
-    textFieldWeight.text = ""
-    choiceBoxUnit.value = ""
-    textFieldMixinMinute.text = ""
-    choiceBoxMixinStep.value = ""
+    textFieldName.text = "name"
+    textFieldWeight.text = "0.0"
+    textFieldMixinMinute.text = "0"
 
   // List
   val listViewYeasts = new ListView[Yeast]:
