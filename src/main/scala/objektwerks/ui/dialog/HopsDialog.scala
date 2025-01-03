@@ -23,7 +23,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   // Methods
   def select(hop: Hop): Unit =
-    saveButton.disable = false
+    buttonSave.disable = false
     listViewHops.selectionModel().select(hop)
     hopToControls(hop)
     listViewHops.scrollTo(hop)
@@ -36,7 +36,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   def remove(hop: Hop): Unit =
     observableHops -= hop // listview items refresh?
     resetControls()
-    saveButton.disable = true
+    buttonSave.disable = true
     if !listViewHops.selectionModel().isEmpty() then
       listViewHops.selectionModel().select(0)
       select( listViewHops.selectionModel().selectedItem() )
@@ -57,7 +57,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     choiceBoxMixinStep.value = hop.mixinStep.toString
 
   def resetControls(): Unit =
-    saveButton.disable = true
+    buttonSave.disable = true
     textFieldName.text = ""
     textFieldWeight.text = ""
     textFieldVolume.text = ""
@@ -138,14 +138,14 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     labelMixinStep -> choiceBoxMixinStep
   )
 
-  val saveButton = new Button:
+  val buttonSave = new Button:
     graphic = context.imageViewSave
     disable = true
     onAction = { _ => save() }
 
   val buttonBarControls = new HBox:
     spacing = 6
-    children = List(saveButton)
+    children = List(buttonSave)
 
   val vboxControls = new VBox:
     spacing = 6
