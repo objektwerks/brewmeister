@@ -21,26 +21,6 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   // Model
   val observableHops = ObservableBuffer.from( hops.map(identity).toBuffer.sorted )
 
-  // Bindings
-  def hopToControls(hop: Hop): Unit =
-    textFieldName.text = hop.name
-    textFieldWeight.text = hop.weight.toString
-    textFieldVolume.text = hop.volume.toString
-    choiceBoxVolumeUnit.value = hop.volumeUnit.toString
-    textFieldAlphaAcid.text = hop.alphaAcid.toString
-    textFieldMixinMinute.text = hop.mixinMinute.toString
-    choiceBoxMixinStep.value = hop.mixinStep.toString
-
-  def resetControls(): Unit =
-    saveButton.disable = true
-    textFieldName.text = ""
-    textFieldWeight.text = ""
-    textFieldVolume.text = ""
-    choiceBoxVolumeUnit.value = ""
-    textFieldAlphaAcid.text = ""
-    textFieldMixinMinute.text = ""
-    choiceBoxMixinStep.value = ""
-
   // Methods
   def select(hop: Hop): Unit =
     saveButton.disable = false
@@ -65,6 +45,26 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     val index = listViewHops.selectionModel().selectedIndex.value
     val hop = listViewHops.selectionModel().selectedItem.value
     observableHops.update(index, hop) // listview items refresh?
+
+  // Bindings
+  def hopToControls(hop: Hop): Unit =
+    textFieldName.text = hop.name
+    textFieldWeight.text = hop.weight.toString
+    textFieldVolume.text = hop.volume.toString
+    choiceBoxVolumeUnit.value = hop.volumeUnit.toString
+    textFieldAlphaAcid.text = hop.alphaAcid.toString
+    textFieldMixinMinute.text = hop.mixinMinute.toString
+    choiceBoxMixinStep.value = hop.mixinStep.toString
+
+  def resetControls(): Unit =
+    saveButton.disable = true
+    textFieldName.text = ""
+    textFieldWeight.text = ""
+    textFieldVolume.text = ""
+    choiceBoxVolumeUnit.value = ""
+    textFieldAlphaAcid.text = ""
+    textFieldMixinMinute.text = ""
+    choiceBoxMixinStep.value = ""
 
   // List
   val listViewHops = new ListView[Hop]:
