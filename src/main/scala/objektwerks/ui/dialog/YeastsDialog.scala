@@ -41,10 +41,8 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     observableYeasts = observableYeasts.sorted
     resetControls()
 
-  def save(): Unit =
-    val index = listViewYeasts.selectionModel().selectedIndex.value
-    val yeast = listViewYeasts.selectionModel().selectedItem.value
-    observableYeasts.update(index, yeast) // listview items refresh?
+  def save(index: Int, yeast: Yeast): Unit =
+    observableYeasts.update(index, yeast)
 
   // Bindings
   def yeastToControls(yeast: Yeast): Unit =
