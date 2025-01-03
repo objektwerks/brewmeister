@@ -19,7 +19,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   headerText = context.dialogYeasts
 
   // Model
-  val observableYeasts = ObservableBuffer.from( yeasts.map(identity).toBuffer.sorted )
+  var observableYeasts = ObservableBuffer.from( yeasts.map(identity).toBuffer.sorted )
 
   // Bindings
   def yeastToControls(yeast: Yeast): Unit =
