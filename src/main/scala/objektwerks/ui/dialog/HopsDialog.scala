@@ -88,7 +88,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     graphic = context.imageViewMinus
     tooltip = context.tooltipRemove
     disable = true
-    onAction = { _ => remove( listViewHops.selectionModel().selectedItem.value ) }
+    onAction = { _ => remove( listViewHops.selectionModel().selectedIndex.value ) }
 
   val buttonBarHops = new HBox:
     spacing = 6
