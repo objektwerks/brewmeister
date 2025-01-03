@@ -29,9 +29,9 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     listViewHops.scrollTo(hop)
     hopToControls(hop)
 
-  def add(): Unit =
-    val hop = Hop()
-    observableHops += hop // listview items refresh?
+  def add(hop: Hop): Unit =
+    observableHops.insert(0, hop)
+    observableHops = observableHops.sorted
     select(hop)
 
   def remove(hop: Hop): Unit =
