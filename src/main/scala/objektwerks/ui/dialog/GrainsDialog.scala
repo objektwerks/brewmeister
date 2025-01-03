@@ -89,7 +89,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     graphic = context.imageViewMinus
     tooltip = context.tooltipRemove
     disable = true
-    onAction = { _ => remove( listViewGrains.selectionModel().selectedItem.value ) }
+    onAction = { _ => remove( listViewGrains.selectionModel().selectedIndex.value ) }
 
   val buttonBarGrains = new HBox:
     spacing = 6
