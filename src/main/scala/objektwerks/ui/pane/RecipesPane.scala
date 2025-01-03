@@ -16,7 +16,6 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
       new TableColumn[Recipe, String]:
         text = context.columnRecipe
         cellValueFactory = _.value.nameProperty
-        sortable = true
     )
     items = model.observableRecipes
     items <== ObjectProperty(model.observableRecipes)
