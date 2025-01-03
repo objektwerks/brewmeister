@@ -85,6 +85,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     if selectedHop != null then select(selectedHop)
   }
 
+  // Buttons
   val buttonAdd = new Button:
     graphic = context.imageViewPlus
     tooltip = context.tooltipAdd
