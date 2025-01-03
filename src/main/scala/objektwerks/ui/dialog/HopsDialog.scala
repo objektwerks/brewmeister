@@ -160,10 +160,10 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   dialogPane().content = content
 
-  val saveButtonType = ButtonType(context.buttonSave, ButtonData.OKDone)
-  dialogPane().buttonTypes = List(saveButtonType, ButtonType.Cancel)
+  val buttonTypeSave = ButtonType(context.buttonSave, ButtonData.OKDone)
+  dialogPane().buttonTypes = List(buttonTypeSave, ButtonType.Cancel)
 
   resultConverter = dialogButton =>
-    if dialogButton == saveButtonType then
+    if dialogButton == buttonTypeSave then
       observableHops.toArray
     else null
