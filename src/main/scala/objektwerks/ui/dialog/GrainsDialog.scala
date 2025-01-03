@@ -42,10 +42,8 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     observableGrains = observableGrains.sorted
     resetControls()
 
-  def save(): Unit =
-    val index = listViewGrains.selectionModel().selectedIndex.value
-    val grain = listViewGrains.selectionModel().selectedItem.value
-    observableGrains.update(index, grain) // listview items refresh?
+  def save(index: Int, grain: Grain): Unit =
+    observableGrains.update(index, grain)
 
   // Bindings
   def grainToControls(grain: Grain): Unit =
