@@ -24,10 +24,11 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   // Methods
   def select(grain: Grain): Unit =
+    buttonRemove.disable = false
     buttonSave.disable = false
     listViewGrains.selectionModel().select(grain)
-    grainToControls(grain)
     listViewGrains.scrollTo(grain)
+    grainToControls(grain)
 
   def add(): Unit =
     val grain = Grain()
