@@ -67,12 +67,13 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
 
   def add(): Unit =
     RecipeNameDialog(context, "name").showAndWait() match
-      case Some(name) if name.nonEmpty => model.add( Recipe(name = name) )
+      case Some(name) if name.nonEmpty =>
+        model.add( Recipe(name = name) )
+        tableView.selectionModel().select(model.selectedRecipeIndex.value)
+        tableView.scrollTo(model.selectedRecipeIndex.value)
+        buttonRemove.disable = false
+        buttonBrew.disable = false
       case _ =>
-    tableView.selectionModel().select(0)
-    tableView.scrollTo(0)
-    buttonRemove.disable = false
-    buttonBrew.disable = false
 
   def remove(): Unit =
     RemoveConfirmationDialog(context).showAndWait() match
