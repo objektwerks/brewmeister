@@ -56,5 +56,6 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
     RemoveConfirmationDialog(context).showAndWait() match
       case Some(ButtonType.OK) =>
         model.remove(model.selectedBatch.value)
-        buttonRemove.disable = true
+        if tableView.items.value.isEmpty then
+          buttonRemove.disable = true
       case _ =>
