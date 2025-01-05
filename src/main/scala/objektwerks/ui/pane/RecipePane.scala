@@ -157,7 +157,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         case Some(volume: Volume) =>
           text = s"${volume.value.toString} ${volume.unit.toString}"
           volume
-        case _ => model.selectedRecipe.value.volume
+        case _ => value.value
     }
 
   val labelGrains = Label( context.labelGrains )
@@ -168,7 +168,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         case Some(grains: Array[Grain]) =>
           text = s"${grains.map(_.name).mkString(", ")}"
           grains.toList
-        case _ => model.selectedRecipe.value.grains
+        case _ => value.value
     }
   
   val labelHops = Label( context.labelHops )
@@ -179,7 +179,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         case Some(hops: Array[Hop]) =>
           text = s"${hops.map(_.name).mkString(", ")}"
           hops.toList
-        case _ => model.selectedRecipe.value.hops
+        case _ => value.value
     }
 
   val labelAdjuncts = Label( context.labelAdjuncts )
@@ -190,7 +190,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         case Some(adjuncts: Array[Adjunct]) =>
           text = s"${adjuncts.map(_.name).mkString(", ")}"
           adjuncts.toList
-        case _ => model.selectedRecipe.value.adjuncts
+        case _ => value.value
     }
 
   val labelYeasts = Label( context.labelYeasts )
@@ -201,7 +201,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         case Some(yeasts: Array[Yeast]) =>
           text = s"${yeasts.map(_.name).mkString(", ")}"
           yeasts.toList
-        case _ => model.selectedRecipe.value.yeasts
+        case _ => value.value
     }
 
   val labelMashingTempRangeDuration = Label( context.labelMashingTempRangeDuration )
