@@ -23,6 +23,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     buttonSave.disable = false
   }
 
+  model.observableRecipes.onChange { (_, _) =>
+    if model.observableRecipes.isEmpty then buttonSave.disable = true
+    else buttonSave.disable = false
+  }
+
   // Methods
   def save(): Unit =
     model.save( controlsToRecipe(model.selectedRecipe.value) )
