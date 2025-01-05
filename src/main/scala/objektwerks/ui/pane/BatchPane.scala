@@ -20,6 +20,15 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     buttonProcess.disable = false
   }
 
+  model.observableBatches.onChange { (_, _) =>
+    if model.observableBatches.isEmpty then
+      buttonLog.disable = true
+      buttonProcess.disable = true
+    else
+      buttonLog.disable = false
+      buttonProcess.disable = false
+  }
+
   // Methods
   def log(): Unit = LogDialog(context, model).showAndWait()
 
