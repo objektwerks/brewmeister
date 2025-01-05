@@ -19,9 +19,14 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   // Model
   model.selectedRecipe.onChange { (_, _, selectedRecipe) =>
-    buttonSave.disable = false
     recipeToControls(selectedRecipe)
+    buttonSave.disable = false
   }
+
+  // Methods
+  def save(): Unit =
+    model.save( controlsToRecipe(model.selectedRecipe.value) )
+    buttonSave.disable = true
 
   // Bindings
   def recipeToControls(recipe: Recipe): Unit =
@@ -133,11 +138,6 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         mashEfficiencyRange = IntRange( rangeSliderMashEfficiency.getLowValue.toInt, rangeSliderMashEfficiency.getHighValue.toInt ),
         brewhouseEfficiencyRange = IntRange( rangeSliderBrewhouseEfficiency.getLowValue.toInt, rangeSliderBrewhouseEfficiency.getHighValue.toInt )
       )
-
-  // Methods
-  def save(): Unit =
-    buttonSave.disable = true
-    model.save( controlsToRecipe(model.selectedRecipe.value) )
 
   // Controls
   val labelName = Label( context.labelName )
