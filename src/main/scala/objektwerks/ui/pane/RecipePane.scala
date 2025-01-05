@@ -352,6 +352,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val scrollPaneControls = new ScrollPane:
     content = ControlGrid(controls)
 
+  // Buttons
   val buttonSave = new Button:
     graphic = context.imageViewSave
     tooltip = context.tooltipSave
@@ -363,6 +364,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     padding = Insets(3)
     children = List(buttonSave)
 
+  // Content
   children = List(scrollPaneControls, buttonBar)
 
   VBox.setVgrow(this, Priority.Always)
