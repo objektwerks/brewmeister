@@ -223,9 +223,12 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelButtonBoilingTempRangeDuration = new LabelButton[TempRangeDuration]:
     value = model.selectedRecipe.value.boilingTempRangeDuration
     buttonAction = () => {
-      TempRangeDurationDialog(context, model.selectedRecipe.value.boilingTempRangeDuration).showAndWait() match
-        case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
-        case _ => model.selectedRecipe.value.boilingTempRangeDuration
+      TempRangeDurationDialog(context, value.value).showAndWait() match
+        case Some(tempRangeDuration: TempRangeDuration) =>
+          text = s"${tempRangeDuration.tempRange.low} - ${tempRangeDuration.tempRange.high}, " +
+                 s"${tempRangeDuration.duration} ${tempRangeDuration.unit.toString}"
+          tempRangeDuration
+        case _ => value.value
     }
 
   val labelCoolingTempRange = Label( context.labelCoolingTempRange )
