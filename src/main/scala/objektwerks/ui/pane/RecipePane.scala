@@ -210,7 +210,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     buttonAction = () => {
       TempRangeDurationDialog(context, value.value).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) =>
-          text = s"${tempRangeDuration.duration} ${tempRangeDuration.unit} : ${tempRangeDuration.tempRange.low} - ${tempRangeDuration.tempRange.high}}"
+          text = s"${tempRangeDuration.tempRange.low} - ${tempRangeDuration.tempRange.high}, " +
+                 s"${tempRangeDuration.duration} ${tempRangeDuration.unit.toString}"
           tempRangeDuration
         case _ => value.value
     }
