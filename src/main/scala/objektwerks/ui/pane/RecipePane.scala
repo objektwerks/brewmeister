@@ -155,7 +155,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     buttonAction = () => {
       VolumeDialog(context, value.value).showAndWait() match
         case Some(volume: Volume) =>
-          text = s"${volume.value.toString} ${volume.unit.toString}"
+          text = s"${volume.value} ${volume.unit}"
           volume
         case _ => value.value
     }
@@ -208,9 +208,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelButtonMashingTempRangeDuration = new LabelButton[TempRangeDuration]:
     value = model.selectedRecipe.value.mashingTempRangeDuration
     buttonAction = () => {
-      TempRangeDurationDialog(context, model.selectedRecipe.value.mashingTempRangeDuration).showAndWait() match
-        case Some(tempRangeDuration: TempRangeDuration) => tempRangeDuration
-        case _ => model.selectedRecipe.value.mashingTempRangeDuration
+      TempRangeDurationDialog(context, value.value).showAndWait() match
+        case Some(tempRangeDuration: TempRangeDuration) =>
+          text = s"${tempRangeDuration.duration} ${tempRangeDuration.unit} : ${tempRangeDuration.tempRange.low} - ${tempRangeDuration.tempRange.high}}"
+          tempRangeDuration
+        case _ => value.value
     }
 
   val labelPotentialMashExtract = Label( context.labelPotentialMashExtract )
