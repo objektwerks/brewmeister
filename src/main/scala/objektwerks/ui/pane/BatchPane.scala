@@ -20,6 +20,11 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     batchToControls(selectedBatch)
   }
 
+  // Methods
+  def log(): Unit = LogDialog(context, model).showAndWait()
+
+  def process(): Unit = ProcessDialog(context, model).showAndWait()
+
   // Binding
   def batchToControls(batch: Batch): Unit =
     textRecipe.text = batch.recipe
@@ -46,11 +51,6 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     textTaste.text = batch.taste.toString
     textStarted.text = batch.started.toString
     textCompleted.text = batch.completed.toString
-
-  // Methods
-  def log(): Unit = LogDialog(context, model).showAndWait()
-
-  def process(): Unit = ProcessDialog(context, model).showAndWait()
 
   // Controls
   val labelRecipe = Label( context.labelRecipe )
