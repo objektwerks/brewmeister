@@ -155,6 +155,7 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   val scrollPaneControls = new ScrollPane:
     content = ControlGrid(controls)
 
+  // Buttons  
   val buttonLog = new Button:
     graphic = context.imageViewLog
     tooltip = context.tooltipLog
@@ -172,6 +173,7 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     padding = Insets(3)
     children = List(buttonLog, buttonProcess)
 
+  // Content
   children = List(scrollPaneControls, buttonBar)
 
   VBox.setVgrow(this, Priority.Always)
