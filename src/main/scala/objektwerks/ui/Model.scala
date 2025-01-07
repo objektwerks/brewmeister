@@ -8,7 +8,7 @@ import objektwerks.{Batch, Recipe, Store}
 final class Model(store: Store):
   var observableRecipes = ObservableBuffer.from(store.listRecipes).sorted
   val selectedRecipeIndex = ObjectProperty(0)
-  val selectedRecipe = ObjectProperty( Recipe() )
+  val selectedRecipe = ObjectProperty( Recipe(name = "") )
 
   var observableBatches = ObservableBuffer.from(store.listBatches).sorted
   val selectedBatchIndex = ObjectProperty(0)
@@ -36,7 +36,7 @@ final class Model(store: Store):
     observableRecipes.remove(selectedRecipeIndex)
     observableRecipes = observableRecipes.sorted
     selectedRecipeIndex.value = 0
-    selectedRecipe.value = Recipe()
+    selectedRecipe.value = Recipe(name = "")
 
   def remove(batch: Batch): Unit =
     store.removeBatch(batch)
