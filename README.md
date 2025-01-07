@@ -179,7 +179,7 @@ Review
 
 Persistence
 -----------
->Recipes and Batches are stored as json files here:
+>**Recipes** and **Batches** are stored as json files here:
 ```
 ~/.brewmeister/store/batches | recipes
 ```
