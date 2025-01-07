@@ -2,8 +2,8 @@ Brewmeister
 -----------
 >Brewing simulator using ScalaFx, ControlsFx, uPickle, Os-Lib annd Scala 3.
 
-Usage
------
+App
+---
 * **Developers**: sbt clean test run
 * **Users**: java -jar .assembly/brewmeister-mac-0.79.jar ( See **Execute** section below. )
 1. Select **default** beer recipe or **add** to build a new beer recipe.
