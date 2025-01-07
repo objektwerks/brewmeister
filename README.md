@@ -5,7 +5,7 @@ Brewmeister
 Usage
 -----
 * **Developers**: sbt clean test run
-* **Users**: java -jar .assembly/brewmeister-os-version.jar
+* **Users**: java -jar .assembly/brewmeister-mac-0.79.jar
 1. Select **default** beer recipe or **add** to build a new beer recipe.
 2. Select **brew** to simulate the brewing of your selected beer recipe.
 3. Analzye brewing batch output.
