@@ -100,8 +100,8 @@ Command
 -------
 * Sanitize, Prepare, Malt, Mill, Mash, LogMashingTempPh, Lauter, Sparge, LogMashEfficiency, Boil, Cool, Whirlpool, LogBoilingCoolingTempOriginalGravity, Ferment, LogFermentingTempFinalGravity, Condition, LogConditioningTempSrmColor, Keg, LogBrewhouseEfficiency
 
-Actor
------
+Assistant
+---------
 * Sanitizer, Preparer, Malter, Miller, Masher, Lauter, Sparger, Boiler, Cooler, Whirlpooler, Fermenter, Conditioner, Kegger
 
 Event
