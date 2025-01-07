@@ -106,7 +106,8 @@ Assistant
 
 Event
 -----
-* Sanitized, Prepared, Malted, Milled, Mashed, MashingTempPhLogged, Lautered, Sparged, MashEfficiencyLogged, Boiled, Cooled, Whirlpooled, BoilingCoolingTempOriginalGravityLogged, Fermented, FermentingTempFinalGravityLogged, Conditioned, ConditioningTempSrmColorLogged, Kegged, BrewhouseEfficiencyLogged
+* Sanitized, Prepared, Malted, Milled, Mashed, MashingTempPhLogged, Lautered, Sparged, MashEfficiencyLogged, Boiled, Cooled, Whirlpooled, BoilingCoolingTempOriginalGravityLogged, Fermented, FermentingTempFinalGravityLogged, Conditioned, ConditioningTempSrmColorLogged, Kegged,
+BrewhouseEfficiencyLogged
 
 Metrics
 -------
