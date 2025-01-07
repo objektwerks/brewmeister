@@ -10,7 +10,7 @@ object Recipe:
   given Ordering[Recipe] = Ordering.by[Recipe, String](r => r.name)
 
   def default: Recipe =
-    Recipe(name = "Objektwerks IPA",
+    Recipe(name = "Brewmeister IPA",
            style = "American IPA",
            water = "Spring",
            volume = Volume(5.0, UoM.gl),
