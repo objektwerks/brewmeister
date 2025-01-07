@@ -90,7 +90,11 @@ Model
 -----
 >See [Entity](https://github.com/objektwerks/brewmeister/blob/main/src/main/scala/objektwerks/Entity.scala) for details.
 * Recipe 1 --> * Grain | Hop | Adjunct | Yeast
-* Brewer 1 --> 1 Listener
+* Brewer 1 -- brews --> * Command
+* Brewer 1 -- delegates --> 1 Listener
+* Listener 1 -- collects --> * Event
+* Listener 1 -- builds --> * Batch
+* Batch 1 --> 1 Log | Process
 
 Actor
 -----
