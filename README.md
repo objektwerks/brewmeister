@@ -96,13 +96,13 @@ Model
 * Listener 1 -- builds --> * Batch
 * Batch 1 --> 1 Log | Process
 
-Actor
------
-* Sanitizer, Preparer, Malter, Miller, Masher, Lauter, Sparger, Boiler, Cooler, Whirlpooler, Fermenter, Conditioner, Kegger
-
 Command
 -------
 * Sanitize, Prepare, Malt, Mill, Mash, LogMashingTempPh, Lauter, Sparge, LogMashEfficiency, Boil, Cool, Whirlpool, LogBoilingCoolingTempOriginalGravity, Ferment, LogFermentingTempFinalGravity, Condition, LogConditioningTempSrmColor, Keg, LogBrewhouseEfficiency
+
+Actor
+-----
+* Sanitizer, Preparer, Malter, Miller, Masher, Lauter, Sparger, Boiler, Cooler, Whirlpooler, Fermenter, Conditioner, Kegger
 
 Event
 -----
