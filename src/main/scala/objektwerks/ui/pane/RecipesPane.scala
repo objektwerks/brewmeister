@@ -3,7 +3,8 @@ package objektwerks.ui.pane
 import scalafx.Includes.*
 import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Insets
-import scalafx.scene.control.{Button, ButtonType, SelectionMode, Tab, TabPane, TableColumn, TableView}
+import scalafx.scene.control.{Alert, Button, ButtonType, SelectionMode, Tab, TabPane, TableColumn, TableView}
+import scalafx.scene.control.Alert.AlertType
 import scalafx.scene.layout.{HBox, Priority, VBox}
 
 import objektwerks.{Batch, Recipe}
@@ -67,12 +68,14 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
 
   def add(): Unit =
     RecipeNameDialog(context, "name").showAndWait() match
-      case Some(name) if name.nonEmpty && model.observableRecipes.filter(recipe => recipe.name == name).isEmpty =>
-        model.add( Recipe(name = name) )
-        tableView.selectionModel().select(model.selectedRecipeIndex.value)
-        tableView.scrollTo(model.selectedRecipeIndex.value)
-        buttonRemove.disable = false
-        buttonBrew.disable = false
+      case Some(name) =>
+        if name.nonEmpty && model.observableRecipes.filter(recipe => recipe.name == name).isEmpty then
+          model.add( Recipe(name = name) )
+          tableView.selectionModel().select(model.selectedRecipeIndex.value)
+          tableView.scrollTo(model.selectedRecipeIndex.value)
+          buttonRemove.disable = false
+          buttonBrew.disable = false
+        else Alert(AlertType.Error, "Provide a unique recipe name.").showAndWait()
       case _ =>
 
   def remove(): Unit =
