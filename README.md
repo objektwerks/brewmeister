@@ -6,7 +6,7 @@ Usage
 -----
 1. sbt clean test run
 2. Select default beer recipe ***or*** add a new beer recipe.
-3. Brew selected beer recipe.
+3. Select **brew** to simulate the brewing of your beer recipe.
 4. Analzye brewing batch output.
 
 Process
