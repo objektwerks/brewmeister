@@ -8,7 +8,7 @@ Usage
 * **Users**: java -jar .assembly/brewmeister-mac-0.79.jar ( See **Execute** section below. )
 1. Select **default** beer recipe or **add** to build a new beer recipe.
 2. Select **brew** to simulate the brewing of your selected beer recipe.
-3. Analzye brewing batch output.
+3. Analzye batch output from brewing selected beer recipe.
 
 Process
 -------
