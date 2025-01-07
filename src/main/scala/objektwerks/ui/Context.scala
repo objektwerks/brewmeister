@@ -33,7 +33,6 @@ final class Context(config: Config):
 
   val recipenameAlertHeaderText = config.getString("recipename.alert.headerText")
   val recipenameAlertContentText = config.getString("recipename.alert.contentText")
-
   val recipenameDialogHeaderText = config.getString("recipename.dialog.headerText")
   val recipenameDialogContentText = config.getString("recipename.dialog.contentText")
 
