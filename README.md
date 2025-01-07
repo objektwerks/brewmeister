@@ -4,7 +4,7 @@ Brewmeister
 
 Usage
 -----
-1. sbt clean test run
+1. Developers: sbt clean test run Users: java -jar .assembly/brewmeister-os-version.jar
 2. Select **default** beer recipe or **add** to build a new beer recipe.
 3. Select **brew** to simulate the brewing of your selected beer recipe.
 4. Analzye brewing batch output.
