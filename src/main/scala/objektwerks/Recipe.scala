@@ -12,7 +12,7 @@ object Recipe:
   def default: Recipe =
     Recipe(name = "Objektwerks IPA",
            style = "American IPA",
-           water = "spring",
+           water = "Spring",
            volume = Volume(5.0, UoM.gl),
            grains = List( Grain("pale ale", 4.0, UoM.lb, 6.0, 1.8, 0) ),
            hops = List( Hop("chinook", 2.0, UoM.oz, 10.0, UoM.oz, 13.0, 30) ),
@@ -41,7 +41,7 @@ object Recipe:
 @upickle.implicits.serializeDefaults(true)
 final case class Recipe(name: String,
                         style: String = "IPA",
-                        water: String = "spring",
+                        water: String = "Spring",
                         volume: Volume = Volume(0.0, UoM.gl),
                         grains: List[Grain] = List.empty[Grain],
                         hops: List[Hop] = List.empty[Hop],
