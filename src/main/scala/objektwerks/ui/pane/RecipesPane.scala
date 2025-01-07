@@ -75,12 +75,13 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
           tableView.scrollTo(model.selectedRecipeIndex.value)
           buttonRemove.disable = false
           buttonBrew.disable = false
-        else new Alert(AlertType.Error) {
-          initOwner(App.stage)
-          title = context.windowTitle
-          headerText = context.recipenameAlertHeaderText
-          contentText = context.recipenameAlertContentText
-        }.showAndWait()
+        else
+          new Alert(AlertType.Error) {
+            initOwner(App.stage)
+            title = context.windowTitle
+            headerText = context.recipenameAlertHeaderText
+            contentText = context.recipenameAlertContentText
+          }.showAndWait()
       case _ =>
 
   def remove(): Unit =
