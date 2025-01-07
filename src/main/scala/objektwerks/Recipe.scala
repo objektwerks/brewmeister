@@ -40,8 +40,8 @@ object Recipe:
 
 @upickle.implicits.serializeDefaults(true)
 final case class Recipe(name: String,
-                        style: String = "",
-                        water: String = "",
+                        style: String = "IPA",
+                        water: String = "spring",
                         volume: Volume = Volume(0.0, UoM.gl),
                         grains: List[Grain] = List.empty[Grain],
                         hops: List[Hop] = List.empty[Hop],
