@@ -14,6 +14,8 @@ final class Model(store: Store):
   val selectedBatchIndex = ObjectProperty(0)
   val selectedBatch = ObjectProperty( Batch() )
 
+  if observableRecipes.isEmpty then store.writeRecipe( Recipe.default )
+
   def add(recipe: Recipe): Unit =
     store.writeRecipe(recipe)
     observableRecipes.insert(0, recipe)
