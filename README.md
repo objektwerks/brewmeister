@@ -175,7 +175,7 @@ Review
 1. Appearance
 2. Aroma
 3. Taste
->Review ratings include: 3, 2 and 1 stars. Higher is better. ;)
+>Review ratings include: 1, 2 and 3 stars. Higher is better.
 
 Persistence
 -----------
