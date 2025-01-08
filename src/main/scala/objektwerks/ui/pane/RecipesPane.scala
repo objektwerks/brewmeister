@@ -69,7 +69,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   def add(): Unit =
     RecipeNameDialog(context, "name").showAndWait() match
       case Some(name) =>
-        if name.nonEmpty && model.observableRecipes.filter(recipe => recipe.name == name).isEmpty then
+        if name.nonEmpty && model.observableRecipes.filter(recipe => recipe.name.equalsIgnoreCase(name)).isEmpty then
           model.add( Recipe(name = name) )
           tableView.selectionModel().select(model.selectedRecipeIndex.value)
           tableView.scrollTo(model.selectedRecipeIndex.value)
