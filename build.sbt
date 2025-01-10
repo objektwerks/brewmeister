@@ -12,6 +12,7 @@ libraryDependencies ++= {
     "com.lihaoyi" %% "os-lib" % "0.11.4-M4",
     "com.lihaoyi" %% "upickle" % "4.1.0",
     "com.typesafe" % "config" % "1.4.3",
+    "ch.qos.logback" % "logback-classic" % "1.5.16" % Test,
     "org.scalatest" %% "scalatest" % "3.2.19" % Test
   )
 }
