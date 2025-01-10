@@ -16,6 +16,7 @@ final class Context(config: Config):
 
   val columnBatch = config.getString("column.batch")
   val columnRecipe = config.getString("column.recipe")
+  val columnBrewhouseEfficiency = config.getString("column.brewhouseEfficiency")
 
   val dialogRecipe = config.getString("dialog.recipe")
   val dialogGrains = config.getString("dialog.grains")
