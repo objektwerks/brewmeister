@@ -9,6 +9,8 @@ import scalafx.scene.layout.{HBox, Priority, VBox}
 import objektwerks.Batch
 import objektwerks.ui.{Context, Model}
 import objektwerks.ui.dialog.RemoveConfirmationDialog
+import scalafx.scene.text.Font
+import scalafx.scene.text.FontWeight
 
 final class BatchesPane(context: Context, model: Model) extends TabPane:
   val tableView = new TableView[Batch]():
@@ -40,6 +42,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
     onAction = { _ => remove() }
 
   val labelBrewhouseEfficiency = new Label:
+    font = Font(family = Font.default.family, weight = FontWeight(FontWeight.Bold), size = 13.0)
     text = calculateBrewhouseEfficiency()
 
   val buttonBar = new HBox:
