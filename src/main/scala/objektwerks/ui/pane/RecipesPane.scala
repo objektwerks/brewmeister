@@ -25,7 +25,6 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
 
   tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedRecipe) =>
     if selectedRecipe != null then
-      model.selectedRecipeIndex.value = tableView.selectionModel().selectedIndex.value
       model.selectedRecipe.value = selectedRecipe
       buttonRemove.disable = false
       buttonBrew.disable = false
@@ -71,8 +70,6 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
       case Some(name) =>
         if name.nonEmpty && model.observableRecipes.filter(recipe => recipe.name.equalsIgnoreCase(name)).isEmpty then
           model.add( Recipe(name = name) )
-          tableView.selectionModel().select(model.selectedRecipeIndex.value)
-          tableView.scrollTo(model.selectedRecipeIndex.value)
           buttonRemove.disable = false
           buttonBrew.disable = false
         else

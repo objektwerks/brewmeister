@@ -7,7 +7,6 @@ import objektwerks.{Batch, Recipe, Store}
 
 final class Model(store: Store):
   var observableRecipes = ObservableBuffer.from(store.listRecipes).sorted
-  val selectedRecipeIndex = ObjectProperty(0)
   val selectedRecipe = ObjectProperty( Recipe(name = "") )
 
   var observableBatches = ObservableBuffer.from(store.listBatches).sorted
@@ -17,25 +16,23 @@ final class Model(store: Store):
 
   def add(recipe: Recipe): Unit =
     store.writeRecipe(recipe)
-    observableRecipes.insert(0, recipe)
-    observableRecipes = observableRecipes.sorted
-    selectedRecipeIndex.value = observableRecipes.indexOf(recipe)
+    observableRecipes.add(recipe)
+    //observableRecipes = observableRecipes.sorted
     selectedRecipe.value = recipe
 
   def add(batch: Batch): Unit =
     store.writeBatch(batch)
-    observableBatches.insert(0, batch)
+    observableBatches.add(batch)
     selectedBatch.value = batch
 
   def save(recipe: Recipe): Unit =
     store.writeRecipe(recipe)
-    observableRecipes.update(selectedRecipeIndex.value, recipe)
+    observableRecipes.update( observableRecipes.indexOf(selectedRecipe.value), recipe )
 
   def remove(recipe: Recipe): Unit =
     store.removeRecipe(recipe)
-    observableRecipes.remove(selectedRecipeIndex)
-    observableRecipes = observableRecipes.sorted
-    selectedRecipeIndex.value = 0
+    observableRecipes.remove(recipe)
+    //observableRecipes = observableRecipes.sorted
     selectedRecipe.value = Recipe(name = "")
 
   def remove(batch: Batch): Unit =
