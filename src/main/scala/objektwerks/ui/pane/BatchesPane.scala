@@ -36,7 +36,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
     onAction = { _ => remove() }
 
   val labelBrewhouseEfficiency = new Label:
-    text = s"${context.labelBrewhouseEfficiency} ${Batch.brewhouseEfficiency(model.observableBatches.toList)}%"
+    text = calculateBrewhouseEfficiency()
 
   val buttonBar = new HBox:
     spacing = 6
@@ -62,3 +62,6 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
         if tableView.items.value.isEmpty then
           buttonRemove.disable = true
       case _ =>
+
+  def calculateBrewhouseEfficiency(): String =
+    s"${context.labelBrewhouseEfficiency} ${Batch.brewhouseEfficiency(model.observableBatches.toList)}%"
