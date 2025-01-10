@@ -32,7 +32,6 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
 
   tableView.selectionModel().selectedItemProperty().addListener { (_, _, selectedBatch) =>
     if selectedBatch != null then
-      model.selectedBatchIndex.value = tableView.selectionModel().selectedIndex.value
       model.selectedBatch.value = selectedBatch
       buttonRemove.disable = false
   }

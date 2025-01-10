@@ -11,7 +11,6 @@ final class Model(store: Store):
   val selectedRecipe = ObjectProperty( Recipe(name = "") )
 
   var observableBatches = ObservableBuffer.from(store.listBatches).sorted
-  val selectedBatchIndex = ObjectProperty(0)
   val selectedBatch = ObjectProperty( Batch() )
 
   if observableRecipes.isEmpty then store.writeRecipe( Recipe.default )
@@ -26,7 +25,6 @@ final class Model(store: Store):
   def add(batch: Batch): Unit =
     store.writeBatch(batch)
     observableBatches.insert(0, batch)
-    selectedBatchIndex.value = 0
     selectedBatch.value = batch
 
   def save(recipe: Recipe): Unit =
@@ -42,7 +40,6 @@ final class Model(store: Store):
 
   def remove(batch: Batch): Unit =
     store.removeBatch(batch)
-    observableBatches.remove(selectedBatchIndex)
+    observableBatches.remove(batch)
     observableBatches = observableBatches.sorted
-    selectedBatchIndex.value = 0
     selectedBatch.value = Batch()
