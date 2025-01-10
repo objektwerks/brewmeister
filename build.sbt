@@ -9,7 +9,7 @@ libraryDependencies ++= {
   Seq(
     "org.scalafx" %% "scalafx" % "23.0.1-R34",
     "org.controlsfx" % "controlsfx" % "11.2.1",
-    "com.lihaoyi" %% "os-lib" % "0.11.4-M3",
+    "com.lihaoyi" %% "os-lib" % "0.11.4-M4",
     "com.lihaoyi" %% "upickle" % "4.1.0",
     "com.typesafe" % "config" % "1.4.3",
     "org.scalatest" %% "scalatest" % "3.2.19" % Test
