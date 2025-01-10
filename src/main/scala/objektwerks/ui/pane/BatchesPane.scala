@@ -29,6 +29,10 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
       buttonRemove.disable = false
   }
 
+  model.observableBatches.onChange { (_, _) =>
+    labelBrewhouseEfficiency.text = calculateBrewhouseEfficiency()
+  }
+
   val buttonRemove = new Button:
     graphic = context.imageViewMinus
     tooltip = context.tooltipRemove
