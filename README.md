@@ -5,7 +5,7 @@ Brewmeister
 App
 ---
 * **Developers**: sbt clean test run
-* **Users**: java -jar .assembly/brewmeister-mac-0.79.jar ( See **Execute** section below. )
+* **Users**: java -jar .assembly/brewmeister-mac-0.80.jar ( See **Execute** section below. )
 1. Select **default** beer recipe or **add** to build a new beer recipe.
 2. Select **brew** to simulate the brewing of your selected beer recipe.
 3. Select generated **batch** and analyze results.
@@ -195,10 +195,10 @@ Assembly
 Execute
 -------
 >To execute an assembled jar locally:
-* java -jar .assembly/brewmeister-mac-0.79.jar
-* java -jar .assembly/brewmeister-m1-0.79.jar
-* java -jar .assembly/brewmeister-win-0.79.jar
-* java -jar .assembly/brewmeister-linux-0.79.jar
+* java -jar .assembly/brewmeister-mac-0.80.jar
+* java -jar .assembly/brewmeister-m1-0.80.jar
+* java -jar .assembly/brewmeister-win-0.80.jar
+* java -jar .assembly/brewmeister-linux-0.80.jar
 
 Deploy
 ------
