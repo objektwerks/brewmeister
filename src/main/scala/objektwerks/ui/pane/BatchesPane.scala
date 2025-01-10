@@ -5,6 +5,7 @@ import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Insets
 import scalafx.scene.control.{Button, ButtonType, Label, SelectionMode, Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.layout.{HBox, Priority, VBox}
+import scalafx.scene.text.TextAlignment
 
 import objektwerks.Batch
 import objektwerks.ui.{Context, Model}
@@ -41,6 +42,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
 
   val labelBrewhouseEfficiency = new Label:
     style = "-fx-font: normal bold 13pt sans-serif"
+    textAlignment = TextAlignment.Right
     text = calculateBrewhouseEfficiency()
 
   val buttonBar = new HBox:
