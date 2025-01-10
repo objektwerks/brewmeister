@@ -46,7 +46,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
     text = calculateBrewhouseEfficiency()
 
   val buttonBar = new HBox:
-    spacing = 6
+    spacing = 15
     padding = Insets(3)
     children = List(buttonRemove, labelBrewhouseEfficiency)
 
