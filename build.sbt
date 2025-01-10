@@ -1,4 +1,4 @@
-val jarVersion = "0.80"
+val jarVersion = "0.81"
 
 name := "brewmeister"
 organization := "objektwerks"
