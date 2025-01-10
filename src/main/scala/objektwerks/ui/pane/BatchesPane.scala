@@ -3,7 +3,7 @@ package objektwerks.ui.pane
 import scalafx.Includes.*
 import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Insets
-import scalafx.scene.control.{Button, ButtonType, SelectionMode, Tab, TabPane, TableColumn, TableView}
+import scalafx.scene.control.{Button, ButtonType, Label, SelectionMode, Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.layout.{HBox, Priority, VBox}
 
 import objektwerks.Batch
@@ -35,10 +35,13 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
     disable = true
     onAction = { _ => remove() }
 
+  val labelBrewhouseEfficiency = new Label:
+    text = s"${context.labelBrewhouseEfficiency} ${Batch.brewhouseEfficiency(model.observableBatches.toList)}%"
+
   val buttonBar = new HBox:
     spacing = 6
     padding = Insets(3)
-    children = List(buttonRemove)
+    children = List(buttonRemove, labelBrewhouseEfficiency)
 
   val vbox = new VBox:
     children = List(tableView, buttonBar)
