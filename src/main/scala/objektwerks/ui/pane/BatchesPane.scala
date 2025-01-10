@@ -22,7 +22,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
         text = context.columnBatch
         cellValueFactory = _.value.nameProperty,
       new TableColumn[Batch, Int]:
-        text = context.columnBatch
+        text = context.columnBrewhouseEfficiency
         cellValueFactory = _.value.brewhouseEfficiencyProoperty
     )
     items = model.observableBatches
