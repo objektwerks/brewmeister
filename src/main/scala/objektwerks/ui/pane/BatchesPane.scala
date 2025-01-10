@@ -42,7 +42,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
 
   val labelBrewhouseEfficiency = new Label:
     style = "-fx-font: normal bold 13pt sans-serif"
-    textAlignment = TextAlignment.Right
+    textAlignment = TextAlignment.Justify
     text = calculateBrewhouseEfficiency()
 
   val buttonBar = new HBox:
