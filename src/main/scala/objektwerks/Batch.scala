@@ -83,6 +83,7 @@ final case class Batch(recipe: String = "",
                        completed: String = "",
                        stored: String = "") derives CanEqual, JsonSupport:
   val nameProperty = ObjectProperty(s"$recipe.$stored")
+  val brewhouseEfficiencyProoperty = ObjectProperty(brewhouseEfficiency)
   val fileProperty = ObjectProperty(s"$recipe.$stored.json")
 
 @upickle.implicits.serializeDefaults(true)
