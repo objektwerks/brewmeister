@@ -12,6 +12,10 @@ import objektwerks.ui.{Context, Model}
 import objektwerks.ui.dialog.RemoveConfirmationDialog
 
 final class BatchesPane(context: Context, model: Model) extends TabPane:
+  model.observableBatches.onChange { (_, _) =>
+    labelBrewhouseEfficiency.text = calculateBrewhouseEfficiency()
+  }
+  
   val tableView = new TableView[Batch]():
     columns ++= List(
       new TableColumn[Batch, String]:
@@ -28,10 +32,6 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
       model.selectedBatchIndex.value = tableView.selectionModel().selectedIndex.value
       model.selectedBatch.value = selectedBatch
       buttonRemove.disable = false
-  }
-
-  model.observableBatches.onChange { (_, _) =>
-    labelBrewhouseEfficiency.text = calculateBrewhouseEfficiency()
   }
 
   val buttonRemove = new Button:
