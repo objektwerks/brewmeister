@@ -87,8 +87,10 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   def remove(): Unit =
     RemoveConfirmationDialog(context).showAndWait() match
       case Some(ButtonType.OK) =>
-        tableView.items.value.removeAll(model.selectedRecipe.value)
-        model.remove(model.selectedRecipe.value)
+        val recipe = tableView.selectionModel().selectedIndex.value
+        val index = tableView.selectionModel().selectedItemProperty().value
+        tableView.items.value.remove(recipe)
+        model.remove(index)
         buttonRemove.disable = true
         buttonBrew.disable = true
       case _ =>
