@@ -116,7 +116,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   def controlsToRecipe(recipe: Recipe): Recipe =
       recipe.copy(
-        name = textName.text.toString,
+        name = textName.text.value,
         style = textFieldStyle.string,
         water = textFieldWater.string,
         volume = labelButtonVolume.value.value,
