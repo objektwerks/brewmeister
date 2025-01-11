@@ -6,10 +6,10 @@ App
 ---
 * **Developers**: sbt clean test run
 * **Users**: java -jar .assembly/brewmeister-mac-0.83.jar ( See **Execute** section below. )
-1. Select **default** beer recipe or **add** to build a new beer recipe.
+1. Select **add** to build a new beer recipe.
 2. Select **brew** to simulate the brewing of your selected beer recipe.
 3. Select generated **batch** and analyze results.
-* Select **remove** to delete a recipe or batch.
+4. Select **remove** to delete a recipe or batch.
 
 Process
 -------
