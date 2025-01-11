@@ -67,11 +67,11 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
   def remove(): Unit =
     RemoveConfirmationDialog(context).showAndWait() match
       case Some(ButtonType.OK) =>
-        val index = tableView.selectionModel().selectedIndex.value
         val batch = tableView.selectionModel().selectedItemProperty().value
-        tableView.items.value.remove(index)
-        model.remove(batch)
-        buttonRemove.disable = true
+        if model.remove(batch) then
+          val index = tableView.selectionModel().selectedIndex.value
+          tableView.items.value.remove(index)
+          buttonRemove.disable = true
       case _ =>
 
   def calculateBrewhouseEfficiency(): String =
