@@ -9,7 +9,7 @@ final class Model(store: Store):
   val observableRecipes = ObservableBuffer.from(store.listRecipes).sorted
   val selectedRecipe = ObjectProperty( Recipe(name = "") )
 
-  var observableBatches = ObservableBuffer.from(store.listBatches).sorted
+  val observableBatches = ObservableBuffer.from(store.listBatches).sorted
   val selectedBatch = ObjectProperty( Batch() )
 
   if observableRecipes.isEmpty then store.writeRecipe( Recipe.default )
