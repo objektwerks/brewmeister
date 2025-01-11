@@ -38,5 +38,5 @@ final class Model(store: Store):
   def remove(batch: Batch): Unit =
     store.removeBatch(batch)
     observableBatches.remove(batch)
-    observableBatches = observableBatches.sorted
+    //observableBatches = observableBatches.sorted
     selectedBatch.value = Batch()
