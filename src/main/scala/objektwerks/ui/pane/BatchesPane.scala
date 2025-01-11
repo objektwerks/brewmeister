@@ -13,7 +13,6 @@ import objektwerks.ui.dialog.RemoveConfirmationDialog
 
 final class BatchesPane(context: Context, model: Model) extends TabPane:
   model.observableBatches.onChange { (_, _) =>
-    tableView.items.value.sort()
     labelBrewhouseEfficiency.text = calculateBrewhouseEfficiency()
   }
   
