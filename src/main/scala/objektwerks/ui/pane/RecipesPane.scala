@@ -88,6 +88,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
         val recipe = tableView.selectionModel().selectedItemProperty().value
         if model.remove(recipe) && index > -1 then
           tableView.items.value.remove(index)
+          tableView.items.value.sort()
           buttonRemove.disable = true
           buttonBrew.disable = true
       case _ =>
