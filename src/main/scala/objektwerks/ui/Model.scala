@@ -32,12 +32,14 @@ final class Model(store: Store):
       true
     else false
 
-  def remove(recipe: Recipe): Unit =
+  def remove(recipe: Recipe): Boolean =
     store.removeRecipe(recipe)
-    observableRecipes.remove(recipe)
-    selectedRecipe.value = Recipe(name = "")
+    val removed = observableRecipes.remove(recipe)
+    if removed then selectedRecipe.value = Recipe(name = "")
+    removed
 
-  def remove(batch: Batch): Unit =
+  def remove(batch: Batch): Boolean =
     store.removeBatch(batch)
-    observableBatches.remove(batch)
-    selectedBatch.value = Batch()
+    val removed = observableBatches.remove(batch)
+    if removed then selectedBatch.value = Batch()
+    removed
