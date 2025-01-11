@@ -50,13 +50,11 @@ object Batch:
   def brewhouseEfficiency(actualFermentableExtract: Double,
                           potentialFermentableExtract: Double): Int =
     val result = ( (actualFermentableExtract / potentialFermentableExtract) * 100 ).toInt
-    println(s"brewhouse efficiency: $result")
     if result > 100 then 0 else result
 
   def brewhouseEfficiency(batches: List[Batch]): Int =
     if batches.nonEmpty then
       val result = ( batches.map(batch => batch.brewhouseEfficiency).sum / batches.length ).toInt
-      println(s"total brewhouse efficiency: $result")
       if result > 100 then 0 else result
     else 0
 
