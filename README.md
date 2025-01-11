@@ -14,7 +14,9 @@ App
 
 Default Recipe
 --------------
->The **Brewmeister IPA** is the default recipe. It can be removed; but it will be regenerated upon App startup - if no recipes exist.
+>The **Brewmeister IPA** is the default recipe.
+
+>It can be removed; but it will be regenerated upon App startup - if **no** recipes exist.
 
 Process
 -------
