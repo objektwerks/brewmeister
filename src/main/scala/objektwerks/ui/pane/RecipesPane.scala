@@ -70,6 +70,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
       case Some(name) =>
         if name.nonEmpty && model.observableRecipes.filter(recipe => recipe.name.equalsIgnoreCase(name)).isEmpty then
           model.add( Recipe(name = name) )
+          tableView.items.value.sort()
           buttonRemove.disable = false
           buttonBrew.disable = false
         else
