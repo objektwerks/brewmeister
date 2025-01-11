@@ -16,17 +16,21 @@ final class Model(store: Store):
 
   def add(recipe: Recipe): Unit =
     store.writeRecipe(recipe)
-    observableRecipes.add(recipe)
+    observableRecipes.insert(0, recipe)
     selectedRecipe.value = recipe
 
   def add(batch: Batch): Unit =
     store.writeBatch(batch)
-    observableBatches.add(batch)
+    observableBatches.insert(0, batch)
     selectedBatch.value = batch
 
-  def save(recipe: Recipe): Unit =
+  def save(recipe: Recipe): Boolean =
     store.writeRecipe(recipe)
-    observableRecipes.update( observableRecipes.indexOf(selectedRecipe.value), recipe )
+    val index = observableRecipes.indexOf(selectedRecipe.value)
+    if index != -1 then
+      observableRecipes.update(index, recipe)
+      true
+    else false
 
   def remove(recipe: Recipe): Unit =
     store.removeRecipe(recipe)
