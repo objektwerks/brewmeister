@@ -17,7 +17,6 @@ final class Model(store: Store):
   def add(recipe: Recipe): Unit =
     store.writeRecipe(recipe)
     observableRecipes.add(recipe)
-    //observableRecipes = observableRecipes.sorted
     selectedRecipe.value = recipe
 
   def add(batch: Batch): Unit =
@@ -32,11 +31,9 @@ final class Model(store: Store):
   def remove(recipe: Recipe): Unit =
     store.removeRecipe(recipe)
     observableRecipes.remove(recipe)
-    //observableRecipes = observableRecipes.sorted
     selectedRecipe.value = Recipe(name = "")
 
   def remove(batch: Batch): Unit =
     store.removeBatch(batch)
     observableBatches.remove(batch)
-    //observableBatches = observableBatches.sorted
     selectedBatch.value = Batch()
