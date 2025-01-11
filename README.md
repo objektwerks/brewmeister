@@ -10,6 +10,7 @@ App
 2. Select **brew** to simulate the brewing of your selected beer recipe.
 3. Select generated **batch** to analyze results.
 4. Select **remove** to delete a recipe or batch.
+5. Select **save** to save the selected recipe.
 
 Default Recipe
 --------------
