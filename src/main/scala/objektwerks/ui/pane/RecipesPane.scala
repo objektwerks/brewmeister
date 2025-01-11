@@ -84,7 +84,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
     RemoveConfirmationDialog(context).showAndWait() match
       case Some(ButtonType.OK) =>
         val recipe = tableView.selectionModel().selectedItemProperty().value
-        if model.remove(recipe) && tableView.items.value.nonEmpty then
+        if model.remove(recipe) then
           tableView.items.value.removeAll(recipe)
           tableView.getSelectionModel().clearSelection()
           tableView.items.value.sort()

@@ -66,7 +66,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
     RemoveConfirmationDialog(context).showAndWait() match
       case Some(ButtonType.OK) =>
         val batch = tableView.selectionModel().selectedItemProperty().value
-        if model.remove(batch) && tableView.items.value.nonEmpty then
+        if model.remove(batch) then
           tableView.items.value.removeAll(batch)
           tableView.getSelectionModel().clearSelection()
           tableView.items.value.sort()
