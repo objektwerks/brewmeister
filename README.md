@@ -11,6 +11,10 @@ App
 3. Select generated **batch** and analyze results.
 4. Select **remove** to delete a recipe or batch.
 
+Default Recipe
+--------------
+>The **Brewmeister IPA** is the default recipe. It can be removed; but it will be regenerated upon App startup - if no recipes exist.
+
 Process
 -------
 >Steps used in ***all grain*** brewing. ***Extract*** brewing excludes steps 3-7.
