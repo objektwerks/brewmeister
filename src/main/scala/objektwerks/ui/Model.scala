@@ -27,7 +27,7 @@ final class Model(store: Store):
   def save(recipe: Recipe): Boolean =
     store.writeRecipe(recipe)
     val index = observableRecipes.indexOf(selectedRecipe.value)
-    if index != -1 then
+    if index > -1 then
       observableRecipes.update(index, recipe)
       true
     else false
