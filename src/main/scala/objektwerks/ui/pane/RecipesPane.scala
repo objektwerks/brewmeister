@@ -1,7 +1,7 @@
 package objektwerks.ui.pane
 
 import scalafx.Includes.*
-import scalafx.beans.property.ObjectProperty
+// import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Insets
 import scalafx.scene.control.{Alert, Button, ButtonType, SelectionMode, Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.control.Alert.AlertType
