@@ -45,7 +45,8 @@ object Batch:
 
   def mashEfficiency(actualMashExtract: Double,
                      potentialMashExtract: Double): Int =
-    ( (actualMashExtract / potentialMashExtract) * 100 ).toInt
+    val result = ( (actualMashExtract / potentialMashExtract) * 100 ).toInt
+    if result > 100 then 0 else result
 
   def brewhouseEfficiency(actualFermentableExtract: Double,
                           potentialFermentableExtract: Double): Int =
