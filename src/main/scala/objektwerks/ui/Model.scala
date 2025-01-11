@@ -6,7 +6,7 @@ import scalafx.collections.ObservableBuffer
 import objektwerks.{Batch, Recipe, Store}
 
 final class Model(store: Store):
-  var observableRecipes = ObservableBuffer.from(store.listRecipes).sorted
+  val observableRecipes = ObservableBuffer.from(store.listRecipes).sorted
   val selectedRecipe = ObjectProperty( Recipe(name = "") )
 
   var observableBatches = ObservableBuffer.from(store.listBatches).sorted
