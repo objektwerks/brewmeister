@@ -16,7 +16,10 @@ final class Store:
   private def buildBatchesPath: Path = os.home / ".brewmeister" / "store" / "batches"
 
   def listRecipes: List[Recipe] =
-    os.list(recipesPath).map { path => readRecipe(s"${path.baseName}.json") }.toList
+    val list = os.list(recipesPath)
+    if list.nonEmpty then
+      list.map { path => readRecipe(s"${path.baseName}.json") }.toList
+    else List.empty[Recipe]
 
   def writeRecipe(recipe: Recipe): Unit =
     val recipeAsJson = writeJson(recipe)
