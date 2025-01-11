@@ -49,11 +49,15 @@ object Batch:
 
   def brewhouseEfficiency(actualFermentableExtract: Double,
                           potentialFermentableExtract: Double): Int =
-    ( (actualFermentableExtract / potentialFermentableExtract) * 100 ).toInt
+    val result = ( (actualFermentableExtract / potentialFermentableExtract) * 100 ).toInt
+    println(s"brewhouse efficiency: $result")
+    if result > 100 then 0 else result
 
   def brewhouseEfficiency(batches: List[Batch]): Int =
     if batches.nonEmpty then
-      ( batches.map(batch => batch.brewhouseEfficiency).sum / batches.length ).toInt
+      val result = ( batches.map(batch => batch.brewhouseEfficiency).sum / batches.length ).toInt
+      println(s"total brewhouse efficiency: $result")
+      if result > 100 then 0 else result
     else 0
 
 @upickle.implicits.serializeDefaults(true)
@@ -85,7 +89,7 @@ final case class Batch(recipe: String = "",
                        completed: String = "",
                        stored: String = "") derives CanEqual, JsonSupport:
   val nameProperty = ObjectProperty(s"$recipe.$stored")
-  val brewhouseEfficiencyProoperty = ObjectProperty(brewhouseEfficiency)
+  val brewhouseEfficiencyProperty = ObjectProperty(brewhouseEfficiency)
   val fileProperty = ObjectProperty(s"$recipe.$stored.json")
 
 @upickle.implicits.serializeDefaults(true)
