@@ -8,10 +8,10 @@ App
 * **Users**: java -jar .assembly/brewmeister-mac-0.83.jar ( See the **Assembly** and **Execute** sections below. )
 
 >**Recipes:**
-* Select **add** to build a new beer recipe.
+* Select **add** to build a new recipe.
 * Select **brew** to simulate the brewing of a selected recipe.
-* Select **remove** to delete a selected recipe.
 * Select **save** to save the selected and edited recipe.
+* Select **remove** to delete a selected recipe.
 
 >**Batches:**
 * Select listed **batch** to analyze results.
