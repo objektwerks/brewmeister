@@ -5,7 +5,7 @@ Brewmeister
 App
 ---
 * **Developers**: sbt clean test run
-* **Users**: java -jar .assembly/brewmeister-mac-0.83.jar ( See **Execute** section below. )
+* **Users**: java -jar .assembly/brewmeister-mac-0.83.jar ( See the **Assembly** and **Execute** sections below. )
 1. Select **add** to build a new beer recipe.
 2. Select **brew** to simulate the brewing of your selected beer recipe.
 3. Select generated **batch** and analyze results.
