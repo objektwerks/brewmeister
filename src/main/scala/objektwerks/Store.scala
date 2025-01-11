@@ -32,7 +32,9 @@ final class Store:
     os.remove(recipesPath / recipe.fileProperty.value)
 
   def listBatches: List[Batch] =
-    os.list(batchesPath).map { path => readBatch(s"${path.baseName}.json") }.toList
+    os.list(batchesPath)
+      .filter { path => path.baseName.nonEmpty }
+      .map { path => readBatch(s"${path.baseName}.json") }.toList
 
   def writeBatch(batch: Batch): Unit =
     val batchAsJson = writeJson(batch)
