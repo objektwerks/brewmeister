@@ -14,7 +14,7 @@ App
 * Select **remove** to delete a selected recipe.
 
 >**Batches:**
-* Select listed **batch** to analyze results.
+* Select a **listed** batch to analyze results.
 * Select **log** to view the batch log.
 * Select **process** to view the batch process.
 * Select **remove** to delete a selected batch.
