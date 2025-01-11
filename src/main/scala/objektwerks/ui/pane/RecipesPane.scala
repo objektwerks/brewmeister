@@ -1,7 +1,6 @@
 package objektwerks.ui.pane
 
 import scalafx.Includes.*
-// import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Insets
 import scalafx.scene.control.{Alert, Button, ButtonType, SelectionMode, Tab, TabPane, TableColumn, TableView}
 import scalafx.scene.control.Alert.AlertType
@@ -19,7 +18,6 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
         cellValueFactory = _.value.nameProperty
     )
     items = model.observableRecipes
-    // items <== ObjectProperty(model.observableRecipes)
     columnResizePolicy = TableView.ConstrainedResizePolicy
     selectionModel().selectionModeProperty.value = SelectionMode.Single
 
@@ -85,13 +83,13 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
   def remove(): Unit =
     RemoveConfirmationDialog(context).showAndWait() match
       case Some(ButtonType.OK) =>
-        val index = tableView.selectionModel().selectedIndex.value - 1
         val recipe = tableView.selectionModel().selectedItemProperty().value
-        if model.remove(recipe) && index > -1 then
-          tableView.items.value.remove(index)
+        if model.remove(recipe) && tableView.items.value.nonEmpty then
+          tableView.items.value.removeAll(recipe)
+          tableView.getSelectionModel().clearSelection()
           tableView.items.value.sort()
-          buttonRemove.disable = true
-          buttonBrew.disable = true
+          buttonRemove.disable = tableView.items.value.isEmpty()
+          buttonBrew.disable = tableView.items.value.isEmpty()
       case _ =>
 
   def brew(): Unit =
