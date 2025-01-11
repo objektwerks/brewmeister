@@ -71,6 +71,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
         val batch = tableView.selectionModel().selectedItemProperty().value
         if model.remove(batch) && index > -1 then
           tableView.items.value.remove(index)
+          tableView.items.value.sort()
           buttonRemove.disable = true
       case _ =>
 
