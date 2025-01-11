@@ -34,9 +34,7 @@ final class Model(store: Store):
 
   def remove(recipe: Recipe): Boolean =
     store.removeRecipe(recipe)
-    val removed = observableRecipes.remove(recipe)
-    if removed then selectedRecipe.value = Recipe(name = "")
-    removed
+    observableRecipes.remove(recipe)
 
   def remove(batch: Batch): Boolean =
     store.removeBatch(batch)
