@@ -7,7 +7,7 @@ import scala.util.Random
 import upickle.default.ReadWriter as JsonSupport
 
 object Recipe:
-  given Ordering[Recipe] = Ordering.by[Recipe, String](r => r.name)
+  given Ordering[Recipe] = Ordering.by[Recipe, String](r => r.created).reverse
 
   def default: Recipe =
     Recipe(name = "Brewmeister IPA",
