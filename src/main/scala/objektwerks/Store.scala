@@ -1,10 +1,12 @@
 package objektwerks
 
+import com.typesafe.scalalogging.LazyLogging
+
 import os.Path
 
 import upickle.default.{read => readJson, write => writeJson}
 
-final class Store:
+final class Store extends LazyLogging:
   os.makeDir.all( buildRecipesPath )
   os.makeDir.all( buildBatchesPath )
 
@@ -23,6 +25,7 @@ final class Store:
   def writeRecipe(recipe: Recipe): Unit =
     val recipeAsJson = writeJson(recipe)
     os.write.over(recipesPath / recipe.fileProperty.value, recipeAsJson)
+    logger.info(s"Write recipe: ${recipe.name}")
 
   def readRecipe(file: String): Recipe =
     val recipeAsJson = os.read(recipesPath / file)
