@@ -199,6 +199,13 @@ Persistence
 ~/.brewmeister/store/batches | recipes
 ```
 
+Logging
+-------
+>**Logs** files are stored here:
+```
+~/.brewmeister/logs
+```
+
 Assembly
 --------
 >To build for a "mac", "m1', "win" or "linux" os target:
