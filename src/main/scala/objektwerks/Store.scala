@@ -53,3 +53,4 @@ final class Store extends LazyLogging:
 
   def removeBatch(batch: Batch): Unit =
     os.remove(batchesPath / batch.fileProperty.value)
+    logger.info(s"Remove batch: ${batch.nameProperty.value}")
