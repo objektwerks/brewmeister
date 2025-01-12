@@ -44,6 +44,7 @@ final class Store extends LazyLogging:
   def writeBatch(batch: Batch): Unit =
     val batchAsJson = writeJson(batch)
     os.write.over(batchesPath / batch.fileProperty.value, batchAsJson)
+    logger.info(s"Write batch: ${batch.nameProperty.value}")
 
   def readBatch(file: String): Batch =
     val batchAsJson = os.read(batchesPath / file)
