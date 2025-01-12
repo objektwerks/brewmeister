@@ -34,6 +34,7 @@ final class Store extends LazyLogging:
 
   def removeRecipe(recipe: Recipe): Unit =
     os.remove(recipesPath / recipe.fileProperty.value)
+    logger.info(s"Remove recipe: ${recipe.name}")
 
   def listBatches: List[Batch] =
     os.list(batchesPath)
