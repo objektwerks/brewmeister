@@ -29,6 +29,7 @@ final class Store extends LazyLogging:
 
   def readRecipe(file: String): Recipe =
     val recipeAsJson = os.read(recipesPath / file)
+    logger.info(s"Read recipe: $file")
     readJson[Recipe](recipeAsJson)
 
   def removeRecipe(recipe: Recipe): Unit =
