@@ -48,6 +48,7 @@ final class Store extends LazyLogging:
 
   def readBatch(file: String): Batch =
     val batchAsJson = os.read(batchesPath / file)
+    logger.info(s"Read batch: $file")
     readJson[Batch](batchAsJson)
 
   def removeBatch(batch: Batch): Unit =
