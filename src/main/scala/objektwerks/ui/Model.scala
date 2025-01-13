@@ -1,11 +1,13 @@
 package objektwerks.ui
 
+import com.typesafe.scalalogging.LazyLogging
+
 import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 
 import objektwerks.{Batch, Recipe, Store}
 
-final class Model(store: Store):
+final class Model(store: Store) extends LazyLogging:
   val recipes = store.listRecipes
   if recipes.isEmpty then store.writeRecipe( Recipe.default )
   val observableRecipes = ObservableBuffer.from( store.listRecipes ).sorted
@@ -13,6 +15,8 @@ final class Model(store: Store):
 
   val observableBatches = ObservableBuffer.from( store.listBatches ).sorted
   val selectedBatch = ObjectProperty( Batch() )
+
+  logger.info("Initialized model.")
 
   def add(recipe: Recipe): Unit =
     store.writeRecipe(recipe)
