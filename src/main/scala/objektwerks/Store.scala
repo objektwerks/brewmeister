@@ -13,6 +13,8 @@ final class Store extends LazyLogging:
   private val recipesPath = buildRecipesPath
   private val batchesPath = buildBatchesPath
 
+  logger.info("Initialized store.")
+
   private def buildRecipesPath: Path = os.home / ".brewmeister" / "store" / "recipes"
 
   private def buildBatchesPath: Path = os.home / ".brewmeister" / "store" / "batches"
