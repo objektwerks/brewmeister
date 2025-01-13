@@ -9,15 +9,15 @@ App
 
 >**Recipes:**
 * Select **add** to build a new recipe.
-* Select **brew** to simulate the brewing of a selected recipe.
-* Select **save** to save the selected and edited recipe.
-* Select **remove** to delete a selected recipe.
+* Select **brew** to simulate the brewing of a **selected** recipe.
+* Select **save** to save the **selected** and **edited** recipe.
+* Select **remove** to delete a **selected** recipe.
 
 >**Batches:**
-* Select a **listed** batch to analyze results.
+* Select a **listed** batch to analyze batch results.
 * Select **log** to view the batch log.
 * Select **process** to view the batch process.
-* Select **remove** to delete a selected batch.
+* Select **remove** to delete a **selected** batch.
 
 Default Recipe
 --------------
