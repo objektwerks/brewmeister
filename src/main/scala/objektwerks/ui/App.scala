@@ -24,3 +24,7 @@ object App extends JFXApp3 with LazyLogging:
     stage.show()
 
     logger.info("Started app.")
+
+  sys.addShutdownHook {
+    logger.info("Shutdown app.")
+  }
