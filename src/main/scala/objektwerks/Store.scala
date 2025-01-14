@@ -4,6 +4,8 @@ import com.typesafe.scalalogging.LazyLogging
 
 import os.Path
 
+import ox.*
+
 import upickle.default.{read => readJson, write => writeJson}
 
 import scalafx.application.Platform
@@ -21,26 +23,30 @@ final class Store extends LazyLogging:
 
   private def buildBatchesPath: Path = os.home / ".brewmeister" / "store" / "batches"
 
-  def isFxThread(): Boolean = Platform.isFxApplicationThread
+  def assertNotInFxThread(): Unit = assert( Platform.isFxApplicationThread, "Store operation executing on Fx thread!")
 
   def listRecipes: List[Recipe] =
-    os.list(recipesPath)
-      .filter { path => path.baseName.nonEmpty }
-      .map { path => readRecipe(s"${path.baseName}.json") }.toList
+    supervised:
+      os.list(recipesPath)
+        .filter { path => path.baseName.nonEmpty }
+        .map { path => readRecipe(s"${path.baseName}.json") }.toList
 
   def writeRecipe(recipe: Recipe): Unit =
-    val recipeAsJson = writeJson(recipe)
-    os.write.over(recipesPath / recipe.fileProperty.value, recipeAsJson)
-    logger.info(s"Write recipe: ${recipe.name}")
+    supervised:
+      val recipeAsJson = writeJson(recipe)
+      os.write.over(recipesPath / recipe.fileProperty.value, recipeAsJson)
+      logger.info(s"Write recipe: ${recipe.name}")
 
   def readRecipe(file: String): Recipe =
-    val recipeAsJson = os.read(recipesPath / file)
-    logger.info(s"Read recipe: $file")
-    readJson[Recipe](recipeAsJson)
+    supervised:
+      val recipeAsJson = os.read(recipesPath / file)
+      logger.info(s"Read recipe: $file")
+      readJson[Recipe](recipeAsJson)
 
   def removeRecipe(recipe: Recipe): Unit =
-    os.remove(recipesPath / recipe.fileProperty.value)
-    logger.info(s"Remove recipe: ${recipe.name}")
+    supervised:
+      os.remove(recipesPath / recipe.fileProperty.value)
+      logger.info(s"Remove recipe: ${recipe.name}")
 
   def listBatches: List[Batch] =
     os.list(batchesPath)
