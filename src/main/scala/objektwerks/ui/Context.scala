@@ -2,6 +2,7 @@ package objektwerks.ui
 
 import com.typesafe.config.Config
 
+import scalafx.application.Platform
 import scalafx.scene.image.{Image, ImageView}
 
 final class Context(config: Config):
@@ -137,6 +138,8 @@ final class Context(config: Config):
   val tooltipBrew = config.getString("tooltip.brew")
   val tooltipLog = config.getString("tooltip.log")
   val tooltipProcess = config.getString("tooltip.process")
+
+  def isFxThread(): Boolean = Platform.isFxApplicationThread
 
   def imageViewLogo = loadImageView("/image/logo.png")
   def imageViewBang = loadImageView("/image/bang.png")
