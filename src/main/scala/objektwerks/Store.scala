@@ -6,6 +6,8 @@ import os.Path
 
 import upickle.default.{read => readJson, write => writeJson}
 
+import scalafx.application.Platform
+
 final class Store extends LazyLogging:
   os.makeDir.all( buildRecipesPath )
   os.makeDir.all( buildBatchesPath )
@@ -18,6 +20,8 @@ final class Store extends LazyLogging:
   private def buildRecipesPath: Path = os.home / ".brewmeister" / "store" / "recipes"
 
   private def buildBatchesPath: Path = os.home / ".brewmeister" / "store" / "batches"
+
+  def isFxThread(): Boolean = Platform.isFxApplicationThread
 
   def listRecipes: List[Recipe] =
     os.list(recipesPath)
