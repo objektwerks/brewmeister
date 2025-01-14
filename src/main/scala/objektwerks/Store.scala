@@ -23,32 +23,32 @@ final class Store extends LazyLogging:
 
   private def buildBatchesPath: Path = os.home / ".brewmeister" / "store" / "batches"
 
-  def isFxThread: Boolean = Platform.isFxApplicationThread
+  def assertNotIsFxThread: Unit = assert( !Platform.isFxApplicationThread )
 
   def listRecipes: List[Recipe] =
     supervised:
-      assert( isFxThread )
+      assertNotIsFxThread
       os.list(recipesPath)
         .filter { path => path.baseName.nonEmpty }
         .map { path => readRecipe(s"${path.baseName}.json") }.toList
 
   def writeRecipe(recipe: Recipe): Unit =
     supervised:
-      assert( isFxThread )
+      assertNotIsFxThread
       val recipeAsJson = writeJson(recipe)
       os.write.over(recipesPath / recipe.fileProperty.value, recipeAsJson)
       logger.info(s"Write recipe: ${recipe.name}")
 
   def readRecipe(file: String): Recipe =
     supervised:
-      assert( isFxThread )
+      assertNotIsFxThread
       val recipeAsJson = os.read(recipesPath / file)
       logger.info(s"Read recipe: $file")
       readJson[Recipe](recipeAsJson)
 
   def removeRecipe(recipe: Recipe): Unit =
     supervised:
-      assert( isFxThread )
+      assertNotIsFxThread
       os.remove(recipesPath / recipe.fileProperty.value)
       logger.info(s"Remove recipe: ${recipe.name}")
 
