@@ -53,20 +53,28 @@ final class Store extends LazyLogging:
       logger.info(s"Remove recipe: ${recipe.name}")
 
   def listBatches: List[Batch] =
-    os.list(batchesPath)
-      .filter { path => path.baseName.nonEmpty }
-      .map { path => readBatch(s"${path.baseName}.json") }.toList
+    supervised:
+      assertNotInFxThread
+      os.list(batchesPath)
+        .filter { path => path.baseName.nonEmpty }
+        .map { path => readBatch(s"${path.baseName}.json") }.toList
 
   def writeBatch(batch: Batch): Unit =
-    val batchAsJson = writeJson(batch)
-    os.write.over(batchesPath / batch.fileProperty.value, batchAsJson)
-    logger.info(s"Write batch: ${batch.nameProperty.value}")
+    supervised:
+      assertNotInFxThread
+      val batchAsJson = writeJson(batch)
+      os.write.over(batchesPath / batch.fileProperty.value, batchAsJson)
+      logger.info(s"Write batch: ${batch.nameProperty.value}")
 
   def readBatch(file: String): Batch =
-    val batchAsJson = os.read(batchesPath / file)
-    logger.info(s"Read batch: $file")
-    readJson[Batch](batchAsJson)
+    supervised:
+      assertNotInFxThread
+        val batchAsJson = os.read(batchesPath / file)
+        logger.info(s"Read batch: $file")
+        readJson[Batch](batchAsJson)
 
   def removeBatch(batch: Batch): Unit =
-    os.remove(batchesPath / batch.fileProperty.value)
-    logger.info(s"Remove batch: ${batch.nameProperty.value}")
+    supervised:
+      assertNotInFxThread
+      os.remove(batchesPath / batch.fileProperty.value)
+      logger.info(s"Remove batch: ${batch.nameProperty.value}")
