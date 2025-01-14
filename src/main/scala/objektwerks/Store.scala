@@ -23,7 +23,7 @@ final class Store extends LazyLogging:
 
   private def buildBatchesPath: Path = os.home / ".brewmeister" / "store" / "batches"
 
-  def assertNotInFxThread: Unit = assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )
+  private def assertNotInFxThread: Unit = assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )
 
   def listRecipes: List[Recipe] =
     supervised:
