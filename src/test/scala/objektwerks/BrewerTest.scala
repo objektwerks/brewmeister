@@ -17,7 +17,6 @@ class BrewerTest extends AnyFunSuite with Matchers:
 
     val batch = listener.batch
     store.writeBatch(batch)
-    println(batch.fileProperty.value)
     store.readBatch(batch.fileProperty.value) shouldBe batch
     store.listBatches.length should be >= 1
 
