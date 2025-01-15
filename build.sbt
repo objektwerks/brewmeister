@@ -4,7 +4,7 @@ name := "brewmeister"
 organization := "objektwerks"
 version := "0.87-SNAPSHOT"
 scalaVersion := "3.6.3-RC2"
-mainClass := Some("objektwerks.App")
+mainClass := Some("objektwerks.ui.App")
 libraryDependencies ++= {
   Seq(
     "org.scalafx" %% "scalafx" % "23.0.1-R34",
