@@ -11,15 +11,15 @@ import upickle.default.{read => readJson, write => writeJson}
 import scalafx.application.Platform
 
 final class Store extends LazyLogging:
-  os.makeDir.all( `buildRecipesPath()` )
+  os.makeDir.all( buildRecipesPath() )
   os.makeDir.all( buildBatchesPath )
 
-  private val recipesPath = `buildRecipesPath()`
+  private val recipesPath = buildRecipesPath()
   private val batchesPath = buildBatchesPath
 
   logger.info("Initialized store.")
 
-  private def `buildRecipesPath()`: Path = os.home / ".brewmeister" / "store" / "recipes"
+  private def buildRecipesPath(): Path = os.home / ".brewmeister" / "store" / "recipes"
 
   private def buildBatchesPath: Path = os.home / ".brewmeister" / "store" / "batches"
 
