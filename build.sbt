@@ -25,7 +25,6 @@ outputStrategy := Some(StdoutOutput)
 parallelExecution := false
 
 // Begin: Assembly Tasks
-
 lazy val createAssemblyDir = taskKey[File]("Create assembly dir.")
 createAssemblyDir := {
   import java.nio.file.*
@@ -55,11 +54,9 @@ copyAssemblyJar := {
 
   Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING)
 }
-
 // End: Assembly Tasks
 
 // Begin: Assembly
-
 /*
 See assembly section in readme.
 1. sbt -Dtarget="mac" clean test assembly copyAssemblyJar
@@ -90,5 +87,4 @@ assembly / assemblyMergeStrategy := {
   case PathList("META-INF",  xs @ _*) => MergeStrategy.discard
   case x => MergeStrategy.first
 }
-
 // End: Assembly
