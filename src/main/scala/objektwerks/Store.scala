@@ -19,7 +19,7 @@ final class Store extends LazyLogging:
 
   logger.info("Initialized store.")
 
-  private def buildRecipesPath(): Path = os.home / ".brewmeister" / "store" / "recipes"
+  private def buildRecipesPath: Path = os.home / ".brewmeister" / "store" / "recipes"
 
   private def buildBatchesPath: Path = os.home / ".brewmeister" / "store" / "batches"
 
