@@ -11,3 +11,5 @@ class BatchMathTest extends AnyFunSuite with Matchers:
   test("alcoholByVolume")
 
   test("alcoholByWeight")
+
+  test("calories")
