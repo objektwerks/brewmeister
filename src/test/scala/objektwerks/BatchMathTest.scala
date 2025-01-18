@@ -7,3 +7,5 @@ class BatchMathTest extends AnyFunSuite with Matchers:
   test("srm color")
 
   test("ibu bitterness")
+
+  test("alcoholByVolume")
