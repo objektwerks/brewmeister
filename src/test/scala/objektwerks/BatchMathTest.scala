@@ -9,3 +9,5 @@ class BatchMathTest extends AnyFunSuite with Matchers:
   test("ibu bitterness")
 
   test("alcoholByVolume")
+
+  test("alcoholByWeight")
