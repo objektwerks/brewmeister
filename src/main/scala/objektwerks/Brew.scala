@@ -1,8 +1,9 @@
 package objektwerks
 
-import Math.pow
+// import Math.pow
 
 trait Brew:
+/*
   def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
     val sum = grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.value) }.sum
     sum / grains.length
@@ -12,6 +13,7 @@ trait Brew:
                batchVolume: Double): Int =
     val maltColorUnits = (grainWeight * grainColor) / batchVolume
     ( 1.4922 * pow(maltColorUnits, 0.6859) ).toInt
+*/
 
   def ibuBitterness(hops: List[Hop]): Int =
     hops.map { hop => ibuBitterness(hop.alphaAcid, hop.weight, hop.volume) }.sum
