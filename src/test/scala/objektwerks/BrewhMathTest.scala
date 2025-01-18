@@ -15,3 +15,5 @@ class BrewhMathTest extends AnyFunSuite with Matchers:
   test("calories")
 
   test("mashEfficiency")
+
+  test("brewEfficiency")
