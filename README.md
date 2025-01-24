@@ -9,7 +9,7 @@ Brewmeister
 2. **provide** batch input properties
 3. **simulate** the brewing of a batch via the 13-step brewing process
 
->In other words, Brewmeister can simulate the entire beer brewing process - without all the hard work, allowing a brewer to run **what-if** scenarios using different beer recipes and batch input properties.
+>In other words, Brewmeister can simulate the entire beer brewing process - without all the hard work, allowing a brewer to run ***what-if*** scenarios using different beer recipes and batch input properties.
 
 App
 ---
