@@ -1,15 +1,17 @@
 Brewmeister
 -----------
->Beer brewing simulator using ScalaFx, ControlsFx, uPickle, Os-Lib, Ox and Scala 3, allowing a brewer to build
->recipes and brew batches using the process of sanitizing, preparing, malting, milling, mashing, lautering,
->sparging, boiling, cooling, whirlpooling, fermenting, conditioning and kegging.
+>A beer brewing simulator, using ScalaFx, ControlsFx, uPickle, Os-Lib, Ox and Scala 3, that allows a brewer
+>to **build** recipes and **brew** batches using the classic beer brewing process of sanitizing, preparing,
+>malting, milling, mashing, lautering, sparging, boiling, cooling, whirlpooling, fermenting, conditioning
+>and kegging.
 
->This beer brewing simulator allows a brewer to:
-1. **define** a beer recipe
-2. **provide** batch input properties
-3. **simulate** the brewing of a batch via the 13-step brewing process
+>Allows a brewer to:
+1. **detail** a beer recipe;
+2. **provide** batch input properties; and
+3. **simulate** the brewing of a batch via the 13-step brewing process.
 
->In other words, Brewmeister can simulate the entire beer brewing process - without all the hard work, allowing a brewer to run ***what-if*** scenarios using different beer recipes and batch input properties.
+>In other words, Brewmeister can simulate the entire beer brewing process - without all the hard work,
+>allowing a brewer to run ***what-if*** scenarios using different beer recipes and batch input properties.
 
 App
 ---
