@@ -7,7 +7,6 @@ import scalafx.scene.control.{ButtonType, ChoiceBox, Dialog, Label}
 import scalafx.scene.control.ButtonBar.ButtonData
 
 import objektwerks.*
-import objektwerks.{UoM, Volume}
 import objektwerks.ui.{App, Context}
 import objektwerks.ui.control.{ControlGrid, DoubleTextField}
 
