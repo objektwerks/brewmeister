@@ -4,7 +4,7 @@ Brewmeister
 >recipes and brew batches using the process of sanitizing, preparing, malting, milling, mashing, lautering,
 >sparging, boiling, cooling, whirlpooling, fermenting, conditioning and kegging.
 
->The Brewmeister simulator allows a brewer to:
+>This beer brewing simulator allows a brewer to:
 1. **define** a beer recipe
 2. **provide** batch input properties
 3. **simulate** the brewing of a batch via the 13-step brewing process
