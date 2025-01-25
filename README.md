@@ -249,6 +249,7 @@ Resources
 * [OG & FG Chart](https://www.brewersfriend.com/2017/05/07/beer-styles-original-gravity-and-final-gravity-chart-2017-update/)
 * [More Ways to Get Hoppy](https://beerandbrewing.com/learning-lab-more-ways-to-get-hoppy/)
 * [Beer Color](https://beermaverick.com/understanding-srm-and-lovibond-beer-color-calculations/)
+* [Beer Advocate](https://www.beeradvocate.com/)
 
 Note
 ----
