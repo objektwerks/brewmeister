@@ -15,7 +15,7 @@ Brewmeister
 
 Issues
 ------
->For isssues or questions, I can be contacted at: ***objektwerks@runbox.com***
+>For isssues or questions, email: ***objektwerks@runbox.com***
 
 App
 ---
