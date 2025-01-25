@@ -6,7 +6,7 @@ Brewmeister
 >and kegging.
 
 >Allows a brewer to:
-1. **detail** a beer recipe;
+1. **define** a beer recipe;
 2. **provide** batch input properties; and
 3. **simulate** the brewing of a batch via the 13-step brewing process.
 
