@@ -13,6 +13,10 @@ Brewmeister
 >In other words, Brewmeister can simulate the entire beer brewing process - without all the hard work,
 >allowing a brewer to run ***what-if*** scenarios using different beer recipes and batch input properties.
 
+Issues
+------
+>For isssues or questions, I can be contacted at: ***objektwerks@runbox.com***
+
 App
 ---
 * **Developers**: sbt clean test run
