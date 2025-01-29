@@ -16,7 +16,7 @@ Brewmeister
 App
 ---
 * **Developers**: sbt clean test run
-* **Users**: java -jar .assembly/brewmeister-mac-1.05.jar ( See the **Assembly** and **Execute** sections below. )
+* **Users**: java -jar .assembly/brewmeister-mac-1.06.jar ( See the **Assembly** and **Execute** sections below. )
 
 >**Recipes:**
 * Select **add** to build a new recipe.
@@ -227,10 +227,10 @@ Assembly
 Execute
 -------
 >To execute an assembled jar locally:
-* java -jar .assembly/brewmeister-mac-1.05.jar
-* java -jar .assembly/brewmeister-m1-1.05.jar
-* java -jar .assembly/brewmeister-win-1.05.jar
-* java -jar .assembly/brewmeister-linux-1.05.jar
+* java -jar .assembly/brewmeister-mac-1.06.jar
+* java -jar .assembly/brewmeister-m1-1.06.jar
+* java -jar .assembly/brewmeister-win-1.06.jar
+* java -jar .assembly/brewmeister-linux-1.06.jar
 
 Deploy
 ------
