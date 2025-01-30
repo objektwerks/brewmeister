@@ -23,6 +23,24 @@ Install
 5. The Brewmeister app should now be installed. Select app icon to launch.
 >See [jDeploy](https://www.npmjs.com/package/jdeploy).
 
+Assembly
+--------
+1. sbt clean test assembly copyAssemblyJar
+
+Execute
+-------
+1. java -jar .assembly/brewmeister-$version.jar ( or double-click executable jar )
+
+Deploy
+------
+1. edit build.sbt ( jarVersion + version )
+2. edit package.json ( version + jdeploy / jar )
+3. sbt clean test assembly copyAssemblyJar
+4. perform github release
+5. npm login
+6. jdeploy publish
+7. check email for npm message
+
 App
 ---
 * **Developers**: sbt clean test run
@@ -225,24 +243,6 @@ Logging
 ```
 ~/.brewmeister/logs
 ```
-
-Assembly
---------
-1. sbt clean test assembly copyAssemblyJar
-
-Execute
--------
-1. java -jar .assembly/brewmeister-$version.jar ( or double-click executable jar )
-
-Deploy
-------
-1. edit build.sbt ( jarVersion + version )
-2. edit package.json ( version + jdeploy / jar )
-3. sbt clean test assembly copyAssemblyJar
-4. perform github release
-5. npm login
-6. jdeploy publish
-7. check email for npm message
 
 Resources
 ---------
