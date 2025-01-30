@@ -230,16 +230,16 @@ Assembly
 --------
 1. sbt clean test assembly copyAssemblyJar
 
+Execute
+-------
+1. java -jar .assembly/brewmeister-1.0.0.jar
+
 Deploy
 ------
 1. edit package.json ( optional )
 2. npm login
 3. jdeploy publish
 4. check email for npm message
-
-Execute
--------
-1. java -jar .assembly/brewmeister-1.0.0.jar
 
 Resources
 ---------
