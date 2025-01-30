@@ -241,12 +241,6 @@ Execute
 -------
 1. java -jar .assembly/brewmeister-1.0.0.jar
 
-Deploy
-------
->Advanced options include:
-1. [jDeploy](https://www.npmjs.com/package/jdeploy)
-2. [Conveyor](https://hydraulic.software/index.html)
-
 Resources
 ---------
 * [Doc's Brewing Glossary](https://docmckee.com/beer/)
