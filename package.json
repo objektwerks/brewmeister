@@ -5,11 +5,11 @@
     "main": "index.js",
     "preferGlobal": true,
     "repository": "git+https://github.com/objektwerks/brewmeister.git",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "jdeploy": {
         "jdk": true,
         "javaVersion": "23",
-        "jar": ".assembly/brewmeister-1.0.3.jar",
+        "jar": ".assembly/brewmeister-1.0.4.jar",
         "javafx": true,
         "javafxVersion": "23.0.2",
         "title": "Brewmeister"
