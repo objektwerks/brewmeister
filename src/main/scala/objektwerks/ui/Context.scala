@@ -138,14 +138,13 @@ final class Context(config: Config):
   val tooltipLog = config.getString("tooltip.log")
   val tooltipProcess = config.getString("tooltip.process")
 
-  def imageViewLogo = loadImageView("/image/logo.png")
   def imageViewBang = loadImageView("/image/bang.png")
   def imageViewSave = loadImageView("/image/save.png")
   def imageViewPlus = loadImageView("/image/plus.png")
   def imageViewMinus = loadImageView("/image/minus.png")
   def imageViewLog = loadImageView("/image/log.png")
   def imageViewProcess = loadImageView("/image/process.png")
-  def imageLogo = Image(Image.getClass.getResourceAsStream("/image/logo.png"))
+  def imageAppIcon = Image(Image.getClass.getResourceAsStream("/image/icon.png"))
 
   private def loadImageView(path: String): ImageView = new ImageView:
     image = Image(Image.getClass.getResourceAsStream(path))
