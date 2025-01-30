@@ -13,16 +13,6 @@ Brewmeister
 >In other words, Brewmeister can simulate the entire beer brewing process - without all the hard work,
 >allowing a brewer to run ***what-if*** scenarios using different beer recipes and batch input properties.
 
-Install
--------
->This install process has been tested on macOS. The app icon rendering is flaky in the Dock, though.
-1. Click [Brewmeister](https://www.jdeploy.com/~brewmeister) to download app installer.
-2. Select a target platform, which will download a file like: Brewmeister Installer-1.0.0_25VJ-arm64.tar.gz | .zip
-3. Decompress the tar.gz or zip file - by double clicking it or using **unzip** or **tar** via the commandline.
-4. Double-click the Brewmeister Installer-1.0.3_25VJ.app to install app.
-5. The Brewmeister app should now be installed. Select app icon to launch.
->See [jDeploy](https://www.npmjs.com/package/jdeploy).
-
 Assembly
 --------
 1. sbt clean test assembly copyAssemblyJar
@@ -38,8 +28,18 @@ Deploy
 3. sbt clean test assembly copyAssemblyJar
 4. perform github release
 5. npm login
-6. jdeploy publish
+6. jdeploy publish ( note https://www.jdeploy.com/~brewmeister )
 7. check email for npm message
+
+Install
+-------
+>This install process has been tested on macOS. The app icon rendering is flaky in the Dock, though.
+1. Click [Brewmeister](https://www.jdeploy.com/~brewmeister) to download app installer.
+2. Select a target platform, which will download a file like: Brewmeister Installer-1.0.0_25VJ-arm64.tar.gz | .zip
+3. Decompress the tar.gz or zip file - by double clicking it or using **unzip** or **tar** via the commandline.
+4. Double-click the Brewmeister Installer-1.0.3_25VJ.app to install app.
+5. The Brewmeister app should now be installed. Select app icon to launch.
+>See [jDeploy](https://www.npmjs.com/package/jdeploy).
 
 App
 ---
