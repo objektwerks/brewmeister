@@ -17,24 +17,24 @@ object App extends JFXApp3 with LazyLogging:
   val context = Context( ConfigFactory.load("app.conf") )
   val model = Model( Store() )
 
-  if Taskbar.isTaskbarSupported() then
-    val taskbar = Taskbar.getTaskbar()
-    if (taskbar.isSupported(Feature.ICON_IMAGE)) then
-      val defaultToolkit = Toolkit.getDefaultToolkit()
-      val dockIcon = defaultToolkit.getImage(getClass().getResource("/image/logo.png"))
-      taskbar.setIconImage(dockIcon)
-
   override def start(): Unit =
     stage = new JFXApp3.PrimaryStage:
       scene = View(context, model).scene
       title = context.windowTitle
       minWidth = context.windowWidth
       minHeight = context.windowHeight
-      icons += context.logoImage
+
+    if Taskbar.isTaskbarSupported() then
+      val taskbar = Taskbar.getTaskbar()
+      if (taskbar.isSupported(Feature.ICON_IMAGE)) then
+        val defaultToolkit = Toolkit.getDefaultToolkit()
+        val appIcon = defaultToolkit.getImage(getClass().getResource("/image/icon.png"))
+        taskbar.setIconImage(appIcon)
+        stage.icons += context.imageLogo
+
     stage.show()
 
     logger.info("Started app.")
 
-  sys.addShutdownHook {
+  sys.addShutdownHook:
     logger.info("Shutdown app.")
-  }
