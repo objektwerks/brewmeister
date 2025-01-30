@@ -5,7 +5,7 @@
     "main": "index.js",
     "preferGlobal": true,
     "repository": "https://github.com/objektwerks/brewmeister",
-    "version": "1.06",
+    "version": "1.0.0",
     "jdeploy": {
         "jdk": true,
         "javaVersion": "23",
