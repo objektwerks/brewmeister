@@ -13,12 +13,12 @@ Brewmeister
 >In other words, Brewmeister can simulate the entire beer brewing process - without all the hard work,
 >allowing a brewer to run ***what-if*** scenarios using different beer recipes and batch input properties.
 
-Download
---------
->See: [Brewmeister](https://www.jdeploy.com/~brewmeister)
-1. Select a target platform - which will download a file like this: Brewmeister Installer-1.0.0_25VJ-arm64.tar.gz | .zip
-2. Decompress the tar.gz or zip file - typically be double clicking it or use **unzip** or **tar** via the commandline.
-3. Double-click the Brewmeister Installer-1.0.0_25VJ.app to install Brewmeister.
+Install
+-------
+1. [Brewmeister](https://www.jdeploy.com/~brewmeister)
+2. Select a target platform - which will download a file like this: Brewmeister Installer-1.0.0_25VJ-arm64.tar.gz | .zip
+3. Decompress the tar.gz or zip file - typically be double clicking it or use **unzip** or **tar** via the commandline.
+4. Double-click the Brewmeister Installer-1.0.0_25VJ.app to install Brewmeister and follow the UI prompts.
 
 App
 ---
