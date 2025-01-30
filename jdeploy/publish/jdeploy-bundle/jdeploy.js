@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-var jarName = "brewmeister-m1-1.06.jar";
+var jarName = "brewmeister-m1-1.0.0.jar";
 var mainClass = "{{MAIN_CLASS}}";
 var classPath = "{{CLASSPATH}}";
 var port = "0";
