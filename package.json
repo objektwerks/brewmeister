@@ -1,0 +1,28 @@
+{
+    "bin": {"brewmeister_3-1-02-SNAPSHOT": "jdeploy-bundle/jdeploy.js"},
+    "author": "Objektwerks",
+    "description": "A beer brewing simulator, using ScalaFx, ControlsFx, uPickle, Os-Lib, Ox and Scala 3, that allows a brewer to build recipes and brew batches using the classic beer brewing process of sanitizing, preparing, malting, milling, mashing, lautering, sparging, boiling, cooling, whirlpooling, fermenting, conditioning and kegging.",
+    "main": "index.js",
+    "preferGlobal": true,
+    "repository": "",
+    "version": "1.06",
+    "jdeploy": {
+        "jdk": true,
+        "javaVersion": "23",
+        "jar": ".assembly/brewmeister-m1-1.06.jar",
+        "javafx": true,
+        "title": "Brewmeister"
+    },
+    "dependencies": {
+        "command-exists-promise": "^2.0.2",
+        "node-fetch": "2.6.7",
+        "tar": "^4.4.8",
+        "yauzl": "^2.10.0",
+        "shelljs": "^0.8.4"
+    },
+    "license": "Apache 2.0",
+    "name": "brewmeister",
+    "files": ["jdeploy-bundle"],
+    "scripts": {"test": "echo \"Error: no test specified\" && exit 1"},
+    "homepage": "https://github.com/objektwerks/brewmeister"
+}
