@@ -21,6 +21,7 @@ Install
 3. Decompress the tar.gz or zip file - by double clicking it or using **unzip** or **tar** via the commandline.
 4. Double-click the Brewmeister Installer-1.0.0_25VJ.app to install app.
 5. The Brewmeister app should now be installed. Select app icon to launch.
+>See [jDeploy](https://www.npmjs.com/package/jdeploy) to learn more about the deployment technology.
 
 App
 ---
