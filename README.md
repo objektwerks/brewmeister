@@ -233,6 +233,11 @@ Assembly
 * sbt -Dtarget="win" clean test assembly copyAssemblyJar
 * sbt -Dtarget="linux" clean test assembly copyAssemblyJar
 
+Deploy
+------
+1. npm login
+2. jdeploy publish
+
 Execute
 -------
 >To execute an assembled jar locally:
