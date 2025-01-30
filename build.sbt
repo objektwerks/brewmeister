@@ -58,32 +58,7 @@ copyAssemblyJar := {
 // End: Assembly Tasks
 
 // Begin: Assembly
-/*
-See assembly section in readme.
-1. sbt -Dtarget="mac" clean test assembly copyAssemblyJar
-2. sbt -Dtarget="m1" clean test assembly copyAssemblyJar
-3. sbt -Dtarget="win" clean test assembly copyAssemblyJar
-4. sbt -Dtarget="linux" clean test assembly copyAssemblyJar
-*/
-lazy val OS: String = sys.props.getOrElse("target", "") match {
-  case name if name.startsWith("mac")   => "mac"
-  case name if name.startsWith("m1")    => "mac-aarch64"
-  case name if name.startsWith("win")   => "win"
-  case name if name.startsWith("linux") => "linux"
-  case _ => ""
-}
-
-if (OS == "mac") assemblyJarName := s"brewmeister-mac-$jarVersion.jar"
-else if (OS == "mac-aarch64") assemblyJarName := s"brewmeister-m1-$jarVersion.jar"
-else if (OS == "win") assemblyJarName := s"brewmeister-win-$jarVersion.jar"
-else if (OS == "linux") assemblyJarName := s"brewmeister-linux-$jarVersion.jar"
-else assemblyJarName := s"brewmeister-no-valid-target-specified-$jarVersion.jar"
-
-lazy val javafxModules = Seq("base", "controls", "web")
-libraryDependencies ++= javafxModules.map( module =>
-  "org.openjfx" % s"javafx-$module" % "23" classifier OS
-)
-
+assemblyJarName := s"brewmeister-$jarVersion.jar"
 assembly / assemblyMergeStrategy := {
   case PathList("META-INF",  xs @ _*) => MergeStrategy.discard
   case x => MergeStrategy.first
