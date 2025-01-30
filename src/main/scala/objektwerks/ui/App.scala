@@ -18,11 +18,11 @@ object App extends JFXApp3 with LazyLogging:
   val model = Model( Store() )
 
   if Taskbar.isTaskbarSupported() then
-      val taskbar = Taskbar.getTaskbar()
-      if (taskbar.isSupported(Feature.ICON_IMAGE)) then
-          val defaultToolkit = Toolkit.getDefaultToolkit()
-          val dockIcon = defaultToolkit.getImage(getClass().getResource("/image/logo.png"))
-          taskbar.setIconImage(dockIcon)
+    val taskbar = Taskbar.getTaskbar()
+    if (taskbar.isSupported(Feature.ICON_IMAGE)) then
+      val defaultToolkit = Toolkit.getDefaultToolkit()
+      val dockIcon = defaultToolkit.getImage(getClass().getResource("/image/logo.png"))
+      taskbar.setIconImage(dockIcon)
 
   override def start(): Unit =
     stage = new JFXApp3.PrimaryStage:
