@@ -232,7 +232,7 @@ Assembly
 
 Execute
 -------
-1. java -jar .assembly/brewmeister-$version.jar
+1. java -jar .assembly/brewmeister-$version.jar ( or double-click executable jar )
 
 Deploy
 ------
