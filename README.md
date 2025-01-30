@@ -26,7 +26,7 @@ Install
 App
 ---
 * **Developers**: sbt clean test run
-* **Users**: java -jar .assembly/brewmeister-mac-1.0.0.jar ( See the **Assembly** and **Execute** sections below. )
+* **Users**: See Install section above.
 
 >**Recipes:**
 * Select **add** to build a new recipe.
