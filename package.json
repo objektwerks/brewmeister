@@ -9,7 +9,7 @@
     "jdeploy": {
         "jdk": true,
         "javaVersion": "23",
-        "jar": ".assembly/brewmeister-1.0.0.jar",
+        "jar": ".assembly/brewmeister-1.0.1.jar",
         "javafx": true,
         "title": "Brewmeister"
     },
