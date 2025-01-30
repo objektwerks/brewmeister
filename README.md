@@ -239,9 +239,10 @@ Deploy
 1. edit build.sbt ( jarVersion + version )
 2. edit package.json ( version + jdeploy / jar )
 3. sbt clean test assembly copyAssemblyJar
-4. npm login
-5. jdeploy publish
-6. check email for npm message
+4. perform github release
+5. npm login
+6. jdeploy publish
+7. check email for npm message
 
 Resources
 ---------
