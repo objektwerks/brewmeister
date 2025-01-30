@@ -15,7 +15,8 @@ Brewmeister
 
 Download
 --------
->[Brewmeister](https://www.jdeploy.com/~brewmeister)
+>See: [Brewmeister](https://www.jdeploy.com/~brewmeister)
+1. Select a target platform - which will download a file like this: Brewmeister Installer-1.0.0_25VJ-arm64.tar.gz | .zip
 
 App
 ---
