@@ -14,7 +14,7 @@ Brewmeister
 >allowing a brewer to run ***what-if*** scenarios using different beer recipes and batch input properties.
 
 Download
---------e
+--------
 >[Brewmeister](https://www.jdeploy.com/~brewmeister)
 
 App
