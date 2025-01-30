@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
 Created-By: objektwerks
 Main-Class: objektwerks.ui.App
-Application-Icon: image/logo.png
+Application-Icon: /image/logo.png
