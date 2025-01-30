@@ -11,6 +11,7 @@
         "javaVersion": "23",
         "jar": ".assembly/brewmeister-1.0.3.jar",
         "javafx": true,
+        "javafxVersion": "23.0.2",
         "title": "Brewmeister"
     },
     "dependencies": {
