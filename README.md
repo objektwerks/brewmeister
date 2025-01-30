@@ -236,10 +236,12 @@ Execute
 
 Deploy
 ------
-1. edit package.json ( version + jdeploy / jar )
-2. npm login
-3. jdeploy publish
-4. check email for npm message
+1. edit build.sbt ( jarVersion + version )
+2. edit package.json ( version + jdeploy / jar )
+3. sbt clean test assembly copyAssemblyJar
+4. npm login
+5. jdeploy publish
+6. check email for npm message
 
 Resources
 ---------
