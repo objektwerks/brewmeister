@@ -239,6 +239,7 @@ Deploy
 1. edit package.json ( optional )
 2. npm login
 3. jdeploy publish
+4. check email for npm message
 
 Execute
 -------
