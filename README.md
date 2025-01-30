@@ -228,11 +228,7 @@ Logging
 
 Assembly
 --------
->To build for a "mac", "m1', "win" or "linux" os target:
-* sbt -Dtarget="mac" clean test assembly copyAssemblyJar
-* sbt -Dtarget="m1" clean test assembly copyAssemblyJar
-* sbt -Dtarget="win" clean test assembly copyAssemblyJar
-* sbt -Dtarget="linux" clean test assembly copyAssemblyJar
+1. sbt clean test assembly copyAssemblyJar
 
 Deploy
 ------
@@ -243,11 +239,7 @@ Deploy
 
 Execute
 -------
->To execute an assembled jar locally:
-* java -jar .assembly/brewmeister-mac-1.0.0.jar
-* java -jar .assembly/brewmeister-m1-1.0.0.jar
-* java -jar .assembly/brewmeister-win-1.0.0.jar
-* java -jar .assembly/brewmeister-linux-1.0.0.jar
+1. java -jar .assembly/brewmeister-1.0.0.jar
 
 Deploy
 ------
