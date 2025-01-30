@@ -235,8 +235,9 @@ Assembly
 
 Deploy
 ------
-1. npm login
-2. jdeploy publish
+1. edit package.json ( optional )
+2. npm login
+3. jdeploy publish
 
 Execute
 -------
