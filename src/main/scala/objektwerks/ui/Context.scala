@@ -145,7 +145,7 @@ final class Context(config: Config):
   def imageViewMinus = loadImageView("/image/minus.png")
   def imageViewLog = loadImageView("/image/log.png")
   def imageViewProcess = loadImageView("/image/process.png")
-  def logoImage = new Image(Image.getClass.getResourceAsStream("/image/logo.png"))
+  def logoImage = Image(Image.getClass.getResourceAsStream("/image/logo.png"))
 
   private def loadImageView(path: String): ImageView = new ImageView:
     image = new Image(Image.getClass.getResourceAsStream(path))
