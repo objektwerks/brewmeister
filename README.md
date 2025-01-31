@@ -279,7 +279,7 @@ Resources
 
 ScalaFx Binding
 ---------------
-1. ScalaFx property binding for case class / properties / controls doesn't appear to work:
+* ScalaFx property binding for case class / properties / controls doesn't appear to work:
 ```
   case class Person(name: String):
     val nameProperty = ObjectProperty(name)
