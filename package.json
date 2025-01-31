@@ -1,10 +1,15 @@
 {
-    "bin": {"brewmeister": "jdeploy-bundle/jdeploy.js"},
+    "bin": {
+        "brewmeister": "jdeploy-bundle/jdeploy.js"
+    },
     "author": "Objektwerks",
     "description": "A beer brewing simulator, using ScalaFx, ControlsFx, uPickle, Os-Lib, Ox and Scala 3, that allows a brewer to build recipes and brew batches using the classic beer brewing process of sanitizing, preparing, malting, milling, mashing, lautering, sparging, boiling, cooling, whirlpooling, fermenting, conditioning and kegging.",
     "main": "index.js",
     "preferGlobal": true,
-    "repository": "git+https://github.com/objektwerks/brewmeister.git",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/objektwerks/brewmeister.git"
+    },
     "version": "1.0.4",
     "jdeploy": {
         "jdk": true,
@@ -23,7 +28,11 @@
     },
     "license": "Apache 2.0",
     "name": "brewmeister",
-    "files": ["jdeploy-bundle"],
-    "scripts": {"test": "echo \"Error: no test specified\" && exit 1"},
+    "files": [
+        "jdeploy-bundle"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
     "homepage": "https://github.com/objektwerks/brewmeister"
 }
