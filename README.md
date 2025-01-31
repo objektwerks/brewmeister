@@ -22,6 +22,27 @@ Install
 5. The Brewmeister app should now be installed. Select app icon to launch.
 >This install has been tested on macOS.
 
+App
+---
+* **Developers**: sbt clean test run
+* **Users**: See Install section above.
+
+>**Recipes:**
+* Select **add** to build a new recipe.
+* Select **brew** to simulate the brewing of a **selected** recipe.
+* Select **save** to save the **selected** and **edited** recipe.
+* Select **remove** to delete a **selected** recipe.
+
+>**Batches:**
+* Select a **listed** batch to analyze batch results.
+* Select **log** to view the batch log.
+* Select **process** to view the batch process.
+* Select **remove** to delete a **selected** batch.
+
+Default Recipe
+--------------
+>The **Brewmeister IPA** is the default recipe. It can be removed; but it will be regenerated upon **App** startup - if ***NO*** recipes exist.
+
 Assembly
 --------
 1. sbt clean test assembly copyAssemblyJar
@@ -60,29 +81,6 @@ jDeploy Issues
     2. See objektwerks.ui.App stage.icons, Taskbar and Toolkit code.
 3. Much of the old sbt assembly plugin code is no longer required. See build.sbt for details.
 4. The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with assembly output copied to ./target/... by default.
-
-App
----
-* **Developers**: sbt clean test run
-* **Users**: See Install section above.
-
->**Recipes:**
-* Select **add** to build a new recipe.
-* Select **brew** to simulate the brewing of a **selected** recipe.
-* Select **save** to save the **selected** and **edited** recipe.
-* Select **remove** to delete a **selected** recipe.
-
->**Batches:**
-* Select a **listed** batch to analyze batch results.
-* Select **log** to view the batch log.
-* Select **process** to view the batch process.
-* Select **remove** to delete a **selected** batch.
-
-Default Recipe
---------------
->The **Brewmeister IPA** is the default recipe.
-
->It can be removed; but it will be regenerated upon **App** startup - if ***NO*** recipes exist.
 
 Process
 -------
