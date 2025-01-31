@@ -50,7 +50,7 @@ jDeploy
 4. ***macOS app icon*** not displayed in Dock and Launchpad.
     1. Ensure app icon ( ./icon.png + ./src/main/resources/image/icon.png ) is sized at 256 x 256.
     2. See objektwerks.ui.App stage.icons, Taskbar and Toolkit code.
-5. Much of the old sbt assembly plugin code is no longer required. See build.sbt.
+5. Much of the old sbt assembly plugin code is no longer required. See build.sbt for details.
 6. The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with assembly output copied to ./target/... by default.
 7. add *jdeploy* and *jdeploy-bundle* to .gitignore
 
