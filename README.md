@@ -41,8 +41,8 @@ Install
 4. Double-click the Brewmeister Installer-$version_25VJ.app to install app.
 5. The Brewmeister app should now be installed. Select app icon to launch.
 
-jDeploy Requirements
---------------------
+jDeploy Install
+---------------
 >See [jDeploy Getting Started](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
 1. Setup npm account at npmjs.com
 2. Install node, which installs npm, which bundles npx.
@@ -50,7 +50,7 @@ jDeploy Requirements
 4. Edit jDeploy *package.json* as required.
 5. Add *jdeploy* and *jdeploy-bundle* to .gitignore
    
-jDeploy issues
+jDeploy Issues
 --------------
 >The following issues with [jDeploy](https://www.jdeploy.com/) were encountered:
 1. ***jDeploy publish*** fails due to npm *2fa* one-time password error. Solution: https://github.com/shannah/jdeploy/issues/74
