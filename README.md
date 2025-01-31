@@ -19,7 +19,7 @@ Install
 2. Select a target platform to download a file like: Brewmeister Installer-$version_25VJ-arm64.tar.gz | .zip
 3. Decompress the tar.gz or zip file by double clicking it or using **unzip** or **tar** via the commandline.
 4. Double-click the Brewmeister Installer-$version_25VJ.app to install app.
-5. The Brewmeister app should now be installed. Select app icon to launch.
+5. Select app icon to launch.
 >This install has been tested on macOS.
 
 App
