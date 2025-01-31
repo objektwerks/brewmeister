@@ -41,6 +41,12 @@ Install
 5. The Brewmeister app should now be installed. Select app icon to launch.
 >See [jDeploy](https://www.npmjs.com/package/jdeploy)
 
+jDeploy
+-------
+>The following issues were encountered:
+1. ***jDeploy publish*** fails due to npm 2fa one-time password error. See solution here: https://github.com/shannah/jdeploy/issues/74
+2. 
+
 App
 ---
 * **Developers**: sbt clean test run
