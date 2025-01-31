@@ -71,7 +71,7 @@ jDeploy Install
 jDeploy Issues
 --------------
 1. ***jDeploy publish*** fails due to npm *2fa* one-time password error. [Github Solution](https://github.com/shannah/jdeploy/issues/74)
-2. ***macOS app icon*** not displayed in Dock and Launchpad.
+2. ***macOS app icon*** not displayed correctly in Dock and Launchpad.
     1. Ensure app icon ( ./icon.png + ./src/main/resources/image/icon.png ) is at least 256x256. 512x512 is recommended.
     2. See objektwerks.ui.App stage.icons, Taskbar and Toolkit code.
 3. Much of the old sbt assembly plugin code is no longer required. See build.sbt for details.
