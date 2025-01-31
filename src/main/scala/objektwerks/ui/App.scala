@@ -14,7 +14,7 @@ import objektwerks.Store
 object App extends JFXApp3 with LazyLogging:
   logger.info("Starting app ...")
 
-  val context = Context( ConfigFactory.load("app.conf") )
+  val context = Context(ConfigFactory.load("app.conf"))
   val model = Model( Store() )
 
   override def start(): Unit =
@@ -27,7 +27,7 @@ object App extends JFXApp3 with LazyLogging:
 
     if Taskbar.isTaskbarSupported() then
       val taskbar = Taskbar.getTaskbar()
-      if (taskbar.isSupported(Feature.ICON_IMAGE)) then
+      if taskbar.isSupported(Feature.ICON_IMAGE) then
         val defaultToolkit = Toolkit.getDefaultToolkit()
         val appIcon = defaultToolkit.getImage(getClass().getResource("/image/icon.png"))
         taskbar.setIconImage(appIcon)
