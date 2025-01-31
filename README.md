@@ -49,7 +49,7 @@ jDeploy
     1. Ensure app icon ( ./icon.png + ./src/main/resources/image/icon.png ) is sized at 256 x 256.
     2. See objektwerks.ui.App stage.icons, Taskbar and Toolkit code.
     3. Much of the old sbt assembly plugin code is not longer required. See build.sbt.
-    4. The build.sbt tasks, createAssemblyDir and copyAssemblyJar, are not absolutely required.
+    4. The build.sbt tasks, createAssemblyDir and copyAssemblyJar, are not absolutely required, with output copied to ./target/...
 
 App
 ---
