@@ -17,7 +17,7 @@ Install
 -------
 1. Select [Brewmeister](https://www.jdeploy.com/~brewmeister)
 2. Select a platform to download an app installer.
-3. Decompress app installer tar.gz | zip file by double-clicking it.
+3. Decompress app installer file.
 4. Install app by double-clicking app installer.
 5. Select app icon to launch app.
 >This install has been tested on macOS.
