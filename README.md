@@ -46,9 +46,9 @@ jDeploy Requirements
 >See [jDeploy Getting Started](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
 1. Setup npm account at npmjs.com
 2. Install node, which installs npm, which bundles npx.
-3. Install jdeploy - *npm install -g jdeploy*
-4. Add *jdeploy* and *jdeploy-bundle* to .gitignore
-5. Edit jDeploy package.json as required.
+3. Install jDeploy via npm - *npm install -g jdeploy*
+4. Edit jDeploy *package.json* as required.
+5. Add *jdeploy* and *jdeploy-bundle* to .gitignore
    
 jDeploy issues
 --------------
