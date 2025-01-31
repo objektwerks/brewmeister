@@ -39,7 +39,7 @@ Deploy
 5. npm login
 6. jdeploy publish ( to https://www.jdeploy.com/~brewmeister )
 7. check email for npm message
->See [jDeploy](https://www.jdeploy.com/docs/manual/#_getting_started)
+>See [jDeploy](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
 
 jDeploy Install
 ---------------
@@ -53,13 +53,13 @@ jDeploy Install
    
 jDeploy Issues
 --------------
->The following issues with [jDeploy](https://www.jdeploy.com/docs/manual/#_getting_started) were encountered:
+>The following issues with were encountered:
 1. ***jDeploy publish*** fails due to npm *2fa* one-time password error. Solution: https://github.com/shannah/jdeploy/issues/74
 2. ***macOS app icon*** not displayed in Dock and Launchpad.
     1. Ensure app icon ( ./icon.png + ./src/main/resources/image/icon.png ) is at least 256 x 256. 512 x 512 is recommended.
     2. See objektwerks.ui.App stage.icons, Taskbar and Toolkit code.
 3. Much of the old sbt assembly plugin code is no longer required. See build.sbt for details.
-4.  The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with assembly output copied to ./target/... by default.
+4. The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with assembly output copied to ./target/... by default.
 
 App
 ---
