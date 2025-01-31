@@ -43,7 +43,7 @@ Install
 
 jDeploy
 -------
->The following requirements and issues were encountered:
+>The following requirements and issues with [jDeploy](https://www.jdeploy.com/) were encountered:
 1. **Must** setup npm account at npmjs.com
 2. **Must** install node, which installs npm, which ships with npx. Seriously. ;)
 3. **Must** install jdeploy - *npm install -g jdeploy*
@@ -54,7 +54,6 @@ jDeploy
 6. Much of the old sbt assembly plugin code is no longer required. See build.sbt for details.
 7. The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with assembly output copied to ./target/... by default.
 8. add *jdeploy* and *jdeploy-bundle* to .gitignore
->See [jDeploy](https://www.jdeploy.com/)
 
 App
 ---
