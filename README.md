@@ -37,7 +37,7 @@ App
 * Select **remove** to delete a **selected** batch.
 
 >**Default Recipe:**
-* The **Brewmeister IPA** is the default recipe. It can be removed; but it will be regenerated upon **App** startup - if ***NO*** recipes exist.
+* **Brewmeister IPA** is the default recipe. It can be removed; but it will be added at **App** startup - if ***NO*** recipes exist.
 
 Assembly
 --------
