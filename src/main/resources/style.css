@@ -5,6 +5,8 @@
   -fx-font-weight: normal;
 }
 .tooltip {
+  -fx-background-color: white;
+  -fx-text-fill: navy;
   -fx-show-delay: 100ms;
   -fx-show-duration: 6s;
 }
