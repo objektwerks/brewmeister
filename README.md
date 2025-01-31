@@ -24,9 +24,6 @@ Install
 
 App
 ---
-* **Developers**: sbt clean test run
-* **Users**: See Install section above.
-
 >**Recipes:**
 * Select **add** to build a new recipe.
 * Select **brew** to simulate the brewing of a **selected** recipe.
@@ -39,9 +36,8 @@ App
 * Select **process** to view the batch process.
 * Select **remove** to delete a **selected** batch.
 
-Default Recipe
---------------
->The **Brewmeister IPA** is the default recipe. It can be removed; but it will be regenerated upon **App** startup - if ***NO*** recipes exist.
+>**Default Recipe:**
+* The **Brewmeister IPA** is the default recipe. It can be removed; but it will be regenerated upon **App** startup - if ***NO*** recipes exist.
 
 Assembly
 --------
