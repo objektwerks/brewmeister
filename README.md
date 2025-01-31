@@ -49,7 +49,7 @@ jDeploy
 3. **Must** install jdeploy - *npm install -g jdeploy*
 4. ***jDeploy publish*** fails due to npm *2fa* one-time password error. Solution: https://github.com/shannah/jdeploy/issues/74
 5. ***macOS app icon*** not displayed in Dock and Launchpad.
-    1. Ensure app icon ( ./icon.png + ./src/main/resources/image/icon.png ) is sized at 256 x 256.
+    1. Ensure app icon ( ./icon.png + ./src/main/resources/image/icon.png ) is at least 256 x 256. 512 x 512 is recommended.
     2. See objektwerks.ui.App stage.icons, Taskbar and Toolkit code.
 6. Much of the old sbt assembly plugin code is no longer required. See build.sbt for details.
 7. The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with assembly output copied to ./target/... by default.
