@@ -39,14 +39,6 @@ App
 >**Default Recipe:**
 * **Brewmeister IPA** is the default recipe. It can be removed; but it will be added at **App** startup - if ***NO*** recipes exist.
 
-Assembly
---------
-1. sbt clean test assembly copyAssemblyJar
-
-Execute
--------
-1. java -jar .assembly/brewmeister-$version.jar ( or double-click executable jar )
-
 Deploy
 ------
 1. edit build.sbt ( jarVersion + version )
@@ -76,6 +68,14 @@ jDeploy Issues
     2. See objektwerks.ui.App stage.icons, Taskbar and Toolkit code.
 3. Much of the old sbt assembly plugin code is no longer required. See build.sbt for details.
 4. The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with assembly output copied to ./target/... by default.
+
+Assembly
+--------
+1. sbt clean test assembly copyAssemblyJar
+
+Execute
+-------
+1. java -jar .assembly/brewmeister-$version.jar ( or double-click executable jar )
 
 Process
 -------
