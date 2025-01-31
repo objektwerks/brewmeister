@@ -16,7 +16,7 @@ Brewmeister
 Install
 -------
 1. Click [Brewmeister](https://www.jdeploy.com/~brewmeister) to download app installer.
-2. Select a target platform to download a file like Brewmeister Installer-$version_25VJ-arm64.tar.gz | .zip
+2. Select a target platform to download an app installer like Brewmeister Installer-$version_25VJ-arm64.tar.gz | .zip
 3. Decompress tar.gz | zip file by double clicking it or using **unzip** or **tar** via the commandline.
 4. Install app by double-clicking Brewmeister Installer-$version_25VJ.app.
 5. Select app icon to launch app.
