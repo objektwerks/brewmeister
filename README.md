@@ -54,6 +54,7 @@ jDeploy
 6. Much of the old sbt assembly plugin code is no longer required. See build.sbt for details.
 7. The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with assembly output copied to ./target/... by default.
 8. add *jdeploy* and *jdeploy-bundle* to .gitignore
+>See [jDeploy](https://www.jdeploy.com/)
 
 App
 ---
