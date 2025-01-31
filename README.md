@@ -41,20 +41,24 @@ Install
 4. Double-click the Brewmeister Installer-$version_25VJ.app to install app.
 5. The Brewmeister app should now be installed. Select app icon to launch.
 
-jDeploy
--------
->The following requirements and issues with [jDeploy](https://www.jdeploy.com/) were encountered:
-1. **Must** setup npm account at npmjs.com
-2. **Must** install node, which installs npm, which ships with npx. Seriously. ;)
-3. **Must** install jdeploy - *npm install -g jdeploy*
-4. **Add** *jdeploy* and *jdeploy-bundle* to .gitignore
-5. **Edited** jDeploy package.json as required.
-6. ***jDeploy publish*** fails due to npm *2fa* one-time password error. Solution: https://github.com/shannah/jdeploy/issues/74
-7. ***macOS app icon*** not displayed in Dock and Launchpad.
+jDeploy Requirements
+--------------------
+>See [jDeploy Getting Started](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
+1. Setup npm account at npmjs.com
+2. Install node, which installs npm, which bundles npx.
+3. Install jdeploy - *npm install -g jdeploy*
+4. Add *jdeploy* and *jdeploy-bundle* to .gitignore
+5. Edit jDeploy package.json as required.
+   
+jDeploy issues
+--------------
+>The following issues with [jDeploy](https://www.jdeploy.com/) were encountered:
+1. ***jDeploy publish*** fails due to npm *2fa* one-time password error. Solution: https://github.com/shannah/jdeploy/issues/74
+2. ***macOS app icon*** not displayed in Dock and Launchpad.
     1. Ensure app icon ( ./icon.png + ./src/main/resources/image/icon.png ) is at least 256 x 256. 512 x 512 is recommended.
     2. See objektwerks.ui.App stage.icons, Taskbar and Toolkit code.
-8. Much of the old sbt assembly plugin code is no longer required. See build.sbt for details.
-9. The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with assembly output copied to ./target/... by default.
+3. Much of the old sbt assembly plugin code is no longer required. See build.sbt for details.
+4.  The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with assembly output copied to ./target/... by default.
 
 App
 ---
