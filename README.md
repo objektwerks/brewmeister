@@ -277,8 +277,8 @@ Resources
 * [Beer Color](https://beermaverick.com/understanding-srm-and-lovibond-beer-color-calculations/)
 * [Beer Advocate](https://www.beeradvocate.com/)
 
-Note
-----
+ScalaFx Binding
+---------------
 1. ScalaFx property binding for case class / properties / controls doesn't appear to work:
 ```
   case class Person(name: String):
