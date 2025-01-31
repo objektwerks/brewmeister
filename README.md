@@ -30,6 +30,7 @@ Deploy
 5. npm login
 6. jdeploy publish ( to https://www.jdeploy.com/~brewmeister )
 7. check email for npm message
+>See [jDeploy](https://www.jdeploy.com/)
 
 Install
 -------
@@ -39,7 +40,6 @@ Install
 3. Decompress the tar.gz or zip file - by double clicking it or using **unzip** or **tar** via the commandline.
 4. Double-click the Brewmeister Installer-$version_25VJ.app to install app.
 5. The Brewmeister app should now be installed. Select app icon to launch.
->See [jDeploy](https://www.jdeploy.com/)
 
 jDeploy
 -------
