@@ -39,7 +39,7 @@ Deploy
 5. npm login
 6. jdeploy publish ( to https://www.jdeploy.com/~brewmeister )
 7. check email for npm message
->See [jDeploy](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
+>See [jDeploy Docs](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
 
 jDeploy Install
 ---------------
@@ -49,7 +49,7 @@ jDeploy Install
 4. Add icon.png ( 256 x 256, 512 x 512 ) to project root.
 5. Edit jDeploy *package.json* as required.
 6. Add *jdeploy* and *jdeploy-bundle* to .gitignore
->See [jDeploy Getting Started](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
+>See [jDeploy Docs](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
    
 jDeploy Issues
 --------------
