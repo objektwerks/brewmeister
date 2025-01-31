@@ -16,7 +16,7 @@ Brewmeister
 Install
 -------
 1. Select [Brewmeister](https://www.jdeploy.com/~brewmeister)
-2. Select a platform to download an app installer.
+2. Select a platform to download a compressed app installer.
 3. Decompress app installer.
 4. Install app by double-clicking app installer.
 5. Select app icon to launch app.
