@@ -12,7 +12,7 @@
     },
     "version": "1.0.4",
     "jdeploy": {
-        "jdk": true,
+        "jdk": false,
         "javaVersion": "23",
         "jar": ".assembly/brewmeister-1.0.4.jar",
         "javafx": true,
