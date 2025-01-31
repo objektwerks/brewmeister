@@ -43,7 +43,7 @@ Install
 
 jDeploy
 -------
->The following issues were encountered:
+>The following requirements and issues were encountered:
 1. **Must** setup npm account at npmjs.com
 2. **Must** install node, which installs npm.
 3. ***jDeploy publish*** fails due to npm *2fa* one-time password error. Solution: https://github.com/shannah/jdeploy/issues/74
