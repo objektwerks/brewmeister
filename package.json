@@ -3,7 +3,7 @@
         "brewmeister": "jdeploy-bundle/jdeploy.js"
     },
     "author": "Objektwerks",
-    "description": "A beer brewing simulator that allows a brewer to build recipes and brew batches using the classic beer brewing process of sanitizing, preparing, malting, milling, mashing, lautering, sparging, boiling, cooling, whirlpooling, fermenting, conditioning and kegging.",
+    "description": "Beer brewing simulator that allows brewers to build recipes and brew batches using the classic beer brewing process of sanitizing, preparing, malting, milling, mashing, lautering, sparging, boiling, cooling, whirlpooling, fermenting, conditioning and kegging.",
     "main": "index.js",
     "preferGlobal": true,
     "repository": {
