@@ -45,7 +45,7 @@ jDeploy
 -------
 >The following issues were encountered:
 1. ***jDeploy publish*** fails due to npm 2fa one-time password error. See solution here: https://github.com/shannah/jdeploy/issues/74
-2. 
+2. macOS app icon not displayed in Dock and Launchpad. Ensure your app icon ( ./icon.png + ./src/main/resources/image/icon.png ) is sized at 256x256.
 
 App
 ---
