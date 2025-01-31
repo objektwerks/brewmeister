@@ -44,7 +44,7 @@ Install
 jDeploy
 -------
 >The following issues were encountered:
-1. **Must** setup *npm account* at npmjs.com
+1. **Must** setup npm account at npmjs.com
 2. ***jDeploy publish*** fails due to npm *2fa* one-time password error. Solution: https://github.com/shannah/jdeploy/issues/74
 3. ***macOS app icon*** not displayed in Dock and Launchpad.
     1. Ensure app icon ( ./icon.png + ./src/main/resources/image/icon.png ) is sized at 256 x 256.
