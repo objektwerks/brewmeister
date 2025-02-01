@@ -65,13 +65,13 @@ final class BrewDialog(context: Context, recipe: Recipe) extends Dialog[Batch]:
     text = 72.toString
 
   val labelAppearance = Label( context.labelAppearance )
-  val ratingAppearance = Rating(2, 2)
+  val ratingAppearance = Rating(3, 2)
 
   val labelAroma = Label( context.labelAroma )
-  val ratingAroma = Rating(2, 2)
+  val ratingAroma = Rating(3, 2)
 
   val labelTaste = Label( context.labelTaste )
-  val ratingTaste = Rating(2, 2)
+  val ratingTaste = Rating(3, 2)
 
   val labelActualFermentableExtract = Label( context.labelActualFermentableExtract )
   val textFieldActualFermentableExtract = new DoubleTextField:
@@ -118,9 +118,9 @@ final class BrewDialog(context: Context, recipe: Recipe) extends Dialog[Batch]:
         conditioningTemp = textFieldConditioningTemp.int,
         srmColor = textFieldSrmColor.int,
         keggingTemp = textFieldKeggingTemp.int,
-        appearance = ratingAppearance.getRating.toInt + 1,
-        aroma = ratingAroma.getRating.toInt + 1,
-        taste = ratingTaste.getRating.toInt + 1,
+        appearance = ratingAppearance.getRating.toInt,
+        aroma = ratingAroma.getRating.toInt,
+        taste = ratingTaste.getRating.toInt,
         actualFermentableExtract = textFieldActualFermentableExtract.double
       )
       listener.batch
