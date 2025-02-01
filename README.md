@@ -182,7 +182,7 @@ Brew Batch Input
 
 Brew Batch Ouput
 ----------------
-* ([See:][(https://example.com](https://github.com/objektwerks/brewmeister/blob/main/doc/batch.output.json)){:target="_blank"})
+* [See:](https://github.com/objektwerks/brewmeister/blob/main/doc/batch.output.json){:target="_blank"}
 
 Model
 -----
