@@ -183,7 +183,7 @@ Brew Batch Input
 
 Brew Batch Ouput
 ----------------
-* See
+* See: https://github.com/objektwerks/brewmeister/blob/main/doc/batch.output.json
 
 Model
 -----
