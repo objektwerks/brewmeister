@@ -181,6 +181,10 @@ Brew Batch Input
 * taste: Int = 3
 * actualFermentableExtract: Double = 4.5
 
+Brew Batch Ouput
+----------------
+* See
+
 Model
 -----
 * Recipe 1 --> * Grain | Hop | Adjunct | Yeast
