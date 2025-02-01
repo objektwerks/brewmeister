@@ -244,7 +244,8 @@ final class Listener:
           aroma = aroma,
           taste = taste,
           log = batch.log ++ log,
-          completed = completed
+          completed = completed,
+          stored = completed
         )
         batch = batch.copy(
           process = batch.process.copy(keggingCompleted = completed)
