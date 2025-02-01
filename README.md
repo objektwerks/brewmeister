@@ -163,7 +163,6 @@ Flow
 
 Brew Batch Input
 ----------------
->Sample input
 * recipe: Recipe = Brewmeister IPA
 * mashingTemp: Int = 150
 * pH: Double = 5.6
