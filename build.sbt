@@ -1,8 +1,8 @@
-val jarVersion = "1.0.6"
+val jarVersion = "1.0.7"
 
 name := "brewmeister"
 organization := "objektwerks"
-version := "1.0.6"
+version := "1.0.7"
 scalaVersion := "3.6.4-RC1"
 mainClass := Some("objektwerks.ui.App")
 libraryDependencies ++= {
