@@ -252,9 +252,7 @@ final class Listener:
       case KeggingTempBrewhouseEfficiencyLogged(brewhouseEfficiency, log) =>
         batch = batch.copy(
           brewhouseEfficiency = brewhouseEfficiency,
-          log = batch.log ++ log,
-          completed = now(), // TODO! Wrong date/time!
-          stored = nowStored()
+          log = batch.log ++ log
         )
     }
     batch
