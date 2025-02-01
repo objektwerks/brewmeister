@@ -1,5 +1,3 @@
-val jarVersion = "1.0.10"
-
 name := "brewmeister"
 organization := "objektwerks"
 version := "1.0.10"
@@ -58,7 +56,7 @@ copyAssemblyJar := {
 // End: Assembly Tasks
 
 // Begin: Assembly
-assemblyJarName := s"brewmeister-$jarVersion.jar"
+assemblyJarName := s"brewmeister-${version.value}.jar"
 assembly / assemblyMergeStrategy := {
   case PathList("META-INF",  xs @ _*) => MergeStrategy.discard
   case x => MergeStrategy.first
