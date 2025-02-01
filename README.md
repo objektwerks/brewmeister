@@ -24,6 +24,8 @@ Install
 
 App
 ---
+>See: https://github.com/objektwerks/brewmeister/blob/main/doc/app.png
+
 >**Recipes:**
 * Select **add** to build a new recipe.
 * Select **brew** to simulate the brewing of a **selected** recipe.
