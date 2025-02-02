@@ -42,8 +42,8 @@ lazy val copyAssemblyJar = taskKey[Unit]("Copy assembly jar to assembly dir.")
 copyAssemblyJar := {
   import java.nio.file.*
 
-  val assemblyDir: File = createAssemblyDir.value
-  val assemblyPath: String = s"${assemblyDir.toString}/${assemblyJarName.value}"
+  val assemblyDir: String = createAssemblyDir.value.toString
+  val assemblyPath: String = s"${assemblyDir}/${assemblyJarName.value}"
 
   val source: Path = (assembly / assemblyOutputPath).value.toPath
   val target: Path = Paths.get(assemblyPath)
