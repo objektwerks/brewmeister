@@ -18,11 +18,11 @@ final class LabelRangeSlider(min: Double,
     setShowTickLabels(true)
     setBlockIncrement(1.0)
     lowValueProperty.onChange { (_, _, newValue) =>
-      labelChangingLow.text = if displayAsInt then newValue.intValue.toString else newValue.toString
+      labelLow.text = if displayAsInt then newValue.intValue.toString else newValue.toString
       lowFunction()
     }
     highValueProperty.onChange { (_, _, newValue) =>
-      labelChangingHigh.text = if displayAsInt then newValue.intValue.toString else newValue.toString
+      labelHigh.text = if displayAsInt then newValue.intValue.toString else newValue.toString
       highFunction()
     }
 
@@ -32,13 +32,13 @@ final class LabelRangeSlider(min: Double,
   def lowValue(value: Double): Unit = slider.setLowValue(value)
   def highValue(value: Double): Unit = slider.setHighValue(value)
 
-  val labelChangingLow = new Label():
+  val labelLow = new Label():
     prefWidth = 35
     text = if displayAsInt then low.intValue.toString else low.toString
 
-  val labelChangingHigh = new Label():
+  val labelHigh = new Label():
     prefWidth = 35
     text = if displayAsInt then high.intValue.toString else high.toString
 
   spacing = 3
-  children.addAll(labelChangingLow, slider, labelChangingHigh) // Required to add org.controlsfx.control.RangeSlider
+  children.addAll(labelLow, slider, labelHigh) // Required to add org.controlsfx.control.RangeSlider
