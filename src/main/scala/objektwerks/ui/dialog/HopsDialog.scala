@@ -43,11 +43,13 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   def save(index: Int, hop: Hop): Unit =
     observableHops.update(index, hop)
+    buttonSave.disable = true
 
   // Bindings
   def hopToControls(hop: Hop): Unit =
     textFieldName.text = hop.name
     textFieldWeight.text = hop.weight.toString
+    choiceBoxWeightUnit.value = hop.weightUnit.toString
     textFieldVolume.text = hop.volume.toString
     choiceBoxVolumeUnit.value = hop.volumeUnit.toString
     textFieldAlphaAcid.text = hop.alphaAcid.toString
