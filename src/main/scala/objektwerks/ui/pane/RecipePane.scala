@@ -239,7 +239,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     }
 
   val labelPotentialMashExtract = Label( context.labelPotentialMashExtract )
-  val textFieldPotentialMashExtract = DoubleTextField()
+  val textFieldPotentialMashExtract = new DoubleTextField():
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelBoilingTempRangeDuration = Label( context.labelBoilingTempRangeDuration )
   val labelButtonBoilingTempRangeDuration = new LabelButton[TempRangeDuration]:
