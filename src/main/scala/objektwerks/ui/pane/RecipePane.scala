@@ -370,6 +370,8 @@ a
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(10)
+    lowValueProperty.onChange { (_, _, _) => enableSave() }
+    highValueProperty.onChange { (_, _, _) => enableSave() }
 
   val labelBrewhouseEfficiencyRange = Label( context.labelBrewhouseEfficiencyRange )
   val rangeSliderBrewhouseEfficiency = new RangeSlider(50, 100, model.selectedRecipe.value.brewhouseEfficiencyRange.low, model.selectedRecipe.value.brewhouseEfficiencyRange.high):
