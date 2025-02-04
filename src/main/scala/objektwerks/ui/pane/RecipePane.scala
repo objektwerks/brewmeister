@@ -302,6 +302,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelRangeSliderOriginalGravity = new LabelRangeSlider(
     min = 1.000,
     max = 1.100,
+    increment = 0.10,
     low = model.selectedRecipe.value.originalGravityRange.low,
     high = model.selectedRecipe.value.originalGravityRange.high,
     lowFunction = enableSave,
