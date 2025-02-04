@@ -316,7 +316,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     highValueProperty.onChange { (_, _, _) => enableSave() }
 
   val labelFinalGravityRange = Label( context.labelFinalGravityRange )
-  val rangeSliderFinalGravity = new RangeSlider(1.000, 1.050, model.selectedRecipe.value.finalGravityRange.low, model.selectedRecipe.value.finalGravityRange.high):
+  val rangeSliderFinalGravity = new RangeSlider(
+    1.000,
+    1.050,
+    model.selectedRecipe.value.finalGravityRange.low,
+    model.selectedRecipe.value.finalGravityRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(0.01)
