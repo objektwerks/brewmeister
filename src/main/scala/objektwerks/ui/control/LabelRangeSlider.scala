@@ -2,6 +2,7 @@ package objektwerks.ui.control
 
 import org.controlsfx.control.RangeSlider
 
+import scalafx.scene.control.Label
 import scalafx.scene.layout.HBox
 
 class LabelRangeSlider(min: Double,
@@ -12,3 +13,7 @@ class LabelRangeSlider(min: Double,
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1.0)
+
+  val labelChangingMin = new Label():
+    prefWidth = 50
+    text = changingMin.toString
