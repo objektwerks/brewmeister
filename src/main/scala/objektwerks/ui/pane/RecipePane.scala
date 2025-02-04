@@ -322,6 +322,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(0.01)
+    lowValueProperty.onChange { (_, _, _) => enableSave() }
+    highValueProperty.onChange { (_, _, _) => enableSave() }
 
   val labelSrmColorRange = Label( context.labelSrmColorRange )
   val rangeSliderSrmColor = new RangeSlider(1, 80, model.selectedRecipe.value.srmColorRange.low, model.selectedRecipe.value.srmColorRange.high):
