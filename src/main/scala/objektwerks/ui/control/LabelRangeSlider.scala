@@ -31,13 +31,11 @@ final class LabelRangeSlider(min: Double,
   def highValue: Double = slider.getHighValue()
 
   def lowValue(value: Double): Unit =
-    println(s"low value: $value")
     if value >= min then
       slider.setLowValue(value)
       labelLow.text = if displayAsInt then value.intValue.toString else value.toString
 
   def highValue(value: Double): Unit =
-    println(s"high value: $value")
     if value <= max then
       slider.setHighValue(value)
       labelHigh.text = if displayAsInt then value.intValue.toString else value.toString
