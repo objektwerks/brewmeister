@@ -179,6 +179,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelGrains = Label( context.labelGrains )
   val labelButtonGrains = new LabelButton[List[Grain]]:
+    text.onChange { (_, _, _) => enableSave() }
     value = model.selectedRecipe.value.grains
     buttonAction = () => {
       GrainsDialog(context, value.value.toArray).showAndWait() match
