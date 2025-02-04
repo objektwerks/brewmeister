@@ -366,6 +366,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelRangeSliderCalories = LabelRangeSlider(
     min = 50,
     max = 250,
+    increment = 25,
     low = model.selectedRecipe.value.calorieRange.low,
     high = model.selectedRecipe.value.calorieRange.high,
     lowFunction = enableSave,
