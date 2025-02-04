@@ -11,17 +11,18 @@ final class LabelRangeSlider(min: Double,
                              changingLow: Double,
                              changingHigh: Double,
                              changingLowFunction: () => Unit,
-                             changingHighFunction: () => Unit) extends HBox:
+                             changingHighFunction: () => Unit,
+                             displayAsInt: Boolean = true) extends HBox:
   val slider = new RangeSlider(min, max, changingLow, changingHigh):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1.0)
     lowValueProperty.onChange { (_, _, newValue) =>
-      labelChangingLow.text = newValue.toString
+      labelChangingLow.text = if displayAsInt then newValue.intValue.toString else newValue.toString
       changingLowFunction()
     }
     highValueProperty.onChange { (_, _, newValue) =>
-      labelChangingHigh.text = newValue.toString
+      labelChangingHigh.text = if displayAsInt then newValue.intValue.toString else newValue.toString
       changingHighFunction()
     }
 
