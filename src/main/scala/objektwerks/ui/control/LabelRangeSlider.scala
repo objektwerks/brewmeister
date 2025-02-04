@@ -8,38 +8,38 @@ import scalafx.scene.layout.HBox
 
 final class LabelRangeSlider(min: Double,
                              max: Double,
-                             changingMin: Double,
-                             changingMax: Double,
-                             changingMinFunction: () => Unit,
-                             changingMaxFunction: () => Unit) extends HBox:
-  val slider = new RangeSlider(min, max, changingMin, changingMax):
+                             changingLow: Double,
+                             changingHigh: Double,
+                             changingLowFunction: () => Unit,
+                             changingHighFunction: () => Unit) extends HBox:
+  val slider = new RangeSlider(min, max, changingLow, changingHigh):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1.0)
     lowValueProperty.onChange { (_, _, newValue) =>
-      labelChangingMin.text = newValue.toString
-      changingMinFunction()
+      labelChangingLow.text = newValue.toString
+      changingLowFunction()
     }
     highValueProperty.onChange { (_, _, newValue) =>
-      labelChangingMax.text = newValue.toString
-      changingMaxFunction()
+      labelChangingHigh.text = newValue.toString
+      changingHighFunction()
     }
 
-  def changingMinValue: Double = slider.getLowValue()
-  def changingMaxValue: Double = slider.getHighValue()
+  def changingLowValue: Double = slider.getLowValue()
+  def changingHighValue: Double = slider.getHighValue()
 
   def changingMinValue(value: Double): Unit = slider.setLowValue(value)
   def changingMaxValue(value: Double): Unit = slider.setHighValue(value)
 
-  val labelChangingMin = new Label():
+  val labelChangingLow = new Label():
     style = "-fx-background-color: lightGray;"
     prefWidth = 50
-    text = changingMin.toString
+    text = changingLow.toString
 
-  val labelChangingMax = new Label():
+  val labelChangingHigh = new Label():
     style = "-fx-background-color: lightGray;"
     prefWidth = 50
-    text = changingMax.toString
+    text = changingHigh.toString
 
   spacing = 3
-  children.addAll(labelChangingMin, slider, labelChangingMax) // Required to add org.controlsfx.control.RangeSlider
+  children.addAll(labelChangingLow, slider, labelChangingHigh) // Required to add org.controlsfx.control.RangeSlider

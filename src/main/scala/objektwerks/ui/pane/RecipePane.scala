@@ -125,7 +125,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         mashingTempRangeDuration = labelButtonMashingTempRangeDuration.value.value,
         potentialMashExtract = textFieldPotentialMashExtract.double.format,
         boilingTempRangeDuration = labelButtonBoilingTempRangeDuration.value.value,
-        coolingTempRange = IntRange( labelRangeSliderCoolingTemp.changingMinValue.toInt, labelRangeSliderCoolingTemp.changingMaxValue.toInt ),
+        coolingTempRange = IntRange( labelRangeSliderCoolingTemp.changingLowValue.toInt, labelRangeSliderCoolingTemp.changingHighValue.toInt ),
         fermentingTempRangeDuration = labelButtonFermentingTempRangeDuration.value.value,
         potentialFermentableExtract = textFieldPotentialFermentableExtract.double.format,
         conditioningTempRangeDuration = labelButtonConditioningTempRangeDuration.value.value,
