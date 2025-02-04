@@ -28,13 +28,10 @@ final class Model(store: Store) extends LazyLogging:
     observableBatches.insert(0, batch)
     selectedBatch.value = batch
 
-  def save(recipe: Recipe): Boolean =
+  def save(recipe: Recipe): Unit =
     store.writeRecipe(recipe)
     val index = observableRecipes.indexOf(selectedRecipe.value)
-    if index > -1 then
-      observableRecipes.update(index, recipe)
-      true
-    else false
+    if index > -1 then observableRecipes.update(index, recipe)
 
   def remove(recipe: Recipe): Boolean =
     store.removeRecipe(recipe)
