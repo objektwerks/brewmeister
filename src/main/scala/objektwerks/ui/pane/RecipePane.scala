@@ -215,6 +215,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelYeasts = Label( context.labelYeasts )
   val labelButtonYeasts = new LabelButton[List[Yeast]]:
+    text.onChange { (_, _, _) => enableSave() }
     value = model.selectedRecipe.value.yeasts
     buttonAction = () => {
       YeastsDialog(context, value.value.toArray).showAndWait() match
