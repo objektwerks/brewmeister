@@ -304,7 +304,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     }
 
   val labelPh = Label( context.labelPh )
-  val textFieldPh = DoubleTextField()
+  val textFieldPh = new DoubleTextField():
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelOriginalGravityRange = Label( context.labelOriginalGravityRange )
   val rangeSliderOriginalGravity = new RangeSlider(1.000, 1.100, model.selectedRecipe.value.originalGravityRange.low, model.selectedRecipe.value.originalGravityRange.high):
