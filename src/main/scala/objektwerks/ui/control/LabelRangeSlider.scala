@@ -29,8 +29,8 @@ final class LabelRangeSlider(min: Double,
   def lowValue: Double = slider.getLowValue()
   def highValue: Double = slider.getHighValue()
 
-  def changingMinValue(value: Double): Unit = slider.setLowValue(value)
-  def changingMaxValue(value: Double): Unit = slider.setHighValue(value)
+  def lowValue(value: Double): Unit = slider.setLowValue(value)
+  def highValue(value: Double): Unit = slider.setHighValue(value)
 
   val labelChangingLow = new Label():
     prefWidth = 35

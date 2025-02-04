@@ -65,8 +65,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
       s"${recipe.boilingTempRangeDuration.duration} ${recipe.boilingTempRangeDuration.unit.toString}"
     labelButtonBoilingTempRangeDuration.value = recipe.boilingTempRangeDuration
     
-    labelRangeSliderCoolingTemp.changingMinValue(recipe.coolingTempRange.low)
-    labelRangeSliderCoolingTemp.changingMaxValue(recipe.coolingTempRange.high)
+    labelRangeSliderCoolingTemp.lowValue(recipe.coolingTempRange.low)
+    labelRangeSliderCoolingTemp.highValue(recipe.coolingTempRange.high)
     
     labelButtonFermentingTempRangeDuration.text =
       s"${recipe.fermentingTempRangeDuration.modelTempRange.low} - ${recipe.fermentingTempRangeDuration.modelTempRange.high}, " +
