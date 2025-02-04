@@ -20,6 +20,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   // Model
   model.selectedRecipe.onChange { (_, _, selectedRecipe) =>
     recipeToControls(selectedRecipe)
+    disableSave()
   }
 
   // Methods
