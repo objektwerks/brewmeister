@@ -21,3 +21,6 @@ class LabelRangeSlider(min: Double,
   val labelChangingMax = new Label():
     prefWidth = 50
     text = changingMax.toString
+
+  spacing = 3
+  children = List(labelChangingMin, slider, labelChangingMax)
