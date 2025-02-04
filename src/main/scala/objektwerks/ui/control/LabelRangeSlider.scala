@@ -9,13 +9,21 @@ import scalafx.scene.layout.HBox
 final class LabelRangeSlider(min: Double,
                              max: Double,
                              changingMin: Double,
-                             changingMax: Double) extends HBox:
+                             changingMax: Double,
+                             changingMixFunction: () => Unit,
+                             changingMaxFunction: () => Unit) extends HBox:
   val slider = new RangeSlider(min, max, changingMin, changingMax):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1.0)
-    lowValueProperty.onChange { (_, _, newValue) => labelChangingMin.text = newValue.toString  }
-    highValueProperty.onChange { (_, _, newValue) => labelChangingMax.text = newValue.toString  }
+    lowValueProperty.onChange { (_, _, newValue) =>
+      labelChangingMin.text = newValue.toString
+      changingMixFunction()
+    }
+    highValueProperty.onChange { (_, _, newValue) =>
+      labelChangingMax.text = newValue.toString
+      changingMaxFunction()
+    }
 
   val labelChangingMin = new Label():
     style = "-fx-background-color: lightGray;"
