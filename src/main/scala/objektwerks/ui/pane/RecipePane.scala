@@ -94,8 +94,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     labelRangeSliderSrmColor.lowValue(recipe.srmColorRange.low)
     labelRangeSliderSrmColor.highValue(recipe.srmColorRange.high)
 
-    rangeSliderIbuBitterness.setLowValue(recipe.ibuBitternessRange.low)
-    rangeSliderIbuBitterness.setHighValue(recipe.ibuBitternessRange.high)
+    labelRangeSliderIbuBitterness.lowValue(recipe.ibuBitternessRange.low)
+    labelRangeSliderIbuBitterness.highValue(recipe.ibuBitternessRange.high)
 
     rangeSliderAlcoholByVolume.setLowValue(recipe.alcoholByVolumeRange.low)
     rangeSliderAlcoholByVolume.setHighValue(recipe.alcoholByVolumeRange.high)
@@ -134,7 +134,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         originalGravityRange = DoubleRange( labelRangeSliderOriginalGravity.lowValue, labelRangeSliderOriginalGravity.highValue ),
         finalGravityRange = DoubleRange( labelRangeSliderFinalGravity.lowValue, labelRangeSliderFinalGravity.highValue ),
         srmColorRange = IntRange( labelRangeSliderSrmColor.lowValue.toInt, labelRangeSliderSrmColor.highValue.toInt ),
-        ibuBitternessRange = IntRange( rangeSliderIbuBitterness.getLowValue.toInt, rangeSliderIbuBitterness.getHighValue.toInt ),
+        ibuBitternessRange = IntRange( labelRangeSliderIbuBitterness.lowValue.toInt, labelRangeSliderIbuBitterness.highValue.toInt ),
         alcoholByVolumeRange = DoubleRange( rangeSliderAlcoholByVolume.getLowValue, rangeSliderAlcoholByVolume.getHighValue ),
         alcoholByWeightRange = DoubleRange( rangeSliderAlcoholByWeight.getLowValue, rangeSliderAlcoholByWeight.getHighValue ),
         calorieRange = IntRange( rangeSliderCalories.getLowValue.toInt, rangeSliderCalories.getHighValue.toInt ),
@@ -330,16 +330,13 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     highFunction = enableSave)
 
   val labelIbuBitternessRange = Label( context.labelIbuBitternessRange )
-  val rangeSliderIbuBitterness = new RangeSlider(
-    1,
-    80,
-    model.selectedRecipe.value.ibuBitternessRange.low,
-    model.selectedRecipe.value.ibuBitternessRange.high):
-    setShowTickMarks(true)
-    setShowTickLabels(true)
-    setBlockIncrement(10)
-    lowValueProperty.onChange { (_, _, _) => enableSave() }
-    highValueProperty.onChange { (_, _, _) => enableSave() }
+  val labelRangeSliderIbuBitterness = LabelRangeSlider(
+    min = 1,
+    max = 80,
+    low = model.selectedRecipe.value.ibuBitternessRange.low,
+    high = model.selectedRecipe.value.ibuBitternessRange.high,
+    lowFunction = enableSave,
+    highFunction = enableSave)
 
   val labelAlcoholByVolumeRange = Label( context.labelAlcoholByVolumeRange )
   val rangeSliderAlcoholByVolume = new RangeSlider(
@@ -425,7 +422,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     labelOriginalGravityRange -> labelRangeSliderOriginalGravity,
     labelFinalGravityRange -> labelRangeSliderFinalGravity,
     labelSrmColorRange -> labelRangeSliderSrmColor,
-    labelIbuBitternessRange -> rangeSliderIbuBitterness,
+    labelIbuBitternessRange -> labelRangeSliderIbuBitterness,
     labelAlcoholByVolumeRange -> rangeSliderAlcoholByVolume,
     labelAlcoholByWeightRange -> rangeSliderAlcoholByWeight,
     labelCalorieRange -> rangeSliderCalories,
