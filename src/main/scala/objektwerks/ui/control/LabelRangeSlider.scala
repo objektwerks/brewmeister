@@ -10,7 +10,7 @@ final class LabelRangeSlider(min: Double,
                              max: Double,
                              changingMin: Double,
                              changingMax: Double,
-                             changingMixFunction: () => Unit,
+                             changingMinFunction: () => Unit,
                              changingMaxFunction: () => Unit) extends HBox:
   val slider = new RangeSlider(min, max, changingMin, changingMax):
     setShowTickMarks(true)
@@ -18,7 +18,7 @@ final class LabelRangeSlider(min: Double,
     setBlockIncrement(1.0)
     lowValueProperty.onChange { (_, _, newValue) =>
       labelChangingMin.text = newValue.toString
-      changingMixFunction()
+      changingMinFunction()
     }
     highValueProperty.onChange { (_, _, newValue) =>
       labelChangingMax.text = newValue.toString
