@@ -1,6 +1,5 @@
 package objektwerks.ui.pane
 
-import scalafx.Includes.*
 import scalafx.geometry.Insets
 import scalafx.scene.Node
 import scalafx.scene.control.{Button, Label, ScrollPane}
