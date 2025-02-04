@@ -35,12 +35,12 @@ final class LabelRangeSlider(min: Double,
   val labelChangingLow = new Label():
     style = "-fx-background-color: lightGray;"
     prefWidth = 50
-    text = changingLow.toString
+    text = if displayAsInt then changingLow.intValue.toString else changingLow.toString
 
   val labelChangingHigh = new Label():
     style = "-fx-background-color: lightGray;"
     prefWidth = 50
-    text = changingHigh.toString
+    text = if displayAsInt then changingHigh.intValue.toString else changingHigh.toString
 
   spacing = 3
   children.addAll(labelChangingLow, slider, labelChangingHigh) // Required to add org.controlsfx.control.RangeSlider
