@@ -376,6 +376,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelRangeSliderMashEfficiency = LabelRangeSlider(
     min = 50,
     max = 100,
+    increment = 10,
     low = model.selectedRecipe.value.mashEfficiencyRange.low,
     high = model.selectedRecipe.value.mashEfficiencyRange.high,
     lowFunction = enableSave,
