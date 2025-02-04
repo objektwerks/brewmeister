@@ -20,11 +20,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   // Model
   model.selectedRecipe.onChange { (_, _, selectedRecipe) =>
     recipeToControls(selectedRecipe)
-    setButtons()
+    setSave()
   }
 
   model.observableRecipes.onChange { (_, _) =>
-    setButtons()
+    setSave()
   }
 
   // Methods
@@ -32,7 +32,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     val saved = model.save( controlsToRecipe(model.selectedRecipe.value) )
     buttonSave.disable = saved
 
-  def setButtons(): Unit =
+  def setSave(): Unit =
     if model.observableRecipes.isEmpty then
       buttonSave.disable = true
     else
