@@ -364,7 +364,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     highValueProperty.onChange { (_, _, _) => enableSave() }
 
   val labelAlcoholByWeightRange = Label( context.labelAlcoholByWeightRange )
-  val rangeSliderAlcoholByWeight = new RangeSlider(1.0, 12.0, model.selectedRecipe.value.alcoholByWeightRange.low, model.selectedRecipe.value.alcoholByWeightRange.high):
+  val rangeSliderAlcoholByWeight = new RangeSlider(
+    1.0,
+    12.0,
+    model.selectedRecipe.value.alcoholByWeightRange.low,
+    model.selectedRecipe.value.alcoholByWeightRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1.0)
