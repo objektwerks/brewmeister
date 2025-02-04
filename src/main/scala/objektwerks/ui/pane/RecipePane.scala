@@ -388,7 +388,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     highValueProperty.onChange { (_, _, _) => enableSave() }
 
   val labelMashEfficiencyRange = Label( context.labelMashEfficiencyRange )
-  val rangeSliderMashEfficiency = new RangeSlider(50, 100, model.selectedRecipe.value.mashEfficiencyRange.low, model.selectedRecipe.value.mashEfficiencyRange.high):
+  val rangeSliderMashEfficiency = new RangeSlider(
+    50,
+    100,
+    model.selectedRecipe.value.mashEfficiencyRange.low,
+    model.selectedRecipe.value.mashEfficiencyRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(10)
