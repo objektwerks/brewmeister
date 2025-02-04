@@ -88,8 +88,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     labelRangeSliderOriginalGravity.lowValue(recipe.originalGravityRange.low)
     labelRangeSliderOriginalGravity.highValue(recipe.originalGravityRange.high)
 
-    rangeSliderFinalGravity.setLowValue(recipe.finalGravityRange.low)
-    rangeSliderFinalGravity.setHighValue(recipe.finalGravityRange.high)
+    labelRangeSliderFinalGravity.lowValue(recipe.finalGravityRange.low)
+    labelRangeSliderFinalGravity.highValue(recipe.finalGravityRange.high)
 
     rangeSliderSrmColor.setLowValue(recipe.srmColorRange.low)
     rangeSliderSrmColor.setHighValue(recipe.srmColorRange.high)
@@ -132,7 +132,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         keggingTempRangeDuration = labelButtonKeggingTempRangeDuration.value.value,
         pH = textFieldPh.double.format,
         originalGravityRange = DoubleRange( labelRangeSliderOriginalGravity.lowValue, labelRangeSliderOriginalGravity.highValue ),
-        finalGravityRange = DoubleRange( rangeSliderFinalGravity.getLowValue, rangeSliderFinalGravity.getHighValue ),
+        finalGravityRange = DoubleRange( labelRangeSliderFinalGravity.lowValue, labelRangeSliderFinalGravity.highValue ),
         srmColorRange = IntRange( rangeSliderSrmColor.getLowValue.toInt, rangeSliderSrmColor.getHighValue.toInt ),
         ibuBitternessRange = IntRange( rangeSliderIbuBitterness.getLowValue.toInt, rangeSliderIbuBitterness.getHighValue.toInt ),
         alcoholByVolumeRange = DoubleRange( rangeSliderAlcoholByVolume.getLowValue, rangeSliderAlcoholByVolume.getHighValue ),
@@ -311,16 +311,14 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     displayAsInt = false)
 
   val labelFinalGravityRange = Label( context.labelFinalGravityRange )
-  val rangeSliderFinalGravity = new RangeSlider(
-    1.000,
-    1.050,
-    model.selectedRecipe.value.finalGravityRange.low,
-    model.selectedRecipe.value.finalGravityRange.high):
-    setShowTickMarks(true)
-    setShowTickLabels(true)
-    setBlockIncrement(0.01)
-    lowValueProperty.onChange { (_, _, _) => enableSave() }
-    highValueProperty.onChange { (_, _, _) => enableSave() }
+  val labelRangeSliderFinalGravity = LabelRangeSlider(
+    min = 1.000,
+    max = 1.050,
+    low = model.selectedRecipe.value.finalGravityRange.low,
+    high = model.selectedRecipe.value.finalGravityRange.high,
+    lowFunction = enableSave,
+    highFunction = enableSave,
+    displayAsInt = false)
 
   val labelSrmColorRange = Label( context.labelSrmColorRange )
   val rangeSliderSrmColor = new RangeSlider(
@@ -428,7 +426,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     labelKeggingTempRangeDuration -> labelButtonKeggingTempRangeDuration,
     labelPh -> textFieldPh,
     labelOriginalGravityRange -> labelRangeSliderOriginalGravity,
-    labelFinalGravityRange -> rangeSliderFinalGravity,
+    labelFinalGravityRange -> labelRangeSliderFinalGravity,
     labelSrmColorRange -> rangeSliderSrmColor,
     labelIbuBitternessRange -> rangeSliderIbuBitterness,
     labelAlcoholByVolumeRange -> rangeSliderAlcoholByVolume,
