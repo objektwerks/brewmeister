@@ -26,8 +26,8 @@ final class LabelRangeSlider(min: Double,
       highFunction()
     }
 
-  def changingLowValue: Double = slider.getLowValue()
-  def changingHighValue: Double = slider.getHighValue()
+  def lowValue: Double = slider.getLowValue()
+  def highValue: Double = slider.getHighValue()
 
   def changingMinValue(value: Double): Unit = slider.setLowValue(value)
   def changingMaxValue(value: Double): Unit = slider.setHighValue(value)
