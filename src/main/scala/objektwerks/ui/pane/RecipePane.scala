@@ -51,7 +51,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     labelButtonYeasts.value = recipe.yeasts
     
     labelButtonMashingTempRangeDuration.text =
-      s"${recipe.mashingTempRangeDuration.tempRange.low} - ${recipe.mashingTempRangeDuration.tempRange.high}, " +
+      s"${recipe.mashingTempRangeDuration.modelTempRange.low} - ${recipe.mashingTempRangeDuration.modelTempRange.high}, " +
       s"${recipe.mashingTempRangeDuration.duration} ${recipe.mashingTempRangeDuration.unit.toString}"
     labelButtonMashingTempRangeDuration.value = recipe.mashingTempRangeDuration
 
@@ -59,7 +59,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     textFieldPotentialFermentableExtract.text = recipe.potentialFermentableExtract.toString
     
     labelButtonBoilingTempRangeDuration.text =
-      s"${recipe.boilingTempRangeDuration.tempRange.low} - ${recipe.boilingTempRangeDuration.tempRange.high}, " +
+      s"${recipe.boilingTempRangeDuration.modelTempRange.low} - ${recipe.boilingTempRangeDuration.modelTempRange.high}, " +
       s"${recipe.boilingTempRangeDuration.duration} ${recipe.boilingTempRangeDuration.unit.toString}"
     labelButtonBoilingTempRangeDuration.value = recipe.boilingTempRangeDuration
     
@@ -67,17 +67,17 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     rangeSliderCoolingTemp.setHighValue(recipe.coolingTempRange.high)
     
     labelButtonFermentingTempRangeDuration.text =
-      s"${recipe.fermentingTempRangeDuration.tempRange.low} - ${recipe.fermentingTempRangeDuration.tempRange.high}, " +
+      s"${recipe.fermentingTempRangeDuration.modelTempRange.low} - ${recipe.fermentingTempRangeDuration.modelTempRange.high}, " +
       s"${recipe.fermentingTempRangeDuration.duration} ${recipe.fermentingTempRangeDuration.unit.toString}"
     labelButtonFermentingTempRangeDuration.value = recipe.fermentingTempRangeDuration
     
     labelButtonConditioningTempRangeDuration.text =
-      s"${recipe.conditioningTempRangeDuration.tempRange.low} - ${recipe.conditioningTempRangeDuration.tempRange.high}, " +
+      s"${recipe.conditioningTempRangeDuration.modelTempRange.low} - ${recipe.conditioningTempRangeDuration.modelTempRange.high}, " +
       s"${recipe.conditioningTempRangeDuration.duration} ${recipe.conditioningTempRangeDuration.unit.toString}"
     labelButtonConditioningTempRangeDuration.value = recipe.conditioningTempRangeDuration
     
     labelButtonKeggingTempRangeDuration.text =
-      s"${recipe.keggingTempRangeDuration.tempRange.low} - ${recipe.keggingTempRangeDuration.tempRange.high}, " +
+      s"${recipe.keggingTempRangeDuration.modelTempRange.low} - ${recipe.keggingTempRangeDuration.modelTempRange.high}, " +
       s"${recipe.keggingTempRangeDuration.duration} ${recipe.keggingTempRangeDuration.unit.toString}"
     labelButtonKeggingTempRangeDuration.value = recipe.keggingTempRangeDuration
 
@@ -219,7 +219,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     buttonAction = () => {
       TempRangeDurationDialog(context, value.value).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) =>
-          text = s"${tempRangeDuration.tempRange.low} - ${tempRangeDuration.tempRange.high}, " +
+          text = s"${tempRangeDuration.modelTempRange.low} - ${tempRangeDuration.modelTempRange.high}, " +
                  s"${tempRangeDuration.duration} ${tempRangeDuration.unit.toString}"
           tempRangeDuration
         case _ => value.value
@@ -236,7 +236,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     buttonAction = () => {
       TempRangeDurationDialog(context, value.value).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) =>
-          text = s"${tempRangeDuration.tempRange.low} - ${tempRangeDuration.tempRange.high}, " +
+          text = s"${tempRangeDuration.modelTempRange.low} - ${tempRangeDuration.modelTempRange.high}, " +
                  s"${tempRangeDuration.duration} ${tempRangeDuration.unit.toString}"
           tempRangeDuration
         case _ => value.value
@@ -257,7 +257,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     buttonAction = () => {
       TempRangeDurationDialog(context, value.value).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) =>
-          text = s"${tempRangeDuration.tempRange.low} - ${tempRangeDuration.tempRange.high}, " +
+          text = s"${tempRangeDuration.modelTempRange.low} - ${tempRangeDuration.modelTempRange.high}, " +
                  s"${tempRangeDuration.duration} ${tempRangeDuration.unit.toString}"
           tempRangeDuration
         case _ => value.value
@@ -274,7 +274,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     buttonAction = () => {
       TempRangeDurationDialog(context, value.value).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) =>
-          text = s"${tempRangeDuration.tempRange.low} - ${tempRangeDuration.tempRange.high}, " +
+          text = s"${tempRangeDuration.modelTempRange.low} - ${tempRangeDuration.modelTempRange.high}, " +
                  s"${tempRangeDuration.duration} ${tempRangeDuration.unit.toString}"
           tempRangeDuration
         case _ => value.value
@@ -287,7 +287,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     buttonAction = () => {
       TempRangeDurationDialog(context, value.value).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) =>
-          text = s"${tempRangeDuration.tempRange.low} - ${tempRangeDuration.tempRange.high}, " +
+          text = s"${tempRangeDuration.modelTempRange.low} - ${tempRangeDuration.modelTempRange.high}, " +
                  s"${tempRangeDuration.duration} ${tempRangeDuration.unit.toString}"
           tempRangeDuration
         case _ => value.value
