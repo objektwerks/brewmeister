@@ -244,6 +244,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelBoilingTempRangeDuration = Label( context.labelBoilingTempRangeDuration )
   val labelButtonBoilingTempRangeDuration = new LabelButton[TempRangeDuration]:
+    text.onChange { (_, _, _) => enableSave() }
     value = model.selectedRecipe.value.boilingTempRangeDuration
     buttonAction = () => {
       TempRangeDurationDialog(context, value.value).showAndWait() match
