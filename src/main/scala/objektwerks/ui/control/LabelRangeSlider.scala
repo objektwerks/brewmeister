@@ -33,12 +33,10 @@ final class LabelRangeSlider(min: Double,
   def changingMaxValue(value: Double): Unit = slider.setHighValue(value)
 
   val labelChangingLow = new Label():
-    style = "-fx-background-color: lightGray;"
     prefWidth = 35
     text = if displayAsInt then changingLow.intValue.toString else changingLow.toString
 
   val labelChangingHigh = new Label():
-    style = "-fx-background-color: lightGray;"
     prefWidth = 35
     text = if displayAsInt then changingHigh.intValue.toString else changingHigh.toString
 
