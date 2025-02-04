@@ -167,6 +167,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelVolume = Label( context.labelVolume )
   val labelButtonVolume = new LabelButton[Volume]:
+    text.onChange { (_, _, _) => enableSave() }
     value = model.selectedRecipe.value.volume
     buttonAction = () => {
       VolumeDialog(context, value.value).showAndWait() match
