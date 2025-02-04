@@ -1,7 +1,5 @@
 package objektwerks.ui.dialog
 
-import org.controlsfx.control.RangeSlider
-
 import scalafx.collections.ObservableBuffer
 import scalafx.Includes.*
 import scalafx.scene.Node
@@ -10,7 +8,7 @@ import scalafx.scene.control.ButtonBar.ButtonData
 
 import objektwerks.{IntRange, TempRangeDuration, UoT}
 import objektwerks.ui.{App, Context}
-import objektwerks.ui.control.{ControlGrid, IntTextField}
+import objektwerks.ui.control.{ControlGrid, IntTextField, LabelRangeSlider}
 
 final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRangeDuration) extends Dialog[TempRangeDuration]:
   initOwner(App.stage)
@@ -18,14 +16,12 @@ final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRan
   headerText = context.dialogTempRangeDuration
 
   val labelTempRange = Label( context.labelTempRange )
-  val rangeSliderTempRange = new RangeSlider(
-    tempRangeDuration.fixedTempRange.low,
-    tempRangeDuration.fixedTempRange.high,
-    tempRangeDuration.modelTempRange.low,
-    tempRangeDuration.modelTempRange.high ):
-      setShowTickMarks(true)
-      setShowTickLabels(true)
-      setBlockIncrement(1)
+  val labelRangeSliderTempRange = LabelRangeSlider(
+    min = tempRangeDuration.fixedTempRange.low,
+    max = tempRangeDuration.fixedTempRange.high,
+    increment = 1,
+    low = tempRangeDuration.modelTempRange.low,
+    high = tempRangeDuration.modelTempRange.high)
 
   val labelDuration = Label( context.labelDuration )
   val textFieldDuration = new IntTextField:
@@ -37,7 +33,7 @@ final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRan
   	value = tempRangeDuration.unit.toString
 
   val controls = List[(Label, Node)](
-    labelTempRange -> rangeSliderTempRange,
+    labelTempRange -> labelRangeSliderTempRange,
     labelDuration -> textFieldDuration,
     labelUnit -> choiceBoxUnit
   )
@@ -51,7 +47,7 @@ final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRan
     if dialogButton == saveButtonType then
       tempRangeDuration.copy(
         fixedTempRange = tempRangeDuration.fixedTempRange,
-        modelTempRange = IntRange( rangeSliderTempRange.getLowValue.toInt, rangeSliderTempRange.getHighValue.toInt ),
+        modelTempRange = IntRange( labelRangeSliderTempRange.lowValue.toInt, labelRangeSliderTempRange.highValue.toInt ),
         duration = textFieldDuration.int,
         unit = UoT.valueOf( choiceBoxUnit.value.value )
       )
