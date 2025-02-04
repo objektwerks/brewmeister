@@ -9,6 +9,7 @@ import scalafx.scene.layout.HBox
 final class LabelRangeSlider(min: Double,
                              max: Double,
                              low: Double,
+                             increment: Double,
                              high: Double,
                              lowFunction: () => Unit,
                              highFunction: () => Unit,
@@ -16,7 +17,7 @@ final class LabelRangeSlider(min: Double,
   val slider = new RangeSlider(min, max, low, high):
     setShowTickMarks(true)
     setShowTickLabels(true)
-    setBlockIncrement(1.0)
+    setBlockIncrement(increment)
     lowValueProperty.onChange { (_, _, newValue) =>
       labelLow.text = if displayAsInt then newValue.intValue.toString else newValue.toString
       lowFunction()
