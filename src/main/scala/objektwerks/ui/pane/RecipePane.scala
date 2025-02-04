@@ -38,8 +38,6 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     else
       buttonSave.disable = false
 
-  def disableSave(): Unit = buttonSave.disable = true
-
   def enableSave(): Unit = buttonSave.disable = false
 
   // Bindings
