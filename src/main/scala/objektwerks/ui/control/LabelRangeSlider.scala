@@ -8,22 +8,22 @@ import scalafx.scene.layout.HBox
 
 final class LabelRangeSlider(min: Double,
                              max: Double,
-                             changingLow: Double,
-                             changingHigh: Double,
-                             changingLowFunction: () => Unit,
-                             changingHighFunction: () => Unit,
+                             low: Double,
+                             high: Double,
+                             lowFunction: () => Unit,
+                             highFunction: () => Unit,
                              displayAsInt: Boolean = true) extends HBox:
-  val slider = new RangeSlider(min, max, changingLow, changingHigh):
+  val slider = new RangeSlider(min, max, low, high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1.0)
     lowValueProperty.onChange { (_, _, newValue) =>
       labelChangingLow.text = if displayAsInt then newValue.intValue.toString else newValue.toString
-      changingLowFunction()
+      lowFunction()
     }
     highValueProperty.onChange { (_, _, newValue) =>
       labelChangingHigh.text = if displayAsInt then newValue.intValue.toString else newValue.toString
-      changingHighFunction()
+      highFunction()
     }
 
   def changingLowValue: Double = slider.getLowValue()
@@ -34,11 +34,11 @@ final class LabelRangeSlider(min: Double,
 
   val labelChangingLow = new Label():
     prefWidth = 35
-    text = if displayAsInt then changingLow.intValue.toString else changingLow.toString
+    text = if displayAsInt then low.intValue.toString else low.toString
 
   val labelChangingHigh = new Label():
     prefWidth = 35
-    text = if displayAsInt then changingHigh.intValue.toString else changingHigh.toString
+    text = if displayAsInt then high.intValue.toString else high.toString
 
   spacing = 3
   children.addAll(labelChangingLow, slider, labelChangingHigh) // Required to add org.controlsfx.control.RangeSlider
