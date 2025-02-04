@@ -334,6 +334,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelRangeSliderIbuBitterness = LabelRangeSlider(
     min = 1,
     max = 80,
+    increment = 10,
     low = model.selectedRecipe.value.ibuBitternessRange.low,
     high = model.selectedRecipe.value.ibuBitternessRange.high,
     lowFunction = enableSave,
