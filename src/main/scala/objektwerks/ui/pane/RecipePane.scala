@@ -319,7 +319,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val rangeSliderSrmColor = new RangeSlider(1, 80, model.selectedRecipe.value.srmColorRange.low, model.selectedRecipe.value.srmColorRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
-    setBlockIncrement(1)
+    setBlockIncrement(10)
     lowValueProperty.onChange { (_, _, _) => enableSave() }
     highValueProperty.onChange { (_, _, _) => enableSave() }
 
@@ -327,7 +327,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val rangeSliderIbuBitterness = new RangeSlider(1, 80, model.selectedRecipe.value.ibuBitternessRange.low, model.selectedRecipe.value.ibuBitternessRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
-    setBlockIncrement(1)
+    setBlockIncrement(10)
     lowValueProperty.onChange { (_, _, _) => enableSave() }
     highValueProperty.onChange { (_, _, _) => enableSave() }
 
