@@ -362,6 +362,8 @@ a
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(25)
+    lowValueProperty.onChange { (_, _, _) => enableSave() }
+    highValueProperty.onChange { (_, _, _) => enableSave() }
 
   val labelMashEfficiencyRange = Label( context.labelMashEfficiencyRange )
   val rangeSliderMashEfficiency = new RangeSlider(50, 100, model.selectedRecipe.value.mashEfficiencyRange.low, model.selectedRecipe.value.mashEfficiencyRange.high):
