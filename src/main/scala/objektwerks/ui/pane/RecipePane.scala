@@ -1,7 +1,5 @@
 package objektwerks.ui.pane
 
-import org.controlsfx.control.RangeSlider
-
 import scalafx.Includes.*
 import scalafx.geometry.Insets
 import scalafx.scene.Node
