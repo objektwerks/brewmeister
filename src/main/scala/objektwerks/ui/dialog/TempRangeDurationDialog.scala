@@ -19,10 +19,10 @@ final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRan
 
   val labelTempRange = Label( context.labelTempRange )
   val rangeSliderTempRange = new RangeSlider(
-    tempRangeDuration.tempRange.low,
-    tempRangeDuration.tempRange.high,
-    tempRangeDuration.tempRange.low,
-    tempRangeDuration.tempRange.high ):
+    tempRangeDuration.fixedTempRange.low,
+    tempRangeDuration.fixedTempRange.high,
+    tempRangeDuration.modelTempRange.low,
+    tempRangeDuration.modelTempRange.high ):
       setShowTickMarks(true)
       setShowTickLabels(true)
       setBlockIncrement(1)
@@ -50,7 +50,8 @@ final class TempRangeDurationDialog(context: Context, tempRangeDuration: TempRan
   resultConverter = dialogButton =>
     if dialogButton == saveButtonType then
       tempRangeDuration.copy(
-        tempRange = IntRange( rangeSliderTempRange.getLowValue.toInt, rangeSliderTempRange.getHighValue.toInt ),
+        fixedTempRange = tempRangeDuration.fixedTempRange,
+        modelTempRange = IntRange( rangeSliderTempRange.getLowValue.toInt, rangeSliderTempRange.getHighValue.toInt ),
         duration = textFieldDuration.int,
         unit = UoT.valueOf( choiceBoxUnit.value.value )
       )
