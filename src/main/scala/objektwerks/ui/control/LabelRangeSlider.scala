@@ -19,19 +19,28 @@ final class LabelRangeSlider(min: Double,
     setShowTickLabels(true)
     setBlockIncrement(increment)
     lowValueProperty.onChange { (_, _, newValue) =>
-      labelLow.text = if displayAsInt then newValue.intValue.toString else newValue.toString
+      lowValue( if displayAsInt then newValue.intValue else newValue.doubleValue )
       lowFunction()
     }
     highValueProperty.onChange { (_, _, newValue) =>
-      labelHigh.text = if displayAsInt then newValue.intValue.toString else newValue.toString
+      highValue( if displayAsInt then newValue.intValue else newValue.doubleValue )
       highFunction()
     }
 
   def lowValue: Double = slider.getLowValue()
   def highValue: Double = slider.getHighValue()
 
-  def lowValue(value: Double): Unit = if value >= min then slider.setLowValue(value)
-  def highValue(value: Double): Unit = if value <= max then slider.setHighValue(value)
+  def lowValue(value: Double): Unit =
+    println(s"low value: $value")
+    if value >= min then
+      slider.setLowValue(value)
+      labelLow.text = if displayAsInt then value.intValue.toString else value.toString
+
+  def highValue(value: Double): Unit =
+    println(s"high value: $value")
+    if value <= max then
+      slider.setHighValue(value)
+      labelHigh.text = if displayAsInt then value.intValue.toString else value.toString
 
   val labelLow = new Label():
     prefWidth = 35
