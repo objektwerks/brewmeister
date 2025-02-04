@@ -25,6 +25,12 @@ final class LabelRangeSlider(min: Double,
       changingMaxFunction()
     }
 
+  def changingMinValue: Double = slider.getLowValue()
+  def changingMaxValue: Double = slider.getHighValue()
+
+  def changingMinValue(value: Double): Unit = slider.setLowValue(value)
+  def changingMaxValue(value: Double): Unit = slider.setHighValue(value)
+
   val labelChangingMin = new Label():
     style = "-fx-background-color: lightGray;"
     prefWidth = 50
