@@ -330,6 +330,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1)
+    lowValueProperty.onChange { (_, _, _) => enableSave() }
+    highValueProperty.onChange { (_, _, _) => enableSave() }
 
   val labelIbuBitternessRange = Label( context.labelIbuBitternessRange )
   val rangeSliderIbuBitterness = new RangeSlider(1, 80, model.selectedRecipe.value.ibuBitternessRange.low, model.selectedRecipe.value.ibuBitternessRange.high):
