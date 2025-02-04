@@ -18,10 +18,12 @@ final class LabelRangeSlider(min: Double,
     highValueProperty.onChange { (_, _, newValue) => labelChangingMax.text = newValue.toString  }
 
   val labelChangingMin = new Label():
+    style = "-fx-background-color: light-gray;"
     prefWidth = 50
     text = changingMin.toString
 
   val labelChangingMax = new Label():
+    style = "-fx-background-color: light-gray;"
     prefWidth = 50
     text = changingMax.toString
 
