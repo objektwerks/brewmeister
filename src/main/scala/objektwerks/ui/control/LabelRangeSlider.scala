@@ -26,4 +26,4 @@ final class LabelRangeSlider(min: Double,
     text = changingMax.toString
 
   spacing = 3
-  children.addAll(labelChangingMin, slider, labelChangingMax)
+  children.addAll(labelChangingMin, slider, labelChangingMax) // Required to add org.controlsfx.control.RangeSlider
