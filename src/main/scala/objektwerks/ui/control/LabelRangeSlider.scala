@@ -17,3 +17,7 @@ class LabelRangeSlider(min: Double,
   val labelChangingMin = new Label():
     prefWidth = 50
     text = changingMin.toString
+
+  val labelChangingMax = new Label():
+    prefWidth = 50
+    text = changingMax.toString
