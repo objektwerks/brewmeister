@@ -159,7 +159,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelStyle = Label( context.labelStyle )
   val textFieldStyle = new NonEmptyTextField():
-    text.onChange { (_, _, _) =>  }
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelWater = Label( context.labelWater )
   val textFieldWater = NonEmptyTextField()
