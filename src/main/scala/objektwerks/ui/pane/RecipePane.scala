@@ -245,7 +245,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     }
 
   val labelCoolingTempRange = Label( context.labelCoolingTempRange )
-  val rangeSliderCoolingTemp = new RangeSlider(67, 73, model.selectedRecipe.value.coolingTempRange.low, model.selectedRecipe.value.coolingTempRange.high):
+  val rangeSliderCoolingTemp = new RangeSlider(
+    67,
+    73,
+    model.selectedRecipe.value.coolingTempRange.low,
+    model.selectedRecipe.value.coolingTempRange.high):
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1)
