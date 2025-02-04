@@ -203,6 +203,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelAdjuncts = Label( context.labelAdjuncts )
   val labelButtonAdjuncts = new LabelButton[List[Adjunct]]:
+    text.onChange { (_, _, _) => enableSave() }
     value = model.selectedRecipe.value.adjuncts
     buttonAction = () => {
       AdjunctsDialog(context, value.value.toArray).showAndWait() match
