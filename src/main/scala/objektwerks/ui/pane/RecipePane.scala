@@ -65,8 +65,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
       s"${recipe.boilingTempRangeDuration.duration} ${recipe.boilingTempRangeDuration.unit.toString}"
     labelButtonBoilingTempRangeDuration.value = recipe.boilingTempRangeDuration
     
-    labelRangeSliderCoolingTemp.slider.setLowValue(recipe.coolingTempRange.low)
-    labelRangeSliderCoolingTemp.slider.setHighValue(recipe.coolingTempRange.high)
+    labelRangeSliderCoolingTemp.changingMinValue(recipe.coolingTempRange.low)
+    labelRangeSliderCoolingTemp.changingMaxValue(recipe.coolingTempRange.high)
     
     labelButtonFermentingTempRangeDuration.text =
       s"${recipe.fermentingTempRangeDuration.modelTempRange.low} - ${recipe.fermentingTempRangeDuration.modelTempRange.high}, " +
@@ -125,7 +125,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         mashingTempRangeDuration = labelButtonMashingTempRangeDuration.value.value,
         potentialMashExtract = textFieldPotentialMashExtract.double.format,
         boilingTempRangeDuration = labelButtonBoilingTempRangeDuration.value.value,
-        coolingTempRange = IntRange( labelRangeSliderCoolingTemp.slider.getLowValue.toInt, labelRangeSliderCoolingTemp.slider.getHighValue.toInt ),
+        coolingTempRange = IntRange( labelRangeSliderCoolingTemp.changingMinValue.toInt, labelRangeSliderCoolingTemp.changingMaxValue.toInt ),
         fermentingTempRangeDuration = labelButtonFermentingTempRangeDuration.value.value,
         potentialFermentableExtract = textFieldPotentialFermentableExtract.double.format,
         conditioningTempRangeDuration = labelButtonConditioningTempRangeDuration.value.value,
