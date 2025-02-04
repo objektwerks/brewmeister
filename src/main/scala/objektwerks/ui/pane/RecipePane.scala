@@ -85,8 +85,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
     textFieldPh.text = recipe.pH.toString
 
-    rangeSliderOriginalGravity.setLowValue(recipe.originalGravityRange.low)
-    rangeSliderOriginalGravity.setHighValue(recipe.originalGravityRange.high)
+    labelRangeSliderOriginalGravity.lowValue(recipe.originalGravityRange.low)
+    labelRangeSliderOriginalGravity.highValue(recipe.originalGravityRange.high)
 
     rangeSliderFinalGravity.setLowValue(recipe.finalGravityRange.low)
     rangeSliderFinalGravity.setHighValue(recipe.finalGravityRange.high)
@@ -131,7 +131,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         conditioningTempRangeDuration = labelButtonConditioningTempRangeDuration.value.value,
         keggingTempRangeDuration = labelButtonKeggingTempRangeDuration.value.value,
         pH = textFieldPh.double.format,
-        originalGravityRange = DoubleRange( rangeSliderOriginalGravity.getLowValue, rangeSliderOriginalGravity.getHighValue ),
+        originalGravityRange = DoubleRange( labelRangeSliderOriginalGravity.lowValue, labelRangeSliderOriginalGravity.highValue ),
         finalGravityRange = DoubleRange( rangeSliderFinalGravity.getLowValue, rangeSliderFinalGravity.getHighValue ),
         srmColorRange = IntRange( rangeSliderSrmColor.getLowValue.toInt, rangeSliderSrmColor.getHighValue.toInt ),
         ibuBitternessRange = IntRange( rangeSliderIbuBitterness.getLowValue.toInt, rangeSliderIbuBitterness.getHighValue.toInt ),
@@ -245,13 +245,13 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     }
 
   val labelCoolingTempRange = Label( context.labelCoolingTempRange )
-  val labelRangeSliderCoolingTemp = new LabelRangeSlider(
-    67,
-    73,
-    model.selectedRecipe.value.coolingTempRange.low,
-    model.selectedRecipe.value.coolingTempRange.high,
-    enableSave,
-    enableSave)
+  val labelRangeSliderCoolingTemp = LabelRangeSlider(
+    min = 67,
+    max = 73,
+    low = model.selectedRecipe.value.coolingTempRange.low,
+    high = model.selectedRecipe.value.coolingTempRange.high,
+    lowFunction = enableSave,
+    highFunction = enableSave)
 
   val labelFermentingTempRangeDuration = Label( context.labelFermentingTempRangeDuration )
   val labelButtonFermentingTempRangeDuration = new LabelButton[TempRangeDuration]:
@@ -301,16 +301,14 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     text.onChange { (_, _, _) => enableSave() }
 
   val labelOriginalGravityRange = Label( context.labelOriginalGravityRange )
-  val rangeSliderOriginalGravity = new RangeSlider(
-    1.000,
-    1.100,
-    model.selectedRecipe.value.originalGravityRange.low,
-    model.selectedRecipe.value.originalGravityRange.high):
-    setShowTickMarks(true)
-    setShowTickLabels(true)
-    setBlockIncrement(0.01)
-    lowValueProperty.onChange { (_, _, _) => enableSave() }
-    highValueProperty.onChange { (_, _, _) => enableSave() }
+  val labelRangeSliderOriginalGravity = new LabelRangeSlider(
+    min = 1.000,
+    max = 1.100,
+    low = model.selectedRecipe.value.originalGravityRange.low,
+    high = model.selectedRecipe.value.originalGravityRange.high,
+    lowFunction = enableSave,
+    highFunction = enableSave,
+    displayAsInt = false)
 
   val labelFinalGravityRange = Label( context.labelFinalGravityRange )
   val rangeSliderFinalGravity = new RangeSlider(
@@ -429,7 +427,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     labelConditioningTempRangeDuration -> labelButtonConditioningTempRangeDuration,
     labelKeggingTempRangeDuration -> labelButtonKeggingTempRangeDuration,
     labelPh -> textFieldPh,
-    labelOriginalGravityRange -> rangeSliderOriginalGravity,
+    labelOriginalGravityRange -> labelRangeSliderOriginalGravity,
     labelFinalGravityRange -> rangeSliderFinalGravity,
     labelSrmColorRange -> rangeSliderSrmColor,
     labelIbuBitternessRange -> rangeSliderIbuBitterness,
