@@ -274,7 +274,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     }
 
   val labelPotentialFermentableExtract = Label( context.labelPotentialFermentableExtract )
-  val textFieldPotentialFermentableExtract = DoubleTextField()
+  val textFieldPotentialFermentableExtract = new DoubleTextField():
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelConditioningTempRangeDuration = Label( context.labelConditioningTempRangeDuration )
   val labelButtonConditioningTempRangeDuration = new LabelButton[TempRangeDuration]:
