@@ -354,7 +354,9 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(1.0)
-
+    lowValueProperty.onChange { (_, _, _) => enableSave() }
+    highValueProperty.onChange { (_, _, _) => enableSave() }
+a
   val labelCalorieRange = Label( context.labelCalorieRange )
   val rangeSliderCalories = new RangeSlider(50, 250, model.selectedRecipe.value.calorieRange.low, model.selectedRecipe.value.calorieRange.high):
     setShowTickMarks(true)
