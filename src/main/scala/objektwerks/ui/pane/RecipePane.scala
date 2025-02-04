@@ -386,6 +386,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelRangeSliderBrewhouseEfficiency = LabelRangeSlider(
     min = 50,
     max = 100,
+    increment = 10,
     low = model.selectedRecipe.value.brewhouseEfficiencyRange.low,
     high = model.selectedRecipe.value.brewhouseEfficiencyRange.high,
     lowFunction = enableSave,
