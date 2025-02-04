@@ -26,4 +26,4 @@ final class LabelRangeSlider(min: Double,
     text = changingMax.toString
 
   spacing = 3
-  children = List(labelChangingMin, slider, labelChangingMax)
+  children.addAll(labelChangingMin, slider, labelChangingMax)
