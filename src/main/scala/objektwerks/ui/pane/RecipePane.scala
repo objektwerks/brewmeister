@@ -432,7 +432,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         prefWidth = 200.0,
         maxWidth = 1000.0,
         hgrow = Priority.Always,
-        halignment = HPos.LEFT,
+        halignment = HPos.Left,
         fillWidth = true      
       ),
       ColumnConstraints(
@@ -440,7 +440,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
         prefWidth = 250.0,
         maxWidth = 1000.0,
         hgrow = Priority.Always,
-        halignment = HPos.LEFT,
+        halignment = HPos.Center,
         fillWidth = true
       ) 
     )
