@@ -8,7 +8,7 @@ import scalafx.scene.control.Alert.AlertType
 
 final class Menu(context: Context) extends MenuBar:
   val menuItemAbout = new MenuItem:
-    text = context.menuExit
+    text = context.menuAbout
     onAction = (_: ActionEvent) =>
       new Alert(AlertType.Information) {
         initOwner(App.stage)
