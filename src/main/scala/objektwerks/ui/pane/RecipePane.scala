@@ -1,9 +1,9 @@
 package objektwerks.ui.pane
 
-import scalafx.geometry.Insets
+import scalafx.geometry.{HPos, Insets}
 import scalafx.scene.Node
 import scalafx.scene.control.{Button, Label, ScrollPane}
-import scalafx.scene.layout.{Priority, HBox, VBox}
+import scalafx.scene.layout.{ColumnConstraints, Priority, HBox, VBox}
 
 import objektwerks.*
 import objektwerks.ui.{Context, Model}
@@ -424,9 +424,30 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     labelBrewhouseEfficiencyRange -> labelRangeSliderBrewhouseEfficiency,
     labelCreated -> labelFieldCreated
   )
+  val controlGrid = ControlGrid(
+    controls,
+    List(
+      ColumnConstraints(
+        minWidth = 200.00,
+        prefWidth = 200.00,
+        maxWidth = 1000.0,
+        hgrow = Priority.Always,
+        halignment = HPos.LEFT,
+        fillWidth = true      
+      ),
+      ColumnConstraints(
+        minWidth = 250.00,
+        prefWidth = 250.00,
+        maxWidth = 1000.0,
+        hgrow = Priority.Always,
+        halignment = HPos.LEFT,
+        fillWidth = true
+      ) 
+    )
+  )
 
   val scrollPaneControls = new ScrollPane:
-    content = ControlGrid(controls)
+    content = controlGrid
 
   // Buttons
   val buttonSave = new Button:
