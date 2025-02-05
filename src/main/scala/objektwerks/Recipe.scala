@@ -62,7 +62,7 @@ final case class Recipe(name: String,
                         ibuBitternessRange: IntRange = IntRange(0, 120),
                         alcoholByVolumeRange: DoubleRange = DoubleRange(1.0, 13.0),
                         alcoholByWeightRange: DoubleRange = DoubleRange(1.0, 10.0),
-                        calorieRange: IntRange = IntRange(50, 400),
+                        calorieRange: IntRange = IntRange(10, 600),
                         mashEfficiencyRange: IntRange = IntRange(50, 100),
                         brewhouseEfficiencyRange: IntRange = IntRange(50, 100),
                         created: String = now()) derives CanEqual, JsonSupport:
