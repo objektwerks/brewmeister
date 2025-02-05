@@ -20,7 +20,7 @@ trait LabelButton[E] extends HBox:
   @setter def buttonAction_=(fn: () => E): Unit = buttonAction.value = fn
 
   val label = new Label("n/a"):
-    prefWidth = 150
+    prefWidth = 250
   label.text <== text
 
   val button = new Button:
