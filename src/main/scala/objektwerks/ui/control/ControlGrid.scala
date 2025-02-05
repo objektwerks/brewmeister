@@ -3,7 +3,7 @@ package objektwerks.ui.control
 import scalafx.geometry.Insets
 import scalafx.scene.Node
 import scalafx.scene.control.Label
-import scalafx.scene.layout.{ColumnConstraints, GridPane, Priority}
+import scalafx.scene.layout.{ColumnConstraints, GridPane}
 
 final class ControlGrid(controls: List[(Label, Node)],
                         columnConstraints: List[ColumnConstraints] = List.empty[ColumnConstraints]) extends GridPane:
@@ -17,6 +17,3 @@ final class ControlGrid(controls: List[(Label, Node)],
     add(label, columnIndex = 0, rowIndex = row)
     add(node, columnIndex = 1, rowIndex = row)
     row += 1
-
-  GridPane.setHgrow(this, Priority.Always)
-  GridPane.setVgrow(this, Priority.Always)
