@@ -48,5 +48,5 @@ final class LabelRangeSlider(min: Double,
     prefWidth = 35
     text = if displayAsInt then high.intValue.toString else high.toString
 
-  spacing = 3
+  spacing = 6
   children.addAll(labelLow, slider, labelHigh) // Required to add org.controlsfx.control.RangeSlider
