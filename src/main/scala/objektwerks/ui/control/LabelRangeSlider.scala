@@ -5,6 +5,7 @@ import org.controlsfx.control.RangeSlider
 import scalafx.Includes.*
 import scalafx.scene.control.Label
 import scalafx.scene.layout.HBox
+import scalafx.scene.text.TextAlignment
 
 final class LabelRangeSlider(min: Double,
                              max: Double,
@@ -42,10 +43,12 @@ final class LabelRangeSlider(min: Double,
 
   val labelLow = new Label():
     prefWidth = 35
+    textAlignment = TextAlignment.Right
     text = if displayAsInt then low.intValue.toString else low.toString
 
   val labelHigh = new Label():
     prefWidth = 35
+    textAlignment = TextAlignment.Right
     text = if displayAsInt then high.intValue.toString else high.toString
 
   spacing = 6
