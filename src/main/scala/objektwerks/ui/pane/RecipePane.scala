@@ -322,9 +322,9 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelSrmColorRange = Label( context.labelSrmColorRange )
   val labelRangeSliderSrmColor = LabelRangeSlider(
-    min = 1,
-    max = 80,
-    increment = 10,
+    min = 6,
+    max = 12,
+    increment = 1,
     low = model.selectedRecipe.value.srmColorRange.low,
     high = model.selectedRecipe.value.srmColorRange.high,
     lowFunction = enableSave,
