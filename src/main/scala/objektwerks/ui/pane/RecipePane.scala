@@ -301,8 +301,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelOriginalGravityRange = Label( context.labelOriginalGravityRange )
   val labelRangeSliderOriginalGravity = new LabelRangeSlider(
     min = 1.000,
-    max = 1.100,
-    increment = 0.10,
+    max = 1.130,
+    increment = 0.01,
     low = model.selectedRecipe.value.originalGravityRange.low,
     high = model.selectedRecipe.value.originalGravityRange.high,
     lowFunction = enableSave,
@@ -312,8 +312,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelFinalGravityRange = Label( context.labelFinalGravityRange )
   val labelRangeSliderFinalGravity = LabelRangeSlider(
     min = 1.000,
-    max = 1.050,
-    increment = 0.10,
+    max = 1.130,
+    increment = 0.01,
     low = model.selectedRecipe.value.finalGravityRange.low,
     high = model.selectedRecipe.value.finalGravityRange.high,
     lowFunction = enableSave,
@@ -322,8 +322,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelSrmColorRange = Label( context.labelSrmColorRange )
   val labelRangeSliderSrmColor = LabelRangeSlider(
-    min = 6,
-    max = 12,
+    min = 1,
+    max = 40,
     increment = 1,
     low = model.selectedRecipe.value.srmColorRange.low,
     high = model.selectedRecipe.value.srmColorRange.high,
