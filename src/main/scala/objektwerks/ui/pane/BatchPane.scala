@@ -1,9 +1,9 @@
 package objektwerks.ui.pane
 
-import scalafx.geometry.Insets
+import scalafx.geometry.{HPos, Insets}
 import scalafx.scene.Node
 import scalafx.scene.control.{Button, Label, ScrollPane}
-import scalafx.scene.layout.{HBox, Priority, VBox}
+import scalafx.scene.layout.{ColumnConstraints, HBox, Priority, VBox}
 
 import objektwerks.Batch
 import objektwerks.ui.{Context, Model}
@@ -162,9 +162,30 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     labelStarted -> textStarted,
     labelCompleted -> textCompleted
   )
+  val controlGrid = ControlGrid(
+    controls,
+    List(
+      ColumnConstraints(
+        minWidth = 150.00,
+        prefWidth = 150.00,
+        maxWidth = 1000.0,
+        hgrow = Priority.Always,
+        halignment = HPos.LEFT,
+        fillWidth = true      
+      ),
+      ColumnConstraints(
+        minWidth = 150.00,
+        prefWidth = 150.00,
+        maxWidth = 1000.0,
+        hgrow = Priority.Always,
+        halignment = HPos.LEFT,
+        fillWidth = true
+      ) 
+    )
+  )
 
   val scrollPaneControls = new ScrollPane:
-    content = ControlGrid(controls)
+    content = controlGrid
 
   // Buttons  
   val buttonLog = new Button:
