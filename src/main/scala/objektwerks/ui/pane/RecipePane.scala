@@ -343,7 +343,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelAlcoholByVolumeRange = Label( context.labelAlcoholByVolumeRange )
   val labelRangeSliderAlcoholByVolume = LabelRangeSlider(
     min = 1.0,
-    max = 12.0,
+    max = 13.0,
     increment = 1.0,
     low = model.selectedRecipe.value.alcoholByVolumeRange.low,
     high = model.selectedRecipe.value.alcoholByVolumeRange.high,
@@ -354,7 +354,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelAlcoholByWeightRange = Label( context.labelAlcoholByWeightRange )
   val labelRangeSliderAlcoholByWeight = LabelRangeSlider(
     min = 1.0,
-    max = 12.0,
+    max = 13.0,
     increment = 1.0,
     low = model.selectedRecipe.value.alcoholByWeightRange.low,
     high = model.selectedRecipe.value.alcoholByWeightRange.high,
@@ -365,8 +365,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelCalorieRange = Label( context.labelCalorieRange )
   val labelRangeSliderCalories = LabelRangeSlider(
     min = 50,
-    max = 250,
-    increment = 25,
+    max = 400,
+    increment = 50,
     low = model.selectedRecipe.value.calorieRange.low,
     high = model.selectedRecipe.value.calorieRange.high,
     lowFunction = enableSave,
