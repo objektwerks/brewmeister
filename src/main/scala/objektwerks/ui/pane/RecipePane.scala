@@ -428,16 +428,16 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     controls,
     List(
       ColumnConstraints(
-        minWidth = 200.00,
-        prefWidth = 200.00,
+        minWidth = 200.0,
+        prefWidth = 200.0,
         maxWidth = 1000.0,
         hgrow = Priority.Always,
         halignment = HPos.LEFT,
         fillWidth = true      
       ),
       ColumnConstraints(
-        minWidth = 250.00,
-        prefWidth = 250.00,
+        minWidth = 250.0,
+        prefWidth = 250.0,
         maxWidth = 1000.0,
         hgrow = Priority.Always,
         halignment = HPos.LEFT,

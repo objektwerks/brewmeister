@@ -166,16 +166,16 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     controls,
     List(
       ColumnConstraints(
-        minWidth = 150.00,
-        prefWidth = 150.00,
+        minWidth = 150.0,
+        prefWidth = 150.0,
         maxWidth = 1000.0,
         hgrow = Priority.Always,
         halignment = HPos.LEFT,
         fillWidth = true      
       ),
       ColumnConstraints(
-        minWidth = 150.00,
-        prefWidth = 150.00,
+        minWidth = 150.0,
+        prefWidth = 150.0,
         maxWidth = 1000.0,
         hgrow = Priority.Always,
         halignment = HPos.LEFT,
