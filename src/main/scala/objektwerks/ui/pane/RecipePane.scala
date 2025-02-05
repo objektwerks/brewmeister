@@ -427,10 +427,6 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val scrollPaneControls = new ScrollPane:
     content = ControlGrid(controls)
-    viewportBounds.onChange { (_, _, bounds) =>
-      fitToWidth = content.value.prefWidth(-1) < bounds.getWidth
-      fitToHeight = content.value.prefHeight(-1) < bounds.getHeight
-    }
 
   // Buttons
   val buttonSave = new Button:
