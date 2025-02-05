@@ -128,6 +128,7 @@ final class Context(config: Config):
   val labelKeggingCompleted = config.getString("label.keggingCompleted")
 
   val menuMenu = config.getString("menu.menu")
+  val menuAbout = config.getString("menu.about")
   val menuExit = config.getString("menu.exit")
 
   val buttonSave = config.getString("button.save")
