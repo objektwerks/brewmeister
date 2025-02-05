@@ -170,7 +170,7 @@ final class BatchPane(context: Context, model: Model) extends VBox:
         prefWidth = 150.0,
         maxWidth = 1000.0,
         hgrow = Priority.Always,
-        halignment = HPos.LEFT,
+        halignment = HPos.Left,
         fillWidth = true      
       ),
       ColumnConstraints(
@@ -178,7 +178,7 @@ final class BatchPane(context: Context, model: Model) extends VBox:
         prefWidth = 150.0,
         maxWidth = 1000.0,
         hgrow = Priority.Always,
-        halignment = HPos.LEFT,
+        halignment = HPos.Center,
         fillWidth = true
       ) 
     )
