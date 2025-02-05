@@ -3,7 +3,7 @@ package objektwerks.ui
 import scalafx.Includes._
 import scalafx.application.Platform
 import scalafx.event.ActionEvent
-import scalafx.scene.control.{Menu => MenuRoot, MenuBar, MenuItem}
+import scalafx.scene.control.{Menu => MenuRoot, MenuBar, MenuItem, SeparatorMenuItem}
 
 final class Menu(context: Context) extends MenuBar:
   val menuItemAbout = new MenuItem:
@@ -16,6 +16,6 @@ final class Menu(context: Context) extends MenuBar:
 
   val menuRoot = new MenuRoot():
     text = context.menuMenu
-    items = List(menuItemExit)
+    items = List(menuItemAbout, SeparatorMenuItem(), menuItemExit)
 
   menus = List(menuRoot)
