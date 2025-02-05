@@ -31,5 +31,5 @@ trait LabelButton[E] extends HBox:
     }
   button.text = "..."
 
-  spacing = 3
+  spacing = 6
   children = List(label, button)
