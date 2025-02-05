@@ -354,7 +354,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   val labelAlcoholByWeightRange = Label( context.labelAlcoholByWeightRange )
   val labelRangeSliderAlcoholByWeight = LabelRangeSlider(
     min = 1.0,
-    max = 13.0,
+    max = 10.0,
     increment = 1.0,
     low = model.selectedRecipe.value.alcoholByWeightRange.low,
     high = model.selectedRecipe.value.alcoholByWeightRange.high,
