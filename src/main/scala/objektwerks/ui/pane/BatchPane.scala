@@ -165,6 +165,7 @@ final class BatchPane(context: Context, model: Model) extends VBox:
 
   val scrollPaneControls = new ScrollPane:
     content = ControlGrid(controls)
+    fitToWidth = true
 
   // Buttons  
   val buttonLog = new Button:
