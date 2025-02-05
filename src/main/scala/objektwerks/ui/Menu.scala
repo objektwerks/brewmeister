@@ -13,8 +13,8 @@ final class Menu(context: Context) extends MenuBar:
       new Alert(AlertType.Information) {
         initOwner(App.stage)
         title = context.windowTitle
-        headerText = "Brewmeister"
-        contentText = "Version 1.0.13, Apache 2.0 License"
+        headerText = context.aboutAlertHeaderText
+        contentText = context.aboutAlertContentText
       }.showAndWait()
 
   val menuItemExit = new MenuItem:
