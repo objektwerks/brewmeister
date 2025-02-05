@@ -303,8 +303,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     min = 1.000,
     max = 1.130,
     increment = 0.01,
-    low = model.selectedRecipe.value.originalGravityRange.low,
-    high = model.selectedRecipe.value.originalGravityRange.high,
+    low = model.selectedRecipe.value.originalGravityRange.low.formatGravity,
+    high = model.selectedRecipe.value.originalGravityRange.high.formatGravity,
     lowFunction = enableSave,
     highFunction = enableSave,
     displayAsInt = false)
@@ -314,8 +314,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     min = 1.000,
     max = 1.130,
     increment = 0.01,
-    low = model.selectedRecipe.value.finalGravityRange.low,
-    high = model.selectedRecipe.value.finalGravityRange.high,
+    low = model.selectedRecipe.value.finalGravityRange.low.formatGravity,
+    high = model.selectedRecipe.value.finalGravityRange.high.formatGravity,
     lowFunction = enableSave,
     highFunction = enableSave,
     displayAsInt = false)
