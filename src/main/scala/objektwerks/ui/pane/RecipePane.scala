@@ -345,8 +345,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     min = 1.0,
     max = 13.0,
     increment = 1.0,
-    low = model.selectedRecipe.value.alcoholByVolumeRange.low,
-    high = model.selectedRecipe.value.alcoholByVolumeRange.high,
+    low = model.selectedRecipe.value.alcoholByVolumeRange.low.format,
+    high = model.selectedRecipe.value.alcoholByVolumeRange.high.format,
     lowFunction = enableSave,
     highFunction = enableSave,
     displayAsInt = false)
@@ -356,8 +356,8 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     min = 1.0,
     max = 10.0,
     increment = 1.0,
-    low = model.selectedRecipe.value.alcoholByWeightRange.low,
-    high = model.selectedRecipe.value.alcoholByWeightRange.high,
+    low = model.selectedRecipe.value.alcoholByWeightRange.low.format,
+    high = model.selectedRecipe.value.alcoholByWeightRange.high.format,
     lowFunction = enableSave,
     highFunction = enableSave,
     displayAsInt = false)
