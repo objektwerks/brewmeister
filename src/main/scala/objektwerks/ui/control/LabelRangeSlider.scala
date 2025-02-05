@@ -16,6 +16,7 @@ final class LabelRangeSlider(min: Double,
                              highFunction: () => Unit = () => (),
                              displayAsInt: Boolean = true) extends HBox:
   val slider = new RangeSlider(min, max, low, high):
+    setPrefWidth(200)
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(increment)
