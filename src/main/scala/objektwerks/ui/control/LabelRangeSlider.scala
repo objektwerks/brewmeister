@@ -13,10 +13,12 @@ enum Format derives CanEqual:
   case asInt, asDouble, asGravity
 
 object Format:
-  def as(format: Format, value: Double) =
-    if format == Format.asInt then value.intValue.toString
-    else if format == Format.asDouble then value.format.toString
-    else value.formatGravity.toString
+  def as(format: Format, value: Double): String =
+    format match
+      case Format.asInt => value.intValue.toString
+      case Format.asDouble => value.format.toString
+      case Format.asGravity => value.formatGravity.toString
+    
 
 final class LabelRangeSlider(min: Double,
                              max: Double,
