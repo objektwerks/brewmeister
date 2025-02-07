@@ -47,25 +47,25 @@ final class Listener:
     events.foreach {
       case Sanitizing(log, started) =>
         batch = batch.copy(
-          process = batch.process.copy(sanitizingStarted = started),
+          timeline = batch.timeline.copy(sanitizingStarted = started),
           log = batch.log ++ log
         )
 
       case Sanitized(log, completed) =>
         batch = batch.copy(
-          process = batch.process.copy(sanitizingCompleted = completed),
+          timeline = batch.timeline.copy(sanitizingCompleted = completed),
           log = batch.log ++ log
         )
 
       case Preparing(log, started) =>
         batch = batch.copy(
-          process = batch.process.copy(preparingStarted = started),
+          timeline = batch.timeline.copy(preparingStarted = started),
           log = batch.log ++ log
         )
 
       case Prepared(recipe, style, volume, log, completed) =>
         batch = batch.copy(
-          process = batch.process.copy(preparingCompleted = completed),
+          timeline = batch.timeline.copy(preparingCompleted = completed),
           recipe = recipe,
           style = style,
           volume = volume,
@@ -74,37 +74,37 @@ final class Listener:
 
       case Malting(log, started) =>
         batch = batch.copy(
-          process = batch.process.copy(maltingStarted = started),
+          timeline = batch.timeline.copy(maltingStarted = started),
           log = batch.log ++ log
         )
 
       case Malted(log, completed) =>
         batch = batch.copy(
-          process = batch.process.copy(maltingCompleted = completed),
+          timeline = batch.timeline.copy(maltingCompleted = completed),
           log = batch.log ++ log
         )
 
       case Milling(log, started) =>
         batch = batch.copy(
-          process = batch.process.copy(millingStarted = started),
+          timeline = batch.timeline.copy(millingStarted = started),
           log = batch.log ++ log
         )
 
       case Milled(log, completed) =>
         batch = batch.copy(
-          process = batch.process.copy(millingCompleted = completed),
+          timeline = batch.timeline.copy(millingCompleted = completed),
           log = batch.log ++ log
         )
 
       case Mashing(log, started) =>
         batch = batch.copy(
-          process = batch.process.copy(mashingStarted = started),
+          timeline = batch.timeline.copy(mashingStarted = started),
           log = batch.log ++ log
         )
 
       case Mashed(log, completed) =>
         batch = batch.copy(
-          process = batch.process.copy(mashingCompleted = completed),
+          timeline = batch.timeline.copy(mashingCompleted = completed),
           log = batch.log ++ log
         )
 
@@ -117,25 +117,25 @@ final class Listener:
 
       case Lautering(log, started) =>
         batch = batch.copy(
-          process = batch.process.copy(lauteringStarted = started),
+          timeline = batch.timeline.copy(lauteringStarted = started),
           log = batch.log ++ log
         )
 
       case Lautered(log, completed) =>
         batch = batch.copy(
-          process = batch.process.copy(lauteringCompleted = completed),
+          timeline = batch.timeline.copy(lauteringCompleted = completed),
           log = batch.log ++ log
         )
 
       case Sparging(log, started) =>
         batch = batch.copy(
-          process = batch.process.copy(spargingStarted = started),
+          timeline = batch.timeline.copy(spargingStarted = started),
           log = batch.log ++ log
         )
 
       case Sparged(log, completed) =>
         batch = batch.copy(
-          process = batch.process.copy(spargingCompleted = completed),
+          timeline = batch.timeline.copy(spargingCompleted = completed),
           log = batch.log ++ log
         )
 
@@ -147,37 +147,37 @@ final class Listener:
 
       case Boiling(log, started) =>
         batch = batch.copy(
-          process = batch.process.copy(boilingStarted = started),
+          timeline = batch.timeline.copy(boilingStarted = started),
           log = batch.log ++ log
         )
 
       case Boiled(log, completed) =>
         batch = batch.copy(
-          process = batch.process.copy(boilingCompleted = completed),
+          timeline = batch.timeline.copy(boilingCompleted = completed),
           log = batch.log ++ log
         )
 
       case Cooling(log, started) =>
         batch = batch.copy(
-          process = batch.process.copy(coolingStarted = started),
+          timeline = batch.timeline.copy(coolingStarted = started),
           log = batch.log ++ log
         )
 
       case Cooled(log, completed) =>
         batch = batch.copy(
-          process = batch.process.copy(coolingCompleted = completed),
+          timeline = batch.timeline.copy(coolingCompleted = completed),
           log = batch.log ++ log
         )
 
       case Whirlpooling(log, started) =>
         batch = batch.copy(
-          process = batch.process.copy(whirlpoolingStarted = started),
+          timeline = batch.timeline.copy(whirlpoolingStarted = started),
           log = batch.log ++ log
         )
 
       case Whirlpooled(log, completed) =>
         batch = batch.copy(
-          process = batch.process.copy(whirlpoolingCompleted = completed),
+          timeline = batch.timeline.copy(whirlpoolingCompleted = completed),
           log = batch.log ++ log
         )
 
@@ -191,13 +191,13 @@ final class Listener:
 
       case Fermenting(log, started) =>
         batch = batch.copy(
-          process = batch.process.copy(fermentingStarted = started),
+          timeline = batch.timeline.copy(fermentingStarted = started),
           log = batch.log ++ log
         )
 
       case Fermented(log, completed) =>
         batch = batch.copy(
-          process = batch.process.copy(fermentingCompleted = completed),
+          timeline = batch.timeline.copy(fermentingCompleted = completed),
           log = batch.log ++ log
         )
 
@@ -210,13 +210,13 @@ final class Listener:
 
       case Conditioning(log, started) =>
         batch = batch.copy(
-          process = batch.process.copy(conditioningStarted = started),
+          timeline = batch.timeline.copy(conditioningStarted = started),
           log = batch.log ++ log
         )
 
       case Conditioned(log, completed) =>
         batch = batch.copy(
-          process = batch.process.copy(conditioningCompleted = completed),
+          timeline = batch.timeline.copy(conditioningCompleted = completed),
           log = batch.log ++ log
         )
 
@@ -229,7 +229,7 @@ final class Listener:
 
       case Kegging(log, started) =>
         batch = batch.copy(
-          process = batch.process.copy(keggingStarted = started),
+          timeline = batch.timeline.copy(keggingStarted = started),
           log = batch.log ++ log
         )
 
@@ -248,7 +248,7 @@ final class Listener:
           stored = completed
         )
         batch = batch.copy(
-          process = batch.process.copy(keggingCompleted = completed)
+          timeline = batch.timeline.copy(keggingCompleted = completed)
         )
 
       case KeggingTempBrewhouseEfficiencyLogged(brewhouseEfficiency, log) =>

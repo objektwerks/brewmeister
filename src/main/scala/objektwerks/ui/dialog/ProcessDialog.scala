@@ -14,7 +14,7 @@ final class ProcessDialog(context: Context, model: Model) extends Dialog[Unit]:
   title = context.windowTitle
   headerText = context.dialogProcess
 
-  val process = model.selectedBatch.value.process
+  val process = model.selectedBatch.value.timeline
 
   val labelSanitizingStarted = Label( context.labelSanitizingStarted )
   val textSanitizingStarted = Label( process.sanitizingStarted )
