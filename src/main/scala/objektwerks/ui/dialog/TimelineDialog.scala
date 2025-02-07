@@ -9,10 +9,10 @@ import scalafx.scene.layout.{ColumnConstraints, Priority}
 import objektwerks.ui.{App, Context, Model}
 import objektwerks.ui.control.ControlGrid
 
-final class ProcessDialog(context: Context, model: Model) extends Dialog[Unit]:
+final class TimelineDialog(context: Context, model: Model) extends Dialog[Unit]:
   initOwner(App.stage)
   title = context.windowTitle
-  headerText = context.dialogProcess
+  headerText = context.dialogTimeline
 
   val process = model.selectedBatch.value.timeline
 

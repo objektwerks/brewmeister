@@ -27,7 +27,7 @@ final class Context(config: Config):
   val dialogVolume = config.getString("dialog.volume")
   val dialogBrew = config.getString("dialog.brew")
   val dialogLog = config.getString("dialog.log")
-  val dialogProcess = config.getString("dialog.process")
+  val dialogTimeline = config.getString("dialog.timeline")
 
   val removeDialogHeaderText = config.getString("remove.dialog.headerText")
   val removeDialogContentText = config.getString("remove.dialog.contentText")
@@ -98,7 +98,7 @@ final class Context(config: Config):
   val labelAroma = config.getString("label.aroma")
   val labelTaste = config.getString("label.taste")
   val labelStarted = config.getString("label.started")
-  val labelProcessed = config.getString("label.processed")
+  val labelTimeline = config.getString("label.timeline")
   val labelCompleted = config.getString("label.completed")
   val labelSanitizingStarted = config.getString("label.sanitizingStarted")
   val labelSanitizingCompleted = config.getString("label.sanitizingCompleted")
@@ -139,14 +139,14 @@ final class Context(config: Config):
   val tooltipRemove = config.getString("tooltip.remove")
   val tooltipBrew = config.getString("tooltip.brew")
   val tooltipLog = config.getString("tooltip.log")
-  val tooltipProcess = config.getString("tooltip.process")
+  val tooltipTimeline = config.getString("tooltip.timeline")
 
   def imageViewBang = loadImageView("/image/bang.png")
   def imageViewSave = loadImageView("/image/save.png")
   def imageViewPlus = loadImageView("/image/plus.png")
   def imageViewMinus = loadImageView("/image/minus.png")
   def imageViewLog = loadImageView("/image/log.png")
-  def imageViewProcess = loadImageView("/image/process.png")
+  def imageViewTimeline = loadImageView("/image/timeline.png")
   def imageAppIcon = Image(Image.getClass.getResourceAsStream("/image/icon.png"))
 
   private def loadImageView(path: String): ImageView = new ImageView:

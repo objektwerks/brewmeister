@@ -8,7 +8,7 @@ import scalafx.scene.layout.{ColumnConstraints, HBox, Priority, VBox}
 import objektwerks.Batch
 import objektwerks.ui.{Context, Model}
 import objektwerks.ui.control.ControlGrid
-import objektwerks.ui.dialog.{LogDialog, ProcessDialog}
+import objektwerks.ui.dialog.{LogDialog, TimelineDialog}
 
 final class BatchPane(context: Context, model: Model) extends VBox:
   padding = Insets(3)
@@ -26,7 +26,7 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   // Methods
   def log(): Unit = LogDialog(context, model).showAndWait()
 
-  def process(): Unit = ProcessDialog(context, model).showAndWait()
+  def process(): Unit = TimelineDialog(context, model).showAndWait()
 
   def setButtons(): Unit =
     if model.observableBatches.isEmpty then
@@ -195,8 +195,8 @@ final class BatchPane(context: Context, model: Model) extends VBox:
     onAction = { _ => log() }
 
   val buttonProcess = new Button:
-    graphic = context.imageViewProcess
-    tooltip = context.tooltipProcess
+    graphic = context.imageViewTimeline
+    tooltip = context.tooltipTimeline
     disable = true
     onAction = { _ => process() }
 
