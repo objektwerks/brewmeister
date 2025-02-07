@@ -30,7 +30,7 @@ final class LabelRangeSlider(min: Double,
     setPrefWidth(200)
     setShowTickMarks(true)
     setShowTickLabels(true)
-    setBlockIncrement(increment)
+    setMajorTickUnit(increment)
     lowValueProperty.onChange { (_, _, newValue) =>
       lowValue( if format == Format.asInt then newValue.intValue else newValue.doubleValue )
       lowFunction()
