@@ -194,7 +194,7 @@ Model
 * Brewer 1 -- delegates --> 1 Listener
 * Listener 1 -- collects --> * Event
 * Listener 1 -- builds --> * Batch
-* Batch 1 --> 1 Log | Process
+* Batch 1 --> 1 Log | Timeline
 
 Command
 -------
