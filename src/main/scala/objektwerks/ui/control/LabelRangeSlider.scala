@@ -7,6 +7,8 @@ import scalafx.scene.control.Label
 import scalafx.scene.layout.{HBox, Priority, Region}
 import scalafx.scene.text.TextAlignment
 
+import objektwerks.*
+
 final class LabelRangeSlider(min: Double,
                              max: Double,
                              low: Double,
@@ -35,22 +37,22 @@ final class LabelRangeSlider(min: Double,
   def lowValue(value: Double): Unit =
     if value >= min then
       slider.setLowValue(value)
-      labelLow.text = if displayAsInt then value.intValue.toString else value.toString
+      labelLow.text = if displayAsInt then value.intValue.toString else value.format.toString
 
   def highValue(value: Double): Unit =
     if value <= max then
       slider.setHighValue(value)
-      labelHigh.text = if displayAsInt then value.intValue.toString else value.toString
+      labelHigh.text = if displayAsInt then value.intValue.toString else value.format.toString
 
   val labelLow = new Label():
     prefWidth = 30
     textAlignment = TextAlignment.Right
-    text = if displayAsInt then low.intValue.toString else low.toString
+    text = if displayAsInt then low.intValue.toString else low.format.toString
 
   val labelHigh = new Label():
     prefWidth = 30
     textAlignment = TextAlignment.Right
-    text = if displayAsInt then high.intValue.toString else high.toString
+    text = if displayAsInt then high.intValue.toString else high.format.toString
 
   val spacerLow = Region()
   val spacerHigh = Region()
