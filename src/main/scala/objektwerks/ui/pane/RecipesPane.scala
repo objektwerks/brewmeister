@@ -56,6 +56,7 @@ final class RecipesPane(context: Context, model: Model) extends TabPane:
 
   val tab = new Tab:
     text = context.tabRecipes
+    graphic = context.imageViewRecipe
     closable = false
     content = vbox
 
