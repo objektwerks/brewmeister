@@ -11,6 +11,7 @@ final class RightPane(context: Context, model: Model) extends VBox:
 
   val recipeTab = new Tab:
     text = context.tabRecipe
+    graphic = context.imageViewRecipe
     closable = false
     content = RecipePane(context, model)
 
@@ -19,6 +20,7 @@ final class RightPane(context: Context, model: Model) extends VBox:
 
   val batchTab = new Tab:
     text = context.tabBatch
+    graphic = context.imageViewBatch
     closable = false
     content = BatchPane(context, model)
 
