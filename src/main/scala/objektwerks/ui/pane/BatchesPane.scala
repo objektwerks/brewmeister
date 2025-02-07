@@ -55,6 +55,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
 
   val tab = new Tab:
     text = context.tabBatches
+    graphic = context.imageViewBatch
     closable = false
     content = vbox
 
