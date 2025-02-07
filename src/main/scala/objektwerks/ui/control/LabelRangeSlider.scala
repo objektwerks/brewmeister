@@ -56,12 +56,12 @@ final class LabelRangeSlider(min: Double,
       labelHigh.text = Format.as(format, value)
 
   val labelLow = new Label():
-    prefWidth = 40
+    prefWidth = 50
     textAlignment = TextAlignment.Right
     text = Format.as(format, low)
 
   val labelHigh = new Label():
-    prefWidth = 40
+    prefWidth = 50
     textAlignment = TextAlignment.Right
     text = Format.as(format, high)
 
