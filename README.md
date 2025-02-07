@@ -302,7 +302,8 @@ Resources
 * [More Ways to Get Hoppy](https://beerandbrewing.com/learning-lab-more-ways-to-get-hoppy/)
 * [Beer Color](https://beermaverick.com/understanding-srm-and-lovibond-beer-color-calculations/)
 * [Beer Advocate](https://www.beeradvocate.com/)
->This open source app has been banned by **Beer Advocate**. Apparently promoting ***home brewing*** is forbidden. Classic! :)
+>This open source app, as in free beer, has been banned by **Beer Advocate**. Apparently promoting
+>***home brewing*** is forbidden. Classic corporate behavior! :)
 
 License
 -------
