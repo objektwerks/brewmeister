@@ -7,7 +7,7 @@ import scalafx.scene.layout.{ColumnConstraints, Priority, HBox, VBox}
 
 import objektwerks.*
 import objektwerks.ui.{Context, Model}
-import objektwerks.ui.control.{ControlGrid, LabelButton, LabelRangeSlider, NonEmptyTextField}
+import objektwerks.ui.control.{ControlGrid, Format, LabelButton, LabelRangeSlider, NonEmptyTextField}
 import objektwerks.ui.control.DoubleTextField
 import objektwerks.ui.dialog.{AdjunctsDialog, GrainsDialog, HopsDialog, TempRangeDurationDialog, VolumeDialog, YeastsDialog}
 
@@ -307,7 +307,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     high = model.selectedRecipe.value.originalGravityRange.high.formatGravity,
     lowFunction = enableSave,
     highFunction = enableSave,
-    formatAs = false)
+    format = Format.asGravity)
 
   val labelFinalGravityRange = Label( context.labelFinalGravityRange )
   val labelRangeSliderFinalGravity = LabelRangeSlider(
@@ -318,7 +318,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     high = model.selectedRecipe.value.finalGravityRange.high.formatGravity,
     lowFunction = enableSave,
     highFunction = enableSave,
-    formatAs = false)
+    format = Format.asGravity)
 
   val labelSrmColorRange = Label( context.labelSrmColorRange )
   val labelRangeSliderSrmColor = LabelRangeSlider(
@@ -349,7 +349,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     high = model.selectedRecipe.value.alcoholByVolumeRange.high.format,
     lowFunction = enableSave,
     highFunction = enableSave,
-    formatAs = false)
+    format = Format.asDouble)
 
   val labelAlcoholByWeightRange = Label( context.labelAlcoholByWeightRange )
   val labelRangeSliderAlcoholByWeight = LabelRangeSlider(
@@ -360,7 +360,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     high = model.selectedRecipe.value.alcoholByWeightRange.high.format,
     lowFunction = enableSave,
     highFunction = enableSave,
-    formatAs = false)
+    format = Format.asDouble)
 
   val labelCalorieRange = Label( context.labelCalorieRange )
   val labelRangeSliderCalories = LabelRangeSlider(
