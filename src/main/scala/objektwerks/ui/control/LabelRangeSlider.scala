@@ -4,7 +4,7 @@ import org.controlsfx.control.RangeSlider
 
 import scalafx.Includes.*
 import scalafx.scene.control.Label
-import scalafx.scene.layout.{HBox, Priority, Region}
+import scalafx.scene.layout.HBox
 import scalafx.scene.text.TextAlignment
 
 import objektwerks.*
@@ -65,9 +65,5 @@ final class LabelRangeSlider(min: Double,
     textAlignment = TextAlignment.Right
     text = Format.as(format, high)
 
-  val spacerLow = Region()
-  val spacerHigh = Region()
-  HBox.setHgrow(spacerLow, Priority.Always)
-  HBox.setHgrow(spacerHigh, Priority.Always)
-
-  children.addAll(labelLow, spacerLow, slider, spacerHigh, labelHigh) // Required to add org.controlsfx.control.RangeSlider
+  spacing = 6
+  children.addAll(labelLow, slider, labelHigh) // Required to add org.controlsfx.control.RangeSlider
