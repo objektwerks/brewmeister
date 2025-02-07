@@ -142,6 +142,7 @@ final class Context(config: Config):
   val tooltipTimeline = config.getString("tooltip.timeline")
 
   def imageViewBang = loadImageView("/image/bang.png")
+  def imageViewBatch = loadImageView("/image/batch.png")
   def imageViewSave = loadImageView("/image/save.png")
   def imageViewPlus = loadImageView("/image/plus.png")
   def imageViewMinus = loadImageView("/image/minus.png")
