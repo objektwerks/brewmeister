@@ -12,13 +12,11 @@ import objektwerks.*
 enum Format derives CanEqual:
   case asInt, asDouble, asGravity
 
-object Format:
-  def as(format: Format, value: Double): String =
-    format match
+  def as(value: Double): String =
+    this match
       case Format.asInt => value.intValue.toString
       case Format.asDouble => value.format.toString
       case Format.asGravity => value.formatGravity.toString
-    
 
 final class LabelRangeSlider(min: Double,
                              max: Double,
@@ -48,22 +46,22 @@ final class LabelRangeSlider(min: Double,
   def lowValue(value: Double): Unit =
     if value >= min then
       slider.setLowValue(value)
-      labelLow.text = Format.as(format, value)
+      labelLow.text = format.as(value)
 
   def highValue(value: Double): Unit =
     if value <= max then
       slider.setHighValue(value)
-      labelHigh.text = Format.as(format, value)
+      labelHigh.text = format.as(value)
 
   val labelLow = new Label():
     prefWidth = 50
     textAlignment = TextAlignment.Right
-    text = Format.as(format, low)
+    text = format.as(low)
 
   val labelHigh = new Label():
     prefWidth = 50
     textAlignment = TextAlignment.Right
-    text = Format.as(format, high)
+    text = format.as(high)
 
   val spacerLow = Region()
   val spacerHigh = Region()
