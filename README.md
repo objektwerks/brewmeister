@@ -303,20 +303,6 @@ Resources
 * [Beer Color](https://beermaverick.com/understanding-srm-and-lovibond-beer-color-calculations/)
 * [Beer Advocate](https://www.beeradvocate.com/)
 
-ScalaFx Binding
----------------
-* ScalaFx property binding for case class / properties / controls doesn't appear to work:
-```
-  case class Person(name: String):
-    val nameProperty = ObjectProperty(name)
-    nameProperty.bind( Bindings.createObjectBinding(() => this.name, nameProperty) )
-
-  val labelName = Label( context.labelName )
-  val textFieldName = new TextField():
-    text <==> model.selectedPerson.value.nameProperty
-```
->Simple ScalaFx property binding does work, though. Currently using manual case class / property binding.
-
 License
 -------
 >Copyright (c) [2024, 2025] [Objektwerks]
