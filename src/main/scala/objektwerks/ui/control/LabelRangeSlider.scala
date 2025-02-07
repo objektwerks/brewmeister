@@ -9,6 +9,15 @@ import scalafx.scene.text.TextAlignment
 
 import objektwerks.*
 
+enum Format derives CanEqual:
+  case asInt, asDouble, asGravity
+
+object Format:
+  def as(format: Format, value: Double) =
+    if format == Format.asInt then value.intValue.toString
+    else if format == Format.asDouble then value.format.toString
+    else value.formatGravity.toString
+
 final class LabelRangeSlider(min: Double,
                              max: Double,
                              low: Double,
@@ -16,18 +25,18 @@ final class LabelRangeSlider(min: Double,
                              high: Double,
                              lowFunction: () => Unit = () => (),
                              highFunction: () => Unit = () => (),
-                             displayAsInt: Boolean = true) extends HBox:
+                             format: Format = Format.asInt) extends HBox:
   val slider = new RangeSlider(min, max, low, high):
     setPrefWidth(200)
     setShowTickMarks(true)
     setShowTickLabels(true)
     setBlockIncrement(increment)
     lowValueProperty.onChange { (_, _, newValue) =>
-      lowValue( if displayAsInt then newValue.intValue else newValue.doubleValue )
+      lowValue( if format == Format.asInt then newValue.intValue else newValue.doubleValue )
       lowFunction()
     }
     highValueProperty.onChange { (_, _, newValue) =>
-      highValue( if displayAsInt then newValue.intValue else newValue.doubleValue )
+      highValue( if format == Format.asInt then newValue.intValue else newValue.doubleValue )
       highFunction()
     }
 
@@ -37,22 +46,22 @@ final class LabelRangeSlider(min: Double,
   def lowValue(value: Double): Unit =
     if value >= min then
       slider.setLowValue(value)
-      labelLow.text = if displayAsInt then value.intValue.toString else value.format.toString
+      labelLow.text = Format.as(format, value)
 
   def highValue(value: Double): Unit =
     if value <= max then
       slider.setHighValue(value)
-      labelHigh.text = if displayAsInt then value.intValue.toString else value.format.toString
+      labelHigh.text = Format.as(format, value)
 
   val labelLow = new Label():
-    prefWidth = 30
+    prefWidth = 40
     textAlignment = TextAlignment.Right
-    text = if displayAsInt then low.intValue.toString else low.format.toString
+    text = Format.as(format, low)
 
   val labelHigh = new Label():
-    prefWidth = 30
+    prefWidth = 40
     textAlignment = TextAlignment.Right
-    text = if displayAsInt then high.intValue.toString else high.format.toString
+    text = Format.as(format, high)
 
   val spacerLow = Region()
   val spacerHigh = Region()

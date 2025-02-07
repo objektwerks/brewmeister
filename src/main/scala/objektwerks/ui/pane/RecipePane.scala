@@ -307,7 +307,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     high = model.selectedRecipe.value.originalGravityRange.high.formatGravity,
     lowFunction = enableSave,
     highFunction = enableSave,
-    displayAsInt = false)
+    formatAs = false)
 
   val labelFinalGravityRange = Label( context.labelFinalGravityRange )
   val labelRangeSliderFinalGravity = LabelRangeSlider(
@@ -318,7 +318,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     high = model.selectedRecipe.value.finalGravityRange.high.formatGravity,
     lowFunction = enableSave,
     highFunction = enableSave,
-    displayAsInt = false)
+    formatAs = false)
 
   val labelSrmColorRange = Label( context.labelSrmColorRange )
   val labelRangeSliderSrmColor = LabelRangeSlider(
@@ -349,7 +349,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     high = model.selectedRecipe.value.alcoholByVolumeRange.high.format,
     lowFunction = enableSave,
     highFunction = enableSave,
-    displayAsInt = false)
+    formatAs = false)
 
   val labelAlcoholByWeightRange = Label( context.labelAlcoholByWeightRange )
   val labelRangeSliderAlcoholByWeight = LabelRangeSlider(
@@ -360,7 +360,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     high = model.selectedRecipe.value.alcoholByWeightRange.high.format,
     lowFunction = enableSave,
     highFunction = enableSave,
-    displayAsInt = false)
+    formatAs = false)
 
   val labelCalorieRange = Label( context.labelCalorieRange )
   val labelRangeSliderCalories = LabelRangeSlider(
