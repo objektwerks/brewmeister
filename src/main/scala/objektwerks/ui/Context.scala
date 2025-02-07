@@ -153,7 +153,7 @@ final class Context(config: Config):
 
   private def loadImageView(path: String): ImageView = new ImageView:
     image = Image(Image.getClass.getResourceAsStream(path))
-    fitHeight = 25
-    fitWidth = 25
+    fitHeight = 22
+    fitWidth = 22
     preserveRatio = true
     smooth = true
