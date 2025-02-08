@@ -81,13 +81,13 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   // Buttons
   val buttonAdd = new Button:
     graphic = context.imageViewPlus
-    tooltip = context.tooltipAdd
+    text = context.buttonAdd
     disable = false
     onAction = { _ => add( Yeast() ) }
 
   val buttonRemove = new Button:
     graphic = context.imageViewMinus
-    tooltip = context.tooltipRemove
+    text = context.buttonRemove
     disable = true
     onAction = { _ => remove( listViewYeasts.selectionModel().selectedIndex.value ) }
 
