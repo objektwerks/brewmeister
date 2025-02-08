@@ -129,6 +129,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   // Buttons
   val buttonSave = new Button:
     graphic = context.imageViewSave
+    text = context.buttonSave
     disable = true
     onAction = { _ => save( listViewAdjuncts.selectionModel().selectedIndex.value, controlsToAdjunct() ) }
 
