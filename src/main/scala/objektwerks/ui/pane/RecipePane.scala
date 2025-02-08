@@ -430,7 +430,7 @@ final class RecipePane(context: Context, model: Model) extends VBox:
       ColumnConstraints(
         minWidth = 200.0,
         prefWidth = 200.0,
-        maxWidth = 1000.0,
+        maxWidth = 250.0,
         hgrow = Priority.Always,
         halignment = HPos.Left,
         fillWidth = true      
@@ -445,9 +445,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
       ) 
     )
   )
+  HBox.setHgrow(controlGrid, Priority.Always)
 
   val scrollPaneControls = new ScrollPane:
     content = controlGrid
+    fitToWidth = true
 
   // Buttons
   val buttonSave = new Button:
@@ -462,6 +464,6 @@ final class RecipePane(context: Context, model: Model) extends VBox:
     children = List(buttonSave)
 
   // Content
-  children = List(scrollPaneControls, buttonBar)
-
   VBox.setVgrow(this, Priority.Always)
+
+  children = List(scrollPaneControls, buttonBar)

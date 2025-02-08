@@ -2,7 +2,7 @@ package objektwerks.ui.control
 
 import scalafx.beans.property.ObjectProperty
 import scalafx.scene.control.{Button, Label}
-import scalafx.scene.layout.HBox
+import scalafx.scene.layout.{HBox, Priority}
 
 import scala.annotation.meta.setter
 import scala.language.strictEquality
@@ -30,6 +30,8 @@ trait LabelButton[E] extends HBox:
       if newValue != value.value then value.value = newValue
     }
   button.text = "..."
+
+  HBox.setHgrow(this, Priority.Always)
 
   spacing = 6
   children = List(label, button)

@@ -27,7 +27,7 @@ final class LabelRangeSlider(min: Double,
                              highFunction: () => Unit = () => (),
                              format: Format = Format.asInt) extends HBox:
   val slider = new RangeSlider(min, max, low, high):
-    setPrefWidth(200)
+    setPrefWidth(250)
     setShowTickMarks(true)
     setShowTickLabels(true)
     setMajorTickUnit(increment)
@@ -65,7 +65,9 @@ final class LabelRangeSlider(min: Double,
 
   val spacerLow = Region()
   val spacerHigh = Region()
+
   HBox.setHgrow(spacerLow, Priority.Always)
   HBox.setHgrow(spacerHigh, Priority.Always)
+  HBox.setHgrow(this, Priority.Always)
 
   children.addAll(labelLow, spacerLow, slider, spacerHigh, labelHigh) // Required to add org.controlsfx.control.RangeSlider
