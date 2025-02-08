@@ -190,13 +190,13 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   // Buttons  
   val buttonLog = new Button:
     graphic = context.imageViewLog
-    tooltip = context.tooltipLog
+    text = context.buttonLog
     disable = true
     onAction = { _ => log() }
 
   val buttonProcess = new Button:
     graphic = context.imageViewTimeline
-    tooltip = context.tooltipTimeline
+    text = context.buttonTimeline
     disable = true
     onAction = { _ => process() }
 
