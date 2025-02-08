@@ -81,13 +81,13 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   // Buttons
   val buttonAdd = new Button:
     graphic = context.imageViewPlus
-    tooltip = context.tooltipAdd
+    text = context.buttonAdd
     disable = false
     onAction = { _ => add( Adjunct() ) }
 
   val buttonRemove = new Button:
     graphic = context.imageViewMinus
-    tooltip = context.tooltipRemove
+    text = context.buttonRemove
     disable = true
     onAction = { _ => remove( listViewAdjuncts.selectionModel().selectedIndex.value ) }
 
