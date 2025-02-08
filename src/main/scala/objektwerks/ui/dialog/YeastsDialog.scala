@@ -129,6 +129,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   // Buttons
   val buttonSave = new Button:
     graphic = context.imageViewSave
+    text = context.buttonSave
     disable = true
     onAction = { _ => save( listViewYeasts.selectionModel().selectedIndex.value, controlsToYeast() ) }
 
