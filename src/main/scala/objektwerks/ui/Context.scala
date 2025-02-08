@@ -138,13 +138,6 @@ final class Context(config: Config):
   val buttonLog = config.getString("button.log")
   val buttonTimeline = config.getString("button.timeline")
 
-  val tooltipAdd = config.getString("tooltip.add")
-  val tooltipSave = config.getString("tooltip.save")
-  val tooltipRemove = config.getString("tooltip.remove")
-  val tooltipBrew = config.getString("tooltip.brew")
-  val tooltipLog = config.getString("tooltip.log")
-  val tooltipTimeline = config.getString("tooltip.timeline")
-
   def imageViewBang = loadImageView("/image/bang.png")
   def imageViewBatch = loadImageView("/image/batch.png")
   def imageViewSave = loadImageView("/image/save.png")
