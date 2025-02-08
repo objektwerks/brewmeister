@@ -37,7 +37,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
 
   val buttonRemove = new Button:
     graphic = context.imageViewMinus
-    tooltip = context.tooltipRemove
+    text = context.buttonRemove
     disable = true
     onAction = { _ => remove() }
 
