@@ -33,5 +33,5 @@ trait LabelButton[E] extends HBox:
 
   HBox.setHgrow(this, Priority.Always)
 
-  spacing = 6
+  spacing = 9
   children = List(label, button)
