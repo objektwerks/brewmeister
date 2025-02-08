@@ -21,6 +21,7 @@ final class BatchesPane(context: Context, model: Model) extends TabPane:
         text = context.columnBatch
         cellValueFactory = _.value.nameProperty,
       new TableColumn[Batch, Int]:
+        style = "-fx-alignment: center;"
         text = context.columnBrewhouseEfficiency
         cellValueFactory = _.value.brewhouseEfficiencyProperty
     )
