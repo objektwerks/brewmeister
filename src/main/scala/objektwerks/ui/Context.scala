@@ -13,6 +13,8 @@ final class Context(config: Config):
   val tabBatch = config.getString("tab.batch")
   val tabRecipes = config.getString("tab.recipes")
   val tabRecipe = config.getString("tab.recipe")
+  val tabLog = config.getString("tab.log")
+  val tabTimeline = config.getString("tab.timeline")
 
   val columnBatch = config.getString("column.batch")
   val columnRecipe = config.getString("column.recipe")
