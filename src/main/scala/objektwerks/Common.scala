@@ -28,7 +28,7 @@ enum UoT derives CanEqual, JsonSupport:
   case minutes, hours, days, weeks
 
 extension (double: Double)
-  def format: Double = f"$double%1.1f".toDouble
+  def format: Double = f"$double%2.1f".toDouble
   def formatGravity: Double = f"$double%1.3f".toDouble
 
 def now(): String = LocalDateTime.now.format(nowFormatter)
