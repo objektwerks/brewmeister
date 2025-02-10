@@ -259,8 +259,8 @@ Metrics
     2. Actual Mash Extract = The amount of fermentable extract collected from the mash tun.
     3. Potential Mash Extract = The maximum extract potential of the grain bill, calculated on the malt’s extract potential and the grain bill’s weight and volume.
     4. ME % = ( Actual Extract / Potential Extract ) * 100
-    5. Range: 70.0 - 100.0 %
-    6. Ideal: 80.0 - 90.0 %
+    5. Range: 70 - 100 %
+    6. Ideal: 80 - 90 %
 12. **Brewhouse Efficiency: BE** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
     1. Method: ***brewer input and metrics***
     2. Actual Fermentable Extract = The amount of fermentable extract collected from the brewhouse.
