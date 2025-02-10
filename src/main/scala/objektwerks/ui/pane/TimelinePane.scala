@@ -4,6 +4,7 @@ import scalafx.geometry.Insets
 import scalafx.scene.control.Label
 import scalafx.scene.layout.VBox
 
+import objektwerks.Timeline
 import objektwerks.ui.{Context, Model}
 
 final class TimelinePane(context: Context, model: Model) extends VBox:
@@ -13,6 +14,35 @@ final class TimelinePane(context: Context, model: Model) extends VBox:
   model.selectedBatch.onChange { (_, _, selectedBatch) =>
 
   }
+
+  // Binding
+  def bind(timeline: Timeline): Unit =
+    textSanitizingStarted.text = timeline.sanitizingStarted
+    textSanitizingCompleted.text = timeline.sanitizingCompleted
+    textPreparingStarted.text = timeline.preparingStarted
+    textPreparingCompleted.text = timeline.preparingCompleted
+    textMaltingStarted.text = timeline.maltingStarted
+    textMaltingCompleted.text = timeline.maltingCompleted
+    textMillingStarted.text = timeline.millingStarted
+    textMillingCompleted.text = timeline.millingCompleted
+    textMashingStarted.text = timeline.mashingStarted
+    textMashingCompleted.text = timeline.mashingCompleted
+    textLauteringStarted.text = timeline.lauteringStarted
+    textLauteringCompleted.text = timeline.lauteringCompleted
+    textSpargingStarted.text = timeline.spargingStarted
+    textSpargingCompleted.text = timeline.spargingCompleted
+    textBoilingStarted.text = timeline.boilingStarted
+    textBoilingCompleted.text = timeline.boilingCompleted
+    textCoolingStarted.text = timeline.coolingStarted
+    textCoolingCompleted.text = timeline.coolingCompleted
+    textWhirlpoolingStarted.text = timeline.whirlpoolingStarted
+    textWhirlpoolingCompleted.text = timeline.whirlpoolingCompleted
+    textFermentingStarted.text = timeline.fermentingStarted
+    textFermentingCompleted.text = timeline.fermentingCompleted
+    textConditioningStarted.text = timeline.conditioningStarted
+    textConditioningCompleted.text = timeline.conditioningCompleted
+    textKeggingStarted.text = timeline.keggingStarted
+    textKeggingCompleted.text = timeline.keggingCompleted
 
   // Controls
   val labelSanitizingStarted = Label( context.labelSanitizingStarted )
