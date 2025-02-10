@@ -122,3 +122,32 @@ final class TimelinePane(context: Context, model: Model) extends VBox:
 
   val labelKeggingCompleted = Label( context.labelKeggingCompleted )
   val textKeggingCompleted = Label("")
+
+  val controls = List[(Label, Node)](
+    labelSanitizingStarted -> textSanitizingStarted,
+    labelSanitizingCompleted -> textSanitizingCompleted,
+    labelPreparingStarted -> textPreparingStarted,
+    labelPreparingCompleted -> textPreparingCompleted,
+    labelMaltingStarted -> textMaltingStarted,
+    labelMaltingCompleted -> textMaltingCompleted,
+    labelMillingStarted -> textMillingStarted,
+    labelMillingCompleted -> textMillingCompleted,
+    labelMashingingStarted -> textMashingStarted,
+    labelMashingCompleted -> textMashingCompleted,
+    labelLauteringingStarted -> textLauteringStarted,
+    labelLauteringCompleted -> textLauteringCompleted,
+    labelSpargingingStarted -> textSpargingStarted,
+    labelSpargingCompleted -> textSpargingCompleted,
+    labelBoilingingStarted -> textBoilingStarted,
+    labelBoilingCompleted -> textBoilingCompleted,
+    labelCoolingingStarted -> textCoolingStarted,
+    labelCoolingCompleted -> textCoolingCompleted,
+    labelWhirlpoolingingStarted -> textWhirlpoolingStarted,
+    labelWhirlpoolingCompleted -> textWhirlpoolingCompleted,
+    labelFermentingingStarted -> textFermentingStarted,
+    labelFermentingCompleted -> textFermentingCompleted,
+    labelConditioningingStarted -> textConditioningStarted,
+    labelConditioningCompleted -> textConditioningCompleted,
+    labelKeggingStarted -> textKeggingStarted,
+    labelKeggingCompleted -> textKeggingCompleted
+  )
