@@ -31,7 +31,7 @@ final class RightPane(context: Context, model: Model) extends VBox:
     content = LogPane(context, model)
 
   val timelineTab = new Tab:
-    text = context.tabBatch // fix
+    text = context.tabTimeline
     graphic = context.imageViewTimeline
     closable = false
     content = LogPane(context, model)
