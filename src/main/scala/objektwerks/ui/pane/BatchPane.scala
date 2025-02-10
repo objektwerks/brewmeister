@@ -2,42 +2,23 @@ package objektwerks.ui.pane
 
 import scalafx.geometry.{HPos, Insets}
 import scalafx.scene.Node
-import scalafx.scene.control.{Button, Label, ScrollPane}
-import scalafx.scene.layout.{ColumnConstraints, HBox, Priority, VBox}
+import scalafx.scene.control.{Label, ScrollPane}
+import scalafx.scene.layout.{ColumnConstraints, Priority, VBox}
 
 import objektwerks.Batch
 import objektwerks.ui.{Context, Model}
 import objektwerks.ui.control.ControlGrid
-import objektwerks.ui.dialog.{LogDialog, TimelineDialog}
 
 final class BatchPane(context: Context, model: Model) extends VBox:
   padding = Insets(6)
 
   // Model
   model.selectedBatch.onChange { (_, _, selectedBatch) =>
-    batchToControls(selectedBatch)
-    setButtons()
+    bind(selectedBatch)
   }
-
-  model.observableBatches.onChange { (_, _) =>
-    setButtons()
-  }
-
-  // Methods
-  def log(): Unit = LogDialog(context, model).showAndWait()
-
-  def process(): Unit = TimelineDialog(context, model).showAndWait()
-
-  def setButtons(): Unit =
-    if model.observableBatches.isEmpty then
-      buttonLog.disable = true
-      buttonProcess.disable = true
-    else
-      buttonLog.disable = false
-      buttonProcess.disable = false
 
   // Binding
-  def batchToControls(batch: Batch): Unit =
+  def bind(batch: Batch): Unit =
     textRecipe.text = batch.recipe
     textStyle.text = batch.style
     textVolume.text = s"${batch.volume.value} ${batch.volume.unit.toString}"
@@ -187,24 +168,6 @@ final class BatchPane(context: Context, model: Model) extends VBox:
   val scrollPaneControls = new ScrollPane:
     content = controlGrid
 
-  // Buttons  
-  val buttonLog = new Button:
-    graphic = context.imageViewLog
-    text = context.buttonLog
-    disable = true
-    onAction = { _ => log() }
-
-  val buttonProcess = new Button:
-    graphic = context.imageViewTimeline
-    text = context.buttonTimeline
-    disable = true
-    onAction = { _ => process() }
-
-  val buttonBar = new HBox:
-    spacing = 6
-    padding = Insets(3)
-    children = List(buttonLog, buttonProcess)
-
   // Content
-  children = List(scrollPaneControls, buttonBar)
+  children = List(scrollPaneControls)
   VBox.setVgrow(this, Priority.Always)
