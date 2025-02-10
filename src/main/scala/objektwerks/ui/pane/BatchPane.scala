@@ -207,5 +207,4 @@ final class BatchPane(context: Context, model: Model) extends VBox:
 
   // Content
   children = List(scrollPaneControls, buttonBar)
-
   VBox.setVgrow(this, Priority.Always)
