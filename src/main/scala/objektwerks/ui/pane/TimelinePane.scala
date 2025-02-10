@@ -159,7 +159,7 @@ final class TimelinePane(context: Context, model: Model) extends VBox:
       ColumnConstraints(
         minWidth = 150.0,
         prefWidth = 150.0,
-        maxWidth = 1000.0,
+        maxWidth = 150.0,
         hgrow = Priority.Always,
         halignment = HPos.LEFT,
         fillWidth = true      
