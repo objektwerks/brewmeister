@@ -28,8 +28,6 @@ final class Context(config: Config):
   val dialogTempRangeDuration = config.getString("dialog.tempRangeDuration")
   val dialogVolume = config.getString("dialog.volume")
   val dialogBrew = config.getString("dialog.brew")
-  val dialogLog = config.getString("dialog.log")
-  val dialogTimeline = config.getString("dialog.timeline")
 
   val removeDialogHeaderText = config.getString("remove.dialog.headerText")
   val removeDialogContentText = config.getString("remove.dialog.contentText")
