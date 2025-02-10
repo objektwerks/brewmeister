@@ -25,7 +25,7 @@ final class RightPane(context: Context, model: Model) extends VBox:
     content = BatchPane(context, model)
 
   val logTab = new Tab:
-    text = context.tabBatch // fix
+    text = context.tabLog
     graphic = context.imageViewLog
     closable = false
     content = LogPane(context, model)
