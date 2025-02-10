@@ -37,7 +37,7 @@ final class RightPane(context: Context, model: Model) extends VBox:
     content = LogPane(context, model)
 
   val batchTabPane = new TabPane:
-    tabs = List(batchTab)
+    tabs = List(batchTab, logTab, timelineTab)
 
   val splitPane = new SplitPane:
     orientation = Orientation.Vertical
