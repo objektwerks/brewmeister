@@ -12,7 +12,7 @@ final class TimelinePane(context: Context, model: Model) extends VBox:
 
   // Model
   model.selectedBatch.onChange { (_, _, selectedBatch) =>
-
+    bind(selectedBatch.timeline)
   }
 
   // Binding
