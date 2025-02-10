@@ -14,85 +14,85 @@ final class TimelineDialog(context: Context, model: Model) extends Dialog[Unit]:
   title = context.windowTitle
   headerText = context.dialogTimeline
 
-  val process = model.selectedBatch.value.timeline
+  val timeline = model.selectedBatch.value.timeline
 
   val labelSanitizingStarted = Label( context.labelSanitizingStarted )
-  val textSanitizingStarted = Label( process.sanitizingStarted )
+  val textSanitizingStarted = Label( timeline.sanitizingStarted )
 
   val labelSanitizingCompleted = Label( context.labelSanitizingCompleted )
-  val textSanitizingCompleted = Label( process.sanitizingCompleted )
+  val textSanitizingCompleted = Label( timeline.sanitizingCompleted )
 
   val labelPreparingStarted = Label( context.labelPreparingStarted )
-  val textPreparingStarted = Label( process.preparingStarted )
+  val textPreparingStarted = Label( timeline.preparingStarted )
 
   val labelPreparingCompleted = Label( context.labelPreparingCompleted )
-  val textPreparingCompleted = Label( process.preparingCompleted )
+  val textPreparingCompleted = Label( timeline.preparingCompleted )
 
   val labelMaltingStarted = Label( context.labelMaltingStarted )
-  val textMaltingStarted = Label( process.maltingStarted )
+  val textMaltingStarted = Label( timeline.maltingStarted )
 
   val labelMaltingCompleted = Label( context.labelMaltingCompleted )
-  val textMaltingCompleted = Label( process.maltingCompleted )
+  val textMaltingCompleted = Label( timeline.maltingCompleted )
 
   val labelMillingStarted = Label( context.labelMillingStarted )
-  val textMillingStarted = Label( process.millingStarted )
+  val textMillingStarted = Label( timeline.millingStarted )
 
   val labelMillingCompleted = Label( context.labelMillingCompleted )
-  val textMillingCompleted = Label( process.millingCompleted )
+  val textMillingCompleted = Label( timeline.millingCompleted )
 
   val labelMashingingStarted = Label( context.labelMashingStarted )
-  val textMashingStarted = Label( process.mashingStarted )
+  val textMashingStarted = Label( timeline.mashingStarted )
 
   val labelMashingCompleted = Label( context.labelMashingCompleted )
-  val textMashingCompleted = Label( process.mashingCompleted )
+  val textMashingCompleted = Label( timeline.mashingCompleted )
 
   val labelLauteringingStarted = Label( context.labelLauteringStarted )
-  val textLauteringStarted = Label( process.lauteringStarted )
+  val textLauteringStarted = Label( timeline.lauteringStarted )
 
   val labelLauteringCompleted = Label( context.labelLauteringCompleted )
-  val textLauteringCompleted = Label( process.lauteringCompleted )
+  val textLauteringCompleted = Label( timeline.lauteringCompleted )
 
   val labelSpargingingStarted = Label( context.labelSpargingStarted )
-  val textSpargingStarted = Label( process.spargingStarted )
+  val textSpargingStarted = Label( timeline.spargingStarted )
 
   val labelSpargingCompleted = Label( context.labelSpargingCompleted )
-  val textSpargingCompleted = Label( process.spargingCompleted )
+  val textSpargingCompleted = Label( timeline.spargingCompleted )
 
   val labelBoilingingStarted = Label( context.labelBoilingStarted )
-  val textBoilingStarted = Label( process.boilingStarted )
+  val textBoilingStarted = Label( timeline.boilingStarted )
 
   val labelBoilingCompleted = Label( context.labelBoilingCompleted )
-  val textBoilingCompleted = Label( process.boilingCompleted )
+  val textBoilingCompleted = Label( timeline.boilingCompleted )
 
   val labelCoolingingStarted = Label( context.labelCoolingStarted )
-  val textCoolingStarted = Label( process.coolingStarted )
+  val textCoolingStarted = Label( timeline.coolingStarted )
 
   val labelCoolingCompleted = Label( context.labelCoolingCompleted )
-  val textCoolingCompleted = Label( process.coolingCompleted )
+  val textCoolingCompleted = Label( timeline.coolingCompleted )
 
   val labelWhirlpoolingingStarted = Label( context.labelWhirlpoolingStarted )
-  val textWhirlpoolingStarted = Label( process.whirlpoolingStarted )
+  val textWhirlpoolingStarted = Label( timeline.whirlpoolingStarted )
 
   val labelWhirlpoolingCompleted = Label( context.labelWhirlpoolingCompleted )
-  val textWhirlpoolingCompleted = Label( process.whirlpoolingCompleted )
+  val textWhirlpoolingCompleted = Label( timeline.whirlpoolingCompleted )
 
   val labelFermentingingStarted = Label( context.labelFermentingStarted )
-  val textFermentingStarted = Label( process.fermentingStarted )
+  val textFermentingStarted = Label( timeline.fermentingStarted )
 
   val labelFermentingCompleted = Label( context.labelFermentingCompleted )
-  val textFermentingCompleted = Label( process.fermentingCompleted )
+  val textFermentingCompleted = Label( timeline.fermentingCompleted )
 
   val labelConditioningingStarted = Label( context.labelConditioningStarted )
-  val textConditioningStarted = Label( process.conditioningStarted )
+  val textConditioningStarted = Label( timeline.conditioningStarted )
 
   val labelConditioningCompleted = Label( context.labelConditioningCompleted )
-  val textConditioningCompleted = Label( process.conditioningCompleted )
+  val textConditioningCompleted = Label( timeline.conditioningCompleted )
 
   val labelKeggingStarted = Label( context.labelKeggingStarted )
-  val textKeggingStarted = Label( process.keggingStarted )
+  val textKeggingStarted = Label( timeline.keggingStarted )
 
   val labelKeggingCompleted = Label( context.labelKeggingCompleted )
-  val textKeggingCompleted = Label( process.keggingCompleted )
+  val textKeggingCompleted = Label( timeline.keggingCompleted )
 
   val controls = List[(Label, Node)](
     labelSanitizingStarted -> textSanitizingStarted,
