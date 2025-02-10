@@ -174,3 +174,7 @@ final class TimelinePane(context: Context, model: Model) extends VBox:
       ) 
     )
   )
+
+  // Content
+  children = List(controlGrid)
+  VBox.setVgrow(this, Priority.Always)
