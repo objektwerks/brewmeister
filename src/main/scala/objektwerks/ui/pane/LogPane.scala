@@ -14,7 +14,7 @@ final class LogPane(context: Context, model: Model) extends VBox:
     bind(selectedBatch.log)
   }  
 
-  val labelLog = Label( context.dialogLog )
+  val labelLog = Label( context.labelLog )
   val listViewLog = ListView( model.selectedBatch.value.log )
 
   def bind(log: List[String]): Unit =
