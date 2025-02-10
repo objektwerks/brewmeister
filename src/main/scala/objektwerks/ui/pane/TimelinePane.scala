@@ -2,7 +2,7 @@ package objektwerks.ui.pane
 
 import scalafx.geometry.{HPos, Insets}
 import scalafx.scene.Node
-import scalafx.scene.control.Label
+import scalafx.scene.control.{Label, ScrollPane}
 import scalafx.scene.layout.{ColumnConstraints, Priority, VBox}
 
 import objektwerks.Timeline
@@ -175,6 +175,9 @@ final class TimelinePane(context: Context, model: Model) extends VBox:
     )
   )
 
+  val scrollPaneControls = new ScrollPane:
+    content = controlGrid
+
   // Content
-  children = List(controlGrid)
+  children = List(scrollPaneControls)
   VBox.setVgrow(this, Priority.Always)
