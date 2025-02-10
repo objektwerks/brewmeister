@@ -1,11 +1,13 @@
 package objektwerks.ui.pane
 
-import scalafx.geometry.Insets
+import scalafx.geometry.{HPos, Insets}
+import scalafx.scene.Node
 import scalafx.scene.control.Label
-import scalafx.scene.layout.VBox
+import scalafx.scene.layout.{ColumnConstraints, Priority, VBox}
 
 import objektwerks.Timeline
 import objektwerks.ui.{Context, Model}
+import objektwerks.ui.control.ControlGrid
 
 final class TimelinePane(context: Context, model: Model) extends VBox:
   padding = Insets(3)
@@ -150,4 +152,25 @@ final class TimelinePane(context: Context, model: Model) extends VBox:
     labelConditioningCompleted -> textConditioningCompleted,
     labelKeggingStarted -> textKeggingStarted,
     labelKeggingCompleted -> textKeggingCompleted
+  )
+  val controlGrid = ControlGrid(
+    controls,
+    List(
+      ColumnConstraints(
+        minWidth = 150.0,
+        prefWidth = 150.0,
+        maxWidth = 1000.0,
+        hgrow = Priority.Always,
+        halignment = HPos.LEFT,
+        fillWidth = true      
+      ),
+      ColumnConstraints(
+        minWidth = 120.0,
+        prefWidth = 120.0,
+        maxWidth = 1000.0,
+        hgrow = Priority.Always,
+        halignment = HPos.LEFT,
+        fillWidth = true
+      ) 
+    )
   )
