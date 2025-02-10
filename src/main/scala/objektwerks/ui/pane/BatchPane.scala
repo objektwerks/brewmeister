@@ -11,7 +11,7 @@ import objektwerks.ui.control.ControlGrid
 import objektwerks.ui.dialog.{LogDialog, TimelineDialog}
 
 final class BatchPane(context: Context, model: Model) extends VBox:
-  padding = Insets(3)
+  padding = Insets(6)
 
   // Model
   model.selectedBatch.onChange { (_, _, selectedBatch) =>

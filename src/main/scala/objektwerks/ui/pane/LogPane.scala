@@ -8,7 +8,7 @@ import scalafx.scene.layout.{Priority, VBox}
 import objektwerks.ui.{Context, Model}
 
 final class LogPane(context: Context, model: Model) extends VBox:
-  padding = Insets(3)
+  padding = Insets(6)
 
   model.selectedBatch.onChange { (_, _, selectedBatch) =>
     bind(selectedBatch.log)

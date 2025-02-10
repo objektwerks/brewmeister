@@ -10,7 +10,7 @@ import objektwerks.ui.{Context, Model}
 import objektwerks.ui.control.ControlGrid
 
 final class TimelinePane(context: Context, model: Model) extends VBox:
-  padding = Insets(3)
+  padding = Insets(6)
 
   // Model
   model.selectedBatch.onChange { (_, _, selectedBatch) =>
