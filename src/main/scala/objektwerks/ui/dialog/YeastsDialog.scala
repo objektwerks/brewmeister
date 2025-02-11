@@ -151,11 +151,16 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     padding = Insets(6)
     children = List( ControlGrid(controls), buttonBarControls )
 
+  // Header
+  val header = new Label():
+    text = context.headerIngrediants
+    style = "-fx-font: italic bold 10pt sans-serif"
+
   // Content
   val content = new VBox:
     spacing = 6
     padding = Insets(6)
-    children = List(vboxYeasts, vboxControls)
+    children = List(header, vboxYeasts, vboxControls)
 
   dialogPane().content = content
   dialogPane().buttonTypes = List(ButtonType.OK, ButtonType.Cancel)
