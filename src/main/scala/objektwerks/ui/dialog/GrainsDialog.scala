@@ -127,7 +127,8 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     text.onChange { (_, _, _) => buttonRemove.disable = false }
 
   val labelLovibond = Label(context.labelLovibond)
-  val textFieldLovibond = DoubleTextField()
+  val textFieldLovibond = new DoubleTextField():
+    text.onChange { (_, _, _) => buttonRemove.disable = false }
 
   val labelMixinMinute = Label(context.labelMixinMinute)
   val textFieldMixinMinute = IntTextField()
