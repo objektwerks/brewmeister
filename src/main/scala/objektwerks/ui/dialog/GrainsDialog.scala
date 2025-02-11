@@ -109,7 +109,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     padding = Insets(6)
     children = List(listViewGrains, buttonBarGrains)
 
-  // Item
+  // Controls
   val labelName = Label(context.labelName)
   val textFieldName = NonEmptyTextField()
 
