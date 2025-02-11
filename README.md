@@ -28,9 +28,9 @@ App
 
 >**Recipes:**
 * Select a **listed** recipe to view a recipe.
-* Click **Add** button to build a new recipe.
-* Click **Remove** button to delete a **selected** recipe.
-* Click **Brew** button to simulate the brewing of a **selected** recipe.
+* Click the **Add** button to build a new recipe.
+* Click the **Remove** button to delete a **selected** recipe.
+* Click the **Brew** button to simulate the brewing of a **selected** recipe.
 
 >**Recipe:**
 * Click **Save** button to save the **selected** and **edited** recipe.
