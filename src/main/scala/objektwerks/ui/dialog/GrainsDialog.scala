@@ -30,14 +30,14 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   def add(grain: Grain): Unit =
     observableGrains.insert(0, grain)
-    observableGrains = observableGrains.sorted
+    observableGrains.sort()
     select(grain)
 
   def remove(index: Int): Unit =
     buttonRemove.disable = true
     buttonSave.disable = true
     observableGrains.remove(index)
-    observableGrains = observableGrains.sorted
+    observableGrains.sort()
     resetControls()
 
   def save(index: Int, grain: Grain): Unit =
