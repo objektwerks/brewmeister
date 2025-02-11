@@ -67,7 +67,9 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   def resetControls(): Unit =
     textFieldName.text = "name"
     textFieldWeight.text = "0.0"
+    choiceBoxUnit.value = UoM.lb.toString
     textFieldMixinMinute.text = "0"
+    choiceBoxMixinStep.value = MixinStep.Mashing.toString
 
   // List
   val listViewAdjuncts = new ListView[Adjunct]:
