@@ -24,7 +24,6 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     buttonRemove.disable = false
     listViewHops.refresh()
     listViewHops.selectionModel().select(hop)
-    listViewHops.scrollTo(hop)
     hopToControls(hop)
 
   def add(hop: Hop): Unit =
