@@ -17,7 +17,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   headerText = context.dialogHops
 
   // Model
-  var observableHops = ObservableBuffer.from( hops.map(identity).toBuffer.sorted )
+  val observableHops = ObservableBuffer.from( hops.map(identity).toBuffer.sorted )
 
   // Methods
   def select(hop: Hop): Unit =
