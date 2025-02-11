@@ -41,7 +41,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     resetControls()
 
   def save(index: Int, grain: Grain): Unit =
-    observableGrains.update(index, grain)
+    if index > -1 then observableGrains.update(index, grain)
     buttonSave.disable = true
 
   def enableSave(): Unit = if buttonSave != null then buttonSave.disable = false
