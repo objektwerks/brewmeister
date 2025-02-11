@@ -141,6 +141,7 @@ final class Context(config: Config):
 
   def imageViewBang = loadImageView("/image/bang.png")
   def imageViewBatch = loadImageView("/image/batch.png")
+  def imageViewEdit = loadImageView("/image/edit.png")
   def imageViewSave = loadImageView("/image/save.png")
   def imageViewPlus = loadImageView("/image/plus.png")
   def imageViewMinus = loadImageView("/image/minus.png")
