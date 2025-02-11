@@ -24,7 +24,6 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   // Methods
   def select(yeast: Yeast): Unit =
     buttonRemove.disable = false
-    buttonSave.disable = false
     listViewYeasts.selectionModel().select(yeast)
     listViewYeasts.scrollTo(yeast)
     yeastToControls(yeast)
@@ -42,7 +41,11 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     resetControls()
 
   def save(index: Int, yeast: Yeast): Unit =
-    observableYeasts.update(index, yeast)
+    if index > -1 then
+      observableYeasts.update(index, yeast)
+      buttonSave.disable = true
+
+  def enableSave(): Unit = if buttonSave != null then buttonSave.disable = false
 
   // Bindings
   def yeastToControls(yeast: Yeast): Unit =

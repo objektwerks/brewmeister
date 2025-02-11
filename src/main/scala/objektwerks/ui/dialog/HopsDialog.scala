@@ -40,8 +40,9 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     resetControls()
 
   def save(index: Int, hop: Hop): Unit =
-    if index > -1 then observableHops.update(index, hop)
-    buttonSave.disable = true
+    if index > -1 then
+      observableHops.update(index, hop)
+      buttonSave.disable = true
 
   def enableSave(): Unit = if buttonSave != null then buttonSave.disable = false
 
@@ -56,7 +57,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     textFieldMixinMinute.text = hop.mixinMinute.toString
     choiceBoxMixinStep.value = hop.mixinStep.toString
 
-  def controlsToHop(): Hop = 
+  def controlsToHop(): Hop =
     Hop(
       name = textFieldName.text.value,
       weight = textFieldWeight.text.value.toDouble,
