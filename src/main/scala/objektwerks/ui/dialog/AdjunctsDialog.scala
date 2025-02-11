@@ -17,7 +17,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   headerText = context.dialogAdjuncts
 
   // Model
-  var observableAdjuncts = ObservableBuffer.from( adjuncts.map(identity).toBuffer.sorted )
+  val observableAdjuncts = ObservableBuffer.from( adjuncts.map(identity).toBuffer.sorted )
 
   // Methods
   def select(adjunct: Adjunct): Unit =
