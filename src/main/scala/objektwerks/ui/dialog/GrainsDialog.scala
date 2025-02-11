@@ -25,7 +25,6 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   // Methods
   def select(grain: Grain): Unit =
     buttonRemove.disable = false
-    buttonSave.disable = false
     listViewGrains.selectionModel().select(grain)
     listViewGrains.scrollTo(grain)
     grainToControls(grain)
@@ -112,7 +111,8 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   // Controls
   val labelName = Label(context.labelName)
-  val textFieldName = NonEmptyTextField()
+  val textFieldName = new NonEmptyTextField():
+    text.onChange { (_, _, _) => buttonRemove.disable = false }
 
   val labelWeight = Label(context.labelWeight)
   val textFieldWeight = DoubleTextField()
