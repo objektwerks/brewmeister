@@ -135,7 +135,8 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   	items = ObservableBuffer.from( UoM.toList )
 
   val labelAlphaAcid = Label(context.labelAlphaAcid)
-  val textFieldAlphaAcid = DoubleTextField()
+  val textFieldAlphaAcid = new DoubleTextField():
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelMixinMinute = Label(context.labelMixinMinute)
   val textFieldMixinMinute = IntTextField()
