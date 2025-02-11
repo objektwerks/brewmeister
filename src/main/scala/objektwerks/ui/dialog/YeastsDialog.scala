@@ -67,7 +67,9 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   def resetControls(): Unit =
     textFieldName.text = "name"
     textFieldWeight.text = "0.0"
+    choiceBoxUnit.value = UoM.oz.toString
     textFieldMixinMinute.text = "0"
+    choiceBoxMixinStep.value = MixinStep.Fermenting.toString
 
   // List
   val listViewYeasts = new ListView[Yeast]:
