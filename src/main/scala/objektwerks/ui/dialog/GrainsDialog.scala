@@ -24,6 +24,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   // Methods
   def select(grain: Grain): Unit =
     buttonRemove.disable = false
+    listViewGrains.refresh()
     listViewGrains.selectionModel().select(grain)
     listViewGrains.scrollTo(grain)
     grainToControls(grain)
@@ -80,7 +81,6 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val listViewGrains = new ListView[Grain]:
     prefHeight = 100
     items = observableGrains
-    items <== ObjectProperty(observableGrains)
     cellFactory = (cell, grain) => cell.text = grain.name
     selectionModel().selectionModeProperty.value = SelectionMode.Single
 
