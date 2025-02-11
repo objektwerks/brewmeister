@@ -105,6 +105,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     spacing = 6
     children = List(buttonAdd, buttonRemove)
 
+  // Layout
   val vboxHops = new VBox:
     spacing = 6
     padding = Insets(6)
@@ -169,6 +170,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     spacing = 6
     children = List(buttonSave)
 
+  // Layout
   val vboxControls = new VBox:
     spacing = 6
     padding = Insets(6)
