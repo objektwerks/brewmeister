@@ -96,6 +96,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     spacing = 6
     children = List(buttonAdd, buttonRemove)
 
+  // Layout
   val vboxAdjuncts = new VBox:
     spacing = 6
     padding = Insets(6)
@@ -144,6 +145,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     spacing = 6
     children = List(buttonSave)
 
+  // Layout
   val vboxControls = new VBox:
     spacing = 6
     padding = Insets(6)
