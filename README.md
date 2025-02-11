@@ -28,9 +28,11 @@ App
 
 >**Recipes:**
 * Click **add** to build a new recipe.
-* Click **brew** to simulate the brewing of a **selected** recipe.
-* Click **save** to save the **selected** and **edited** recipe.
 * Click **remove** to delete a **selected** recipe.
+* Click **brew** to simulate the brewing of a **selected** recipe.
+
+>**Recipe:**
+* Click **save** to save the **selected** and **edited** recipe.
 
 >**Batches:**
 * Click a **listed** batch to analyze batch results.
