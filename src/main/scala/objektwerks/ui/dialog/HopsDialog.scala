@@ -40,9 +40,8 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     resetControls()
 
   def save(index: Int, hop: Hop): Unit =
-    if index > -1 then
-      observableHops.update(index, hop)
-      buttonSave.disable = true
+    if index > -1 then observableHops.update(index, hop)
+    buttonSave.disable = true
 
   def enableSave(): Unit = if buttonSave != null then buttonSave.disable = false
 
