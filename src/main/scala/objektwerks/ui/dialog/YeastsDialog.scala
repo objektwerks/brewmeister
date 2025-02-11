@@ -96,6 +96,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     spacing = 6
     children = List(buttonAdd, buttonRemove)
 
+  // Layout
   val vboxYeasts = new VBox:
     spacing = 6
     padding = Insets(6)
@@ -144,6 +145,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     spacing = 6
     children = List(buttonSave)
 
+  // Layout
   val vboxControls = new VBox:
     spacing = 6
     padding = Insets(6)
