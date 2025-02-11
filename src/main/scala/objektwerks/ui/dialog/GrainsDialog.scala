@@ -70,7 +70,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   def resetControls(): Unit =
     textFieldName.text = "name"
     textFieldWeight.text = "0.0"
-    choiceBoxUnit.value = UoM.oz.toString
+    choiceBoxUnit.value = UoM.lb.toString
     textFieldColor.text = "0.0"
     textFieldLovibond.text = "0.0"
     textFieldMixinMinute.text = "0"
@@ -162,7 +162,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   val buttonBarControls = new HBox:
     spacing = 6
-    children = List(buttonSave)  
+    children = List(buttonSave)
 
   val vboxControls = new VBox:
     spacing = 6

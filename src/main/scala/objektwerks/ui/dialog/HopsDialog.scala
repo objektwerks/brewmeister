@@ -72,9 +72,12 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   def resetControls(): Unit =
     textFieldName.text = "name"
     textFieldWeight.text = "0.0"
+    choiceBoxWeightUnit.value = UoM.oz.toString
     textFieldVolume.text = "0.0"
+    choiceBoxVolumeUnit.value = UoM.oz.toString
     textFieldAlphaAcid.text = "0.0"
     textFieldMixinMinute.text = "0"
+    choiceBoxMixinStep.value = MixinStep.Boiling.toString
 
   // List
   val listViewHops = new ListView[Hop]:
