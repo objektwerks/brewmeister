@@ -115,7 +115,8 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     text.onChange { (_, _, _) => buttonRemove.disable = false }
 
   val labelWeight = Label(context.labelWeight)
-  val textFieldWeight = DoubleTextField()
+  val textFieldWeight = new DoubleTextField():
+    text.onChange { (_, _, _) => buttonRemove.disable = false }
 
   val labelUnit = Label(context.labelUnit)
   val choiceBoxUnit = new ChoiceBox[String]:
