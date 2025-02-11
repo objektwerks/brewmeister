@@ -6,7 +6,6 @@ import scalafx.collections.ObservableBuffer
 import scalafx.geometry.Insets
 import scalafx.scene.Node
 import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, ListView, SelectionMode}
-import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.{HBox, VBox}
 
 import objektwerks.{Hop, MixinStep, UoM}
@@ -185,10 +184,9 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   dialogPane().content = content
 
-  val buttonTypeSave = ButtonType(context.buttonSave, ButtonData.OKDone)
-  dialogPane().buttonTypes = List(buttonTypeSave, ButtonType.Cancel)
+  dialogPane().buttonTypes = List(ButtonType.OK)
 
   resultConverter = dialogButton =>
-    if dialogButton == buttonTypeSave then
+    if dialogButton == ButtonType.OK then
       observableHops.toArray
     else null
