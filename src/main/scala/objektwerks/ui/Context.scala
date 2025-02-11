@@ -9,6 +9,8 @@ final class Context(config: Config):
   val windowWidth = config.getDouble("window.width")
   val windowHeight = config.getDouble("window.height")
 
+  val headerIngrediants = config.getString("header.ingrediants")
+
   val tabBatches = config.getString("tab.batches")
   val tabBatch = config.getString("tab.batch")
   val tabRecipes = config.getString("tab.recipes")

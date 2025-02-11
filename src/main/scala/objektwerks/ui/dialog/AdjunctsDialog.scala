@@ -151,11 +151,16 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     padding = Insets(6)
     children = List( ControlGrid(controls), buttonBarControls )
 
+  // Header
+  val header = new Label():
+    text = context.headerIngrediants
+    style = "-fx-font: italic bold 10pt sans-serif"
+
   // Content
   val content = new VBox:
     spacing = 6
     padding = Insets(6)
-    children = List(vboxAdjuncts, vboxControls)
+    children = List(header, vboxAdjuncts, vboxControls)
 
   dialogPane().content = content
   dialogPane().buttonTypes = List(ButtonType.OK, ButtonType.Cancel)
