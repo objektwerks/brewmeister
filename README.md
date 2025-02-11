@@ -35,11 +35,13 @@ App
 * Click **save** to save the **selected** and **edited** recipe.
 
 >**Batches:**
-* Click a **listed** batch to analyze batch results.
+* Click a **listed** batch to view batch results.
+* Click **remove** to delete a **selected** batch.
+
+>**Batch:**
 * Click **batch** tab to view batch.
 * Click **log** tab to view the batch log.
 * Click **timeline** tab to view the batch timeline.
-* Click **remove** to delete a **selected** batch.
 
 >**Default Recipe:**
 * **Brewmeister IPA** is the default recipe. It can be removed; but it will be added at **App** startup - if ***NO*** recipes exist.
