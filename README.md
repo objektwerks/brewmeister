@@ -27,16 +27,17 @@ App
 >See: https://github.com/objektwerks/brewmeister/blob/main/doc/app.png
 
 >**Recipes:**
-* Select **add** to build a new recipe.
-* Select **brew** to simulate the brewing of a **selected** recipe.
-* Select **save** to save the **selected** and **edited** recipe.
-* Select **remove** to delete a **selected** recipe.
+* Click **add** to build a new recipe.
+* Click **brew** to simulate the brewing of a **selected** recipe.
+* Click **save** to save the **selected** and **edited** recipe.
+* Click **remove** to delete a **selected** recipe.
 
 >**Batches:**
-* Select a **listed** batch to analyze batch results.
-* Select **log** to view the batch log.
-* Select **process** to view the batch process.
-* Select **remove** to delete a **selected** batch.
+* Click a **listed** batch to analyze batch results.
+* Click **batch** tab to view batch.
+* Click **log** tab to view the batch log.
+* Click **timeline** tab to view the batch timeline.
+* Click **remove** to delete a **selected** batch.
 
 >**Default Recipe:**
 * **Brewmeister IPA** is the default recipe. It can be removed; but it will be added at **App** startup - if ***NO*** recipes exist.
