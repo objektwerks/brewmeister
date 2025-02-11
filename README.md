@@ -49,7 +49,8 @@ App
 
 Deploy
 ------
->**Note**: I ***don't*** recommend using jDeploy. The author is unresponsive to raised Github issues, which may prove critical to your project.
+>**Note**: I ***don't*** recommend using jDeploy. The author is unresponsive to raised Github issues,
+>which may prove ***critical*** to your project.
 1. edit app.conf ( about > alert > contentText )
 2. edit build.sbt ( jarVersion + version )
 3. edit package.json ( version + jdeploy / jar )
