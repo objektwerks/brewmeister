@@ -147,6 +147,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val labelMixinStep = Label(context.labelMixinStep)
   val choiceBoxMixinStep = new ChoiceBox[String]:
   	items = ObservableBuffer.from( MixinStep.toList )
+  choiceBoxMixinStep.value.onChange { (_, _, _) => enableSave() }
 
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
