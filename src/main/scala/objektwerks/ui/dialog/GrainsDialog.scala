@@ -18,7 +18,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   headerText = context.dialogGrains
 
   // Model
-  var observableGrains = ObservableBuffer.from( grains.map(identity).toBuffer.sorted )
+  val observableGrains = ObservableBuffer.from( grains.map(identity).toBuffer.sorted )
 
   // Methods
   def select(grain: Grain): Unit =
