@@ -44,7 +44,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     observableGrains.update(index, grain)
     buttonSave.disable = true
 
-  def enableSave(): Unit = buttonSave.disable = false
+  def enableSave(): Unit = if buttonSave != null then buttonSave.disable = false
 
   // Bindings
   def grainToControls(grain: Grain): Unit =
@@ -122,7 +122,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val labelUnit = Label(context.labelUnit)
   val choiceBoxUnit = new ChoiceBox[String]:
   	items = ObservableBuffer.from( UoM.toList )
-  choiceBoxUnit.items.onChange { (_, _, _) => enableSave() }
+  choiceBoxUnit.value.onChange { (_, _, _) => enableSave() }
 
   val labelColor = Label(context.labelColor)
   val textFieldColor = new DoubleTextField():
@@ -139,7 +139,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val labelMixinStep = Label(context.labelMixinStep)
   val choiceBoxMixinStep = new ChoiceBox[String]:
   	items = ObservableBuffer.from( MixinStep.toList )
-  choiceBoxMixinStep.items.onChange { (_, _, _) => enableSave() }
+  choiceBoxMixinStep.value.onChange { (_, _, _) => enableSave() }
 
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
