@@ -111,7 +111,8 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     text.onChange { (_, _, _) => enableSave() }
 
   val labelWeight = Label(context.labelWeight)
-  val textFieldWeight = DoubleTextField()
+  val textFieldWeight = new DoubleTextField():
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelUnit = Label(context.labelUnit)
   val choiceBoxUnit = new ChoiceBox[String]:
