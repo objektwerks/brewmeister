@@ -33,7 +33,7 @@ App
 * Click **Brew** button to simulate the brewing of a **selected** recipe.
 
 >**Recipe:**
-* Click **save** to save the **selected** and **edited** recipe.
+* Click **save** button to save the **selected** and **edited** recipe.
 
 >**Batches:**
 * Select a **listed** batch to view a batch.
