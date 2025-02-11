@@ -1,7 +1,7 @@
 package objektwerks.ui.dialog
 
 import scalafx.Includes.*
-import scalafx.beans.property.ObjectProperty
+//import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.Insets
 import scalafx.scene.Node
@@ -23,7 +23,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   // Methods
   def select(adjunct: Adjunct): Unit =
     buttonRemove.disable = false
-    //listViewAdjuncts.refresh()
+    listViewAdjuncts.refresh()
     listViewAdjuncts.selectionModel().select(adjunct)
     listViewAdjuncts.scrollTo(adjunct)
     adjunctToControls(adjunct)
@@ -74,7 +74,6 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   val listViewAdjuncts = new ListView[Adjunct]:
     prefHeight = 100
     items = observableAdjuncts
-    items <== ObjectProperty(observableAdjuncts)
     cellFactory = (cell, adjunct) => cell.text = adjunct.name
     selectionModel().selectionModeProperty.value = SelectionMode.Single
 
