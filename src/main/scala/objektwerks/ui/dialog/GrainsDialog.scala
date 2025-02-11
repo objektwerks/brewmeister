@@ -123,7 +123,8 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   	items = ObservableBuffer.from( UoM.toList )
 
   val labelColor = Label(context.labelColor)
-  val textFieldColor = DoubleTextField()
+  val textFieldColor = new DoubleTextField():
+    text.onChange { (_, _, _) => buttonRemove.disable = false }
 
   val labelLovibond = Label(context.labelLovibond)
   val textFieldLovibond = DoubleTextField()
