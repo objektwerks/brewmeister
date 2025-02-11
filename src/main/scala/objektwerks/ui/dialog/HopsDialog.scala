@@ -119,7 +119,8 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     text.onChange { (_, _, _) => enableSave() }
 
   val labelWeight = Label(context.labelWeight)
-  val textFieldWeight = DoubleTextField()
+  val textFieldWeight = new DoubleTextField():
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelWeightUnit = Label(context.labelUnit)
   val choiceBoxWeightUnit = new ChoiceBox[String]:
