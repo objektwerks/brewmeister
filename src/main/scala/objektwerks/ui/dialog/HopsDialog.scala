@@ -184,7 +184,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     children = List(vboxHops, vboxControls)
 
   dialogPane().content = content
-  dialogPane().buttonTypes = List(ButtonType.OK)
+  dialogPane().buttonTypes = List(ButtonType.OK, ButtonType.Cancel)
 
   resultConverter = dialogButton =>
     if dialogButton == ButtonType.OK then

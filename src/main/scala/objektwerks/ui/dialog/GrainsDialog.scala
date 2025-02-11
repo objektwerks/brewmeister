@@ -176,7 +176,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     children = List(vboxGrains, vboxControls)
 
   dialogPane().content = content
-  dialogPane().buttonTypes = List(ButtonType.OK)
+  dialogPane().buttonTypes = List(ButtonType.OK, ButtonType.Cancel)
 
   resultConverter = dialogButton =>
     if dialogButton == ButtonType.OK then

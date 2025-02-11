@@ -159,7 +159,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     children = List(vboxYeasts, vboxControls)
 
   dialogPane().content = content
-  dialogPane().buttonTypes = List(ButtonType.OK)
+  dialogPane().buttonTypes = List(ButtonType.OK, ButtonType.Cancel)
 
   resultConverter = dialogButton =>
     if dialogButton == ButtonType.OK then
