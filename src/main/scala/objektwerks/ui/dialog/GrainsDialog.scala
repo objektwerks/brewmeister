@@ -7,7 +7,6 @@ import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Insets
 import scalafx.scene.Node
 import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, ListView, SelectionMode}
-import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.layout.{HBox, VBox}
 
 import objektwerks.{Grain, MixinStep, UoM}
@@ -121,6 +120,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val labelUnit = Label(context.labelUnit)
   val choiceBoxUnit = new ChoiceBox[String]:
   	items = ObservableBuffer.from( UoM.toList )
+  choiceBoxUnit.items.onChange { (_, _, _) => buttonRemove.disable = false }
 
   val labelColor = Label(context.labelColor)
   val textFieldColor = new DoubleTextField():
@@ -137,6 +137,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   val labelMixinStep = Label(context.labelMixinStep)
   val choiceBoxMixinStep = new ChoiceBox[String]:
   	items = ObservableBuffer.from( MixinStep.toList )
+  choiceBoxMixinStep.items.onChange { (_, _, _) => buttonRemove.disable = false }
 
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
@@ -174,10 +175,9 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   dialogPane().content = content
 
-  val buttonTypeSave = ButtonType(context.buttonSave, ButtonData.OKDone)
-  dialogPane().buttonTypes = List(buttonTypeSave, ButtonType.Cancel)
+  dialogPane().buttonTypes = List(ButtonType.OK)
 
   resultConverter = dialogButton =>
-    if dialogButton == buttonTypeSave then
+    if dialogButton == ButtonType.OK then
       observableGrains.toArray
     else null
