@@ -159,6 +159,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     labelMixinMinute -> textFieldMixinMinute,
     labelMixinStep -> choiceBoxMixinStep
   )
+  resetControls()
 
   // Buttons
   val buttonSave = new Button:

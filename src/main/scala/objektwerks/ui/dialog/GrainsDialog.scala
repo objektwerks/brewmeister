@@ -150,7 +150,6 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     labelMixinMinute -> textFieldMixinMinute,
     labelMixinStep -> choiceBoxMixinStep
   )
-
   resetControls()
 
   // Buttons
