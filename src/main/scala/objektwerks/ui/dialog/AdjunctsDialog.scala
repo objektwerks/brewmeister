@@ -24,7 +24,6 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   // Methods
   def select(adjunct: Adjunct): Unit =
     buttonRemove.disable = false
-    buttonSave.disable = false
     listViewAdjuncts.selectionModel().select(adjunct)
     listViewAdjuncts.scrollTo(adjunct)
     adjunctToControls(adjunct)
@@ -42,7 +41,11 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     resetControls()
 
   def save(index: Int, adjunct: Adjunct): Unit =
-    observableAdjuncts.update(index, adjunct)
+    if index > -1 then
+      observableAdjuncts.update(index, adjunct)
+      buttonSave.disable = true
+
+  def enableSave(): Unit = if buttonSave != null then buttonSave.disable = false
 
   // Bindings
   def adjunctToControls(adjunct: Adjunct): Unit =
