@@ -67,7 +67,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   def resetControls(): Unit =
     textFieldName.text = "name"
     textFieldWeight.text = "0.0"
-    choiceBoxUnit.value = UoM.lb.toString
+    choiceBoxUnit.value = UoM.oz.toString
     textFieldMixinMinute.text = "0"
     choiceBoxMixinStep.value = MixinStep.Mashing.toString
 
@@ -118,7 +118,7 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   val choiceBoxUnit = new ChoiceBox[String]:
   	items = ObservableBuffer.from( UoM.toList )
   choiceBoxUnit.value.onChange { (_, _, _) => enableSave() }
-a
+
   val labelMixinMinute = Label(context.labelMixinMinute)
   val textFieldMixinMinute = new IntTextField():
     text.onChange { (_, _, _) => enableSave() }
@@ -126,6 +126,7 @@ a
   val labelMixinStep = Label(context.labelMixinStep)
   val choiceBoxMixinStep = new ChoiceBox[String]:
   	items = ObservableBuffer.from( MixinStep.toList )
+  choiceBoxMixinStep.value.onChange { (_, _, _) => enableSave() }
 
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
@@ -134,6 +135,7 @@ a
     labelMixinMinute -> textFieldMixinMinute,
     labelMixinStep -> choiceBoxMixinStep
   )
+  resetControls()
 
   // Buttons
   val buttonSave = new Button:
