@@ -49,6 +49,7 @@ App
 
 Deploy
 ------
+>**Note**: I don't recommend using jDeploy. The author is quite unresponsive to the simplest of issues.
 1. edit app.conf ( about > alert > contentText )
 2. edit build.sbt ( jarVersion + version )
 3. edit package.json ( version + jdeploy / jar )
