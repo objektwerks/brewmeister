@@ -29,14 +29,14 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
 
   def add(yeast: Yeast): Unit =
     observableYeasts.insert(0, yeast)
-    observableYeasts = observableYeasts.sorted
+    observableYeasts.sort()
     select(yeast)
 
   def remove(index: Int): Unit =
     buttonRemove.disable = true
     buttonSave.disable = true
     observableYeasts.remove(index)
-    observableYeasts = observableYeasts.sorted
+    observableYeasts.sort()
     resetControls()
 
   def save(index: Int, yeast: Yeast): Unit =
