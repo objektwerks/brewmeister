@@ -24,7 +24,6 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   // Methods
   def select(hop: Hop): Unit =
     buttonRemove.disable = false
-    buttonSave.disable = false
     listViewHops.selectionModel().select(hop)
     listViewHops.scrollTo(hop)
     hopToControls(hop)
@@ -42,8 +41,10 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     resetControls()
 
   def save(index: Int, hop: Hop): Unit =
-    observableHops.update(index, hop)
+    if index > -1 then observableHops.update(index, hop)
     buttonSave.disable = true
+
+  def enableSave(): Unit = if buttonSave != null then buttonSave.disable = false
 
   // Bindings
   def hopToControls(hop: Hop): Unit =
