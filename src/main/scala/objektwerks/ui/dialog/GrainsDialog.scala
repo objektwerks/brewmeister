@@ -144,6 +144,8 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     labelMixinStep -> choiceBoxMixinStep
   )
 
+  resetControls()
+
   // Buttons
   val buttonSave = new Button:
     graphic = context.imageViewSave
