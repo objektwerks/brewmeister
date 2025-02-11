@@ -24,7 +24,6 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     buttonRemove.disable = false
     listViewYeasts.refresh()
     listViewYeasts.selectionModel().select(yeast)
-    listViewYeasts.scrollTo(yeast)
     yeastToControls(yeast)
 
   def add(yeast: Yeast): Unit =
