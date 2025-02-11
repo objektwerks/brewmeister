@@ -44,6 +44,8 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     observableGrains.update(index, grain)
     buttonSave.disable = true
 
+  def enableSave(): Unit = buttonSave.disable = false
+
   // Bindings
   def grainToControls(grain: Grain): Unit =
     textFieldName.text = grain.name
@@ -111,33 +113,33 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
   // Controls
   val labelName = Label(context.labelName)
   val textFieldName = new NonEmptyTextField():
-    text.onChange { (_, _, _) => buttonRemove.disable = false }
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelWeight = Label(context.labelWeight)
   val textFieldWeight = new DoubleTextField():
-    text.onChange { (_, _, _) => buttonRemove.disable = false }
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelUnit = Label(context.labelUnit)
   val choiceBoxUnit = new ChoiceBox[String]:
   	items = ObservableBuffer.from( UoM.toList )
-  choiceBoxUnit.items.onChange { (_, _, _) => buttonRemove.disable = false }
+  choiceBoxUnit.items.onChange { (_, _, _) => enableSave() }
 
   val labelColor = Label(context.labelColor)
   val textFieldColor = new DoubleTextField():
-    text.onChange { (_, _, _) => buttonRemove.disable = false }
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelLovibond = Label(context.labelLovibond)
   val textFieldLovibond = new DoubleTextField():
-    text.onChange { (_, _, _) => buttonRemove.disable = false }
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelMixinMinute = Label(context.labelMixinMinute)
   val textFieldMixinMinute = new IntTextField():
-    text.onChange { (_, _, _) => buttonRemove.disable = false }
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelMixinStep = Label(context.labelMixinStep)
   val choiceBoxMixinStep = new ChoiceBox[String]:
   	items = ObservableBuffer.from( MixinStep.toList )
-  choiceBoxMixinStep.items.onChange { (_, _, _) => buttonRemove.disable = false }
+  choiceBoxMixinStep.items.onChange { (_, _, _) => enableSave() }
 
   val controls = List[(Label, Node)](
     labelName -> textFieldName,
