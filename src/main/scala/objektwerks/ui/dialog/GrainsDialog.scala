@@ -25,7 +25,6 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     buttonRemove.disable = false
     listViewGrains.refresh()
     listViewGrains.selectionModel().select(grain)
-    listViewGrains.scrollTo(grain)
     grainToControls(grain)
 
   def add(grain: Grain): Unit =
