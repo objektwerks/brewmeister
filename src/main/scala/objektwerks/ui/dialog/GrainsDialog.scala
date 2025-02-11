@@ -44,6 +44,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
 
   def save(index: Int, grain: Grain): Unit =
     observableGrains.update(index, grain)
+    buttonSave.disable = true
 
   // Bindings
   def grainToControls(grain: Grain): Unit =
