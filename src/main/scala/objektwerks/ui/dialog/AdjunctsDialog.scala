@@ -24,7 +24,6 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
     buttonRemove.disable = false
     listViewAdjuncts.refresh()
     listViewAdjuncts.selectionModel().select(adjunct)
-    listViewAdjuncts.scrollTo(adjunct)
     adjunctToControls(adjunct)
 
   def add(adjunct: Adjunct): Unit =
