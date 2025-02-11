@@ -29,14 +29,14 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
 
   def add(hop: Hop): Unit =
     observableHops.insert(0, hop)
-    observableHops = observableHops.sorted
+    observableHops.sort()
     select(hop)
 
   def remove(index: Int): Unit =
     buttonRemove.disable = true
     buttonSave.disable = true
     observableHops.remove(index)
-    observableHops = observableHops.sorted
+    observableHops.sort()
     resetControls()
 
   def save(index: Int, hop: Hop): Unit =
