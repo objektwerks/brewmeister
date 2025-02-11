@@ -40,9 +40,9 @@ App
 * Click **Remove** button to delete a **selected** batch.
 
 >**Batch:**
-* Click the **batch** tab to view batch.
-* Click the **log** tab to view the batch log.
-* Click the **timeline** tab to view the batch timeline.
+* Click the **Batch** tab to view batch.
+* Click the **Log** tab to view the batch log.
+* Click the **Timeline** tab to view the batch timeline.
 
 >**Default Recipe:**
 * **Brewmeister IPA** is the default recipe. It can be removed; but it will be added at ***startup*** - if ***NO*** recipes exist.
