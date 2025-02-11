@@ -17,7 +17,7 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   headerText = context.dialogYeasts
 
   // Model
-  var observableYeasts = ObservableBuffer.from( yeasts.map(identity).toBuffer.sorted )
+  val observableYeasts = ObservableBuffer.from( yeasts.map(identity).toBuffer.sorted )
 
   // Methods
   def select(yeast: Yeast): Unit =
