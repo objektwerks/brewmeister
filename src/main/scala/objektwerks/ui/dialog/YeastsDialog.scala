@@ -105,9 +105,10 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
     padding = Insets(6)
     children = List(listViewYeasts, buttonBarYeasts)
 
-  // Item
+  // Controls
   val labelName = Label(context.labelName)
-  val textFieldName = NonEmptyTextField()
+  val textFieldName = new NonEmptyTextField():
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelWeight = Label(context.labelWeight)
   val textFieldWeight = DoubleTextField()
