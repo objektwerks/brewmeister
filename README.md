@@ -37,7 +37,7 @@ App
 
 >**Batches:**
 * Select a **listed** batch to view a batch.
-* Click **Remove** button to delete a **selected** batch.
+* Click the **Remove** button to delete a **selected** batch.
 
 >**Batch:**
 * Click the **Batch** tab to view batch.
