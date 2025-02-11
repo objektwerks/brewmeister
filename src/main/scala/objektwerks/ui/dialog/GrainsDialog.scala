@@ -131,7 +131,8 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     text.onChange { (_, _, _) => buttonRemove.disable = false }
 
   val labelMixinMinute = Label(context.labelMixinMinute)
-  val textFieldMixinMinute = IntTextField()
+  val textFieldMixinMinute = new IntTextField():
+    text.onChange { (_, _, _) => buttonRemove.disable = false }
 
   val labelMixinStep = Label(context.labelMixinStep)
   val choiceBoxMixinStep = new ChoiceBox[String]:
