@@ -3,7 +3,6 @@ package objektwerks.ui.dialog
 import scalafx.collections.ObservableBuffer
 
 import scalafx.Includes.*
-import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.Insets
 import scalafx.scene.Node
 import scalafx.scene.control.{Button, ButtonType, ChoiceBox, Dialog, Label, ListView, SelectionMode}
