@@ -45,7 +45,7 @@ App
 * Click the **timeline** tab to view the batch timeline.
 
 >**Default Recipe:**
-* **Brewmeister IPA** is the default recipe. It can be removed; but it will be added at **App** startup - if ***NO*** recipes exist.
+* **Brewmeister IPA** is the default recipe. It can be removed; but it will be added at ***startup*** - if ***NO*** recipes exist.
 
 Deploy
 ------
