@@ -119,7 +119,8 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   	items = ObservableBuffer.from( UoM.toList )
 
   val labelMixinMinute = Label(context.labelMixinMinute)
-  val textFieldMixinMinute = IntTextField()
+  val textFieldMixinMinute = new IntTextField():
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelMixinStep = Label(context.labelMixinStep)
   val choiceBoxMixinStep = new ChoiceBox[String]:
