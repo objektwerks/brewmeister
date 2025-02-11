@@ -168,11 +168,16 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     padding = Insets(6)
     children = List( ControlGrid(controls), buttonBarControls )
 
+  // Header
+  val header = new Label():
+    text = context.headerIngrediants
+    style = "-fx-font: italic bold 10pt sans-serif"
+
   // Content
   val content = new VBox:
     spacing = 6
     padding = Insets(6)
-    children = List(vboxGrains, vboxControls)
+    children = List(header, vboxGrains, vboxControls)
 
   dialogPane().content = content
   dialogPane().buttonTypes = List(ButtonType.OK, ButtonType.Cancel)
