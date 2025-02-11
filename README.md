@@ -49,7 +49,7 @@ App
 
 Deploy
 ------
->**Warning**: I ***don't*** recommend using jDeploy. The author is unresponsive to raised Github issues,
+>**Warning**: I ***don't*** recommend using jDeploy. The maintainer is unresponsive to Github issues,
 >which may prove ***critical*** to your project. [Conveyor](https://www.hydraulic.dev/index.html) might
 >prove more useful for your project.
 1. edit app.conf ( about > alert > contentText )
