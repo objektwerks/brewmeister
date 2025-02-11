@@ -1,7 +1,6 @@
 package objektwerks.ui.dialog
 
 import scalafx.Includes.*
-//import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.Insets
 import scalafx.scene.Node
