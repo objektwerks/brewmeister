@@ -153,11 +153,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelVolume = Label( context.labelVolume )
   val labelButtonVolume = new LabelButton[Volume]:
-    text.onChange { (_, _, _) => enableSave() }
     value = model.selectedRecipe.value.volume
     buttonAction = () => {
       VolumeDialog(context, value.value).showAndWait() match
         case Some(volume: Volume) =>
+          enableSave()
           text = s"${volume.value} ${volume.unit}"
           volume
         case _ => value.value
@@ -165,11 +165,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelGrains = Label( context.labelGrains )
   val labelButtonGrains = new LabelButton[List[Grain]]:
-    text.onChange { (_, _, _) => enableSave() }
     value = model.selectedRecipe.value.grains
     buttonAction = () => {
       GrainsDialog(context, value.value.toArray).showAndWait() match
         case Some(grains: Array[Grain]) =>
+          enableSave()
           text = s"${grains.map(_.name).mkString(", ")}"
           grains.toList
         case _ => value.value
@@ -177,11 +177,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
   
   val labelHops = Label( context.labelHops )
   val labelButtonHops = new LabelButton[List[Hop]]:
-    text.onChange { (_, _, _) => enableSave() }
     value = model.selectedRecipe.value.hops
     buttonAction = () => {
       HopsDialog(context, value.value.toArray).showAndWait() match
         case Some(hops: Array[Hop]) =>
+          enableSave()
           text = s"${hops.map(_.name).mkString(", ")}"
           hops.toList
         case _ => value.value
@@ -189,11 +189,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelAdjuncts = Label( context.labelAdjuncts )
   val labelButtonAdjuncts = new LabelButton[List[Adjunct]]:
-    text.onChange { (_, _, _) => enableSave() }
     value = model.selectedRecipe.value.adjuncts
     buttonAction = () => {
       AdjunctsDialog(context, value.value.toArray).showAndWait() match
         case Some(adjuncts: Array[Adjunct]) =>
+          enableSave()
           text = s"${adjuncts.map(_.name).mkString(", ")}"
           adjuncts.toList
         case _ => value.value
@@ -201,11 +201,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelYeasts = Label( context.labelYeasts )
   val labelButtonYeasts = new LabelButton[List[Yeast]]:
-    text.onChange { (_, _, _) => enableSave() }
     value = model.selectedRecipe.value.yeasts
     buttonAction = () => {
       YeastsDialog(context, value.value.toArray).showAndWait() match
         case Some(yeasts: Array[Yeast]) =>
+          enableSave()
           text = s"${yeasts.map(_.name).mkString(", ")}"
           yeasts.toList
         case _ => value.value
@@ -213,11 +213,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelMashingTempRangeDuration = Label( context.labelMashingTempRangeDuration )
   val labelButtonMashingTempRangeDuration = new LabelButton[TempRangeDuration]:
-    text.onChange { (_, _, _) => enableSave() }
     value = model.selectedRecipe.value.mashingTempRangeDuration
     buttonAction = () => {
       TempRangeDurationDialog(context, value.value).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) =>
+          enableSave()
           text = s"${tempRangeDuration.modelTempRange.low} - ${tempRangeDuration.modelTempRange.high}, " +
                  s"${tempRangeDuration.duration} ${tempRangeDuration.unit.toString}"
           tempRangeDuration
@@ -230,11 +230,11 @@ final class RecipePane(context: Context, model: Model) extends VBox:
 
   val labelBoilingTempRangeDuration = Label( context.labelBoilingTempRangeDuration )
   val labelButtonBoilingTempRangeDuration = new LabelButton[TempRangeDuration]:
-    text.onChange { (_, _, _) => enableSave() }
     value = model.selectedRecipe.value.boilingTempRangeDuration
     buttonAction = () => {
       TempRangeDurationDialog(context, value.value).showAndWait() match
         case Some(tempRangeDuration: TempRangeDuration) =>
+          enableSave()
           text = s"${tempRangeDuration.modelTempRange.low} - ${tempRangeDuration.modelTempRange.high}, " +
                  s"${tempRangeDuration.duration} ${tempRangeDuration.unit.toString}"
           tempRangeDuration
