@@ -119,7 +119,8 @@ final class YeastsDialog(context: Context, yeasts: Array[Yeast]) extends Dialog[
   	items = ObservableBuffer.from( UoM.toList )
 
   val labelMixinMinute = Label(context.labelMixinMinute)
-  val textFieldMixinMinute = IntTextField()
+  val textFieldMixinMinute = new IntTextField():
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelMixinStep = Label(context.labelMixinStep)
   val choiceBoxMixinStep = new ChoiceBox[String]:
