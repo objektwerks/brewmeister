@@ -117,7 +117,8 @@ final class AdjunctsDialog(context: Context, adjuncts: Array[Adjunct]) extends D
   val labelUnit = Label(context.labelUnit)
   val choiceBoxUnit = new ChoiceBox[String]:
   	items = ObservableBuffer.from( UoM.toList )
-
+  choiceBoxUnit.value.onChange { (_, _, _) => enableSave() }
+a
   val labelMixinMinute = Label(context.labelMixinMinute)
   val textFieldMixinMinute = new IntTextField():
     text.onChange { (_, _, _) => enableSave() }
