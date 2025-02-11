@@ -27,7 +27,7 @@ App
 >See: https://github.com/objektwerks/brewmeister/blob/main/doc/app.png
 
 >**Recipes:**
-* Click a **listed** recipe to view a recipe.
+* Select a **listed** recipe to view a recipe.
 * Click **add** to build a new recipe.
 * Click **remove** to delete a **selected** recipe.
 * Click **brew** to simulate the brewing of a **selected** recipe.
@@ -36,7 +36,7 @@ App
 * Click **save** to save the **selected** and **edited** recipe.
 
 >**Batches:**
-* Click a **listed** batch to view a batch.
+* Select a **listed** batch to view a batch.
 * Click **remove** to delete a **selected** batch.
 
 >**Batch:**
