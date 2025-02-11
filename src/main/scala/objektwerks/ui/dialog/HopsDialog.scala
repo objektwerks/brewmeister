@@ -113,9 +113,10 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
     padding = Insets(6)
     children = List(listViewHops, buttonBarHops)
 
-  // Item
+  // Controls
   val labelName = Label(context.labelName)
-  val textFieldName = NonEmptyTextField()
+  val textFieldName = new NonEmptyTextField():
+    text.onChange { (_, _, _) => enableSave() }
 
   val labelWeight = Label(context.labelWeight)
   val textFieldWeight = DoubleTextField()
