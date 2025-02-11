@@ -103,6 +103,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     spacing = 6
     children = List(buttonAdd, buttonRemove)
 
+  // Layout
   val vboxGrains = new VBox:
     spacing = 6
     padding = Insets(6)
@@ -161,6 +162,7 @@ final class GrainsDialog(context: Context, grains: Array[Grain]) extends Dialog[
     spacing = 6
     children = List(buttonSave)
 
+  // Layout
   val vboxControls = new VBox:
     spacing = 6
     padding = Insets(6)
