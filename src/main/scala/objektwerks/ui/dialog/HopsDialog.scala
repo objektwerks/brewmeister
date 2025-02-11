@@ -134,6 +134,7 @@ final class HopsDialog(context: Context, hops: Array[Hop]) extends Dialog[Array[
   val labelVolumeUnit = Label(context.labelUnit)
   val choiceBoxVolumeUnit = new ChoiceBox[String]:
   	items = ObservableBuffer.from( UoM.toList )
+  choiceBoxVolumeUnit.value.onChange { (_, _, _) => enableSave() }
 
   val labelAlphaAcid = Label(context.labelAlphaAcid)
   val textFieldAlphaAcid = new DoubleTextField():
