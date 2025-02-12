@@ -50,8 +50,7 @@ App
 Deploy
 ------
 >**Note**: I ***can't*** recommend jDeploy without reservations. The maintainer is unresponsive to Github issues,
->which may prove ***critical*** to your project. [Conveyor](https://www.hydraulic.dev/index.html) ***might***
->prove more useful to your project.
+>which may prove ***critical*** to your project. [Conveyor](https://www.hydraulic.dev/index.html) is an alternative.
 1. edit app.conf ( about > alert > contentText )
 2. edit build.sbt ( jarVersion + version )
 3. edit package.json ( version + jdeploy / jar )
