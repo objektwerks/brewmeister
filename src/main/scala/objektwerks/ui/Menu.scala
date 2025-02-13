@@ -13,7 +13,7 @@ final class Menu(context: Context) extends MenuBar:
     wrapText = true
     text = context.aboutAlertContentText
   val gridPaneAbout = new GridPane():
-    prefHeight = 90
+    prefHeight = 85
     prefWidth = 200
   gridPaneAbout.add(textAreaAbout, 0, 0)
 
