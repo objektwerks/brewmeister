@@ -80,6 +80,10 @@ jDeploy Issues
 3. Much of the old sbt assembly plugin code is no longer required. See build.sbt for details.
 4. The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with assembly output copied to ./target/... by default.
 
+NPM Registry
+------------
+>Brewmeister is deployed to: https://www.npmjs.com/package/brewmeister
+
 Build
 -----
 1. sbt clean compile
