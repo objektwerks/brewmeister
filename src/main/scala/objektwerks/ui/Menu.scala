@@ -3,32 +3,28 @@ package objektwerks.ui
 import scalafx.Includes._
 import scalafx.application.Platform
 import scalafx.event.ActionEvent
-import scalafx.scene.control.{Alert, Menu => MenuRoot, MenuBar, MenuItem, SeparatorMenuItem}
+import scalafx.scene.control.{Alert, Menu => MenuRoot, MenuBar, MenuItem, SeparatorMenuItem, TextArea}
 import scalafx.scene.control.Alert.AlertType
+import scalafx.scene.layout.GridPane
 
-/*
-TextArea textArea = new TextArea("YOUR_MESSAGE_HERE");
-textArea.setEditable(false);
-textArea.setWrapText(true);
-GridPane gridPane = new GridPane();
-gridPane.setMaxWidth(Double.MAX_VALUE);
-gridPane.add(textArea, 0, 0);
-
-Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-alert.setTitle("Stuff");
-alert.getDialogPane().setContent(gridPane);
-alert.showAndWait();
-*/
 final class Menu(context: Context) extends MenuBar:
+  val textAreaAbout = new TextArea():
+    editable = false
+    wrapText = true
+    text = context.aboutAlertContentText
+  val gridPaneAbout = new GridPane():
+    maxWidth = Double.MaxValue
+  gridPaneAbout.add(textAreaAbout, 0, 0)
+
   val menuItemAbout = new MenuItem:
     text = context.menuAbout
     onAction = (_: ActionEvent) =>
-      new Alert(AlertType.Information) {
+      val alert = new Alert(AlertType.Information):
         initOwner(App.stage)
         title = context.windowTitle
         headerText = context.aboutAlertHeaderText
-        contentText = context.aboutAlertContentText
-      }.showAndWait()
+      alert.dialogPane().content = gridPaneAbout
+      alert.showAndWait()
 
   val menuItemExit = new MenuItem:
     text = context.menuExit
