@@ -140,6 +140,7 @@ final class Context(config: Config):
   val buttonBrew = config.getString("button.brew")
 
   def imageViewBang = loadImageView("/image/bang.png")
+  def imageViewBeer = loadImageView("/image/beer.png")
   def imageViewBatch = loadImageView("/image/batch.png")
   def imageViewEdit = loadImageView("/image/edit.png")
   def imageViewSave = loadImageView("/image/save.png")
