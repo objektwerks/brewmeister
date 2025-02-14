@@ -78,10 +78,10 @@ jDeploy Issues
 >While jDeploy is quite useful - the author is often unresponsive to Github issues, which may prove
 >***critical*** to your project. [Conveyor](https://www.hydraulic.dev/index.html) is an alternative.
 1. ***jDeploy publish*** fails due to npm *2fa* one-time password error.
-    1. [Github Solution](https://github.com/shannah/jdeploy/issues/74)
+    1. See: [Github Solution](https://github.com/shannah/jdeploy/issues/74)
 2. ***macOS app icon*** not rendered correctly in Dock and Launchpad.
     1. Ensure app icon ( ./icon.png + ./src/main/resources/image/icon.png ) is at least 256x256. 512x512 is recommended.
-    2. See objektwerks.ui.App stage.icons, Taskbar and Toolkit code.
+    2. See: objektwerks.ui.App stage.icons, Taskbar and Toolkit code for details.
 
 NPM Registry
 ------------
