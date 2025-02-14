@@ -12,6 +12,7 @@ final class Menu(context: Context) extends MenuBar:
     editable = false
     wrapText = true
     text = context.aboutAlertContentText
+
   val gridPaneAbout = new GridPane():
     prefHeight = 120
     prefWidth = 200
@@ -20,12 +21,12 @@ final class Menu(context: Context) extends MenuBar:
   val menuItemAbout = new MenuItem:
     text = context.menuAbout
     onAction = (_: ActionEvent) =>
-      val alert = new Alert(AlertType.Information):
+      new Alert(AlertType.Information):
         initOwner(App.stage)
         title = context.windowTitle
         headerText = context.aboutAlertHeaderText
-      alert.dialogPane().content = gridPaneAbout
-      alert.showAndWait()
+        dialogPane().content = gridPaneAbout
+      .showAndWait()
 
   val menuItemExit = new MenuItem:
     text = context.menuExit
