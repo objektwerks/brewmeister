@@ -57,7 +57,7 @@ Deploy
 6. npm login
 7. jdeploy publish ( to https://www.jdeploy.com/~brewmeister )
 8. check email for npm message
->See [jDeploy Docs](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
+>See: [jDeploy Docs](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
 
 >The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with
 >assembly output copied to ./target/... by default. Also much of the *old* sbt assembly plugin code
