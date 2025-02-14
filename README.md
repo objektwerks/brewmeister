@@ -51,9 +51,9 @@ Deploy
 ------
 >**Note**: I ***can't*** recommend jDeploy without reservations. The maintainer is unresponsive to Github issues,
 >which may prove ***critical*** to your project. [Conveyor](https://www.hydraulic.dev/index.html) is an alternative.
-1. edit app.conf ( about > alert > contentText )
-2. edit build.sbt ( jarVersion + version )
-3. edit package.json ( version + jdeploy / jar )
+1. edit build.sbt ( jarVersion + version )
+2. edit package.json ( version + jdeploy / jar )
+3. edit app.conf ( about > alert > contentText )
 4. sbt clean test assembly copyAssemblyJar
 5. perform github release ( from https://github.com/objektwerks/brewmeister )
 6. npm login
