@@ -45,3 +45,7 @@ App
 
 >**Default Recipe:**
 * **Brewmeister IPA** is the default recipe. It can be removed; but it will be added at ***startup*** - if ***NO*** recipes exist.
+
+Details
+-------
+>See: https://github.com/objektwerks/brewmeister/blob/main/README.md
