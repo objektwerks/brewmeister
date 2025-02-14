@@ -60,7 +60,7 @@ Deploy
 >See [jDeploy Docs](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
 
 >The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with
->assembly output copied to ./target/... by default. Also Much of the old sbt assembly plugin code
+>assembly output copied to ./target/... by default. Also much of the *old* sbt assembly plugin code
 >is no longer required. See build.sbt for details.
 
 jDeploy Install
