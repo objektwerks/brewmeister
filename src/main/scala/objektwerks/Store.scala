@@ -30,7 +30,8 @@ final class Store extends LazyLogging:
       assertNotInFxThread
       os.list(recipesPath)
         .filter { path => path.baseName.nonEmpty }
-        .map { path => readRecipe(s"${path.baseName}.json") }.toList
+        .map { path => readRecipe(s"${path.baseName}.json") }
+        .toList
 
   def writeRecipe(recipe: Recipe): Unit =
     supervised:
@@ -57,7 +58,8 @@ final class Store extends LazyLogging:
       assertNotInFxThread
       os.list(batchesPath)
         .filter { path => path.baseName.nonEmpty }
-        .map { path => readBatch(s"${path.baseName}.json") }.toList
+        .map { path => readBatch(s"${path.baseName}.json") }
+        .toList
 
   def writeBatch(batch: Batch): Unit =
     supervised:
