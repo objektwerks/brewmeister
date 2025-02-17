@@ -57,6 +57,7 @@ final class Store extends LazyLogging:
   def listBatches: List[Batch] =
     supervised:
       assertNotInFxThread
+      logger.info(s"List batches.")
       os.list(batchesPath)
         .filter { path => path.baseName.nonEmpty }
         .map { path => readBatch(s"${path.baseName}.json") }
