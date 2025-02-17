@@ -28,6 +28,7 @@ final class Store extends LazyLogging:
   def listRecipes: List[Recipe] =
     supervised:
       assertNotInFxThread
+      logger.info(s"List recipes.")
       os.list(recipesPath)
         .filter { path => path.baseName.nonEmpty }
         .map { path => readRecipe(s"${path.baseName}.json") }
