@@ -51,8 +51,7 @@ object Batch:
 
   def brewhouseEfficiency(batches: List[Batch]): Int =
     if batches.nonEmpty then
-      val result = ( batches.map(batch => batch.brewhouseEfficiency).sum / batches.length ).toInt
-      if result > 100 then 0 else result
+      ( batches.map(batch => batch.brewhouseEfficiency).sum / batches.length ).toInt
     else 0
 
 @upickle.implicits.serializeDefaults(true)
