@@ -46,8 +46,7 @@ object Batch:
     ( (actualFermentableExtract / potentialFermentableExtract) * 100 ).toInt
 
   def brewhouseEfficiency(batches: List[Batch]): Int =
-    if batches.nonEmpty then
-      ( batches.map(batch => batch.brewhouseEfficiency).sum / batches.length ).toInt
+    if batches.nonEmpty then ( batches.map(batch => batch.brewhouseEfficiency).sum / batches.length ).toInt
     else 0
 
 @upickle.implicits.serializeDefaults(true)
