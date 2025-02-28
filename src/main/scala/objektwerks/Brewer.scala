@@ -404,7 +404,7 @@ final class Kegger(listener: Listener):
           s"IBU hop bitterness: $ibuBitterness",
           s"ABV: $alcoholByVolume",
           s"ABW: $alcoholByWeight",
-          s"Calories: $calories",
+          s"Calories: $calories for volume of: ${keg.recipe.volume} ${keg.recipe.volume.unit}",
           s"Kegging temp: ${keg.keggingTemp}",
           s"Appearance: ${keg.appearance}",
           s"Aroma: ${keg.aroma}",
