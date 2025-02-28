@@ -47,8 +47,7 @@ object Batch:
 
   def brewhouseEfficiency(actualFermentableExtract: Double,
                           potentialFermentableExtract: Double): Int =
-    val result = ( (actualFermentableExtract / potentialFermentableExtract) * 100 ).toInt
-    if result > 100 then 0 else result
+    ( (actualFermentableExtract / potentialFermentableExtract) * 100 ).toInt
 
   def brewhouseEfficiency(batches: List[Batch]): Int =
     if batches.nonEmpty then
