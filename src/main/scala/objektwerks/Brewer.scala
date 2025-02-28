@@ -372,7 +372,7 @@ final class Kegger(listener: Listener):
     val alcoholByVolume = Batch.alcoholByVolume(listener.originalGravity, listener.finalGravity)
     val alcoholByWeight = Batch.alcoholByWeight(alcoholByVolume, listener.finalGravity)
     val calories = Batch.calories(
-      keg.recipe.volume.value,
+      keg.recipe.volume,
       listener.originalGravity,
       listener.finalGravity
     )

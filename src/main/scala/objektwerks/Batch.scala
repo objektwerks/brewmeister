@@ -24,11 +24,15 @@ object Batch:
                       finalGravity: Double): Double =
     ( (0.79 * alcoholByVolume) / finalGravity ).format
 
-  def calories(packageVolume: Double,
+  def calories(packageVolume: Volume,
                originalGravity: Double,
                finalGravity: Double): Int =
+    val oz = packageVolume.unit match
+      case UoM.oz => packageVolume.value
+      case UoM.gl => packageVolume.value * 128
+      case UoM.lb => 0
     val alcoholCalories = (originalGravity - finalGravity) * 7.5
-    val carbohydrateCalories = (finalGravity * 13) * packageVolume
+    val carbohydrateCalories = (finalGravity * 13) * oz
     ( alcoholCalories + carbohydrateCalories ).toInt
 
   def mashEfficiency(actualMashExtract: Double,
