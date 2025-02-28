@@ -273,7 +273,7 @@ Metrics
     4. Carbohydrate Calories = ( FG * 13 ) * Volume
     5. Calories = Alcohol Calories + Carbohydrate Calories
     6. Range: 10 - 600
-11. **Mash Efficiency** - Mash Efficiency calculates the percentage of fermentable extract extracted during the mash and sparging steps.
+11. **Mash Efficiency** - Calculates the percentage of fermentable extract extracted during the mash and sparging steps.
     1. Method: ***brewer input and recipe***
     2. Actual Mash Extract = The amount of fermentable extract collected from the mash tun.
     3. Potential Mash Extract = The maximum extract potential of the grain bill, calculated on the malt’s extract potential and the grain bill’s weight and volume.
