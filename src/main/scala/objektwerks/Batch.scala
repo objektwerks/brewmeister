@@ -7,16 +7,6 @@ import upickle.default.{ReadWriter => JsonSupport}
 object Batch:
   given Ordering[Batch] = Ordering.by[Batch, String](b => b.completed).reverse
 
-  def srmColor(batchVolume: Volume, grains: List[Grain]): Int =
-    val sum = grains.map { grain => srmColor(grain.weight, grain.color, batchVolume.value) }.sum
-    sum / grains.length
-
-  def srmColor(grainWeight: Double,
-               grainColor: Double,
-               batchVolume: Double): Int =
-    val maltColorUnits = (grainWeight * grainColor) / batchVolume
-    ( 1.4922 * Math.pow(maltColorUnits, 0.6859) ).toInt
-
   def ibuBitterness(hops: List[Hop]): Int =
     hops.map { hop => ibuBitterness(hop.alphaAcid, hop.weight, hop.volume) }.sum
 
