@@ -268,7 +268,7 @@ Metrics
     3. Range: 1.0 - 10.0 %
 10. **Calories** - The number of calories in a beer.
     1. Method: ***metrics***
-    2. Volume = Beer container (oz)
+    2. Volume = Beer packaged container (oz)
     3. Alcohol Calories = ( OG - FG ) * 7.5
     4. Carbohydrate Calories = ( FG * 13 ) * Volume
     5. Calories = Alcohol Calories + Carbohydrate Calories
