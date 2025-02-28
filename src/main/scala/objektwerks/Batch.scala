@@ -31,9 +31,11 @@ object Batch:
       case UoM.oz => packageVolume.value
       case UoM.gl => packageVolume.value * 128
       case UoM.lb => 0
-    val alcoholCalories = (originalGravity - finalGravity) * 7.5
-    val carbohydrateCalories = (finalGravity * 13) * oz
-    ( alcoholCalories + carbohydrateCalories ).toInt
+    if oz != 0 then
+      val alcoholCalories = (originalGravity - finalGravity) * 7.5
+      val carbohydrateCalories = (finalGravity * 13) * oz
+      ( alcoholCalories + carbohydrateCalories ).toInt
+    else 0
 
   def mashEfficiency(actualMashExtract: Double,
                      potentialMashExtract: Double): Int =
