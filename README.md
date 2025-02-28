@@ -280,7 +280,7 @@ Metrics
     4. Mash Efficiency % = ( Actual Mash Extract / Potential Mash Extract ) * 100
     5. Range: 70 - 100 %
     6. Ideal: 80 - 90 %
-12. **Brewhouse Efficiency** - Brewhouse Efficiency accounts for losses throughout the entire brewing process.
+12. **Brewhouse Efficiency** - Accounts for inefficiencies throughout the entire brewing process.
     1. Method: ***brewer input and metrics***
     2. Actual Fermentable Extract = The amount of fermentable extract collected from the brewhouse.
     3. Potential Fermentable Extract = The maximum extract potential of the grain bill, assuming 100% efficiency throughout the brewing process.
