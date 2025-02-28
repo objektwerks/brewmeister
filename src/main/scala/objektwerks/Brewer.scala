@@ -370,10 +370,7 @@ final class Kegger(listener: Listener):
   def keg(keg: Keg): Unit =
     val ibuBitterness = Batch.ibuBitterness(keg.recipe.hops)
     val alcoholByVolume = Batch.alcoholByVolume(listener.originalGravity, listener.finalGravity)
-    val alcoholByWeight = Batch.alcoholByWeight(
-      Batch.alcoholByVolume(listener.originalGravity, listener.finalGravity),
-      listener.finalGravity
-    )
+    val alcoholByWeight = Batch.alcoholByWeight(alcoholByVolume, listener.finalGravity)
     val calories = Batch.calories(
       keg.recipe.volume.value,
       listener.originalGravity,
