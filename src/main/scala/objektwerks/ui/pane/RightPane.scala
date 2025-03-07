@@ -7,7 +7,7 @@ import scalafx.scene.layout.{Priority, VBox}
 import objektwerks.ui.{Context, Model}
 
 final class RightPane(context: Context, model: Model) extends VBox:
-  padding = Insets(6)
+  padding = Insets(3)
 
   val recipeTab = new Tab:
     text = context.tabRecipe
