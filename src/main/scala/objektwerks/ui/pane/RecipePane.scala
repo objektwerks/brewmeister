@@ -12,8 +12,6 @@ import objektwerks.ui.control.DoubleTextField
 import objektwerks.ui.dialog.{AdjunctsDialog, GrainsDialog, HopsDialog, TempRangeDurationDialog, VolumeDialog, YeastsDialog}
 
 final class RecipePane(context: Context, model: Model) extends VBox:
-  padding = Insets(3)
-
   // Model
   model.selectedRecipe.onChange { (_, _, selectedRecipe) =>
     recipeToControls(selectedRecipe)
