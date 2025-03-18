@@ -305,7 +305,7 @@ Persistence
 
 Logging
 -------
->**Logs** files are stored here:
+>**Log** files are stored here:
 ```
 ~/.brewmeister/logs
 ```
