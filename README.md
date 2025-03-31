@@ -160,26 +160,26 @@ Process
 Flow
 ----
 >**Package / Packager / Packaged** has been replaced with **Keg / Kegger / Kegged** for *simplicity* in the design.
-1. App -- create --> Recipe | Listener | Brewer
+1. App -- create --> Recipe & Listener & Brewer
 2. App -- command --> Brewer -- handle( command )
-    1. Sanitize --> **Sanitizer** -- Sanitizing | Sanitized --> Listener
-    2. Prepare --> **Preparer** -- Preparing | Prepared --> Listener
-    3. Malt --> **Malter** -- Malting | Malted --> Listener
-    4. Mill --> **Miller** -- Milling | Milled --> Listener
-    5. Mash --> **Masher** -- Mashing | Mashed --> Listener
+    1. Sanitize --> **Sanitizer** -- Sanitizing & Sanitized --> Listener
+    2. Prepare --> **Preparer** -- Preparing & Prepared --> Listener
+    3. Malt --> **Malter** -- Malting & Malted --> Listener
+    4. Mill --> **Miller** -- Milling & Milled --> Listener
+    5. Mash --> **Masher** -- Mashing & Mashed --> Listener
     6. LogMashingTempPh --> **Masher** -- MashingTempPhLogged --> Listener
-    7. Lauter --> **Lauterer** -- Lautering | Lautered --> Listener
-    8. Sparge --> **Sparger** -- Sparing | Sparged --> Listener
+    7. Lauter --> **Lauterer** -- Lautering & Lautered --> Listener
+    8. Sparge --> **Sparger** -- Sparing & Sparged --> Listener
     9. LogMashEfficiency --> **Sparger** -- MashEfficiencyLogged --> Listener
-    10. Boil --> **Boiler** -- Boiling | Boiled --> Listener
-    11. Cool --> **Cooler** -- Cooling | Cooled --> Listener
+    10. Boil --> **Boiler** -- Boiling & Boiled --> Listener
+    11. Cool --> **Cooler** -- Cooling & Cooled --> Listener
     12. Whirlpool --> **Whirlpooler** -- Whirlpooling | Whirlpooled --> Listener
     13. LogBoilingCoolingTempOriginalGravity --> **Whirlpooler** -- BoilingCoolingTempOriginalGravityLogged --> Listener
-    14. Ferment --> **Fermenter** -- Fermenting | Fermented --> Listener
+    14. Ferment --> **Fermenter** -- Fermenting & Fermented --> Listener
     15. LogFermentingTempFinalGravity --> **Fermenter** -- FermentingTempFinalGravityLogged --> Listener
-    16. Condition --> **Conditioner** -- Conditioning | Conditioned --> Listener
+    16. Condition --> **Conditioner** -- Conditioning & Conditioned --> Listener
     17. LogConditioningTempSrmColor --> **Conditioner** -- ConditioningTempSrmColorLogged --> Listener
-    18. Keg --> **Kegger** -- Kegging | Kegged --> Listener
+    18. Keg --> **Kegger** -- Kegging & Kegged --> Listener
     19. LogKeggingTempBrewhouseEfficiency --> **Kegger** -- KeggingTempBrewhouseEfficiencyLogged --> Listener
 3. Listener -- events -> Batch
 
@@ -208,12 +208,12 @@ Brew Batch Ouput
 
 Model
 -----
-* Recipe 1 --> * Grain | Hop | Adjunct | Yeast
+* Recipe 1 --> * Grain & Hop & Adjunct & Yeast
 * Brewer 1 -- brews --> * Command
 * Brewer 1 -- delegates --> 1 Listener
 * Listener 1 -- collects --> * Event
 * Listener 1 -- builds --> * Batch
-* Batch 1 --> 1 Log | Timeline
+* Batch 1 --> 1 Log & Timeline
 
 Command
 -------
