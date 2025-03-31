@@ -173,7 +173,7 @@ Flow
     9. LogMashEfficiency --> **Sparger** -- MashEfficiencyLogged --> Listener
     10. Boil --> **Boiler** -- Boiling & Boiled --> Listener
     11. Cool --> **Cooler** -- Cooling & Cooled --> Listener
-    12. Whirlpool --> **Whirlpooler** -- Whirlpooling | Whirlpooled --> Listener
+    12. Whirlpool --> **Whirlpooler** -- Whirlpooling & Whirlpooled --> Listener
     13. LogBoilingCoolingTempOriginalGravity --> **Whirlpooler** -- BoilingCoolingTempOriginalGravityLogged --> Listener
     14. Ferment --> **Fermenter** -- Fermenting & Fermented --> Listener
     15. LogFermentingTempFinalGravity --> **Fermenter** -- FermentingTempFinalGravityLogged --> Listener
