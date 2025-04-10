@@ -83,6 +83,10 @@ jDeploy Issues
     1. Ensure app icon ( ./icon.png + ./src/main/resources/image/icon.png ) is at least 256x256. 512x512 is recommended.
     2. See objektwerks.ui.App stage.icons, Taskbar and Toolkit code for details.
 
+NPM Versioning
+--------------
+>Your build.sbt file will require a semver 3-digit version number [Npmjs Semver](https://docs.npmjs.com/about-semantic-versioning)
+
 NPM Registry
 ------------
 >Brewmeister is deployed to: https://www.npmjs.com/package/brewmeister
