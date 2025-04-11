@@ -75,8 +75,6 @@ jDeploy Install
 
 jDeploy Issues
 --------------
->While jDeploy is quite useful - the author does not always respond to Github issues in a timely manner, which
->may prove ***critical*** to your project. [Conveyor](https://www.hydraulic.dev/index.html) is an alternative.
 1. ***jDeploy publish*** fails due to npm *2fa* one-time password error.
     1. See: [Github Solution](https://github.com/shannah/jdeploy/issues/74)
 2. ***macOS app icon*** not rendered correctly in Dock and Launchpad.
