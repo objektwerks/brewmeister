@@ -1,7 +1,7 @@
 name := "brewmeister"
 organization := "objektwerks"
 version := "2.7.0"
-scalaVersion := "3.6.4" // Scala 3.7.0-RC breaks Scalafx!
+scalaVersion := "3.6.4" // Scala 3.7.0-RC2 breaks ScalaFx!
 mainClass := Some("objektwerks.ui.App")
 libraryDependencies ++= {
   Seq(
