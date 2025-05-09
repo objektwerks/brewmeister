@@ -1,6 +1,6 @@
 package objektwerks.ui
 
-import scalafx.Includes._
+import scalafx.Includes.*
 import scalafx.application.Platform
 import scalafx.event.ActionEvent
 import scalafx.scene.control.{Alert, Menu => MenuRoot, MenuBar, MenuItem, SeparatorMenuItem, TextArea}
