@@ -6,3 +6,4 @@ project/target/
 target/
 jdeploy
 jdeploy-bundle
+sbt-launch.jar
