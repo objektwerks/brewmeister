@@ -12,7 +12,7 @@ import scalafx.scene.image.Image
 import objektwerks.Store
 
 object App extends JFXApp3 with LazyLogging:
-  logger.info("Starting app ...")
+  logger.info("Brewmeister starting ...")
 
   val context = Context(ConfigFactory.load("app.conf"))
   val model = Model( Store() )
@@ -33,7 +33,7 @@ object App extends JFXApp3 with LazyLogging:
 
     stage.show()
 
-    logger.info("Started app.")
+    logger.info("Brewmeister started.")
 
   sys.addShutdownHook:
-    logger.info("Shutdown app.")
+    logger.info("Brewmeister shutdown.")
