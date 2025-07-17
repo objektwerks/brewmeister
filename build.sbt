@@ -1,6 +1,6 @@
 name := "brewmeister"
 organization := "objektwerks"
-version := "2.8.0"
+version := "3.0.0"
 scalaVersion := "3.7.2-RC1"
 mainClass := Some("objektwerks.ui.App")
 libraryDependencies ++= {
