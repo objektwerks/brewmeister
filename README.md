@@ -89,26 +89,6 @@ NPM Registry
 ------------
 >Brewmeister is deployed to: https://www.npmjs.com/package/brewmeister
 
-Build
------
-1. ```sbt clean compile```
-
-Test
-----
-1. ```sbt clean test```
-
-Run
----
-1. ```sbt run```
-
-Assembly
---------
-1. ```sbt clean test assembly copyAssemblyJar```
-
-Execute
--------
-1. ```java -jar .assembly/brewmeister-$version.jar```
-
 Process
 -------
 >Steps used in ***all grain*** brewing. ***Extract*** brewing excludes steps 3-7.
@@ -311,6 +291,26 @@ Logging
 ```
 ~/.brewmeister/logs
 ```
+
+Build
+-----
+1. ```sbt clean compile```
+
+Test
+----
+1. ```sbt clean test```
+
+Run
+---
+1. ```sbt run```
+
+Assembly
+--------
+1. ```sbt clean test assembly copyAssemblyJar```
+
+Execute
+-------
+1. ```java -jar .assembly/brewmeister-$version.jar```
 
 Resources
 ---------
