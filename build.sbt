@@ -1,6 +1,6 @@
 name := "brewmeister"
 organization := "objektwerks"
-version := "3.0.0"
+version := "4.0.0"
 scalaVersion := "3.7.2-RC1"
 mainClass := Some("objektwerks.ui.App")
 libraryDependencies ++= {
@@ -58,7 +58,8 @@ copyAssemblyJar := {
 // End: Assembly Tasks
 
 // Begin: Assembly
-assemblyJarName := s"brewmeister-${version.value}.jar"
+assemblyJarName := s"" +
+  s"${name.value}-${version.value}.jar"
 assembly / assemblyMergeStrategy := {
   case PathList("META-INF", x, xs @ _*) if x.toLowerCase == "services" => MergeStrategy.filterDistinctLines
   case PathList("META-INF", xs @ _*) => MergeStrategy.discard
