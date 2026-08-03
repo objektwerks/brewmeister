@@ -12,7 +12,7 @@ libraryDependencies ++= {
     "com.lihaoyi" %% "upickle" % "4.4.3",
     "com.typesafe" % "config" % "1.4.3",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
-    "ch.qos.logback" % "logback-classic" % "1.5.32",
+    "ch.qos.logback" % "logback-classic" % "1.5.38",
     "org.scalatest" %% "scalatest" % "3.2.19" % Test
   )
 }
