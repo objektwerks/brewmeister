@@ -6,7 +6,7 @@ mainClass := Some("objektwerks.ui.App")
 libraryDependencies ++= {
   Seq(
     "org.scalafx" %% "scalafx" % "27.0.0-R39",
-    "com.softwaremill.ox" %% "core" % "1.0.9",
+    "com.softwaremill.ox" %% "core" % "1.1.0",
     "org.controlsfx" % "controlsfx" % "11.2.1",
     "com.lihaoyi" %% "os-lib" % "0.11.9-M8",
     "com.lihaoyi" %% "upickle" % "4.4.3",
