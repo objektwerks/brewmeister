@@ -8,7 +8,7 @@ libraryDependencies ++= {
     "org.scalafx" %% "scalafx" % "27.0.0-R39",
     "com.softwaremill.ox" %% "core" % "1.1.0",
     "org.controlsfx" % "controlsfx" % "11.2.1",
-    "com.lihaoyi" %% "os-lib" % "0.11.9",
+    "com.lihaoyi" %% "os-lib" % "0.11.10",
     "com.lihaoyi" %% "upickle" % "4.4.3",
     "com.typesafe" % "config" % "1.4.3",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
